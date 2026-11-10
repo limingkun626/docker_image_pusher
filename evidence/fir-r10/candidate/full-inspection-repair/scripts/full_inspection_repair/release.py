@@ -1,0 +1,381 @@
+from __future__ import annotations
+
+import json
+import os
+from pathlib import Path
+from typing import Any
+
+from .contracts import canonical_digest
+from .review import (
+    ED25519_VERIFIER,
+    SIGSTORE_VERIFIER,
+    ReviewBlocked,
+    VerificationRunner,
+    validate_review_receipt,
+    verify_reviewer_attestation,
+    verify_sigstore_attestation,
+)
+from .state_machine import advance
+from .strict import strict_loads, write_all
+
+
+class ReleaseBlocked(ValueError):
+    """Raised when release evidence is incomplete or inconsistent."""
+
+
+def _valid_digest(value: object) -> bool:
+    return (
+        isinstance(value, str)
+        and len(value) == 64
+        and all(character in "0123456789abcdef" for character in value)
+    )
+
+
+def _verify_review_bundle(
+    review: dict[str, Any],
+    *,
+    verification_method: str,
+    attestation_bytes: bytes | None,
+    attestation_path: str | Path | None,
+    signature_bytes: bytes | None,
+    public_key_bytes: bytes | None,
+    issuer: str | None,
+    trust_root_id: str | None,
+    sigstore_bundle: str | Path | None,
+    sigstore_verifier: str | Path | None,
+    cert_identity: str | None,
+    oidc_issuer: str | None,
+    runner: VerificationRunner | None,
+) -> dict[str, Any]:
+    try:
+        validate_review_receipt(review)
+    except ReviewBlocked as exc:
+        raise ReleaseBlocked(str(exc)) from exc
+    if verification_method == ED25519_VERIFIER:
+        if (
+            attestation_bytes is None
+            or signature_bytes is None
+            or public_key_bytes is None
+            or not issuer
+            or not trust_root_id
+        ):
+            raise ReleaseBlocked("Ed25519 verification material is incomplete")
+        verified = verify_reviewer_attestation(
+            attestation_bytes=attestation_bytes,
+            signature_bytes=signature_bytes,
+            public_key_bytes=public_key_bytes,
+            expected_reviewer=review["reviewer"],
+            expected_issuer=issuer,
+            expected_trust_root_id=trust_root_id,
+        )
+    elif verification_method == SIGSTORE_VERIFIER:
+        if (
+            not attestation_path
+            or not sigstore_bundle
+            or not sigstore_verifier
+            or not cert_identity
+            or not oidc_issuer
+        ):
+            raise ReleaseBlocked("Sigstore verification material is incomplete")
+        verified = verify_sigstore_attestation(
+            attestation_path=attestation_path,
+            bundle_path=sigstore_bundle,
+            verifier_executable=sigstore_verifier,
+            cert_identity=cert_identity,
+            oidc_issuer=oidc_issuer,
+            runner=runner,
+        )
+        actual_bytes = Path(attestation_path).read_bytes()
+        if attestation_bytes is not None and actual_bytes != attestation_bytes:
+            raise ReleaseBlocked("Sigstore attestation bytes changed during verification")
+    else:
+        raise ReleaseBlocked(f"unsupported verification method: {verification_method}")
+    stored = review["external_signature"]
+    fields = [
+        "reviewer",
+        "issuer",
+        "trust_root_id",
+        "verification_method",
+        "attestation_sha256",
+        "attestation_digest",
+        "signature_sha256",
+        "receipt_digest",
+    ]
+    if verification_method == ED25519_VERIFIER:
+        fields.append("public_key_fingerprint")
+    else:
+        fields.extend(
+            [
+                "bundle_sha256",
+                "verifier_executable",
+                "verifier_exit_code",
+                "verifier_command_digest",
+            ]
+        )
+    for field in fields:
+        if verified.get(field) != stored.get(field):
+            raise ReleaseBlocked(f"signature verification receipt mismatch: {field}")
+    return stored
+
+
+def build_release_claim(
+    review: dict[str, object],
+    *,
+    verification_method: str = ED25519_VERIFIER,
+    attestation_bytes: bytes | None = None,
+    attestation_path: str | Path | None = None,
+    signature_bytes: bytes | None = None,
+    public_key_bytes: bytes | None = None,
+    issuer: str | None = None,
+    trust_root_id: str | None = None,
+    sigstore_bundle: str | Path | None = None,
+    sigstore_verifier: str | Path | None = None,
+    cert_identity: str | None = None,
+    oidc_issuer: str | None = None,
+    runner: VerificationRunner | None = None,
+) -> dict[str, object]:
+    receipt = _verify_review_bundle(
+        review,
+        verification_method=verification_method,
+        attestation_bytes=attestation_bytes,
+        attestation_path=attestation_path,
+        signature_bytes=signature_bytes,
+        public_key_bytes=public_key_bytes,
+        issuer=issuer,
+        trust_root_id=trust_root_id,
+        sigstore_bundle=sigstore_bundle,
+        sigstore_verifier=sigstore_verifier,
+        cert_identity=cert_identity,
+        oidc_issuer=oidc_issuer,
+        runner=runner,
+    )
+    if review.get("state") != "INDEPENDENT_REVIEW":
+        raise ReleaseBlocked("review is not at the independent-review boundary")
+    closed_state = advance("INDEPENDENT_REVIEW", "close")
+    claim: dict[str, object] = {
+        "schema_version": 2,
+        "status": "RELEASE_READY",
+        "state": closed_state,
+        "subject_digest": review["subject_digest"],
+        "scope_digest": review["scope_digest"],
+        "candidate_digest": review["candidate_digest"],
+        "verification_digest": review["verification_digest"],
+        "ledger_digest": review["ledger_digest"],
+        "evaluator_digest": review["evaluator_digest"],
+        "matrix_digest": review["matrix_digest"],
+        "coverage_digest": review["coverage_digest"],
+        "domains_digest": review["domains_digest"],
+        "findings_digest": review["findings_digest"],
+        "review_digest": review["review_digest"],
+        "producer": review["producer"],
+        "reviewer": review["reviewer"],
+        "issuer": receipt["issuer"],
+        "trust_root_id": receipt["trust_root_id"],
+        "verification_method": receipt["verification_method"],
+        "attestation_digest": receipt["attestation_digest"],
+        "attestation_sha256": receipt["attestation_sha256"],
+        "signature_sha256": receipt["signature_sha256"],
+        "signature_verification_receipt_digest": receipt["receipt_digest"],
+        "risk_gate_digest": review["risk_gate"]["gate_digest"],
+        "issued_at": review["reviewed_at"],
+        "finding_count": len(review["findings"]),
+        "open_count": 0,
+    }
+    if receipt["verification_method"] == SIGSTORE_VERIFIER:
+        claim["bundle_sha256"] = receipt["bundle_sha256"]
+        claim["verifier_command_digest"] = receipt["verifier_command_digest"]
+    claim["claim_digest"] = canonical_digest(claim)
+    return claim
+
+
+def validate_release_claim(
+    claim: dict[str, Any],
+    *,
+    expected_candidate_digest: str | None = None,
+    expected_review_digest: str | None = None,
+    expected_trust_root_id: str | None = None,
+) -> dict[str, Any]:
+    required = {
+        "schema_version",
+        "status",
+        "state",
+        "subject_digest",
+        "scope_digest",
+        "candidate_digest",
+        "verification_digest",
+        "ledger_digest",
+        "evaluator_digest",
+        "matrix_digest",
+        "coverage_digest",
+        "domains_digest",
+        "findings_digest",
+        "review_digest",
+        "producer",
+        "reviewer",
+        "issuer",
+        "trust_root_id",
+        "verification_method",
+        "attestation_digest",
+        "attestation_sha256",
+        "signature_sha256",
+        "signature_verification_receipt_digest",
+        "risk_gate_digest",
+        "issued_at",
+        "finding_count",
+        "open_count",
+        "claim_digest",
+    }
+    missing = sorted(required - set(claim))
+    if missing:
+        raise ReleaseBlocked("release claim missing: " + ", ".join(missing))
+    if claim["schema_version"] != 2:
+        raise ReleaseBlocked("release claim schema mismatch")
+    if claim["status"] != "RELEASE_READY":
+        raise ReleaseBlocked("release claim is not RELEASE_READY")
+    if claim["state"] != "CLOSED_FOR_DECLARED_UNIVERSE":
+        raise ReleaseBlocked("release state machine is not closed")
+    if claim["verification_method"] not in (ED25519_VERIFIER, SIGSTORE_VERIFIER):
+        raise ReleaseBlocked("release claim verification method is unsupported")
+    if claim["verification_method"] == SIGSTORE_VERIFIER:
+        for field in ("bundle_sha256", "verifier_command_digest"):
+            if not claim.get(field):
+                raise ReleaseBlocked(f"release claim missing: {field}")
+    if claim["open_count"] != 0:
+        raise ReleaseBlocked("release claim has open risk")
+    material = dict(claim)
+    declared = material.pop("claim_digest", None)
+    if canonical_digest(material) != declared:
+        raise ReleaseBlocked("release claim digest mismatch")
+    if expected_candidate_digest is not None and (
+        claim["candidate_digest"] != expected_candidate_digest
+    ):
+        raise ReleaseBlocked("release claim is for a foreign candidate")
+    if expected_review_digest is not None and (
+        claim["review_digest"] != expected_review_digest
+    ):
+        raise ReleaseBlocked("release claim is stale for the supplied review")
+    if expected_trust_root_id is not None and (
+        claim["trust_root_id"] != expected_trust_root_id
+    ):
+        raise ReleaseBlocked("release claim trust root mismatch")
+    return claim
+
+
+def validate_claim_for_install(
+    claim: dict[str, Any],
+    review: dict[str, Any],
+    *,
+    verification_method: str,
+    attestation_bytes: bytes | None,
+    attestation_path: str | Path | None,
+    signature_bytes: bytes | None,
+    public_key_bytes: bytes | None,
+    issuer: str | None,
+    candidate_digest: str,
+    trust_root_id: str | None,
+    sigstore_bundle: str | Path | None,
+    sigstore_verifier: str | Path | None,
+    cert_identity: str | None,
+    oidc_issuer: str | None,
+    runner: VerificationRunner | None,
+) -> dict[str, Any]:
+    validate_review_receipt(review)
+    validate_release_claim(
+        claim,
+        expected_candidate_digest=candidate_digest,
+        expected_review_digest=review["review_digest"],
+        expected_trust_root_id=trust_root_id,
+    )
+    stored = _verify_review_bundle(
+        review,
+        verification_method=verification_method,
+        attestation_bytes=attestation_bytes,
+        attestation_path=attestation_path,
+        signature_bytes=signature_bytes,
+        public_key_bytes=public_key_bytes,
+        issuer=issuer,
+        trust_root_id=trust_root_id,
+        sigstore_bundle=sigstore_bundle,
+        sigstore_verifier=sigstore_verifier,
+        cert_identity=cert_identity,
+        oidc_issuer=oidc_issuer,
+        runner=runner,
+    )
+    if trust_root_id is not None and stored["trust_root_id"] != trust_root_id:
+        raise ReleaseBlocked("review attestation trust root mismatch")
+    claim_bindings = {
+        "reviewer": "reviewer",
+        "issuer": "issuer",
+        "trust_root_id": "trust_root_id",
+        "verification_method": "verification_method",
+        "attestation_digest": "attestation_digest",
+        "attestation_sha256": "attestation_sha256",
+        "signature_sha256": "signature_sha256",
+        "receipt_digest": "signature_verification_receipt_digest",
+    }
+    for stored_field, claim_field in claim_bindings.items():
+        if stored.get(stored_field) != claim.get(claim_field):
+            raise ReleaseBlocked(f"claim signature receipt mismatch: {stored_field}")
+    if verification_method == SIGSTORE_VERIFIER:
+        if stored["bundle_sha256"] != claim["bundle_sha256"]:
+            raise ReleaseBlocked("claim Sigstore bundle mismatch")
+        if stored["verifier_command_digest"] != claim["verifier_command_digest"]:
+            raise ReleaseBlocked("claim Sigstore verifier command mismatch")
+    if review["candidate_digest"] != candidate_digest:
+        raise ReleaseBlocked("review candidate digest mismatch")
+    return claim
+
+
+def replay_release_history(history_path: str | Path) -> list[dict[str, Any]]:
+    path = Path(history_path)
+    if not path.exists():
+        return []
+    records: list[dict[str, Any]] = []
+    previous: str | None = None
+    for number, line in enumerate(path.read_bytes().splitlines(), start=1):
+        if not line.strip():
+            raise ReleaseBlocked(f"release history has a blank record at line {number}")
+        try:
+            record = strict_loads(line)
+        except ValueError as exc:
+            raise ReleaseBlocked(f"release history is invalid at line {number}") from exc
+        if record.get("sequence") != number:
+            raise ReleaseBlocked(f"release history sequence mismatch at line {number}")
+        if record.get("previous_record_digest") != previous:
+            raise ReleaseBlocked(f"release history chain mismatch at line {number}")
+        material = dict(record)
+        declared = material.pop("record_digest", None)
+        if canonical_digest(material) != declared:
+            raise ReleaseBlocked(f"release history digest mismatch at line {number}")
+        previous = str(declared)
+        records.append(record)
+    return records
+
+
+def append_release_record(
+    history_path: str | Path, record: dict[str, Any]
+) -> dict[str, Any]:
+    if not record.get("event") or not record.get("status"):
+        raise ReleaseBlocked("release history record requires event and status")
+    path = Path(history_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    records = replay_release_history(path)
+    item = dict(record)
+    item.pop("sequence", None)
+    item.pop("previous_record_digest", None)
+    item.pop("record_digest", None)
+    item["sequence"] = len(records) + 1
+    item["previous_record_digest"] = (
+        records[-1]["record_digest"] if records else None
+    )
+    item["record_digest"] = canonical_digest(item)
+    payload = json.dumps(
+        item, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8") + b"\n"
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_APPEND, 0o600)
+    try:
+        write_all(fd, payload)
+        os.fsync(fd)
+    finally:
+        os.close(fd)
+    return item
