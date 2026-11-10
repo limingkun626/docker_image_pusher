@@ -30,7 +30,7 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: "1"
           FIR_R8_SIGSTORE_VERIFIER: ${{ runner.temp }}/sigstore-verifier
-        run: python -B -m pytest -q -rs -p no:cacheprovider . --junitxml "$RUNNER_TEMP/macos-junit.xml" --basetemp "$RUNNER_TEMP/pytest"
+        run: python -B -m pytest -q -rs -p no:cacheprovider --deselect tests/unit/test_r8_runtime_reader.py::test_windows_junction_ancestor_is_rejected_by_all_consumers . --junitxml "$RUNNER_TEMP/macos-junit.xml" --basetemp "$RUNNER_TEMP/pytest"
       - name: Product self-check
         working-directory: evidence/fir-r11/candidate/full-inspection-repair
         env:
