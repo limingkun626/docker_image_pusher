@@ -1,0 +1,14 @@
+{
+  "blocked_detectors": [],
+  "closed_count": 0,
+  "coverage_digest": "03e762553eee8a66463abc945f890ed1918804fb8101be0ce7190be04721569d",
+  "detectors": 10,
+  "impact_digest": "0396419b357bcaf369f6bbd6cf6d2ce0338d5c88be27718b1097eab94bef064d",
+  "matrix_digest": null,
+  "open_count": 0,
+  "status": "CHECKED",
+  "subject_id": "skill:40ca5b91e20b3d51",
+  "subject_kind": "SKILL",
+  "taxonomy_digest": "651aa3b507f79e8784fa28beb2fb89c2667fb0b561252f09eda415839f43ed8b",
+  "tree_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+}

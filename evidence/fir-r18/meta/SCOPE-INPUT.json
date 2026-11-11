@@ -1,0 +1,76 @@
+{
+  "authorization": {
+    "brief": "F:\\Codex\\runs\\fir-full-r18-windows-linux-only-20261111\\R18-SCOPE-BRIEF.md",
+    "brief_sha256": "bebf0be513cba3638f86010af95dab781d08b51f9b05332340a2580c146491d7",
+    "excluded_platforms": [
+      "macos",
+      "native_posix_non_wsl"
+    ],
+    "full_verification": true,
+    "independent_review": true,
+    "install": true,
+    "new_scope": true,
+    "physical_power_loss": true,
+    "preserve_r13_to_r17": true,
+    "release_history": true,
+    "scope_statement": "Create a new R18 scope without modifying R13 through R17 evidence; copy the R16 candidate into an isolated staged tree; remove macOS from all product declarations, runtime paths, tests, risk gates, release matrices, and future verification requirements; retain Windows 10/11 and WSL Linux; freeze one complete repair batch; and verify the exact Windows/Linux-only candidate through power loss, independent review, Sigstore signature, installation, read-back, retained rollback, and release history.",
+    "scope_statement_digest": "bf500d0d329b9964a73aef5fbbdc8139258fc1da96c8266899cfa388f807f963",
+    "signature": true,
+    "supported_platforms": [
+      "windows",
+      "linux"
+    ]
+  },
+  "base_file_count": 84,
+  "base_source": "F:\\Codex\\skills-candidates\\fir-full-r16-sigstore-r7-pair-20261111\\full-inspection-repair",
+  "base_tree_digest": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+  "discovery_ledger": "F:\\Codex\\runs\\fir-full-r18-windows-linux-only-20261111\\R18-DISCOVERY-LEDGER.json",
+  "discovery_ledger_sha256": "e2305d48b502fc130d50debf5175a38a5c06fbd072f17708e7517ac13a54030f",
+  "environment": {
+    "machine": "amd64",
+    "os_name": "nt",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python_implementation": "CPython",
+    "python_version": "3.12.10"
+  },
+  "final_candidate": "F:\\Codex\\skills-candidates\\fir-full-r18-windows-linux-only-20261111\\full-inspection-repair",
+  "fresh_base_census": {
+    "output": "F:\\Codex\\runs\\fir-full-r18-windows-linux-only-20261111\\precheck-r18-base",
+    "required_status": "CHECKED"
+  },
+  "installed_target": {
+    "file_count": 59,
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\full-inspection-repair",
+    "tree_digest": "132f4927a9ae633a39811a1846227cb20d7b2226adfe66fda47f2181bf386240"
+  },
+  "r16_block_receipt": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\R16-VERIFICATION-BLOCK.json",
+  "r16_block_receipt_sha256": "36343fb093d9a53909d23a4ee5d9921e42a34a04abbec56796fc8541025f8c38",
+  "r17_cancellation": "F:\\Codex\\runs\\fir-full-r17-byte-stable-checkout-20261111\\R17-RUN-STATUS.json",
+  "r17_cancellation_sha256": "696025bc027efc07187f7b04c7e89c5fca686bbd9efbeb461ebba0e1441ee092",
+  "r18_observation_checkpoint": {
+    "checkpoint_digest": "87b529380262143a63a9cfb30e61d6be14e84955bef8f9e34d085c51318da7cd",
+    "head_digest": "868659bf5385e2980c1263ad68bcb9bc9c21cf4abed77e66f29cbe4056eb82b1",
+    "record_count": 6,
+    "redaction_policy_digest": "6f9542307cc632f679f39027efb6aa877bd64398f5e90ed1cc260d2143acb928",
+    "schema_version": 2,
+    "source_run_id": "fir-full-r18-windows-linux-only-20261111-r1"
+  },
+  "r18_observation_ids": [
+    "observation:1:1a052be3da3afcec",
+    "observation:2:1afbeb4c06e49bc8",
+    "observation:3:2e93d06070cb6b6a",
+    "observation:4:3b9b53f8d5c1acd5",
+    "observation:5:307ce8398c74b863",
+    "observation:6:7c801a5b157cf1e7"
+  ],
+  "run_id": "fir-full-r18-windows-linux-only-20261111-r1",
+  "schema_version": 1,
+  "scope_id": "fir-full-r18-windows-linux-only-20261111",
+  "scope_input_digest": "c73e457bc11917c7c8a2cbfd4b8749f2bec38a9d12d0906d09870999fbcb1b73",
+  "screening_ledger": "F:\\Codex\\runs\\fir-full-r18-windows-linux-only-20261111\\R18-SCREENING-LEDGER.json",
+  "screening_ledger_sha256": "8d2ad29830f9bd5a2f6f8866fcba70382a0b078c97d83a3276b2aac96756a73d",
+  "staged_file_count": 84,
+  "staged_tree_digest": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+  "status": "SCOPE_INPUTS_FROZEN",
+  "subject": "F:\\Codex\\runs\\fir-full-r18-windows-linux-only-20261111\\staged-candidate\\full-inspection-repair"
+}

@@ -1,0 +1,417 @@
+{
+  "patterns": "macos|mac os|darwin|osx|apple|apfs|hfs",
+  "rounds": [
+    {
+      "file_count": 84,
+      "hits": [
+        {
+          "line": 8032,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\pip\\\\_vendor\\\\platformdirs\\\\__pycache__\\\\macos.cpython-312.pyc\","
+        },
+        {
+          "line": 8033,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/pip/_vendor/platformdirs/__pycache__/macos.cpython-312.pyc\","
+        },
+        {
+          "line": 8068,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\pip\\\\_vendor\\\\platformdirs\\\\macos.py\","
+        },
+        {
+          "line": 8069,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/pip/_vendor/platformdirs/macos.py\","
+        },
+        {
+          "line": 9892,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\pip\\\\_vendor\\\\truststore\\\\__pycache__\\\\_macos.cpython-312.pyc\","
+        },
+        {
+          "line": 9893,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/pip/_vendor/truststore/__pycache__/_macos.cpython-312.pyc\","
+        },
+        {
+          "line": 9922,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\pip\\\\_vendor\\\\truststore\\\\_macos.py\","
+        },
+        {
+          "line": 9923,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/pip/_vendor/truststore/_macos.py\","
+        },
+        {
+          "line": 10540,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\platformdirs\\\\__pycache__\\\\macos.cpython-312.pyc\","
+        },
+        {
+          "line": 10541,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/platformdirs/__pycache__/macos.cpython-312.pyc\","
+        },
+        {
+          "line": 10600,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\platformdirs\\\\macos.py\","
+        },
+        {
+          "line": 10601,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/platformdirs/macos.py\","
+        },
+        {
+          "line": 20776,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\Lib\\\\_osx_support.py\","
+        },
+        {
+          "line": 20777,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"runtime/Lib/_osx_support.py\","
+        },
+        {
+          "line": 85,
+          "path": "references/operations.md",
+          "text": "On macOS, `open_no_follow` treats `O_CREAT` without `O_EXCL` as create-or-open:"
+        },
+        {
+          "line": 500,
+          "path": "references/operations.md",
+          "text": "The required documentation checks cover Windows, WSL Linux, and macOS. A release"
+        },
+        {
+          "line": 12,
+          "path": "scripts/full_inspection_repair/risk_gate.py",
+          "text": "\"platform_support.macos_install\": \"VERIFIED\","
+        },
+        {
+          "line": 480,
+          "path": "scripts/full_inspection_repair/strict.py",
+          "text": "sys.platform == \"darwin\""
+        },
+        {
+          "line": 173,
+          "path": "SKILL.md",
+          "text": "- The required runtime scope is Windows, WSL Linux, and macOS. A release claim"
+        },
+        {
+          "line": 320,
+          "path": "tests/contract/test_documented_contracts.py",
+          "text": "r\"required runtime scope is Windows, WSL Linux, and macOS\", combined"
+        },
+        {
+          "line": 324,
+          "path": "tests/contract/test_documented_contracts.py",
+          "text": "assert not re.search(r\"\\bsupports?\\s+macOS\\b\", combined, re.IGNORECASE)"
+        },
+        {
+          "line": 59,
+          "path": "tests/integration/test_r14_macos_observation_lock_stress.py",
+          "text": "@pytest.mark.skipif(sys.platform != \"darwin\", reason=\"native Darwin lock stress\")"
+        },
+        {
+          "line": 60,
+          "path": "tests/integration/test_r14_macos_observation_lock_stress.py",
+          "text": "def test_macos_observation_lock_stress(tmp_path: Path) -> None:"
+        },
+        {
+          "line": 19,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "monkeypatch: pytest.MonkeyPatch, platform: str = \"darwin\""
+        },
+        {
+          "line": 67,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_existing_file_uses_one_non_creating_open("
+        },
+        {
+          "line": 83,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_missing_file_then_creates_exclusively("
+        },
+        {
+          "line": 100,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_concurrent_creation_retries_non_creating_open("
+        },
+        {
+          "line": 122,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_never_issues_old_create_without_exclusive("
+        },
+        {
+          "line": 130,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "raise OSError(errno.EINVAL, \"old Darwin create form\")"
+        },
+        {
+          "line": 143,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_final_symlink_stays_eloop_and_victim_is_unchanged("
+        },
+        {
+          "line": 166,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_caller_requested_exclusive_remains_direct("
+        },
+        {
+          "line": 184,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_non_darwin_create_remains_one_unchanged_open("
+        },
+        {
+          "line": 205,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_preserves_flags_access_mode_and_permissions("
+        },
+        {
+          "line": 232,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_create_errors_propagate_without_fallback("
+        },
+        {
+          "line": 101,
+          "path": "tests/unit/test_risk_gate.py",
+          "text": "def test_platform_support_requires_windows_linux_and_macos() -> None:"
+        },
+        {
+          "line": 109,
+          "path": "tests/unit/test_risk_gate.py",
+          "text": "\"platform_support.macos_install\","
+        },
+        {
+          "line": 167,
+          "path": "tests/unit/test_risk_gate.py",
+          "text": "def test_macos_not_applicable_with_approval_is_never_accepted() -> None:"
+        },
+        {
+          "line": 169,
+          "path": "tests/unit/test_risk_gate.py",
+          "text": "inputs[\"domains\"][\"platform_support\"][\"macos_install\"] = ("
+        },
+        {
+          "line": 177,
+          "path": "tests/unit/test_risk_gate.py",
+          "text": "\"DOMAIN:platform_support.macos_install:NOT_APPLICABLE_WITH_APPROVAL\""
+        }
+      ],
+      "method": "complete literal scan of every staged candidate file",
+      "raw_hit_count": 39,
+      "round": 1
+    },
+    {
+      "decision": "Remove all product support hits. Retain trust-policy entries whose only match is a third-party platformdirs/truststore module name or Python runtime support file.",
+      "dependency_closure_hits": [
+        {
+          "line": 8032,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\pip\\\\_vendor\\\\platformdirs\\\\__pycache__\\\\macos.cpython-312.pyc\","
+        },
+        {
+          "line": 8033,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/pip/_vendor/platformdirs/__pycache__/macos.cpython-312.pyc\","
+        },
+        {
+          "line": 8068,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\pip\\\\_vendor\\\\platformdirs\\\\macos.py\","
+        },
+        {
+          "line": 8069,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/pip/_vendor/platformdirs/macos.py\","
+        },
+        {
+          "line": 9892,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\pip\\\\_vendor\\\\truststore\\\\__pycache__\\\\_macos.cpython-312.pyc\","
+        },
+        {
+          "line": 9893,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/pip/_vendor/truststore/__pycache__/_macos.cpython-312.pyc\","
+        },
+        {
+          "line": 9922,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\pip\\\\_vendor\\\\truststore\\\\_macos.py\","
+        },
+        {
+          "line": 9923,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/pip/_vendor/truststore/_macos.py\","
+        },
+        {
+          "line": 10540,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\platformdirs\\\\__pycache__\\\\macos.cpython-312.pyc\","
+        },
+        {
+          "line": 10541,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/platformdirs/__pycache__/macos.cpython-312.pyc\","
+        },
+        {
+          "line": 10600,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"F:\\\\Codex\\\\runs\\\\fir-full-closure-r5-20261110\\\\.sigstore-venv\\\\Lib\\\\site-packages\\\\platformdirs\\\\macos.py\","
+        },
+        {
+          "line": 10601,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"Lib/site-packages/platformdirs/macos.py\","
+        },
+        {
+          "line": 20776,
+          "path": "policies/trust-policy.json",
+          "text": "\"path\": \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\Lib\\\\_osx_support.py\","
+        },
+        {
+          "line": 20777,
+          "path": "policies/trust-policy.json",
+          "text": "\"relative_path\": \"runtime/Lib/_osx_support.py\","
+        }
+      ],
+      "method": "classify product support surfaces versus dependency closure names",
+      "product_support_hits": [
+        {
+          "line": 85,
+          "path": "references/operations.md",
+          "text": "On macOS, `open_no_follow` treats `O_CREAT` without `O_EXCL` as create-or-open:"
+        },
+        {
+          "line": 500,
+          "path": "references/operations.md",
+          "text": "The required documentation checks cover Windows, WSL Linux, and macOS. A release"
+        },
+        {
+          "line": 12,
+          "path": "scripts/full_inspection_repair/risk_gate.py",
+          "text": "\"platform_support.macos_install\": \"VERIFIED\","
+        },
+        {
+          "line": 480,
+          "path": "scripts/full_inspection_repair/strict.py",
+          "text": "sys.platform == \"darwin\""
+        },
+        {
+          "line": 173,
+          "path": "SKILL.md",
+          "text": "- The required runtime scope is Windows, WSL Linux, and macOS. A release claim"
+        },
+        {
+          "line": 320,
+          "path": "tests/contract/test_documented_contracts.py",
+          "text": "r\"required runtime scope is Windows, WSL Linux, and macOS\", combined"
+        },
+        {
+          "line": 324,
+          "path": "tests/contract/test_documented_contracts.py",
+          "text": "assert not re.search(r\"\\bsupports?\\s+macOS\\b\", combined, re.IGNORECASE)"
+        },
+        {
+          "line": 59,
+          "path": "tests/integration/test_r14_macos_observation_lock_stress.py",
+          "text": "@pytest.mark.skipif(sys.platform != \"darwin\", reason=\"native Darwin lock stress\")"
+        },
+        {
+          "line": 60,
+          "path": "tests/integration/test_r14_macos_observation_lock_stress.py",
+          "text": "def test_macos_observation_lock_stress(tmp_path: Path) -> None:"
+        },
+        {
+          "line": 19,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "monkeypatch: pytest.MonkeyPatch, platform: str = \"darwin\""
+        },
+        {
+          "line": 67,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_existing_file_uses_one_non_creating_open("
+        },
+        {
+          "line": 83,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_missing_file_then_creates_exclusively("
+        },
+        {
+          "line": 100,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_concurrent_creation_retries_non_creating_open("
+        },
+        {
+          "line": 122,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_never_issues_old_create_without_exclusive("
+        },
+        {
+          "line": 130,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "raise OSError(errno.EINVAL, \"old Darwin create form\")"
+        },
+        {
+          "line": 143,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_final_symlink_stays_eloop_and_victim_is_unchanged("
+        },
+        {
+          "line": 166,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_caller_requested_exclusive_remains_direct("
+        },
+        {
+          "line": 184,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_non_darwin_create_remains_one_unchanged_open("
+        },
+        {
+          "line": 205,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_preserves_flags_access_mode_and_permissions("
+        },
+        {
+          "line": 232,
+          "path": "tests/unit/test_r14_darwin_open_semantics.py",
+          "text": "def test_darwin_create_errors_propagate_without_fallback("
+        },
+        {
+          "line": 101,
+          "path": "tests/unit/test_risk_gate.py",
+          "text": "def test_platform_support_requires_windows_linux_and_macos() -> None:"
+        },
+        {
+          "line": 109,
+          "path": "tests/unit/test_risk_gate.py",
+          "text": "\"platform_support.macos_install\","
+        },
+        {
+          "line": 167,
+          "path": "tests/unit/test_risk_gate.py",
+          "text": "def test_macos_not_applicable_with_approval_is_never_accepted() -> None:"
+        },
+        {
+          "line": 169,
+          "path": "tests/unit/test_risk_gate.py",
+          "text": "inputs[\"domains\"][\"platform_support\"][\"macos_install\"] = ("
+        },
+        {
+          "line": 177,
+          "path": "tests/unit/test_risk_gate.py",
+          "text": "\"DOMAIN:platform_support.macos_install:NOT_APPLICABLE_WITH_APPROVAL\""
+        }
+      ],
+      "round": 2
+    }
+  ],
+  "run_id": "fir-full-r18-windows-linux-only-20261111-r1",
+  "schema_version": 1,
+  "scope_id": "fir-full-r18-windows-linux-only-20261111",
+  "screening_digest": "fa6eb510b6051939db8d9a5582ea18c91f92d4e89b18f2da1dca1fff38121155",
+  "status": "COMPLETE"
+}

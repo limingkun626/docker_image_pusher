@@ -1,0 +1,62 @@
+[
+  {
+    "detector_id": "skill.frontmatter-name",
+    "error": null,
+    "findings": [],
+    "status": "PASS"
+  },
+  {
+    "detector_id": "text.placeholder",
+    "error": null,
+    "findings": [],
+    "status": "PASS"
+  },
+  {
+    "detector_id": "text.final-newline",
+    "error": null,
+    "findings": [],
+    "status": "PASS"
+  },
+  {
+    "detector_id": "skill.entrypoint",
+    "error": null,
+    "findings": [],
+    "status": "PASS"
+  },
+  {
+    "detector_id": "text.empty",
+    "error": null,
+    "findings": [],
+    "status": "PASS"
+  },
+  {
+    "detector_id": "file.oversized",
+    "error": null,
+    "findings": [],
+    "status": "PASS"
+  },
+  {
+    "detector_id": "text.latent-marker",
+    "error": null,
+    "findings": [],
+    "status": "PASS"
+  },
+  {
+    "detector_id": "security.dangerous-pattern",
+    "error": null,
+    "findings": [],
+    "status": "PASS"
+  },
+  {
+    "detector_id": "text.boundary",
+    "error": null,
+    "findings": [],
+    "status": "PASS"
+  },
+  {
+    "detector_id": "python.exception-swallow",
+    "error": null,
+    "findings": [],
+    "status": "PASS"
+  }
+]

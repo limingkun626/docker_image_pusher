@@ -1,0 +1,35 @@
+{
+  "current_state": "IMPACT_CLOSURE",
+  "environment_digest": "43cbd04a6fee68065af03b0f755d3972c515b076a8124bdf97a40d77d06d9e98",
+  "history": [
+    {
+      "event": "freeze_scope",
+      "from": "INTAKE",
+      "to": "SCOPE_FROZEN"
+    },
+    {
+      "event": "census",
+      "from": "SCOPE_FROZEN",
+      "to": "SUBJECT_CENSUS"
+    },
+    {
+      "event": "discover",
+      "from": "SUBJECT_CENSUS",
+      "to": "ISSUE_DISCOVERY"
+    },
+    {
+      "event": "impact",
+      "from": "ISSUE_DISCOVERY",
+      "to": "IMPACT_CLOSURE"
+    }
+  ],
+  "policy_digest": "9a640f91f40d2445343db1538d531e0785353971e731f8c9a96a17a72db47bce",
+  "run_id": "run:923419e9bba544a78a69a117dccb4fe7",
+  "schema_version": 1,
+  "snapshot_digest": "65c497da8d31467df11d3d5d20922243aba515b3246eae81555a82fb67bcbedb",
+  "subject_id": "skill:40ca5b91e20b3d51",
+  "subject_kind": "SKILL",
+  "target": "F:\\Codex\\skills-candidates\\fir-full-r18-windows-linux-only-20261111\\full-inspection-repair",
+  "taxonomy_digest": "3df8e3c9b9334eb1aa035029a8c0025c81f4f82bd33280e27298edc6abc818f2",
+  "tree_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+}

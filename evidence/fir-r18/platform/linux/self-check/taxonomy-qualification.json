@@ -1,0 +1,5884 @@
+{
+  "all_passed": true,
+  "cell_count": 72,
+  "cells": [
+    {
+      "binding_digest": "a40ad441c53b569ce7c690363532b83bf677884a5b377359cad795bc460e334f",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "control_count": 10,
+      "detector_id": "detector.functional_fault.static",
+      "detector_ids": [
+        "detector.functional_fault.static"
+      ],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": null,
+      "oracle_id": "oracle.functional_fault.static",
+      "oracle_ids": [
+        "oracle.functional_fault.static"
+      ],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "123e0672fa0b4fc0ea80db30a6fa1b7cadd61f713b17ac54c204318f53611dd4",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "e5237fbdeaf102fbc85b589644f8bd1c2d4125faf0427d7106fffd33cfb0d968",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "d83fea3888434110b47eefd9033cf5e50f84e1a7f723df25de76d17157089e7e",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "20399691d3a8dc0c6f6ca6d7194ac09d18b702d101832bb0c09ea53e28a374c7",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "4e60a436587ffe678c33bdda38d396d3acc449bc9b7c11d55be94b3a6306371a",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "d4260a1abae0bc94052fcd1ee4a1ff58fc805f5bb4b154bcd49892f9d8faa8b7",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "9c33e365e012409893f21b96d644f203ee95d487b7a7744253704799ed4756f7",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "3639aa02958e1d4bb2bca70e29701caca008c664d31128a00c85d2ee7bf3fb84",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "5f976937fb9fa8cb7200bec2853d0856f1fc157d497d60b0d6f9ab388bcdb837",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "7e458eac4ec979fd8cea4fbd91649dc736afe7efca5cc7f734fec26b02518028",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "a76440c7e1e5fdea7ee093a8bedf2aff3ba8260aefe098b4f5230d591dc85d53",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "8795cf8504fb4350b873d4b9b75a086065ac37f7b92de8ad41724748f92f479b",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "0e532ed7dd70a9ac89f4e560b8ecaf0bc3a0eb87492eb05eb0e7fae850587327",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "2fad0e840a07ef8a407b10030efe33b1cea094e2ab951860adc37ab70b848ac7",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "ddf87cf6e109618dbec6eefd256fddb3c16678d16772e65042acc0931b7cb0b2",
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "431597acb60a78e2143d4f2498597c9e4126834b485c044ae17050dd9f42dbc8",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "79b4cde318441bbda18554a1f81bf2cb860420a4cb26f38ed8f51079d92e2f1b",
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "8576fdc1b1626bedc5a3fd6cb79dfb7cf70f8e4237995d58a518e66a39b83ee9",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "30f633fbdb04e9ccb7183ae78aa18d1b097704029b7a5087a92e15b2cc414063",
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "cc4bf017470d4be97b55d274775eaf59037764bff3fd33f225247746a4571e98",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "a3f884b2026c1858de4e78ae24a42bd2d5d40229683edc49505b914ca7f32d55",
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "c976b5cde486899318ae490bae70d1528c1d9ff1eb9302033064badfb8e6b186",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "76bbfe2d150bec12c9f8c2e03aef1f7cc9b54b40ffbcbd239271b2280524803c",
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "a4a289d80b6ff301e3f92aafb93a6b6f5b2e63c45d4ad03248b3227facde147a",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "0050ad43210618e0047aaccd2def89ce55b3398bbac649c0416c712de7d636ab",
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "e09a719cbfa79bb59bc29d5d19e993e62c9a831c9e854fcceeedecc4fc9fe5d8",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "826e75871a187ead547d64e186182fd9a2ce4b86d012a425ec1a07d7fa37615a",
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "control_count": 10,
+      "detector_id": "detector.risk_exposure.performance",
+      "detector_ids": [
+        "detector.risk_exposure.performance"
+      ],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": null,
+      "oracle_id": "oracle.risk_exposure.performance",
+      "oracle_ids": [
+        "oracle.risk_exposure.performance"
+      ],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "76d5ba725a1ac37a3cc5fad370ccaae6bac4f1aa6acba8c007d59bbecda557c4",
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "ad264496a4a757a777b3560ddaa788bf2b24ac3850213d6acb587c4cc7fb34fa",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "3e287d5d6f117c9376d5d2a16d44b3658481ac505d12578c6f883bc1a94702fd",
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "1677b81b1526ab77a72eb5566f9d6c8a9f1285360f2572946d554caed6a8e0d2",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "b92a832ed6a43cb13ffc7bcdb62001e788331088d180b644de94dd3cc2f225b3",
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "1d367aaab90d893be94323256d976297d92d54eca6b080b3f29d623fb60bae7c",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "619ff5c87128b21341e962f6508274af0882c43d4eee60557247d3f3a7eaee40",
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "control_count": 10,
+      "detector_id": "detector.latent_defect.semantic",
+      "detector_ids": [
+        "detector.latent_defect.semantic"
+      ],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": null,
+      "oracle_id": "oracle.latent_defect.semantic",
+      "oracle_ids": [
+        "oracle.latent_defect.semantic"
+      ],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "0b5cbebac6463ebf3c3787b507523f86b73bec6e679d6197c8106341fd211e9b",
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "f27b5ea4f9c82c4b0296e8eae21f538ba2f104677b517cc7d9d281b732b72fb0",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "60070dd4ba405485fe645202219b8ab1cebf450568108748edf2421b21b71fdb",
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "365c9f8b350691feaa079faf9b7508a6cdbd21657aa879c5f5c99826445fc852",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "208279c1d9d96c94bd9685e0b6d59ac0441fd99344aafa6eff255b86d1c89ce3",
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "9c2d01bac332da2a99efb27e1d2936b09b146ae839062cfd82ca2db9c385beb0",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "b5ed93533ba4ad4dbcf0fb1028050b1a54335591bf93724a18d5829ff05c6f47",
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "6e4ed61f36e7e0d408d98f553f3e9ca363aec03cc2c3935f8364ef04ff8d988e",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "a013bd3e329d355b974aac16a6dbf30badde6c2aacc081e5dc1dbaaa6ab09159",
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "d03976f7e996aef1c869e906db82e27125ac1115735f9d7ec65749a47e539599",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "b682f53643805fd654de4da373790e5f2b5099d50e119e266032984bb461cbd4",
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "ccc6ec5f265b11e3d3c66c1ff6f4339de82801a893de7d934a322dad0ed43cfe",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "21994478cb9a6cc18f5083842307622dc2f8b7984b8bf362c7b55a2bf999b224",
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "a201a096e06b14c54384e99eff647d2074f73799463969f57135463785c4978d",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "7f4ef2400fb416d8b9eb65fe080c94b5d53e1407d06f4640cbe77f2d5e78124f",
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "37f6ed3261580a57b838f457ca18bd45327991c59290d777c475db2b26b7f170",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "81176dbee4d5e05ee3f2bd7ebe2941de6a276bfe282813dfd5b4244491f94757",
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "9146a5f7b7759bea813994db8ad785e09268f7f41e7d70d0fce654bf990403cf",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "2ec3478cbc79f9ae70f9b7288aa746d5e4e32fb18d213d472d29e3b6b0226080",
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "5ea87b2e52896f4c4fd8b4163f7545dd730e06d0d79dbad9ae13a1ab0184cbbe",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "d1a7bd15577f7a002fb302ea5e33562c4f345fb6da066b04c48b2a6f9f249252",
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "control_count": 10,
+      "detector_id": "detector.vulnerability.security",
+      "detector_ids": [
+        "detector.vulnerability.security"
+      ],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": null,
+      "oracle_id": "oracle.vulnerability.security",
+      "oracle_ids": [
+        "oracle.vulnerability.security"
+      ],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "18df7882b1c223c6e9dc8eb402336c773c2497e581a5961b485769242a11b38e",
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "86376a2b8069e25175471fa0e7f17d6ff9e274015f2972ae50af1ebf9acf498d",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "c3e7eff779eb2b02f00e93fdefbb7cf5aa0da245291e9eb4b12d21464c693281",
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "12500fcf5f5c165055d791ebf146b38d98b4c21ab581c5d7f19bf78a3dd74ef1",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "ac39a729b1ea37cd94638070754bd5294da3359cbe4ef4057ea61d0d1c23b8a0",
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "control_count": 10,
+      "detector_id": "detector.omission.static",
+      "detector_ids": [
+        "detector.omission.static"
+      ],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": null,
+      "oracle_id": "oracle.omission.static",
+      "oracle_ids": [
+        "oracle.omission.static"
+      ],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "f0d154edbe79354844757186f92f4074e9719b96af9f25b3e143a69dcc9e6d88",
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "c98c3a40c2b1e780eadb1e241eca5472894fccd8680b226083d01f6d125aea81",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "bd4af8d28c8664a75d7f4464c28d9dce8f1c90959ac6a4d90432a7bda650e312",
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "control_count": 10,
+      "detector_id": "detector.omission.semantic",
+      "detector_ids": [
+        "detector.omission.semantic"
+      ],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": null,
+      "oracle_id": "oracle.omission.semantic",
+      "oracle_ids": [
+        "oracle.omission.semantic"
+      ],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "eb6eb08a5a89a233e0cfba29a8192afca526d40d20cd35ee6535cd1896299d02",
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "d62531370259622f03a3b6ea91669785a0cebbb318750566bb99041ced6a7c3e",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "8ddbf431b8c7d23eb47516f16afa3f272db4ef04141f9a17258e038dbfe41f3e",
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "ed09d3f4b763cc2df455f03b8516f15330aaebf69ce7f9cc82b07309f04eb777",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "047882ac776af6281e826f8efb393245409ea360cedcf10c56d7912a65b720f6",
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "aa52795961a9933f05da41b904a48931dd24212faf8c00c968bd3c5a418712eb",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "9a5cc11affe469d9cea2b25e9096d95bc58d6dcd9f472209568d643e8f6720ac",
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "e1c1a8281c434dade1c181893ec772aa0194d0de151ba796dd11635293463193",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "b1776b03cbc715a37f75bcd5827f5666ffff6aebc7c48d26746a1029d9324a3c",
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "105b6a2265f3f1a9375484e3aa94d0f3b9966677e7e0c301b8c95b22b3222899",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "d45d67a3071cffb767dde99d019c91454f53226cbda847d4d74bf7bccb650110",
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "control_count": 10,
+      "detector_id": "detector.inconsistency.static",
+      "detector_ids": [
+        "detector.inconsistency.static"
+      ],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": null,
+      "oracle_id": "oracle.inconsistency.static",
+      "oracle_ids": [
+        "oracle.inconsistency.static"
+      ],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "f7da5e1284f748eff86d1e4eafc3799c74216ee890f876995ac4da6f3fd459ce",
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "control_count": 10,
+      "detector_id": "detector.inconsistency.contract",
+      "detector_ids": [
+        "detector.inconsistency.contract"
+      ],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": null,
+      "oracle_id": "oracle.inconsistency.contract",
+      "oracle_ids": [
+        "oracle.inconsistency.contract"
+      ],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "e774e5c2c7252581c8251e3e6f63b23b5240bc7fd5cfe34efd2de974b5def23d",
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "f113be0bf6adb4b57f6bd70ea4d6517b4f66be093b35c01234ea80fdb25a17a3",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "95fa5e951176283e9d3278dce496aebc709c933693e8d79b4bbb853a478376c2",
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "ff1f6fe36823b543bd8a317f5ceaad5e52d42a6f65d121681dae786333578355",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "06737b1cb62467101f7afbf79e72910d8a60d508c9f0ef3bcac4fe1cab5a2a6d",
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "3d30f09ac4bbb77ca432f712c4ae15519793169379a9da39bc183db1cd067b7d",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "1cb9c5c2ebe6ba2bef63b8e6f3d68dbc41d71b4c78431b3b159b721b63956364",
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "61dd9309ca16d5ad1afeb7775cfbbe8678ef911a4f104497ea35ef80a0e5bc7b",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "fbd6fd251fac061e25989c13b635d9aaf5d441e86300265ab331fbdf487fbb1f",
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "dde151559c9693ade78028a68b2ae4a158dec2f5901d2c2a82dfabd8fe87ffac",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "fe633812aa777f1c149818fc0551f0ea2143111a7206d3f1ade34aa3fa24160f",
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "0a08d3659346d8d6f16dc3fd5073b30c742cafcd3868b71f270f3469b0f285d7",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "ebbe6122540e4d106d6a9284a49266f46bcdb6318ee760a479908187463fe692",
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "control_count": 10,
+      "detector_id": "detector.boundary.static",
+      "detector_ids": [
+        "detector.boundary.static"
+      ],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": null,
+      "oracle_id": "oracle.boundary.static",
+      "oracle_ids": [
+        "oracle.boundary.static"
+      ],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "c4301542a2056d287b8d020a1bcde3dd4ce4d91a9fafd156d22006c8beb93c78",
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "32e656f8c6a1d9e0fb6fb409185a0502c599e1268e9c76313d70f1f1e6b4dd56",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "c6fcbc2828317c1a0c9ab074819ba5cac3e5e6cb9b9fc5fcd896c56c6ffa3fcb",
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "b01cd31725bd5cee50ed85617b12b732248ad0e4c9ca218346c8550cedec169c",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "eb9ae2757f9b27943b15c9429a0cd4a0e75754b73dc88370de497e5f12664d86",
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "9d73fbf4471c5791f8d0dffd33c32dd15530c209f4d5a50ebc0217953a017fb7",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "458eb6a7497acba005c53b54c252514af8240bc7e24fa846278e7c3e06a164e3",
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "b26395fa71cc520e6f56ab756db7283d737b914095e6976822e23fbb0a1052c2",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "c4045461da6295a86b3a3e00e0caf2d8097a26adfa9ab3009ee7e9a1468e2f30",
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "4aca082c60f103c7378ae29abe48f8c914422e20f708bc9e8f10e63b1fe00d50",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "71ffd5fe173a040cd2d067ddf056900523a403299244999701575d5ce709a0d8",
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "6679251d4ec0ee1f51b53a99b8ae31149eea46bafa98d2db581cf3a5a180a8ea",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "3b1fa129ca130019544e2e5325ec904d997562e214c23880a9b54579366a95cd",
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "f6c7502e2975f36f41cdff5df84019de0a7467008b45ba77f43e46a49b5d3741",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "98dc456fa150f08d98b96489f686b340e99cbbaf6a9ed6d551e92611143df1ef",
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "710850d487b1aba313aa540ceb92c48d2d72164ef994383433fa31b14209b94e",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "6a39b7c61ef78ad6bf2271f1eb2740f0c2e0140c83f66be0603e2ebd0cb92d4a",
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "5552107d0e6e3820b72e738d5c94e12fbfae1b4cb4fd2eb16f489aaa55f12bd8",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "4605ba8519ef5b97ba47c5a5c215d8f25bbc66a60b53518f5f68cdf13b51aa94",
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "579d5c10a4e645617a1b44401fe673542015851784ba1f1c814e2d2ef598dc68",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "b2741050e2403c8839f3c7029240958f6b255285b113f0c1717b6a79eececef7",
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "control_count": 10,
+      "detector_id": "detector.exception_path.behavior",
+      "detector_ids": [
+        "detector.exception_path.behavior"
+      ],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": null,
+      "oracle_id": "oracle.exception_path.behavior",
+      "oracle_ids": [
+        "oracle.exception_path.behavior"
+      ],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "65c6459d007837d757d91030c20fc5e65bb8eda1d28c635bafa6d3aa9c99598d",
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "3e74cd465533e33f66833bf245c4af5c856cc6092751e5981c3ab946d1b5625c",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "90fa4c3e054b90566e6da77fb644f9ab78c78afb931c33019cbb37b825f7a5db",
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "ed38c31694f274dfa67e3c249de08e4402e4c3895683d20b022250e37d04ad3d",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "26ec78fcf0f13d67908dae520d2bb14ea0fccbc38d6a72cccb53edaf7733da44",
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "9c13544419429b54e819d6e83c102b465b4362bfa54ef987b4cf4f474976af74",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "28bb7a73726b4010d8251a9d835b84db7e5ec905779e8f05c3432ecd9f0d56b8",
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "dcd05acee7047280b81a00e7041749c8bb3ad458c95c3a59ce1dc943dbca9960",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "c9976d6fd2073f3943660af703864e55fdc6e6d181a348cc631915e33a39f303",
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "e96966ad11dc73fbdad5a721d86ef8b13a9ad0f9139e800be38cef931ee01eb9",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "3b98d87a30fde12e0a666ceb788975986a50efb9b59c2f13cc4017d1c0a77e36",
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "88105bf65ab74d21b1b6ae33fb760240e7f534f8ec2ac7c40e35359390e09a47",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "18ec9c9b1651b74cbcb585165611d08bdde40daf2de58415de75c75d549fb757",
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "380885bf064fa8d64bdd5088285916c071f9631c639dcf7820a2624adeae6fa5",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "c5769afb5c8ab7b4e93fdc3fdcec684a1f7c634c068ba69008fae82a0ffe83e9",
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "d8e5dc903956f7ceb2a45d63b1d2e1c5d15b01ead7f33dcce59d79b3f96d585e",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "6bb548d7211d4f09e1cdfb921c3c2671689273869c5e0d96dfce2fbd5d2437b0",
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "292a1bd965a5e06008a2cf49e3d3d98d01250fe45f7c0b280672a2e4c3713f7c",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "844ebe6f823d9c56b90316f3b017cad4fab56ca122054064be4b696da5fc0296",
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "b6d4c6f842ef7890fe574c3e345dfb9a919380f57aa2a1a401a6288fcf9f43a6",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "050c10203939841bc096e2b4f4ca12227b9d390c646ac451497e58df2858af75",
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "45e7b9bb262e10c70b7349177b4637fcb92d6029a6233e557c3b5d599f37b16e",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    },
+    {
+      "binding_digest": "4f9e36bd434ffb88b395b0ebb15d8649da2ad10f2e539e8c1d5c0d279b4453eb",
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "control_count": 10,
+      "detector_id": "NOT_APPLICABLE",
+      "detector_ids": [],
+      "detector_observations": {
+        "category": true,
+        "plane": true
+      },
+      "not_applicable_proof_digest": "e8fdb334977e5502d35f441fac084be5dc9a1713759beed4b5e4a2f168fe9b6d",
+      "oracle_id": "POLICY_PROOF",
+      "oracle_ids": [],
+      "oracle_observations": {
+        "category": true,
+        "plane": true
+      },
+      "passed_count": 10,
+      "qualified": true,
+      "subject_digest": "40ca5b91e20b3d5158bc9d0f3b005612294bd2fda4e5913ffad7d58606c8f375"
+    }
+  ],
+  "control_count": 720,
+  "controls": [
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "control": "positive",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "control": "negative",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "control": "boundary",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "control": "timeout",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "control": "detector_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "control": "oracle_exception",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "control": "missing_output",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "control": "tamper",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "control": "stale",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    },
+    {
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "control": "mutant",
+      "status": "PASS",
+      "target_kind": "SKILL"
+    }
+  ],
+  "qualified_count": 72,
+  "report_digest": "651aa3b507f79e8784fa28beb2fb89c2667fb0b561252f09eda415839f43ed8b",
+  "schema_version": 2
+}
