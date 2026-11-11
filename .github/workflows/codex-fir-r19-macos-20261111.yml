@@ -6,6 +6,7 @@ on:
       - codex-fir-r19-macos-qualification-20261111
       - codex-fir-r19-macos-qualification2-20261111
       - codex-fir-r19-macos-qualification3-20261111
+      - codex-fir-r19-macos-qualification4-20261111
       - codex-fir-r19-macos-formal-20261111
   workflow_dispatch:
     inputs:
@@ -77,9 +78,11 @@ jobs:
         run: |
           python -B - <<'PY'
           import json
+          import sys
           import tempfile
           from pathlib import Path
 
+          sys.path.insert(0, "scripts")
           from full_inspection_repair.cli import main
           from full_inspection_repair.detector_registry import default_taxonomy_coverage
 
