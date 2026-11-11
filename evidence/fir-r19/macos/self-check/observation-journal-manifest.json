@@ -1,0 +1,16 @@
+{
+  "checkpoint": {
+    "checkpoint_digest": "4a9eeb71d732e175c591ddf3217ced880ddce477fdf3943b1c81a3a9f8773266",
+    "head_digest": null,
+    "record_count": 0,
+    "redaction_policy_digest": "566ecbefee06251a4c1cf442480c239bdba7e7c11aaf95e0b489537b4640e431",
+    "schema_version": 2,
+    "source_run_id": "run:fc1b13dc2fe84f2cb90b859d3baf20d8"
+  },
+  "head_digest": null,
+  "journal_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "record_count": 0,
+  "schema_version": 1,
+  "status": "PASS",
+  "verified_at": "2026-11-11T11:16:14+00:00"
+}
