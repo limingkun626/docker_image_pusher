@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Issue Observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "observation_id",
+    "journal_sequence",
+    "previous_record_digest",
+    "record_digest",
+    "source_run_id",
+    "source_phase",
+    "producer_id",
+    "subject_id",
+    "subject_kind",
+    "subject_digest",
+    "invariant_id",
+    "defect_class_id",
+    "taxonomy_category_id",
+    "fingerprint",
+    "fingerprint_version",
+    "message",
+    "mechanism",
+    "root_cause_hypothesis",
+    "evidence_refs",
+    "evidence_sha256",
+    "redaction_policy_digest",
+    "severity",
+    "analogous_surfaces",
+    "status",
+    "safe_feedback",
+    "recorded_at"
+  ],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "observation_id": { "type": "string", "minLength": 1 },
+    "journal_sequence": { "type": "integer", "minimum": 1 },
+    "previous_record_digest": {
+      "oneOf": [
+        { "type": "null" },
+        { "$ref": "#/$defs/sha256" }
+      ]
+    },
+    "record_digest": { "$ref": "#/$defs/sha256" },
+    "source_run_id": { "type": "string", "minLength": 1 },
+    "source_phase": { "enum": ["CHECK", "VERIFICATION", "REVIEW", "INCIDENT"] },
+    "producer_id": { "type": "string", "minLength": 1 },
+    "subject_id": { "type": "string", "minLength": 1 },
+    "subject_kind": {
+      "enum": ["SKILL", "PLAN", "ARTICLE", "PROJECT", "OTHER"]
+    },
+    "subject_digest": { "$ref": "#/$defs/sha256" },
+    "invariant_id": { "type": "string", "minLength": 1 },
+    "defect_class_id": { "type": "string", "minLength": 1 },
+    "taxonomy_category_id": {
+      "enum": [
+        "FUNCTIONAL_FAULT",
+        "RISK_EXPOSURE",
+        "LATENT_DEFECT",
+        "VULNERABILITY",
+        "OMISSION",
+        "INCONSISTENCY",
+        "BOUNDARY",
+        "EXCEPTION_PATH",
+        "OTHER_DECLARED"
+      ]
+    },
+    "fingerprint": { "type": "string", "minLength": 1 },
+    "fingerprint_version": { "type": "string", "minLength": 1 },
+    "message": { "type": "string", "minLength": 1 },
+    "mechanism": { "type": "string", "minLength": 1 },
+    "root_cause_hypothesis": { "type": ["string", "null"] },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "evidence_sha256": { "$ref": "#/$defs/sha256" },
+    "redaction_policy_digest": { "$ref": "#/$defs/sha256" },
+    "severity": { "enum": ["Critical", "High", "Medium", "Low"] },
+    "analogous_surfaces": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "status": {
+      "enum": ["CONFIRMED", "INCONCLUSIVE", "FALSE_POSITIVE"]
+    },
+    "safe_feedback": { "type": "string", "minLength": 1 },
+    "recorded_at": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+  "installation_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+  "platform": "macos",
+  "readback_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+  "receipt_digest": "35b0d21f1cdc544f7ead020f1f8cf06d0b642a4e627559d3c7e16be09d2089a1",
+  "rollback_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+  "schema_version": 1,
+  "smoke_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+  "source_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+  "stages": {
+    "atomic_activation": {
+      "receipt": {
+        "activated_atomically": true,
+        "install_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955"
+      },
+      "receipt_sha256": "19f223eab31051996b022a7d45283a07eac26df9f352f95262b6c757f18b397a",
+      "status": "PASS"
+    },
+    "installation": {
+      "receipt": {
+        "install_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+        "source_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955"
+      },
+      "receipt_sha256": "513d9bcef4cdca4a0959834aef8d24cb46cb1c4d502df2aaffe507b154060bae",
+      "status": "PASS"
+    },
+    "readback": {
+      "receipt": {
+        "digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+        "readback_verified": true
+      },
+      "receipt_sha256": "2eb907708841957dbd8ab26c5258fadd78096a6b00b48fb712dbd3a355c82274",
+      "status": "PASS"
+    },
+    "rollback": {
+      "receipt": {
+        "digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+        "retained": true
+      },
+      "receipt_sha256": "10836eabd3a8db0d103e3fada25a6955533bfea803871702d47959c4c153ef5e",
+      "status": "PASS"
+    },
+    "smoke": {
+      "receipt": {
+        "digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+        "smoke_verified": true
+      },
+      "receipt_sha256": "81763019a561de5345cae68a5d09f84ab7543be3df102ce1890e7ef6fd2c1828",
+      "status": "PASS"
+    }
+  },
+  "target_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955"
+}
