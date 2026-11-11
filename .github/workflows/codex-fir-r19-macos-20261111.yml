@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - codex-fir-r19-macos-qualification-20261111
+      - codex-fir-r19-macos-qualification2-20261111
       - codex-fir-r19-macos-formal-20261111
   workflow_dispatch:
     inputs:
@@ -20,7 +21,7 @@ on:
         type: string
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   macos:
@@ -181,3 +182,12 @@ jobs:
           name: fir-r19-macos-evidence
           path: evidence/fir-r19/macos
           if-no-files-found: warn
+
+      - name: Commit evidence to branch
+        if: success()
+        run: |
+          git config user.name "Codex R19 Evidence"
+          git config user.email "codex-r19-evidence@users.noreply.github.com"
+          git add evidence/fir-r19/macos
+          git commit -m "Record FIR R19 macOS evidence [skip ci]"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
