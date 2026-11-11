@@ -1,0 +1,70 @@
+{
+  "rounds": [
+    {
+      "candidates": [
+        {
+          "bytes": 10884,
+          "mtime_ns": 1794298418332978700,
+          "path": "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.json",
+          "sha256": "1f688dd1bb371b9fd1c8085eb9c0ad662be81271e07ba11274f5eec279f611e7"
+        },
+        {
+          "bytes": 11131,
+          "mtime_ns": 1794300374676137000,
+          "path": "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.sigstore.json",
+          "sha256": "5502ccc3320d5a9425776a7522f4e19f6a500f95c14cc0336f54a5e3ce513dda"
+        },
+        {
+          "bytes": 11218,
+          "mtime_ns": 1794385167214108300,
+          "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\github-r16\\evidence\\fir-r13\\sigstore\\INDEPENDENT-REVIEW.json",
+          "sha256": "5db05f8d87e1f75ca01d8186c5c258fe835ec9c61b422dc4c0d1e8ceba62324c"
+        },
+        {
+          "bytes": 11131,
+          "mtime_ns": 1794385167214108300,
+          "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\github-r16\\evidence\\fir-r13\\sigstore\\INDEPENDENT-REVIEW.sigstore.json",
+          "sha256": "5502ccc3320d5a9425776a7522f4e19f6a500f95c14cc0336f54a5e3ce513dda"
+        }
+      ],
+      "method": "path and filename screening across R7/R11/R13 evidence",
+      "round": 1
+    },
+    {
+      "method": "byte digest equality plus offline Sigstore positive/negative execution",
+      "negative_exit_code": 1,
+      "negative_failure": "Bundle message digest mismatch",
+      "positive_exit_code": 0,
+      "rejected": [
+        {
+          "bytes": 11218,
+          "mtime_ns": 1794385167214108300,
+          "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\github-r16\\evidence\\fir-r13\\sigstore\\INDEPENDENT-REVIEW.json",
+          "reason": "bundle message digest mismatch",
+          "sha256": "5db05f8d87e1f75ca01d8186c5c258fe835ec9c61b422dc4c0d1e8ceba62324c"
+        }
+      ],
+      "round": 2,
+      "selected": {
+        "artifact": {
+          "bytes": 10884,
+          "mtime_ns": 1794298418332978700,
+          "path": "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.json",
+          "sha256": "1f688dd1bb371b9fd1c8085eb9c0ad662be81271e07ba11274f5eec279f611e7"
+        },
+        "bundle": {
+          "bytes": 11131,
+          "mtime_ns": 1794300374676137000,
+          "path": "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.sigstore.json",
+          "sha256": "5502ccc3320d5a9425776a7522f4e19f6a500f95c14cc0336f54a5e3ce513dda"
+        },
+        "signed_message_digest": "1f688dd1bb371b9fd1c8085eb9c0ad662be81271e07ba11274f5eec279f611e7"
+      }
+    }
+  ],
+  "run_id": "fir-full-r16-sigstore-r7-pair-20261111-r1",
+  "schema_version": 1,
+  "scope_id": "fir-full-r16-sigstore-r7-pair-20261111",
+  "screening_digest": "9e6f8aec0af8e0886572ba68372d8db37125aa8591f27fbd75cfdba5c3a01cf6",
+  "status": "COMPLETE"
+}

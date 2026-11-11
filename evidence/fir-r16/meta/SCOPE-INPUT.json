@@ -1,0 +1,191 @@
+{
+  "authorization": {
+    "brief": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\R16-SCOPE-BRIEF.md",
+    "brief_sha256": "60e9aff1646724d92139c58baab85fc5e64a743109b389bee641aafbcbd0c716",
+    "full_verification": true,
+    "independent_review": true,
+    "install": true,
+    "modify_candidate": false,
+    "modify_tools": true,
+    "modify_workflow": true,
+    "new_scope": true,
+    "physical_power_loss": true,
+    "preserve_r14_r15": true,
+    "release_history": true,
+    "scope_statement": "Create a new R16 scope without modifying R14 or R15 evidence; copy the R15 candidate byte-for-byte to an isolated R16 candidate; bind the offline Sigstore bundle and artifact to the matching R7 pair; reject the R11/R13 artifact bytes as negative controls; rebuild the full inherited denominator plus the new mismatch finding; and execute the complete verification, power-loss, review, signature, installation, read-back, rollback, and release-history chain.",
+    "scope_statement_digest": "39d2af801d6cae5ab5ed42dbc64fa5e4e120e9db326d6dd5ace62010a391c949",
+    "signature": true
+  },
+  "base_file_count": 84,
+  "base_source": "F:\\Codex\\skills-candidates\\fir-full-r15-sigstore-fixture-20261111\\full-inspection-repair",
+  "base_tree_digest": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+  "copied_file_count": 84,
+  "copied_tree_digest": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+  "copy_verification": {
+    "byte_identical_content": true,
+    "source_and_copy_file_sets_match": true
+  },
+  "discovery_ledger": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\R16-DISCOVERY-LEDGER.json",
+  "discovery_ledger_sha256": "bf6de99fb2955935f359eafaa7bc51b1ef4799d3c01fd766f9e6360758e9fc31",
+  "environment": {
+    "machine": "amd64",
+    "os_name": "nt",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python_implementation": "CPython",
+    "python_version": "3.12.10"
+  },
+  "fixture_pair": {
+    "artifact": {
+      "bytes": 10884,
+      "mtime_ns": 1794298418332978700,
+      "path": "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.json",
+      "sha256": "1f688dd1bb371b9fd1c8085eb9c0ad662be81271e07ba11274f5eec279f611e7"
+    },
+    "bundle": {
+      "bytes": 11131,
+      "mtime_ns": 1794300374676137000,
+      "path": "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.sigstore.json",
+      "sha256": "5502ccc3320d5a9425776a7522f4e19f6a500f95c14cc0336f54a5e3ce513dda"
+    },
+    "bundle_message_digest": "1f688dd1bb371b9fd1c8085eb9c0ad662be81271e07ba11274f5eec279f611e7",
+    "fixture_san": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/sign.yml@refs/heads/codex-fir-r7-sign-20261110",
+    "issuer": "https://token.actions.githubusercontent.com",
+    "prevalidation": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\PAIR-PREVALIDATION.json",
+    "prevalidation_sha256": "41581649122227e04f40b6da6ede831fc542f1642c772bf9fedd666b43ee5295",
+    "rejected_artifact": {
+      "bytes": 11218,
+      "mtime_ns": 1794385167214108300,
+      "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\github-r16\\evidence\\fir-r13\\sigstore\\INDEPENDENT-REVIEW.json",
+      "sha256": "5db05f8d87e1f75ca01d8186c5c258fe835ec9c61b422dc4c0d1e8ceba62324c"
+    }
+  },
+  "fresh_census": {
+    "command": "python -B scripts/run_inspection.py check --target . --kind SKILL --output F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\precheck-r16-r1",
+    "output": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\precheck-r16-r1",
+    "required_status": "CHECKED"
+  },
+  "github_base": {
+    "branch": "codex-fir-r15-macos-20261111",
+    "commit": "b5966477a5b76a424f57473182bb4d8bf1739e40",
+    "repository": "limingkun626/docker_image_pusher",
+    "snapshot": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\github-r16"
+  },
+  "installed_target": {
+    "file_count": 59,
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\full-inspection-repair",
+    "tree_digest": "132f4927a9ae633a39811a1846227cb20d7b2226adfe66fda47f2181bf386240"
+  },
+  "r15_block_receipt": "F:\\Codex\\runs\\fir-full-r15-sigstore-fixture-20261111\\R15-VERIFICATION-BLOCK.json",
+  "r15_block_receipt_sha256": "cd2c09b49b09b07a641ab69b384e86c0e06c8af1ce000e53d54cb593e15a0ad4",
+  "r16_observation_checkpoint": {
+    "checkpoint_digest": "80a83b5884bfa731420e774bc0e96cdca2915a92a16f44125572fe6ed6cef227",
+    "head_digest": "8a7e22f44e72a609ee0caf944514d01a21c1545f24d3b9ccdaa27422de03a3d9",
+    "record_count": 1,
+    "redaction_policy_digest": "6f9542307cc632f679f39027efb6aa877bd64398f5e90ed1cc260d2143acb928",
+    "schema_version": 2,
+    "source_run_id": "fir-full-r16-sigstore-r7-pair-20261111-r1"
+  },
+  "r16_observation_ids": [
+    "observation:1:046269d6706c3042"
+  ],
+  "read_only_inputs": [
+    {
+      "bytes": 167022,
+      "mtime_ns": 1794383268820319200,
+      "path": "F:\\Codex\\runs\\fir-full-r15-sigstore-fixture-20261111\\R15-DISCOVERY-LEDGER.json",
+      "sha256": "bd8f71ab177b349d30081814d58143455dd848f775fb9d1e755164fdbf712356"
+    },
+    {
+      "bytes": 2424,
+      "mtime_ns": 1794384303713568300,
+      "path": "F:\\Codex\\runs\\fir-full-r15-sigstore-fixture-20261111\\R15-VERIFICATION-BLOCK.json",
+      "sha256": "cd2c09b49b09b07a641ab69b384e86c0e06c8af1ce000e53d54cb593e15a0ad4"
+    },
+    {
+      "bytes": 58563,
+      "mtime_ns": 1794384217583523900,
+      "path": "F:\\Codex\\runs\\fir-full-r15-sigstore-fixture-20261111\\macos-r15-r1-job.log",
+      "sha256": "965c835c2d1c27117a2a9008cda39757c011eca4ac807a7b6d9c999b6cabd5f8"
+    },
+    {
+      "bytes": 46671,
+      "mtime_ns": 1794355196000000000,
+      "path": "F:\\Codex\\runs\\fir-full-r15-sigstore-fixture-20261111\\macos-r15-r1-evidence\\macos-junit.xml",
+      "sha256": "df2762fc119c13cd35e0a690748fd4cd36e70e9b726fb928ffa44bd5b1cad2da"
+    },
+    {
+      "bytes": 8603,
+      "mtime_ns": 1794385167163738400,
+      "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\github-r16\\.github\\workflows\\codex-fir-r15-macos-20261111.yml",
+      "sha256": "945b0c59256c661dec9ddfbf15e2557ee4e851eac5f482f65cfd643bb31f92b0"
+    },
+    {
+      "bytes": 10884,
+      "mtime_ns": 1794298418332978700,
+      "path": "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.json",
+      "sha256": "1f688dd1bb371b9fd1c8085eb9c0ad662be81271e07ba11274f5eec279f611e7"
+    },
+    {
+      "bytes": 11131,
+      "mtime_ns": 1794300374676137000,
+      "path": "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.sigstore.json",
+      "sha256": "5502ccc3320d5a9425776a7522f4e19f6a500f95c14cc0336f54a5e3ce513dda"
+    },
+    {
+      "bytes": 11218,
+      "mtime_ns": 1794385167214108300,
+      "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\github-r16\\evidence\\fir-r13\\sigstore\\INDEPENDENT-REVIEW.json",
+      "sha256": "5db05f8d87e1f75ca01d8186c5c258fe835ec9c61b422dc4c0d1e8ceba62324c"
+    },
+    {
+      "bytes": 11131,
+      "mtime_ns": 1794385167214108300,
+      "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\github-r16\\evidence\\fir-r13\\sigstore\\INDEPENDENT-REVIEW.sigstore.json",
+      "sha256": "5502ccc3320d5a9425776a7522f4e19f6a500f95c14cc0336f54a5e3ce513dda"
+    },
+    {
+      "bytes": 941,
+      "mtime_ns": 1794385211307717400,
+      "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\R16-SCOPE-BRIEF.md",
+      "sha256": "60e9aff1646724d92139c58baab85fc5e64a743109b389bee641aafbcbd0c716"
+    },
+    {
+      "bytes": 2843,
+      "mtime_ns": 1794385218480280500,
+      "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\PAIR-PREVALIDATION.json",
+      "sha256": "41581649122227e04f40b6da6ede831fc542f1642c772bf9fedd666b43ee5295"
+    },
+    {
+      "bytes": 2943,
+      "mtime_ns": 1794385219085934500,
+      "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\R16-SCREENING-LEDGER.json",
+      "sha256": "80847a73e8b6322238f927f5827c62f99365cb814f5b6d64509aca03904c2f6c"
+    },
+    {
+      "bytes": 194305,
+      "mtime_ns": 1794385219167591800,
+      "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\R16-DISCOVERY-LEDGER.json",
+      "sha256": "bf6de99fb2955935f359eafaa7bc51b1ef4799d3c01fd766f9e6360758e9fc31"
+    },
+    {
+      "bytes": 2205,
+      "mtime_ns": 1794385219019691300,
+      "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\observations.jsonl",
+      "sha256": "b78b4dfb4873a79018532fab8dadd83b04b382ff8a799608f59754ec30103757"
+    },
+    {
+      "bytes": 1,
+      "mtime_ns": 1794385219019691300,
+      "path": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\observations.jsonl.lock",
+      "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+    }
+  ],
+  "run_id": "fir-full-r16-sigstore-r7-pair-20261111-r1",
+  "schema_version": 1,
+  "scope_id": "fir-full-r16-sigstore-r7-pair-20261111",
+  "scope_input_digest": "b775cc3612cd27bc0e6fd5aa53e4dbd3d963825b03510ba9e061b715fc16b149",
+  "screening_ledger": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\R16-SCREENING-LEDGER.json",
+  "screening_ledger_sha256": "80847a73e8b6322238f927f5827c62f99365cb814f5b6d64509aca03904c2f6c",
+  "status": "SCOPE_INPUTS_FROZEN",
+  "subject": "F:\\Codex\\skills-candidates\\fir-full-r16-sigstore-r7-pair-20261111\\full-inspection-repair"
+}

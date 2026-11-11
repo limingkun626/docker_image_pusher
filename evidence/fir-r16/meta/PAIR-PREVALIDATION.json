@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "bytes": 10884,
+    "mtime_ns": 1794298418332978700,
+    "path": "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.json",
+    "sha256": "1f688dd1bb371b9fd1c8085eb9c0ad662be81271e07ba11274f5eec279f611e7"
+  },
+  "bundle": {
+    "bytes": 11131,
+    "mtime_ns": 1794300374676137000,
+    "path": "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.sigstore.json",
+    "sha256": "5502ccc3320d5a9425776a7522f4e19f6a500f95c14cc0336f54a5e3ce513dda"
+  },
+  "bundle_message_digest": "1f688dd1bb371b9fd1c8085eb9c0ad662be81271e07ba11274f5eec279f611e7",
+  "fixture_san": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/sign.yml@refs/heads/codex-fir-r7-sign-20261110",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "negative": {
+    "artifact": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\github-r16\\evidence\\fir-r13\\sigstore\\INDEPENDENT-REVIEW.json",
+    "exit_code": 1,
+    "expected_failure_fragment": "Bundle message digest mismatch",
+    "sha256": "5db05f8d87e1f75ca01d8186c5c258fe835ec9c61b422dc4c0d1e8ceba62324c",
+    "stderr": "[16:20:18] WARNING  TUF repository is loaded in offline mode;        tuf.py:103\n                    updates will not be performed                              \n           ERROR    FAIL:                                          _cli.py:1159\n                    F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20             \n                    261111\\github-r16\\evidence\\fir-r13\\sigstore\\IN             \n                    DEPENDENT-REVIEW.json                                      \n           ERROR    Bundle message digest mismatch                 errors.py:42\n                    For detailed error information, run sigstore               \n                    with the `--verbose` flag.                                 \n",
+    "stdout": ""
+  },
+  "positive": {
+    "artifact": "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.json",
+    "exit_code": 0,
+    "stderr": "[16:20:17] WARNING  TUF repository is loaded in offline mode;        tuf.py:103\n                    updates will not be performed                              \nOK: F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.json\n",
+    "stdout": ""
+  },
+  "receipt_digest": "6f1d4813ece0d2b6189f875a7368f48bff71f6f1dd0fc7ee20f910a7644660c3",
+  "recorded_at": "2026-11-11T08:20:18Z",
+  "run_id": "fir-full-r16-sigstore-r7-pair-20261111-r1",
+  "schema_version": 1,
+  "scope_id": "fir-full-r16-sigstore-r7-pair-20261111",
+  "status": "PASS",
+  "verifier": {
+    "bytes": 108424,
+    "mtime_ns": 1794297168438995500,
+    "path": "F:\\Codex\\runs\\fir-full-closure-r5-20261110\\.sigstore-venv\\Scripts\\sigstore.exe",
+    "sha256": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+  }
+}

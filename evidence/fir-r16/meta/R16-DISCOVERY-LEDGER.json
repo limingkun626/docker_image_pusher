@@ -1,0 +1,4079 @@
+{
+  "authorization_brief": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\R16-SCOPE-BRIEF.md",
+  "authorization_brief_sha256": "60e9aff1646724d92139c58baab85fc5e64a743109b389bee641aafbcbd0c716",
+  "authorized_scope_statement": "Create a new R16 scope without modifying R14 or R15 evidence; copy the R15 candidate byte-for-byte to an isolated R16 candidate; bind the offline Sigstore bundle and artifact to the matching R7 pair; reject the R11/R13 artifact bytes as negative controls; rebuild the full inherited denominator plus the new mismatch finding; and execute the complete verification, power-loss, review, signature, installation, read-back, rollback, and release-history chain.",
+  "authorized_scope_statement_digest": "39d2af801d6cae5ab5ed42dbc64fa5e4e120e9db326d6dd5ace62010a391c949",
+  "base_discovery": "F:\\Codex\\runs\\fir-full-r15-sigstore-fixture-20261111\\R15-DISCOVERY-LEDGER.json",
+  "base_discovery_digest": "ed99b9361fc152254d864649568af76d614a94fda2fdda86f69ca00bb4e85e79",
+  "base_discovery_sha256": "bd8f71ab177b349d30081814d58143455dd848f775fb9d1e755164fdbf712356",
+  "complete_repository_denominator": true,
+  "finding_count": 96,
+  "inherited_count": 95,
+  "inherited_finding_ids": [
+    "R10-MAC-001",
+    "R10-MAC-002",
+    "R10-MAC-003",
+    "R10-MAC-004",
+    "R10-MAC-005",
+    "R10-MAC-006",
+    "R10-MAC-007",
+    "R10-MAC-008",
+    "R10-MAC-009",
+    "R11-RUNTIME-001",
+    "R11-RUNTIME-002",
+    "R11-RUNTIME-003",
+    "R12-REL-001",
+    "R12-REL-002",
+    "R12-REL-003",
+    "R12-REL-004",
+    "R12-REL-005",
+    "R12-REL-006",
+    "R12-REL-007",
+    "R12-REL-008",
+    "R12-REL-009",
+    "R12-REL-010",
+    "R12-REL-011",
+    "R12-REL-012",
+    "R12-REL-013",
+    "R12-REL-014",
+    "R12-REL-015",
+    "R12-REL-016",
+    "R12-REL-017",
+    "R12-REL-018",
+    "R12-REL-019",
+    "R12-REL-020",
+    "R12-REL-021",
+    "R12-REL-022",
+    "R12-REL-023",
+    "R12-REL-024",
+    "R12-RUN-001",
+    "R12-RUN-002",
+    "R12-RUN-003",
+    "R12-RUN-004",
+    "R12-RUN-005",
+    "R12-RUN-006",
+    "R12-RUN-007",
+    "R12-RUN-008",
+    "R12-RUN-009",
+    "R12-RUN-010",
+    "R12-RUN-011",
+    "R12-RUN-012",
+    "R12-RUN-013",
+    "R12-RUN-014",
+    "R12-RUN-015",
+    "R12-RUN-016",
+    "R12-RUN-017",
+    "R12-RUN-018",
+    "R12-RUN-019",
+    "R12-TAX-001",
+    "R12-TAX-002",
+    "R12-TAX-003",
+    "R12-TAX-004",
+    "R12-TAX-005",
+    "R12-TAX-006",
+    "R12-TAX-007",
+    "R12-TAX-008",
+    "R12-TAX-009",
+    "R12-TAX-010",
+    "R12-TAX-011",
+    "R12-TAX-012",
+    "R12-TAX-013",
+    "R12-TAX-014",
+    "R12-TAX-015",
+    "R12-TAX-016",
+    "R12-TAX-017",
+    "R12-TAX-018",
+    "R8-RT-001",
+    "R8-RT-002",
+    "R8-RT-003",
+    "R8-RT-004",
+    "R8-RT-005",
+    "R8-RT-006",
+    "R8-RT-007",
+    "R8-RT-008",
+    "R8-RT-009",
+    "R8-RT-010",
+    "R8-RT-011",
+    "R8-RT-012",
+    "R8-RT-013",
+    "R8-RT-014",
+    "R8-RT-015",
+    "R8-RT-016",
+    "FIR-R13-DUR-001",
+    "FIR-R13-DUR-002",
+    "FIR-R13-DUR-003",
+    "FIR-R14-POSIX-001",
+    "FIR-R14-POSIX-002",
+    "FIR-R15-SIGSTORE-001"
+  ],
+  "items": [
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/risk_gate.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R10-MAC-001.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MACOS-PLATFORM-RESTORE",
+      "mechanism": "The risk gate still requires Windows, Linux, and macOS installation evidence.",
+      "message": "Release evidence cannot omit a required platform.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R10-MAC-001",
+      "root_cause_id": "RC-MACOS-PLATFORM-RESTORE",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/risk_gate.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R10-MAC-002.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MACOS-PLATFORM-RESTORE",
+      "mechanism": "SKILL.md still declares the three-platform evidence requirement.",
+      "message": "Operators can determine the required platform evidence from the skill contract.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R10-MAC-002",
+      "root_cause_id": "RC-MACOS-PLATFORM-RESTORE",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "references/operations.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R10-MAC-003.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MACOS-PLATFORM-RESTORE",
+      "mechanism": "operations.md retains the three-platform and power-loss claim boundary.",
+      "message": "The runbook matches the executable release gate.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R10-MAC-003",
+      "root_cause_id": "RC-MACOS-PLATFORM-RESTORE",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:references/operations.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "references/architecture-v9.2.1.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R10-MAC-004.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MACOS-PLATFORM-RESTORE",
+      "mechanism": "The architecture remains synchronized with verified platform receipts.",
+      "message": "Implementation guidance matches the three-platform gate.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R10-MAC-004",
+      "root_cause_id": "RC-MACOS-PLATFORM-RESTORE",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:references/architecture-v9.2.1.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "tests/unit/test_risk_gate.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R10-MAC-005.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MACOS-PLATFORM-RESTORE",
+      "mechanism": "Positive exact-set and negative macOS NOT_APPLICABLE controls remain present.",
+      "message": "Removing macOS from required domains is caught.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R10-MAC-005",
+      "root_cause_id": "RC-MACOS-PLATFORM-RESTORE",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:tests/unit/test_risk_gate.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/__init__.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R10-MAC-006.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MACOS-PLATFORM-RESTORE",
+      "mechanism": "Runtime and documentation version identity remain synchronized.",
+      "message": "Metadata no longer identifies the restored platform candidate as the earlier package.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R10-MAC-006",
+      "root_cause_id": "RC-MACOS-PLATFORM-RESTORE",
+      "schema_version": 1,
+      "severity": "Low",
+      "source_id": "source:scripts/full_inspection_repair/__init__.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.functional_fault",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R10-MAC-007.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MACOS-PLATFORM-RESTORE",
+      "mechanism": "The pre-review runner requires and binds macOS JUnit/evidence inputs.",
+      "message": "The pre-review matrix cannot reach review without the restored platform result.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R10-MAC-007",
+      "root_cause_id": "RC-MACOS-PLATFORM-RESTORE",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "FUNCTIONAL_FAULT",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.functional_fault",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R10-MAC-008.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MACOS-PLATFORM-RESTORE",
+      "mechanism": "The formal matrix includes macOS JUnit/evidence in validation and artifact hashes.",
+      "message": "Formal release evidence can no longer omit a required platform.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R10-MAC-008",
+      "root_cause_id": "RC-MACOS-PLATFORM-RESTORE",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "FUNCTIONAL_FAULT",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.functional_fault",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R10-MAC-009.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MACOS-PLATFORM-RESTORE",
+      "mechanism": "The evaluator still includes all three JUnit artifacts and tamper controls.",
+      "message": "Missing, linked, mutated, or unbound macOS result artifacts are detected.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R10-MAC-009",
+      "root_cause_id": "RC-MACOS-PLATFORM-RESTORE",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "FUNCTIONAL_FAULT",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/review.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R11-RUNTIME-001.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-SIGSTORE-VERIFIER-NOT-AUTHENTICATED",
+      "mechanism": "Verifier bytes are checked only against a caller-supplied registry; a fake verifier and fake registry produce status VERIFIED. A caller runner can also fake both command results.",
+      "message": "A caller can supply a malicious or replaced verifier and have an arbitrary attestation accepted as externally signed, defeating the release trust root and independent-review gate.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R11-RUNTIME-001",
+      "root_cause_id": "RC-SIGSTORE-VERIFIER-NOT-AUTHENTICATED",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:scripts/full_inspection_repair/review.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/release.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R11-RUNTIME-002.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-RELEASE-HISTORY-NO-HIGH-WATER",
+      "mechanism": "The anchor is in the mutable output directory. Deleting history and anchor is treated as genesis; a new append succeeds with sequence 1.",
+      "message": "Prior CLAIM/INSTALL/BLOCKED records can be removed without detection, violating the append-only release-history contract and hiding release ancestry or rollback events.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R11-RUNTIME-002",
+      "root_cause_id": "RC-RELEASE-HISTORY-NO-HIGH-WATER",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/release.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R11-RUNTIME-003.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-R11-FROZEN-LINUX-INTERPRETER-MISMATCH",
+      "mechanism": "Scope revision 4 now points to the complete R11 Linux venv; the exact frozen interpreter completed the installed dependencies and a full suite.",
+      "message": "The formally frozen Linux environment cannot reproduce the declared full test matrix, so a release cannot bind Linux evidence to the scope-declared interpreter.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R11-RUNTIME-003",
+      "root_cause_id": "RC-R11-FROZEN-LINUX-INTERPRETER-MISMATCH",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/release_skill.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-001.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-R12-TARGET-CANDIDATE-MISMATCH",
+      "mechanism": "The installed target digest is 132f4927... and has 59 manifest files. The R11 candidate digest is cbbef7ac... and has 74 files. Fifty shared paths differ and 15 files exist only in R11. The installed release_skill.py hash is 8c81e8ce..., while R11 is fdb9e828...",
+      "message": "The R12 initial check audited an older installation, not the R11 release candidate. R11 fixes for release authorization, history, rollback and risk gates are absent from the active target.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-001",
+      "root_cause_id": "RC-R12-TARGET-CANDIDATE-MISMATCH",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:scripts/release_skill.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/review.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-002.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "ROOT-REL-R8-SELF-ASSERTED-AUTHORIZATION",
+      "mechanism": "A caller supplied distinct producer/reviewer labels and a self-authored risk_gate PASS. review_packet returned PASS and build_release_claim returned RELEASE_READY with external_signature=null and no finding evidence.",
+      "message": "The installed release path has no cryptographic review, reviewer registry or external trust root and can mint its own release authorization.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-002",
+      "root_cause_id": "ROOT-REL-R8-SELF-ASSERTED-AUTHORIZATION",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:scripts/full_inspection_repair/review.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/review.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-003.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-CLAIM-TRUSTS-OPEN-COUNT",
+      "mechanism": "review_packet validates subject.open_count and residual_risks but does not inspect each subject.findings status. With findings=[{finding_id:OPEN-1,status:OPEN}] and open_count=0, review returned PASS and claim returned RELEASE_READY.",
+      "message": "An OPEN issue can be hidden by an inconsistent count or missing evidence projection.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-003",
+      "root_cause_id": "RC-CLAIM-TRUSTS-OPEN-COUNT",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/review.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/risk_gate.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-004.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "ROOT-REL-R8-GATE-ACCEPTS-CLAIMS",
+      "mechanism": "The installed gate passed every REQUIRED_DOMAINS value supplied by the caller and a matrix containing only status=PASS, failed_count=0 and digests. No runner receipt, environment receipt, requested-case set or matrix cell was required.",
+      "message": "Caller-authored strings and self-consistent summaries can satisfy release domains for Windows, Linux, macOS, trust, power loss, install and rollback without evidence.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-004",
+      "root_cause_id": "ROOT-REL-R8-GATE-ACCEPTS-CLAIMS",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/risk_gate.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/release_skill.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-005.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "ROOT-REL-R8-LEDGER-NOT-CONTENT-BOUND",
+      "mechanism": "release_skill._review accepted a ledger lacking schema_version, items, required_sources, counts and digests, then wrote independent-review.json with exit code 0.",
+      "message": "The release CLI can bypass the canonical ledger contract and accept absent evidence.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-005",
+      "root_cause_id": "ROOT-REL-R8-LEDGER-NOT-CONTENT-BOUND",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/release_skill.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/contracts.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-006.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-ZERO-OPEN-EVIDENCE-UNRESOLVED",
+      "mechanism": "assert_zero_open_risk accepted a closed item whose evidence_refs and verification_check point to a nonexistent receipt and whose ledger/required-source digests are arbitrary constants.",
+      "message": "A zero-open-risk assertion does not prove evidence exists or belongs to the candidate.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-006",
+      "root_cause_id": "RC-ZERO-OPEN-EVIDENCE-UNRESOLVED",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/contracts.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/package.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-007.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "ROOT-REL-R8-INSTALL-BYPASSES-CLAIM",
+      "mechanism": "install_package accepted source, target and manifest only. It staged, activated and returned INSTALLED with readback_verified=true without a claim, review or signature.",
+      "message": "Any valid tree manifest can install without release authorization.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-007",
+      "root_cause_id": "ROOT-REL-R8-INSTALL-BYPASSES-CLAIM",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:scripts/full_inspection_repair/package.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/package.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.exception_path",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-008.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "ROOT-R11-RELEASE-RESTORE-MISCLASSIFIED",
+      "mechanism": "Forced staged activation and subsequent restore failure left target_exists=false and rollback_exists=true. The surfaced error was OSError: forced restore failure and contained no BLOCKED_RESTORE receipt.",
+      "message": "Operators cannot distinguish successful restoration from an unrecovered target-absent state.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-008",
+      "root_cause_id": "ROOT-R11-RELEASE-RESTORE-MISCLASSIFIED",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/package.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "EXCEPTION_PATH",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/release.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-009.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "ROOT-R11-RELEASE-HISTORY-NO-TRUST-ANCHOR",
+      "mechanism": "The installed release module builds a claim from a review dict and writes no release history. A probe generated release-claim.json with no release-history.jsonl.",
+      "message": "Claims and installs have no append-only lifecycle record and can disappear from audit history.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-009",
+      "root_cause_id": "ROOT-R11-RELEASE-HISTORY-NO-TRUST-ANCHOR",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/release.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/risk_gate.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-010.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "ROOT-REL-R8-CLOSURE-VOCABULARY-DRIFT",
+      "mechanism": "The contract closed-status set contains FALSE_POSITIVE and PREVENTED_BY_GUARD. The gate instead accepts CLOSED, FALSE_POSITIVE_WITH_PROOF and PREVENTED_BY_VERIFIED_GUARD.",
+      "message": "The same closure can be valid at one boundary and invalid at another.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-010",
+      "root_cause_id": "ROOT-REL-R8-CLOSURE-VOCABULARY-DRIFT",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/risk_gate.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-011.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-TAXONOMY-SYNTHETIC-BINDINGS",
+      "mechanism": "R12 initial check ran ten generic detectors and reported zero findings. Ten concrete installed release-trust defects and five candidate residual defects were independently reproduced. The 72 matrix cells use 72 synthetic detector IDs plus ten executable IDs.",
+      "message": "The initial CHECKED result is a false-negative release-trust denominator rather than evidence that release trust is safe.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-011",
+      "root_cause_id": "RC-TAXONOMY-SYNTHETIC-BINDINGS",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/release_skill.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.exception_path",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-012.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-BLOCKED-RECEIPT-ESCAPE",
+      "mechanism": "A normal malformed-manifest rejection produced structured blocked-review.json. When the output path itself was a file, output.mkdir raised FileExistsError after the catch block; exit code was 1, stdout was empty and stderr contained a traceback.",
+      "message": "A failure to write the blocked receipt escapes the structured-result contract.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-012",
+      "root_cause_id": "RC-BLOCKED-RECEIPT-ESCAPE",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/release_skill.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "EXCEPTION_PATH",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/review.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-013.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-CALLER-SELF-DIGEST-TRUST",
+      "mechanism": "The R11 candidate generates a fresh Ed25519 key and a matching caller-authored registry. It computes the registry digest from that same registry and passes both to review; review returns PASS with external receipt status VERIFIED.",
+      "message": "The R11 candidate's trust registry is self-authenticating. It proves signature math against caller data, not reviewer independence or external trust-root control.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-013",
+      "root_cause_id": "RC-CALLER-SELF-DIGEST-TRUST",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:scripts/full_inspection_repair/review.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/release_skill.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-014.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-EVALUATOR-IDENTITY-SELF-ASSERTED",
+      "mechanism": "The review subject used an evaluator_digest computed from arbitrary caller text {evaluator:caller-authored}. No evaluator file, freeze, source bytes or identity document existed; the risk gate returned PASS.",
+      "message": "Evaluator identity is not content-bound and can be invented by the producer or reviewer caller.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-014",
+      "root_cause_id": "RC-EVALUATOR-IDENTITY-SELF-ASSERTED",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/release_skill.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/review.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.boundary",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-015.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "ROOT-R11-RELEASE-SIGSTORE-VERIFY-READ-TOCTOU",
+      "mechanism": "The verifier executes mutable paths. An ABA runner replaced the bundle during verification and restored the original bytes before return; pre/post byte reads matched and verify_sigstore_attestation returned VERIFIED.",
+      "message": "Verification can cover different bytes from those recorded in the receipt.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-015",
+      "root_cause_id": "ROOT-R11-RELEASE-SIGSTORE-VERIFY-READ-TOCTOU",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/review.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "BOUNDARY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-016.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "ROOT-R11-RELEASE-VERIFIER-UNPINNED",
+      "mechanism": "The registry pins sigstore-verifier.cmd at 80c625a0... but that wrapper invokes another file, sigstore_verifier_win.py, hash 6418123d.... The helper and its Python/sigstore environment are not included in verifier_sha256 or verifier receipts.",
+      "message": "Pinning the wrapper does not pin the code that performs verification; substituting the helper or environment changes the verifier without detection.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-016",
+      "root_cause_id": "ROOT-R11-RELEASE-VERIFIER-UNPINNED",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "tests/integration/test_r8_release_sigstore.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-017.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "ROOT-R11-RELEASE-REAL-SIGSTORE-UNEXECUTED",
+      "mechanism": "The full R11 candidate suite skipped test_real_sigstore_verifier_offline_bundle because no FIR_R8_SIGSTORE_* environment was configured. No real signed workflow bundle exists in the R11 run outside test fixtures. The real verifier did reject a malformed unsigned bundle with exit code 1.",
+      "message": "No positive external Sigstore identity verification exists for the candidate and reviewer workflow.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-017",
+      "root_cause_id": "ROOT-R11-RELEASE-REAL-SIGSTORE-UNEXECUTED",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:tests/integration/test_r8_release_sigstore.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/release_skill.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.functional_fault",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-018.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "ROOT-R11-RELEASE-NONTRANSACTIONAL-PUBLICATION",
+      "mechanism": "Claim history is appended before release-claim.json is written. Fault injection at the claim write left release-history.jsonl present, release-claim.json absent and run state still INDEPENDENT_REVIEW.",
+      "message": "A failed claim can leave an uncommitted lifecycle history row and force ambiguous recovery.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-018",
+      "root_cause_id": "ROOT-R11-RELEASE-NONTRANSACTIONAL-PUBLICATION",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/release_skill.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "FUNCTIONAL_FAULT",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-019.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-EVALUATOR-SELF-AUTHORED-TRUST",
+      "mechanism": "The evaluator baseline fabricated review-receipt.json, install-receipt.json, JUnit, matrix-runner.py, verifier.py and release history, then returned PASS. All eight append-byte tamper cases were caught, but updating the changed verifier binding, evaluator metadata and manifest digest made both self-rehashed cases PASS.",
+      "message": "The evaluator validates an internally authored bundle of hashes, not externally established evidence provenance.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-019",
+      "root_cause_id": "RC-EVALUATOR-SELF-AUTHORED-TRUST",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-020.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MATRIX-REVIEW-SCHEMA-DIVERGENCE",
+      "mechanism": "_review_checks requires status, producer_id and reviewer_id. The production R11 review schema has verdict, producer and reviewer, so a valid candidate review was rejected. A fabricated receipt with only status=PASS, verdict=PASS, candidate_digest and arbitrary producer_id/reviewer_id was accepted.",
+      "message": "The matrix runner cannot consume the production review schema and accepts an unsigned substitute.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-020",
+      "root_cause_id": "RC-MATRIX-REVIEW-SCHEMA-DIVERGENCE",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.risk_exposure",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-021.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MATRIX-EXTERNAL-EVIDENCE-SELF-ASSERTED",
+      "mechanism": "A caller-authored macOS evidence file with provider=github-actions, one fabricated passing testcase and a self-computed JUnit hash was accepted. A caller-authored power-loss file with status=CLOSED and a fabricated unexpected_shutdown_events list was also accepted.",
+      "message": "macOS and physical power-loss release domains can be satisfied by local JSON booleans without workflow provenance or hardware evidence.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-021",
+      "root_cause_id": "RC-MATRIX-EXTERNAL-EVIDENCE-SELF-ASSERTED",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "RISK_EXPOSURE",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-022.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-R11-RELEASE-AUDIT-STALE-TARGET",
+      "mechanism": "The R11 release audit records target_digest af4ae4d4..., but the current R11 candidate freeze records cbbef7ac... with 74 files. The current candidate independently matches the latter package manifest exactly.",
+      "message": "The release audit's overall target identity is stale relative to the current frozen candidate even though selected release source hashes overlap.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-022",
+      "root_cause_id": "RC-R11-RELEASE-AUDIT-STALE-TARGET",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-023.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-R11-REAL-LIFECYCLE-UNEXECUTED",
+      "mechanism": "Outside test fixtures, the R11 run has no release-claim.json, release-history.jsonl or install-receipt.json. Both physical power-loss attempts ended as NO_POWER_LOSS_OBSERVED. No real Sigstore bundle exists.",
+      "message": "R11 did not execute a complete real claim-review-claim-install-readback-history lifecycle and did not establish physical durability.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-023",
+      "root_cause_id": "RC-R11-REAL-LIFECYCLE-UNEXECUTED",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/release_skill.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.risk_exposure",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-REL-024.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-RELEASE-HISTORY-KEY-SELF-AUTHORITY",
+      "mechanism": "The history high-water MAC key is any caller-selected file outside output with at least 32 bytes. It is not named, digested or pinned in CANDIDATE-FREEZE.json or an external identity.",
+      "message": "A caller that can select the key can create or re-anchor a self-consistent history chain; the MAC proves possession of a caller key, not independent append-only authority.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-REL-024",
+      "root_cause_id": "RC-RELEASE-HISTORY-KEY-SELF-AUTHORITY",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/release_skill.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "RISK_EXPOSURE",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/observation.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-001.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-OBSERVATION-PATH-ALIAS",
+      "mechanism": "ObservationJournal opens the lock and journal paths with normal path APIs. A symlinked lock path truncated/rewrote a zero-byte external victim, and a symlinked journal appended a second record to an external file.",
+      "message": "A pre-existing link can redirect evidence reads/appends or mutate an unrelated file.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-001",
+      "root_cause_id": "RC-OBSERVATION-PATH-ALIAS",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/observation.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/cli.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-002.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-OBSERVATION-AFTER-STATE",
+      "mechanism": "State advances to IMPACT_CLOSURE and taxonomy qualification completes before discovery findings are appended to the observation journal.",
+      "message": "An observation persistence failure leaves the run advanced without durable issue knowledge, violating write-ahead ordering.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-002",
+      "root_cause_id": "RC-OBSERVATION-AFTER-STATE",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/cli.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/cli.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.exception_path",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-003.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-STATE-EVIDENCE-NONATOMIC",
+      "mechanism": "CLI run-state, summary, JSON, and JSONL writes use direct Path.write_text/write_bytes. A torn write injection left run-state.json at 24 bytes and unparseable.",
+      "message": "A process crash or power loss can replace a valid state/evidence file with a truncated prefix, making recovery and release binding impossible.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-003",
+      "root_cause_id": "RC-STATE-EVIDENCE-NONATOMIC",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/cli.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "EXCEPTION_PATH",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/release_skill.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-004.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-RUN-STATE-UNBOUND",
+      "mechanism": "release_skill accepts a forged run-state with candidate_digest absent and an empty history. _require_run_state returned it for an arbitrary candidate digest.",
+      "message": "A caller can manufacture the expected FSM state and release a foreign candidate without an authenticated transition history.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-004",
+      "root_cause_id": "RC-RUN-STATE-UNBOUND",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/release_skill.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/cli.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-005.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-STALE-INPUT-INCOMPLETE-IDENTITY",
+      "mechanism": "Policy identity hashes only a subset of runtime code and environment identity omits dependency versions. Changing state_machine.py changed the source digest but left policy identity unchanged.",
+      "message": "A tool, adapter, or dependency can change during a run without triggering BLOCKED_STALE_INPUT.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-005",
+      "root_cause_id": "RC-STALE-INPUT-INCOMPLETE-IDENTITY",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/cli.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-006.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MATRIX-SNAPSHOT-SKIPS-LINKS",
+      "mechanism": "candidate_snapshot checks path.is_dir() before rejecting links, so a symlink directory is skipped and not added to the file set. matrix parse also follows is_file links. An added external-directory link left the digest unchanged.",
+      "message": "The formal matrix can accept a candidate tree containing an unreviewed link and external content while reporting the frozen digest.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-006",
+      "root_cause_id": "RC-MATRIX-SNAPSHOT-SKIPS-LINKS",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-007.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-POWER-LOSS-SELF-ASSERTED",
+      "mechanism": "_validate_external_evidence accepts self-authored JSON fields for candidate binding, status, timestamps, and unexpected shutdown events. A fabricated power-loss closure and synthetic macOS evidence were accepted.",
+      "message": "Physical power loss can be claimed without an independently authenticated outage source.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-007",
+      "root_cause_id": "RC-POWER-LOSS-SELF-ASSERTED",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-008.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-MACOS-EVIDENCE-INCONSISTENT",
+      "mechanism": "The real macOS JUnit reports 234 tests with skipped=1 while _validate_external_evidence rejects any skipped test. The real supplied macOS evidence therefore blocks the formal matrix.",
+      "message": "The formal release path cannot consume its own verified macOS test evidence.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-008",
+      "root_cause_id": "RC-MACOS-EVIDENCE-INCONSISTENT",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/strict.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.exception_path",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-009.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-WINDOWS-DIRECTORY-FSYNC-NOOP",
+      "mechanism": "fsync_directory returns successfully on Windows without opening or flushing the directory handle; all callers therefore receive a false durability signal.",
+      "message": "Directory-entry creation and rename durability after power loss is not established on the primary Windows platform.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-009",
+      "root_cause_id": "RC-WINDOWS-DIRECTORY-FSYNC-NOOP",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/strict.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "EXCEPTION_PATH",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-010.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-WINDOWS-KERNEL-EVIDENCE-GAP",
+      "mechanism": "No LPAC, USN journal, ETW/Kernel-File, or DeviceIoControl evidence implementation exists.",
+      "message": "The required Windows exclusive-write and filesystem-observation evidence plane is absent.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-010",
+      "root_cause_id": "RC-WINDOWS-KERNEL-EVIDENCE-GAP",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-011.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-PHYSICAL-POWER-UNEXECUTED",
+      "mechanism": "Both R11 power probes timed out with status NO_POWER_LOSS_OBSERVED. No ARMED-to-recovery physical outage evidence exists.",
+      "message": "All power-loss closure remains unproven; simulated process kills are not substitutes.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-011",
+      "root_cause_id": "RC-PHYSICAL-POWER-UNEXECUTED",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/repair.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.boundary",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-012.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-REPAIR-CANDIDATE-ALIAS",
+      "mechanism": "apply_batch resolves the candidate root and copies through a junction alias without rejecting the alias chain; the probe wrote to the real candidate directory.",
+      "message": "A submitted candidate path can silently rebind to another directory.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-012",
+      "root_cause_id": "RC-REPAIR-CANDIDATE-ALIAS",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/repair.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "BOUNDARY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/release.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.exception_path",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-013.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-RELEASE-HISTORY-STALE-LOCK",
+      "mechanism": "The exclusive lock file has no stale-owner recovery. A simulated crashed owner caused every append to wait 10 seconds and fail, while the lock remained.",
+      "message": "A crash during history append permanently blocks future release history until manual cleanup.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-013",
+      "root_cause_id": "RC-RELEASE-HISTORY-STALE-LOCK",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/release.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "EXCEPTION_PATH",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-014.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-R12-INITIAL-CHECK-FOREIGN-SUBJECT",
+      "mechanism": "The R12 initial check binds installed tree 132f4927... with 59 files, while the current R11 candidate is cbbef7ac... with 74 files. Its zero-finding CHECKED result does not cover the candidate.",
+      "message": "Candidate runtime/durability evidence cannot be derived from the installed baseline check.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-014",
+      "root_cause_id": "RC-R12-INITIAL-CHECK-FOREIGN-SUBJECT",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.latent_defect",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-015.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-LINUX-RESOURCE-TIMEOUT-FLAKE",
+      "mechanism": "The exact frozen Linux suite failed once with six timing/resource-related failures and passed unchanged on repeat. Detector deadlines start before all workers are scheduled and release lock wait is fixed at 10 seconds.",
+      "message": "Release evidence is nondeterministic under ordinary machine load.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-015",
+      "root_cause_id": "RC-LINUX-RESOURCE-TIMEOUT-FLAKE",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "LATENT_DEFECT",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.risk_exposure",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-016.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-JOURNAL-UNBOUNDED-READ",
+      "mechanism": "Journal verification reads the entire file with Path.read_bytes before applying strict parsing limits. Observation/WAL file size and line counts are not capped at the read boundary.",
+      "message": "A large or replaced journal can exhaust memory before failing closed.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-016",
+      "root_cause_id": "RC-JOURNAL-UNBOUNDED-READ",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "RISK_EXPOSURE",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/coverage.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.boundary",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-017.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-COVERAGE-SERIALIZED-BUDGET",
+      "mechanism": "The configured 64 MiB derived-evidence budget yielded a 102,359,444-byte JSON artifact from 303,884 source bytes.",
+      "message": "Resource limits do not bound the actual serialized evidence size or output amplification.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-017",
+      "root_cause_id": "RC-COVERAGE-SERIALIZED-BUDGET",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/coverage.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "BOUNDARY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/package.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-018.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-INSTALL-CRASH-RECOVERY",
+      "mechanism": "Install has no durable install journal/phase marker in the product path. Process exceptions restore the old target, but a power cut between target->rollback and staged->target has no automatic boot-time recovery.",
+      "message": "Crash recovery depends on a separately prepared probe/manual process rather than an in-product transaction record.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-018",
+      "root_cause_id": "RC-INSTALL-CRASH-RECOVERY",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/package.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "SKILL.md"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-RUN-019.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-INSTALL-TARGET-NOT-SCOPE-BOUND",
+      "mechanism": "The installation target is caller-supplied and is not checked against SCOPE-LOCK allowed_write_roots or bound into the release claim/review.",
+      "message": "A valid reviewed candidate can be installed to an unintended same-volume path.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-RUN-019",
+      "root_cause_id": "RC-INSTALL-TARGET-NOT-SCOPE-BOUND",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:SKILL.md",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/adapters.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-001.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-CACHE-SOURCE-OMISSION",
+      "mechanism": "The protected snapshot enumerated 76 files, but build_subject silently removed 17 .pyc files under __pycache__. The manifest, required-source list, byte ledger, character coverage, and risk ledger consequently contain only 59 files. Both binary ledgers are zero bytes and the summary is still CHECKED.",
+      "message": "Real target bytes are absent from the denominator, and opaque files receive no explicit structural projection.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-001",
+      "root_cause_id": "RC-CACHE-SOURCE-OMISSION",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/adapters.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/detector_registry.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.risk_exposure",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-002.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-TAXONOMY-SYNTHETIC-BINDINGS",
+      "mechanism": "default_taxonomy_coverage creates one detector.cell.<category>.<plane> and one oracle.cell counterpart for every category-plane. The resulting matrix has 82 detector IDs: 10 executable registry IDs and 72 synthetic IDs with no callable implementation. Every synthetic ID appears exactly once.",
+      "message": "The matrix can report all 72 cells covered without 72 real detection/oracle paths, so taxonomy completeness is an ID construction rather than executable coverage.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-002",
+      "root_cause_id": "RC-TAXONOMY-SYNTHETIC-BINDINGS",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:scripts/full_inspection_repair/detector_registry.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "RISK_EXPOSURE",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/taxonomy_qualification.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.risk_exposure",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-003.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-TAXONOMY-UNBOUND-QUALIFICATION",
+      "mechanism": "Qualification keys evidence only by CATEGORY:PLANE and checks path['passed']; it does not verify that the evidence ID is the declared detector/oracle ID. Replacing all 72 detector and oracle IDs with unregistered values still yielded 72 qualified cells and 720 passing controls.",
+      "message": "A forged taxonomy can claim coverage with evidence unrelated to its declared bindings; all qualification receipts remain green.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-003",
+      "root_cause_id": "RC-TAXONOMY-UNBOUND-QUALIFICATION",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:scripts/full_inspection_repair/taxonomy_qualification.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "RISK_EXPOSURE",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/coverage.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.risk_exposure",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-004.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-COVERAGE-EVIDENCE-MATERIALIZATION",
+      "mechanism": "build_complete_coverage materializes codepoint spans, lines, per-character punctuation rows, per-character whitespace/control rows, and unit rows in one in-memory report. There is no derived-evidence budget.",
+      "message": "Coverage evidence grows far faster than source bytes and can exhaust memory or disk before a valid inspection is emitted.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-004",
+      "root_cause_id": "RC-COVERAGE-EVIDENCE-MATERIALIZATION",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/coverage.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "RISK_EXPOSURE",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/coverage.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-005.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-COVERAGE-NEWLINE-ALPHABET",
+      "mechanism": "_line_starts indexes only LF and newline classification cannot identify bare CR. For a;\\rb;\\r, line_count is 2 but newline_style is NONE and both semicolon records are reported on line 1.",
+      "message": "Byte and codepoint ranges remain continuous, but line and column evidence is false for CR-only and mixed-newline files.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-005",
+      "root_cause_id": "RC-COVERAGE-NEWLINE-ALPHABET",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/coverage.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/coverage.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-006.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-COVERAGE-SENTENCE-REGEX",
+      "mechanism": "_unit_rows treats every boundary row and then the EOF remainder as coverage units. The SENTENCE boundary regex also treats bare line breaks as sentence boundaries, producing a whitespace-only sentence unit after terminal punctuation.",
+      "message": "Sentence coverage totals remain complete, but the semantic view contains non-sentence units and cannot support exact sentence evidence.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-006",
+      "root_cause_id": "RC-COVERAGE-SENTENCE-REGEX",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/coverage.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/coverage.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-007.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-COVERAGE-VERIFIER-SCHEMA",
+      "mechanism": "verify_complete_coverage compares only a fixed list of known fields. Adding unexpected_extension and recomputing coverage_digest still returned an empty failure list.",
+      "message": "A structurally incompatible or migrated coverage artifact can be treated as current evidence when all known rows match.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-007",
+      "root_cause_id": "RC-COVERAGE-VERIFIER-SCHEMA",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/coverage.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/impact.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-008.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-IMPACT-UNRESOLVED-OMISSION",
+      "mechanism": "A broken local Markdown link is silently dropped when it is not in file_ids. PY_IMPORT_PATTERN does not match relative imports such as 'from . import b'; dynamic imports and unresolved references are not recorded as nodes.",
+      "message": "The impact graph omits missing links, package relationships, and callers, so closure can pass on an incomplete dependency graph.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-008",
+      "root_cause_id": "RC-IMPACT-UNRESOLVED-OMISSION",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/impact.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/adapters.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-009.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-LINK-DEREFERENCE-BEFORE-VALIDATION",
+      "mechanism": "Adapters and packaging call Path.resolve() before protected traversal, so a lexical root junction/symlink is dereferenced before validation. A junction alias was traversed by snapshot_tree, build_subject, and build_package_manifest.",
+      "message": "A submitted lexical root can silently rebind the audit or package scope to another filesystem object.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-009",
+      "root_cause_id": "RC-LINK-DEREFERENCE-BEFORE-VALIDATION",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/adapters.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/detectors.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.boundary",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-010.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-PYTHON-AST-PARSE-SILENT",
+      "mechanism": "_python_tree converts SyntaxError and UnicodeDecodeError into None; both AST-based security and exception detectors then return an empty result. The default detector set contains no syntax boundary detector.",
+      "message": "Malformed Python can bypass all AST-based semantic and security checks while byte coverage remains complete.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-010",
+      "root_cause_id": "RC-PYTHON-AST-PARSE-SILENT",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/detectors.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "BOUNDARY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/detectors.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-011.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-COLLECTION-OCCURRENCE-LOSS",
+      "mechanism": "detect_placeholders and detect_latent_markers explicitly skip every .py file. For non-Python text they use search(), retaining only the first occurrence. A multi-occurrence SKILL.md plus TODO/FIXME comments in code.py yielded only the first SKILL.md TODO.",
+      "message": "Latent and unfinished work in Python disappears, and the issue denominator undercounts multiple independent occurrences.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-011",
+      "root_cause_id": "RC-COLLECTION-OCCURRENCE-LOSS",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/detectors.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/detectors.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-012.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-SKILL-CONTRACT-OMISSION",
+      "mechanism": "The frontmatter detector catches only a name mismatch. Missing or malformed YAML enters the StopIteration/YAMLError exception and returns no finding. The probe with 'name: [broken' produced zero findings.",
+      "message": "A skill whose identity contract cannot be parsed is reported clean.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-012",
+      "root_cause_id": "RC-SKILL-CONTRACT-OMISSION",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/detectors.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/ledger.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-013.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-LEDGER-DENOMINATOR-RECONCILIATION",
+      "mechanism": "When present_sources is omitted, build_risk_ledger substitutes the required-source set as the observed set. A ledger with source:SKILL.md required but no observation input returned both missing_sources and unexpected_sources as empty arrays.",
+      "message": "The central evidence function can report a clean denominator without ever observing a source and cannot detect extra material.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-013",
+      "root_cause_id": "RC-LEDGER-DENOMINATOR-RECONCILIATION",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/ledger.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "contracts/required-source.schema.json"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-014.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-REQUIRED-SOURCE-ENUM-DRIFT",
+      "mechanism": "build_required_sources emits applicability=REQUIRED_MISSING for a missing SKILL.md, but the schema permits only APPLICABLE and NOT_APPLICABLE_WITH_PROOF. The empty-skill probe fails contract validation.",
+      "message": "The core missing-entrypoint path writes an invalid required-source row, so downstream validation rejects its own inspection artifact.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-014",
+      "root_cause_id": "RC-REQUIRED-SOURCE-ENUM-DRIFT",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:contracts/required-source.schema.json",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/adapters.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-015.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-TARGET-ADAPTER-COVERAGE-OVERCLAIM",
+      "mechanism": "The skill states the same workflow applies to SKILL, PLAN, ARTICLE, PROJECT, and OTHER and instructs selection of a matching adapter. Implementation accepts all five kinds through one protected-reader resource adapter; no target-specific claim, section, build, or lifecycle source is added.",
+      "message": "Non-SKILL targets can be marked CHECKED using generic file checks while omitting their required source classes.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-015",
+      "root_cause_id": "RC-TARGET-ADAPTER-COVERAGE-OVERCLAIM",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/adapters.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/cli.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-016.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-EVIDENCE-PACK-IDENTITY",
+      "mechanism": "Subject-manifest digests are derived from constant labels rather than artifact content: knowledge_pack_digest hashes {'knowledge_pack':'default'}, detector_pack_digest hashes {'detectors':'default-v2'}, defect_taxonomy_digest hashes only the category list, and config_digest hashes only subject_kind.",
+      "message": "Behaviorally different detector, knowledge, taxonomy, or config content can share the same manifest identity, invalidating stale-input detection and evidence reuse checks.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-016",
+      "root_cause_id": "RC-EVIDENCE-PACK-IDENTITY",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/cli.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "contracts/finding.schema.json"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-017.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-CLOSED-STATUS-VOCAB-DRIFT",
+      "mechanism": "The Finding contract and consistency validator accept FALSE_POSITIVE and PREVENTED_BY_GUARD, while the release gate accepts FALSE_POSITIVE_WITH_PROOF and PREVENTED_BY_VERIFIED_GUARD. The two four-value sets do not match.",
+      "message": "Contract-valid closures can be rejected at release, while gate-valid closures can be nonterminal in the product contract.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-017",
+      "root_cause_id": "RC-CLOSED-STATUS-VOCAB-DRIFT",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:contracts/finding.schema.json",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/taxonomy_qualification.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R12-TAX-018.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-TAXONOMY-UNBOUND-QUALIFICATION",
+      "mechanism": "R11 marks PIPE-003 FIXED. Its target-kind/exact-ID test passes, but production qualification still accepts the legacy shared category-plane evidence map through canonical_alias. Published bound cells show only {'category':true,'plane':true} for both detector and oracle.",
+      "message": "The R11 closure receipt overstates oracle independence: real detector IDs are paired with generic booleans rather than actual detector/oracle observations.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R12-TAX-018",
+      "root_cause_id": "RC-TAXONOMY-UNBOUND-QUALIFICATION",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/taxonomy_qualification.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/protected_reader.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-001.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-LINK-DEREFERENCE-BEFORE-VALIDATION",
+      "mechanism": "Current protected_reader opens every Windows/POSIX root component without following links; Windows junction and POSIX ancestor-link consumer tests passed.",
+      "message": "A submitted lexical root with a linked ancestor can silently rebind the audit or package scope to another filesystem object while root metadata describes the linked target.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-001",
+      "root_cause_id": "RC-LINK-DEREFERENCE-BEFORE-VALIDATION",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/protected_reader.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/protected_reader.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.exception_path",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-002.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-POSIX-SPECIAL-FILE-OPEN-BEFORE-TYPE-CHECK",
+      "mechanism": "POSIX traversal rejects special files before open and uses O_NONBLOCK; the executable FIFO regression passed on the frozen Linux interpreter.",
+      "message": "A FIFO or other special entry can no longer block the protected snapshot before reaching a structured rejection.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-002",
+      "root_cause_id": "RC-POSIX-SPECIAL-FILE-OPEN-BEFORE-TYPE-CHECK",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/protected_reader.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "EXCEPTION_PATH",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/cli.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.exception_path",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-003.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-READER-ERRORS-NOT-NORMALIZED",
+      "mechanism": "Reader OSError paths remain normalized to ProtectedObjectError and the current reader/error tests passed in both platform suites.",
+      "message": "Permission, disappearance, metadata, and read failures now produce a structured blocked result rather than an unbounded traceback.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-003",
+      "root_cause_id": "RC-READER-ERRORS-NOT-NORMALIZED",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/cli.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "EXCEPTION_PATH",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/coverage.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-004.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-COVERAGE-NEWLINE-ALPHABET-INCOMPLETE",
+      "mechanism": "CR/LF/CRLF handling and mixed newline coverage tests are present and passed.",
+      "message": "CR-only and mixed line endings now produce exact line and punctuation locations rather than false line-one evidence.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-004",
+      "root_cause_id": "RC-COVERAGE-NEWLINE-ALPHABET-INCOMPLETE",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/coverage.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/coverage.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-005.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-COVERAGE-SENTENCE-REGEX-ASCII-WHITESPACE",
+      "mechanism": "A fresh probe now returns sentence texts ['第一句。','第二句。\\n']; there is no whitespace-only sentence unit.",
+      "message": "The sentence evidence view still contains non-sentence whitespace units, so semantic sentence-range evidence is not exact even though codepoint partition coverage passes.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-005",
+      "root_cause_id": "RC-COVERAGE-SENTENCE-REGEX-ASCII-WHITESPACE",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/coverage.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/coverage.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.contract",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-006.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-COVERAGE-VERIFIER-SCHEMA-OMITTED",
+      "mechanism": "A recomputed report with unexpected_extension is now rejected with a 'schema' failure.",
+      "message": "A structurally incompatible coverage artifact can still be accepted as current evidence when all known rows match and the digest is internally consistent.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-006",
+      "root_cause_id": "RC-COVERAGE-VERIFIER-SCHEMA-OMITTED",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/coverage.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "CONTRACT",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/package.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.vulnerability",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-007.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-INSTALL-TARGET-LINK-DEREFERENCE",
+      "mechanism": "Install preflight checks source, target, and rollback path ancestry; link, overlap, cross-volume, rollback, and smoke tests passed.",
+      "message": "A target or ancestor link can no longer redirect installation outside the submitted lexical path.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-007",
+      "root_cause_id": "RC-INSTALL-TARGET-LINK-DEREFERENCE",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/package.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "VULNERABILITY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/package.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.boundary",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-008.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-INSTALL-SOURCE-TARGET-OVERLAP",
+      "mechanism": "Pairwise source/target/rollback disjointness is enforced before staging.",
+      "message": "A nested target can no longer cause recursive staging growth or late filesystem failure.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-008",
+      "root_cause_id": "RC-INSTALL-SOURCE-TARGET-OVERLAP",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/package.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "BOUNDARY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/package.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.boundary",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-009.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-INSTALL-ROLLBACK-TOPOLOGY",
+      "mechanism": "Rollback topology is preflighted and a mid-swap injected exception restored the old target.",
+      "message": "Rollback can no longer mutate the source tree or defer a cross-volume failure until activation.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-009",
+      "root_cause_id": "RC-INSTALL-ROLLBACK-TOPOLOGY",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/package.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "BOUNDARY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/write_ahead.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.exception_path",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-010.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-WAL-SHORT-WRITE-IGNORED",
+      "mechanism": "write_all handles short writes/EINTR and fsync failure is fail-closed.",
+      "message": "A short or interrupted write can no longer advance sequence as if the record were durable.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-010",
+      "root_cause_id": "RC-WAL-SHORT-WRITE-IGNORED",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/write_ahead.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "EXCEPTION_PATH",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/write_ahead.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.contract",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-011.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-WAL-PAIR-IDENTITY-INCOMPLETE",
+      "mechanism": "A completion with evidence {} still verifies PASS after an intent with evidence {'operation':'write-A'}; only overlapping keys are compared.",
+      "message": "A completion can attest a different operation payload than the intent, so journal recovery may treat an unintended or substituted operation as completed.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-011",
+      "root_cause_id": "RC-WAL-PAIR-IDENTITY-INCOMPLETE",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/write_ahead.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "CONTRACT",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/cli.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-012.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-JOURNAL-NO-TRUSTED-HIGH-WATER",
+      "mechanism": "A persisted WAL checkpoint is itself rewritable. Truncating four records to two and recomputing the checkpoint verifies PASS.",
+      "message": "Tail truncation at a complete-pair boundary is indistinguishable from a legitimately shorter run, so the production command can emit success with missing durable operation evidence.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-012",
+      "root_cause_id": "RC-JOURNAL-NO-TRUSTED-HIGH-WATER",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/cli.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/observation.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-013.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-OBSERVATION-NO-TRUSTED-HIGH-WATER",
+      "mechanism": "The observation high-water is stored in the same mutable output tree. Truncating two records to one and recomputing its checkpoint verifies PASS.",
+      "message": "Complete deletion or replacement of a non-empty observation history is not accepted as an unanchored empty success.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-013",
+      "root_cause_id": "RC-OBSERVATION-NO-TRUSTED-HIGH-WATER",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/observation.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/cli.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-014.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-OBSERVATION-NOT-VERIFIED-IN-PRODUCTION",
+      "mechanism": "Production check/repair verifies observation chains before success.",
+      "message": "A mutated or incomplete observation chain can no longer coexist with CHECKED or REPAIRED_CANDIDATE.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-014",
+      "root_cause_id": "RC-OBSERVATION-NOT-VERIFIED-IN-PRODUCTION",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/cli.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/cli.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.inconsistency",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-015.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-WAL-CHECK-RESULT-NOT-ENFORCED",
+      "mechanism": "Production WAL verification is enforced before success status.",
+      "message": "A broken journal now terminates the command with BLOCKED_EVIDENCE instead of a successful status.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-015",
+      "root_cause_id": "RC-WAL-CHECK-RESULT-NOT-ENFORCED",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/cli.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "INCONSISTENCY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/cli.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.exception_path",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/R8-RT-016.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-OBSERVATION-NO-EXPLICIT-EMPTY-STATE",
+      "mechanism": "Zero-record runs create an explicit provenance-bound empty checkpoint.",
+      "message": "Genuinely clean targets can complete without treating a missing journal as success.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "R8-RT-016",
+      "root_cause_id": "RC-OBSERVATION-NO-EXPLICIT-EMPTY-STATE",
+      "schema_version": 1,
+      "severity": "Medium",
+      "source_id": "source:scripts/full_inspection_repair/cli.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "EXCEPTION_PATH",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/package.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.exception_path",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/FIR-R13-DUR-001.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-R13-STAGING-DURABILITY",
+      "mechanism": "Real R12 power loss left six staged files NUL-filled; the retained rollback tree also failed its frozen digest.",
+      "message": "A staged candidate or rollback tree can be exposed after reboot before copied file data is durable.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "FIR-R13-DUR-001",
+      "root_cause_id": "RC-R13-STAGING-DURABILITY",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:scripts/full_inspection_repair/package.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "EXCEPTION_PATH",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/strict.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.latent_defect",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/FIR-R13-DUR-002.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-R13-EVIDENCE-DURABILITY",
+      "mechanism": "The R12 probe USN snapshot and evidence writes used direct file replacement without file and parent-directory fsync.",
+      "message": "Recovery can observe a syntactically written but non-durable arm or evidence record after an outage.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "FIR-R13-DUR-002",
+      "root_cause_id": "RC-R13-EVIDENCE-DURABILITY",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:scripts/full_inspection_repair/strict.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "LATENT_DEFECT",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/package.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.boundary",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/FIR-R13-DUR-003.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-R13-RENAME-DURABILITY",
+      "mechanism": "Directory renames were not bracketed by file-tree and both parent-directory fsync operations.",
+      "message": "The post-boot namespace can differ from the in-process mid-swap state used by the recovery probe.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "FIR-R13-DUR-003",
+      "root_cause_id": "RC-R13-RENAME-DURABILITY",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:scripts/full_inspection_repair/package.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "BOUNDARY",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "scripts/full_inspection_repair/strict.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.exception_path",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/FIR-R14-POSIX-001.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-R14-DARWIN-OPENAT-CREATE-OR-OPEN",
+      "mechanism": "R13 macOS spawned child received ENOENT for observations.jsonl.lock before flock; the call used dir_fd with O_CREAT and no O_EXCL.",
+      "message": "Concurrent first creation can fail observation append or zero-record checkpoint creation and block the run.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "FIR-R14-POSIX-001",
+      "root_cause_id": "RC-R14-DARWIN-OPENAT-CREATE-OR-OPEN",
+      "schema_version": 1,
+      "severity": "Critical",
+      "source_id": "source:scripts/full_inspection_repair/strict.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "EXCEPTION_PATH",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "tests/unit/test_r11_pipeline_repair.py"
+      ],
+      "closed_at": "2026-11-11T07:37:58Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "finding.omission",
+      "evidence_refs": [
+        "candidate:1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+        "receipt:finding-evidence/FIR-R14-POSIX-002.json",
+        "junit:windows-junit.xml",
+        "junit:linux-junit.xml",
+        "check:summary.json",
+        "check:summary.json"
+      ],
+      "evidence_sha256": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "invariant_id": "RC-R14-DARWIN-OPENAT-ORACLE",
+      "mechanism": "The existing race test has one probabilistic trial and no deterministic assertion of Darwin create-or-open flags.",
+      "message": "A candidate can retain the broken primitive and still pass when the scheduler does not reproduce the race.",
+      "r15_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_scope_id": "fir-full-r14-darwin-openat-20261111",
+        "source_status": "FIXED"
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_CLOSED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "FIXED"
+      },
+      "residual_risk": null,
+      "risk_id": "FIR-R14-POSIX-002",
+      "root_cause_id": "RC-R14-DARWIN-OPENAT-ORACLE",
+      "schema_version": 1,
+      "severity": "High",
+      "source_id": "source:tests/unit/test_r11_pipeline_repair.py",
+      "status": "FIXED",
+      "subject_id": "skill:1fd66cdf76cc4477",
+      "taxonomy_category_id": "OMISSION",
+      "verification_check": "receipt:windows-junit.xml;receipt:linux-junit.xml;receipt:summary.json;receipt:summary.json"
+    },
+    {
+      "affected_refs": [
+        "workflow:codex-fir-r14-macos-20261111.yml#FIR_R8_SIGSTORE_IDENTITY",
+        "tests/integration/test_r8_release_sigstore.py::test_real_sigstore_verifier_offline_bundle"
+      ],
+      "category": "OMISSION",
+      "closed_at": "2026-11-11T08:20:19Z",
+      "closed_by": "1fd66cdf76cc4477250ad53faf6e3363de0ef2122729a191d4714ba5ccfb2d35",
+      "defect_class_id": "test.sigstore-fixture-identity-mismatch",
+      "evidence_refs": [
+        "F:\\Codex\\runs\\fir-full-r15-sigstore-fixture-20261111\\R15-VERIFICATION-BLOCK.json",
+        "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\github-r16\\.github\\workflows\\codex-fir-r15-macos-20261111.yml",
+        "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\PAIR-PREVALIDATION.json"
+      ],
+      "evidence_sha256": "02b931896f7c24c55493a0f8f6eb8950f48ff26ea3c51c33369be0b736877192",
+      "file_or_asset": "workflow codex-fir-r14-macos-20261111.yml FIR_R8_SIGSTORE_IDENTITY fixture",
+      "finding_id": "FIR-R15-SIGSTORE-001",
+      "impact": "The macOS Sigstore identity gate rejected a valid offline bundle before the R14 release could complete.",
+      "impact_proof": "R14 receipt sha256=013c41ff97e8add030b64a378ab1576f310b7480e155971c8bb7099316d4ae20; job log sha256=92f3c793307abc1759cb8d644f2e1765d29b5f2557d03197b2e9d4acfeeb83c4; JUnit sha256=c67ea9d1d63f59e102890dfeb7fb58958fa4474036c3facbe9c5b8d9569bdfde",
+      "invariant_id": "VALIDATION-SIGSTORE-FIXTURE-IDENTITY-001",
+      "location": "offline R13 Sigstore bundle identity verification",
+      "mechanism": "The workflow expected the R13 sign-workflow SAN, but the selected offline R13 bundle was signed by https://github.com/limingkun626/docker_image_pusher/.github/workflows/sign.yml@refs/heads/codex-fir-r7-sign-20261110",
+      "message": "The macOS fixture expected the R13 sign-workflow SAN while the selected offline R13 bundle carried the R7 sign-workflow SAN.",
+      "observation_digest": "13a2231729d4b7085411bedfb535af0b2328cb0d836b7bd0979df775b66f5d12",
+      "observation_id": "observation:1:22beab5788312f42",
+      "r15_inheritance": {
+        "classification": "NEW_OPEN",
+        "source_scope_id": null,
+        "source_status": null
+      },
+      "r16_inheritance": {
+        "classification": "INHERITED_SUPERSEDED",
+        "source_run_id": "fir-full-r15-sigstore-fixture-20261111-r1",
+        "source_scope_id": "fir-full-r15-sigstore-fixture-20261111",
+        "source_status": "OPEN"
+      },
+      "repair_strategy": "Set the fixture expected identity to the bundle's actual verified SAN, then rerun all gates.",
+      "residual_risk": null,
+      "risk_id": "FIR-R15-SIGSTORE-001",
+      "root_cause_id": "RC-R15-SIGSTORE-FIXTURE-EXPECTED-IDENTITY",
+      "safe_feedback": "Set the fixture expected identity to the bundle's actual verified SAN, then rerun all gates.",
+      "schema_version": 1,
+      "severity": "High",
+      "status": "SUPERSEDED_BY_VERIFIED_CHANGE",
+      "taxonomy_category_id": "OMISSION",
+      "trigger_condition": "Run test_real_sigstore_verifier_offline_bundle against the selected offline R13 bundle with the fixture's R13 workflow identity.",
+      "verification_check": "R15 workflow uses the R7 SAN; R16 pair prevalidation accepts the matching R7 bundle/artifact pair",
+      "verification_requirement": "The real offline Sigstore verifier must accept the selected bundle with the actual verified SAN and the complete gate set must rerun."
+    },
+    {
+      "affected_refs": [
+        "workflow:FIR_R8_SIGSTORE_BUNDLE",
+        "workflow:FIR_R8_SIGSTORE_ARTIFACT",
+        "tests/integration/test_r8_release_sigstore.py::test_real_sigstore_verifier_offline_bundle"
+      ],
+      "category": "OMISSION",
+      "defect_class_id": "test.sigstore-fixture-artifact-pair-mismatch",
+      "evidence_refs": [
+        "F:\\Codex\\runs\\fir-full-r15-sigstore-fixture-20261111\\R15-VERIFICATION-BLOCK.json",
+        "F:\\Codex\\runs\\fir-full-r15-sigstore-fixture-20261111\\macos-r15-r1-job.log",
+        "F:\\Codex\\runs\\fir-full-r15-sigstore-fixture-20261111\\macos-r15-r1-evidence\\macos-junit.xml",
+        "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.json",
+        "F:\\Codex\\runs\\fir-full-closure-r7-20261110\\INDEPENDENT-REVIEW.sigstore.json",
+        "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\PAIR-PREVALIDATION.json"
+      ],
+      "evidence_sha256": "7f69b93c4e045fa4b276c055f97aa172bb1b49afa99c9e4f9cd311f051cc668b",
+      "file_or_asset": "FIR_R8_SIGSTORE_BUNDLE and FIR_R8_SIGSTORE_ARTIFACT",
+      "finding_id": "FIR-R16-SIGSTORE-001",
+      "impact": "A valid R7 bundle is rejected before the macOS full suite can complete, blocking every downstream release gate.",
+      "impact_proof": "R15 receipt sha256=cd2c09b49b09b07a641ab69b384e86c0e06c8af1ce000e53d54cb593e15a0ad4; pair prevalidation sha256=41581649122227e04f40b6da6ede831fc542f1642c772bf9fedd666b43ee5295",
+      "invariant_id": "VALIDATION-SIGSTORE-FIXTURE-PAIR-001",
+      "location": "offline suite fixture selection",
+      "mechanism": "Bundle signs 1f688dd1bb371b9fd1c8085eb9c0ad662be81271e07ba11274f5eec279f611e7; selected artifact hash is 5db05f8d87e1f75ca01d8186c5c258fe835ec9c61b422dc4c0d1e8ceba62324c.",
+      "message": "The offline verifier received a bundle and artifact from different release evidence sets.",
+      "observation_digest": "8a7e22f44e72a609ee0caf944514d01a21c1545f24d3b9ccdaa27422de03a3d9",
+      "observation_id": "observation:1:046269d6706c3042",
+      "r16_inheritance": {
+        "classification": "NEW_OPEN",
+        "source_scope_id": null,
+        "source_status": null
+      },
+      "repair_strategy": "Bind both fixture environment variables to the matching R7 bundle and artifact bytes.",
+      "residual_risk": null,
+      "risk_id": "FIR-R16-SIGSTORE-001",
+      "root_cause_id": "RC-R16-SIGSTORE-BUNDLE-ARTIFACT-PAIR",
+      "safe_feedback": "Treat the bundle and signed artifact as one immutable pair.",
+      "schema_version": 1,
+      "severity": "High",
+      "status": "OPEN",
+      "taxonomy_category_id": "OMISSION",
+      "trigger_condition": "Run the offline identity verifier with the R7 bundle and R13 artifact.",
+      "verification_requirement": "Positive verifier execution must pass for the R7 pair, the R13 artifact must fail as a negative control, and all three platform suites must pass."
+    }
+  ],
+  "ledger_digest": "e3bb5041fac8d7201db660bc11b2b61361b0357cc982eaeffeec9110e12ac73f",
+  "new_open_count": 1,
+  "new_open_finding_ids": [
+    "FIR-R16-SIGSTORE-001"
+  ],
+  "observation_checkpoint": {
+    "checkpoint_digest": "80a83b5884bfa731420e774bc0e96cdca2915a92a16f44125572fe6ed6cef227",
+    "head_digest": "8a7e22f44e72a609ee0caf944514d01a21c1545f24d3b9ccdaa27422de03a3d9",
+    "record_count": 1,
+    "redaction_policy_digest": "6f9542307cc632f679f39027efb6aa877bd64398f5e90ed1cc260d2143acb928",
+    "schema_version": 2,
+    "source_run_id": "fir-full-r16-sigstore-r7-pair-20261111-r1"
+  },
+  "observation_journal": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\observations.jsonl",
+  "open_count": 1,
+  "run_id": "fir-full-r16-sigstore-r7-pair-20261111-r1",
+  "schema_version": 1,
+  "scope_id": "fir-full-r16-sigstore-r7-pair-20261111",
+  "screening_ledger": "F:\\Codex\\runs\\fir-full-r16-sigstore-r7-pair-20261111\\R16-SCREENING-LEDGER.json",
+  "screening_ledger_sha256": "80847a73e8b6322238f927f5827c62f99365cb814f5b6d64509aca03904c2f6c",
+  "status": "OPEN"
+}
