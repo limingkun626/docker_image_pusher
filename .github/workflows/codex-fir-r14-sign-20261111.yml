@@ -1,0 +1,38 @@
+name: fir-r14-sigstore
+
+on:
+  push:
+    branches: [codex-fir-r14-sign-20261111]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - uses: sigstore/cosign-installer@756fe2d284c7292c4e9b62c8a28f1e5629c59532
+
+      - name: Sign frozen R14 evidence
+        run: |
+          test -s evidence/fir-r14/sigstore/INDEPENDENT-REVIEW.json
+          test -s evidence/fir-r14/sigstore/POWER-ATTESTATION.json
+          cosign sign-blob --yes \
+            --bundle evidence/fir-r14/sigstore/INDEPENDENT-REVIEW.sigstore.json \
+            evidence/fir-r14/sigstore/INDEPENDENT-REVIEW.json
+          cosign sign-blob --yes \
+            --bundle evidence/fir-r14/sigstore/POWER-ATTESTATION.sigstore.json \
+            evidence/fir-r14/sigstore/POWER-ATTESTATION.json
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: fir-r14-sigstore-evidence
+          path: |
+            evidence/fir-r14/sigstore/INDEPENDENT-REVIEW.json
+            evidence/fir-r14/sigstore/INDEPENDENT-REVIEW.sigstore.json
+            evidence/fir-r14/sigstore/POWER-ATTESTATION.json
+            evidence/fir-r14/sigstore/POWER-ATTESTATION.sigstore.json
+          if-no-files-found: error
