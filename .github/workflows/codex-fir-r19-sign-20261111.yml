@@ -7,7 +7,7 @@ on:
       - evidence/fir-r19/sigstore/**
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 jobs:
@@ -39,3 +39,11 @@ jobs:
             evidence/fir-r19/sigstore/POWER-ATTESTATION.json
             evidence/fir-r19/sigstore/POWER-ATTESTATION.sigstore.json
           if-no-files-found: error
+
+      - name: Commit signatures to branch
+        run: |
+          git config user.name "Codex R19 Sigstore"
+          git config user.email "codex-r19-sigstore@users.noreply.github.com"
+          git add evidence/fir-r19/sigstore
+          git commit -m "Record FIR R19 Sigstore evidence [skip ci]"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

@@ -5,6 +5,7 @@ on:
     branches:
       - codex-fir-r19-macos-qualification-20261111
       - codex-fir-r19-macos-qualification2-20261111
+      - codex-fir-r19-macos-qualification3-20261111
       - codex-fir-r19-macos-formal-20261111
   workflow_dispatch:
     inputs:
@@ -70,6 +71,53 @@ jobs:
         run: |
           printf '#!/usr/bin/env bash\nexec python -m sigstore "$@"\n' > "$RUNNER_TEMP/sigstore-verifier"
           chmod +x "$RUNNER_TEMP/sigstore-verifier"
+
+      - name: Diagnose repair CLI
+        working-directory: evidence/fir-r19/candidate/full-inspection-repair
+        run: |
+          python -B - <<'PY'
+          import json
+          import tempfile
+          from pathlib import Path
+
+          from full_inspection_repair.cli import main
+          from full_inspection_repair.detector_registry import default_taxonomy_coverage
+
+          with tempfile.TemporaryDirectory(prefix="r19-repair-diag-") as raw:
+              root = Path(raw)
+              source = root / "source-skill"
+              source.mkdir()
+              (source / "SKILL.md").write_text(
+                  "---\nname: source-skill\n---\n\n# Demo",
+                  encoding="utf-8",
+              )
+              output = root / "repair-run"
+              candidate = root / "candidate" / "source-skill"
+              taxonomy = root / "taxonomy.json"
+              taxonomy.write_text(
+                  json.dumps(default_taxonomy_coverage("SKILL")),
+                  encoding="utf-8",
+              )
+              result = main([
+                  "repair",
+                  "--target",
+                  str(source),
+                  "--kind",
+                  "SKILL",
+                  "--output",
+                  str(output),
+                  "--candidate",
+                  str(candidate),
+                  "--taxonomy",
+                  str(taxonomy),
+              ])
+              print(f"repair_exit={result}")
+              for path in sorted(output.rglob("*")) if output.exists() else []:
+                  if path.is_file():
+                      print(f"ARTIFACT {path.relative_to(output)}")
+                      if path.stat().st_size <= 65536:
+                          print(path.read_text(encoding="utf-8", errors="replace"))
+          PY
 
       - name: Full macOS tests
         working-directory: evidence/fir-r19/candidate/full-inspection-repair
