@@ -1,0 +1,55 @@
+{
+  "generated_at_utc": "2026-11-12T04:44:18+00:00",
+  "history_anchor": {
+    "key_sha256": "600f0b0691b576a73445a43167d6a99de5d1d24b1ea847b756823c4bbbc8cf99",
+    "path": "F:\\Codex\\runs\\fir-full-r14-darwin-openat-20261111\\authority\\history-anchor.key",
+    "purpose": "release-history-hmac"
+  },
+  "lock_digest": "a6d9a812e335a89d8917a76f8fc22f45b7379bfafc4393f947b7e378c4ed411f",
+  "reviewer_policy": {
+    "canonical_sha256": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+    "issuer": "https://token.actions.githubusercontent.com",
+    "path": "F:\\Codex\\skills-candidates\\fir-full-r22-sigstore-authority-20261112\\full-inspection-repair\\policies\\trust-policy.json",
+    "registry_digest": "fe7c2fa54b17902fe99e9cb8c5805ee0f7caf7aed201055afe42d040de20a3b7",
+    "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+    "reviewer_identity_domain_id": "sigstore:abaa28e5742590a89203105e550752548daad953299b3bc66656bca0d1dd775c",
+    "sha256": "b93f6ad7a4b9d719b4b53f029f731857ffbe8fb1877851cd8236c28ca01407d9",
+    "verification_method": "sigstore-keyless"
+  },
+  "schema_version": 1,
+  "scope_id": "fir-full-r22-sigstore-authority-20261112",
+  "sigstore": {
+    "client_trust_config": {
+      "media_type": "application/vnd.dev.sigstore.clienttrustconfig.v0.1+json",
+      "path": "F:\\Codex\\runs\\fir-full-r22-sigstore-authority-20261112\\authority-r1\\client-trust-config.json",
+      "sha256": "485837be3b70e97410a152c9a0093123cb8a0ee5740a471b1c3b980f45e0a80f"
+    },
+    "signing_config": {
+      "media_type": "application/vnd.dev.sigstore.signingconfig.v0.2+json",
+      "path": "F:\\Codex\\runs\\fir-full-r22-sigstore-authority-20261112\\authority-r1\\signing-config.v0.2.json",
+      "sha256": "9711a6d5375706957a4859af31c5866a4474f81f0544f9f4b76c9c4f4c8a539c"
+    },
+    "trusted_root": {
+      "media_type": "application/vnd.dev.sigstore.trustedroot+json;version=0.1",
+      "path": "F:\\Codex\\runs\\fir-full-r22-sigstore-authority-20261112\\authority-r1\\trusted-root.json",
+      "sha256": "6494e21ea73fa7ee769f85f57d5a3e6a08725eae1e38c755fc3517c9e6bc0b66"
+    },
+    "tuf_provenance": {
+      "files": [
+        {
+          "bytes": 1034,
+          "path": "https%3A%2F%2Ftuf-repo-cdn.sigstore.dev/signing_config.v0.2.json",
+          "sha256": "9711a6d5375706957a4859af31c5866a4474f81f0544f9f4b76c9c4f4c8a539c"
+        },
+        {
+          "bytes": 6787,
+          "path": "https%3A%2F%2Ftuf-repo-cdn.sigstore.dev/trusted_root.json",
+          "sha256": "6494e21ea73fa7ee769f85f57d5a3e6a08725eae1e38c755fc3517c9e6bc0b66"
+        }
+      ],
+      "repository_url": "https://tuf-repo-cdn.sigstore.dev"
+    },
+    "verifier_sha256": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627",
+    "verifier_version": "4.5.1"
+  }
+}

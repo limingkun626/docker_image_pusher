@@ -1,4 +1,0 @@
-interface:
-  display_name: "全量检查修复"
-  short_description: "全量普查、全局影响分析、一次批量修复、全量验证与证据闭环"
-  default_prompt: "Use $full-inspection-repair to produce a bounded stable-local candidate; do not install without explicit authorization."

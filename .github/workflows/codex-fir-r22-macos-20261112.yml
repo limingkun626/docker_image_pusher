@@ -1,0 +1,186 @@
+name: fir-r22-macos
+
+on:
+  push:
+    branches: [codex-fir-r22-evidence-20261112]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  FIR_R22_SCOPE_ID: fir-full-r22-sigstore-authority-20261112
+  FIR_R22_RUN_ID: fir-full-r22-sigstore-authority-20261112-r1
+  FIR_R8_SIGSTORE_BUNDLE: ${{ github.workspace }}/evidence/fir-r22/fixture/INDEPENDENT-REVIEW.sigstore.json
+  FIR_R8_SIGSTORE_ARTIFACT: ${{ github.workspace }}/evidence/fir-r22/fixture/INDEPENDENT-REVIEW.json
+  FIR_R8_SIGSTORE_IDENTITY: https://github.com/limingkun626/docker_image_pusher/.github/workflows/sign.yml@refs/heads/codex-fir-r7-sign-20261110
+  FIR_R8_SIGSTORE_ISSUER: https://token.actions.githubusercontent.com
+  PYTHONDONTWRITEBYTECODE: "1"
+
+jobs:
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -r evidence/fir-r22/candidate/full-inspection-repair/requirements.txt
+          python -m pip install "sigstore==4.5.1"
+
+      - name: Verify R22 candidate identity
+        run: |
+          test "$GITHUB_REF_NAME" = "codex-fir-r22-evidence-20261112"
+          python -B - <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          root = Path("evidence/fir-r22")
+          candidate = root / "candidate" / "full-inspection-repair"
+          sys.path.insert(0, str(candidate / "scripts"))
+          from full_inspection_repair.package import build_package_manifest
+
+          identity = json.loads((root / "CANDIDATE-IDENTITY.json").read_text(encoding="utf-8"))
+          manifest = build_package_manifest(candidate)
+          actual = {
+              "scope_id": identity.get("scope_id"),
+              "run_id": identity.get("run_id"),
+              "candidate_digest": manifest["tree_digest"],
+              "candidate_manifest_digest": manifest["manifest_digest"],
+          }
+          expected = {
+              "scope_id": os.environ["FIR_R22_SCOPE_ID"],
+              "run_id": os.environ["FIR_R22_RUN_ID"],
+              "candidate_digest": identity.get("candidate_digest"),
+              "candidate_manifest_digest": identity.get("candidate_manifest_digest"),
+          }
+          if actual != expected:
+              raise SystemExit(f"R22 identity mismatch: {actual!r} != {expected!r}")
+          print(json.dumps(actual, sort_keys=True))
+          PY
+
+      - name: Prepare Sigstore test verifier
+        run: |
+          printf '#!/usr/bin/env bash\nexec python -m sigstore "$@"\n' > "$RUNNER_TEMP/sigstore-verifier"
+          chmod +x "$RUNNER_TEMP/sigstore-verifier"
+
+      - name: Full macOS tests
+        working-directory: evidence/fir-r22/candidate/full-inspection-repair
+        env:
+          FIR_R8_SIGSTORE_VERIFIER: ${{ runner.temp }}/sigstore-verifier
+        run: |
+          set -o pipefail
+          python -B -m pytest -q -rs -p no:cacheprovider . \
+            --junitxml "$RUNNER_TEMP/macos-junit.xml" \
+            --basetemp "$RUNNER_TEMP/pytest" \
+            2>&1 | tee "$RUNNER_TEMP/macos-pytest.log"
+
+      - name: Product self-check
+        working-directory: evidence/fir-r22/candidate/full-inspection-repair
+        run: |
+          python -B scripts/run_inspection.py check \
+            --target . --kind SKILL --output "$RUNNER_TEMP/self-check" \
+            2>&1 | tee "$RUNNER_TEMP/self-check.log"
+
+      - name: Package and install lifecycle
+        working-directory: evidence/fir-r22/candidate/full-inspection-repair
+        run: |
+          python -B scripts/release_skill.py package \
+            --source . --output "$RUNNER_TEMP/package"
+          python -B ../../tools/make_r22_lifecycle_receipt.py \
+            --candidate . \
+            --manifest "$RUNNER_TEMP/package/package-manifest.json" \
+            --platform macos \
+            --output "$RUNNER_TEMP/macos-lifecycle"
+
+      - name: Preserve evidence
+        if: always()
+        run: |
+          mkdir -p evidence/fir-r22/macos
+          for item in macos-junit.xml macos-pytest.log self-check self-check.log package macos-lifecycle; do
+            if [ -e "$RUNNER_TEMP/$item" ]; then
+              cp -R "$RUNNER_TEMP/$item" evidence/fir-r22/macos/
+            fi
+          done
+          python -B - <<'PY'
+          import hashlib
+          import json
+          import os
+          import platform
+          from datetime import UTC, datetime
+          from pathlib import Path
+          from xml.etree import ElementTree as ET
+
+          cycle = Path("evidence/fir-r22")
+          root = cycle / "macos"
+          identity = json.loads((cycle / "CANDIDATE-IDENTITY.json").read_text(encoding="utf-8"))
+          junit = root / "macos-junit.xml"
+          summary_path = root / "self-check" / "summary.json"
+          receipt = root / "macos-lifecycle" / "macos-install.json"
+          totals = None
+          self_check = None
+          if junit.is_file():
+              tree = ET.parse(junit)
+              suite_root = tree.getroot()
+              suites = [suite_root] if suite_root.tag == "testsuite" else list(suite_root)
+              totals = {
+                  "tests": sum(int(suite.attrib.get("tests", "0")) for suite in suites),
+                  "failures": sum(int(suite.attrib.get("failures", "0")) for suite in suites),
+                  "errors": sum(int(suite.attrib.get("errors", "0")) for suite in suites),
+                  "skipped": sum(int(suite.attrib.get("skipped", "0")) for suite in suites),
+              }
+          if summary_path.is_file():
+              value = json.loads(summary_path.read_text(encoding="utf-8"))
+              self_check = {
+                  "status": value.get("status"),
+                  "open_count": value.get("open_count"),
+                  "blocked_detectors": len(value.get("blocked_detectors") or []),
+              }
+          files = [
+              {
+                  "path": path.relative_to(root).as_posix(),
+                  "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                  "bytes": path.stat().st_size,
+              }
+              for path in sorted(root.rglob("*"))
+              if path.is_file()
+          ]
+          value = {
+              "schema_version": 1,
+              "provider": "github-actions",
+              "scope_id": identity["scope_id"],
+              "run_id": identity["run_id"],
+              "candidate_digest": identity["candidate_digest"],
+              "github_run_id": os.environ.get("GITHUB_RUN_ID"),
+              "github_run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT"),
+              "github_sha": os.environ.get("GITHUB_SHA"),
+              "github_workflow_ref": os.environ.get("GITHUB_WORKFLOW_REF"),
+              "completed_at": datetime.now(UTC).replace(microsecond=0).isoformat(),
+              "junit_sha256": hashlib.sha256(junit.read_bytes()).hexdigest() if junit.is_file() else None,
+              "junit_totals": totals,
+              "self_check": self_check,
+              "install_receipt_sha256": hashlib.sha256(receipt.read_bytes()).hexdigest() if receipt.is_file() else None,
+              "platform": "macos-15",
+              "python": platform.python_version(),
+              "machine": platform.machine(),
+              "files": files,
+          }
+          (root / "MACOS-EVIDENCE.json").write_text(
+              json.dumps(value, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: fir-r22-macos-evidence
+          path: evidence/fir-r22/macos
+          if-no-files-found: error

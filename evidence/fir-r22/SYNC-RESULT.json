@@ -1,0 +1,42 @@
+{
+  "candidate_digest": "1cd9d7247e815ff57a010476efd9ff266c924c0e46d826d5b445cc4064347b6f",
+  "candidate_file_count": 86,
+  "candidate_frozen": false,
+  "candidate_manifest_digest": "f2f303076460f3e188d9d976efa08355bb07072d782d1971a46807f9eb8da52a",
+  "required_candidate_freeze": "evidence/fir-r22/CANDIDATE-FREEZE.json",
+  "required_review_evidence": "evidence/fir-r22/sigstore/CANDIDATE-REVIEW.json",
+  "run_id": "fir-full-r22-sigstore-authority-20261112-r1",
+  "scope_id": "fir-full-r22-sigstore-authority-20261112",
+  "status": "SYNCED",
+  "trust_materials": {
+    "client-trust-config.json": {
+      "bytes": 8846,
+      "media_type": "application/vnd.dev.sigstore.clienttrustconfig.v0.1+json",
+      "sha256": "485837be3b70e97410a152c9a0093123cb8a0ee5740a471b1c3b980f45e0a80f"
+    },
+    "signing-config.v0.2.json": {
+      "bytes": 1034,
+      "media_type": "application/vnd.dev.sigstore.signingconfig.v0.2+json",
+      "sha256": "9711a6d5375706957a4859af31c5866a4474f81f0544f9f4b76c9c4f4c8a539c"
+    },
+    "trusted-root.json": {
+      "bytes": 6787,
+      "media_type": "application/vnd.dev.sigstore.trustedroot+json;version=0.1",
+      "sha256": "6494e21ea73fa7ee769f85f57d5a3e6a08725eae1e38c755fc3517c9e6bc0b66"
+    }
+  },
+  "validation": {
+    "evidence_directories": [
+      "fir-r22"
+    ],
+    "fir_workflows": [
+      "codex-fir-r22-macos-20261112.yml",
+      "codex-fir-r22-review-20261112.yml"
+    ],
+    "json_files_parsed": 16,
+    "jsonl_files_parsed": 0,
+    "run_id": "fir-full-r22-sigstore-authority-20261112-r1",
+    "scope_id": "fir-full-r22-sigstore-authority-20261112",
+    "status": "PASS"
+  }
+}
