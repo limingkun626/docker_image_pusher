@@ -33,7 +33,7 @@
       "codex-fir-r23-macos-20261112.yml",
       "codex-fir-r23-review-20261112.yml"
     ],
-    "json_files_parsed": 16,
+    "json_files_parsed": 17,
     "jsonl_files_parsed": 0,
     "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
     "scope_id": "fir-full-r23-sigstore-authority-20261112",

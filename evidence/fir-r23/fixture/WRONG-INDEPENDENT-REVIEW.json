@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "review_type": "non-producer-independent-strict-review",
+  "reviewer_id": "87605929@qq.com",
+  "reviewer_thread_id": "01a1c480-115d-7ae2-96b6-d42236f9e2e8",
+  "producer_id": "codex-primary",
+  "reviewer_role": "non-producer independent reviewer",
+  "independence": {
+    "producer_reviewer_distinct": true,
+    "basis": "The reviewer is distinct from the declared producer and only read the frozen candidate and evidence before writing the two requested review artifacts and result."
+  },
+  "verdict": "PASS",
+  "status": "PASS",
+  "scope_id": "fir-full-closure-r7-20261110",
+  "run_id": "fir-full-closure-r7-20261110-r1",
+  "candidate_digest": "64615493dd6aa94d6497401fdd22a813f6e9f0816ed7a980e1293d3dc8a85a16",
+  "package_manifest_digest": "cb0db191629339abe251a41c9b2ba001a2c3d17a4d19181023c21ca0e6681cab",
+  "verification_digest": "835ea3a6495d99ed308299297fbef423af166331dd0abd6996ead108d8844218",
+  "ledger_digest": "8d24dde1469a8350c594be62a3fc4ab1bd30ef709c49e826c4f8dc1b47902c53",
+  "evaluator_digest": "88b439dee430d6342b13d25f7d88a670ebf6c35ffafa50c76cb6e477199061e7",
+  "matrix_digest": "835ea3a6495d99ed308299297fbef423af166331dd0abd6996ead108d8844218",
+  "coverage_digest": "5564c2c2d2899610e4bc0408ac6cf3bcdfcb177f6960d338448f09e1aacb644f",
+  "taxonomy_digest": "fe868f8043491437a9400a75c94ef05100caad4993f80418842644c344c38e9f",
+  "open_count": 0,
+  "residual_risks": [],
+  "findings": [
+    {
+      "finding_id": "FIR-S-001",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-002",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-003",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-004",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-005",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-006",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-007",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-008",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-009",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-010",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-011",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "IR-R3-001",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "IR-R3-002",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "IR-R3-003",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-012",
+      "status": "FALSE_POSITIVE_WITH_PROOF"
+    },
+    {
+      "finding_id": "FIR-S-013",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-016",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "IR-R4-001",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-017",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-018",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-019",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "IR-R6-001",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "FIR-S-020",
+      "status": "FIXED"
+    },
+    {
+      "finding_id": "IR-R7-001",
+      "status": "FIXED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "digest-recomputation",
+      "result": "PASS",
+      "values": {
+        "candidate_digest": "64615493dd6aa94d6497401fdd22a813f6e9f0816ed7a980e1293d3dc8a85a16",
+        "package_manifest_digest": "cb0db191629339abe251a41c9b2ba001a2c3d17a4d19181023c21ca0e6681cab",
+        "repair_batch_digest": "4b5869e1b721ff5ff85339fc8ceb180fe2db3a677e988ac33b68d5375bbdbbb5",
+        "ledger_digest": "8d24dde1469a8350c594be62a3fc4ab1bd30ef709c49e826c4f8dc1b47902c53",
+        "root_map_digest": "854217a326bc551374cc0934bc90774d51893efd7cc2ff7b17cf56a97e980739",
+        "matrix_digest": "835ea3a6495d99ed308299297fbef423af166331dd0abd6996ead108d8844218",
+        "coverage_digest": "5564c2c2d2899610e4bc0408ac6cf3bcdfcb177f6960d338448f09e1aacb644f",
+        "gate_probe_digest": "6e73861d47b684167e03ea7ae96f0f2c4a3d88607a888ae5757cf70a370ddbc8",
+        "physical_recovery_digest": "f9c8881d8527bfa890f4a16ae1471e5da0afe5f25b8691c27e276044a3691281",
+        "evaluator_tamper_digest": "88b439dee430d6342b13d25f7d88a670ebf6c35ffafa50c76cb6e477199061e7"
+      }
+    },
+    {
+      "check": "candidate-and-package",
+      "result": "PASS",
+      "file_count": 59,
+      "candidate_file_set_matches_manifest": true,
+      "package_manifest_digest_recomputed": "cb0db191629339abe251a41c9b2ba001a2c3d17a4d19181023c21ca0e6681cab",
+      "package_tree_digest_recomputed": "64615493dd6aa94d6497401fdd22a813f6e9f0816ed7a980e1293d3dc8a85a16",
+      "package_readback": "PASS"
+    },
+    {
+      "check": "repair-batch-scope",
+      "result": "PASS",
+      "changed_paths": [
+        "scripts/full_inspection_repair/risk_gate.py",
+        "tests/unit/test_risk_gate.py"
+      ],
+      "preimage_and_postimage_hashes_match": true,
+      "conflict_count": 0
+    },
+    {
+      "check": "release-gate-disposable-cases",
+      "result": "PASS",
+      "approval_source_sha256": "6ae8a996663d90a2dfc6aeea83c8cf8ce4b3e0e06006b13c4f51bef23fc432ac",
+      "approval_source_hash_matches": true,
+      "cases": [
+        {
+          "case": "approved-macos-exact-frozen-digest",
+          "expected_release_ready": true,
+          "actual_release_ready": true,
+          "result": "PASS"
+        },
+        {
+          "case": "approved-macos-without-proof",
+          "expected_release_ready": false,
+          "actual_release_ready": false,
+          "blocker": "DOMAIN:platform_support.macos_install:NOT_APPLICABLE_WITH_APPROVAL",
+          "result": "PASS"
+        },
+        {
+          "case": "approved-macos-different-well-formed-digest",
+          "expected_release_ready": false,
+          "actual_release_ready": false,
+          "blocker": "DOMAIN:platform_support.macos_install:NOT_APPLICABLE_WITH_APPROVAL",
+          "result": "PASS"
+        },
+        {
+          "case": "identical-id-changed-status",
+          "expected_release_ready": false,
+          "actual_release_ready": false,
+          "blocker": "REVIEW_LEDGER_PROJECTION_DEFECT",
+          "result": "PASS"
+        },
+        {
+          "case": "duplicate-finding-id",
+          "expected_release_ready": false,
+          "actual_release_ready": false,
+          "blocker": "REVIEW_LEDGER_PROJECTION_DEFECT",
+          "result": "PASS"
+        },
+        {
+          "case": "foreign-review-candidate-digest",
+          "expected_release_ready": false,
+          "actual_release_ready": false,
+          "blocker": "REVIEW_CANDIDATE_MISMATCH",
+          "result": "PASS"
+        },
+        {
+          "case": "foreign-matrix-candidate-digest",
+          "expected_release_ready": false,
+          "actual_release_ready": false,
+          "blocker": "MATRIX_CANDIDATE_MISMATCH",
+          "result": "PASS"
+        },
+        {
+          "case": "foreign-review-matrix-digest",
+          "expected_release_ready": false,
+          "actual_release_ready": false,
+          "blocker": "REVIEW_MATRIX_MISMATCH",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "check": "ledger-and-root-closure",
+      "result": "PASS",
+      "finding_count": 24,
+      "closed_count": 24,
+      "open_count": 0,
+      "unverified_count": 0,
+      "residual_risk_count": 0,
+      "root_count": 15,
+      "all_roots_closed": true,
+      "finding_projection_exact": true,
+      "all_evidence_references_resolve": true
+    },
+    {
+      "check": "fresh-census",
+      "result": "PASS",
+      "status": "CHECKED",
+      "file_count": 59,
+      "codepoint_count": 280301,
+      "line_count": 8822,
+      "unit_count": 8822,
+      "punctuation_count": 36987,
+      "uncovered_count": 0,
+      "gap_count": 0,
+      "binary_file_count": 0,
+      "coverage_digest_recomputed": "5564c2c2d2899610e4bc0408ac6cf3bcdfcb177f6960d338448f09e1aacb644f"
+    },
+    {
+      "check": "cross-platform-junit",
+      "result": "PASS",
+      "windows": {
+        "tests": 89,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "skip_reason": "POSIX directory fd contract"
+      },
+      "linux": {
+        "tests": 89,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "check": "package-staging-readback",
+      "result": "PASS",
+      "windows_staging_digest": "64615493dd6aa94d6497401fdd22a813f6e9f0816ed7a980e1293d3dc8a85a16",
+      "windows_rollback_digest": "64615493dd6aa94d6497401fdd22a813f6e9f0816ed7a980e1293d3dc8a85a16",
+      "linux_staging_digest": "64615493dd6aa94d6497401fdd22a813f6e9f0816ed7a980e1293d3dc8a85a16",
+      "all_receipt_digests_valid": true,
+      "all_candidate_bindings_match": true,
+      "all_readback_verified": true
+    },
+    {
+      "check": "evaluator-tamper-controls",
+      "result": "PASS",
+      "case_count": 8,
+      "passed_count": 8,
+      "failed_count": 0,
+      "all_exit_code_2": true,
+      "all_failure_code_EVIDENCE_TAMPER": true,
+      "matrix_digest_recomputed": "88b439dee430d6342b13d25f7d88a670ebf6c35ffafa50c76cb6e477199061e7"
+    },
+    {
+      "check": "identity-preservation",
+      "result": "PASS",
+      "candidate_digest_recomputed": "64615493dd6aa94d6497401fdd22a813f6e9f0816ed7a980e1293d3dc8a85a16",
+      "candidate_unchanged_after_review": true,
+      "installed_1_1_0_digest_recomputed": "58fa4e2f289e44e94c3a054184e6e125c88eeb45f06b2b5cbbd1a095d45c945b",
+      "installed_1_1_0_file_count": 55,
+      "installed_1_1_0_unchanged": true
+    },
+    {
+      "check": "installer-and-physical-recovery-chain",
+      "result": "PASS",
+      "installer_source_sha256": "f4ef7a7edb5092c8f262057d1939e542666359a0b4874d662d18f51a0d4c9fd9",
+      "installer_matches_r4_and_r5": true,
+      "physical_status": "CLOSED",
+      "physical_result_status": "COMPENSATED_MID_SWAP",
+      "journal_record_count": 3,
+      "journal_hash_chain_valid": true,
+      "armed_linkage_valid": true,
+      "recovery_linkage_valid": true,
+      "source_hashes_match": true,
+      "boot_identity_changed": true,
+      "rollback_retained": true,
+      "target_restored": true,
+      "restored_target_digest_recomputed": "d84903815fc59f446417c0365fd066cd9411f923fe97810dec80fed58d0ca2f5"
+    },
+    {
+      "check": "independent-windows-suite-rerun",
+      "result": "PASS",
+      "passed": 88,
+      "skipped": 1,
+      "failed": 0,
+      "candidate_unchanged": true
+    }
+  ],
+  "limitations": [],
+  "unverified_claims": [],
+  "not_run": [],
+  "non_blocking_observations": [],
+  "reviewed_at": "2026-11-10T08:13:05Z",
+  "signature_status": "PENDING_SIGNSTORE_KEYLESS",
+  "post_review_release_gates": [
+    "External Sigstore keyless signature of this PASS review",
+    "Formal atomic activation of the signed candidate",
+    "Post-install smoke, package readback, and append-only release history"
+  ],
+  "review_digest": "e8d300e1f33b03a06d6f2f2542cea405721cff5688a322fd7de60ea58fbb1195"
+}
