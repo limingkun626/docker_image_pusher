@@ -1,9 +1,7 @@
 from __future__ import annotations
 
-import time
 from collections.abc import Callable
-from queue import Empty, Queue
-from threading import Thread
+from threading import Event, Thread
 from typing import Any
 
 from .contracts import ContractError, canonical_digest
@@ -242,19 +240,19 @@ def _raises(call: Callable[[], bool]) -> bool:
 
 
 def _timeout_control() -> bool:
-    result: Queue[bool] = Queue(maxsize=1)
+    started = Event()
+    release = Event()
 
     def delayed() -> None:
-        time.sleep(0.05)
-        result.put(True)
+        started.set()
+        release.wait(5)
 
     worker = Thread(target=delayed, daemon=True)
     worker.start()
-    worker.join(0.005)
-    if worker.is_alive():
-        return True
-    try:
-        result.get_nowait()
-    except Empty:
+    if not started.wait(1):
         return False
-    return False
+    worker.join(0.005)
+    timed_out = worker.is_alive()
+    release.set()
+    worker.join(1)
+    return timed_out and not worker.is_alive()

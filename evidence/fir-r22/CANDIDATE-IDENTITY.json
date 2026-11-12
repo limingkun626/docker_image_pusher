@@ -1,9 +1,9 @@
 {
   "candidate": "F:\\Codex\\skills-candidates\\fir-full-r22-sigstore-authority-20261112\\full-inspection-repair",
-  "candidate_digest": "1cd9d7247e815ff57a010476efd9ff266c924c0e46d826d5b445cc4064347b6f",
+  "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
   "candidate_digest_is_release_authority": false,
   "candidate_file_count": 86,
-  "candidate_manifest_digest": "f2f303076460f3e188d9d976efa08355bb07072d782d1971a46807f9eb8da52a",
+  "candidate_manifest_digest": "600d42e987bbf11afcd7c60ee00dff40b01239698e317bdfe77eaab3fcd022f8",
   "files": [
     {
       "bytes": 51,
@@ -176,9 +176,9 @@
       "sha256": "4c0bd371acc4e039baf2753b7aa034ded528c8ed2f86886ff4525f93536d8fc5"
     },
     {
-      "bytes": 8192,
+      "bytes": 8181,
       "path": "scripts/full_inspection_repair/taxonomy_qualification.py",
-      "sha256": "2591ee21bb77fe5f2a93dc2bd3222b748bdeced13d232ac5203e83cb572d0b1d"
+      "sha256": "045a77d0d3a5100a40498658ed5aab9f4a6000d45ad93e246db922871b7ae8d8"
     },
     {
       "bytes": 6364,
@@ -436,7 +436,7 @@
       "sha256": "34c17c73f86c906607e2b7bd685e5f9c1ac67ae7ffc8be46274abc2e13037704"
     }
   ],
-  "identity_digest": "481bc493e9f674a1143070a4a90c578171d76cdc148d38a5c4f0c067c6194721",
+  "identity_digest": "5c16717e3a33a2264de19d291db73e7c334759cdb607dfd19679be70cd39bdc5",
   "run_id": "fir-full-r22-sigstore-authority-20261112-r1",
   "schema_version": 1,
   "scope_id": "fir-full-r22-sigstore-authority-20261112"

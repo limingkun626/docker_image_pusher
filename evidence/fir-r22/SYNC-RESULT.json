@@ -1,8 +1,8 @@
 {
-  "candidate_digest": "1cd9d7247e815ff57a010476efd9ff266c924c0e46d826d5b445cc4064347b6f",
+  "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
   "candidate_file_count": 86,
   "candidate_frozen": false,
-  "candidate_manifest_digest": "f2f303076460f3e188d9d976efa08355bb07072d782d1971a46807f9eb8da52a",
+  "candidate_manifest_digest": "600d42e987bbf11afcd7c60ee00dff40b01239698e317bdfe77eaab3fcd022f8",
   "required_candidate_freeze": "evidence/fir-r22/CANDIDATE-FREEZE.json",
   "required_review_evidence": "evidence/fir-r22/sigstore/CANDIDATE-REVIEW.json",
   "run_id": "fir-full-r22-sigstore-authority-20261112-r1",
