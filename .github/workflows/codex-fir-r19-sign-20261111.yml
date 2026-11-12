@@ -1,10 +1,14 @@
-name: fir-r19-sigstore
+name: fir-r19-r20-r21-sigstore
 
 on:
   push:
-    branches: [codex-fir-r19-sign-20261111]
+    branches:
+      - codex-fir-r19-sign-20261111
+      - codex-fir-r21-macos-20261112
     paths:
       - evidence/fir-r19/sigstore/**
+      - evidence/fir-r20/sigstore/**
+      - evidence/fir-r21/sigstore/**
 
 permissions:
   contents: write
@@ -19,31 +23,47 @@ jobs:
 
       - uses: sigstore/cosign-installer@756fe2d284c7292c4e9b62c8a28f1e5629c59532
 
-      - name: Sign frozen R19 evidence
+      - name: Sign R19, R20, and R21 evidence files
         run: |
-          test -s evidence/fir-r19/sigstore/INDEPENDENT-REVIEW.json
-          test -s evidence/fir-r19/sigstore/POWER-ATTESTATION.json
-          cosign sign-blob --yes \
-            --bundle evidence/fir-r19/sigstore/INDEPENDENT-REVIEW.sigstore.json \
-            evidence/fir-r19/sigstore/INDEPENDENT-REVIEW.json
-          cosign sign-blob --yes \
-            --bundle evidence/fir-r19/sigstore/POWER-ATTESTATION.sigstore.json \
-            evidence/fir-r19/sigstore/POWER-ATTESTATION.json
+          roots=()
+          for root in evidence/fir-r19/sigstore evidence/fir-r20/sigstore evidence/fir-r21/sigstore; do
+            if test -d "$root"; then
+              roots+=("$root")
+            fi
+          done
+          test "${#roots[@]}" -gt 0
+          count=0
+          while IFS= read -r -d '' receipt; do
+            count=$((count + 1))
+            bundle="${receipt%.json}.sigstore.json"
+            if test ! -s "$bundle"; then
+              cosign sign-blob --yes --bundle "$bundle" "$receipt"
+            fi
+          done < <(
+            find "${roots[@]}" -maxdepth 1 -type f -name '*.json' \
+              ! -name '*.sigstore.json' -print0 | sort -z
+          )
+          test "$count" -gt 0
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
-          name: fir-r19-sigstore-evidence
+          name: fir-r19-r20-r21-sigstore-evidence
           path: |
-            evidence/fir-r19/sigstore/INDEPENDENT-REVIEW.json
-            evidence/fir-r19/sigstore/INDEPENDENT-REVIEW.sigstore.json
-            evidence/fir-r19/sigstore/POWER-ATTESTATION.json
-            evidence/fir-r19/sigstore/POWER-ATTESTATION.sigstore.json
+            evidence/fir-r19/sigstore
+            evidence/fir-r20/sigstore
+            evidence/fir-r21/sigstore
           if-no-files-found: error
 
       - name: Commit signatures to branch
         run: |
-          git config user.name "Codex R19 Sigstore"
-          git config user.email "codex-r19-sigstore@users.noreply.github.com"
-          git add evidence/fir-r19/sigstore
-          git commit -m "Record FIR R19 Sigstore evidence [skip ci]"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          git config user.name "Codex R19 R20 R21 Sigstore"
+          git config user.email "codex-r19-r20-r21-sigstore@users.noreply.github.com"
+          for root in evidence/fir-r19/sigstore evidence/fir-r20/sigstore evidence/fir-r21/sigstore; do
+            if test -d "$root"; then
+              git add "$root"
+            fi
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m "Record FIR R19, R20, and R21 Sigstore evidence [skip ci]"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

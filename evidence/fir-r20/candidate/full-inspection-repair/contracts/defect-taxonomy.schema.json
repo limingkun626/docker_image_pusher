@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Defect Taxonomy Coverage",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "taxonomy_id",
+    "taxonomy_version",
+    "categories",
+    "target_kinds",
+    "evidence_planes",
+    "cells",
+    "coverage_digest"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "taxonomy_id": {
+      "const": "inspection-closure.defect-taxonomy"
+    },
+    "taxonomy_version": { "type": "string", "minLength": 1 },
+    "categories": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "FUNCTIONAL_FAULT",
+          "RISK_EXPOSURE",
+          "LATENT_DEFECT",
+          "VULNERABILITY",
+          "OMISSION",
+          "INCONSISTENCY",
+          "BOUNDARY",
+          "EXCEPTION_PATH",
+          "OTHER_DECLARED"
+        ]
+      }
+    },
+    "target_kinds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": ["SKILL", "PLAN", "ARTICLE", "PROJECT", "OTHER"]
+      }
+    },
+    "evidence_planes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "STATIC",
+          "CONTRACT",
+          "SEMANTIC",
+          "BEHAVIOR",
+          "RUNTIME",
+          "SECURITY",
+          "PERFORMANCE",
+          "LIFECYCLE"
+        ]
+      }
+    },
+    "cells": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "target_kind",
+          "category_id",
+          "evidence_plane",
+          "detector_ids",
+          "oracle_ids",
+          "not_applicable_proof",
+          "status"
+        ],
+        "properties": {
+          "target_kind": {
+            "enum": ["SKILL", "PLAN", "ARTICLE", "PROJECT", "OTHER"]
+          },
+          "category_id": { "type": "string", "minLength": 1 },
+          "evidence_plane": {
+            "enum": [
+              "STATIC",
+              "CONTRACT",
+              "SEMANTIC",
+              "BEHAVIOR",
+              "RUNTIME",
+              "SECURITY",
+              "PERFORMANCE",
+              "LIFECYCLE"
+            ]
+          },
+          "detector_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "oracle_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "not_applicable_proof": { "type": ["string", "null"] },
+          "status": { "enum": ["COVERED", "UNCOVERED", "BLOCKED"] }
+        }
+      }
+    },
+    "coverage_digest": { "$ref": "#/$defs/sha256" }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}
