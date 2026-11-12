@@ -30,8 +30,7 @@
       "fir-r22"
     ],
     "fir_workflows": [
-      "codex-fir-r22-macos-20261112.yml",
-      "codex-fir-r22-review-20261112.yml"
+      "codex-fir-r22-macos-20261112.yml"
     ],
     "json_files_parsed": 16,
     "jsonl_files_parsed": 0,

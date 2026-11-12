@@ -3,6 +3,9 @@ name: fir-r22-macos
 on:
   push:
     branches: [codex-fir-r22-evidence-20261112]
+    paths:
+      - evidence/fir-r22/CANDIDATE-IDENTITY.json
+      - evidence/fir-r22/candidate/**
   workflow_dispatch:
 
 permissions:
