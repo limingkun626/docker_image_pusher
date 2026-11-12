@@ -1009180,13 +1009180,13 @@
             "python_implementation": "CPython",
             "python_version": "3.12.10"
           },
-          "evidence_path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\PHYSICAL-POWER-CARRY-STATUS.json",
-          "evidence_sha256": "9a98d0a23bb2b976109c577791c48ca0ae65c1ced4323bfdd6a8e10eb2fbf587",
+          "evidence_path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\PHYSICAL-POWER-CARRY-STATUS.json",
+          "evidence_sha256": "1b7bf295754655e462e40c696569469566fd836798ad3cd608fcb77e98c4db32",
           "receipt": {
             "carry_status": {
               "byte_identical": true,
               "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
-              "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence",
+              "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence",
               "file_count": 11,
               "matrix_invoked": false,
               "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
@@ -1009198,7 +1009198,7 @@
                 "boot_id": "854ff15960be66c3990de0c0773559f9826ebcb4f98f2f64fc97f9fb2eae1d1f",
                 "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
                 "copy_file_count": 11,
-                "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23",
+                "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1",
                 "evidence_digest": "d6eae755f618447d710c13e6ab5c3a4750eb3787fd12806fc7d505878f835096",
                 "evidence_sha256": "91151f930c6959f378d8637869691fd3d49af5fc749f1da250cc3c890f643a9c",
                 "file_set_and_bytes_identical": true,
@@ -1009207,43 +1009207,43 @@
                 "proofs": {
                   "arm": {
                     "bytes": 809,
-                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\arm\\arm-marker.txt",
+                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\arm\\arm-marker.txt",
                     "relative_path": "arm/arm-marker.txt",
                     "sha256": "b6217a0d532d5bc689cd5ef1d05d77670c8be04d839f194f7d3143758810bc90"
                   },
                   "boot": {
                     "bytes": 282,
-                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\boot\\boot-identity.txt",
+                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\boot\\boot-identity.txt",
                     "relative_path": "boot/boot-identity.txt",
                     "sha256": "12d4fc1838c087d1c4f75b042ae7eb6d5c097c227efa2246f53e0cf2eb73af87"
                   },
                   "cut": {
                     "bytes": 622,
-                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\cut\\kernel-power-41.txt",
+                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\cut\\kernel-power-41.txt",
                     "relative_path": "cut/kernel-power-41.txt",
                     "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
                   },
                   "os_audit": {
                     "bytes": 391,
-                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\os-audit\\usn-queryjournal.txt",
+                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\os-audit\\usn-queryjournal.txt",
                     "relative_path": "os-audit/usn-queryjournal.txt",
                     "sha256": "b64f12c9358b0eccba8f9381b1ac311c036c3f514aec7d756de211489b0d9d57"
                   },
                   "outage_event": {
                     "bytes": 622,
-                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\outage\\unexpected-shutdown-events.txt",
+                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\outage\\unexpected-shutdown-events.txt",
                     "relative_path": "outage/unexpected-shutdown-events.txt",
                     "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
                   },
                   "rollback": {
                     "bytes": 433,
-                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\rollback\\recovery.log",
+                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\rollback\\recovery.log",
                     "relative_path": "rollback/recovery.log",
                     "sha256": "aed008217b16832a16a8a68cd8bd48d1465aff3d99b3b8f4e75a9d00b745b993"
                   },
                   "target": {
                     "bytes": 15163,
-                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\target\\target-manifest.json",
+                    "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\target\\target-manifest.json",
                     "relative_path": "target/target-manifest.json",
                     "sha256": "3291f8ba14168e2510a387953685203e97725c78ba04a8ae422d50c94132d268"
                   }
@@ -1009259,13 +1009259,13 @@
                 "target_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
                 "usn_record_count": 2373
               },
-              "verified_at": "2026-11-12T09:33:38+00:00"
+              "verified_at": "2026-11-12T09:50:12+00:00"
             },
             "verification": {
               "boot_id": "854ff15960be66c3990de0c0773559f9826ebcb4f98f2f64fc97f9fb2eae1d1f",
               "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
               "copy_file_count": 11,
-              "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23",
+              "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1",
               "evidence_digest": "d6eae755f618447d710c13e6ab5c3a4750eb3787fd12806fc7d505878f835096",
               "evidence_sha256": "91151f930c6959f378d8637869691fd3d49af5fc749f1da250cc3c890f643a9c",
               "file_set_and_bytes_identical": true,
@@ -1009274,43 +1009274,43 @@
               "proofs": {
                 "arm": {
                   "bytes": 809,
-                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\arm\\arm-marker.txt",
+                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\arm\\arm-marker.txt",
                   "relative_path": "arm/arm-marker.txt",
                   "sha256": "b6217a0d532d5bc689cd5ef1d05d77670c8be04d839f194f7d3143758810bc90"
                 },
                 "boot": {
                   "bytes": 282,
-                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\boot\\boot-identity.txt",
+                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\boot\\boot-identity.txt",
                   "relative_path": "boot/boot-identity.txt",
                   "sha256": "12d4fc1838c087d1c4f75b042ae7eb6d5c097c227efa2246f53e0cf2eb73af87"
                 },
                 "cut": {
                   "bytes": 622,
-                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\cut\\kernel-power-41.txt",
+                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\cut\\kernel-power-41.txt",
                   "relative_path": "cut/kernel-power-41.txt",
                   "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
                 },
                 "os_audit": {
                   "bytes": 391,
-                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\os-audit\\usn-queryjournal.txt",
+                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\os-audit\\usn-queryjournal.txt",
                   "relative_path": "os-audit/usn-queryjournal.txt",
                   "sha256": "b64f12c9358b0eccba8f9381b1ac311c036c3f514aec7d756de211489b0d9d57"
                 },
                 "outage_event": {
                   "bytes": 622,
-                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\outage\\unexpected-shutdown-events.txt",
+                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\outage\\unexpected-shutdown-events.txt",
                   "relative_path": "outage/unexpected-shutdown-events.txt",
                   "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
                 },
                 "rollback": {
                   "bytes": 433,
-                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\rollback\\recovery.log",
+                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\rollback\\recovery.log",
                   "relative_path": "rollback/recovery.log",
                   "sha256": "aed008217b16832a16a8a68cd8bd48d1465aff3d99b3b8f4e75a9d00b745b993"
                 },
                 "target": {
                   "bytes": 15163,
-                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\target\\target-manifest.json",
+                  "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\target\\target-manifest.json",
                   "relative_path": "target/target-manifest.json",
                   "sha256": "3291f8ba14168e2510a387953685203e97725c78ba04a8ae422d50c94132d268"
                 }
@@ -1009327,9 +1009327,9 @@
               "usn_record_count": 2373
             }
           },
-          "receipt_sha256": "7add2c521f5dd9b793acbb3b5ab220ac7421277965dcfe30f86a7d4f75656a69",
+          "receipt_sha256": "d778383377a191aa43a3f65e731e77735e48bb44687a4cfa53c99f3b8d6176b1",
           "runner": "r22-physical-power-carry-verifier",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         },
         "software_atomicity": {
@@ -1009375,7 +1009375,7 @@
           },
           "receipt_sha256": "834338a224a448998c762d5e7ef9ed70520ae553d7338186a2d9c9bdeae62910",
           "runner": "r22-software-atomicity-qualification",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         }
       },
@@ -1009389,8 +1009389,8 @@
             "python_implementation": "CPython",
             "python_version": "3.12.10"
           },
-          "evidence_path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\generation-r7\\EVALUATOR-TAMPER-RESULT.json",
-          "evidence_sha256": "f05db192c5064a251e86821276bf753c479a1e7556cce7b42a2e3d8ca9b5e13c",
+          "evidence_path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\generation-r8\\EVALUATOR-TAMPER-RESULT.json",
+          "evidence_sha256": "e4a0f428718c49d61076c2f54c4f3e3d1e9266f971af854a6881848a252524ad",
           "receipt": {
             "all_structured": true,
             "case_count": 8,
@@ -1009463,7 +1009463,7 @@
           },
           "receipt_sha256": "e6ef75d8b9cc0f07ee079262c788df4e140f58e7e00d0ababc7b430eb540d878",
           "runner": "r22-structured-blocked-receipts",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         },
         "tamper_input_matrix": {
@@ -1009475,8 +1009475,8 @@
             "python_implementation": "CPython",
             "python_version": "3.12.10"
           },
-          "evidence_path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\generation-r7\\EVALUATOR-TAMPER-RESULT.json",
-          "evidence_sha256": "f05db192c5064a251e86821276bf753c479a1e7556cce7b42a2e3d8ca9b5e13c",
+          "evidence_path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\generation-r8\\EVALUATOR-TAMPER-RESULT.json",
+          "evidence_sha256": "e4a0f428718c49d61076c2f54c4f3e3d1e9266f971af854a6881848a252524ad",
           "receipt": {
             "case_count": 8,
             "cases": [
@@ -1009545,19 +1009545,19 @@
                 "status": "PASS"
               }
             ],
-            "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
+            "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
             "failed_count": 0,
-            "receipt_digest": "46bad56718afa104f8333767415acbe94d5ba33c4b81d69a93b74725bfb39ca4",
+            "receipt_digest": "c27c40ece83da5eab6db90075ce3846869f86c3ceae721adf5788562349aaae5",
             "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
             "schema_version": 1,
             "scope_id": "fir-full-r23-sigstore-authority-20261112",
-            "source_receipt": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\matrix-tmp\\selftest-r10\\MATRIX-SELFTEST.json",
-            "source_receipt_sha256": "74a8152325939cf58e86c6f939f7b2c3f3c0bbe361ce9327753e02cdc5867c5f",
+            "source_receipt": "F:\\Codex\\runs\\fir-full-r19-review-defect-repair-20261111\\matrix-tmp\\selftest-r23-evaluator-r1\\MATRIX-SELFTEST.json",
+            "source_receipt_sha256": "6d60493ddba2915ce8780815cfe3ce0079afb6f8e95d012f1aacb417eff5c345",
             "status": "PASS"
           },
-          "receipt_sha256": "b5d5910285a24aa063cbde8649f9d78c260fef4fe5169af741960d5c90e83516",
+          "receipt_sha256": "a0b7b76f3dbf4fe4875032a9c4036c3b5a1cd139223508253f3c44cbf8b0dbc1",
           "runner": "r22-evaluator-tamper-matrix",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         },
         "verifier_identity_frozen": {
@@ -1009579,7 +1009579,7 @@
           },
           "receipt_sha256": "bd33278584b2447cfd2527137fac2fe8b7c872e723a1292a63dc323483f6c82b",
           "runner": "r22-verifier-identity-freeze",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         }
       },
@@ -1009626,7 +1009626,7 @@
           },
           "receipt_sha256": "53e5f00f06f26822757e7caf6a798f150ead44316c37dcf26ddcdc7e27eeed72",
           "runner": "r22-lifecycle-atomic-activation",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         },
         "post_activation_smoke": {
@@ -1009671,7 +1009671,7 @@
           },
           "receipt_sha256": "d3e90b337663101be1b45d655521a853c3ff1dcbdb439d703cd01bc7c7f2bac9",
           "runner": "r22-lifecycle-post-activation-smoke",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         },
         "readback": {
@@ -1009716,7 +1009716,7 @@
           },
           "receipt_sha256": "b507ee1a1407fb212e906e2fa1b8d8109d214ab06113f027757d6640673353f2",
           "runner": "r22-lifecycle-readback",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         },
         "rollback_retained": {
@@ -1009761,7 +1009761,7 @@
           },
           "receipt_sha256": "688d07833408c1443fa29e816ee40052020663b0a7bf5ee770db1a7be225afcd",
           "runner": "r22-lifecycle-rollback-retained",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         },
         "staging_install": {
@@ -1009806,7 +1009806,7 @@
           },
           "receipt_sha256": "fa702922d4d6c1d5ac5e9c35d6829ec59543470b5b9f683e4e1bdb23d136a7eb",
           "runner": "r22-lifecycle-staging-install",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         }
       },
@@ -1009880,7 +1009880,7 @@
           },
           "receipt_sha256": "70dff8f5d84270c87619674423242c011b76be342a0e7ac4dedfd3b881f149cb",
           "runner": "r22-lifecycle-linux",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         },
         "macos_install": {
@@ -1009952,7 +1009952,7 @@
           },
           "receipt_sha256": "dcb0013ea497906bd110741e378cee7816a6ac760c72f6becbd219b66b560018",
           "runner": "r22-lifecycle-macos",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         },
         "windows_install": {
@@ -1010024,7 +1010024,7 @@
           },
           "receipt_sha256": "6de119d2ce086dbb20631b9e5e64791d769c1a41a82a1d4bfb30717ffa3e3624",
           "runner": "r22-lifecycle-windows",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         }
       },
@@ -1010052,7 +1010052,7 @@
           },
           "receipt_sha256": "2faa86cf4a1ab3c2bda1634d8d87b420fd5d260dda6d470e1641871a19be390d",
           "runner": "r22-signing-authority-preflight",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         },
         "external_trust_root": {
@@ -1010077,7 +1010077,7 @@
           },
           "receipt_sha256": "44fd4c970bd6f06497337e9c1c5629ad42cb40de7cc9bfb4550f9bc800c2fb3a",
           "runner": "r22-trust-root-verifier",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         },
         "non_producer_review": {
@@ -1010089,14 +1010089,14 @@
             "python_implementation": "CPython",
             "python_version": "3.12.10"
           },
-          "evidence_path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\signing-r1\\PRE-MATRIX-REVIEW-AUDIT.json",
-          "evidence_sha256": "b4503d68350f95a47c9d4b375849e570ef68535ccbe5ee80c04aca38c5443950",
+          "evidence_path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\signing-r2\\PRE-MATRIX-REVIEW-AUDIT.json",
+          "evidence_sha256": "bcda4b53ffff5da73c7651bfb22bde73722e040c7181c3a336832b8f9b13c037",
           "receipt": {
             "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
             "coverage_digest": "0e6b7c1d9409610e594322be70bf1426758d16201dd2751a2e91992fbb5701ad",
-            "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
+            "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
             "finding_count": 14,
-            "ledger_digest": "5057edb965c63d5d3aaf1ace2252252d615cbe6c9038af564b695e2db14c2328",
+            "ledger_digest": "a8751afaa9fbbb586a3aabc4e4f4fde46c9e28dfb3eef7199f5f69eaeef01fcc",
             "open_count": 0,
             "platform_test_counts": {
               "linux": {
@@ -1010121,24 +1010121,24 @@
             "producer": "fir-full-r23-sigstore-authority-20261112-producer",
             "producer_reviewer_independent": true,
             "residual_count": 0,
-            "reviewed_at": "2026-11-12T09:33:38+00:00",
+            "reviewed_at": "2026-11-12T09:50:12+00:00",
             "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
             "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
             "schema_version": 1,
-            "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+            "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
             "scope_id": "fir-full-r23-sigstore-authority-20261112",
             "status": "PASS",
             "tamper_cases_structured": 8,
             "taxonomy_qualified_cells": 72
           },
-          "receipt_sha256": "2ac570a1103e4e5e91cb00e40df91453804ed4e1b4b80020b8837c2240d43521",
+          "receipt_sha256": "58d1e71486391eb8501fc5deb9a9592d2c9d2b92cb0fb4f37fe377500a7e44ba",
           "runner": "r22-independent-prereview-audit",
-          "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+          "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
           "status": "VERIFIED"
         }
       }
     },
-    "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
+    "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
     "findings": [
       {
         "affected_refs": [
@@ -1010147,7 +1010147,7 @@
           "prepare_r22_scope.py",
           "r22_identity.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-01-reviewer-identity-domain-drift",
         "evidence_refs": [
@@ -1010178,7 +1010178,7 @@
           "build_r22_final_artifacts.py",
           "run_full_matrix_r22.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-02-trust-material-role-confusion",
         "evidence_refs": [
@@ -1010209,7 +1010209,7 @@
           "matrix_selftest_r22.py",
           "run_full_matrix_r22.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-03-global-cli-option-after-subcommand",
         "evidence_refs": [
@@ -1010240,7 +1010240,7 @@
           "power_probe_r22.py",
           "run_full_matrix_r22.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-04-cross-scope-power-evidence-resigning",
         "evidence_refs": [
@@ -1010273,7 +1010273,7 @@
           "matrix_selftest_r22.py",
           "run_full_matrix_r22.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-05-release-history-lifecycle-contract",
         "evidence_refs": [
@@ -1010305,7 +1010305,7 @@
           "builder-tests/test_r22_artifact_builder.py",
           "power_probe_r22.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-06-power-tooling-nested-path-rejection",
         "evidence_refs": [
@@ -1010335,7 +1010335,7 @@
         "affected_refs": [
           "power_probe_r22.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-14-power-pause-timeout",
         "evidence_refs": [
@@ -1010365,7 +1010365,7 @@
         "affected_refs": [
           "power_probe_r22.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-13-power-probe-r23-defaults-stale",
         "evidence_refs": [
@@ -1010399,7 +1010399,7 @@
           "r22_finalize_prereview.py",
           "r22_publish_sign_evidence.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-12-prematrix-signing-pipeline-missing",
         "evidence_refs": [
@@ -1010430,7 +1010430,7 @@
           "run_linux_lifecycle_r23.sh",
           "run_windows_lifecycle_r23.ps1"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-11-native-lifecycle-automation-missing",
         "evidence_refs": [
@@ -1010460,7 +1010460,7 @@
         "affected_refs": [
           "build_r22_final_artifacts.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-10-r23-path-defaults-stale",
         "evidence_refs": [
@@ -1010491,7 +1010491,7 @@
           "github_api_push_r22.py",
           "github_runs_r22.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-09-github-empty-response-parsing",
         "evidence_refs": [
@@ -1010522,7 +1010522,7 @@
           "R23-MACOS-WORKFLOW.yml",
           "sync_r22_github.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-08-published-lifecycle-tool-name-mismatch",
         "evidence_refs": [
@@ -1010555,7 +1010555,7 @@
           "r22_negative_mutation.py",
           "sync_r22_github.py"
         ],
-        "closed_at": "2026-11-12T08:49:50Z",
+        "closed_at": "2026-11-12T09:49:54Z",
         "closed_by": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "defect_class_id": "bc-07-sigstore-fixture-path-mismatch",
         "evidence_refs": [
@@ -1010584,7 +1010584,7 @@
     ],
     "formal_matrix_pending": true,
     "history_anchor_key_sha256": "600f0b0691b576a73445a43167d6a99de5d1d24b1ea847b756823c4bbbc8cf99",
-    "ledger_digest": "5057edb965c63d5d3aaf1ace2252252d615cbe6c9038af564b695e2db14c2328",
+    "ledger_digest": "a8751afaa9fbbb586a3aabc4e4f4fde46c9e28dfb3eef7199f5f69eaeef01fcc",
     "limitations": [],
     "matrix": {
       "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
@@ -1010621,13 +1010621,13 @@
             "python_version": "3.12.10"
           },
           "receipt": {
-            "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
-            "freeze_digest": "22a31c6577b491528fe406cc178dfc0dbcc919981efb10f3f8c543ab0fac5b8c",
-            "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+            "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
+            "freeze_digest": "df191fcec1db3e73f5796d67fdca1e171abce7d5fc09a212f424f02a0d00978f",
+            "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
             "tooling_manifest_digest": "52d519739d185488f913b07f10401c21fdb936a5a3a46d7f906b8247668fd839",
             "verification_digest": "507913010abfdaad165873f78c58987b5fdd3f866e1cc237f29b3d91b7161d77"
           },
-          "receipt_sha256": "8fb88d19fa4363537917deb6c4bfcea7f74478e8d64c177c09ae547ef7fa8659",
+          "receipt_sha256": "112020d75abc8d3e549334108b3974b98288a7e208105fb1db7044508c94e6f0",
           "runner": "r22-pre-matrix-qualification:freeze-binding",
           "status": "PASS"
         },
@@ -1010786,7 +1010786,7 @@
             "boot_id": "854ff15960be66c3990de0c0773559f9826ebcb4f98f2f64fc97f9fb2eae1d1f",
             "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
             "copy_file_count": 11,
-            "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23",
+            "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1",
             "evidence_digest": "d6eae755f618447d710c13e6ab5c3a4750eb3787fd12806fc7d505878f835096",
             "evidence_sha256": "91151f930c6959f378d8637869691fd3d49af5fc749f1da250cc3c890f643a9c",
             "file_set_and_bytes_identical": true,
@@ -1010795,43 +1010795,43 @@
             "proofs": {
               "arm": {
                 "bytes": 809,
-                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\arm\\arm-marker.txt",
+                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\arm\\arm-marker.txt",
                 "relative_path": "arm/arm-marker.txt",
                 "sha256": "b6217a0d532d5bc689cd5ef1d05d77670c8be04d839f194f7d3143758810bc90"
               },
               "boot": {
                 "bytes": 282,
-                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\boot\\boot-identity.txt",
+                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\boot\\boot-identity.txt",
                 "relative_path": "boot/boot-identity.txt",
                 "sha256": "12d4fc1838c087d1c4f75b042ae7eb6d5c097c227efa2246f53e0cf2eb73af87"
               },
               "cut": {
                 "bytes": 622,
-                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\cut\\kernel-power-41.txt",
+                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\cut\\kernel-power-41.txt",
                 "relative_path": "cut/kernel-power-41.txt",
                 "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
               },
               "os_audit": {
                 "bytes": 391,
-                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\os-audit\\usn-queryjournal.txt",
+                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\os-audit\\usn-queryjournal.txt",
                 "relative_path": "os-audit/usn-queryjournal.txt",
                 "sha256": "b64f12c9358b0eccba8f9381b1ac311c036c3f514aec7d756de211489b0d9d57"
               },
               "outage_event": {
                 "bytes": 622,
-                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\outage\\unexpected-shutdown-events.txt",
+                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\outage\\unexpected-shutdown-events.txt",
                 "relative_path": "outage/unexpected-shutdown-events.txt",
                 "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
               },
               "rollback": {
                 "bytes": 433,
-                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\rollback\\recovery.log",
+                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\rollback\\recovery.log",
                 "relative_path": "rollback/recovery.log",
                 "sha256": "aed008217b16832a16a8a68cd8bd48d1465aff3d99b3b8f4e75a9d00b745b993"
               },
               "target": {
                 "bytes": 15163,
-                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\target\\target-manifest.json",
+                "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\target\\target-manifest.json",
                 "relative_path": "target/target-manifest.json",
                 "sha256": "3291f8ba14168e2510a387953685203e97725c78ba04a8ae422d50c94132d268"
               }
@@ -1010847,7 +1010847,7 @@
             "target_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
             "usn_record_count": 2373
           },
-          "receipt_sha256": "b4390071f2d66790cf14d2845e23ecbd674a483594e17be2e15308e3da98b0dc",
+          "receipt_sha256": "ce81386d67f032559aba1154122d8dc4a918a62f95862671a7fd8b29385e1a1b",
           "runner": "r22-pre-matrix-qualification:physical-power-carry",
           "status": "PASS"
         },
@@ -1010930,17 +1010930,17 @@
                 "status": "PASS"
               }
             ],
-            "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
+            "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
             "failed_count": 0,
-            "receipt_digest": "46bad56718afa104f8333767415acbe94d5ba33c4b81d69a93b74725bfb39ca4",
+            "receipt_digest": "c27c40ece83da5eab6db90075ce3846869f86c3ceae721adf5788562349aaae5",
             "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
             "schema_version": 1,
             "scope_id": "fir-full-r23-sigstore-authority-20261112",
-            "source_receipt": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\matrix-tmp\\selftest-r10\\MATRIX-SELFTEST.json",
-            "source_receipt_sha256": "74a8152325939cf58e86c6f939f7b2c3f3c0bbe361ce9327753e02cdc5867c5f",
+            "source_receipt": "F:\\Codex\\runs\\fir-full-r19-review-defect-repair-20261111\\matrix-tmp\\selftest-r23-evaluator-r1\\MATRIX-SELFTEST.json",
+            "source_receipt_sha256": "6d60493ddba2915ce8780815cfe3ce0079afb6f8e95d012f1aacb417eff5c345",
             "status": "PASS"
           },
-          "receipt_sha256": "b5d5910285a24aa063cbde8649f9d78c260fef4fe5169af741960d5c90e83516",
+          "receipt_sha256": "a0b7b76f3dbf4fe4875032a9c4036c3b5a1cd139223508253f3c44cbf8b0dbc1",
           "runner": "r22-pre-matrix-qualification:evaluator-tamper",
           "status": "PASS"
         },
@@ -1010977,25 +1010977,25 @@
             "python_version": "3.12.10"
           },
           "receipt": {
-            "batch_digest": "1b67f409dc403b691ce4c7471cfbee93fe09c734bc09aab649acaa21845d0137",
+            "batch_digest": "854758172b9dd2e248d9d1721d8a844e932250c3c0b16df601a6240933cfe2c3",
             "finding_count": 14,
-            "issue_set_digest": "5057edb965c63d5d3aaf1ace2252252d615cbe6c9038af564b695e2db14c2328",
+            "issue_set_digest": "a8751afaa9fbbb586a3aabc4e4f4fde46c9e28dfb3eef7199f5f69eaeef01fcc",
             "open_count": 0,
             "residual_count": 0,
-            "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb"
+            "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9"
           },
-          "receipt_sha256": "43f616f635826ca8771fa609a42a41db692ff4cd9c1bb425d3304e4aea51209f",
+          "receipt_sha256": "2d2ec51a8bff5214ccdc5854152f3a7dba37be50f2162a16057db54b7c6ef7fb",
           "runner": "r22-pre-matrix-qualification:scope-issue-batch",
           "status": "PASS"
         }
       ],
       "coverage_digest": "0e6b7c1d9409610e594322be70bf1426758d16201dd2751a2e91992fbb5701ad",
-      "domains_digest": "966937b1867effcd2d62c4e7045876f9667b050276a02d4966eb491c4baeda3b",
-      "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
+      "domains_digest": "97a5c43d2c13160b738f9481fab7ef2354b983c913e5e234a46cc5576b823f43",
+      "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
       "failed_count": 0,
       "failures": [],
       "formal_matrix": false,
-      "matrix_digest": "52a199ba977472bff22a6c8cee5f116812b796b3e58b891dd63787af7c9b3009",
+      "matrix_digest": "87a14a574f259a4adf0abd819118b2e0d14688e7c3acf3ee6c65dcf0e1d5cc5d",
       "matrix_kind": "PRE_MATRIX_QUALIFICATION_NOT_FORMAL",
       "release_ready": false,
       "requested_cases": [
@@ -1011012,7 +1011012,7 @@
       ],
       "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
       "schema_version": 1,
-      "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+      "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
       "scope_id": "fir-full-r23-sigstore-authority-20261112",
       "skipped": [],
       "status": "PASS",
@@ -1011024,13 +1011024,13 @@
     "producer": "fir-full-r23-sigstore-authority-20261112-producer",
     "residual_risks": [],
     "review_kind": "PRE_MATRIX_AUTHORIZATION",
-    "reviewed_at": "2026-11-12T09:33:38+00:00",
+    "reviewed_at": "2026-11-12T09:50:12+00:00",
     "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
-    "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+    "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
     "scope_id": "fir-full-r23-sigstore-authority-20261112",
     "trust_anchor_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
     "unverified_claims": [],
     "verification_digest": "507913010abfdaad165873f78c58987b5fdd3f866e1cc237f29b3d91b7161d77"
   },
-  "subject_digest": "c5b287b727391c05897131a04f81d8283f91323871be8cbe2f671f2cfe68ceb6"
+  "subject_digest": "ffc07e03417dd88ba4cf74323adbe37f1cc1f0b07a9d154001982c166271f6f8"
 }

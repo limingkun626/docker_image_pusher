@@ -1,7 +1,7 @@
 {
   "byte_identical": true,
   "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
-  "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence",
+  "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence",
   "file_count": 11,
   "matrix_invoked": false,
   "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
@@ -13,7 +13,7 @@
     "boot_id": "854ff15960be66c3990de0c0773559f9826ebcb4f98f2f64fc97f9fb2eae1d1f",
     "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
     "copy_file_count": 11,
-    "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23",
+    "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1",
     "evidence_digest": "d6eae755f618447d710c13e6ab5c3a4750eb3787fd12806fc7d505878f835096",
     "evidence_sha256": "91151f930c6959f378d8637869691fd3d49af5fc749f1da250cc3c890f643a9c",
     "file_set_and_bytes_identical": true,
@@ -22,43 +22,43 @@
     "proofs": {
       "arm": {
         "bytes": 809,
-        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\arm\\arm-marker.txt",
+        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\arm\\arm-marker.txt",
         "relative_path": "arm/arm-marker.txt",
         "sha256": "b6217a0d532d5bc689cd5ef1d05d77670c8be04d839f194f7d3143758810bc90"
       },
       "boot": {
         "bytes": 282,
-        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\boot\\boot-identity.txt",
+        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\boot\\boot-identity.txt",
         "relative_path": "boot/boot-identity.txt",
         "sha256": "12d4fc1838c087d1c4f75b042ae7eb6d5c097c227efa2246f53e0cf2eb73af87"
       },
       "cut": {
         "bytes": 622,
-        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\cut\\kernel-power-41.txt",
+        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\cut\\kernel-power-41.txt",
         "relative_path": "cut/kernel-power-41.txt",
         "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
       },
       "os_audit": {
         "bytes": 391,
-        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\os-audit\\usn-queryjournal.txt",
+        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\os-audit\\usn-queryjournal.txt",
         "relative_path": "os-audit/usn-queryjournal.txt",
         "sha256": "b64f12c9358b0eccba8f9381b1ac311c036c3f514aec7d756de211489b0d9d57"
       },
       "outage_event": {
         "bytes": 622,
-        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\outage\\unexpected-shutdown-events.txt",
+        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\outage\\unexpected-shutdown-events.txt",
         "relative_path": "outage/unexpected-shutdown-events.txt",
         "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
       },
       "rollback": {
         "bytes": 433,
-        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\rollback\\recovery.log",
+        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\rollback\\recovery.log",
         "relative_path": "rollback/recovery.log",
         "sha256": "aed008217b16832a16a8a68cd8bd48d1465aff3d99b3b8f4e75a9d00b745b993"
       },
       "target": {
         "bytes": 15163,
-        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\target\\target-manifest.json",
+        "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\target\\target-manifest.json",
         "relative_path": "target/target-manifest.json",
         "sha256": "3291f8ba14168e2510a387953685203e97725c78ba04a8ae422d50c94132d268"
       }
@@ -74,5 +74,5 @@
     "target_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
     "usn_record_count": 2373
   },
-  "verified_at": "2026-11-12T09:33:38+00:00"
+  "verified_at": "2026-11-12T09:50:12+00:00"
 }

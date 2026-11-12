@@ -33,13 +33,13 @@
         "python_version": "3.12.10"
       },
       "receipt": {
-        "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
-        "freeze_digest": "22a31c6577b491528fe406cc178dfc0dbcc919981efb10f3f8c543ab0fac5b8c",
-        "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+        "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
+        "freeze_digest": "df191fcec1db3e73f5796d67fdca1e171abce7d5fc09a212f424f02a0d00978f",
+        "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
         "tooling_manifest_digest": "52d519739d185488f913b07f10401c21fdb936a5a3a46d7f906b8247668fd839",
         "verification_digest": "507913010abfdaad165873f78c58987b5fdd3f866e1cc237f29b3d91b7161d77"
       },
-      "receipt_sha256": "8fb88d19fa4363537917deb6c4bfcea7f74478e8d64c177c09ae547ef7fa8659",
+      "receipt_sha256": "112020d75abc8d3e549334108b3974b98288a7e208105fb1db7044508c94e6f0",
       "runner": "r22-pre-matrix-qualification:freeze-binding",
       "status": "PASS"
     },
@@ -198,7 +198,7 @@
         "boot_id": "854ff15960be66c3990de0c0773559f9826ebcb4f98f2f64fc97f9fb2eae1d1f",
         "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "copy_file_count": 11,
-        "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23",
+        "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1",
         "evidence_digest": "d6eae755f618447d710c13e6ab5c3a4750eb3787fd12806fc7d505878f835096",
         "evidence_sha256": "91151f930c6959f378d8637869691fd3d49af5fc749f1da250cc3c890f643a9c",
         "file_set_and_bytes_identical": true,
@@ -207,43 +207,43 @@
         "proofs": {
           "arm": {
             "bytes": 809,
-            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\arm\\arm-marker.txt",
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\arm\\arm-marker.txt",
             "relative_path": "arm/arm-marker.txt",
             "sha256": "b6217a0d532d5bc689cd5ef1d05d77670c8be04d839f194f7d3143758810bc90"
           },
           "boot": {
             "bytes": 282,
-            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\boot\\boot-identity.txt",
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\boot\\boot-identity.txt",
             "relative_path": "boot/boot-identity.txt",
             "sha256": "12d4fc1838c087d1c4f75b042ae7eb6d5c097c227efa2246f53e0cf2eb73af87"
           },
           "cut": {
             "bytes": 622,
-            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\cut\\kernel-power-41.txt",
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\cut\\kernel-power-41.txt",
             "relative_path": "cut/kernel-power-41.txt",
             "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
           },
           "os_audit": {
             "bytes": 391,
-            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\os-audit\\usn-queryjournal.txt",
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\os-audit\\usn-queryjournal.txt",
             "relative_path": "os-audit/usn-queryjournal.txt",
             "sha256": "b64f12c9358b0eccba8f9381b1ac311c036c3f514aec7d756de211489b0d9d57"
           },
           "outage_event": {
             "bytes": 622,
-            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\outage\\unexpected-shutdown-events.txt",
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\outage\\unexpected-shutdown-events.txt",
             "relative_path": "outage/unexpected-shutdown-events.txt",
             "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
           },
           "rollback": {
             "bytes": 433,
-            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\rollback\\recovery.log",
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\rollback\\recovery.log",
             "relative_path": "rollback/recovery.log",
             "sha256": "aed008217b16832a16a8a68cd8bd48d1465aff3d99b3b8f4e75a9d00b745b993"
           },
           "target": {
             "bytes": 15163,
-            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\target\\target-manifest.json",
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23-carry-r1\\evidence\\target\\target-manifest.json",
             "relative_path": "target/target-manifest.json",
             "sha256": "3291f8ba14168e2510a387953685203e97725c78ba04a8ae422d50c94132d268"
           }
@@ -259,7 +259,7 @@
         "target_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
         "usn_record_count": 2373
       },
-      "receipt_sha256": "b4390071f2d66790cf14d2845e23ecbd674a483594e17be2e15308e3da98b0dc",
+      "receipt_sha256": "ce81386d67f032559aba1154122d8dc4a918a62f95862671a7fd8b29385e1a1b",
       "runner": "r22-pre-matrix-qualification:physical-power-carry",
       "status": "PASS"
     },
@@ -342,17 +342,17 @@
             "status": "PASS"
           }
         ],
-        "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
+        "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
         "failed_count": 0,
-        "receipt_digest": "46bad56718afa104f8333767415acbe94d5ba33c4b81d69a93b74725bfb39ca4",
+        "receipt_digest": "c27c40ece83da5eab6db90075ce3846869f86c3ceae721adf5788562349aaae5",
         "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
         "schema_version": 1,
         "scope_id": "fir-full-r23-sigstore-authority-20261112",
-        "source_receipt": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\matrix-tmp\\selftest-r10\\MATRIX-SELFTEST.json",
-        "source_receipt_sha256": "74a8152325939cf58e86c6f939f7b2c3f3c0bbe361ce9327753e02cdc5867c5f",
+        "source_receipt": "F:\\Codex\\runs\\fir-full-r19-review-defect-repair-20261111\\matrix-tmp\\selftest-r23-evaluator-r1\\MATRIX-SELFTEST.json",
+        "source_receipt_sha256": "6d60493ddba2915ce8780815cfe3ce0079afb6f8e95d012f1aacb417eff5c345",
         "status": "PASS"
       },
-      "receipt_sha256": "b5d5910285a24aa063cbde8649f9d78c260fef4fe5169af741960d5c90e83516",
+      "receipt_sha256": "a0b7b76f3dbf4fe4875032a9c4036c3b5a1cd139223508253f3c44cbf8b0dbc1",
       "runner": "r22-pre-matrix-qualification:evaluator-tamper",
       "status": "PASS"
     },
@@ -389,25 +389,25 @@
         "python_version": "3.12.10"
       },
       "receipt": {
-        "batch_digest": "1b67f409dc403b691ce4c7471cfbee93fe09c734bc09aab649acaa21845d0137",
+        "batch_digest": "854758172b9dd2e248d9d1721d8a844e932250c3c0b16df601a6240933cfe2c3",
         "finding_count": 14,
-        "issue_set_digest": "5057edb965c63d5d3aaf1ace2252252d615cbe6c9038af564b695e2db14c2328",
+        "issue_set_digest": "a8751afaa9fbbb586a3aabc4e4f4fde46c9e28dfb3eef7199f5f69eaeef01fcc",
         "open_count": 0,
         "residual_count": 0,
-        "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb"
+        "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9"
       },
-      "receipt_sha256": "43f616f635826ca8771fa609a42a41db692ff4cd9c1bb425d3304e4aea51209f",
+      "receipt_sha256": "2d2ec51a8bff5214ccdc5854152f3a7dba37be50f2162a16057db54b7c6ef7fb",
       "runner": "r22-pre-matrix-qualification:scope-issue-batch",
       "status": "PASS"
     }
   ],
   "coverage_digest": "0e6b7c1d9409610e594322be70bf1426758d16201dd2751a2e91992fbb5701ad",
-  "domains_digest": "966937b1867effcd2d62c4e7045876f9667b050276a02d4966eb491c4baeda3b",
-  "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
+  "domains_digest": "97a5c43d2c13160b738f9481fab7ef2354b983c913e5e234a46cc5576b823f43",
+  "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
   "failed_count": 0,
   "failures": [],
   "formal_matrix": false,
-  "matrix_digest": "52a199ba977472bff22a6c8cee5f116812b796b3e58b891dd63787af7c9b3009",
+  "matrix_digest": "87a14a574f259a4adf0abd819118b2e0d14688e7c3acf3ee6c65dcf0e1d5cc5d",
   "matrix_kind": "PRE_MATRIX_QUALIFICATION_NOT_FORMAL",
   "release_ready": false,
   "requested_cases": [
@@ -424,7 +424,7 @@
   ],
   "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
   "schema_version": 1,
-  "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+  "scope_digest": "71c539de8eabc23c2e2e08abd8b236481fa4e095e0f6178b4bda9086fb4ae6a9",
   "scope_id": "fir-full-r23-sigstore-authority-20261112",
   "skipped": [],
   "status": "PASS",
