@@ -1,21 +1,22 @@
-name: fir-r22-macos
+name: fir-r23-macos
 
 on:
   push:
-    branches: [codex-fir-r22-evidence-20261112]
+    branches: [codex-fir-r23-evidence-20261112]
     paths:
-      - evidence/fir-r22/CANDIDATE-IDENTITY.json
-      - evidence/fir-r22/candidate/**
+      - evidence/fir-r23/CANDIDATE-IDENTITY.json
+      - evidence/fir-r23/candidate/**
   workflow_dispatch:
 
 permissions:
   contents: read
 
 env:
-  FIR_R22_SCOPE_ID: fir-full-r22-sigstore-authority-20261112
-  FIR_R22_RUN_ID: fir-full-r22-sigstore-authority-20261112-r1
-  FIR_R8_SIGSTORE_BUNDLE: ${{ github.workspace }}/evidence/fir-r22/fixture/INDEPENDENT-REVIEW.sigstore.json
-  FIR_R8_SIGSTORE_ARTIFACT: ${{ github.workspace }}/evidence/fir-r22/fixture/INDEPENDENT-REVIEW.json
+  FIR_R23_SCOPE_ID: fir-full-r23-power-tooling-20261112
+  FIR_R23_RUN_ID: fir-full-r23-power-tooling-20261112-r1
+  FIR_R8_SIGSTORE_BUNDLE: ${{ github.workspace }}/evidence/fir-r23/fixture/INDEPENDENT-REVIEW.sigstore.json
+  FIR_R8_SIGSTORE_ARTIFACT: ${{ github.workspace }}/evidence/fir-r23/fixture/INDEPENDENT-REVIEW.json
+  FIR_R8_SIGSTORE_WRONG_ARTIFACT: ${{ github.workspace }}/evidence/fir-r23/fixture/WRONG-INDEPENDENT-REVIEW.json
   FIR_R8_SIGSTORE_IDENTITY: https://github.com/limingkun626/docker_image_pusher/.github/workflows/sign.yml@refs/heads/codex-fir-r7-sign-20261110
   FIR_R8_SIGSTORE_ISSUER: https://token.actions.githubusercontent.com
   PYTHONDONTWRITEBYTECODE: "1"
@@ -33,19 +34,19 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install -r evidence/fir-r22/candidate/full-inspection-repair/requirements.txt
+          python -m pip install -r evidence/fir-r23/candidate/full-inspection-repair/requirements.txt
           python -m pip install "sigstore==4.5.1"
 
-      - name: Verify R22 candidate identity
+      - name: Verify R23 candidate identity
         run: |
-          test "$GITHUB_REF_NAME" = "codex-fir-r22-evidence-20261112"
+          test "$GITHUB_REF_NAME" = "codex-fir-r23-evidence-20261112"
           python -B - <<'PY'
           import json
           import os
           import sys
           from pathlib import Path
 
-          root = Path("evidence/fir-r22")
+          root = Path("evidence/fir-r23")
           candidate = root / "candidate" / "full-inspection-repair"
           sys.path.insert(0, str(candidate / "scripts"))
           from full_inspection_repair.package import build_package_manifest
@@ -59,13 +60,13 @@ jobs:
               "candidate_manifest_digest": manifest["manifest_digest"],
           }
           expected = {
-              "scope_id": os.environ["FIR_R22_SCOPE_ID"],
-              "run_id": os.environ["FIR_R22_RUN_ID"],
+              "scope_id": os.environ["FIR_R23_SCOPE_ID"],
+              "run_id": os.environ["FIR_R23_RUN_ID"],
               "candidate_digest": identity.get("candidate_digest"),
               "candidate_manifest_digest": identity.get("candidate_manifest_digest"),
           }
           if actual != expected:
-              raise SystemExit(f"R22 identity mismatch: {actual!r} != {expected!r}")
+              raise SystemExit(f"R23 identity mismatch: {actual!r} != {expected!r}")
           print(json.dumps(actual, sort_keys=True))
           PY
 
@@ -74,8 +75,20 @@ jobs:
           printf '#!/usr/bin/env bash\nexec python -m sigstore "$@"\n' > "$RUNNER_TEMP/sigstore-verifier"
           chmod +x "$RUNNER_TEMP/sigstore-verifier"
 
+      - name: Verify mismatched Sigstore fixture blocks
+        run: |
+          echo "negative fixture: --wrong-artifact evidence/fir-r23/fixture/WRONG-INDEPENDENT-REVIEW.json"
+          if "$RUNNER_TEMP/sigstore-verifier" verify identity --offline \
+            --bundle "$FIR_R8_SIGSTORE_BUNDLE" \
+            --cert-identity "$FIR_R8_SIGSTORE_IDENTITY" \
+            --cert-oidc-issuer "$FIR_R8_SIGSTORE_ISSUER" \
+            "$FIR_R8_SIGSTORE_WRONG_ARTIFACT"; then
+            echo "mismatched Sigstore fixture unexpectedly verified" >&2
+            exit 1
+          fi
+
       - name: Full macOS tests
-        working-directory: evidence/fir-r22/candidate/full-inspection-repair
+        working-directory: evidence/fir-r23/candidate/full-inspection-repair
         env:
           FIR_R8_SIGSTORE_VERIFIER: ${{ runner.temp }}/sigstore-verifier
         run: |
@@ -86,18 +99,18 @@ jobs:
             2>&1 | tee "$RUNNER_TEMP/macos-pytest.log"
 
       - name: Product self-check
-        working-directory: evidence/fir-r22/candidate/full-inspection-repair
+        working-directory: evidence/fir-r23/candidate/full-inspection-repair
         run: |
           python -B scripts/run_inspection.py check \
             --target . --kind SKILL --output "$RUNNER_TEMP/self-check" \
             2>&1 | tee "$RUNNER_TEMP/self-check.log"
 
       - name: Package and install lifecycle
-        working-directory: evidence/fir-r22/candidate/full-inspection-repair
+        working-directory: evidence/fir-r23/candidate/full-inspection-repair
         run: |
           python -B scripts/release_skill.py package \
             --source . --output "$RUNNER_TEMP/package"
-          python -B ../../tools/make_r22_lifecycle_receipt.py \
+          python -B ../../tools/make_r23_lifecycle_receipt.py \
             --candidate . \
             --manifest "$RUNNER_TEMP/package/package-manifest.json" \
             --platform macos \
@@ -106,10 +119,10 @@ jobs:
       - name: Preserve evidence
         if: always()
         run: |
-          mkdir -p evidence/fir-r22/macos
+          mkdir -p evidence/fir-r23/macos
           for item in macos-junit.xml macos-pytest.log self-check self-check.log package macos-lifecycle; do
             if [ -e "$RUNNER_TEMP/$item" ]; then
-              cp -R "$RUNNER_TEMP/$item" evidence/fir-r22/macos/
+              cp -R "$RUNNER_TEMP/$item" evidence/fir-r23/macos/
             fi
           done
           python -B - <<'PY'
@@ -121,7 +134,7 @@ jobs:
           from pathlib import Path
           from xml.etree import ElementTree as ET
 
-          cycle = Path("evidence/fir-r22")
+          cycle = Path("evidence/fir-r23")
           root = cycle / "macos"
           identity = json.loads((cycle / "CANDIDATE-IDENTITY.json").read_text(encoding="utf-8"))
           junit = root / "macos-junit.xml"
@@ -184,6 +197,6 @@ jobs:
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
-          name: fir-r22-macos-evidence
-          path: evidence/fir-r22/macos
+          name: fir-r23-macos-evidence
+          path: evidence/fir-r23/macos
           if-no-files-found: error

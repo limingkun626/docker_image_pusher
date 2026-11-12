@@ -3,10 +3,10 @@
   "candidate_file_count": 86,
   "candidate_frozen": false,
   "candidate_manifest_digest": "600d42e987bbf11afcd7c60ee00dff40b01239698e317bdfe77eaab3fcd022f8",
-  "required_candidate_freeze": "evidence/fir-r22/CANDIDATE-FREEZE.json",
-  "required_review_evidence": "evidence/fir-r22/sigstore/CANDIDATE-REVIEW.json",
-  "run_id": "fir-full-r22-sigstore-authority-20261112-r1",
-  "scope_id": "fir-full-r22-sigstore-authority-20261112",
+  "required_candidate_freeze": "evidence/fir-r23/CANDIDATE-FREEZE.json",
+  "required_review_evidence": "evidence/fir-r23/sigstore/CANDIDATE-REVIEW.json",
+  "run_id": "fir-full-r23-power-tooling-20261112-r1",
+  "scope_id": "fir-full-r23-power-tooling-20261112",
   "status": "SYNCED",
   "trust_materials": {
     "client-trust-config.json": {
@@ -27,15 +27,16 @@
   },
   "validation": {
     "evidence_directories": [
-      "fir-r22"
+      "fir-r23"
     ],
     "fir_workflows": [
-      "codex-fir-r22-macos-20261112.yml"
+      "codex-fir-r23-macos-20261112.yml",
+      "codex-fir-r23-review-20261112.yml"
     ],
-    "json_files_parsed": 16,
+    "json_files_parsed": 17,
     "jsonl_files_parsed": 0,
-    "run_id": "fir-full-r22-sigstore-authority-20261112-r1",
-    "scope_id": "fir-full-r22-sigstore-authority-20261112",
+    "run_id": "fir-full-r23-power-tooling-20261112-r1",
+    "scope_id": "fir-full-r23-power-tooling-20261112",
     "status": "PASS"
   }
 }

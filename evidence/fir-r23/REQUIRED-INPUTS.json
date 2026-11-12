@@ -5,17 +5,17 @@
   "release_artifact_publication": false,
   "required_inputs": [
     {
-      "path": "evidence/fir-r22/CANDIDATE-FREEZE.json",
+      "path": "evidence/fir-r23/CANDIDATE-FREEZE.json",
       "purpose": "frozen candidate authority"
     },
     {
-      "path": "evidence/fir-r22/sigstore/CANDIDATE-REVIEW.json",
+      "path": "evidence/fir-r23/sigstore/CANDIDATE-REVIEW.json",
       "purpose": "review evidence to sign"
     }
   ],
-  "run_id": "fir-full-r22-sigstore-authority-20261112-r1",
+  "run_id": "fir-full-r23-power-tooling-20261112-r1",
   "schema_version": 1,
-  "scope_id": "fir-full-r22-sigstore-authority-20261112",
+  "scope_id": "fir-full-r23-power-tooling-20261112",
   "signed_review_evidence_only": true,
   "trust_materials": {
     "client-trust-config.json": {
