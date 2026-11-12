@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://full-inspection-repair.local/contracts/risk-ledger.schema.json",
+  "title": "Risk Ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scope_digest",
+    "finding_schema_digest",
+    "risk_ledger_schema_digest",
+    "required_sources",
+    "required_sources_digest",
+    "observed_sources",
+    "items",
+    "open_count",
+    "closed_count",
+    "missing_sources",
+    "unexpected_sources",
+    "residual_risks",
+    "unresolved_ids",
+    "ledger_digest"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "scope_digest": { "$ref": "#/$defs/sha256" },
+    "finding_schema_digest": { "$ref": "#/$defs/sha256" },
+    "risk_ledger_schema_digest": { "$ref": "#/$defs/sha256" },
+    "required_sources": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "required_sources_digest": { "$ref": "#/$defs/sha256" },
+    "observed_sources": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "https://full-inspection-repair.local/contracts/finding.schema.json"
+      }
+    },
+    "open_count": { "type": "integer", "minimum": 0 },
+    "closed_count": { "type": "integer", "minimum": 0 },
+    "missing_sources": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "unexpected_sources": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "residual_risks": { "type": "array" },
+    "unresolved_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "ledger_digest": { "$ref": "#/$defs/sha256" }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}
