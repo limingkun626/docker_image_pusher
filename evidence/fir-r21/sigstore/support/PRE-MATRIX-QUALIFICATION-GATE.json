@@ -1,0 +1,21 @@
+{
+  "blocker_count": 0,
+  "blockers": [],
+  "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+  "coverage_digest": "ab4dcedc6d23158d05ef8ffce80d6a7c2f9942937e26c037e78a01a0dd9e296b",
+  "domains_digest": "e95e798fdc8fe2f349e8a71e0e4d37a670870cdc21a4a00f90d1817ae0a9c59b",
+  "evaluator_digest": "bd14cc8dbcaca82c2a3ef8962782f22f66a1f20b69c19496b408f52d570f79e6",
+  "finding_count": 113,
+  "findings_digest": "5bc08a8bf11e1822369110723b974e6171781a8ab2083601e46a2084aef6b09c",
+  "gate_digest": "a1cbf2b1d0bd3ac0697c208b59b8807559e8a5f6ff8c3046f3e86167446d42d8",
+  "ledger_digest": "efb2d8742ec22a7da4846eb75a68785877a4bb1d367a79b3213afb58c370ba7b",
+  "matrix_digest": "13ad511aaac6e199585587bdbd049e7087900e1cafb7a2fbd9fecbabe3c4c631",
+  "nonterminal_finding_count": 0,
+  "release_ready": true,
+  "review_binding_digest": "e5e69fb42afa2546e343c91c68a086bf96a9945dc76566ea11de0c63316235b5",
+  "schema_version": 2,
+  "scope_digest": "72f6d25486ef5925a6881585b4849d5cad862cbb89154a5d1b33eb987d4f44ed",
+  "state": "CLOSED_FOR_DECLARED_UNIVERSE",
+  "status": "PASS",
+  "verification_digest": "74d9d33d6e177f118ebd51903091107e2c13090eb027f55fdcb1334f67f910a8"
+}

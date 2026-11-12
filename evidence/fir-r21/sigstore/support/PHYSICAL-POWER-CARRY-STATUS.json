@@ -1,0 +1,78 @@
+{
+  "byte_identical": true,
+  "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+  "copy_root": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence",
+  "file_count": 11,
+  "matrix_invoked": false,
+  "run_id": "fir-full-r21-release-contract-repair-20261112-r1",
+  "schema_version": 1,
+  "scope_id": "fir-full-r21-release-contract-repair-20261112",
+  "source_root": "F:\\Codex\\runs\\fir-full-r20-r19-probe-refreeze-20261112\\power-r20-r1\\evidence",
+  "status": "PASS",
+  "verification": {
+    "boot_id": "bc9b58f72f4a330597abc6c4ba1548caca27bba72c1a9e207138920d74c883c3",
+    "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+    "copy_file_count": 11,
+    "copy_root": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1",
+    "evidence_digest": "1cf58457aa5031a88a7ced06874bb5a53a189412aaf9f5a38f966ad258a1a184",
+    "evidence_sha256": "6a8d94da9eb1720b22eef6b59d4ac2d5463bc36c88d76b9dbd34b592758ae9a1",
+    "file_set_and_bytes_identical": true,
+    "kernel_power_event": "Microsoft-Windows-Kernel-Power/41",
+    "os_audit_kind": "USN",
+    "proofs": {
+      "arm": {
+        "bytes": 818,
+        "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\arm\\arm-marker.txt",
+        "relative_path": "arm/arm-marker.txt",
+        "sha256": "4ca56a982d8a25d026ccc9558458e686f72909b4b7b0306ad8edefa0801f5d62"
+      },
+      "boot": {
+        "bytes": 282,
+        "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\boot\\boot-identity.txt",
+        "relative_path": "boot/boot-identity.txt",
+        "sha256": "50d9d3c026fbc5010562bf7ea3fa2d18dec11b09015c3106b41b576a8c924534"
+      },
+      "cut": {
+        "bytes": 622,
+        "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\cut\\kernel-power-41.txt",
+        "relative_path": "cut/kernel-power-41.txt",
+        "sha256": "123d042e8ec0fbef1affad236831ad21affd608829b51d78bee56f1cccd8c74c"
+      },
+      "os_audit": {
+        "bytes": 391,
+        "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\os-audit\\usn-queryjournal.txt",
+        "relative_path": "os-audit/usn-queryjournal.txt",
+        "sha256": "6e38628fe10769e429680cab6423a61ed1d778f227b01291e1b8f7def936c645"
+      },
+      "outage_event": {
+        "bytes": 622,
+        "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\outage\\unexpected-shutdown-events.txt",
+        "relative_path": "outage/unexpected-shutdown-events.txt",
+        "sha256": "123d042e8ec0fbef1affad236831ad21affd608829b51d78bee56f1cccd8c74c"
+      },
+      "rollback": {
+        "bytes": 436,
+        "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\rollback\\recovery.log",
+        "relative_path": "rollback/recovery.log",
+        "sha256": "7f500cce11d3a75d726395afce41ae24b3f4a75fe67e6a6b0c0f6047399ce477"
+      },
+      "target": {
+        "bytes": 14981,
+        "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\target\\target-manifest.json",
+        "relative_path": "target/target-manifest.json",
+        "sha256": "4f7f89f3c960a01b8be72b6566d5ea52343464797954655d0c26642c369050a7"
+      }
+    },
+    "rollback_restored_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+    "rollback_retained_digest": "132f4927a9ae633a39811a1846227cb20d7b2226adfe66fda47f2181bf386240",
+    "run_id": "fir-full-r21-release-contract-repair-20261112-r1",
+    "schema_version": 1,
+    "scope_id": "fir-full-r21-release-contract-repair-20261112",
+    "source_file_count": 11,
+    "source_root": "F:\\Codex\\runs\\fir-full-r20-r19-probe-refreeze-20261112\\power-r20-r1\\evidence",
+    "status": "VERIFIED",
+    "target_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+    "usn_record_count": 637
+  },
+  "verified_at": "2026-11-12T03:42:49+00:00"
+}

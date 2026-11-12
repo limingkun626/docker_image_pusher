@@ -1,0 +1,15 @@
+{
+  "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+  "evidence_digest": "1cf58457aa5031a88a7ced06874bb5a53a189412aaf9f5a38f966ad258a1a184",
+  "evidence_sha256": "6a8d94da9eb1720b22eef6b59d4ac2d5463bc36c88d76b9dbd34b592758ae9a1",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "reviewed_at": "2026-11-12T03:42:49+00:00",
+  "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+  "run_id": "fir-full-r21-release-contract-repair-20261112-r1",
+  "schema_version": 1,
+  "scope_id": "fir-full-r21-release-contract-repair-20261112",
+  "subject_kind": "PHYSICAL_POWER_LOSS",
+  "trust_root_id": "sigstore:6f708a5704bac698ca1de47bcec52e4d1bbc42b38e91171bca126d5a94255797",
+  "verdict": "PASS",
+  "verification_method": "sigstore-keyless"
+}

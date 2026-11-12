@@ -1,0 +1,40 @@
+{
+  "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+  "coverage_digest": "ab4dcedc6d23158d05ef8ffce80d6a7c2f9942937e26c037e78a01a0dd9e296b",
+  "evaluator_digest": "bd14cc8dbcaca82c2a3ef8962782f22f66a1f20b69c19496b408f52d570f79e6",
+  "finding_count": 113,
+  "ledger_digest": "efb2d8742ec22a7da4846eb75a68785877a4bb1d367a79b3213afb58c370ba7b",
+  "open_count": 0,
+  "platform_test_counts": {
+    "linux": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 8,
+      "tests": 303
+    },
+    "macos": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 7,
+      "tests": 303
+    },
+    "windows": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 7,
+      "tests": 303
+    }
+  },
+  "producer": "fir-full-r21-release-contract-repair-20261112-producer",
+  "producer_reviewer_independent": true,
+  "residual_count": 0,
+  "reviewed_at": "2026-11-12T03:42:49+00:00",
+  "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+  "run_id": "fir-full-r21-release-contract-repair-20261112-r1",
+  "schema_version": 1,
+  "scope_digest": "72f6d25486ef5925a6881585b4849d5cad862cbb89154a5d1b33eb987d4f44ed",
+  "scope_id": "fir-full-r21-release-contract-repair-20261112",
+  "status": "PASS",
+  "tamper_cases_structured": 8,
+  "taxonomy_qualified_cells": 72
+}

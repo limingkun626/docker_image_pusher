@@ -1,0 +1,436 @@
+{
+  "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+  "checks": [
+    {
+      "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+      "check_id": "candidate-integrity",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+        "file_count": 85,
+        "manifest_digest": "cafafe4a3f7884d94330f89b3caeb75cb3b753610fe7940a23f9fa9f83e25c65"
+      },
+      "receipt_sha256": "3a3ca53546cf110640dc791cc85859681ac8d86dd8094f4c443de9dc530467a9",
+      "runner": "r21-pre-matrix-qualification:candidate-integrity",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+      "check_id": "freeze-binding",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "evaluator_digest": "bd14cc8dbcaca82c2a3ef8962782f22f66a1f20b69c19496b408f52d570f79e6",
+        "freeze_digest": "beb9b4939e44ecb063087f4a051e3598d9b736fa0cac478cc81d11d463d72832",
+        "scope_digest": "72f6d25486ef5925a6881585b4849d5cad862cbb89154a5d1b33eb987d4f44ed",
+        "tooling_manifest_digest": "ec562fc981e8d8dc8b240a1ad5d1444b27ecb044d6f80340b7206758724e7cd1",
+        "verification_digest": "74d9d33d6e177f118ebd51903091107e2c13090eb027f55fdcb1334f67f910a8"
+      },
+      "receipt_sha256": "a4a683a67e43cc35473227d9d78335ceed3dfc3b77ee2401b25d83b0c3d239e9",
+      "runner": "r21-pre-matrix-qualification:freeze-binding",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+      "check_id": "junit-reconciliation",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "linux": {
+          "errors": 0,
+          "failures": 0,
+          "junit_sha256": "4c4b3d67c70c6627257b9ca801c44a16a0170d1791cf9c39f9eb900ca136e54d",
+          "skipped": 8,
+          "tests": 303
+        },
+        "macos": {
+          "errors": 0,
+          "failures": 0,
+          "junit_sha256": "8462356b4352ff9d0b69494b46d7248bd6713a9bb7b13dc0472a94a21d6113b5",
+          "skipped": 7,
+          "tests": 303
+        },
+        "windows": {
+          "errors": 0,
+          "failures": 0,
+          "junit_sha256": "91110a45ce940d5380d7df44a0531b40857d533358a6a5a08e3c00367e2394c6",
+          "skipped": 7,
+          "tests": 303
+        }
+      },
+      "receipt_sha256": "ddfc33242e510af6344f38f6e1dde353ba7050e2530e680fba3a6b2d2782f48f",
+      "runner": "r21-pre-matrix-qualification:junit-reconciliation",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+      "check_id": "platform-receipts",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "receipts": {
+          "linux": {
+            "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\lifecycle-linux-r1\\linux-install.json",
+            "sha256": "0148c0331fde02103e1eb3a2f8ed12816bd7cd9c15cc29f485e648ad78db21e0",
+            "stages": {
+              "atomic_activation": "PASS",
+              "installation": "PASS",
+              "readback": "PASS",
+              "rollback": "PASS",
+              "smoke": "PASS"
+            }
+          },
+          "macos": {
+            "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\macos-artifact-extract-r1\\macos-lifecycle\\macos-install.json",
+            "sha256": "319f75f409a3b8d6418d322b34eef568fc60a192a0faff723f6f7f4a4fef39c0",
+            "stages": {
+              "atomic_activation": "PASS",
+              "installation": "PASS",
+              "readback": "PASS",
+              "rollback": "PASS",
+              "smoke": "PASS"
+            }
+          },
+          "windows": {
+            "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\lifecycle-win-r1\\windows-install.json",
+            "sha256": "aa86fd865068464c567b4f45e037776012e206e719128af788b6d5ca062e6575",
+            "stages": {
+              "atomic_activation": "PASS",
+              "installation": "PASS",
+              "readback": "PASS",
+              "rollback": "PASS",
+              "smoke": "PASS"
+            }
+          }
+        }
+      },
+      "receipt_sha256": "bd1ce994e5ca0d070a3d778e4de2d4febfd5da1acc2297b786d9050169e7b2b3",
+      "runner": "r21-pre-matrix-qualification:platform-receipts",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+      "check_id": "reviewer-signing-authority",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "authorized_branch": "codex-fir-r19-sign-20261111",
+        "authorized_evidence_path": "evidence/fir-r21/sigstore/**",
+        "issuer": "https://token.actions.githubusercontent.com",
+        "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "trust_root_id": "sigstore:6f708a5704bac698ca1de47bcec52e4d1bbc42b38e91171bca126d5a94255797",
+        "verification_method": "sigstore-keyless",
+        "workflow_path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\github-r21\\.github\\workflows\\codex-fir-r19-sign-20261111.yml",
+        "workflow_sha256": "4a32d0b6aeeb84d49755e91af5628de7e438679ad3fb233b65274bce33912ff7"
+      },
+      "receipt_sha256": "a495d103424dee16ed287c582aeda0fe3c4a8ac33bc056478500e44ec1d297da",
+      "runner": "r21-pre-matrix-qualification:reviewer-signing-authority",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+      "check_id": "macos-provenance",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "artifact_bytes": 10527929,
+        "artifact_id": 13911594372,
+        "artifact_name": "fir-r21-macos-evidence",
+        "artifact_path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\jobs\\fir-r21-macos-evidence-r1.zip",
+        "artifact_sha256": "25ea2033da3a4363635a4309ef040732662ba83542b7a01684bd2a5bbc21a04e",
+        "conclusion": "success",
+        "download_path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\jobs\\macos-artifact-download-r1.json",
+        "download_sha256": "9788b35cb7bdf43454b636264f6bd2075b60cbe4dab074e4c4a1d52924d373ed",
+        "head_sha": "9c5c3fbf193e29aa3b144676a519cdf572b28711",
+        "run_id": 43148105333,
+        "status_path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\jobs\\macos-workflow-status-r1.json",
+        "status_sha256": "7128dcfdbcb3476cf253433aebdaf537dd0f95c6eb404e8f4658696b3a5be5a8"
+      },
+      "receipt_sha256": "bf38b9b66c3d02f3527ad832ca7cce7aae9b4dd9928135099060ded3824e878f",
+      "runner": "r21-pre-matrix-qualification:macos-provenance",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+      "check_id": "physical-power-carry",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "boot_id": "bc9b58f72f4a330597abc6c4ba1548caca27bba72c1a9e207138920d74c883c3",
+        "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+        "copy_file_count": 11,
+        "copy_root": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1",
+        "evidence_digest": "1cf58457aa5031a88a7ced06874bb5a53a189412aaf9f5a38f966ad258a1a184",
+        "evidence_sha256": "6a8d94da9eb1720b22eef6b59d4ac2d5463bc36c88d76b9dbd34b592758ae9a1",
+        "file_set_and_bytes_identical": true,
+        "kernel_power_event": "Microsoft-Windows-Kernel-Power/41",
+        "os_audit_kind": "USN",
+        "proofs": {
+          "arm": {
+            "bytes": 818,
+            "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\arm\\arm-marker.txt",
+            "relative_path": "arm/arm-marker.txt",
+            "sha256": "4ca56a982d8a25d026ccc9558458e686f72909b4b7b0306ad8edefa0801f5d62"
+          },
+          "boot": {
+            "bytes": 282,
+            "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\boot\\boot-identity.txt",
+            "relative_path": "boot/boot-identity.txt",
+            "sha256": "50d9d3c026fbc5010562bf7ea3fa2d18dec11b09015c3106b41b576a8c924534"
+          },
+          "cut": {
+            "bytes": 622,
+            "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\cut\\kernel-power-41.txt",
+            "relative_path": "cut/kernel-power-41.txt",
+            "sha256": "123d042e8ec0fbef1affad236831ad21affd608829b51d78bee56f1cccd8c74c"
+          },
+          "os_audit": {
+            "bytes": 391,
+            "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\os-audit\\usn-queryjournal.txt",
+            "relative_path": "os-audit/usn-queryjournal.txt",
+            "sha256": "6e38628fe10769e429680cab6423a61ed1d778f227b01291e1b8f7def936c645"
+          },
+          "outage_event": {
+            "bytes": 622,
+            "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\outage\\unexpected-shutdown-events.txt",
+            "relative_path": "outage/unexpected-shutdown-events.txt",
+            "sha256": "123d042e8ec0fbef1affad236831ad21affd608829b51d78bee56f1cccd8c74c"
+          },
+          "rollback": {
+            "bytes": 436,
+            "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\rollback\\recovery.log",
+            "relative_path": "rollback/recovery.log",
+            "sha256": "7f500cce11d3a75d726395afce41ae24b3f4a75fe67e6a6b0c0f6047399ce477"
+          },
+          "target": {
+            "bytes": 14981,
+            "path": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\power-r21-carry-r1\\evidence\\target\\target-manifest.json",
+            "relative_path": "target/target-manifest.json",
+            "sha256": "4f7f89f3c960a01b8be72b6566d5ea52343464797954655d0c26642c369050a7"
+          }
+        },
+        "rollback_restored_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+        "rollback_retained_digest": "132f4927a9ae633a39811a1846227cb20d7b2226adfe66fda47f2181bf386240",
+        "run_id": "fir-full-r21-release-contract-repair-20261112-r1",
+        "schema_version": 1,
+        "scope_id": "fir-full-r21-release-contract-repair-20261112",
+        "source_file_count": 11,
+        "source_root": "F:\\Codex\\runs\\fir-full-r20-r19-probe-refreeze-20261112\\power-r20-r1\\evidence",
+        "status": "VERIFIED",
+        "target_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+        "usn_record_count": 637
+      },
+      "receipt_sha256": "c3b2fa1e157e717d677bf82d1b0393f95914fd1258d8c344e14d0bb96a858c36",
+      "runner": "r21-pre-matrix-qualification:physical-power-carry",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+      "check_id": "evaluator-tamper",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "case_count": 8,
+        "cases": [
+          {
+            "artifact": "freeze.json",
+            "case": "freeze",
+            "expected_code": "FREEZE_DRIFT",
+            "failure_count": 1,
+            "observed_code": "FREEZE_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "verifier.py",
+            "case": "verifier",
+            "expected_code": "EVALUATOR_DRIFT",
+            "failure_count": 1,
+            "observed_code": "EVALUATOR_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "matrix-runner.py",
+            "case": "matrix-runner",
+            "expected_code": "TOOLING_DRIFT",
+            "failure_count": 1,
+            "observed_code": "TOOLING_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "windows-junit.xml",
+            "case": "junit",
+            "expected_code": "JUNIT_DIGEST_MISMATCH",
+            "failure_count": 1,
+            "observed_code": "JUNIT_DIGEST_MISMATCH",
+            "status": "PASS"
+          },
+          {
+            "artifact": "review-receipt.json",
+            "case": "review-receipt",
+            "expected_code": "REVIEW_RECEIPT_DRIFT",
+            "failure_count": 1,
+            "observed_code": "REVIEW_RECEIPT_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "install-receipt.json",
+            "case": "install-receipt",
+            "expected_code": "INSTALL_RECEIPT_DRIFT",
+            "failure_count": 1,
+            "observed_code": "INSTALL_RECEIPT_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "release-history.jsonl",
+            "case": "release-history",
+            "expected_code": "RELEASE_HISTORY_DRIFT",
+            "failure_count": 1,
+            "observed_code": "RELEASE_HISTORY_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "candidate-manifest.json",
+            "case": "candidate-manifest",
+            "expected_code": "CANDIDATE_MANIFEST_DRIFT",
+            "failure_count": 1,
+            "observed_code": "CANDIDATE_MANIFEST_DRIFT",
+            "status": "PASS"
+          }
+        ],
+        "evaluator_digest": "bd14cc8dbcaca82c2a3ef8962782f22f66a1f20b69c19496b408f52d570f79e6",
+        "failed_count": 0,
+        "receipt_digest": "b752080283fa25e3b16bd1842139c0322d7dc1917f9d0cbb93ac93d2445d52c3",
+        "run_id": "fir-full-r21-release-contract-repair-20261112-r1",
+        "schema_version": 1,
+        "scope_id": "fir-full-r21-release-contract-repair-20261112",
+        "source_receipt": "F:\\Codex\\runs\\fir-full-r21-release-contract-repair-20261112\\matrix-tmp\\main-acceptance-selftest-r1\\MATRIX-SELFTEST.json",
+        "source_receipt_sha256": "cbc6cceaeb13d77c474e1e4b818551590e209523110074ca229cbe645bd74fd4",
+        "status": "PASS"
+      },
+      "receipt_sha256": "9533fad582b15e3dfa5e2ab0a153c86543bbd11e5779ad4c42a88e66d330abcf",
+      "runner": "r21-pre-matrix-qualification:evaluator-tamper",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+      "check_id": "qualification-selftest",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "all_passed": true,
+        "cell_count": 72,
+        "qualified_count": 72,
+        "taxonomy_qualification_digest": "0fcf3ddd8cae6bdad54138c4fade001d90eb00fa0e47b25adb76ba7561e09f7c"
+      },
+      "receipt_sha256": "1dc9f98e0891ca595bc78aab54cc94a0eebb0aff2e0e57788337336f7a2fd89b",
+      "runner": "r21-pre-matrix-qualification:qualification-selftest",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "0d364d7963f0555b88a8e71b2cb4b9ef5ef05a6da1b99aaf52c3dcfec3038955",
+      "check_id": "scope-issue-batch",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "batch_digest": "403d76f782b506e5383afbf0bf46bb4b016914b1f86ecb046b903c130740b141",
+        "finding_count": 113,
+        "issue_set_digest": "efb2d8742ec22a7da4846eb75a68785877a4bb1d367a79b3213afb58c370ba7b",
+        "open_count": 0,
+        "residual_count": 0,
+        "scope_digest": "72f6d25486ef5925a6881585b4849d5cad862cbb89154a5d1b33eb987d4f44ed"
+      },
+      "receipt_sha256": "26b4e90d4327c214a7e10cd51c03da4d04ce3a6a451670d120e1ecfb824a783f",
+      "runner": "r21-pre-matrix-qualification:scope-issue-batch",
+      "status": "PASS"
+    }
+  ],
+  "coverage_digest": "ab4dcedc6d23158d05ef8ffce80d6a7c2f9942937e26c037e78a01a0dd9e296b",
+  "domains_digest": "e95e798fdc8fe2f349e8a71e0e4d37a670870cdc21a4a00f90d1817ae0a9c59b",
+  "evaluator_digest": "bd14cc8dbcaca82c2a3ef8962782f22f66a1f20b69c19496b408f52d570f79e6",
+  "failed_count": 0,
+  "failures": [],
+  "formal_matrix": false,
+  "matrix_digest": "13ad511aaac6e199585587bdbd049e7087900e1cafb7a2fbd9fecbabe3c4c631",
+  "matrix_kind": "PRE_MATRIX_QUALIFICATION_NOT_FORMAL",
+  "release_ready": false,
+  "requested_cases": [
+    "candidate-integrity",
+    "freeze-binding",
+    "junit-reconciliation",
+    "platform-receipts",
+    "reviewer-signing-authority",
+    "macos-provenance",
+    "physical-power-carry",
+    "evaluator-tamper",
+    "qualification-selftest",
+    "scope-issue-batch"
+  ],
+  "run_id": "fir-full-r21-release-contract-repair-20261112-r1",
+  "schema_version": 1,
+  "scope_digest": "72f6d25486ef5925a6881585b4849d5cad862cbb89154a5d1b33eb987d4f44ed",
+  "scope_id": "fir-full-r21-release-contract-repair-20261112",
+  "skipped": [],
+  "status": "PASS",
+  "verification_digest": "74d9d33d6e177f118ebd51903091107e2c13090eb027f55fdcb1334f67f910a8"
+}
