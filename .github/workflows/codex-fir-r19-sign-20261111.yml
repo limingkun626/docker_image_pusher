@@ -1,4 +1,4 @@
-name: fir-r19-r20-r21-sigstore
+name: fir-r19-r20-r23-sigstore
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
     paths:
       - evidence/fir-r19/sigstore/**
       - evidence/fir-r20/sigstore/**
-      - evidence/fir-r21/sigstore/**
+      - evidence/fir-r23/sigstore/**
 
 permissions:
   contents: write
@@ -21,10 +21,10 @@ jobs:
 
       - uses: sigstore/cosign-installer@756fe2d284c7292c4e9b62c8a28f1e5629c59532
 
-      - name: Sign R19, R20, and R21 evidence files
+      - name: Sign R19, R20, and R23 evidence files
         run: |
           roots=()
-          for root in evidence/fir-r19/sigstore evidence/fir-r20/sigstore evidence/fir-r21/sigstore; do
+          for root in evidence/fir-r19/sigstore evidence/fir-r20/sigstore evidence/fir-r23/sigstore; do
             if test -d "$root"; then
               roots+=("$root")
             fi
@@ -45,23 +45,23 @@ jobs:
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
-          name: fir-r19-r20-r21-sigstore-evidence
+          name: fir-r19-r20-r23-sigstore-evidence
           path: |
             evidence/fir-r19/sigstore
             evidence/fir-r20/sigstore
-            evidence/fir-r21/sigstore
+            evidence/fir-r23/sigstore
           if-no-files-found: error
 
       - name: Commit signatures to branch
         run: |
-          git config user.name "Codex R19 R20 R21 Sigstore"
-          git config user.email "codex-r19-r20-r21-sigstore@users.noreply.github.com"
-          for root in evidence/fir-r19/sigstore evidence/fir-r20/sigstore evidence/fir-r21/sigstore; do
+          git config user.name "Codex R19 R20 R23 Sigstore"
+          git config user.email "codex-r19-r20-r23-sigstore@users.noreply.github.com"
+          for root in evidence/fir-r19/sigstore evidence/fir-r20/sigstore evidence/fir-r23/sigstore; do
             if test -d "$root"; then
               git add "$root"
             fi
           done
           if ! git diff --cached --quiet; then
-            git commit -m "Record FIR R19, R20, and R21 Sigstore evidence [skip ci]"
+            git commit -m "Record FIR R19, R20, and R23 Sigstore evidence [skip ci]"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi

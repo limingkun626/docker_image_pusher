@@ -1,0 +1,432 @@
+{
+  "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+  "checks": [
+    {
+      "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+      "check_id": "candidate-integrity",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+        "file_count": 86,
+        "manifest_digest": "600d42e987bbf11afcd7c60ee00dff40b01239698e317bdfe77eaab3fcd022f8"
+      },
+      "receipt_sha256": "71ea8d1d5ccadf4bb0987aaad172f8b452c433b7cd957b8396b87f139d125a16",
+      "runner": "r22-pre-matrix-qualification:candidate-integrity",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+      "check_id": "freeze-binding",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
+        "freeze_digest": "22a31c6577b491528fe406cc178dfc0dbcc919981efb10f3f8c543ab0fac5b8c",
+        "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+        "tooling_manifest_digest": "52d519739d185488f913b07f10401c21fdb936a5a3a46d7f906b8247668fd839",
+        "verification_digest": "507913010abfdaad165873f78c58987b5fdd3f866e1cc237f29b3d91b7161d77"
+      },
+      "receipt_sha256": "8fb88d19fa4363537917deb6c4bfcea7f74478e8d64c177c09ae547ef7fa8659",
+      "runner": "r22-pre-matrix-qualification:freeze-binding",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+      "check_id": "junit-reconciliation",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "linux": {
+          "errors": 0,
+          "failures": 0,
+          "junit_sha256": "1968aeabe5258524b350f55d510273fe453b1e869113c213916bfcc61fc2c890",
+          "skipped": 8,
+          "tests": 314
+        },
+        "macos": {
+          "errors": 0,
+          "failures": 0,
+          "junit_sha256": "218f152d53351b61d952c339d4fd14ac4996629f93940cba8b81ad529cc8453b",
+          "skipped": 7,
+          "tests": 314
+        },
+        "windows": {
+          "errors": 0,
+          "failures": 0,
+          "junit_sha256": "955e3fdff0b9cb603e18b89825be536dcc1155118e31fbba6370314d942c47f9",
+          "skipped": 7,
+          "tests": 314
+        }
+      },
+      "receipt_sha256": "cc5ca3a66a126512d4c864581b289c2a3d997dee43aeb7fd463cf2b63f9b7c77",
+      "runner": "r22-pre-matrix-qualification:junit-reconciliation",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+      "check_id": "platform-receipts",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "receipts": {
+          "linux": {
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\lifecycle-linux-r2\\linux-install.json",
+            "sha256": "622f9039858b5d33f167e60fe665f2bd51ac4465da1ace2f0598f7ceacf7dad4",
+            "stages": {
+              "atomic_activation": "PASS",
+              "installation": "PASS",
+              "readback": "PASS",
+              "rollback": "PASS",
+              "smoke": "PASS"
+            }
+          },
+          "macos": {
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\macos-artifact-extract-r1\\macos-lifecycle\\macos-install.json",
+            "sha256": "16f276fbf62c4bc89b5a44309a14ad9ced53e779e36c9672441425758364f58d",
+            "stages": {
+              "atomic_activation": "PASS",
+              "installation": "PASS",
+              "readback": "PASS",
+              "rollback": "PASS",
+              "smoke": "PASS"
+            }
+          },
+          "windows": {
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\lifecycle-win-r2\\windows-install.json",
+            "sha256": "f614205fb336bce99200a0f295ead1bbdcd7944b0535cb3a97c542f3cca0c658",
+            "stages": {
+              "atomic_activation": "PASS",
+              "installation": "PASS",
+              "readback": "PASS",
+              "rollback": "PASS",
+              "smoke": "PASS"
+            }
+          }
+        }
+      },
+      "receipt_sha256": "7bc296e870c7bd4383be3ff5078027424d1eb69532542c0076bddc1199c6334b",
+      "runner": "r22-pre-matrix-qualification:platform-receipts",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+      "check_id": "reviewer-signing-authority",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "authorized_branch": "codex-fir-r19-sign-20261111",
+        "authorized_evidence_path": "evidence/fir-r23/sigstore/**",
+        "issuer": "https://token.actions.githubusercontent.com",
+        "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "trust_root_id": "sigstore:abaa28e5742590a89203105e550752548daad953299b3bc66656bca0d1dd775c",
+        "verification_method": "sigstore-keyless",
+        "workflow_path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\R23-SIGN-WORKFLOW.yml",
+        "workflow_sha256": "2af3fe6eb423d68aa966fdc90adc75807449a6b97c08219cec326f5fb9a43341"
+      },
+      "receipt_sha256": "2faa86cf4a1ab3c2bda1634d8d87b420fd5d260dda6d470e1641871a19be390d",
+      "runner": "r22-pre-matrix-qualification:reviewer-signing-authority",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+      "check_id": "macos-provenance",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "artifact_bytes": 10746136,
+        "artifact_id": 13925481642,
+        "artifact_name": "fir-r23-macos-evidence",
+        "artifact_path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\macos-artifact-r1.zip",
+        "artifact_sha256": "8a2e328fa7c1959e4219321c1883a7587c8b64b656b74f82b2b730863fc42d3f",
+        "conclusion": "success",
+        "head_sha": "37136350f82f737a9e714a74e238c7b878d11271",
+        "run_id": 43178374081
+      },
+      "receipt_sha256": "302740561c903d1c3b9df1dede67574000733c3235d7907b03ee239280cf9bad",
+      "runner": "r22-pre-matrix-qualification:macos-provenance",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+      "check_id": "physical-power-carry",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "boot_id": "854ff15960be66c3990de0c0773559f9826ebcb4f98f2f64fc97f9fb2eae1d1f",
+        "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+        "copy_file_count": 11,
+        "copy_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23",
+        "evidence_digest": "d6eae755f618447d710c13e6ab5c3a4750eb3787fd12806fc7d505878f835096",
+        "evidence_sha256": "91151f930c6959f378d8637869691fd3d49af5fc749f1da250cc3c890f643a9c",
+        "file_set_and_bytes_identical": true,
+        "kernel_power_event": "Microsoft-Windows-Kernel-Power/41",
+        "os_audit_kind": "USN",
+        "proofs": {
+          "arm": {
+            "bytes": 809,
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\arm\\arm-marker.txt",
+            "relative_path": "arm/arm-marker.txt",
+            "sha256": "b6217a0d532d5bc689cd5ef1d05d77670c8be04d839f194f7d3143758810bc90"
+          },
+          "boot": {
+            "bytes": 282,
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\boot\\boot-identity.txt",
+            "relative_path": "boot/boot-identity.txt",
+            "sha256": "12d4fc1838c087d1c4f75b042ae7eb6d5c097c227efa2246f53e0cf2eb73af87"
+          },
+          "cut": {
+            "bytes": 622,
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\cut\\kernel-power-41.txt",
+            "relative_path": "cut/kernel-power-41.txt",
+            "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
+          },
+          "os_audit": {
+            "bytes": 391,
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\os-audit\\usn-queryjournal.txt",
+            "relative_path": "os-audit/usn-queryjournal.txt",
+            "sha256": "b64f12c9358b0eccba8f9381b1ac311c036c3f514aec7d756de211489b0d9d57"
+          },
+          "outage_event": {
+            "bytes": 622,
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\outage\\unexpected-shutdown-events.txt",
+            "relative_path": "outage/unexpected-shutdown-events.txt",
+            "sha256": "b814a2632dcbbe692656f447d229ebbe25edb0c9c7e57645a7e0fad47efa2258"
+          },
+          "rollback": {
+            "bytes": 433,
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\rollback\\recovery.log",
+            "relative_path": "rollback/recovery.log",
+            "sha256": "aed008217b16832a16a8a68cd8bd48d1465aff3d99b3b8f4e75a9d00b745b993"
+          },
+          "target": {
+            "bytes": 15163,
+            "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence\\target\\target-manifest.json",
+            "relative_path": "target/target-manifest.json",
+            "sha256": "3291f8ba14168e2510a387953685203e97725c78ba04a8ae422d50c94132d268"
+          }
+        },
+        "rollback_restored_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+        "rollback_retained_digest": "132f4927a9ae633a39811a1846227cb20d7b2226adfe66fda47f2181bf386240",
+        "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
+        "schema_version": 1,
+        "scope_id": "fir-full-r23-sigstore-authority-20261112",
+        "source_file_count": 11,
+        "source_root": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\power-r23\\evidence",
+        "status": "VERIFIED",
+        "target_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+        "usn_record_count": 2373
+      },
+      "receipt_sha256": "b4390071f2d66790cf14d2845e23ecbd674a483594e17be2e15308e3da98b0dc",
+      "runner": "r22-pre-matrix-qualification:physical-power-carry",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+      "check_id": "evaluator-tamper",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "case_count": 8,
+        "cases": [
+          {
+            "artifact": "freeze.json",
+            "case": "freeze",
+            "expected_code": "FREEZE_DRIFT",
+            "failure_count": 1,
+            "observed_code": "FREEZE_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "verifier.py",
+            "case": "verifier",
+            "expected_code": "EVALUATOR_DRIFT",
+            "failure_count": 1,
+            "observed_code": "EVALUATOR_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "matrix-runner.py",
+            "case": "matrix-runner",
+            "expected_code": "TOOLING_DRIFT",
+            "failure_count": 1,
+            "observed_code": "TOOLING_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "windows-junit.xml",
+            "case": "junit",
+            "expected_code": "JUNIT_DIGEST_MISMATCH",
+            "failure_count": 1,
+            "observed_code": "JUNIT_DIGEST_MISMATCH",
+            "status": "PASS"
+          },
+          {
+            "artifact": "review-receipt.json",
+            "case": "review-receipt",
+            "expected_code": "REVIEW_RECEIPT_DRIFT",
+            "failure_count": 1,
+            "observed_code": "REVIEW_RECEIPT_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "install-receipt.json",
+            "case": "install-receipt",
+            "expected_code": "INSTALL_RECEIPT_DRIFT",
+            "failure_count": 1,
+            "observed_code": "INSTALL_RECEIPT_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "release-history.jsonl",
+            "case": "release-history",
+            "expected_code": "RELEASE_HISTORY_DRIFT",
+            "failure_count": 1,
+            "observed_code": "RELEASE_HISTORY_DRIFT",
+            "status": "PASS"
+          },
+          {
+            "artifact": "candidate-manifest.json",
+            "case": "candidate-manifest",
+            "expected_code": "CANDIDATE_MANIFEST_DRIFT",
+            "failure_count": 1,
+            "observed_code": "CANDIDATE_MANIFEST_DRIFT",
+            "status": "PASS"
+          }
+        ],
+        "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
+        "failed_count": 0,
+        "receipt_digest": "46bad56718afa104f8333767415acbe94d5ba33c4b81d69a93b74725bfb39ca4",
+        "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
+        "schema_version": 1,
+        "scope_id": "fir-full-r23-sigstore-authority-20261112",
+        "source_receipt": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\matrix-tmp\\selftest-r10\\MATRIX-SELFTEST.json",
+        "source_receipt_sha256": "74a8152325939cf58e86c6f939f7b2c3f3c0bbe361ce9327753e02cdc5867c5f",
+        "status": "PASS"
+      },
+      "receipt_sha256": "b5d5910285a24aa063cbde8649f9d78c260fef4fe5169af741960d5c90e83516",
+      "runner": "r22-pre-matrix-qualification:evaluator-tamper",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+      "check_id": "qualification-selftest",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "all_passed": true,
+        "cell_count": 72,
+        "qualified_count": 72,
+        "taxonomy_qualification_digest": "ebeb907011fddb3ff0c30aed7dd00a9bf2b492112688ce5d72596495f71c8c95"
+      },
+      "receipt_sha256": "746d0d1f58467b1d26f9805a12bbf29ba503dcaee2d675afdfa996255c01d261",
+      "runner": "r22-pre-matrix-qualification:qualification-selftest",
+      "status": "PASS"
+    },
+    {
+      "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
+      "check_id": "scope-issue-batch",
+      "environment": {
+        "machine": "amd64",
+        "os_name": "nt",
+        "platform_release": "10",
+        "platform_system": "Windows",
+        "python_implementation": "CPython",
+        "python_version": "3.12.10"
+      },
+      "receipt": {
+        "batch_digest": "1b67f409dc403b691ce4c7471cfbee93fe09c734bc09aab649acaa21845d0137",
+        "finding_count": 14,
+        "issue_set_digest": "5057edb965c63d5d3aaf1ace2252252d615cbe6c9038af564b695e2db14c2328",
+        "open_count": 0,
+        "residual_count": 0,
+        "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb"
+      },
+      "receipt_sha256": "43f616f635826ca8771fa609a42a41db692ff4cd9c1bb425d3304e4aea51209f",
+      "runner": "r22-pre-matrix-qualification:scope-issue-batch",
+      "status": "PASS"
+    }
+  ],
+  "coverage_digest": "0e6b7c1d9409610e594322be70bf1426758d16201dd2751a2e91992fbb5701ad",
+  "domains_digest": "966937b1867effcd2d62c4e7045876f9667b050276a02d4966eb491c4baeda3b",
+  "evaluator_digest": "7044a24d5872c12a6bf5dc43d0f51ff1ce269deb592f6255fba5ef9c7a3e7eb2",
+  "failed_count": 0,
+  "failures": [],
+  "formal_matrix": false,
+  "matrix_digest": "52a199ba977472bff22a6c8cee5f116812b796b3e58b891dd63787af7c9b3009",
+  "matrix_kind": "PRE_MATRIX_QUALIFICATION_NOT_FORMAL",
+  "release_ready": false,
+  "requested_cases": [
+    "candidate-integrity",
+    "freeze-binding",
+    "junit-reconciliation",
+    "platform-receipts",
+    "reviewer-signing-authority",
+    "macos-provenance",
+    "physical-power-carry",
+    "evaluator-tamper",
+    "qualification-selftest",
+    "scope-issue-batch"
+  ],
+  "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
+  "schema_version": 1,
+  "scope_digest": "aabdb1fb9c23cb30600f738b26ff24552a652b4215f03c76c7122e0f3a3799fb",
+  "scope_id": "fir-full-r23-sigstore-authority-20261112",
+  "skipped": [],
+  "status": "PASS",
+  "verification_digest": "507913010abfdaad165873f78c58987b5fdd3f866e1cc237f29b3d91b7161d77"
+}
