@@ -13,9 +13,9 @@
       "purpose": "review evidence to sign"
     }
   ],
-  "run_id": "fir-full-r23-power-tooling-20261112-r1",
+  "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
   "schema_version": 1,
-  "scope_id": "fir-full-r23-power-tooling-20261112",
+  "scope_id": "fir-full-r23-sigstore-authority-20261112",
   "signed_review_evidence_only": true,
   "trust_materials": {
     "client-trust-config.json": {

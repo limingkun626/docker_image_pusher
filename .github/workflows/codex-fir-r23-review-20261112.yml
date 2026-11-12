@@ -11,8 +11,8 @@ permissions:
   id-token: write
 
 env:
-  FIR_R23_SCOPE_ID: fir-full-r23-power-tooling-20261112
-  FIR_R23_RUN_ID: fir-full-r23-power-tooling-20261112-r1
+  FIR_R23_SCOPE_ID: fir-full-r23-sigstore-authority-20261112
+  FIR_R23_RUN_ID: fir-full-r23-sigstore-authority-20261112-r1
   FIR_R23_TRUST_CONFIG: evidence/fir-r23/trust/client-trust-config.json
   FIR_R23_REVIEWER_IDENTITY: https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111
   FIR_R23_REVIEWER_ISSUER: https://token.actions.githubusercontent.com

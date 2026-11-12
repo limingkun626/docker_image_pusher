@@ -1,5 +1,5 @@
 {
-  "candidate": "F:\\Codex\\skills-candidates\\fir-full-r23-power-tooling-20261112\\full-inspection-repair",
+  "candidate": "F:\\Codex\\skills-candidates\\fir-full-r23-sigstore-authority-20261112\\full-inspection-repair",
   "candidate_digest": "6bae3aca33e5b2c94114aca741886e65347293b1e7a0d1724d4f3e361496fad3",
   "candidate_digest_is_release_authority": false,
   "candidate_file_count": 86,
@@ -436,8 +436,8 @@
       "sha256": "34c17c73f86c906607e2b7bd685e5f9c1ac67ae7ffc8be46274abc2e13037704"
     }
   ],
-  "identity_digest": "5062e73bb5be6d123ec66fdceb3a348bb2b9153fed7a61afa828256c035cd6ea",
-  "run_id": "fir-full-r23-power-tooling-20261112-r1",
+  "identity_digest": "b7aec4a6ef8608315795b665d00147cadc54ba83b6b5e3e13929c5a54b846a59",
+  "run_id": "fir-full-r23-sigstore-authority-20261112-r1",
   "schema_version": 1,
-  "scope_id": "fir-full-r23-power-tooling-20261112"
+  "scope_id": "fir-full-r23-sigstore-authority-20261112"
 }

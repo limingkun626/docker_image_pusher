@@ -1,15 +1,15 @@
 {
-  "generated_at_utc": "2026-11-12T05:58:53+00:00",
+  "generated_at_utc": "2026-11-12T07:45:03+00:00",
   "history_anchor": {
     "key_sha256": "600f0b0691b576a73445a43167d6a99de5d1d24b1ea847b756823c4bbbc8cf99",
     "path": "F:\\Codex\\runs\\fir-full-r14-darwin-openat-20261111\\authority\\history-anchor.key",
     "purpose": "release-history-hmac"
   },
-  "lock_digest": "6bb1fe80c5414df577084ee4235ecded92533edbafc1b3dc8683ff8073aa3edc",
+  "lock_digest": "f0e08bead37b07861a053eb68321455568d650948ef5584706352298c59d8d02",
   "reviewer_policy": {
     "canonical_sha256": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
     "issuer": "https://token.actions.githubusercontent.com",
-    "path": "F:\\Codex\\skills-candidates\\fir-full-r23-power-tooling-20261112\\full-inspection-repair\\policies\\trust-policy.json",
+    "path": "F:\\Codex\\skills-candidates\\fir-full-r23-sigstore-authority-20261112\\full-inspection-repair\\policies\\trust-policy.json",
     "registry_digest": "fe7c2fa54b17902fe99e9cb8c5805ee0f7caf7aed201055afe42d040de20a3b7",
     "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
     "reviewer_identity_domain_id": "sigstore:abaa28e5742590a89203105e550752548daad953299b3bc66656bca0d1dd775c",
@@ -17,21 +17,21 @@
     "verification_method": "sigstore-keyless"
   },
   "schema_version": 1,
-  "scope_id": "fir-full-r23-power-tooling-20261112",
+  "scope_id": "fir-full-r23-sigstore-authority-20261112",
   "sigstore": {
     "client_trust_config": {
       "media_type": "application/vnd.dev.sigstore.clienttrustconfig.v0.1+json",
-      "path": "F:\\Codex\\runs\\fir-full-r23-power-tooling-20261112\\authority-r23-r1\\client-trust-config.json",
+      "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\authority-r1\\client-trust-config.json",
       "sha256": "485837be3b70e97410a152c9a0093123cb8a0ee5740a471b1c3b980f45e0a80f"
     },
     "signing_config": {
       "media_type": "application/vnd.dev.sigstore.signingconfig.v0.2+json",
-      "path": "F:\\Codex\\runs\\fir-full-r23-power-tooling-20261112\\authority-r23-r1\\signing-config.v0.2.json",
+      "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\authority-r1\\signing-config.v0.2.json",
       "sha256": "9711a6d5375706957a4859af31c5866a4474f81f0544f9f4b76c9c4f4c8a539c"
     },
     "trusted_root": {
       "media_type": "application/vnd.dev.sigstore.trustedroot+json;version=0.1",
-      "path": "F:\\Codex\\runs\\fir-full-r23-power-tooling-20261112\\authority-r23-r1\\trusted-root.json",
+      "path": "F:\\Codex\\runs\\fir-full-r23-sigstore-authority-20261112\\authority-r1\\trusted-root.json",
       "sha256": "6494e21ea73fa7ee769f85f57d5a3e6a08725eae1e38c755fc3517c9e6bc0b66"
     },
     "tuf_provenance": {
