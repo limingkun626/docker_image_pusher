@@ -1,48 +1,27 @@
 .........................sssss.......................................... [ 14%]
-ssss..............F.......s....................FFFFFFFFF.F.F..FFFF...... [ 29%]
+ssss..............F.......s....................FFFFFFFFF.FF.F..FFFF..... [ 28%]
 ........................................................................ [ 43%]
-........................................................................ [ 58%]
-.................s......s...s................................FFFF....... [ 72%]
-................................................................s....... [ 87%]
-........................F.ss....................................         [100%]
+........................................................................ [ 57%]
+..................s......s...s................................FFFF...... [ 72%]
+.................................................................s...... [ 86%]
+.........................F.ss......................................      [100%]
 =================================== FAILURES ===================================
 ______________ test_offline_and_output_limits_do_not_become_pass _______________
 
     def test_offline_and_output_limits_do_not_become_pass() -> None:
->       denied = run_bounded_process(
+        denied = run_bounded_process(
             [sys.executable, "-c", "print('offline')"],
             env={"NO_PROXY": "*", "HTTP_PROXY": "", "HTTPS_PROXY": ""},
         )
+>       assert denied["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED
 
-tests/integration/test_r2_external_adapters.py:27: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/r2_engine.py:1487: in run_bounded_process
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+denied     = {'status': 'BLOCKED', 'failure_code': 'NSJAIL_FAILURE', 'returncode': None, 'elapsed_seconds': 0.0, ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c8634c860>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-c', "print('offline')"]
-cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
-limits = SandboxLimits(timeout_seconds=30.0, max_output_bytes=1048576, max_rss_mib=1024.0, max_input_files=None)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_r2_external_adapters.py:31: AssertionError
 _ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:BOUNDARY:BEHAVIOR] _
 
 cell_id = 'SKILL:BOUNDARY:BEHAVIOR'
@@ -51,42 +30,18 @@ cell_id = 'SKILL:BOUNDARY:BEHAVIOR'
     def test_every_external_adapter_executes_its_frozen_fixture_pair(
         cell_id: str,
     ) -> None:
->       observed = run_external_cell(cell_id)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS", observed
+E       AssertionError: {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:BOUNDARY:BEHAVIOR', 'logical_tool_id': 'schemathesis', ...}
+E       assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:49: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+cell_id    = 'SKILL:BOUNDARY:BEHAVIOR'
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:BOUNDARY:BEHAVIOR', 'logical_tool_id': 'schemathesis', ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c8624dfa0>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/schemathesis', '/home/runner/work/docker_image_pusher/docker_image_pusher...tmp/fir-exact-adapter-7hjevsf3/SLICE-703d9804d88fad61/positive-b4f83dd49c2c4eb4b2e26a6dd0154635', '--mode', 'positive']
-cwd = PosixPath('/tmp/fir-exact-adapter-7hjevsf3/SLICE-703d9804d88fad61/positive-b4f83dd49c2c4eb4b2e26a6dd0154635')
-limits = SandboxLimits(timeout_seconds=120.0, max_output_bytes=8388608, max_rss_mib=2048.0, max_input_files=64)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:52: AssertionError
 _ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:FUNCTIONAL_FAULT:BEHAVIOR] _
 
 cell_id = 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR'
@@ -95,42 +50,18 @@ cell_id = 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR'
     def test_every_external_adapter_executes_its_frozen_fixture_pair(
         cell_id: str,
     ) -> None:
->       observed = run_external_cell(cell_id)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS", observed
+E       AssertionError: {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'logical_tool_id': 'pytest', ...}
+E       assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:49: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+cell_id    = 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR'
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'logical_tool_id': 'pytest', ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c863a4800>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/tmp/fir-exact-adapter-mvdj5eyh/SLICE-57d9534a5fb62f57/positive-6323fd6c39424ce2b70ce20e0e334424/test_calc.py']
-cwd = PosixPath('/tmp/fir-exact-adapter-mvdj5eyh/SLICE-57d9534a5fb62f57/positive-6323fd6c39424ce2b70ce20e0e334424')
-limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:52: AssertionError
 _ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:INCONSISTENCY:BEHAVIOR] _
 
 cell_id = 'SKILL:INCONSISTENCY:BEHAVIOR'
@@ -139,42 +70,18 @@ cell_id = 'SKILL:INCONSISTENCY:BEHAVIOR'
     def test_every_external_adapter_executes_its_frozen_fixture_pair(
         cell_id: str,
     ) -> None:
->       observed = run_external_cell(cell_id)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS", observed
+E       AssertionError: {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:INCONSISTENCY:BEHAVIOR', 'logical_tool_id': 'schemathesis', ...}
+E       assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:49: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+cell_id    = 'SKILL:INCONSISTENCY:BEHAVIOR'
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:INCONSISTENCY:BEHAVIOR', 'logical_tool_id': 'schemathesis', ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c8649d5e0>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/schemathesis', '/home/runner/work/docker_image_pusher/docker_image_pusher...tmp/fir-exact-adapter-btr401ei/SLICE-703d9804d88fad61/positive-acd5db1d5c254e8d92e90ad58a783745', '--mode', 'positive']
-cwd = PosixPath('/tmp/fir-exact-adapter-btr401ei/SLICE-703d9804d88fad61/positive-acd5db1d5c254e8d92e90ad58a783745')
-limits = SandboxLimits(timeout_seconds=120.0, max_output_bytes=8388608, max_rss_mib=2048.0, max_input_files=64)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:52: AssertionError
 _ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:INCONSISTENCY:LIFECYCLE] _
 
 cell_id = 'SKILL:INCONSISTENCY:LIFECYCLE'
@@ -183,42 +90,18 @@ cell_id = 'SKILL:INCONSISTENCY:LIFECYCLE'
     def test_every_external_adapter_executes_its_frozen_fixture_pair(
         cell_id: str,
     ) -> None:
->       observed = run_external_cell(cell_id)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS", observed
+E       AssertionError: {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:INCONSISTENCY:LIFECYCLE', 'logical_tool_id': 'import-linter', ...}
+E       assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:49: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+cell_id    = 'SKILL:INCONSISTENCY:LIFECYCLE'
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:INCONSISTENCY:LIFECYCLE', 'logical_tool_id': 'import-linter', ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c863a2a50>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/lint-imports', '--no-cache', '--config', '/tmp/fir-exact-adapter-9_wr7yyf/SLICE-4c97c069b2d3b694/positive-6c8c185d6bc94353b3a0e36bbe752bb6/.importlinter']
-cwd = PosixPath('/tmp/fir-exact-adapter-9_wr7yyf/SLICE-4c97c069b2d3b694/positive-6c8c185d6bc94353b3a0e36bbe752bb6')
-limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:52: AssertionError
 _ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:LATENT_DEFECT:BEHAVIOR] _
 
 cell_id = 'SKILL:LATENT_DEFECT:BEHAVIOR'
@@ -227,42 +110,18 @@ cell_id = 'SKILL:LATENT_DEFECT:BEHAVIOR'
     def test_every_external_adapter_executes_its_frozen_fixture_pair(
         cell_id: str,
     ) -> None:
->       observed = run_external_cell(cell_id)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS", observed
+E       AssertionError: {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:LATENT_DEFECT:BEHAVIOR', 'logical_tool_id': 'mutmut', ...}
+E       assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:49: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+cell_id    = 'SKILL:LATENT_DEFECT:BEHAVIOR'
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:LATENT_DEFECT:BEHAVIOR', 'logical_tool_id': 'mutmut', ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c86275580>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python3.12', '/home/runner/work/docker_image_pusher/docker_image_pusher/...g/mutmut_probe.py', '/tmp/fir-exact-adapter-aez7sjfc/SLICE-b0f2f0e6cb318280/positive-160fce68e1b24c20b16d363b71a7c926']
-cwd = PosixPath('/tmp/fir-exact-adapter-aez7sjfc/SLICE-b0f2f0e6cb318280/positive-160fce68e1b24c20b16d363b71a7c926')
-limits = SandboxLimits(timeout_seconds=120.0, max_output_bytes=2097152, max_rss_mib=1024.0, max_input_files=32)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:52: AssertionError
 _ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:OMISSION:BEHAVIOR] _
 
 cell_id = 'SKILL:OMISSION:BEHAVIOR'
@@ -271,42 +130,18 @@ cell_id = 'SKILL:OMISSION:BEHAVIOR'
     def test_every_external_adapter_executes_its_frozen_fixture_pair(
         cell_id: str,
     ) -> None:
->       observed = run_external_cell(cell_id)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS", observed
+E       AssertionError: {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:OMISSION:BEHAVIOR', 'logical_tool_id': 'pytest', ...}
+E       assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:49: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+cell_id    = 'SKILL:OMISSION:BEHAVIOR'
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:OMISSION:BEHAVIOR', 'logical_tool_id': 'pytest', ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c86275ac0>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/tmp/fir-exact-adapter-x4dboahm/SLICE-57d9534a5fb62f57/positive-351be9f03a714272b1106086e129b73f/test_calc.py']
-cwd = PosixPath('/tmp/fir-exact-adapter-x4dboahm/SLICE-57d9534a5fb62f57/positive-351be9f03a714272b1106086e129b73f')
-limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:52: AssertionError
 _ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:RISK_EXPOSURE:BEHAVIOR] _
 
 cell_id = 'SKILL:RISK_EXPOSURE:BEHAVIOR'
@@ -315,42 +150,18 @@ cell_id = 'SKILL:RISK_EXPOSURE:BEHAVIOR'
     def test_every_external_adapter_executes_its_frozen_fixture_pair(
         cell_id: str,
     ) -> None:
->       observed = run_external_cell(cell_id)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS", observed
+E       AssertionError: {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:RISK_EXPOSURE:BEHAVIOR', 'logical_tool_id': 'schemathesis', ...}
+E       assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:49: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+cell_id    = 'SKILL:RISK_EXPOSURE:BEHAVIOR'
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:RISK_EXPOSURE:BEHAVIOR', 'logical_tool_id': 'schemathesis', ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c86399fd0>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/schemathesis', '/home/runner/work/docker_image_pusher/docker_image_pusher...tmp/fir-exact-adapter-8dnfso52/SLICE-703d9804d88fad61/positive-85f8202468084365a4547a3b31ba8879', '--mode', 'positive']
-cwd = PosixPath('/tmp/fir-exact-adapter-8dnfso52/SLICE-703d9804d88fad61/positive-85f8202468084365a4547a3b31ba8879')
-limits = SandboxLimits(timeout_seconds=120.0, max_output_bytes=8388608, max_rss_mib=2048.0, max_input_files=64)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:52: AssertionError
 _ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:VULNERABILITY:BEHAVIOR] _
 
 cell_id = 'SKILL:VULNERABILITY:BEHAVIOR'
@@ -359,42 +170,18 @@ cell_id = 'SKILL:VULNERABILITY:BEHAVIOR'
     def test_every_external_adapter_executes_its_frozen_fixture_pair(
         cell_id: str,
     ) -> None:
->       observed = run_external_cell(cell_id)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS", observed
+E       AssertionError: {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:VULNERABILITY:BEHAVIOR', 'logical_tool_id': 'opengrep', ...}
+E       assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:49: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+cell_id    = 'SKILL:VULNERABILITY:BEHAVIOR'
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:VULNERABILITY:BEHAVIOR', 'logical_tool_id': 'opengrep', ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c8634e4b0>
-argv = ['/home/runner/work/_temp/fir-tools/bin/opengrep', 'scan', '--enable-interfile', '--no-git-ignore', '--project-root=/tmp/fir-exact-adapter-n25ga0u2/SLICE-8511218645035615/positive-c7ddbfc003724c4c9421d0d5c00d302e', '--config', ...]
-cwd = PosixPath('/tmp/fir-exact-adapter-n25ga0u2/SLICE-8511218645035615/positive-c7ddbfc003724c4c9421d0d5c00d302e')
-limits = SandboxLimits(timeout_seconds=300.0, max_output_bytes=4194304, max_rss_mib=2048.0, max_input_files=64)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:52: AssertionError
 _____ test_exact_adapter_runs_frozen_fixture_even_without_target_snapshot ______
 
 tmp_path = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_runs_frozen0')
@@ -402,44 +189,24 @@ tmp_path = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_runs_fro
     def test_exact_adapter_runs_frozen_fixture_even_without_target_snapshot(
         tmp_path: Path,
     ) -> None:
->       observed = run_external_cell(
+        observed = run_external_cell(
             "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
             tmp_path / "scratch",
         )
+        assert observed["release_authority"] is False
+        assert observed["tool_identity"]["fixture_digest"]
+        assert observed["receipt_digest"]
+>       assert observed["status"] == "PASS", observed
+E       AssertionError: {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'logical_tool_id': 'pytest', ...}
+E       assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:58: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'logical_tool_id': 'pytest', ...}
+tmp_path   = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_runs_frozen0')
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c8635a780>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/home/runner/work/_temp/pytest/test_exact_adapter_runs_frozen0/scratch/SLICE-57d9534a5fb62f57/positive-f47f2d827b4741208366a68262e22a76/test_calc.py']
-cwd = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_runs_frozen0/scratch/SLICE-57d9534a5fb62f57/positive-f47f2d827b4741208366a68262e22a76')
-limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:67: AssertionError
 _____________ test_exact_adapter_executes_target_not_only_fixtures _____________
 
 tmp_path = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_executes_ta0')
@@ -453,7 +220,7 @@ tmp_path = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_executes
             encoding="utf-8",
         )
     
->       observed = run_for_snapshot(
+        observed = run_for_snapshot(
             "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
             {
                 "target_root": str(target),
@@ -461,42 +228,84 @@ tmp_path = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_executes
                 "fixture_scratch_root": str(tmp_path / "fixtures"),
             },
         )
+    
+>       assert observed["status"] == "PASS", observed
+E       AssertionError: {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'logical_tool_id': 'pytest', ...}
+E       assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:91: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/external_adapters.py:385: in run_for_snapshot
-    qualification = run_external_cell(
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'logical_tool_id': 'pytest', ...}
+target     = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_executes_ta0/target')
+tmp_path   = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_executes_ta0')
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c8635b1d0>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/home/runner/work/_temp/pytest/test_exact_adapter_executes_ta0/fixtures/SLICE-57d9534a5fb62f57/positive-e438a7be4dd042159da49fb0ecc68538/test_calc.py']
-cwd = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_executes_ta0/fixtures/SLICE-57d9534a5fb62f57/positive-e438a7be4dd042159da49fb0ecc68538')
-limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
-policy = 'ALLOW'
+tests/integration/test_runtime_exact_adapters.py:102: AssertionError
+_______ test_exact_adapter_resolves_temporary_parent_before_target_copy ________
 
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
+tmp_path = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_resolves_te0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7904e7856060>
 
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+    @pytest.mark.skipif(os.name == "nt", reason="POSIX symlink fixture")
+    def test_exact_adapter_resolves_temporary_parent_before_target_copy(
+        tmp_path: Path,
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        actual = tmp_path / "actual"
+        actual.mkdir()
+        alias = tmp_path / "alias"
+        alias.symlink_to(actual, target_is_directory=True)
+        scratch = alias / "run"
+        scratch.mkdir()
+    
+        class TemporaryDirectory:
+            name = str(scratch)
+    
+            def __enter__(self) -> str:
+                return self.name
+    
+            def __exit__(self, *args: object) -> None:
+                return None
+    
+        monkeypatch.setattr(
+            external_adapters_module.tempfile,
+            "TemporaryDirectory",
+            lambda **_: TemporaryDirectory(),
+        )
+        target = tmp_path / "target"
+        target.mkdir()
+        (target / "test_ok.py").write_text(
+            "def test_ok():\n"
+            "    assert True\n",
+            encoding="utf-8",
+        )
+    
+        observed = run_for_snapshot(
+            "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+            {
+                "target_root": str(target),
+                "subject_digest": "a" * 64,
+                "fixture_scratch_root": str(tmp_path / "fixtures"),
+            },
+        )
+    
+>       assert observed["status"] == "PASS", observed
+E       AssertionError: {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'logical_tool_id': 'pytest', ...}
+E       assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
+
+TemporaryDirectory = <class 'test_runtime_exact_adapters.test_exact_adapter_resolves_temporary_parent_before_target_copy.<locals>.TemporaryDirectory'>
+actual     = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_resolves_te0/actual')
+alias      = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_resolves_te0/alias')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7904e7856060>
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'logical_tool_id': 'pytest', ...}
+scratch    = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_resolves_te0/alias/run')
+target     = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_resolves_te0/target')
+tmp_path   = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_resolves_te0')
+
+tests/integration/test_runtime_exact_adapters.py:150: AssertionError
 ______________ test_run_cell_exact_adapter_uses_target_execution _______________
 
 tmp_path = PosixPath('/home/runner/work/_temp/pytest/test_run_cell_exact_adapter_us0')
@@ -509,7 +318,7 @@ tmp_path = PosixPath('/home/runner/work/_temp/pytest/test_run_cell_exact_adapter
             "    assert False\n",
             encoding="utf-8",
         )
->       observed = run_cell(
+        observed = run_cell(
             "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
             {
                 "files": {},
@@ -517,45 +326,17 @@ tmp_path = PosixPath('/home/runner/work/_temp/pytest/test_run_cell_exact_adapter
                 "subject_digest": "a" * 64,
             },
         )
+>       assert observed["status"] == "FINDING", observed
+E       AssertionError: {'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'status': 'BLOCKED', 'failure_code': 'FIXTURE_ASSERTION_FAILED', 'exact... 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'logical_tool_id': 'pytest', ...}, ...}
+E       assert 'BLOCKED' == 'FINDING'
+E         
+E         - FINDING
+E         + BLOCKED
 
-tests/integration/test_runtime_exact_adapters.py:143: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/r2_engine.py:1219: in run_cell
-    exact = run_external(cell_id, snapshot)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-scripts/full_inspection_repair/external_adapters.py:385: in run_for_snapshot
-    qualification = run_external_cell(
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+observed   = {'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'status': 'BLOCKED', 'failure_code': 'FIXTURE_ASSERTION_FAILED', 'exact... 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR', 'logical_tool_id': 'pytest', ...}, ...}
+tmp_path   = PosixPath('/home/runner/work/_temp/pytest/test_run_cell_exact_adapter_us0')
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c86526ab0>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/tmp/fir-exact-adapter-8k9sy2as/SLICE-57d9534a5fb62f57/positive-c2e13395a3f64a6c912b6f1b752fdee6/test_calc.py']
-cwd = PosixPath('/tmp/fir-exact-adapter-8k9sy2as/SLICE-57d9534a5fb62f57/positive-c2e13395a3f64a6c912b6f1b752fdee6')
-limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:199: AssertionError
 _____________ test_lifecycle_process_probe_uses_disposable_scratch _____________
 
 tmp_path = PosixPath('/home/runner/work/_temp/pytest/test_lifecycle_process_probe_u0')
@@ -564,81 +345,34 @@ tmp_path = PosixPath('/home/runner/work/_temp/pytest/test_lifecycle_process_prob
         tmp_path: Path,
     ) -> None:
         (tmp_path / "fixture.txt").write_text("stable\n", encoding="utf-8")
->       observed = process_tree_probe(tmp_path)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observed = process_tree_probe(tmp_path)
+    
+>       assert observed["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:187: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/lifecycle_adapters.py:683: in process_tree_probe
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:RISK_EXPOSURE:LIFECYCLE', 'logical_tool_id': 'linux.process-group', ...}
+tmp_path   = PosixPath('/home/runner/work/_temp/pytest/test_lifecycle_process_probe_u0')
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c863582f0>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-B', '-I', '-c', "import subprocess,sys,time\nfrom pathlib imp...'])\nPath('/tmp/fir-lifecycle-process-076ra0f7/child.pid').write_text(str(p.pid),encoding='utf-8')\ntime.sleep(0.2)\n"]
-cwd = PosixPath('/tmp/fir-lifecycle-process-076ra0f7')
-limits = SandboxLimits(timeout_seconds=10, max_output_bytes=65536, max_rss_mib=256, max_input_files=16)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:237: AssertionError
 ______ test_lifecycle_snapshot_without_target_uses_frozen_process_fixture ______
 
     def test_lifecycle_snapshot_without_target_uses_frozen_process_fixture() -> None:
->       observed = run_lifecycle_snapshot(
+        observed = run_lifecycle_snapshot(
             "SKILL:RISK_EXPOSURE:LIFECYCLE",
             {},
         )
+>       assert observed["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:196: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/lifecycle_adapters.py:862: in run_for_snapshot
-    return run_frozen_process_pair(cell_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-scripts/full_inspection_repair/lifecycle_adapters.py:381: in run_frozen_process_pair
-    positive = _run_process_scenario(definition["positive"], root / "positive")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-scripts/full_inspection_repair/lifecycle_adapters.py:350: in _run_process_scenario
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:RISK_EXPOSURE:LIFECYCLE', 'logical_tool_id': 'windows.job-object', ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c863a58b0>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-B', '-I', '-c', "import subprocess,sys,time\nfrom pathlib imp...mp/fir-lifecycle-process-pair-xh1ffwo6/positive/child.pid').write_text(str(p.pid),encoding='utf-8')\ntime.sleep(.1)\n"]
-cwd = PosixPath('/tmp/fir-lifecycle-process-pair-xh1ffwo6/positive')
-limits = SandboxLimits(timeout_seconds=10, max_output_bytes=65536, max_rss_mib=256, max_input_files=16)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:248: AssertionError
 _____ test_all_exact_lifecycle_cells_use_frozen_positive_negative_fixtures _____
 
     def test_all_exact_lifecycle_cells_use_frozen_positive_negative_fixtures() -> None:
@@ -647,89 +381,33 @@ _____ test_all_exact_lifecycle_cells_use_frozen_positive_negative_fixtures _____
             "SKILL:RISK_EXPOSURE:LIFECYCLE",
             "SKILL:VULNERABILITY:LIFECYCLE",
         ):
->           observed = run_lifecycle_snapshot(cell_id, {})
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            observed = run_lifecycle_snapshot(cell_id, {})
+>           assert observed["status"] == "PASS"
+E           AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E             
+E             - PASS
+E             + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:210: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/lifecycle_adapters.py:860: in run_for_snapshot
-    return run_frozen_install_pair(cell_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-scripts/full_inspection_repair/lifecycle_adapters.py:256: in run_frozen_install_pair
-    positive = _run_install_scenario(
-scripts/full_inspection_repair/lifecycle_adapters.py:224: in _run_install_scenario
-    receipts.append(_pip_install(baseline_wheel, target, upgrade=False))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-scripts/full_inspection_repair/lifecycle_adapters.py:170: in _pip_install
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+cell_id    = 'SKILL:FUNCTIONAL_FAULT:LIFECYCLE'
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:FUNCTIONAL_FAULT:LIFECYCLE', 'logical_tool_id': 'pip-lifecycle-fixture', ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c865247a0>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-m', 'pip', 'install', '--no-index', '--no-deps', ...]
-cwd = PosixPath('/tmp/fir-lifecycle-install-pair-ttc7xi2h/positive')
-limits = SandboxLimits(timeout_seconds=120, max_output_bytes=2097152, max_rss_mib=1024, max_input_files=32)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:259: AssertionError
 _______ test_lifecycle_dispatch_falls_back_to_import_linter_fixture_pair _______
 
     def test_lifecycle_dispatch_falls_back_to_import_linter_fixture_pair() -> None:
->       observed = run_lifecycle_snapshot(
+        observed = run_lifecycle_snapshot(
             "SKILL:INCONSISTENCY:LIFECYCLE",
             {},
         )
+>       assert observed["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
 
-tests/integration/test_runtime_exact_adapters.py:218: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/lifecycle_adapters.py:850: in run_for_snapshot
-    return run_external_cell(
-scripts/full_inspection_repair/external_adapters.py:290: in run_external_cell
-    positive = run_fixture_case(
-scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
-    receipt = run_slice(
-scripts/full_inspection_repair/capabilities.py:1847: in run_slice
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+observed   = {'schema_version': 3, 'receipt_kind': 'EXACT_ADAPTER', 'cell_id': 'SKILL:INCONSISTENCY:LIFECYCLE', 'logical_tool_id': 'import-linter', ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c86398ef0>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/lint-imports', '--no-cache', '--config', '/tmp/fir-exact-adapter-7asxg16q/SLICE-4c97c069b2d3b694/positive-e9d1c4d36d904ad9bad0035a832820c1/.importlinter']
-cwd = PosixPath('/tmp/fir-exact-adapter-7asxg16q/SLICE-4c97c069b2d3b694/positive-e9d1c4d36d904ad9bad0035a832820c1')
-limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/integration/test_runtime_exact_adapters.py:270: AssertionError
 ________ test_runtime_limits_block[import time; time.sleep(2)-TIMEOUT] _________
 
 code = 'import time; time.sleep(2)', expected = 'TIMEOUT'
@@ -743,42 +421,23 @@ code = 'import time; time.sleep(2)', expected = 'TIMEOUT'
         ],
     )
     def test_runtime_limits_block(code: str, expected: str) -> None:
->       observed = run_bounded_process(
+        observed = run_bounded_process(
             [sys.executable, "-c", code],
             timeout=0.2,
             max_output_bytes=1024,
             max_rss_mib=32,
         )
+>       assert observed["status"] == expected
+E       AssertionError: assert 'BLOCKED' == 'TIMEOUT'
+E         
+E         - TIMEOUT
+E         + BLOCKED
 
-tests/unit/test_r2_engine.py:211: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/r2_engine.py:1487: in run_bounded_process
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+code       = 'import time; time.sleep(2)'
+expected   = 'TIMEOUT'
+observed   = {'status': 'BLOCKED', 'failure_code': 'NSJAIL_FAILURE', 'returncode': None, 'elapsed_seconds': 0.0, ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c8639a960>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-c', 'import time; time.sleep(2)']
-cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
-limits = SandboxLimits(timeout_seconds=0.2, max_output_bytes=1024, max_rss_mib=32, max_input_files=None)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/unit/test_r2_engine.py:217: AssertionError
 _ test_runtime_limits_block[import time\ndata=bytearray(32*1024*1024)\ntime.sleep(2)-OOM] _
 
 code = 'import time\ndata=bytearray(32*1024*1024)\ntime.sleep(2)'
@@ -793,42 +452,23 @@ expected = 'OOM'
         ],
     )
     def test_runtime_limits_block(code: str, expected: str) -> None:
->       observed = run_bounded_process(
+        observed = run_bounded_process(
             [sys.executable, "-c", code],
             timeout=0.2,
             max_output_bytes=1024,
             max_rss_mib=32,
         )
+>       assert observed["status"] == expected
+E       AssertionError: assert 'BLOCKED' == 'OOM'
+E         
+E         - OOM
+E         + BLOCKED
 
-tests/unit/test_r2_engine.py:211: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/r2_engine.py:1487: in run_bounded_process
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+code       = 'import time\ndata=bytearray(32*1024*1024)\ntime.sleep(2)'
+expected   = 'OOM'
+observed   = {'status': 'BLOCKED', 'failure_code': 'NSJAIL_FAILURE', 'returncode': None, 'elapsed_seconds': 0.0, ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c86474530>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-c', 'import time\ndata=bytearray(32*1024*1024)\ntime.sleep(2)']
-cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
-limits = SandboxLimits(timeout_seconds=0.2, max_output_bytes=1024, max_rss_mib=32, max_input_files=None)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/unit/test_r2_engine.py:217: AssertionError
 _ test_runtime_limits_block[import sys; sys.stdout.write('x'*4096)-OUTPUT_OVERFLOW] _
 
 code = "import sys; sys.stdout.write('x'*4096)", expected = 'OUTPUT_OVERFLOW'
@@ -842,42 +482,23 @@ code = "import sys; sys.stdout.write('x'*4096)", expected = 'OUTPUT_OVERFLOW'
         ],
     )
     def test_runtime_limits_block(code: str, expected: str) -> None:
->       observed = run_bounded_process(
+        observed = run_bounded_process(
             [sys.executable, "-c", code],
             timeout=0.2,
             max_output_bytes=1024,
             max_rss_mib=32,
         )
+>       assert observed["status"] == expected
+E       AssertionError: assert 'BLOCKED' == 'OUTPUT_OVERFLOW'
+E         
+E         - OUTPUT_OVERFLOW
+E         + BLOCKED
 
-tests/unit/test_r2_engine.py:211: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/r2_engine.py:1487: in run_bounded_process
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+code       = "import sys; sys.stdout.write('x'*4096)"
+expected   = 'OUTPUT_OVERFLOW'
+observed   = {'status': 'BLOCKED', 'failure_code': 'NSJAIL_FAILURE', 'returncode': None, 'elapsed_seconds': 0.0, ...}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c861755e0>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-c', "import sys; sys.stdout.write('x'*4096)"]
-cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
-limits = SandboxLimits(timeout_seconds=0.2, max_output_bytes=1024, max_rss_mib=32, max_input_files=None)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/unit/test_r2_engine.py:217: AssertionError
 __________ test_runtime_repeatability_is_derived_from_digest_equality __________
 
     def test_runtime_repeatability_is_derived_from_digest_equality() -> None:
@@ -897,47 +518,21 @@ __________ test_runtime_repeatability_is_derived_from_digest_equality __________
                 "forbidden_calls": ["system"],
             },
         }
->       first = run_native("SKILL:RISK_EXPOSURE:RUNTIME", snapshot)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        first = run_native("SKILL:RISK_EXPOSURE:RUNTIME", snapshot)
+        second = run_native("SKILL:RISK_EXPOSURE:RUNTIME", snapshot)
+>       assert repeatability_status(first["events_digest"], second["events_digest"]) == "PASS"
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'events_digest'
 
-tests/unit/test_r2_engine.py:238: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/r2_engine.py:1094: in run_native
-    return _runtime_detector(cell_id, snapshot)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-scripts/full_inspection_repair/r2_engine.py:903: in _runtime_detector
-    observed = run_bounded_process(
-scripts/full_inspection_repair/r2_engine.py:1487: in run_bounded_process
-    observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+first      = {'cell_id': 'SKILL:RISK_EXPOSURE:RUNTIME', 'method_id': 'runtime.monitor', 'method_version': '1.0.0', 'status': 'BLOCKED_NSJAIL_FAILURE', ...}
+second     = {'cell_id': 'SKILL:RISK_EXPOSURE:RUNTIME', 'method_id': 'runtime.monitor', 'method_version': '1.0.0', 'status': 'BLOCKED_NSJAIL_FAILURE', ...}
+snapshot   = {'files': {'fixture.py': "import os\ndef run():\n    os.system('echo forbidden')\n    return True\n"}, 'runtime_case': {'call': 'run', 'args': [], 'declared_return': True, 'forbidden_calls': ['system']}}
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c861750d0>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-B', '-I', '/home/runner/work/docker_image_pusher/docker_image...on-repair/scripts/full_inspection_repair/runtime_monitor.py', '--fixture', '/tmp/fir-runtime-n9d5gxrx/fixture.py', ...]
-cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
-limits = SandboxLimits(timeout_seconds=5.0, max_output_bytes=1048576, max_rss_mib=256.0, max_input_files=None)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/unit/test_r2_engine.py:240: KeyError
 ___________________ test_stdout_and_stderr_share_one_budget ____________________
 
     def test_stdout_and_stderr_share_one_budget() -> None:
->       observed = run_sandboxed(
+        observed = run_sandboxed(
             [
                 sys.executable,
                 "-B",
@@ -951,34 +546,17 @@ ___________________ test_stdout_and_stderr_share_one_budget ____________________
                 max_rss_mib=256,
             ),
         )
+    
+>       assert observed.status == "OUTPUT_OVERFLOW", observed.error
+E       AssertionError: NoSuchProcess: process PID not found (pid=5196)
+E       assert 'BLOCKED' == 'OUTPUT_OVERFLOW'
+E         
+E         - OUTPUT_OVERFLOW
+E         + BLOCKED
 
-tests/unit/test_sandbox_runtime.py:28: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/sandbox.py:1464: in run_sandboxed
-    return selected.run(
-scripts/full_inspection_repair/sandbox.py:1091: in run
-    wrapped = self._wrap(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+observed   = SandboxResult(backend_id='linux.process-group', backend_version='1.0', status='BLOCKED', failure_code='NSJAIL_FAILURE'...anup_verified=True, network_canary={'status': 'NOT_REQUIRED'}, error='NoSuchProcess: process PID not found (pid=5196)')
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x736c86475b50>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-B', '-c', "import sys; sys.stdout.write('x'*700); sys.stderr.write('y'*700)"]
-cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
-limits = SandboxLimits(timeout_seconds=10, max_output_bytes=1024, max_rss_mib=256, max_input_files=None)
-policy = 'ALLOW'
-
-    def _wrap(
-        self,
-        argv: Sequence[str],
-        *,
-        cwd: Path,
-        limits: SandboxLimits,
-        policy: str,
-    ) -> list[str]:
->       assert self.executable
-               ^^^^^^^^^^^^^^^
-E       AssertionError
-
-scripts/full_inspection_repair/sandbox.py:878: AssertionError
+tests/unit/test_sandbox_runtime.py:44: AssertionError
 =========================== short test summary info ============================
 SKIPPED [1] tests/integration/test_capability_cli.py:70: Windows srt-win policy is Windows-specific
 SKIPPED [1] tests/integration/test_capability_cli.py:102: the pinned ast-grep capability command is Windows-specific
@@ -994,6 +572,6 @@ SKIPPED [1] tests/unit/test_r12_runtime_repair.py:103: Windows alternate data st
 SKIPPED [1] tests/unit/test_r12_runtime_repair.py:280: Windows directory flush
 SKIPPED [1] tests/unit/test_r12_runtime_repair.py:431: Windows USN journal
 SKIPPED [1] tests/unit/test_r8_runtime_reader.py:117: Windows junction fixture
-SKIPPED [1] tests/unit/test_sandbox_runtime.py:72: Windows Job Object backend
-SKIPPED [1] tests/unit/test_sandbox_runtime.py:88: Windows Job Object backend
-21 failed, 459 passed, 16 skipped in 68.62s (0:01:08)
+SKIPPED [1] tests/unit/test_sandbox_runtime.py:73: Windows Job Object backend
+SKIPPED [1] tests/unit/test_sandbox_runtime.py:89: Windows Job Object backend
+22 failed, 461 passed, 16 skipped in 138.82s (0:02:18)
