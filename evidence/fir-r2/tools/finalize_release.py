@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import platform
+import shutil
 import sys
 import xml.etree.ElementTree as ET
 from datetime import UTC, datetime
@@ -180,6 +181,116 @@ def verify_lifecycle(
     return value
 
 
+def verify_power_evidence(
+    path: Path,
+    *,
+    candidate_digest: str,
+    scope_digest: str,
+) -> dict[str, Any]:
+    value = read_json(path)
+    require_digest(value, "evidence_digest", "physical power evidence")
+    if (
+        value.get("status") != "VERIFIED"
+        or value.get("candidate_digest") != candidate_digest
+        or value.get("scope_digest") != scope_digest
+        or value.get("boot_identity_changed") is not True
+        or value.get("kernel_power_event_id") != 41
+        or value.get("mid_swap_recovered") is not True
+        or value.get("mid_swap_observation", {}).get("target_absent") is not True
+        or value.get("mid_swap_observation", {}).get("rollback_present") is not True
+        or value.get("mid_swap_observation", {}).get("staged_candidate_present")
+        is not True
+    ):
+        raise ValueError("physical power evidence is incomplete")
+
+    expected_files = {
+        "arm",
+        "marker",
+        "cut",
+        "boot",
+        "usn-start",
+        "usn-finish",
+        "target-manifest",
+        "rollback-manifest",
+        "probe-script",
+    }
+    records = value.get("evidence_files")
+    if not isinstance(records, dict) or set(records) != expected_files:
+        raise ValueError("physical power evidence file set mismatch")
+    base = path.parent.resolve()
+    resolved: dict[str, Path] = {}
+    for name, record in records.items():
+        if not isinstance(record, dict):
+            raise ValueError(f"physical power evidence record is invalid: {name}")
+        relative = Path(str(record.get("path", "")))
+        if relative.is_absolute() or ".." in relative.parts or not relative.parts:
+            raise ValueError(f"unsafe physical power evidence path: {name}")
+        evidence_path = (base / relative).resolve()
+        if base not in evidence_path.parents or not evidence_path.is_file():
+            raise ValueError(f"physical power evidence is missing: {name}")
+        if (
+            evidence_path.stat().st_size != record.get("bytes")
+            or sha256(evidence_path) != record.get("sha256")
+        ):
+            raise ValueError(f"physical power evidence digest mismatch: {name}")
+        resolved[name] = evidence_path
+
+    arm = read_json(resolved["arm"])
+    arm_digest = arm.pop("arm_digest", None)
+    if (
+        arm_digest != canonical_digest(arm)
+        or arm.get("status") != "ARMED"
+        or arm.get("candidate_digest") != candidate_digest
+        or arm.get("scope_digest") != scope_digest
+        or arm.get("probe_script_sha256") != value.get("probe_script_sha256")
+        or arm.get("probe_script_sha256") != sha256(resolved["probe-script"])
+    ):
+        raise ValueError("physical power arm receipt mismatch")
+    marker = read_json(resolved["marker"])
+    marker_digest = marker.pop("marker_digest", None)
+    if (
+        marker_digest != canonical_digest(marker)
+        or marker_digest != value.get("event_id")
+        or marker.get("status") != "MID_SWAP_REACHED"
+        or marker.get("candidate_digest") != candidate_digest
+        or marker.get("scope_digest") != scope_digest
+        or marker.get("target_exists") is not False
+        or marker.get("rollback_exists") is not True
+        or not marker.get("staged_candidates")
+    ):
+        raise ValueError("physical power midpoint marker mismatch")
+    power_events = read_json(resolved["cut"]).get("events")
+    if (
+        not isinstance(power_events, list)
+        or not any(int(event.get("Id", 0)) == 41 for event in power_events)
+    ):
+        raise ValueError("physical power Kernel-Power event is missing")
+    boot = read_json(resolved["boot"])
+    if (
+        boot.get("boot_id") != value.get("post_cut_boot_id")
+        or arm.get("boot", {}).get("boot_id") != value.get("pre_cut_boot_id")
+    ):
+        raise ValueError("physical power boot identity mismatch")
+    usn_start = read_json(resolved["usn-start"])
+    usn_finish = read_json(resolved["usn-finish"])
+    if (
+        usn_finish.get("status") != "COMPLETE"
+        or usn_start.get("journal_id") != usn_finish.get("journal_id")
+        or usn_finish.get("start_usn") != usn_start.get("start_usn")
+    ):
+        raise ValueError("physical power USN audit mismatch")
+    target_manifest = read_json(resolved["target-manifest"])
+    rollback_manifest = read_json(resolved["rollback-manifest"])
+    if (
+        target_manifest.get("tree_digest") != candidate_digest
+        or target_manifest.get("tree_digest") != value.get("recovered_target_digest")
+        or rollback_manifest.get("tree_digest") != value.get("rollback_digest")
+        or rollback_manifest.get("tree_digest") != arm.get("old_target_digest")
+    ):
+        raise ValueError("physical power tree digest mismatch")
+    return value
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, required=True)
@@ -311,17 +422,11 @@ def main() -> int:
         ),
     }
     power_path = input_root / "power" / "PHYSICAL-POWER-EVIDENCE.json"
-    power = read_json(power_path)
-    require_digest(power, "evidence_digest", "physical power evidence")
-    if (
-        power.get("status") != "VERIFIED"
-        or power.get("candidate_digest") != candidate_digest
-        or power.get("scope_digest") != scope_digest
-        or power.get("boot_identity_changed") is not True
-        or power.get("kernel_power_event_id") != 41
-        or power.get("mid_swap_recovered") is not True
-    ):
-        raise ValueError("physical power evidence is incomplete")
+    power = verify_power_evidence(
+        power_path,
+        candidate_digest=candidate_digest,
+        scope_digest=scope_digest,
+    )
 
     source_ids = [
         f"source:{item['path']}" for item in manifest["files"]
@@ -793,6 +898,7 @@ def main() -> int:
     write_json(output / "coverage.json", coverage)
     write_json(output / "domains.json", domains)
     write_json(output / "risk-gate-evidence.json", risk_evidence)
+    shutil.copytree(power_path.parent, output / "power")
     (output / "reviewer-attestation.json").write_text(
         canonical_json(attestation) + "\n",
         encoding="utf-8",

@@ -205,6 +205,7 @@ jobs:
             evidence/fir-r2/macos
             evidence/fir-r2/final
             evidence/fir-r2/signed
+            evidence/fir-r2/input/power
           if-no-files-found: error
 
       - name: Commit evidence and Sigstore bundles
