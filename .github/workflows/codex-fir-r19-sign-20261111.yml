@@ -30,9 +30,29 @@ jobs:
           python -B evidence/fir-r2/candidate/full-inspection-repair/scripts/release_skill.py package \
             --source evidence/fir-r2/candidate/full-inspection-repair \
             --output "$RUNNER_TEMP/package"
-          cmp \
-            evidence/fir-r2/input/package-manifest.json \
-            "$RUNNER_TEMP/package/package-manifest.json"
+          python -B - "$RUNNER_TEMP/package/package-manifest.json" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          expected = json.loads(
+              Path("evidence/fir-r2/input/package-manifest.json").read_text()
+          )
+          actual = json.loads(
+              Path(sys.argv[1]).read_text()
+          )
+          if actual != expected:
+              raise SystemExit("checkout package manifest differs from the freeze")
+          sys.path.insert(
+              0, "evidence/fir-r2/candidate/full-inspection-repair/scripts"
+          )
+          from full_inspection_repair.package import verify_package_manifest
+
+          verify_package_manifest(
+              "evidence/fir-r2/candidate/full-inspection-repair",
+              expected,
+          )
+          PY
 
       - name: Full macOS tests
         working-directory: evidence/fir-r2/candidate/full-inspection-repair
