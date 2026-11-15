@@ -16,6 +16,9 @@ python -m venv "${venv}"
   schemathesis==4.33.4
 
 mkdir -p "${bin_dir}"
+for tool in pytest lint-imports mutmut schemathesis; do
+  ln -sf "${venv}/bin/${tool}" "${bin_dir}/${tool}"
+done
 case "${platform}" in
   macos)
     asset="opengrep_osx_arm64"
@@ -37,7 +40,7 @@ curl --fail --location --silent --show-error \
 printf '%s  %s\n' "${expected}" "${bin_dir}/opengrep" | shasum -a 256 -c -
 chmod +x "${bin_dir}/opengrep"
 
-printf '%s\n' "${venv}/bin" "${bin_dir}" >> "${GITHUB_PATH}"
+printf '%s\n' "${bin_dir}" >> "${GITHUB_PATH}"
 
 "${venv}/bin/pytest" --version
 "${venv}/bin/lint-imports" --version
