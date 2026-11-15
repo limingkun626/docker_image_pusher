@@ -1,0 +1,104 @@
+{
+  "candidate_checks": {
+    "linux": {
+      "blocked_detectors": [],
+      "capability_digest": null,
+      "capability_status": null,
+      "closed_count": 0,
+      "coverage_digest": "ca617393125db3fafcae0a1e469b9db936be8de6ad47795a75501651f62936a7",
+      "detectors": 10,
+      "impact_digest": "ba83068201c390dca6fcb13b787b9ee412ebc232fd678802f99f10be862648f2",
+      "matrix_digest": null,
+      "open_count": 0,
+      "status": "CHECKED",
+      "subject_id": "skill:bdb5b5edd46c862f",
+      "subject_kind": "SKILL",
+      "taxonomy_digest": "c710ebe3c2ae2526197519dede3ccb52ebb44510246839f955e7b0750a208ecd",
+      "tree_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7"
+    },
+    "macos": {
+      "blocked_detectors": [],
+      "capability_digest": null,
+      "capability_status": null,
+      "closed_count": 0,
+      "coverage_digest": "ca617393125db3fafcae0a1e469b9db936be8de6ad47795a75501651f62936a7",
+      "detectors": 10,
+      "impact_digest": "ba83068201c390dca6fcb13b787b9ee412ebc232fd678802f99f10be862648f2",
+      "matrix_digest": null,
+      "open_count": 0,
+      "status": "CHECKED",
+      "subject_id": "skill:bdb5b5edd46c862f",
+      "subject_kind": "SKILL",
+      "taxonomy_digest": "c710ebe3c2ae2526197519dede3ccb52ebb44510246839f955e7b0750a208ecd",
+      "tree_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7"
+    },
+    "windows": {
+      "blocked_detectors": [],
+      "capability_digest": null,
+      "capability_status": null,
+      "closed_count": 0,
+      "coverage_digest": "ca617393125db3fafcae0a1e469b9db936be8de6ad47795a75501651f62936a7",
+      "detectors": 10,
+      "impact_digest": "ba83068201c390dca6fcb13b787b9ee412ebc232fd678802f99f10be862648f2",
+      "matrix_digest": null,
+      "open_count": 0,
+      "status": "CHECKED",
+      "subject_id": "skill:bdb5b5edd46c862f",
+      "subject_kind": "SKILL",
+      "taxonomy_digest": "c710ebe3c2ae2526197519dede3ccb52ebb44510246839f955e7b0750a208ecd",
+      "tree_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7"
+    }
+  },
+  "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+  "captured_at_utc": "2026-11-15T05:28:34+00:00",
+  "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
+  "failure_count": 0,
+  "lifecycle_receipt_digests": {
+    "linux": "3a7678d5689411ccd360ddcbf45cb2da92312bc3b08d3067e1702e4457b63219",
+    "macos": "6d67ed648b062c4a8097073fc902ae8076d43d3cf4f45063ad45bd9be769e457",
+    "windows": "2139463b5753ff5525fff02f0f4c7c6b0df2e47cc8f4fc1acb357b0b2a72669f"
+  },
+  "package_manifest_digest": "b0cbdab3ba4f7a57aebb36ab7666cef1289734a8a3ab15d123f1f62714150baa",
+  "power_evidence_digest": "6d091953d0210fd343d4383f1c249ce25527097bd5bff1cf2629cac4d88f3394",
+  "run_id": "fir-r2-release-20261115-generation-4-r1",
+  "schema_version": 3,
+  "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+  "scope_id": "fir-r2-release-20261115-generation-4",
+  "status": "PASS",
+  "taxonomy": {
+    "cells": 72,
+    "coverage_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
+    "qualification_controls": 720,
+    "terminal_counts": {
+      "COVERED_BY_EXACT_ADAPTER": 11,
+      "COVERED_BY_INDEPENDENT_ORACLE": 16,
+      "COVERED_BY_NATIVE_DETECTOR": 35,
+      "MERGED_WITH_PRIMARY_CELL": 2,
+      "NOT_APPLICABLE_WITH_PROOF": 8
+    }
+  },
+  "test_suites": {
+    "linux": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 358,
+      "skipped": 14,
+      "tests": 372
+    },
+    "macos": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 359,
+      "skipped": 13,
+      "tests": 372
+    },
+    "windows": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 363,
+      "skipped": 9,
+      "tests": 372
+    }
+  },
+  "verification_digest": "2f1ef008892ad5afbaa216d0622df0687d0032d8f65772cfe87bd202efd1da4d"
+}

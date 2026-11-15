@@ -1,0 +1,21 @@
+.........................sssss.......................................sss [ 19%]
+.......................s................................................ [ 38%]
+........................................................................ [ 58%]
+........s......s...s.................................................... [ 77%]
+.................................................s...................... [ 96%]
+............                                                             [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/integration/test_capability_cli.py:71: Windows firewall guard is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:168: the pinned ast-grep capability command is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:196: the pinned ast-grep capability command is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:222: Windows firewall guard is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:315: Windows firewall guard is Windows-specific
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:704: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:743: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:799: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r8_release_sigstore.py:393: real Sigstore bundle environment is not configured
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:103: Windows alternate data streams
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:280: Windows directory flush
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:431: Windows USN journal
+SKIPPED [1] tests/unit/test_r8_runtime_reader.py:117: Windows junction fixture
+359 passed, 13 skipped in 158.23s (0:02:38)

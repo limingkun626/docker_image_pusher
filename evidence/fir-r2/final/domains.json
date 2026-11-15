@@ -1,0 +1,807 @@
+{
+  "durability": {
+    "physical_power_loss": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "durability.physical_power_loss",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "bytes": 3351,
+            "path": "input/power/PHYSICAL-POWER-EVIDENCE.json",
+            "sha256": "8af3654141ed334c9fc4fd541451372829a97e91fc7f5010cac103b1be271c71"
+          }
+        ],
+        "facts": {
+          "boot_identity_changed": true,
+          "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+          "event": "PHYSICAL_MID_SWAP_OUTAGE",
+          "kernel_power_event_id": 41,
+          "mid_swap_recovered": true,
+          "rollback_digest": "d8cb1de088a17d3659a6d0be5c739699982933507bb7f935d19331b3a1773e6e"
+        },
+        "receipt_digest": "da7b243c906286f83da77cd6785400bc4507930a9044fe35d24e390a2c9d5caf",
+        "runner": "python -B \"F:\\Codex\\runs\\fir-r2-release-20261115\\power_probe.py\" arm",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "7de34ed13c4e36a532c156f2d54dbb399d2ec9fb7754ae69fc23dc9f6f0f738b",
+      "runner": "python -B \"F:\\Codex\\runs\\fir-r2-release-20261115\\power_probe.py\" arm",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    },
+    "software_atomicity": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "durability.software_atomicity",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "bytes": 53526,
+            "path": "input/windows-junit.xml",
+            "sha256": "dfb92db34c8d401faa7ad6cdcaaeff22cea4ae33178ac584bb63ea952fd55f2a"
+          },
+          {
+            "bytes": 54987,
+            "path": "input/linux-junit.xml",
+            "sha256": "813e47e12c3e9a8b25b4b6300836316020ddf0a64537c11dcaf5dce790d5a154"
+          }
+        ],
+        "facts": {
+          "atomic_activation": true,
+          "linux_pass_count": 358,
+          "required_tests": [
+            "test_failed_second_operation_removes_candidate_tree",
+            "test_install_package_copies_exact_reviewed_tree",
+            "test_installation_uses_durable_replace_for_all_directory_transitions",
+            "test_restore_failure_reports_blocked_restore"
+          ],
+          "rollback_retained": true,
+          "windows_pass_count": 363
+        },
+        "receipt_digest": "b895074f0ba50f156b67aa2969eb5350e48515ac16fef617d1f824178c61dd0d",
+        "runner": "pytest package, durability, rollback and crash-recovery suites",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "a0047a8e9b0c7e329f9e0d5869a33a545332ec8a90993292280b9ddd0edb8d45",
+      "runner": "pytest package, durability, rollback and crash-recovery suites",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    }
+  },
+  "evaluator": {
+    "structured_blocked_receipt": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "evaluator.structured_blocked_receipt",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "bytes": 53526,
+            "path": "input/windows-junit.xml",
+            "sha256": "dfb92db34c8d401faa7ad6cdcaaeff22cea4ae33178ac584bb63ea952fd55f2a"
+          }
+        ],
+        "facts": {
+          "required_tests": [
+            "test_cli_blocked_output_file_is_structured_json_without_traceback",
+            "test_r8_cli_emits_blocked_install_receipt",
+            "test_release_cli_turns_bad_manifest_into_blocked_receipt"
+          ]
+        },
+        "receipt_digest": "a6adc838aa8e40daa71db95c473b687824fbf49b83716feb8163e19e912158e2",
+        "runner": "pytest structured release failure receipts",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "e6c40f90883bdcdf3c6449700530f151bd12d2a3068a0c958999e67da2f2f0c5",
+      "runner": "pytest structured release failure receipts",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    },
+    "tamper_input_matrix": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "evaluator.tamper_input_matrix",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "bytes": 53526,
+            "path": "input/windows-junit.xml",
+            "sha256": "dfb92db34c8d401faa7ad6cdcaaeff22cea4ae33178ac584bb63ea952fd55f2a"
+          }
+        ],
+        "facts": {
+          "required_tests": [
+            "test_sigstore_helper_substitution_blocks_before_execution",
+            "test_sigstore_replacement_between_verify_and_hash_blocks",
+            "test_sigstore_script_wrapper_requires_complete_runtime_closure",
+            "test_sigstore_verifier_content_and_version_are_pinned"
+          ]
+        },
+        "receipt_digest": "4b4ffebc286e1d697e3e44c95e7f8d1916b6ab78cfa07f3d0105c735eff1610e",
+        "runner": "pytest Sigstore tamper and substitution matrix",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "a9a751ca0f6d2a79de97cf194a9638221f3d5dd9c7798156831284ef0bc34f2c",
+      "runner": "pytest Sigstore tamper and substitution matrix",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    },
+    "verifier_identity_frozen": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "evaluator.verifier_identity_frozen",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "bytes": 38468,
+            "path": "input/evaluator/matrix_selftest_r19.py",
+            "sha256": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083"
+          },
+          {
+            "path": "policies/trust-policy.json",
+            "sha256": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c"
+          }
+        ],
+        "facts": {
+          "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
+          "policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+          "verifier_sha256": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627",
+          "verifier_version": "4.5.1"
+        },
+        "receipt_digest": "58a2b10d6b0122d03b60d17ab9b6a5ac22baa92cf923785fbb7e16174cb8850e",
+        "runner": "pytest evaluator trust and verifier identity controls",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "6552618e752dee4f310b07914815ebb6d4801474bb18b250622c7550855c14e5",
+      "runner": "pytest evaluator trust and verifier identity controls",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    }
+  },
+  "lifecycle": {
+    "atomic_activation": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "lifecycle.atomic_activation",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "path": "windows-lifecycle",
+            "sha256": "2139463b5753ff5525fff02f0f4c7c6b0df2e47cc8f4fc1acb357b0b2a72669f"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "3a7678d5689411ccd360ddcbf45cb2da92312bc3b08d3067e1702e4457b63219"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "6d67ed648b062c4a8097073fc902ae8076d43d3cf4f45063ad45bd9be769e457"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+          "platforms": [
+            "windows",
+            "linux",
+            "macos"
+          ],
+          "stage": "atomic_activation",
+          "status": "PASS"
+        },
+        "receipt_digest": "78e9209c16159d12850a79ee6598f624d5cff1aa5757ce4c40e0de79df6f3a52",
+        "runner": "three-platform lifecycle harness",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "15e30cb8c59d6ddf2a7407fed8cfdd8a0fd2b6c402fdfee8a57ee73222256b83",
+      "runner": "three-platform lifecycle harness",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    },
+    "post_activation_smoke": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "lifecycle.post_activation_smoke",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "path": "windows-lifecycle",
+            "sha256": "2139463b5753ff5525fff02f0f4c7c6b0df2e47cc8f4fc1acb357b0b2a72669f"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "3a7678d5689411ccd360ddcbf45cb2da92312bc3b08d3067e1702e4457b63219"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "6d67ed648b062c4a8097073fc902ae8076d43d3cf4f45063ad45bd9be769e457"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+          "platforms": [
+            "windows",
+            "linux",
+            "macos"
+          ],
+          "stage": "smoke",
+          "status": "PASS"
+        },
+        "receipt_digest": "e40471ba1b6beed70b71f1d863cd52aa649a0cf4a6d310699760df0406df798f",
+        "runner": "three-platform lifecycle harness",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "28fb0b58bb0b392356d8d9cbf1aac95b1223badee270f7823f009f6a082ecd12",
+      "runner": "three-platform lifecycle harness",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    },
+    "readback": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "lifecycle.readback",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "path": "windows-lifecycle",
+            "sha256": "2139463b5753ff5525fff02f0f4c7c6b0df2e47cc8f4fc1acb357b0b2a72669f"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "3a7678d5689411ccd360ddcbf45cb2da92312bc3b08d3067e1702e4457b63219"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "6d67ed648b062c4a8097073fc902ae8076d43d3cf4f45063ad45bd9be769e457"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+          "platforms": [
+            "windows",
+            "linux",
+            "macos"
+          ],
+          "stage": "readback",
+          "status": "PASS"
+        },
+        "receipt_digest": "dcad389e00a7aaef479b1ae720c5c17ee962e7a3f005d2cf25ac0faf2c406aa1",
+        "runner": "three-platform lifecycle harness",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "b13fac115451912b3341a2ab9f77c8306a6944c554f1d4644957cd98e1327f85",
+      "runner": "three-platform lifecycle harness",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    },
+    "rollback_retained": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "lifecycle.rollback_retained",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "path": "windows-lifecycle",
+            "sha256": "2139463b5753ff5525fff02f0f4c7c6b0df2e47cc8f4fc1acb357b0b2a72669f"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "3a7678d5689411ccd360ddcbf45cb2da92312bc3b08d3067e1702e4457b63219"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "6d67ed648b062c4a8097073fc902ae8076d43d3cf4f45063ad45bd9be769e457"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+          "platforms": [
+            "windows",
+            "linux",
+            "macos"
+          ],
+          "stage": "rollback",
+          "status": "PASS"
+        },
+        "receipt_digest": "ef6b408306fecaa18220c9c622f301a4bd818978281974c30b1691b2bfa4153b",
+        "runner": "three-platform lifecycle harness",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "e46606155cf04433374dbd596ba454cdafc80dc0bd91115aab5e17d46df87690",
+      "runner": "three-platform lifecycle harness",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    },
+    "staging_install": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "lifecycle.staging_install",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "path": "windows-lifecycle",
+            "sha256": "2139463b5753ff5525fff02f0f4c7c6b0df2e47cc8f4fc1acb357b0b2a72669f"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "3a7678d5689411ccd360ddcbf45cb2da92312bc3b08d3067e1702e4457b63219"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "6d67ed648b062c4a8097073fc902ae8076d43d3cf4f45063ad45bd9be769e457"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+          "platforms": [
+            "windows",
+            "linux",
+            "macos"
+          ],
+          "stage": "installation",
+          "status": "PASS"
+        },
+        "receipt_digest": "7b2a3c224262ef750d779983b7f62ce025aebe3d701943501816880139e505c8",
+        "runner": "three-platform lifecycle harness",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "927f5f7170b48d91a79e5d90f42d89a37791d1c011c9e163f1d3b9e73af1b7d3",
+      "runner": "three-platform lifecycle harness",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    }
+  },
+  "platform_support": {
+    "linux_install": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "platform_support.linux_install",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "bytes": 54987,
+            "path": "input/linux-junit.xml",
+            "sha256": "813e47e12c3e9a8b25b4b6300836316020ddf0a64537c11dcaf5dce790d5a154"
+          },
+          {
+            "path": "linux-self-check-summary",
+            "sha256": "e2f1ba7983c97267e817a2159cd39d04ca69ddd5dd9e24c6764deb72612d8f93"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "3a7678d5689411ccd360ddcbf45cb2da92312bc3b08d3067e1702e4457b63219"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+          "lifecycle": "PASS",
+          "platform": "linux",
+          "self_check": "CHECKED",
+          "tests": {
+            "errors": 0,
+            "failures": 0,
+            "passed": 358,
+            "skipped": 14,
+            "tests": 372
+          }
+        },
+        "receipt_digest": "3c1e0bb049a840986cceaf8d1fdba7974d89fdb26a81bc252687a6d2247cf93f",
+        "runner": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "61a62956c863c3b31d5abe2729f9902485d4bcb9b9d3379d4cbc29c1904e5ad4",
+      "runner": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    },
+    "macos_install": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "platform_support.macos_install",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "bytes": 55091,
+            "path": "macos/macos-junit.xml",
+            "sha256": "8557c9536b51919848af4d11910b043539bf6265fbae5309578695c7e8d12aff"
+          },
+          {
+            "path": "macos-self-check-summary",
+            "sha256": "e2f1ba7983c97267e817a2159cd39d04ca69ddd5dd9e24c6764deb72612d8f93"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "6d67ed648b062c4a8097073fc902ae8076d43d3cf4f45063ad45bd9be769e457"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+          "lifecycle": "PASS",
+          "platform": "macos",
+          "self_check": "CHECKED",
+          "tests": {
+            "errors": 0,
+            "failures": 0,
+            "passed": 359,
+            "skipped": 13,
+            "tests": 372
+          }
+        },
+        "receipt_digest": "4f9c0216ed9b03174940f9ba395361d9192b4e9609fde100f1872be67d8984c7",
+        "runner": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "3339cdafc730102ad991077cf54f9b2d62bf8700a5341bdacba98f224615e0d5",
+      "runner": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    },
+    "windows_install": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "platform_support.windows_install",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "bytes": 53526,
+            "path": "input/windows-junit.xml",
+            "sha256": "dfb92db34c8d401faa7ad6cdcaaeff22cea4ae33178ac584bb63ea952fd55f2a"
+          },
+          {
+            "path": "windows-self-check-summary",
+            "sha256": "e2f1ba7983c97267e817a2159cd39d04ca69ddd5dd9e24c6764deb72612d8f93"
+          },
+          {
+            "path": "windows-lifecycle",
+            "sha256": "2139463b5753ff5525fff02f0f4c7c6b0df2e47cc8f4fc1acb357b0b2a72669f"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+          "lifecycle": "PASS",
+          "platform": "windows",
+          "self_check": "CHECKED",
+          "tests": {
+            "errors": 0,
+            "failures": 0,
+            "passed": 363,
+            "skipped": 9,
+            "tests": 372
+          }
+        },
+        "receipt_digest": "6c422680204e7e0ff68b1ac251603c19754f9162c49086412d0442597f087458",
+        "runner": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "484dc6389a491a12a8b68a57bba2fa8def86c47187d4ad84df01d73fdd9a80d8",
+      "runner": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    }
+  },
+  "trust": {
+    "external_reviewer_signature": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "trust.external_reviewer_signature",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "path": ".github/workflows/codex-fir-r19-sign-20261111.yml",
+            "sha256": "5b7a6a48ca04abb54391cc8de7174fcc351943e56e6489668c456611b00b5b0a"
+          },
+          {
+            "path": "policies/trust-policy.json",
+            "sha256": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c"
+          }
+        ],
+        "facts": {
+          "oidc_issuer": "https://token.actions.githubusercontent.com",
+          "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "trust_root_id": "sigstore:abaa28e5742590a89203105e550752548daad953299b3bc66656bca0d1dd775c",
+          "verification": "offline exact-identity Sigstore bundle verification"
+        },
+        "receipt_digest": "23dc2f34880e56a79f9d23a03cd5f3cb8a3d7183711dd57fe16558240b9a316c",
+        "runner": "cosign sign-blob under GitHub Actions OIDC",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "f078a3f34faa7a713521a2ba981ec28623597e6aa8adab93c6a6210910b2e6ae",
+      "runner": "cosign sign-blob under GitHub Actions OIDC",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    },
+    "external_trust_root": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "trust.external_trust_root",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "path": "policies/trust-policy.json",
+            "sha256": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c"
+          }
+        ],
+        "facts": {
+          "oidc_issuer": "https://token.actions.githubusercontent.com",
+          "reviewer_registry_digest": "fe7c2fa54b17902fe99e9cb8c5805ee0f7caf7aed201055afe42d040de20a3b7",
+          "trust_root_id": "sigstore:abaa28e5742590a89203105e550752548daad953299b3bc66656bca0d1dd775c"
+        },
+        "receipt_digest": "d8d3285f87bc8d254764b1839fc045f6871fa29415bd0e6813070eb0f11bffaa",
+        "runner": "code-frozen trust policy",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "fcebc5fe2c6b7225ee7f9631622e308450db784da6d0c9c10b5cd7f9ec6b7789",
+      "runner": "code-frozen trust policy",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    },
+    "non_producer_review": {
+      "environment": {
+        "github_run_id": "43681194880",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+        "domain": "trust.non_producer_review",
+        "environment": {
+          "github_run_id": "43681194880",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "evidence": [
+          {
+            "path": "trust-registry.json",
+            "sha256": "fe7c2fa54b17902fe99e9cb8c5805ee0f7caf7aed201055afe42d040de20a3b7"
+          },
+          {
+            "path": "policies/trust-policy.json",
+            "sha256": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c"
+          }
+        ],
+        "facts": {
+          "producer": "codex-primary",
+          "producer_reviewer_separated": true,
+          "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111"
+        },
+        "receipt_digest": "3d61036c414418446df4f0a7e4682da514664c0f61001fd70290c14c12311818",
+        "runner": "GitHub Actions OIDC reviewer workflow",
+        "schema_version": 1,
+        "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+        "status": "VERIFIED"
+      },
+      "receipt_sha256": "de57f9d910bd97a70bc554fed8649bd7efdaaaa04eecbe83e58cb09b85d8b015",
+      "runner": "GitHub Actions OIDC reviewer workflow",
+      "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+      "status": "VERIFIED"
+    }
+  }
+}
