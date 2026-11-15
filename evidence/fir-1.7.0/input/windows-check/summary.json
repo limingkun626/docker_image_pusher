@@ -9,10 +9,10 @@
   "matrix_digest": null,
   "open_count": 0,
   "semantic_cell_count": 72,
-  "semantic_matrix_digest": "2754dfc52ff4541b8c5cecd219dfe549179d14e56cd74cb464ed356a9938c335",
+  "semantic_matrix_digest": "12b4b30e551d2207775bc8672978ba027b622b5960aef83d4d900eaf38abb3d9",
   "status": "CHECKED",
   "subject_id": "skill:ab9f771f43d10ef8",
   "subject_kind": "SKILL",
-  "taxonomy_digest": "793bd4d2ca0ed39166ca0933b54c604d9eef37f7bb5bec77f32bc1398949376b",
+  "taxonomy_digest": "58db7b988a3d55b9321b4287ef810d6ddf45bc32b0f79e0164387f0f4f6584d5",
   "tree_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed"
 }

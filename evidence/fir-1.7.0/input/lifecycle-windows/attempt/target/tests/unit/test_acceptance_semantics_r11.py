@@ -5,6 +5,7 @@ import io
 import sys
 from dataclasses import replace
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -90,7 +91,7 @@ def test_t_run_02_successful_deny_canary_blocks_network_execution(
     backend.srt_win = "srt-win-test"
     backend.srt_version = "test"
     backend._srt_available = True
-    monkeypatch.setattr(sandbox_module.os, "name", "nt")
+    monkeypatch.setattr(sandbox_module, "os", SimpleNamespace(name="nt"))
     monkeypatch.setattr(
         backend,
         "_execute_job",

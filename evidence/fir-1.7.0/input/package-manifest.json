@@ -621,9 +621,9 @@
       "sha256": "bc1bc939aa402ff877fccb3951f0c29ffcaf6e31ab51b5b5ac2830b64c472f41"
     },
     {
-      "bytes": 9910,
+      "bytes": 9961,
       "path": "tests/unit/test_acceptance_semantics_r11.py",
-      "sha256": "4b6259951819d37099199ad28e5f9655f4294653149ec6f4bbe96663a98f5721"
+      "sha256": "9fa4a4a77f208c314fd0f1c36131c9434fa06c289f6336d7172cc4dd7ab02c59"
     },
     {
       "bytes": 15031,
@@ -811,8 +811,8 @@
       "sha256": "616388c7358f7257e0aa4b8f320c737fdbe5a05d6ed1e9b2442073f07b63a298"
     }
   ],
-  "manifest_digest": "831cfd4fe18a4cc9d766bac22c78396517eec7a5e6e9bd0e7967366decb103ad",
+  "manifest_digest": "3c189fa36ba3fa2e3510a8dd1b18c1f44b56a63d0a106a849cdeef2127521d2a",
   "root_name": "full-inspection-repair",
   "schema_version": 1,
-  "tree_digest": "2a1d8446b2b8ba5a6672640770c7e30929917df035c4445e637e4670bfabd595"
+  "tree_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9"
 }
