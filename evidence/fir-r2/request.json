@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "status": "MACOS_AND_FINALIZE",
+  "scope_id": "fir-r2-release-20261115-generation-4",
+  "run_id": "fir-r2-release-20261115-generation-4-r1",
+  "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+  "package_manifest_digest": "b0cbdab3ba4f7a57aebb36ab7666cef1289734a8a3ab15d123f1f62714150baa",
+  "producer": "codex-primary",
+  "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+  "oidc_issuer": "https://token.actions.githubusercontent.com",
+  "trust_root_id": "sigstore:abaa28e5742590a89203105e550752548daad953299b3bc66656bca0d1dd775c",
+  "requested_at_utc": "2026-11-15T05:00:00Z"
+}
