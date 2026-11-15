@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://codex.local/fir/r2/execution-receipt-v2.schema.json",
+  "title": "FIR R2 execution receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_kind",
+    "cell_id",
+    "mechanism_id",
+    "tool_version",
+    "tool_digest",
+    "argv_digest",
+    "snapshot_digest",
+    "policy_digest",
+    "adapter_digest",
+    "fact_set_digest",
+    "resource_receipt",
+    "process_tree_receipt",
+    "network_guard_receipt",
+    "terminal_status",
+    "failure_code",
+    "receipt_digest"
+  ],
+  "properties": {
+    "schema_version": {"const": 2},
+    "receipt_kind": {"enum": ["DETECTOR", "EXTERNAL_ADAPTER", "ORACLE", "LIFECYCLE"]},
+    "cell_id": {"type": "string", "pattern": "^SKILL:[A-Z_]+:[A-Z_]+$"},
+    "mechanism_id": {"type": "string", "minLength": 1},
+    "tool_version": {"type": "string", "minLength": 1},
+    "tool_digest": {"$ref": "#/$defs/digest"},
+    "argv_digest": {"$ref": "#/$defs/digest"},
+    "snapshot_digest": {"$ref": "#/$defs/digest"},
+    "policy_digest": {"$ref": "#/$defs/digest"},
+    "adapter_digest": {"$ref": "#/$defs/digest"},
+    "fact_set_digest": {"$ref": "#/$defs/digest"},
+    "resource_receipt": {"$ref": "#/$defs/resource"},
+    "process_tree_receipt": {"$ref": "#/$defs/process"},
+    "network_guard_receipt": {"$ref": "#/$defs/network"},
+    "terminal_status": {
+      "enum": [
+        "FINDING",
+        "CLEAN",
+        "UNCOVERED",
+        "UNSUPPORTED",
+        "BLOCKED",
+        "PASS"
+      ]
+    },
+    "failure_code": {"type": ["string", "null"]},
+    "receipt_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "resource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "timeout_seconds",
+        "elapsed_seconds",
+        "peak_rss_mib",
+        "files",
+        "output_bytes",
+        "limit_hit"
+      ],
+      "properties": {
+        "timeout_seconds": {"type": "number", "minimum": 0},
+        "elapsed_seconds": {"type": "number", "minimum": 0},
+        "peak_rss_mib": {"type": "number", "minimum": 0},
+        "files": {"type": "integer", "minimum": 0},
+        "output_bytes": {"type": "integer", "minimum": 0},
+        "limit_hit": {"type": ["string", "null"]}
+      }
+    },
+    "process": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["root_pid", "child_pids", "termination_method", "descendants_empty"],
+      "properties": {
+        "root_pid": {"type": "integer", "minimum": 1},
+        "child_pids": {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 1},
+          "uniqueItems": true
+        },
+        "termination_method": {"type": "string", "minLength": 1},
+        "descendants_empty": {"type": "boolean"}
+      }
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy", "enforced", "cleanup_verified"],
+      "properties": {
+        "policy": {"enum": ["DENY", "LOOPBACK_ONLY", "ALLOWLIST"]},
+        "enforced": {"type": "boolean"},
+        "cleanup_verified": {"type": "boolean"},
+        "mechanism": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

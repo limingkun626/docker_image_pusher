@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://full-inspection-repair.local/contracts/execution-receipt-v3.schema.json",
+  "title": "FIR Execution Receipt V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "run_id",
+    "receipt_kind",
+    "cell_id",
+    "binding_id",
+    "tool",
+    "subject",
+    "execution",
+    "resources",
+    "process_tree",
+    "network",
+    "facts",
+    "terminal_status",
+    "failure_code",
+    "receipt_digest"
+  ],
+  "properties": {
+    "schema_version": { "const": 3 },
+    "receipt_id": { "$ref": "#/$defs/digest" },
+    "run_id": { "type": "string", "minLength": 1 },
+    "receipt_kind": { "enum": ["DETECTOR", "EXTERNAL_ADAPTER", "ORACLE", "LIFECYCLE"] },
+    "cell_id": { "type": "string", "pattern": "^SKILL:[A-Z_]+:[A-Z_]+$" },
+    "binding_id": { "type": "string", "minLength": 1 },
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["closure_digest"],
+      "properties": { "closure_digest": { "$ref": "#/$defs/digest" } }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tree_digest", "candidate_digest", "snapshot_digest"],
+      "properties": {
+        "tree_digest": { "$ref": "#/$defs/digest" },
+        "candidate_digest": { "anyOf": [{ "$ref": "#/$defs/digest" }, { "type": "null" }] },
+        "snapshot_digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "argv_digest",
+        "environment_digest",
+        "rule_set_digest",
+        "exit_code",
+        "stdout_digest",
+        "stderr_digest",
+        "parse_status"
+      ],
+      "properties": {
+        "argv_digest": { "$ref": "#/$defs/digest" },
+        "environment_digest": { "$ref": "#/$defs/digest" },
+        "rule_set_digest": { "$ref": "#/$defs/digest" },
+        "exit_code": { "type": "integer" },
+        "stdout_digest": { "$ref": "#/$defs/digest" },
+        "stderr_digest": { "$ref": "#/$defs/digest" },
+        "parse_status": { "enum": ["PASS", "MALFORMED", "UNSUPPORTED"] }
+      }
+    },
+    "resources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["elapsed_seconds", "peak_rss_mib", "input_files", "output_bytes", "limit_hit"],
+      "properties": {
+        "elapsed_seconds": { "type": "number", "minimum": 0 },
+        "peak_rss_mib": { "type": "number", "minimum": 0 },
+        "input_files": { "type": "integer", "minimum": 0 },
+        "output_bytes": { "type": "integer", "minimum": 0 },
+        "limit_hit": { "type": ["string", "null"] }
+      }
+    },
+    "process_tree": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["root_pid", "descendants_seen", "descendants_remaining", "termination_method", "empty_verified"],
+      "properties": {
+        "root_pid": { "type": "integer", "minimum": 1 },
+        "descendants_seen": { "type": "array", "uniqueItems": true, "items": { "type": "integer", "minimum": 1 } },
+        "descendants_remaining": { "type": "array", "uniqueItems": true, "items": { "type": "integer", "minimum": 1 } },
+        "termination_method": { "type": "string", "minLength": 1 },
+        "empty_verified": { "type": "boolean" }
+      }
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy", "backend", "enforced", "namespace_or_job_identity", "canary_receipt_digest", "cleanup_verified"],
+      "properties": {
+        "policy": { "enum": ["DENY", "LOOPBACK_ONLY", "ALLOW"] },
+        "backend": { "enum": ["nsjail", "srt", "job-object", "none"] },
+        "enforced": { "type": "boolean" },
+        "namespace_or_job_identity": { "type": ["string", "null"] },
+        "canary_receipt_digest": { "type": ["string", "null"] },
+        "cleanup_verified": { "type": "boolean" }
+      }
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["fact_id", "fact_digest"],
+        "properties": {
+          "fact_id": { "$ref": "#/$defs/digest" },
+          "fact_digest": { "$ref": "#/$defs/digest" }
+        }
+      }
+    },
+    "terminal_status": { "enum": ["CLEAN", "FINDING", "UNCOVERED", "UNSUPPORTED", "BLOCKED"] },
+    "failure_code": { "type": ["string", "null"] },
+    "receipt_digest": { "$ref": "#/$defs/digest" }
+  },
+  "$defs": {
+    "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

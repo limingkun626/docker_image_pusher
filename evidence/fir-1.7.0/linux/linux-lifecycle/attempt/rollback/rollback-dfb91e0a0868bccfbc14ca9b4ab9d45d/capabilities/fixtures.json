@@ -1,0 +1,785 @@
+{
+  "schema_version": 1,
+  "slices": {
+    "SLICE-0880b7c0fee15791": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ic-cap02-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ic-cap02-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "projection-blocker-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "IC-CAP-02"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "projection-blocker-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "IC-CAP-02"
+        }
+      ]
+    },
+    "SLICE-15323d9fb3ed2b72": {
+      "allow_empty_negative": true,
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/trivy-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/trivy-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "license-finding-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "trivy"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "license-finding-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "trivy"
+        }
+      ]
+    },
+    "SLICE-19490cdb9f51a957": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ic-cap06-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ic-cap06-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "repair-protocol-failure",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "IC-CAP-06"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "repair-protocol-failure",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "IC-CAP-06"
+        }
+      ]
+    },
+    "SLICE-29e52c4f9b508cee": {
+      "allow_empty_negative": true,
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/syft-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/syft-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "inventory-evidence-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "syft"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "inventory-evidence-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "syft"
+        }
+      ]
+    },
+    "SLICE-322b9b55b7d0b8fa": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/jsonschema-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/jsonschema-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "schema-validation-finding",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "jsonschema"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "schema-validation-finding",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "jsonschema"
+        }
+      ]
+    },
+    "SLICE-3233bd156148d7e2": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ast-grep-inspect-negative/target/valid.py",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ast-grep-inspect-positive/target/service.py",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "ast-grep-witness-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "ast-grep"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "ast-grep-witness-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "ast-grep"
+        }
+      ]
+    },
+    "SLICE-326f8fc2f5936f49": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ic-cap03-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ic-cap03-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "manifest-test-count-mismatch",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "IC-CAP-03"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "manifest-test-count-mismatch",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "IC-CAP-03"
+        }
+      ]
+    },
+    "SLICE-4c97c069b2d3b694": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/import-linter-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/import-linter-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "forbidden-import-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "import-linter"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "forbidden-import-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "import-linter"
+        }
+      ]
+    },
+    "SLICE-4f08b4dc03c39f80": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/hypothesis-negative/target/test_property_pass.py",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/hypothesis-positive/target/test_property_fail.py",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "property-failure-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "hypothesis"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "property-failure-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "hypothesis"
+        }
+      ]
+    },
+    "SLICE-57d9534a5fb62f57": {
+      "negative_assert": [],
+      "negative_command": [
+        "@tool:hypothesis-pytest",
+        "-q",
+        "{target}/test_calc.py"
+      ],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/pytest-negative/target",
+      "positive_assert": [],
+      "positive_command": [
+        "@tool:hypothesis-pytest",
+        "-q",
+        "{target}/test_calc.py"
+      ],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/pytest-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "behavioral-assertion-failure",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "pytest"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "behavioral-assertion-failure",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "pytest"
+        }
+      ]
+    },
+    "SLICE-5cd50955e7caf7db": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/mypy-negative/target/mypy-negative.py",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/mypy-positive/target/mypy-positive.py",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "type-error-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "mypy"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "type-error-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "mypy"
+        }
+      ]
+    },
+    "SLICE-703d9804d88fad61": {
+      "negative_assert": [],
+      "negative_command": [
+        "@tool:schemathesis-python",
+        "{tooling}/schemathesis_probe.py",
+        "{target}",
+        "--mode",
+        "negative"
+      ],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/schemathesis-negative/target",
+      "positive_assert": [],
+      "positive_command": [
+        "@tool:schemathesis-python",
+        "{tooling}/schemathesis_probe.py",
+        "{target}",
+        "--mode",
+        "positive"
+      ],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/schemathesis-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "response-schema-mismatch",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "schemathesis"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "response-schema-mismatch",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "schemathesis"
+        }
+      ]
+    },
+    "SLICE-8511218645035615": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/opengrep-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/opengrep-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "security-pattern-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "opengrep"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "security-pattern-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "opengrep"
+        }
+      ]
+    },
+    "SLICE-87ab5ff8cdbc1770": {
+      "negative_assert": [],
+      "negative_mutated": false,
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ast-grep-repair-negative/target",
+      "positive_assert": [],
+      "positive_mutated": true,
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ast-grep-repair-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "ast-grep-witness-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "ast-grep"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "ast-grep-witness-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "ast-grep"
+        }
+      ]
+    },
+    "SLICE-9ae4bc3f41975252": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/tree-sitter-negative/target/valid.py",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/tree-sitter-positive/target/malformed.py",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "syntax-error-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "tree-sitter"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "syntax-error-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "tree-sitter"
+        }
+      ]
+    },
+    "SLICE-b0f2f0e6cb318280": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/mutmut-negative/target",
+      "positive_assert": [
+        "survived"
+      ],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/mutmut-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "surviving-mutant-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "mutmut"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "surviving-mutant-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "mutmut"
+        }
+      ]
+    },
+    "SLICE-c95a4fc56c57d42a": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/eslint-negative/target/negative.js",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/eslint-positive/target/positive.js",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "lint-rule-finding-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "eslint"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "lint-rule-finding-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "eslint"
+        }
+      ]
+    },
+    "SLICE-caf22f3a1d069518": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ruff-negative/target/valid.py",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ruff-positive/target/malformed.py",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "ruff-diagnostic-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "ruff"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "ruff-diagnostic-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "ruff"
+        }
+      ]
+    },
+    "SLICE-d7a3a346445d1e96": {
+      "negative_assert": [],
+      "negative_command": [
+        "node",
+        "@tool:strykerjs",
+        "run",
+        "--testRunner",
+        "command",
+        "--commandRunner.command",
+        "node --test",
+        "--mutate",
+        "{target}/src/subject.js",
+        "--reporters",
+        "clear-text",
+        "--concurrency",
+        "1",
+        "--dryRunOnly"
+      ],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/strykerjs-negative/target",
+      "positive_assert": [
+        "6 mutant(s)",
+        "survived"
+      ],
+      "positive_command": [
+        "node",
+        "@tool:strykerjs",
+        "run",
+        "--testRunner",
+        "command",
+        "--commandRunner.command",
+        "node --test",
+        "--mutate",
+        "{target}/src/subject.js",
+        "--reporters",
+        "clear-text",
+        "--concurrency",
+        "1"
+      ],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/strykerjs-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "surviving-mutant-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "strykerjs"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "surviving-mutant-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "strykerjs"
+        }
+      ]
+    },
+    "SLICE-df7849ce84d49074": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ic-cap06-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ic-cap06-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "repair-protocol-failure",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "IC-CAP-06"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "repair-protocol-failure",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "IC-CAP-06"
+        }
+      ]
+    },
+    "SLICE-e4653d9ce52284fc": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/dependency-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/dependency-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "dependency-edge-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "dependency-cruiser"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "dependency-edge-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "dependency-cruiser"
+        }
+      ]
+    },
+    "SLICE-edfb454882dfc164": {
+      "allow_empty_negative": true,
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/trivy-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/trivy-positive/target",
+      "positive_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "license-finding-presence",
+          "expected": "FINDING"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "trivy"
+        }
+      ],
+      "negative_assertions": [
+        {
+          "kind": "normalized-outcome",
+          "predicate": "license-finding-presence",
+          "expected": "CLEAN"
+        },
+        {
+          "kind": "candidate-identity",
+          "expected": "trivy"
+        }
+      ]
+    }
+  },
+  "lifecycle_fixtures": {
+    "SKILL:FUNCTIONAL_FAULT:LIFECYCLE": {
+      "kind": "INSTALL_UPGRADE_ROLLBACK",
+      "package": "fir-lifecycle-fixture",
+      "positive": {
+        "baseline_version": "1.0.0",
+        "candidate_version": "2.0.0",
+        "candidate_entry": "broken"
+      },
+      "negative": {
+        "baseline_version": "1.0.0",
+        "candidate_version": "2.0.0",
+        "candidate_entry": "valid"
+      },
+      "assertions": {
+        "positive": "FINDING",
+        "negative": "CLEAN"
+      }
+    },
+    "SKILL:RISK_EXPOSURE:LIFECYCLE": {
+      "kind": "PROCESS_TREE",
+      "positive": {
+        "spawn_child": true,
+        "child_sleep_seconds": 30
+      },
+      "negative": {
+        "spawn_child": false
+      },
+      "assertions": {
+        "positive": "PROTECTED",
+        "negative": "PROTECTED"
+      }
+    },
+    "SKILL:VULNERABILITY:LIFECYCLE": {
+      "kind": "DEPENDENCY_LOCKFILE",
+      "positive": {
+        "package": "requests",
+        "version": "2.19.0",
+        "introduced": "2.0.0",
+        "fixed": "2.20.0",
+        "expected_vulnerable": true
+      },
+      "negative": {
+        "package": "requests",
+        "version": "2.20.0",
+        "introduced": "2.0.0",
+        "fixed": "2.20.0",
+        "expected_vulnerable": false
+      },
+      "assertions": {
+        "positive": "FINDING",
+        "negative": "CLEAN"
+      }
+    }
+  }
+}

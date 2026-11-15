@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://codex.local/fir/r2/evidence-fact.schema.json",
+  "title": "FIR R2 immutable evidence fact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "fact_id",
+    "cell_id",
+    "invariant_id",
+    "defect_class_id",
+    "snapshot_digest",
+    "policy_digest",
+    "locator",
+    "predicate",
+    "value",
+    "witness_refs",
+    "method_id",
+    "method_version",
+    "terminal_observation",
+    "fact_digest"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "fact_id": {"$ref": "#/$defs/digest"},
+    "cell_id": {"type": "string", "pattern": "^SKILL:[A-Z_]+:[A-Z_]+$"},
+    "invariant_id": {"type": "string", "minLength": 1},
+    "defect_class_id": {"type": "string", "minLength": 1},
+    "snapshot_digest": {"$ref": "#/$defs/digest"},
+    "policy_digest": {"$ref": "#/$defs/digest"},
+    "locator": {"type": "string", "minLength": 1},
+    "source_span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": {"type": "integer", "minimum": 1},
+        "end": {"type": "integer", "minimum": 1}
+      }
+    },
+    "predicate": {"type": "string", "minLength": 1},
+    "value": {},
+    "witness_refs": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "method_id": {"type": "string", "minLength": 1},
+    "method_version": {"type": "string", "minLength": 1},
+    "terminal_observation": {
+      "enum": ["FINDING", "CLEAN", "UNCOVERED", "UNSUPPORTED", "BLOCKED"]
+    },
+    "fact_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

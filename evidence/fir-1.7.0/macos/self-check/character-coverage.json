@@ -1,0 +1,217 @@
+{
+  "binary_file_count": 0,
+  "binary_files": [],
+  "codepoint_count": 35,
+  "coverage_digest": "6f71a1e734127dc6a7835eb74cd824f1b389170b81d1501427850447fc9346ab",
+  "file_count": 1,
+  "files": [
+    {
+      "bom": false,
+      "bytes": 35,
+      "clause_covered_codepoints": 35,
+      "clause_units": [
+        {
+          "byte_end_exclusive": 9,
+          "byte_start": 0,
+          "codepoint_end_exclusive": 9,
+          "codepoint_start": 0,
+          "kind": "CLAUSE",
+          "path": "SKILL.md",
+          "sha256": "f6f22fa56120ac8a32bf694638b4f12789b057da47680b979987416e4420a409",
+          "unit_number": 1
+        },
+        {
+          "byte_end_exclusive": 35,
+          "byte_start": 9,
+          "codepoint_end_exclusive": 35,
+          "codepoint_start": 9,
+          "kind": "CLAUSE",
+          "path": "SKILL.md",
+          "sha256": "8684db2cf23fe344c89d5a710d75f7c9104f84e9419a1cd167488a8fa8a33774",
+          "unit_number": 2
+        }
+      ],
+      "codepoint_count": 35,
+      "codepoint_spans": [
+        {
+          "byte_end_exclusive": 35,
+          "byte_start": 0,
+          "codepoint_count": 35,
+          "codepoint_end_exclusive": 35,
+          "codepoint_start": 0,
+          "sha256": "db3d5de60023831c05ee00b2b10d79dbfb8ae58cebe81f2bb69baff2afd67dae"
+        }
+      ],
+      "empty_line_count": 1,
+      "final_terminator": true,
+      "kind": "TEXT",
+      "line_count": 5,
+      "lines": [
+        {
+          "byte_length": 4,
+          "byte_start": 0,
+          "codepoint_count": 4,
+          "codepoint_start": 0,
+          "line": 1,
+          "sha256": "f52d711103d50a437830c6fbcd04fb4bab49a0f82f6d26d1c791c6e8488dd090"
+        },
+        {
+          "byte_length": 18,
+          "byte_start": 4,
+          "codepoint_count": 18,
+          "codepoint_start": 4,
+          "line": 2,
+          "sha256": "b8343c5b9a08999fc11d8facabec83446505cafff2d332e02494a2d346317d5c"
+        },
+        {
+          "byte_length": 4,
+          "byte_start": 22,
+          "codepoint_count": 4,
+          "codepoint_start": 22,
+          "line": 3,
+          "sha256": "f52d711103d50a437830c6fbcd04fb4bab49a0f82f6d26d1c791c6e8488dd090"
+        },
+        {
+          "byte_length": 1,
+          "byte_start": 26,
+          "codepoint_count": 1,
+          "codepoint_start": 26,
+          "line": 4,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "byte_length": 8,
+          "byte_start": 27,
+          "codepoint_count": 8,
+          "codepoint_start": 27,
+          "line": 5,
+          "sha256": "53ac5e2f4e870d0d0945f2bdb3bdab14106b8251acf0154a503de2acc82e49d5"
+        }
+      ],
+      "newline_style": "LF",
+      "paragraph_covered_codepoints": 35,
+      "paragraph_units": [
+        {
+          "byte_end_exclusive": 27,
+          "byte_start": 0,
+          "codepoint_end_exclusive": 27,
+          "codepoint_start": 0,
+          "kind": "PARAGRAPH",
+          "path": "SKILL.md",
+          "sha256": "eb7f801510b2dcdc336afeec53ab3d6f70e3ccc7a0557ebdd5c13129a6d54e49",
+          "unit_number": 1
+        },
+        {
+          "byte_end_exclusive": 35,
+          "byte_start": 27,
+          "codepoint_end_exclusive": 35,
+          "codepoint_start": 27,
+          "kind": "PARAGRAPH",
+          "path": "SKILL.md",
+          "sha256": "53ac5e2f4e870d0d0945f2bdb3bdab14106b8251acf0154a503de2acc82e49d5",
+          "unit_number": 2
+        }
+      ],
+      "path": "SKILL.md",
+      "prose": true,
+      "punctuation_count": 9,
+      "raw_sha256": "db3d5de60023831c05ee00b2b10d79dbfb8ae58cebe81f2bb69baff2afd67dae",
+      "sentence_covered_codepoints": 35,
+      "sentence_units": [
+        {
+          "byte_end_exclusive": 35,
+          "byte_start": 0,
+          "codepoint_end_exclusive": 35,
+          "codepoint_start": 0,
+          "kind": "SENTENCE",
+          "path": "SKILL.md",
+          "sha256": "db3d5de60023831c05ee00b2b10d79dbfb8ae58cebe81f2bb69baff2afd67dae",
+          "text": "---\nname: probe-skill\n---\n\n# Probe\n",
+          "unit_number": 1
+        }
+      ],
+      "unit_covered_codepoints": 35,
+      "units": [
+        {
+          "byte_end_exclusive": 4,
+          "byte_start": 0,
+          "codepoint_end_exclusive": 4,
+          "codepoint_start": 0,
+          "kind": "SYNTAX_LINE",
+          "path": "SKILL.md",
+          "sha256": "f52d711103d50a437830c6fbcd04fb4bab49a0f82f6d26d1c791c6e8488dd090",
+          "unit_number": 1
+        },
+        {
+          "byte_end_exclusive": 22,
+          "byte_start": 4,
+          "codepoint_end_exclusive": 22,
+          "codepoint_start": 4,
+          "kind": "SYNTAX_LINE",
+          "path": "SKILL.md",
+          "sha256": "b8343c5b9a08999fc11d8facabec83446505cafff2d332e02494a2d346317d5c",
+          "unit_number": 2
+        },
+        {
+          "byte_end_exclusive": 27,
+          "byte_start": 22,
+          "codepoint_end_exclusive": 27,
+          "codepoint_start": 22,
+          "kind": "SYNTAX_LINE",
+          "path": "SKILL.md",
+          "sha256": "fb9f586eb6a7d7113a63492f0f563b1b46c410e47f561c4fd527ca2e35f232fe",
+          "unit_number": 3
+        },
+        {
+          "byte_end_exclusive": 35,
+          "byte_start": 27,
+          "codepoint_end_exclusive": 35,
+          "codepoint_start": 27,
+          "kind": "SYNTAX_LINE",
+          "path": "SKILL.md",
+          "sha256": "53ac5e2f4e870d0d0945f2bdb3bdab14106b8251acf0154a503de2acc82e49d5",
+          "unit_number": 4
+        }
+      ],
+      "whitespace_control_count": 7
+    }
+  ],
+  "gap_count": 0,
+  "gaps": [],
+  "line_count": 5,
+  "punctuation_count": 9,
+  "punctuation_runs": [
+    {
+      "count": 9,
+      "counts": {
+        "Pd": 7,
+        "Po": 2
+      },
+      "first_codepoint": 0,
+      "kind": "PUNCTUATION",
+      "last_codepoint": 27,
+      "path": "SKILL.md",
+      "sha256": "7ade29bf0120001a776c84836a06f6596437551de4a73a822bd9d8e11e164ac9"
+    }
+  ],
+  "schema_id": "inspection-closure.coverage",
+  "schema_version": 2,
+  "text_file_count": 1,
+  "uncovered": [],
+  "uncovered_count": 0,
+  "unit_count": 4,
+  "whitespace_control_runs": [
+    {
+      "count": 7,
+      "counts": {
+        "Cc": 5,
+        "Zs": 2
+      },
+      "first_codepoint": 3,
+      "kind": "WHITESPACE_CONTROL",
+      "last_codepoint": 34,
+      "path": "SKILL.md",
+      "sha256": "6eca27159d0af849b470e7cfdd83b2f6c045288d4f58b76c5e091af61a37a8eb"
+    }
+  ]
+}

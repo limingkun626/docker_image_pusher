@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/fir-enhancement/execution-receipt.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "adapter_id",
+    "slice_id",
+    "candidate_id",
+    "subject_digest",
+    "input_digest",
+    "adapter_digest",
+    "tool_digest",
+    "rules_digest",
+    "command_digest",
+    "raw_exit_code",
+    "findings",
+    "unsupported_cells",
+    "stdout_sha256",
+    "stderr_sha256",
+    "elapsed_seconds",
+    "peak_rss_mib",
+    "terminal_status",
+    "receipt_digest"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "adapter_id": {"type": "string", "minLength": 1},
+    "slice_id": {"type": "string", "pattern": "^SLICE-[0-9a-f]{16}$"},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "subject_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "input_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "adapter_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "tool_digest": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "rules_digest": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "command_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "raw_exit_code": {"type": ["integer", "null"]},
+    "outcome": {"enum": ["FINDING", "CLEAN"]},
+    "findings": {"type": "array", "items": {"type": "object"}},
+    "unsupported_cells": {"type": "array", "items": {"type": "string"}},
+    "stdout_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "stderr_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "elapsed_seconds": {"type": "number", "minimum": 0},
+    "peak_rss_mib": {"type": "number", "minimum": 0},
+    "terminal_status": {"enum": ["PASS", "UNSUPPORTED", "UNCOVERED", "BLOCKED"]},
+    "failure_code": {"type": ["string", "null"]},
+    "input_kind": {"enum": ["FILE", "DIRECTORY", "EMPTY_DIRECTORY"]},
+    "input_file_count": {"type": "integer", "minimum": 0},
+    "input_tree_digest_after": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "input_mutated_by_tool": {"type": "boolean"},
+    "stdout_text": {"type": "string"},
+    "stderr_text": {"type": "string"},
+    "network_policy": {
+      "enum": ["DENY", "OFFLINE_CACHE_ONLY", "LOOPBACK_ONLY"]
+    },
+    "network_enforced": {"type": "boolean"},
+    "network_guard_receipt": {"type": "object"},
+    "mutation_source_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "mutation_source_unchanged": {"type": "boolean"},
+    "mutation_strategy": {
+      "enum": ["DISPOSABLE_COPY", "REQUIRES_DISPOSABLE_COPY"]
+    },
+    "mutation_copy_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "fixture_error": {"type": ["string", "null"]},
+    "source_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_unchanged": {"type": "boolean"},
+    "target_role": {"enum": ["DISPOSABLE_COPY", "SOURCE"]},
+    "receipt_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"terminal_status": {"const": "PASS"}},
+        "required": ["terminal_status"]
+      },
+      "then": {
+        "required": ["outcome", "failure_code"],
+        "properties": {
+          "outcome": {"enum": ["FINDING", "CLEAN"]},
+          "failure_code": {"type": "null"}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "terminal_status": {"enum": ["UNSUPPORTED", "UNCOVERED", "BLOCKED"]}
+        },
+        "required": ["terminal_status"]
+      },
+      "then": {
+        "required": ["failure_code"],
+        "properties": {
+          "failure_code": {"type": "string", "minLength": 1}
+        },
+        "not": {"required": ["outcome"]}
+      }
+    }
+  ]
+}

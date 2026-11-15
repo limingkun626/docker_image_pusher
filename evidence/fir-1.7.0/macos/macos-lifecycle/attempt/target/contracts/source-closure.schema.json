@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fir.local/contracts/source-closure.schema.json",
+  "title": "FIR Source Closure",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scope_id",
+    "subject_digest",
+    "candidate_digest",
+    "runtime_registry_digest",
+    "source_denominator_digest",
+    "source_count",
+    "terminal_count",
+    "records",
+    "coverage_boundary_digest",
+    "closure_digest"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "scope_id": {"type": "string", "minLength": 1},
+    "subject_digest": {"$ref": "#/$defs/digest"},
+    "candidate_digest": {"oneOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]},
+    "runtime_registry_digest": {"oneOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]},
+    "source_denominator_digest": {"$ref": "#/$defs/digest"},
+    "source_count": {"type": "integer", "minimum": 1},
+    "terminal_count": {"type": "integer", "minimum": 0},
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/record"}
+    },
+    "coverage_boundary_digest": {"$ref": "#/$defs/digest"},
+    "closure_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_type",
+        "locator",
+        "applicability",
+        "terminal_status",
+        "evidence_refs",
+        "evidence_sha256",
+        "evidence_method_id",
+        "evidence_method_version",
+        "unsupported_reason",
+        "proof_ref"
+      ],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "source_type": {
+          "enum": ["RESOURCE", "CLAIM", "INVARIANT", "PLANE", "BEHAVIOR", "RUNTIME", "LIFECYCLE", "EXTERNAL"]
+        },
+        "locator": {"type": "string", "minLength": 1},
+        "applicability": {
+          "enum": ["APPLICABLE", "NOT_APPLICABLE_WITH_PROOF", "REQUIRED_MISSING"]
+        },
+        "terminal_status": {
+          "enum": ["SATISFIED", "NOT_APPLICABLE_WITH_PROOF", "UNSUPPORTED", "UNCOVERED", "BLOCKED"]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "evidence_sha256": {"$ref": "#/$defs/digest"},
+        "evidence_method_id": {"type": "string", "minLength": 1},
+        "evidence_method_version": {"type": "string", "minLength": 1},
+        "unsupported_reason": {"type": ["string", "null"]},
+        "proof_ref": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

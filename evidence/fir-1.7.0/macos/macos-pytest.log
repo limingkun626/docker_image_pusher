@@ -1,0 +1,26 @@
+.................................................................sssss.. [ 13%]
+........................................sss.......................s..... [ 26%]
+........................................................................ [ 39%]
+........................................................................ [ 52%]
+...............................................................s......s. [ 66%]
+..s..................................................................... [ 79%]
+......................................s................................. [ 92%]
+ss...s...................................                                [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/integration/test_capability_cli.py:70: Windows srt-win policy is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:102: the pinned ast-grep capability command is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:140: the pinned ast-grep capability command is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:167: Windows srt-win policy is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:190: Windows srt-win policy is Windows-specific
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:704: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:743: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:799: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r8_release_sigstore.py:397: real Sigstore bundle environment is not configured
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:103: Windows alternate data streams
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:280: Windows directory flush
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:431: Windows USN journal
+SKIPPED [1] tests/unit/test_r8_runtime_reader.py:117: Windows junction fixture
+SKIPPED [1] tests/unit/test_sandbox_runtime.py:73: Windows Job Object backend
+SKIPPED [1] tests/unit/test_sandbox_runtime.py:89: Windows Job Object backend
+SKIPPED [1] tests/unit/test_sandbox_runtime.py:163: Linux process-group backend
+529 passed, 16 skipped in 182.45s (0:03:02)
