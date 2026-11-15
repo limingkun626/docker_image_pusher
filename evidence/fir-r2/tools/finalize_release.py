@@ -304,6 +304,9 @@ def main() -> int:
     candidate = root / "candidate" / "full-inspection-repair"
     input_root = root / "input"
     output = args.output.resolve()
+    windows_check = args.windows_check.resolve()
+    linux_check = args.linux_check.resolve()
+    macos = args.macos.resolve()
     output.mkdir(parents=True, exist_ok=True)
 
     sys.path.insert(0, str(candidate / "scripts"))
@@ -375,7 +378,7 @@ def main() -> int:
 
     windows_junit = input_root / "windows-junit.xml"
     linux_junit = input_root / "linux-junit.xml"
-    macos_junit = args.macos / "macos-junit.xml"
+    macos_junit = macos / "macos-junit.xml"
     suites = {
         "windows": junit_counts(windows_junit),
         "linux": junit_counts(linux_junit),
@@ -383,9 +386,9 @@ def main() -> int:
     }
 
     checks = {
-        "windows": read_json(args.windows_check / "summary.json"),
-        "linux": read_json(args.linux_check / "summary.json"),
-        "macos": read_json(args.macos / "self-check" / "summary.json"),
+        "windows": read_json(windows_check / "summary.json"),
+        "linux": read_json(linux_check / "summary.json"),
+        "macos": read_json(macos / "self-check" / "summary.json"),
     }
     for name, value in checks.items():
         if (
@@ -395,7 +398,7 @@ def main() -> int:
             or value.get("tree_digest") != candidate_digest
         ):
             raise ValueError(f"{name} candidate self-check is not clean")
-    character_coverage = read_json(args.linux_check / "character-coverage.json")
+    character_coverage = read_json(linux_check / "character-coverage.json")
     if (
         character_coverage.get("coverage_digest")
         != checks["linux"].get("coverage_digest")
@@ -416,7 +419,7 @@ def main() -> int:
             candidate_digest=candidate_digest,
         ),
         "macos": verify_lifecycle(
-            args.macos / "macos-lifecycle" / "macos-install.json",
+            macos / "macos-lifecycle" / "macos-install.json",
             platform_name="macos",
             candidate_digest=candidate_digest,
         ),
