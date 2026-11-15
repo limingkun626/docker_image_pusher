@@ -1,0 +1,88 @@
+{
+  "armed_at": "2026-11-15T04:56:08+00:00",
+  "boot_identity_changed": true,
+  "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+  "event_id": "fe0273b896b2c7a30693a16492a584bb38a460889bf8cff7e7390be8462c5900",
+  "evidence_digest": "6d091953d0210fd343d4383f1c249ce25527097bd5bff1cf2629cac4d88f3394",
+  "evidence_files": {
+    "arm": {
+      "bytes": 1783,
+      "path": "arm.json",
+      "sha256": "37165e10ae78e5da6158b5825d8630c164ffa8e685867e2b82bd41de4d49d8a3"
+    },
+    "boot": {
+      "bytes": 231,
+      "path": "boot-identity.json",
+      "sha256": "208e8841ef7a00137b340e3518e7fb13914e9fd557f8ba4863a6df0db4381ec2"
+    },
+    "cut": {
+      "bytes": 216,
+      "path": "kernel-power-41.json",
+      "sha256": "cb8688391ae6f02cfa3f33f00c17811c57a7b026ed97911b1dd1da0757c93dc3"
+    },
+    "marker": {
+      "bytes": 702,
+      "path": "mid-swap.json",
+      "sha256": "157e9fe90464a698b7583ee8aa238db708eccec7d66fcd2294e49a68cc1e41fe"
+    },
+    "probe-script": {
+      "bytes": 16822,
+      "path": "power_probe.py",
+      "sha256": "85dab7b83c73feb5fa555f27462ac8b0101f989102651d94099c81dd9bd6d31e"
+    },
+    "rollback-manifest": {
+      "bytes": 18759,
+      "path": "rollback-manifest.json",
+      "sha256": "9f30ffb8af507b8f7e40cfdc7757d5fe0ddaed82011dc3628378a44799028c8b"
+    },
+    "target-manifest": {
+      "bytes": 21546,
+      "path": "target-manifest.json",
+      "sha256": "047b38ddfffdafd0942d45360fd6874c768762246da9ecf2e5fc9064ddf2f988"
+    },
+    "usn-finish": {
+      "bytes": 914713,
+      "path": "usn-finish.json",
+      "sha256": "d9db03b35c7544a1c949d73f70146a292a67411764d2f5cca8bfb8df3ab9998a"
+    },
+    "usn-start": {
+      "bytes": 632,
+      "path": "usn-start.json",
+      "sha256": "8663d4045cf832d7434d64d4a26e58eefb8b8c407fdce4fb7dc745ab70e625c8"
+    }
+  },
+  "kernel_power_event_id": 41,
+  "kernel_power_events": [
+    {
+      "Id": 41,
+      "MachineName": "DESKTOP-GGA6JS7",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "RecordId": 69381,
+      "TimeCreated": "/Date(1794719827570)/"
+    }
+  ],
+  "mid_swap_at": "2026-11-15T04:56:16+00:00",
+  "mid_swap_observation": {
+    "rollback_digest": "d8cb1de088a17d3659a6d0be5c739699982933507bb7f935d19331b3a1773e6e",
+    "rollback_present": true,
+    "staged_candidate_present": true,
+    "target_absent": true
+  },
+  "mid_swap_recovered": true,
+  "post_cut_boot_id": "ea28ebafd7e343abfa6d87b66dce4ff068e01e36d3f106fc63fc2c74b4ed5ffc",
+  "pre_cut_boot_id": "45fa81c7f060778520f0254cd95dc72a808ca619653cfe7e4d0c765ef5e3f7ab",
+  "probe_command": "python -B \"F:\\Codex\\runs\\fir-r2-release-20261115\\power_probe.py\" arm",
+  "probe_script_sha256": "85dab7b83c73feb5fa555f27462ac8b0101f989102651d94099c81dd9bd6d31e",
+  "recovered_at": "2026-11-15T05:20:31+00:00",
+  "recovered_target_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+  "rollback_digest": "d8cb1de088a17d3659a6d0be5c739699982933507bb7f935d19331b3a1773e6e",
+  "run_id": "fir-r2-release-20261115-generation-4-r1",
+  "schema_version": 2,
+  "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+  "scope_id": "fir-r2-release-20261115-generation-4",
+  "status": "VERIFIED",
+  "usn_end_usn": 1077488376,
+  "usn_event_count": 2257,
+  "usn_start_usn": 1077264160,
+  "usn_status": "COMPLETE"
+}

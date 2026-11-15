@@ -1,0 +1,15 @@
+{
+  "armed_at": "2026-11-15T04:56:08+00:00",
+  "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+  "marker_digest": "fe0273b896b2c7a30693a16492a584bb38a460889bf8cff7e7390be8462c5900",
+  "mid_swap_at": "2026-11-15T04:56:16+00:00",
+  "rollback_digest": "d8cb1de088a17d3659a6d0be5c739699982933507bb7f935d19331b3a1773e6e",
+  "rollback_exists": true,
+  "schema_version": 1,
+  "scope_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
+  "staged_candidates": [
+    "F:\\Codex\\runs\\fir-r2-release-20261115\\scope-generation-4\\power-r3\\attempt\\.active.install-x4h7z4lw\\active"
+  ],
+  "status": "MID_SWAP_REACHED",
+  "target_exists": false
+}
