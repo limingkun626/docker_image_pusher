@@ -1,0 +1,813 @@
+.........................sssss.......................................... [ 14%]
+sss...............F.......s....................FFFFFFFFF.F.F..FFFF...... [ 29%]
+..........................................FF............................ [ 43%]
+........................................................................ [ 58%]
+...............s......s...s................................FFFF......... [ 73%]
+..............................................................s......... [ 87%]
+......................FFss...F...............................            [100%]
+=================================== FAILURES ===================================
+______________ test_offline_and_output_limits_do_not_become_pass _______________
+
+    def test_offline_and_output_limits_do_not_become_pass() -> None:
+        denied = run_bounded_process(
+            [sys.executable, "-c", "print('offline')"],
+            env={"NO_PROXY": "*", "HTTP_PROXY": "", "HTTPS_PROXY": ""},
+        )
+>       assert denied["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED
+
+tests/integration/test_r2_external_adapters.py:31: AssertionError
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:BOUNDARY:BEHAVIOR] _
+
+cell_id = 'SKILL:BOUNDARY:BEHAVIOR'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+>       observed = run_external_cell(cell_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration/test_runtime_exact_adapters.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/external_adapters.py:311: in run_external_cell
+    command = _resolve_logical_command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['@tool:schemathesis-python', '/Users/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate...athesis_probe.py', '/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/fir-exact-adapter-y8urryab', '--mode', 'positive']
+
+    def _resolve_logical_command(command: Iterable[str]) -> list[str]:
+        result: list[str] = []
+        for argument in command:
+            if argument.startswith("@"):
+                resolved = _resolve_logical_token(argument)
+                if resolved is None:
+>                   raise CapabilityBlocked(
+                        f"logical tool is unavailable: {argument}"
+                    )
+E                   full_inspection_repair.capabilities.CapabilityBlocked: logical tool is unavailable: @tool:schemathesis-python
+
+scripts/full_inspection_repair/capabilities.py:230: CapabilityBlocked
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:FUNCTIONAL_FAULT:BEHAVIOR] _
+
+cell_id = 'SKILL:FUNCTIONAL_FAULT:BEHAVIOR'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+>       observed = run_external_cell(cell_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration/test_runtime_exact_adapters.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/external_adapters.py:311: in run_external_cell
+    command = _resolve_logical_command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['@tool:hypothesis-pytest', '-q', '/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/fir-exact-adapter-amj57io2']
+
+    def _resolve_logical_command(command: Iterable[str]) -> list[str]:
+        result: list[str] = []
+        for argument in command:
+            if argument.startswith("@"):
+                resolved = _resolve_logical_token(argument)
+                if resolved is None:
+>                   raise CapabilityBlocked(
+                        f"logical tool is unavailable: {argument}"
+                    )
+E                   full_inspection_repair.capabilities.CapabilityBlocked: logical tool is unavailable: @tool:hypothesis-pytest
+
+scripts/full_inspection_repair/capabilities.py:230: CapabilityBlocked
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:INCONSISTENCY:BEHAVIOR] _
+
+cell_id = 'SKILL:INCONSISTENCY:BEHAVIOR'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+>       observed = run_external_cell(cell_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration/test_runtime_exact_adapters.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/external_adapters.py:311: in run_external_cell
+    command = _resolve_logical_command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['@tool:schemathesis-python', '/Users/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate...athesis_probe.py', '/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/fir-exact-adapter-4qulm_jo', '--mode', 'positive']
+
+    def _resolve_logical_command(command: Iterable[str]) -> list[str]:
+        result: list[str] = []
+        for argument in command:
+            if argument.startswith("@"):
+                resolved = _resolve_logical_token(argument)
+                if resolved is None:
+>                   raise CapabilityBlocked(
+                        f"logical tool is unavailable: {argument}"
+                    )
+E                   full_inspection_repair.capabilities.CapabilityBlocked: logical tool is unavailable: @tool:schemathesis-python
+
+scripts/full_inspection_repair/capabilities.py:230: CapabilityBlocked
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:INCONSISTENCY:LIFECYCLE] _
+
+cell_id = 'SKILL:INCONSISTENCY:LIFECYCLE'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+>       observed = run_external_cell(cell_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration/test_runtime_exact_adapters.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/external_adapters.py:311: in run_external_cell
+    command = _resolve_logical_command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['@tool:import-linter', '--no-cache', '--config', '/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/fir-exact-adapter-or80yx60/.importlinter']
+
+    def _resolve_logical_command(command: Iterable[str]) -> list[str]:
+        result: list[str] = []
+        for argument in command:
+            if argument.startswith("@"):
+                resolved = _resolve_logical_token(argument)
+                if resolved is None:
+>                   raise CapabilityBlocked(
+                        f"logical tool is unavailable: {argument}"
+                    )
+E                   full_inspection_repair.capabilities.CapabilityBlocked: logical tool is unavailable: @tool:import-linter
+
+scripts/full_inspection_repair/capabilities.py:230: CapabilityBlocked
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:LATENT_DEFECT:BEHAVIOR] _
+
+cell_id = 'SKILL:LATENT_DEFECT:BEHAVIOR'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
+
+tests/integration/test_runtime_exact_adapters.py:50: AssertionError
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:OMISSION:BEHAVIOR] _
+
+cell_id = 'SKILL:OMISSION:BEHAVIOR'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+>       observed = run_external_cell(cell_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration/test_runtime_exact_adapters.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/external_adapters.py:311: in run_external_cell
+    command = _resolve_logical_command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['@tool:hypothesis-pytest', '-q', '/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/fir-exact-adapter-3mgmoco6']
+
+    def _resolve_logical_command(command: Iterable[str]) -> list[str]:
+        result: list[str] = []
+        for argument in command:
+            if argument.startswith("@"):
+                resolved = _resolve_logical_token(argument)
+                if resolved is None:
+>                   raise CapabilityBlocked(
+                        f"logical tool is unavailable: {argument}"
+                    )
+E                   full_inspection_repair.capabilities.CapabilityBlocked: logical tool is unavailable: @tool:hypothesis-pytest
+
+scripts/full_inspection_repair/capabilities.py:230: CapabilityBlocked
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:RISK_EXPOSURE:BEHAVIOR] _
+
+cell_id = 'SKILL:RISK_EXPOSURE:BEHAVIOR'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+>       observed = run_external_cell(cell_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration/test_runtime_exact_adapters.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/external_adapters.py:311: in run_external_cell
+    command = _resolve_logical_command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['@tool:schemathesis-python', '/Users/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate...athesis_probe.py', '/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/fir-exact-adapter-bd00lo7l', '--mode', 'positive']
+
+    def _resolve_logical_command(command: Iterable[str]) -> list[str]:
+        result: list[str] = []
+        for argument in command:
+            if argument.startswith("@"):
+                resolved = _resolve_logical_token(argument)
+                if resolved is None:
+>                   raise CapabilityBlocked(
+                        f"logical tool is unavailable: {argument}"
+                    )
+E                   full_inspection_repair.capabilities.CapabilityBlocked: logical tool is unavailable: @tool:schemathesis-python
+
+scripts/full_inspection_repair/capabilities.py:230: CapabilityBlocked
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:VULNERABILITY:BEHAVIOR] _
+
+cell_id = 'SKILL:VULNERABILITY:BEHAVIOR'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+>       observed = run_external_cell(cell_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration/test_runtime_exact_adapters.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/external_adapters.py:311: in run_external_cell
+    command = _resolve_logical_command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['@tool:opengrep', 'scan', '--enable-interfile', '--no-git-ignore', '--project-root=/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/fir-exact-adapter-l4r2wiv9', '--config', ...]
+
+    def _resolve_logical_command(command: Iterable[str]) -> list[str]:
+        result: list[str] = []
+        for argument in command:
+            if argument.startswith("@"):
+                resolved = _resolve_logical_token(argument)
+                if resolved is None:
+>                   raise CapabilityBlocked(
+                        f"logical tool is unavailable: {argument}"
+                    )
+E                   full_inspection_repair.capabilities.CapabilityBlocked: logical tool is unavailable: @tool:opengrep
+
+scripts/full_inspection_repair/capabilities.py:230: CapabilityBlocked
+_____ test_exact_adapter_runs_frozen_fixture_even_without_target_snapshot ______
+
+tmp_path = PosixPath('/Users/runner/work/_temp/pytest/test_exact_adapter_runs_frozen0')
+
+    def test_exact_adapter_runs_frozen_fixture_even_without_target_snapshot(
+        tmp_path: Path,
+    ) -> None:
+>       observed = run_external_cell(
+            "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+            tmp_path / "scratch",
+        )
+
+tests/integration/test_runtime_exact_adapters.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/external_adapters.py:311: in run_external_cell
+    command = _resolve_logical_command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['@tool:hypothesis-pytest', '-q', '/Users/runner/work/_temp/pytest/test_exact_adapter_runs_frozen0/scratch']
+
+    def _resolve_logical_command(command: Iterable[str]) -> list[str]:
+        result: list[str] = []
+        for argument in command:
+            if argument.startswith("@"):
+                resolved = _resolve_logical_token(argument)
+                if resolved is None:
+>                   raise CapabilityBlocked(
+                        f"logical tool is unavailable: {argument}"
+                    )
+E                   full_inspection_repair.capabilities.CapabilityBlocked: logical tool is unavailable: @tool:hypothesis-pytest
+
+scripts/full_inspection_repair/capabilities.py:230: CapabilityBlocked
+_____________ test_exact_adapter_executes_target_not_only_fixtures _____________
+
+tmp_path = PosixPath('/Users/runner/work/_temp/pytest/test_exact_adapter_executes_ta0')
+
+    def test_exact_adapter_executes_target_not_only_fixtures(tmp_path: Path) -> None:
+        target = tmp_path / "target"
+        target.mkdir()
+        (target / "test_ok.py").write_text(
+            "def test_ok():\n"
+            "    assert True\n",
+            encoding="utf-8",
+        )
+    
+>       observed = run_for_snapshot(
+            "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+            {
+                "target_root": str(target),
+                "subject_digest": "a" * 64,
+                "fixture_scratch_root": str(tmp_path / "fixtures"),
+            },
+        )
+
+tests/integration/test_runtime_exact_adapters.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/external_adapters.py:385: in run_for_snapshot
+    qualification = run_external_cell(
+scripts/full_inspection_repair/external_adapters.py:311: in run_external_cell
+    command = _resolve_logical_command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['@tool:hypothesis-pytest', '-q', '/Users/runner/work/_temp/pytest/test_exact_adapter_executes_ta0/fixtures']
+
+    def _resolve_logical_command(command: Iterable[str]) -> list[str]:
+        result: list[str] = []
+        for argument in command:
+            if argument.startswith("@"):
+                resolved = _resolve_logical_token(argument)
+                if resolved is None:
+>                   raise CapabilityBlocked(
+                        f"logical tool is unavailable: {argument}"
+                    )
+E                   full_inspection_repair.capabilities.CapabilityBlocked: logical tool is unavailable: @tool:hypothesis-pytest
+
+scripts/full_inspection_repair/capabilities.py:230: CapabilityBlocked
+______________ test_run_cell_exact_adapter_uses_target_execution _______________
+
+tmp_path = PosixPath('/Users/runner/work/_temp/pytest/test_run_cell_exact_adapter_us0')
+
+    def test_run_cell_exact_adapter_uses_target_execution(
+        tmp_path: Path,
+    ) -> None:
+        (tmp_path / "test_failure.py").write_text(
+            "def test_failure():\n"
+            "    assert False\n",
+            encoding="utf-8",
+        )
+>       observed = run_cell(
+            "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+            {
+                "files": {},
+                "target_root": str(tmp_path),
+                "subject_digest": "a" * 64,
+            },
+        )
+
+tests/integration/test_runtime_exact_adapters.py:143: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/r2_engine.py:1219: in run_cell
+    exact = run_external(cell_id, snapshot)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/full_inspection_repair/external_adapters.py:385: in run_for_snapshot
+    qualification = run_external_cell(
+scripts/full_inspection_repair/external_adapters.py:311: in run_external_cell
+    command = _resolve_logical_command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['@tool:hypothesis-pytest', '-q', '/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/fir-exact-adapter-o1q23cx_']
+
+    def _resolve_logical_command(command: Iterable[str]) -> list[str]:
+        result: list[str] = []
+        for argument in command:
+            if argument.startswith("@"):
+                resolved = _resolve_logical_token(argument)
+                if resolved is None:
+>                   raise CapabilityBlocked(
+                        f"logical tool is unavailable: {argument}"
+                    )
+E                   full_inspection_repair.capabilities.CapabilityBlocked: logical tool is unavailable: @tool:hypothesis-pytest
+
+scripts/full_inspection_repair/capabilities.py:230: CapabilityBlocked
+_____________ test_lifecycle_process_probe_uses_disposable_scratch _____________
+
+tmp_path = PosixPath('/Users/runner/work/_temp/pytest/test_lifecycle_process_probe_u0')
+
+    def test_lifecycle_process_probe_uses_disposable_scratch(
+        tmp_path: Path,
+    ) -> None:
+        (tmp_path / "fixture.txt").write_text("stable\n", encoding="utf-8")
+        observed = process_tree_probe(tmp_path)
+    
+>       assert observed["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
+
+tests/integration/test_runtime_exact_adapters.py:189: AssertionError
+______ test_lifecycle_snapshot_without_target_uses_frozen_process_fixture ______
+
+    def test_lifecycle_snapshot_without_target_uses_frozen_process_fixture() -> None:
+        observed = run_lifecycle_snapshot(
+            "SKILL:RISK_EXPOSURE:LIFECYCLE",
+            {},
+        )
+>       assert observed["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
+
+tests/integration/test_runtime_exact_adapters.py:200: AssertionError
+_____ test_all_exact_lifecycle_cells_use_frozen_positive_negative_fixtures _____
+
+    def test_all_exact_lifecycle_cells_use_frozen_positive_negative_fixtures() -> None:
+        for cell_id in (
+            "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+            "SKILL:RISK_EXPOSURE:LIFECYCLE",
+            "SKILL:VULNERABILITY:LIFECYCLE",
+        ):
+>           observed = run_lifecycle_snapshot(cell_id, {})
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration/test_runtime_exact_adapters.py:210: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/lifecycle_adapters.py:859: in run_for_snapshot
+    return run_frozen_install_pair(cell_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/full_inspection_repair/lifecycle_adapters.py:255: in run_frozen_install_pair
+    positive = _run_install_scenario(
+scripts/full_inspection_repair/lifecycle_adapters.py:230: in _run_install_scenario
+    shutil.rmtree(target)
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/shutil.py:759: in rmtree
+    _rmtree_safe_fd(stack, onexc)
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/shutil.py:703: in _rmtree_safe_fd
+    onexc(func, path, err)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+stack = [], onexc = <function rmtree.<locals>.onexc at 0x105848ae0>
+
+    def _rmtree_safe_fd(stack, onexc):
+        # Each stack item has four elements:
+        # * func: The first operation to perform: os.lstat, os.close or os.rmdir.
+        #   Walking a directory starts with an os.lstat() to detect symlinks; in
+        #   this case, func is updated before subsequent operations and passed to
+        #   onexc() if an error occurs.
+        # * dirfd: Open file descriptor, or None if we're processing the top-level
+        #   directory given to rmtree() and the user didn't supply dir_fd.
+        # * path: Path of file to operate upon. This is passed to onexc() if an
+        #   error occurs.
+        # * orig_entry: os.DirEntry, or None if we're processing the top-level
+        #   directory given to rmtree(). We used the cached stat() of the entry to
+        #   save a call to os.lstat() when walking subdirectories.
+        func, dirfd, path, orig_entry = stack.pop()
+        name = path if orig_entry is None else orig_entry.name
+        try:
+            if func is os.close:
+                os.close(dirfd)
+                return
+            if func is os.rmdir:
+                os.rmdir(name, dir_fd=dirfd)
+                return
+    
+            # Note: To guard against symlink races, we use the standard
+            # lstat()/open()/fstat() trick.
+            assert func is os.lstat
+            if orig_entry is None:
+>               orig_st = os.lstat(name, dir_fd=dirfd)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               FileNotFoundError: [Errno 2] No such file or directory: PosixPath('/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/fir-lifecycle-install-pair-6lvqem_0/positive/installed')
+
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/shutil.py:669: FileNotFoundError
+_______ test_lifecycle_dispatch_falls_back_to_import_linter_fixture_pair _______
+
+    def test_lifecycle_dispatch_falls_back_to_import_linter_fixture_pair() -> None:
+>       observed = run_lifecycle_snapshot(
+            "SKILL:INCONSISTENCY:LIFECYCLE",
+            {},
+        )
+
+tests/integration/test_runtime_exact_adapters.py:218: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/full_inspection_repair/lifecycle_adapters.py:849: in run_for_snapshot
+    return run_external_cell(
+scripts/full_inspection_repair/external_adapters.py:311: in run_external_cell
+    command = _resolve_logical_command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['@tool:import-linter', '--no-cache', '--config', '/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/fir-exact-adapter-7s_elqjn/.importlinter']
+
+    def _resolve_logical_command(command: Iterable[str]) -> list[str]:
+        result: list[str] = []
+        for argument in command:
+            if argument.startswith("@"):
+                resolved = _resolve_logical_token(argument)
+                if resolved is None:
+>                   raise CapabilityBlocked(
+                        f"logical tool is unavailable: {argument}"
+                    )
+E                   full_inspection_repair.capabilities.CapabilityBlocked: logical tool is unavailable: @tool:import-linter
+
+scripts/full_inspection_repair/capabilities.py:230: CapabilityBlocked
+____________________ test_nonmutation_source_change_blocks _____________________
+
+tmp_path = PosixPath('/Users/runner/work/_temp/pytest/test_nonmutation_source_change0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1057c2000>
+
+    def test_nonmutation_source_change_blocks(tmp_path, monkeypatch):
+        manifest = load_pack(slice_ids=["SLICE-9ae4bc3f41975252"])["slices"][0]
+        manifest = {
+            **manifest,
+            "mutation_semantics": False,
+            "output_format": "TEXT",
+            "outcome_rules": [{"outcome": "CLEAN", "exit_codes": [0]}],
+            "network_policy": "DENY",
+            "network_enforcement": "LOOPBACK_ONLY",
+        }
+        target = tmp_path / "target"
+        target.mkdir()
+        (target / "source.txt").write_text("target\n", encoding="utf-8")
+        script = "from pathlib import Path; Path('mutated.txt').write_text('x')"
+    
+        def fake_sandbox(command, **kwargs):
+            completed = subprocess.run(
+                command,
+                cwd=kwargs["cwd"],
+                capture_output=True,
+                check=False,
+            )
+            return SimpleNamespace(
+                status="PASS" if completed.returncode == 0 else "BLOCKED",
+                failure_code=None if completed.returncode == 0 else "NONZERO_EXIT",
+                returncode=completed.returncode,
+                stdout=completed.stdout,
+                stderr=completed.stderr,
+                elapsed_seconds=0.0,
+                peak_rss_mib=0.0,
+                output_bytes=len(completed.stdout) + len(completed.stderr),
+                network_enforced=True,
+                network_cleanup_verified=True,
+                network_canary={"status": "PASS"},
+                backend_id="test.sandbox",
+                receipt=lambda: {
+                    "process_tree": {
+                        "descendants_empty": True,
+                        "termination_method": "test",
+                        "root_pid": 1,
+                        "child_pids": [],
+                    }
+                },
+            )
+    
+        monkeypatch.setattr(capabilities_module, "run_sandboxed", fake_sandbox)
+        receipt = run_slice(
+            manifest,
+            target,
+            command_override=[sys.executable, "-c", script],
+        )
+>       assert (target / "mutated.txt").is_file()
+E       AssertionError: assert False
+E        +  where False = is_file()
+E        +    where is_file = (PosixPath('/Users/runner/work/_temp/pytest/test_nonmutation_source_change0/target') / 'mutated.txt').is_file
+
+tests/unit/test_capabilities.py:264: AssertionError
+______________ test_windows_firewall_guard_fails_closed_on_posix _______________
+
+tmp_path = PosixPath('/Users/runner/work/_temp/pytest/test_windows_firewall_guard_fa0')
+
+    def test_windows_firewall_guard_fails_closed_on_posix(tmp_path):
+        if os.name == "nt":
+            pytest.skip("the non-Windows fail-closed branch is POSIX-specific")
+        manifest = load_pack(slice_ids=["SLICE-9ae4bc3f41975252"])["slices"][0]
+        manifest = {
+            **manifest,
+            "mutation_semantics": False,
+            "output_format": "TEXT",
+            "outcome_rules": [{"outcome": "CLEAN", "exit_codes": [0]}],
+            "network_enforcement": "WINDOWS_FIREWALL",
+        }
+        target = tmp_path / "target"
+        target.mkdir()
+        (target / "source.txt").write_text("target\n", encoding="utf-8")
+        script = "from pathlib import Path; Path('must-not-run.txt').write_text('x')"
+    
+        receipt = run_slice(
+            manifest,
+            target,
+            command_override=[sys.executable, "-c", script],
+        )
+    
+        assert not (target / "must-not-run.txt").exists()
+>       assert receipt["terminal_status"] == "BLOCKED"
+E       AssertionError: assert 'UNSUPPORTED' == 'BLOCKED'
+E         
+E         - BLOCKED
+E         + UNSUPPORTED
+
+tests/unit/test_capabilities.py:294: AssertionError
+________ test_runtime_limits_block[import time; time.sleep(2)-TIMEOUT] _________
+
+code = 'import time; time.sleep(2)', expected = 'TIMEOUT'
+
+    @pytest.mark.parametrize(
+        ("code", "expected"),
+        [
+            ("import time; time.sleep(2)", "TIMEOUT"),
+            ("import time\ndata=bytearray(32*1024*1024)\ntime.sleep(2)", "OOM"),
+            ("import sys; sys.stdout.write('x'*4096)", "OUTPUT_OVERFLOW"),
+        ],
+    )
+    def test_runtime_limits_block(code: str, expected: str) -> None:
+        observed = run_bounded_process(
+            [sys.executable, "-c", code],
+            timeout=0.2,
+            max_output_bytes=1024,
+            max_rss_mib=32,
+        )
+>       assert observed["status"] == expected
+E       AssertionError: assert 'BLOCKED' == 'TIMEOUT'
+E         
+E         - TIMEOUT
+E         + BLOCKED
+
+tests/unit/test_r2_engine.py:217: AssertionError
+_ test_runtime_limits_block[import time\ndata=bytearray(32*1024*1024)\ntime.sleep(2)-OOM] _
+
+code = 'import time\ndata=bytearray(32*1024*1024)\ntime.sleep(2)'
+expected = 'OOM'
+
+    @pytest.mark.parametrize(
+        ("code", "expected"),
+        [
+            ("import time; time.sleep(2)", "TIMEOUT"),
+            ("import time\ndata=bytearray(32*1024*1024)\ntime.sleep(2)", "OOM"),
+            ("import sys; sys.stdout.write('x'*4096)", "OUTPUT_OVERFLOW"),
+        ],
+    )
+    def test_runtime_limits_block(code: str, expected: str) -> None:
+        observed = run_bounded_process(
+            [sys.executable, "-c", code],
+            timeout=0.2,
+            max_output_bytes=1024,
+            max_rss_mib=32,
+        )
+>       assert observed["status"] == expected
+E       AssertionError: assert 'BLOCKED' == 'OOM'
+E         
+E         - OOM
+E         + BLOCKED
+
+tests/unit/test_r2_engine.py:217: AssertionError
+_ test_runtime_limits_block[import sys; sys.stdout.write('x'*4096)-OUTPUT_OVERFLOW] _
+
+code = "import sys; sys.stdout.write('x'*4096)", expected = 'OUTPUT_OVERFLOW'
+
+    @pytest.mark.parametrize(
+        ("code", "expected"),
+        [
+            ("import time; time.sleep(2)", "TIMEOUT"),
+            ("import time\ndata=bytearray(32*1024*1024)\ntime.sleep(2)", "OOM"),
+            ("import sys; sys.stdout.write('x'*4096)", "OUTPUT_OVERFLOW"),
+        ],
+    )
+    def test_runtime_limits_block(code: str, expected: str) -> None:
+        observed = run_bounded_process(
+            [sys.executable, "-c", code],
+            timeout=0.2,
+            max_output_bytes=1024,
+            max_rss_mib=32,
+        )
+>       assert observed["status"] == expected
+E       AssertionError: assert 'BLOCKED' == 'OUTPUT_OVERFLOW'
+E         
+E         - OUTPUT_OVERFLOW
+E         + BLOCKED
+
+tests/unit/test_r2_engine.py:217: AssertionError
+__________ test_runtime_repeatability_is_derived_from_digest_equality __________
+
+    def test_runtime_repeatability_is_derived_from_digest_equality() -> None:
+        snapshot = {
+            "files": {
+                "fixture.py": (
+                    "import os\n"
+                    "def run():\n"
+                    "    os.system('echo forbidden')\n"
+                    "    return True\n"
+                )
+            },
+            "runtime_case": {
+                "call": "run",
+                "args": [],
+                "declared_return": True,
+                "forbidden_calls": ["system"],
+            },
+        }
+        first = run_native("SKILL:RISK_EXPOSURE:RUNTIME", snapshot)
+        second = run_native("SKILL:RISK_EXPOSURE:RUNTIME", snapshot)
+>       assert repeatability_status(first["events_digest"], second["events_digest"]) == "PASS"
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'events_digest'
+
+tests/unit/test_r2_engine.py:240: KeyError
+___________________ test_stdout_and_stderr_share_one_budget ____________________
+
+    def test_stdout_and_stderr_share_one_budget() -> None:
+        observed = run_sandboxed(
+            [
+                sys.executable,
+                "-B",
+                "-c",
+                "import sys; sys.stdout.write('x'*700); "
+                "sys.stderr.write('y'*700)",
+            ],
+            limits=SandboxLimits(
+                timeout_seconds=10,
+                max_output_bytes=1024,
+                max_rss_mib=256,
+            ),
+        )
+    
+>       assert observed.status == "OUTPUT_OVERFLOW"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'OUTPUT_OVERFLOW'
+E         
+E         - OUTPUT_OVERFLOW
+E         + BLOCKED_ADAPTER
+
+tests/unit/test_sandbox_runtime.py:42: AssertionError
+_______________ test_input_file_ceiling_is_checked_before_launch _______________
+
+tmp_path = PosixPath('/Users/runner/work/_temp/pytest/test_input_file_ceiling_is_che0')
+
+    def test_input_file_ceiling_is_checked_before_launch(tmp_path: Path) -> None:
+        marker = tmp_path / "must-not-run.txt"
+        observed = run_sandboxed(
+            [
+                sys.executable,
+                "-B",
+                "-c",
+                f"from pathlib import Path; Path({str(marker)!r}).write_text('ran')",
+            ],
+            limits=SandboxLimits(
+                timeout_seconds=10,
+                max_output_bytes=1024,
+                max_rss_mib=256,
+                max_input_files=1,
+            ),
+            input_file_count=2,
+        )
+    
+>       assert observed.status == "BLOCKED"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'BLOCKED'
+E         
+E         - BLOCKED
+E         + BLOCKED_ADAPTER
+
+tests/unit/test_sandbox_runtime.py:66: AssertionError
+__________________ test_windows_job_query_api_failure_raises ___________________
+
+    def test_windows_job_query_api_failure_raises() -> None:
+        class FakeKernel32:
+            @staticmethod
+            def QueryInformationJobObject(*args: object) -> int:
+                del args
+                return 0
+    
+        job = sandbox_module._WindowsJob.__new__(sandbox_module._WindowsJob)
+        job.handle = 1
+        job.kernel32 = FakeKernel32()
+    
+        with pytest.raises(sandbox_module._JobObjectQueryError):
+>           job.process_ids()
+
+tests/unit/test_sandbox_runtime.py:276: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <full_inspection_repair.sandbox._WindowsJob object at 0x10568c290>
+
+    def process_ids(self) -> list[int]:
+        capacity = 128
+        while True:
+            size = ctypes.sizeof(_WindowsPidList) + (capacity - 1) * ctypes.sizeof(
+                ctypes.c_size_t
+            )
+            buffer = ctypes.create_string_buffer(size)
+            if not self.kernel32.QueryInformationJobObject(
+                self.handle,
+                self.JOB_OBJECT_BASIC_PROCESS_ID_LIST,
+                buffer,
+                size,
+                None,
+            ):
+                raise _JobObjectQueryError(
+>                   ctypes.get_last_error(),
+                    ^^^^^^^^^^^^^^^^^^^^^
+                    "QueryInformationJobObject failed",
+                )
+E               AttributeError: module 'ctypes' has no attribute 'get_last_error'
+
+scripts/full_inspection_repair/sandbox.py:371: AttributeError
+=========================== short test summary info ============================
+SKIPPED [1] tests/integration/test_capability_cli.py:70: Windows srt-win policy is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:102: the pinned ast-grep capability command is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:140: the pinned ast-grep capability command is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:167: Windows srt-win policy is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:190: Windows srt-win policy is Windows-specific
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:704: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:743: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:799: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r8_release_sigstore.py:397: real Sigstore bundle environment is not configured
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:103: Windows alternate data streams
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:280: Windows directory flush
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:431: Windows USN journal
+SKIPPED [1] tests/unit/test_r8_runtime_reader.py:117: Windows junction fixture
+SKIPPED [1] tests/unit/test_sandbox_runtime.py:71: Windows Job Object backend
+SKIPPED [1] tests/unit/test_sandbox_runtime.py:87: Windows Job Object backend
+25 failed, 453 passed, 15 skipped in 229.18s (0:03:49)
