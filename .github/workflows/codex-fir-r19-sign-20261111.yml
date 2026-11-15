@@ -39,6 +39,30 @@ jobs:
         run: |
           bash evidence/fir-1.7.0/tools/install_platform_tools.sh macos
 
+      - name: Probe macOS sandbox backend
+        working-directory: evidence/fir-1.7.0/candidate/full-inspection-repair
+        run: |
+          python -B - <<'PY'
+          import json
+          import sys
+
+          sys.path.insert(0, "scripts")
+          from full_inspection_repair.sandbox import (
+              MacSandboxRuntimeBackend,
+              SandboxLimits,
+          )
+
+          backend = MacSandboxRuntimeBackend(None)
+          result = backend.run(
+              [sys.executable, "-c", "print('sandbox probe')"],
+              cwd=".",
+              env=None,
+              limits=SandboxLimits(),
+              network_policy="ALLOW",
+          )
+          print(json.dumps(result.receipt(), indent=2, sort_keys=True))
+          PY
+
       - name: Verify exact package
         run: |
           python -B evidence/fir-1.7.0/candidate/full-inspection-repair/scripts/release_skill.py package \
