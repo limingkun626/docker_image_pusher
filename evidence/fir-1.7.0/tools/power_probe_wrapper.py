@@ -4,7 +4,7 @@ import importlib.util
 import sys
 from pathlib import Path
 
-RUN = Path(r"F:\Codex\runs\fir-1.7.0-release-20261115\generation-9")
+RUN = Path(r"F:\Codex\runs\fir-1.7.0-release-20261115\generation-10")
 SOURCE = Path(
     r"F:\Codex\runs\fir-r2-release-20261115\power_probe.py"
 )

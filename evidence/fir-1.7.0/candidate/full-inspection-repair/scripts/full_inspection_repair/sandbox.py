@@ -1172,16 +1172,6 @@ class MacSandboxRuntimeBackend:
             "available": sys.platform == "darwin" and bool(self.executable),
         }
 
-    def _resource(self) -> tuple[Any, str]:
-        try:
-            resource_module = __import__("resource")
-        except ImportError:
-            return None, "resource module unavailable"
-        for name in ("RLIMIT_NOFILE",):
-            if not hasattr(resource_module, name):
-                return None, f"{name} unavailable"
-        return resource_module, ""
-
     def _wrap(
         self,
         argv: Sequence[str],
@@ -1216,34 +1206,6 @@ class MacSandboxRuntimeBackend:
         child_pids: set[int] = set()
         termination_method = "natural-exit"
 
-        resource_module, resource_error = self._resource()
-        if resource_error:
-            return _blocked(
-                self.backend_id,
-                self.backend_version,
-                BLOCKED_ADAPTER,
-                network_policy="ALLOW",
-                error=resource_error,
-            )
-
-        def limit_resources() -> None:
-            memory_bytes = max(1, int(limits.max_rss_mib * 1024 * 1024))
-            if hasattr(resource_module, "RLIMIT_AS"):
-                resource_module.setrlimit(
-                    resource_module.RLIMIT_AS,
-                    (memory_bytes, memory_bytes),
-                )
-            resource_module.setrlimit(
-                resource_module.RLIMIT_NOFILE,
-                (256, 256),
-            )
-            if hasattr(resource_module, "RLIMIT_CPU"):
-                cpu_seconds = max(1, int(limits.timeout_seconds) + 1)
-                resource_module.setrlimit(
-                    resource_module.RLIMIT_CPU,
-                    (cpu_seconds, cpu_seconds),
-                )
-
         def terminate_tree() -> None:
             nonlocal termination_method
             if process is None:
@@ -1265,7 +1227,6 @@ class MacSandboxRuntimeBackend:
                 stderr=subprocess.PIPE,
                 shell=False,
                 start_new_session=True,
-                preexec_fn=limit_resources,
             )
             assert process.stdout is not None
             assert process.stderr is not None

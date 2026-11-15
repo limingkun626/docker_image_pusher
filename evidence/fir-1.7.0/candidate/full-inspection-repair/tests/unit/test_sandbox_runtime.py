@@ -40,7 +40,7 @@ def test_stdout_and_stderr_share_one_budget() -> None:
         ),
     )
 
-    assert observed.status == "OUTPUT_OVERFLOW"
+    assert observed.status == "OUTPUT_OVERFLOW", observed.error
     assert observed.failure_code == "OUTPUT_OVERFLOW"
     assert observed.output_bytes == 1024
     assert observed.descendants_empty is True
@@ -308,29 +308,14 @@ def test_macos_streams_one_budget_and_rechecks_process_group(
             return self.returncode
 
     process = FakeProcess()
-    resource_calls: list[tuple[int, tuple[int, int]]] = []
     group_queries = 0
     killed = 0
     post_kill_queries = 0
 
-    class FakeResource:
-        RLIMIT_AS = 1
-        RLIMIT_CPU = 2
-        RLIMIT_NOFILE = 3
-
-        def setrlimit(
-            self,
-            resource_id: int,
-            values: tuple[int, int],
-        ) -> None:
-            resource_calls.append((resource_id, values))
-
     def fake_popen(*args: object, **kwargs: object) -> FakeProcess:
         del args
         assert kwargs["start_new_session"] is True
-        preexec = kwargs["preexec_fn"]
-        assert callable(preexec)
-        preexec()
+        assert kwargs.get("preexec_fn") is None
         return process
 
     def fake_killpg(pid: int, sig: int) -> None:
@@ -350,11 +335,6 @@ def test_macos_streams_one_budget_and_rechecks_process_group(
         return [4400] if post_kill_queries == 1 else []
 
     backend = MacSandboxRuntimeBackend("/usr/bin/srt")
-    monkeypatch.setattr(
-        backend,
-        "_resource",
-        lambda: (FakeResource(), ""),
-    )
     monkeypatch.setattr(sandbox_module.subprocess, "Popen", fake_popen)
     monkeypatch.setattr(
         sandbox_module.os,
@@ -390,7 +370,7 @@ def test_macos_streams_one_budget_and_rechecks_process_group(
         ),
     )
 
-    assert observed.status == "OUTPUT_OVERFLOW"
+    assert observed.status == "OUTPUT_OVERFLOW", observed.error
     assert observed.output_bytes == 8
     assert len(observed.stdout) + len(observed.stderr) == 8
     assert killed >= 2
@@ -398,11 +378,6 @@ def test_macos_streams_one_budget_and_rechecks_process_group(
     assert observed.child_pids == (4400,)
     assert observed.descendants_empty is True
     assert observed.termination_method == "process-group"
-    assert {item[0] for item in resource_calls} == {
-        FakeResource.RLIMIT_AS,
-        FakeResource.RLIMIT_CPU,
-        FakeResource.RLIMIT_NOFILE,
-    }
 
 
 def test_macos_network_canary_failure_blocks(

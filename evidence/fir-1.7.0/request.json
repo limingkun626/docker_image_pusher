@@ -1,8 +1,8 @@
 {
-  "candidate_digest": "0cb211e8c29b65e56c84210dd808074097eff571f891726d0753c6bb0bfef585",
-  "freeze_digest": "cbea9f0562503e52db69015f06fe2ee6c116cc8d11135721e8261f230c933e5e",
-  "generation": 9,
-  "request_id": "fir-1.7.0-release-20261115-generation-9",
+  "candidate_digest": "80e531398bd36ebf3bac1d376cc0b6a65c88262cab41bde4b25fc31b9189593c",
+  "freeze_digest": "e4f4ea55d5656348434c0d534e1a77fb16d212f9a12b1fba6bb41a1f8804ba22",
+  "generation": 10,
+  "request_id": "fir-1.7.0-release-20261115-generation-10",
   "schema_version": 1,
   "status": "REQUESTED",
   "version": "1.7.0"
