@@ -1,0 +1,690 @@
+{
+  "candidate_digest": null,
+  "closure_digest": "05ba6a1fdc8b710c0a149453bafb02fd548f745c9ce5fcfd92dc67118592c40a",
+  "coverage_boundary_digest": "7555ae4658276f608d268b1e7cf69fbbca91682e5ef56fa57534386c92b12eb2",
+  "records": [
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "protected-reader+semantic-matrix",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "resource-snapshot:db3d5de60023831c05ee00b2b10d79dbfb8ae58cebe81f2bb69baff2afd67dae",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "40aa6da97b6110bb2acd92f6c4d891aab3162a4b417c22016886ddfb04fd6c6c",
+      "locator": "SKILL.md",
+      "proof_ref": null,
+      "source_id": "source:SKILL.md",
+      "source_type": "RESOURCE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "claim-extractor+semantic-matrix",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "claim-observation:f6b3aaf1cfea3737597d55a198fd383968920faa343c5f3ef266cbf72e75ab69",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "1838fa3fef8970ae949b90c3dccb06055d4b9062700a0d618147bda3c8eaf52f",
+      "locator": "SKILL.md#frontmatter.name",
+      "proof_ref": null,
+      "source_id": "claim:SKILL.md#frontmatter.name",
+      "source_type": "CLAIM",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-proof-set",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-proof-set:dc2a0a082d481d6cf48fff2ed613494cc7e3a0ada9d34213ada199040b0df685"
+      ],
+      "evidence_sha256": "44aef684e94286585cf543082cc912f833b853066f7df9d9aeb3a0f41a4e2c08",
+      "locator": "registry:invariant:INV-CANDIDATE-BOUND",
+      "proof_ref": null,
+      "source_id": "invariant:INV-CANDIDATE-BOUND",
+      "source_type": "INVARIANT",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-proof-set",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-proof-set:dc2a0a082d481d6cf48fff2ed613494cc7e3a0ada9d34213ada199040b0df685"
+      ],
+      "evidence_sha256": "d49e5c7146b7eb4d4595eb03890d54f52e2635af00f931a9d1788b0826892b3d",
+      "locator": "registry:invariant:INV-CENSUS-COMPLETE",
+      "proof_ref": null,
+      "source_id": "invariant:INV-CENSUS-COMPLETE",
+      "source_type": "INVARIANT",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-proof-set",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-proof-set:dc2a0a082d481d6cf48fff2ed613494cc7e3a0ada9d34213ada199040b0df685"
+      ],
+      "evidence_sha256": "24028121e5b3a9feebd200bb68f4d520703b80b3878568ee768494e498eb9fd5",
+      "locator": "registry:invariant:INV-IMPACT-CLOSED",
+      "proof_ref": null,
+      "source_id": "invariant:INV-IMPACT-CLOSED",
+      "source_type": "INVARIANT",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-proof-set",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-proof-set:dc2a0a082d481d6cf48fff2ed613494cc7e3a0ada9d34213ada199040b0df685"
+      ],
+      "evidence_sha256": "4f44866fc123f794752d1443d27c16552ccfc9245a27a94cbde17b17e3349115",
+      "locator": "registry:invariant:INV-JOURNAL-DURABLE",
+      "proof_ref": null,
+      "source_id": "invariant:INV-JOURNAL-DURABLE",
+      "source_type": "INVARIANT",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-proof-set",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-proof-set:dc2a0a082d481d6cf48fff2ed613494cc7e3a0ada9d34213ada199040b0df685"
+      ],
+      "evidence_sha256": "1ec3161467801fda55ade29a08b39a5c7f61936d90b702ea4fa171ac1fe2f9be",
+      "locator": "registry:invariant:INV-MATRIX-COMPLETE",
+      "proof_ref": null,
+      "source_id": "invariant:INV-MATRIX-COMPLETE",
+      "source_type": "INVARIANT",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-proof-set",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-proof-set:dc2a0a082d481d6cf48fff2ed613494cc7e3a0ada9d34213ada199040b0df685"
+      ],
+      "evidence_sha256": "7ce07d97b61276a54a42f59ce045a34e9c94515e3d7783c622c220ef6e7b6522",
+      "locator": "registry:invariant:INV-NO-AUTO-REENTRY",
+      "proof_ref": null,
+      "source_id": "invariant:INV-NO-AUTO-REENTRY",
+      "source_type": "INVARIANT",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-proof-set",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-proof-set:dc2a0a082d481d6cf48fff2ed613494cc7e3a0ada9d34213ada199040b0df685"
+      ],
+      "evidence_sha256": "532e716964715b4dd3a83643154f390e7558ecc61245eeb89598d0c1822d29dc",
+      "locator": "registry:invariant:INV-RELEASE-AUTHORITY-BOUNDARY",
+      "proof_ref": null,
+      "source_id": "invariant:INV-RELEASE-AUTHORITY-BOUNDARY",
+      "source_type": "INVARIANT",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-proof-set",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-proof-set:dc2a0a082d481d6cf48fff2ed613494cc7e3a0ada9d34213ada199040b0df685"
+      ],
+      "evidence_sha256": "3e87660b27d1e3ffef20b05a51b014e1c134d27221b4ee192e46b1811974feea",
+      "locator": "registry:invariant:INV-SCOPE-FROZEN",
+      "proof_ref": null,
+      "source_id": "invariant:INV-SCOPE-FROZEN",
+      "source_type": "INVARIANT",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-plane-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-plane:BEHAVIOR:5b23596f5a8676385acabf986322680181a33214517845c3b5943c44caae0b66"
+      ],
+      "evidence_sha256": "3f41670e1ddfdce1b188c7ec8bef7c96f75c260b650ec8446a2fa356d432c1ec",
+      "locator": "registry:plane:SKILL:BEHAVIOR",
+      "proof_ref": null,
+      "source_id": "plane:BEHAVIOR",
+      "source_type": "PLANE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-plane-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-plane:CONTRACT:fa7683133480c60fdb3aefe180ccd8ebd9a23431a72de8747f6007778ffd9aa0"
+      ],
+      "evidence_sha256": "2bd86d98dbb0dd8bafca564fc252247d67705ef454ab059007a0bd4ebae012b6",
+      "locator": "registry:plane:SKILL:CONTRACT",
+      "proof_ref": null,
+      "source_id": "plane:CONTRACT",
+      "source_type": "PLANE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-plane-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-plane:LIFECYCLE:f9c88be4477f08dcd3b150ac51a34c90caddb6e42967655b1805bdcd1f91860a"
+      ],
+      "evidence_sha256": "8e320171fd7402bef51be0062737c31f028331c6fe4c7248723d4ec540546dbd",
+      "locator": "registry:plane:SKILL:LIFECYCLE",
+      "proof_ref": null,
+      "source_id": "plane:LIFECYCLE",
+      "source_type": "PLANE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-plane-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-plane:PERFORMANCE:1cf0eda6dba81daef635d2f1f05381ec2ee29edc5094322c6da621536ff9b8c0"
+      ],
+      "evidence_sha256": "c10f8baead83ae0bf165291ca13202a143cb0668b6be31b117a973255f7e953a",
+      "locator": "registry:plane:SKILL:PERFORMANCE",
+      "proof_ref": null,
+      "source_id": "plane:PERFORMANCE",
+      "source_type": "PLANE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-plane-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-plane:RUNTIME:4a3f64e9bcf25504ef7231b50555234e27da948621ae452d085adccc9ad89e03"
+      ],
+      "evidence_sha256": "797dd33b872210487ad56df213b45930b6025a6d89d0228c5c50364fb8b17416",
+      "locator": "registry:plane:SKILL:RUNTIME",
+      "proof_ref": null,
+      "source_id": "plane:RUNTIME",
+      "source_type": "PLANE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-plane-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-plane:SECURITY:f746d0a3dd8b79b1f2a0711b522766e00f20622cc62c8c7b37e775b3cf1e5cfd"
+      ],
+      "evidence_sha256": "464490e5af76b8128d4659a6663a7e679bd00f28487df94b1d5fd27d027fc37f",
+      "locator": "registry:plane:SKILL:SECURITY",
+      "proof_ref": null,
+      "source_id": "plane:SECURITY",
+      "source_type": "PLANE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-plane-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-plane:SEMANTIC:029c8b3dfdd55384d2eeae5fdf9317fc18fff4e742fa2902f16630018f375c5b"
+      ],
+      "evidence_sha256": "6e289940b855c567cb280d506d3c5eebf8bb55bda14bb4ed1e0b77a4c175f1b9",
+      "locator": "registry:plane:SKILL:SEMANTIC",
+      "proof_ref": null,
+      "source_id": "plane:SEMANTIC",
+      "source_type": "PLANE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "semantic-plane-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "semantic-plane:STATIC:891e0d442883c6e82b5e0290258b55aa3fbd3cca37ffd9cabc35d6b7f932a3e3"
+      ],
+      "evidence_sha256": "6e2223f0e556955ca03941a24fc57e9e582f5b84e3c5112cf2c467b0013db935",
+      "locator": "registry:plane:SKILL:STATIC",
+      "proof_ref": null,
+      "source_id": "plane:STATIC",
+      "source_type": "PLANE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "behavior-evidence",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "behavior-receipts:5b23596f5a8676385acabf986322680181a33214517845c3b5943c44caae0b66",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "0394f21d4d3de675444bda542b95aae953d184fe8b5052080a6706330367180c",
+      "locator": "behavior:build-taxonomy",
+      "proof_ref": null,
+      "source_id": "behavior:build-taxonomy",
+      "source_type": "BEHAVIOR",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "behavior-evidence",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "behavior-receipts:5b23596f5a8676385acabf986322680181a33214517845c3b5943c44caae0b66",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "b08e4ec16ec3876e5572ecc62ebcc26e4ac2cbc76368b23db3ab10a12f4d8033",
+      "locator": "behavior:capabilities.matrix",
+      "proof_ref": null,
+      "source_id": "behavior:capabilities.matrix",
+      "source_type": "BEHAVIOR",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "behavior-evidence",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "behavior-receipts:5b23596f5a8676385acabf986322680181a33214517845c3b5943c44caae0b66",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "6c5153972f0297d35aa04030d4eb5842ac40d24c56a843585d5b439563924625",
+      "locator": "behavior:capabilities.run",
+      "proof_ref": null,
+      "source_id": "behavior:capabilities.run",
+      "source_type": "BEHAVIOR",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "behavior-evidence",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "behavior-receipts:5b23596f5a8676385acabf986322680181a33214517845c3b5943c44caae0b66",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "20f385b656583bd4211693a7801285183153ce51150f22f159b29cdf3686b27e",
+      "locator": "behavior:capabilities.validate",
+      "proof_ref": null,
+      "source_id": "behavior:capabilities.validate",
+      "source_type": "BEHAVIOR",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "behavior-evidence",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "behavior-receipts:5b23596f5a8676385acabf986322680181a33214517845c3b5943c44caae0b66",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "d65db9f15b550b6379f764a203bc65dcb221e8baa0eb4962d401b83b2dcbf857",
+      "locator": "behavior:check",
+      "proof_ref": null,
+      "source_id": "behavior:check",
+      "source_type": "BEHAVIOR",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "behavior-evidence",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "behavior-receipts:5b23596f5a8676385acabf986322680181a33214517845c3b5943c44caae0b66",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "827d9c77c42bfedaece7ddb1aa196b9a3c5b3e6cf1b04b9bb53f7a571b137046",
+      "locator": "behavior:claim",
+      "proof_ref": null,
+      "source_id": "behavior:claim",
+      "source_type": "BEHAVIOR",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "behavior-evidence",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "behavior-receipts:5b23596f5a8676385acabf986322680181a33214517845c3b5943c44caae0b66",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "3b28e2136c21e8a3eeb805982be5199722ea7dd45178610c71881cf56fe2bee5",
+      "locator": "behavior:install",
+      "proof_ref": null,
+      "source_id": "behavior:install",
+      "source_type": "BEHAVIOR",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "behavior-evidence",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "behavior-receipts:5b23596f5a8676385acabf986322680181a33214517845c3b5943c44caae0b66",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "7eaadffe66b45caee22763bd41ac584787ae48771cebb1c8c317ae3098d8b7e4",
+      "locator": "behavior:package",
+      "proof_ref": null,
+      "source_id": "behavior:package",
+      "source_type": "BEHAVIOR",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "behavior-evidence",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "behavior-receipts:5b23596f5a8676385acabf986322680181a33214517845c3b5943c44caae0b66",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "005028a40552dfc587a7b133b6e40e12d93eefe23f12e2564ed8c100f66034e9",
+      "locator": "behavior:repair",
+      "proof_ref": null,
+      "source_id": "behavior:repair",
+      "source_type": "BEHAVIOR",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "behavior-evidence",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "behavior-receipts:5b23596f5a8676385acabf986322680181a33214517845c3b5943c44caae0b66",
+        "semantic-matrix:3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42"
+      ],
+      "evidence_sha256": "7fa003d162260b56eb7f4c954969cbe76ce76e58c0a1fe7d2390a33060841cf8",
+      "locator": "behavior:review",
+      "proof_ref": null,
+      "source_id": "behavior:review",
+      "source_type": "BEHAVIOR",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "runtime-identity",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "environment:43cbd04a6fee68065af03b0f755d3972c515b076a8124bdf97a40d77d06d9e98",
+        "runtime-registry:5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2"
+      ],
+      "evidence_sha256": "5d29e01fa5addb19aa75082de519f3dc82535d8502f44d0c624f532758495b18",
+      "locator": "runtime:python>=3.12",
+      "proof_ref": null,
+      "source_id": "runtime:python>=3.12",
+      "source_type": "RUNTIME",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "runtime-identity",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "environment:43cbd04a6fee68065af03b0f755d3972c515b076a8124bdf97a40d77d06d9e98",
+        "runtime-registry:5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2"
+      ],
+      "evidence_sha256": "acbe5e91067ffd78533f18965ea5c15f44a3fed9e7921149ec8e07f5f808081f",
+      "locator": "runtime:runtime-dependencies",
+      "proof_ref": null,
+      "source_id": "runtime:runtime-dependencies",
+      "source_type": "RUNTIME",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "runtime-identity",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "environment:43cbd04a6fee68065af03b0f755d3972c515b076a8124bdf97a40d77d06d9e98",
+        "runtime-registry:5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2"
+      ],
+      "evidence_sha256": "d1a948b5e4c51cafaa4186a11cc880951dde30db630e84cdbcb9c5b61c00aa51",
+      "locator": "runtime:sandbox-backend",
+      "proof_ref": null,
+      "source_id": "runtime:sandbox-backend",
+      "source_type": "RUNTIME",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "runtime-identity",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "environment:43cbd04a6fee68065af03b0f755d3972c515b076a8124bdf97a40d77d06d9e98",
+        "runtime-registry:5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2"
+      ],
+      "evidence_sha256": "2af504d7aa75b67c7858e9a585b2206fd468eef1076b5fc3e631413c97b896cd",
+      "locator": "runtime:supported-operating-systems",
+      "proof_ref": null,
+      "source_id": "runtime:supported-operating-systems",
+      "source_type": "RUNTIME",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "lifecycle-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "lifecycle-receipts:f9c88be4477f08dcd3b150ac51a34c90caddb6e42967655b1805bdcd1f91860a"
+      ],
+      "evidence_sha256": "ca6dfa451b47bbdc7c64e08743b378e0dd6f69ac935c77ada4ea8abc048faae7",
+      "locator": "lifecycle:fresh-install",
+      "proof_ref": null,
+      "source_id": "lifecycle:fresh-install",
+      "source_type": "LIFECYCLE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "lifecycle-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "lifecycle-receipts:f9c88be4477f08dcd3b150ac51a34c90caddb6e42967655b1805bdcd1f91860a"
+      ],
+      "evidence_sha256": "955115016f9196cbb8e32ef7f29756d3b9fe5647fed8139cee2a79d08cf8a10b",
+      "locator": "lifecycle:interrupted-install-recovery",
+      "proof_ref": null,
+      "source_id": "lifecycle:interrupted-install-recovery",
+      "source_type": "LIFECYCLE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "lifecycle-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "lifecycle-receipts:f9c88be4477f08dcd3b150ac51a34c90caddb6e42967655b1805bdcd1f91860a"
+      ],
+      "evidence_sha256": "87eed83ee3599ae77537b7a96ac7cdb1f20db5b86892ffe72d1a20b00a968785",
+      "locator": "lifecycle:post-install-readback",
+      "proof_ref": null,
+      "source_id": "lifecycle:post-install-readback",
+      "source_type": "LIFECYCLE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "lifecycle-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "lifecycle-receipts:f9c88be4477f08dcd3b150ac51a34c90caddb6e42967655b1805bdcd1f91860a"
+      ],
+      "evidence_sha256": "e0071f2445a3501a49ef3376b0fdd98819ece18bd09e15665cf241cef013e5e5",
+      "locator": "lifecycle:repeat-install",
+      "proof_ref": null,
+      "source_id": "lifecycle:repeat-install",
+      "source_type": "LIFECYCLE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "lifecycle-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "lifecycle-receipts:f9c88be4477f08dcd3b150ac51a34c90caddb6e42967655b1805bdcd1f91860a"
+      ],
+      "evidence_sha256": "eea367cd53aa78089dfe4b84bb5dc0b4444981ad3575cc78fedf2331bcf2035e",
+      "locator": "lifecycle:rollback",
+      "proof_ref": null,
+      "source_id": "lifecycle:rollback",
+      "source_type": "LIFECYCLE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "lifecycle-receipts",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "lifecycle-receipts:f9c88be4477f08dcd3b150ac51a34c90caddb6e42967655b1805bdcd1f91860a"
+      ],
+      "evidence_sha256": "260ba39e1e2f68884208427a105459fe46fae4a1a493ec21bf6e0c5f58c8014d",
+      "locator": "lifecycle:upgrade",
+      "proof_ref": null,
+      "source_id": "lifecycle:upgrade",
+      "source_type": "LIFECYCLE",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "tool-closure-registry",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "tool-closure:5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2"
+      ],
+      "evidence_sha256": "517914284748f58de9d46310c18afbf5a3ba5d9cebbd8bf93b99b9c5ee26556b",
+      "locator": "external:cryptography",
+      "proof_ref": null,
+      "source_id": "external:cryptography",
+      "source_type": "EXTERNAL",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "tool-closure-registry",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "tool-closure:5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2"
+      ],
+      "evidence_sha256": "1795afb6333f0558ed1be3a5b0448aa49ed6984aa01b8d0d16703612b733b311",
+      "locator": "external:jsonschema",
+      "proof_ref": null,
+      "source_id": "external:jsonschema",
+      "source_type": "EXTERNAL",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "tool-closure-registry",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "tool-closure:5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2"
+      ],
+      "evidence_sha256": "478825223b1a51439ceaca0f1f192539eee1dcbfb95526cea1ea86d77266752b",
+      "locator": "external:pytest",
+      "proof_ref": null,
+      "source_id": "external:pytest",
+      "source_type": "EXTERNAL",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "tool-closure-registry",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "tool-closure:5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2"
+      ],
+      "evidence_sha256": "5c12924466a55d1a51dd6edbaec2171f4dd3ce8f8e4c44ce76e7885844e31875",
+      "locator": "external:python-interpreter",
+      "proof_ref": null,
+      "source_id": "external:python-interpreter",
+      "source_type": "EXTERNAL",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "tool-closure-registry",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "tool-closure:5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2"
+      ],
+      "evidence_sha256": "5fd9da94ff656d50399f9f7d22b56f56d08d155822c8ddbb3dc47bf610042981",
+      "locator": "external:pyyaml",
+      "proof_ref": null,
+      "source_id": "external:pyyaml",
+      "source_type": "EXTERNAL",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    },
+    {
+      "applicability": "APPLICABLE",
+      "evidence_method_id": "tool-closure-registry",
+      "evidence_method_version": "1.0.0",
+      "evidence_refs": [
+        "tool-closure:5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2"
+      ],
+      "evidence_sha256": "18e435fec9851a7ee91332e04825f1d8fce6c48dd647c0e898ff549a9795e4a6",
+      "locator": "external:sigstore-verifier",
+      "proof_ref": null,
+      "source_id": "external:sigstore-verifier",
+      "source_type": "EXTERNAL",
+      "terminal_status": "SATISFIED",
+      "unsupported_reason": null
+    }
+  ],
+  "runtime_registry_digest": "5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2",
+  "schema_version": 1,
+  "scope_id": "run:9a7a17a52f404828acf4500212757e50",
+  "source_count": 44,
+  "source_denominator_digest": "5f1db1bdd6ba30cc4faef0e65eb0d1b62077d4ea48be8f4dcdb0efee64d8e88f",
+  "subject_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed",
+  "terminal_count": 44
+}

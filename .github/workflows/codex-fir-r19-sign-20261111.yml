@@ -1,14 +1,14 @@
-name: fir-r2-release-20261115
+name: fir-1.7.0-release
 
 on:
   push:
     branches: [codex-fir-r19-sign-20261111]
     paths:
-      - evidence/fir-r2/request.json
+      - evidence/fir-1.7.0/request.json
   workflow_dispatch:
     inputs:
       mode:
-        description: "Set to finalize_only to reuse frozen macOS evidence"
+        description: "qualification stops after macOS evidence; full runs finalization"
         required: false
         default: full
 
@@ -18,7 +18,6 @@ permissions:
 
 jobs:
   macos:
-    if: ${{ github.event_name == 'push' || inputs.mode != 'finalize_only' }}
     runs-on: macos-15
     timeout-minutes: 120
     steps:
@@ -30,12 +29,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install -r evidence/fir-r2/candidate/full-inspection-repair/requirements.txt
+          python -m pip install -r evidence/fir-1.7.0/candidate/full-inspection-repair/requirements.txt
 
       - name: Verify exact package
         run: |
-          python -B evidence/fir-r2/candidate/full-inspection-repair/scripts/release_skill.py package \
-            --source evidence/fir-r2/candidate/full-inspection-repair \
+          python -B evidence/fir-1.7.0/candidate/full-inspection-repair/scripts/release_skill.py package \
+            --source evidence/fir-1.7.0/candidate/full-inspection-repair \
             --output "$RUNNER_TEMP/package"
           python -B - "$RUNNER_TEMP/package/package-manifest.json" <<'PY'
           import json
@@ -43,26 +42,24 @@ jobs:
           from pathlib import Path
 
           expected = json.loads(
-              Path("evidence/fir-r2/input/package-manifest.json").read_text()
+              Path("evidence/fir-1.7.0/input/package-manifest.json").read_text()
           )
-          actual = json.loads(
-              Path(sys.argv[1]).read_text()
-          )
+          actual = json.loads(Path(sys.argv[1]).read_text())
           if actual != expected:
               raise SystemExit("checkout package manifest differs from the freeze")
           sys.path.insert(
-              0, "evidence/fir-r2/candidate/full-inspection-repair/scripts"
+              0, "evidence/fir-1.7.0/candidate/full-inspection-repair/scripts"
           )
           from full_inspection_repair.package import verify_package_manifest
 
           verify_package_manifest(
-              "evidence/fir-r2/candidate/full-inspection-repair",
+              "evidence/fir-1.7.0/candidate/full-inspection-repair",
               expected,
           )
           PY
 
       - name: Full macOS tests
-        working-directory: evidence/fir-r2/candidate/full-inspection-repair
+        working-directory: evidence/fir-1.7.0/candidate/full-inspection-repair
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
@@ -72,24 +69,23 @@ jobs:
             --basetemp "$RUNNER_TEMP/pytest" \
             2>&1 | tee "$RUNNER_TEMP/macos-pytest.log"
 
-      - name: Candidate self-check
-        working-directory: evidence/fir-r2/candidate/full-inspection-repair
+      - name: Clean-probe self-check
+        working-directory: evidence/fir-1.7.0/candidate/full-inspection-repair
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
           python -B scripts/run_inspection.py check \
-            --target . \
+            --target ../../probe-skill \
             --kind SKILL \
             --taxonomy ../../input/taxonomy-coverage.json \
-            --output "$RUNNER_TEMP/self-check" \
-            2>&1 | tee "$RUNNER_TEMP/self-check.log"
+            --output "$RUNNER_TEMP/self-check"
 
       - name: Lifecycle harness
-        working-directory: evidence/fir-r2/candidate/full-inspection-repair
+        working-directory: evidence/fir-1.7.0/candidate/full-inspection-repair
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          python -B ../../tools/make_lifecycle_harness.py \
+          python -B ../../tools/lifecycle_harness_wrapper.py \
             --candidate . \
             --manifest ../../input/package-manifest.json \
             --platform macos \
@@ -98,25 +94,25 @@ jobs:
       - name: Preserve macOS evidence
         if: always()
         run: |
-          mkdir -p evidence/fir-r2/macos
-          for item in macos-junit.xml macos-pytest.log self-check self-check.log macos-lifecycle; do
+          mkdir -p evidence/fir-1.7.0/macos
+          for item in macos-junit.xml macos-pytest.log self-check macos-lifecycle; do
             if test -e "$RUNNER_TEMP/$item"; then
-              cp -R "$RUNNER_TEMP/$item" evidence/fir-r2/macos/
+              cp -R "$RUNNER_TEMP/$item" evidence/fir-1.7.0/macos/
             fi
           done
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
-          name: fir-r2-macos-evidence
-          path: evidence/fir-r2/macos
+          name: fir-1.7.0-macos-evidence
+          path: evidence/fir-1.7.0/macos
           if-no-files-found: error
 
   finalize:
     needs: macos
-    if: ${{ always() && (needs.macos.result == 'success' || needs.macos.result == 'skipped') }}
+    if: ${{ inputs.mode != 'qualification' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
@@ -126,96 +122,120 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install -r evidence/fir-r2/candidate/full-inspection-repair/requirements.txt
+          python -m pip install -r evidence/fir-1.7.0/candidate/full-inspection-repair/requirements.txt
 
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
-        if: ${{ inputs.mode != 'finalize_only' }}
         with:
-          name: fir-r2-macos-evidence
-          path: evidence/fir-r2/macos
+          name: fir-1.7.0-macos-evidence
+          path: evidence/fir-1.7.0/macos
 
-      - name: Stage frozen macOS evidence
-        if: ${{ inputs.mode == 'finalize_only' }}
+      - name: Full Linux tests
+        working-directory: evidence/fir-1.7.0/candidate/full-inspection-repair
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          mkdir -p evidence/fir-r2/macos
-          cp -R evidence/fir-r2/input/macos/. evidence/fir-r2/macos/
+          set -o pipefail
+          python -B -m pytest -q -rs -p no:cacheprovider . \
+            --junitxml "$RUNNER_TEMP/linux-junit.xml" \
+            --basetemp "$RUNNER_TEMP/pytest" \
+            2>&1 | tee "$RUNNER_TEMP/linux-pytest.log"
 
-      - name: Fresh Linux self-check
-        working-directory: evidence/fir-r2/candidate/full-inspection-repair
+      - name: Linux clean-probe self-check
+        working-directory: evidence/fir-1.7.0/candidate/full-inspection-repair
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
           python -B scripts/run_inspection.py check \
-            --target . \
+            --target ../../probe-skill \
             --kind SKILL \
             --taxonomy ../../input/taxonomy-coverage.json \
             --output "$RUNNER_TEMP/linux-check"
 
-      - name: Finalize evidence
+      - name: Linux lifecycle harness
+        working-directory: evidence/fir-1.7.0/candidate/full-inspection-repair
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          python -B evidence/fir-r2/tools/finalize_release.py \
-            --root evidence/fir-r2 \
-            --windows-check evidence/fir-r2/input/windows-check \
-            --linux-check "$RUNNER_TEMP/linux-check" \
-            --macos evidence/fir-r2/macos \
-            --output evidence/fir-r2/final
+          python -B ../../tools/lifecycle_harness_wrapper.py \
+            --candidate . \
+            --manifest ../../input/package-manifest.json \
+            --platform linux \
+            --output "$RUNNER_TEMP/lifecycle-linux"
 
       - uses: sigstore/cosign-installer@756fe2d284c7292c4e9b62c8a28f1e5629c59532
 
-      - name: Sign final evidence with GitHub OIDC
+      - name: Finalize and sign domain evidence
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          mkdir -p evidence/fir-r2/signed
-          for name in PHYSICAL-POWER-EVIDENCE REVIEWER-ATTESTATION; do
-            if test "$name" = "PHYSICAL-POWER-EVIDENCE"; then
-              input="evidence/fir-r2/input/power/${name}.json"
-            else
-              input="evidence/fir-r2/final/reviewer-attestation.json"
-            fi
-            bundle="evidence/fir-r2/signed/${name}.sigstore.json"
-            cosign sign-blob --yes --bundle "$bundle" "$input"
-          done
+          cp "$RUNNER_TEMP/linux-junit.xml" evidence/fir-1.7.0/input/linux-junit.xml
+          cp -R "$RUNNER_TEMP/lifecycle-linux" evidence/fir-1.7.0/input/lifecycle-linux
+          python -B evidence/fir-1.7.0/tools/finalize_release_1_7.py \
+            --root evidence/fir-1.7.0 \
+            --windows-check evidence/fir-1.7.0/input/windows-check \
+            --linux-check "$RUNNER_TEMP/linux-check" \
+            --macos evidence/fir-1.7.0/macos \
+            --output evidence/fir-1.7.0/final
 
-      - name: Verify final evidence before publication
+      - name: Sign reviewer attestation
         run: |
-          test -s evidence/fir-r2/signed/PHYSICAL-POWER-EVIDENCE.sigstore.json
-          test -s evidence/fir-r2/signed/REVIEWER-ATTESTATION.sigstore.json
+          mkdir -p evidence/fir-1.7.0/signed
+          cosign sign-blob --yes \
+            --bundle evidence/fir-1.7.0/signed/REVIEWER-ATTESTATION.sigstore.json \
+            evidence/fir-1.7.0/final/reviewer-attestation.json
+          cosign verify-blob \
+            --bundle evidence/fir-1.7.0/signed/REVIEWER-ATTESTATION.sigstore.json \
+            --certificate-identity \
+              "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111" \
+            --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+            evidence/fir-1.7.0/final/reviewer-attestation.json
+
+      - name: Verify final evidence
+        run: |
+          test -s evidence/fir-1.7.0/final/DOMAIN-SET.sigstore.json
+          test -s evidence/fir-1.7.0/signed/REVIEWER-ATTESTATION.sigstore.json
           python -B - <<'PY'
           import json
           from pathlib import Path
 
-          request = json.loads(Path("evidence/fir-r2/request.json").read_text())
+          request = json.loads(Path("evidence/fir-1.7.0/request.json").read_text())
           verification = json.loads(
-              Path("evidence/fir-r2/final/verification.json").read_text()
+              Path("evidence/fir-1.7.0/final/verification.json").read_text()
           )
-          ledger = json.loads(Path("evidence/fir-r2/final/risk-ledger.json").read_text())
+          ledger = json.loads(
+              Path("evidence/fir-1.7.0/final/risk-ledger.json").read_text()
+          )
+          gate = json.loads(
+              Path("evidence/fir-1.7.0/final/risk-gate-evidence.json").read_text()
+          )
           if request["candidate_digest"] != verification["candidate_digest"]:
               raise SystemExit("candidate digest drift")
           if verification["status"] != "PASS" or verification["failure_count"] != 0:
               raise SystemExit("verification is not PASS")
           if ledger["open_count"] != 0:
               raise SystemExit("risk ledger is open")
+          if gate["status"] != "PASS" or gate["release_ready"] is not True:
+              raise SystemExit("risk gate is not release-ready")
           PY
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
-          name: fir-r2-release-evidence
+          name: fir-1.7.0-release-evidence
           path: |
-            evidence/fir-r2/macos
-            evidence/fir-r2/final
-            evidence/fir-r2/signed
-            evidence/fir-r2/input/power
+            evidence/fir-1.7.0/macos
+            evidence/fir-1.7.0/final
+            evidence/fir-1.7.0/signed
+            evidence/fir-1.7.0/input/power
           if-no-files-found: error
 
       - name: Commit evidence and Sigstore bundles
         run: |
-          git config user.name "Codex FIR R2 Reviewer"
-          git config user.email "codex-fir-r2-reviewer@users.noreply.github.com"
-          git add evidence/fir-r2/macos evidence/fir-r2/final evidence/fir-r2/signed
+          git config user.name "Codex FIR 1.7.0 Reviewer"
+          git config user.email "codex-fir-1.7.0@users.noreply.github.com"
+          git add evidence/fir-1.7.0/macos evidence/fir-1.7.0/final evidence/fir-1.7.0/signed
           if git diff --cached --quiet; then
-            test -s evidence/fir-r2/signed/REVIEWER-ATTESTATION.sigstore.json
+            test -s evidence/fir-1.7.0/signed/REVIEWER-ATTESTATION.sigstore.json
           else
-            git commit -m "Record FIR 1.6.0 macOS, final review, and Sigstore evidence [skip ci]"
+            git commit -m "Record FIR 1.7.0 macOS, final review, and Sigstore evidence [skip ci]"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi

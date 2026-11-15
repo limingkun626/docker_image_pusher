@@ -1,0 +1,18 @@
+{
+  "blocked_detectors": [],
+  "capability_digest": null,
+  "capability_status": null,
+  "closed_count": 0,
+  "coverage_digest": "6f71a1e734127dc6a7835eb74cd824f1b389170b81d1501427850447fc9346ab",
+  "detectors": 10,
+  "impact_digest": "ea3292a7540fa4767566c287024dd064cac7fd056b173b6dbbe753d0ff67f5f3",
+  "matrix_digest": null,
+  "open_count": 0,
+  "semantic_cell_count": 72,
+  "semantic_matrix_digest": "3a8f8104c93589887d8d08f5cf813195c4ee51efc3b4102b3919e7a54230cb42",
+  "status": "CHECKED",
+  "subject_id": "skill:ab9f771f43d10ef8",
+  "subject_kind": "SKILL",
+  "taxonomy_digest": "d543092c981290a7f062151d2021294093444af96852abcbc79f3e3f26942ac7",
+  "tree_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed"
+}

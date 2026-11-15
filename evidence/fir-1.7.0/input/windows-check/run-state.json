@@ -1,0 +1,44 @@
+{
+  "current_state": "IMPACT_CLOSURE",
+  "environment_digest": "43cbd04a6fee68065af03b0f755d3972c515b076a8124bdf97a40d77d06d9e98",
+  "history": [
+    {
+      "event": "freeze_scope",
+      "from": "INTAKE",
+      "to": "SCOPE_FROZEN"
+    },
+    {
+      "event": "census",
+      "from": "SCOPE_FROZEN",
+      "to": "SUBJECT_CENSUS"
+    },
+    {
+      "event": "discover",
+      "from": "SUBJECT_CENSUS",
+      "to": "ISSUE_DISCOVERY"
+    },
+    {
+      "event": "impact",
+      "from": "ISSUE_DISCOVERY",
+      "to": "IMPACT_CLOSURE"
+    }
+  ],
+  "knowledge_pack_digest": null,
+  "knowledge_pack_id": null,
+  "policy_digest": "6830862e0102bd8572dec9e59fdda1859d53066a06c25f9046d44f056f117535",
+  "run_id": "run:9a7a17a52f404828acf4500212757e50",
+  "runtime_registry_digest": "5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2",
+  "runtime_registry_id": "FIR-RUNTIME-REGISTRY",
+  "runtime_registry_version": "1.7.0",
+  "schema_version": 1,
+  "scope_digest": "c2ab93af6466335a492a9d178417f5cc12c1ff35d613c9c409053658ebc90168",
+  "scope_id": "run:9a7a17a52f404828acf4500212757e50",
+  "snapshot_digest": "d349a26e6abcc9ddd9c2c9da911dc03182ac4d45951f9ae6e5632f4688fc45ef",
+  "source_closure_digest": "05ba6a1fdc8b710c0a149453bafb02fd548f745c9ce5fcfd92dc67118592c40a",
+  "source_inventory_digest": "6b56bff12284d271536089c273a84d7d109bf6fb36404d748dc9c6a9ab761dc0",
+  "subject_id": "skill:ab9f771f43d10ef8",
+  "subject_kind": "SKILL",
+  "target": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\probe-skill",
+  "taxonomy_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
+  "tree_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed"
+}

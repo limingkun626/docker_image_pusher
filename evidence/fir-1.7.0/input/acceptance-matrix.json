@@ -1,0 +1,1007 @@
+{
+  "items": [
+    {
+      "area": "REGISTRY",
+      "case": "registry schema validates unique binding IDs",
+      "covers_findings": "SYN-F08;SYN-F16;SYN-F25",
+      "evidence": "registry digest",
+      "expected_status": "PASS",
+      "setup": "load valid v3 registry",
+      "status": "PASS",
+      "test_id": "T-REG-01",
+      "test_names": [
+        "test_t_reg_01_registry_is_complete_frozen_and_immutable"
+      ]
+    },
+    {
+      "area": "REGISTRY",
+      "case": "missing implementation module",
+      "covers_findings": "SYN-F25",
+      "evidence": "validator error",
+      "expected_status": "BLOCKED_ADAPTER",
+      "setup": "register path not shipped",
+      "status": "PASS",
+      "test_id": "T-REG-02",
+      "test_names": [
+        "test_t_reg_02_missing_implementation_blocks"
+      ]
+    },
+    {
+      "area": "REGISTRY",
+      "case": "absolute host path in checked-in tool entry",
+      "covers_findings": "SYN-F02",
+      "evidence": "validator error",
+      "expected_status": "BLOCKED_ADAPTER",
+      "setup": "insert absolute path",
+      "status": "PASS",
+      "test_id": "T-REG-03",
+      "test_names": [
+        "test_t_reg_03_absolute_host_path_blocks"
+      ]
+    },
+    {
+      "area": "REGISTRY",
+      "case": "duplicate primary mechanisms without explicit merge",
+      "covers_findings": "SYN-F16",
+      "evidence": "no detector execution receipt",
+      "expected_status": "BLOCKED_TAXONOMY",
+      "setup": "register native and adapter as primary",
+      "status": "PASS",
+      "test_id": "T-REG-04",
+      "test_names": [
+        "test_t_reg_04_duplicate_primary_mechanism_blocks"
+      ]
+    },
+    {
+      "area": "REGISTRY",
+      "case": "explicit merge rebinding after duplicate detection",
+      "covers_findings": "SYN-F16",
+      "evidence": "rebound cell binding map",
+      "expected_status": "PASS",
+      "setup": "retain one primary and declare merge alias",
+      "status": "PASS",
+      "test_id": "T-REG-05",
+      "test_names": [
+        "test_t_reg_05_merge_alias_uses_one_primary"
+      ]
+    },
+    {
+      "area": "IDENTITY",
+      "case": "forged subject digest",
+      "covers_findings": "SYN-F07;SYN-F08",
+      "evidence": "manifest error",
+      "expected_status": "BLOCKED_STALE_INPUT",
+      "setup": "tamper manifest",
+      "status": "PASS",
+      "test_id": "T-ID-01",
+      "test_names": [
+        "test_t_id_01_forged_subject_digest_blocks_stale_input"
+      ]
+    },
+    {
+      "area": "IDENTITY",
+      "case": "forged candidate digest",
+      "covers_findings": "SYN-F09",
+      "evidence": "ledger error",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "replace candidate digest",
+      "status": "PASS",
+      "test_id": "T-ID-02",
+      "test_names": [
+        "test_t_id_02_forged_candidate_digest_blocks_evidence"
+      ]
+    },
+    {
+      "area": "IDENTITY",
+      "case": "tool version substitution before execution",
+      "covers_findings": "SYN-F08",
+      "evidence": "tool closure mismatch",
+      "expected_status": "BLOCKED_ADAPTER",
+      "setup": "use same argv with a binary that differs from the frozen closure",
+      "status": "PASS",
+      "test_id": "T-ID-03",
+      "test_names": [
+        "test_t_id_03_tool_version_substitution_blocks_adapter"
+      ]
+    },
+    {
+      "area": "IDENTITY",
+      "case": "rule or grammar drift after freeze",
+      "covers_findings": "SYN-F08",
+      "evidence": "stale-input mismatch",
+      "expected_status": "BLOCKED_STALE_INPUT",
+      "setup": "alter bytes after run admission",
+      "status": "PASS",
+      "test_id": "T-ID-04",
+      "test_names": [
+        "test_t_id_04_rule_drift_after_freeze_blocks_stale_input"
+      ]
+    },
+    {
+      "area": "SOURCE",
+      "case": "file-only source inventory",
+      "covers_findings": "SYN-F17",
+      "evidence": "missing source kinds",
+      "expected_status": "BLOCKED_TAXONOMY",
+      "setup": "disable non-file producer",
+      "status": "PASS",
+      "test_id": "T-SRC-01",
+      "test_names": [
+        "test_t_src_01_inventory_emits_every_typed_source"
+      ]
+    },
+    {
+      "area": "SOURCE",
+      "case": "unknown source kind",
+      "covers_findings": "SYN-F17",
+      "evidence": "schema reject",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "insert unknown type",
+      "status": "PASS",
+      "test_id": "T-SRC-02",
+      "test_names": [
+        "test_t_src_02_unknown_source_type_blocks"
+      ]
+    },
+    {
+      "area": "SOURCE",
+      "case": "claim source missing from ledger",
+      "covers_findings": "SYN-F17",
+      "evidence": "ledger mismatch",
+      "expected_status": "BLOCKED_TAXONOMY",
+      "setup": "inject undeclared claim",
+      "status": "PASS",
+      "test_id": "T-SRC-03",
+      "test_names": [
+        "test_t_src_03_missing_required_source_blocks"
+      ]
+    },
+    {
+      "area": "SOURCE",
+      "case": "NA without proof",
+      "covers_findings": "SYN-F17",
+      "evidence": "proof missing",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "mark external N/A no proof",
+      "status": "PASS",
+      "test_id": "T-SRC-04",
+      "test_names": [
+        "test_t_src_04_na_without_proof_blocks"
+      ]
+    },
+    {
+      "area": "SOURCE",
+      "case": "candidate source inventory reused from subject",
+      "covers_findings": "SYN-F09;SYN-F17",
+      "evidence": "binding mismatch",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "omit candidate binding",
+      "status": "PASS",
+      "test_id": "T-SRC-05",
+      "test_names": [
+        "test_t_src_05_candidate_binding_is_not_reusable"
+      ]
+    },
+    {
+      "area": "FILES",
+      "case": "PowerShell file receives text classification and scanner",
+      "covers_findings": "SYN-F10",
+      "evidence": "file class receipt",
+      "expected_status": "PASS",
+      "setup": "add .ps1 fixture",
+      "status": "PASS",
+      "test_id": "T-FILE-01",
+      "test_names": [
+        "test_t_file_01_powershell_is_text_source_with_scanner"
+      ]
+    },
+    {
+      "area": "FILES",
+      "case": "JSON/YAML config scanner",
+      "covers_findings": "SYN-F10;SYN-F18",
+      "evidence": "reference edge",
+      "expected_status": "PASS",
+      "setup": "add config reference fixture",
+      "status": "PASS",
+      "test_id": "T-FILE-02",
+      "test_names": [
+        "test_t_file_02_json_and_yaml_are_configuration_with_path_scanner"
+      ]
+    },
+    {
+      "area": "DETECTION",
+      "case": "all 72 cells executed",
+      "covers_findings": "SYN-F16",
+      "evidence": "semantic-matrix receipts",
+      "expected_status": "PASS",
+      "setup": "run clean skill",
+      "status": "PASS",
+      "test_id": "T-DET-01",
+      "test_names": [
+        "test_t_det_01_all_72_cells_get_cell_specific_receipts"
+      ]
+    },
+    {
+      "area": "DETECTION",
+      "case": "missing cell blocks",
+      "covers_findings": "SYN-F16",
+      "evidence": "taxonomy receipt",
+      "expected_status": "BLOCKED_TAXONOMY",
+      "setup": "disable one registry cell",
+      "status": "PASS",
+      "test_id": "T-DET-02",
+      "test_names": [
+        "test_disabled_cell_is_blocked_taxonomy"
+      ]
+    },
+    {
+      "area": "DETECTION",
+      "case": "detector and oracle disagree",
+      "covers_findings": "SYN-F28",
+      "evidence": "comparison receipt",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "one finding one clean",
+      "status": "PASS",
+      "test_id": "T-DET-03",
+      "test_names": [
+        "test_native_oracle_disagreement_and_empty_sets_block"
+      ]
+    },
+    {
+      "area": "DETECTION",
+      "case": "equivalent finding with different witness names",
+      "covers_findings": "SYN-F28",
+      "evidence": "semantic digest equal",
+      "expected_status": "PASS",
+      "setup": "normalize two witnesses",
+      "status": "PASS",
+      "test_id": "T-DET-04",
+      "test_names": [
+        "test_t_det_04_message_lines_and_labels_do_not_affect_semantics"
+      ]
+    },
+    {
+      "area": "DETECTION",
+      "case": "two different defects at same file",
+      "covers_findings": "SYN-F28",
+      "evidence": "comparison receipt",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "emit two semantic witnesses",
+      "status": "PASS",
+      "test_id": "T-DET-05",
+      "test_names": [
+        "test_t_det_05_one_sided_or_contradictory_evidence_blocks"
+      ]
+    },
+    {
+      "area": "CAPABILITY",
+      "case": "positive fixture has empty assertions",
+      "covers_findings": "SYN-F14",
+      "evidence": "CELL_FIXTURE_ASSERTION_MISSING",
+      "expected_status": "BLOCKED_TAXONOMY",
+      "setup": "load fixture",
+      "status": "PASS",
+      "test_id": "T-CAP-01",
+      "test_names": [
+        "test_capability_pack_is_complete_and_non_authoritative"
+      ]
+    },
+    {
+      "area": "CAPABILITY",
+      "case": "negative fixture detects defect",
+      "covers_findings": "SYN-F14",
+      "evidence": "assertion failure",
+      "expected_status": "BLOCKED",
+      "setup": "synthetic positive payload",
+      "status": "PASS",
+      "test_id": "T-CAP-02",
+      "test_names": [
+        "test_ast_grep_inspect_uses_semantic_object_output"
+      ]
+    },
+    {
+      "area": "CAPABILITY",
+      "case": "fixtures.zip digest missing",
+      "covers_findings": "SYN-F27",
+      "evidence": "matrix reject",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "supply matrix without archive digest",
+      "status": "PASS",
+      "test_id": "T-CAP-03",
+      "test_names": [
+        "test_manifest_uses_exact_pack_identity_and_rejects_pair_drift"
+      ]
+    },
+    {
+      "area": "CAPABILITY",
+      "case": "output budget split across stdout and stderr",
+      "covers_findings": "SYN-F06",
+      "evidence": "OUTPUT_OVERFLOW",
+      "expected_status": "BLOCKED",
+      "setup": "write 700+700 under 1024 cap",
+      "status": "PASS",
+      "test_id": "T-CAP-04",
+      "test_names": [
+        "test_stdout_and_stderr_share_one_budget"
+      ]
+    },
+    {
+      "area": "CAPABILITY",
+      "case": "input files exceed declared maximum",
+      "covers_findings": "SYN-F22",
+      "evidence": "INPUT_FILE_LIMIT",
+      "expected_status": "BLOCKED",
+      "setup": "submit larger target",
+      "status": "PASS",
+      "test_id": "T-CAP-05",
+      "test_names": [
+        "test_input_file_ceiling_is_checked_before_launch"
+      ]
+    },
+    {
+      "area": "IMPACT",
+      "case": "shell command reference discovered",
+      "covers_findings": "SYN-F18",
+      "evidence": "COMMAND_REF edge",
+      "expected_status": "PASS",
+      "setup": "script invokes affected file",
+      "status": "PASS",
+      "test_id": "T-IMP-01",
+      "test_names": [
+        "test_t_imp_01_shell_and_powershell_commands_are_typed"
+      ]
+    },
+    {
+      "area": "IMPACT",
+      "case": "JSON workflow reference discovered",
+      "covers_findings": "SYN-F18",
+      "evidence": "CONFIG_REF edge",
+      "expected_status": "PASS",
+      "setup": "workflow path references target",
+      "status": "PASS",
+      "test_id": "T-IMP-02",
+      "test_names": [
+        "test_t_imp_02_json_config_reference_is_typed"
+      ]
+    },
+    {
+      "area": "IMPACT",
+      "case": "unsupported extension affected",
+      "covers_findings": "SYN-F18",
+      "evidence": "UNSCANNED",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "modify .unknown file",
+      "status": "PASS",
+      "test_id": "T-IMP-03",
+      "test_names": [
+        "test_t_imp_03_unsupported_consumer_blocks_no_consumer_proof"
+      ]
+    },
+    {
+      "area": "IMPACT",
+      "case": "source graph reused for candidate",
+      "covers_findings": "SYN-F09;SYN-F18",
+      "evidence": "digest mismatch",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "skip candidate rescan",
+      "status": "PASS",
+      "test_id": "T-IMP-04",
+      "test_names": [
+        "test_t_imp_04_graph_digest_changes_with_references"
+      ]
+    },
+    {
+      "area": "REPAIR",
+      "case": "post-freeze operation injection",
+      "covers_findings": "SYN-F03",
+      "evidence": "batch digest mismatch",
+      "expected_status": "BLOCKED_REPAIR_PLAN",
+      "setup": "mutate operations list",
+      "status": "PASS",
+      "test_id": "T-REP-01",
+      "test_names": [
+        "test_t_rep_01_post_freeze_injection_blocks_batch"
+      ]
+    },
+    {
+      "area": "REPAIR",
+      "case": "operation digest valid before and after apply",
+      "covers_findings": "SYN-F03",
+      "evidence": "operation receipt",
+      "expected_status": "PASS",
+      "setup": "run normal batch",
+      "status": "PASS",
+      "test_id": "T-REP-02",
+      "test_names": [
+        "test_t_rep_02_operation_digest_is_stable_before_and_after_apply"
+      ]
+    },
+    {
+      "area": "REPAIR",
+      "case": "target path escapes root",
+      "covers_findings": "SYN-F03",
+      "evidence": "path reject",
+      "expected_status": "BLOCKED_REPAIR_PLAN",
+      "setup": "use ../target",
+      "status": "PASS",
+      "test_id": "T-REP-03",
+      "test_names": [
+        "test_t_rep_03_target_escape_is_rejected"
+      ]
+    },
+    {
+      "area": "REPAIR",
+      "case": "overlapping text ranges",
+      "covers_findings": "SYN-F03",
+      "evidence": "conflict graph",
+      "expected_status": "BLOCKED_REPAIR_CONFLICT",
+      "setup": "two range operations overlap",
+      "status": "PASS",
+      "test_id": "T-REP-04",
+      "test_names": [
+        "test_t_rep_04_overlapping_ranges_conflict"
+      ]
+    },
+    {
+      "area": "REPAIR",
+      "case": "cache files present in source",
+      "covers_findings": "SYN-F23",
+      "evidence": "copy manifest equality",
+      "expected_status": "PASS",
+      "setup": "frozen tree with __pycache__",
+      "status": "PASS",
+      "test_id": "T-REP-05",
+      "test_names": [
+        "test_t_rep_05_cache_inclusive_copy"
+      ]
+    },
+    {
+      "area": "REPAIR",
+      "case": "candidate basename differs",
+      "covers_findings": "SYN-F24",
+      "evidence": "logical identity equality",
+      "expected_status": "PASS",
+      "setup": "use my-skill-candidate",
+      "status": "PASS",
+      "test_id": "T-REP-06",
+      "test_names": [
+        "test_t_rep_06_candidate_basename_does_not_change_logical_identity"
+      ]
+    },
+    {
+      "area": "REPAIR",
+      "case": "ast-grep changes only planned ranges",
+      "covers_findings": "SYN-F03;SYN-F14",
+      "evidence": "changed-file digest",
+      "expected_status": "PASS",
+      "setup": "apply one AST rule",
+      "status": "PASS",
+      "test_id": "T-REP-07",
+      "test_names": [
+        "test_t_rep_07_ast_rewrite_changes_only_planned_range"
+      ]
+    },
+    {
+      "area": "REPAIR",
+      "case": "ast-grep changes unplanned file",
+      "covers_findings": "SYN-F03",
+      "evidence": "unplanned change reject",
+      "expected_status": "BLOCKED_REPAIR_PLAN",
+      "setup": "inject broad rule",
+      "status": "PASS",
+      "test_id": "T-REP-08",
+      "test_names": [
+        "test_t_rep_08_ast_unplanned_match_blocks"
+      ]
+    },
+    {
+      "area": "REPAIR",
+      "case": "process crash during staging",
+      "covers_findings": "SYN-F03;SYN-F05",
+      "evidence": "no accepted candidate",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "interrupt after first op",
+      "status": "PASS",
+      "test_id": "T-REP-09",
+      "test_names": [
+        "test_t_rep_09_failure_during_staging_leaves_no_candidate"
+      ]
+    },
+    {
+      "area": "REPAIR",
+      "case": "atomic rename failure",
+      "covers_findings": "SYN-F03",
+      "evidence": "staging and candidate absent; source digest unchanged; rollback receipt retained",
+      "expected_status": "BLOCKED_REPAIR_PLAN",
+      "setup": "remove candidate parent before commit",
+      "status": "PASS",
+      "test_id": "T-REP-10",
+      "test_names": [
+        "test_t_rep_10_atomic_commit_failure_retains_rollback_receipt"
+      ]
+    },
+    {
+      "area": "CANDIDATE",
+      "case": "open_count zero with residual risk",
+      "covers_findings": "SYN-F09",
+      "evidence": "residual-risk reject",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "construct residual ledger",
+      "status": "PASS",
+      "test_id": "T-CC-01",
+      "test_names": [
+        "test_t_cc_01_residual_risk_blocks"
+      ]
+    },
+    {
+      "area": "CANDIDATE",
+      "case": "open_count zero with unresolved IDs",
+      "covers_findings": "SYN-F09",
+      "evidence": "unresolved-id reject",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "construct unresolved ledger",
+      "status": "PASS",
+      "test_id": "T-CC-02",
+      "test_names": [
+        "test_t_cc_02_unresolved_id_blocks"
+      ]
+    },
+    {
+      "area": "CANDIDATE",
+      "case": "candidate uses source matrix digest",
+      "covers_findings": "SYN-F09",
+      "evidence": "candidate-binding reject",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "reuse old matrix",
+      "status": "PASS",
+      "test_id": "T-CC-03",
+      "test_names": [
+        "test_t_cc_03_source_matrix_digest_blocks"
+      ]
+    },
+    {
+      "area": "CANDIDATE",
+      "case": "complete candidate closure",
+      "covers_findings": "SYN-F09",
+      "evidence": "candidate attestation",
+      "expected_status": "PASS",
+      "setup": "run check->repair",
+      "status": "PASS",
+      "test_id": "T-CC-04",
+      "test_names": [
+        "test_t_cc_04_complete_candidate_closure"
+      ]
+    },
+    {
+      "area": "RUNTIME",
+      "case": "network DENY unavailable",
+      "covers_findings": "SYN-F04",
+      "evidence": "backend probe",
+      "expected_status": "BLOCKED_ADAPTER",
+      "setup": "disable nsjail/srt",
+      "status": "PASS",
+      "test_id": "T-RUN-01",
+      "test_names": [
+        "test_windows_network_deny_requires_verified_srt_win"
+      ]
+    },
+    {
+      "area": "RUNTIME",
+      "case": "network DENY canary succeeds",
+      "covers_findings": "SYN-F04",
+      "evidence": "canary failure",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "allow external socket",
+      "status": "PASS",
+      "test_id": "T-RUN-02",
+      "test_names": [
+        "test_windows_network_deny_requires_verified_srt_win"
+      ]
+    },
+    {
+      "area": "RUNTIME",
+      "case": "loopback only external socket blocked",
+      "covers_findings": "SYN-F04",
+      "evidence": "canary receipt",
+      "expected_status": "PASS",
+      "setup": "run external socket canary",
+      "status": "PASS",
+      "test_id": "T-RUN-03",
+      "test_names": [
+        "test_linux_backend_uses_a_new_network_namespace"
+      ]
+    },
+    {
+      "area": "RUNTIME",
+      "case": "grandchild survives root",
+      "covers_findings": "SYN-F05",
+      "evidence": "descendant receipt",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "spawn orphan",
+      "status": "PASS",
+      "test_id": "T-RUN-04",
+      "test_names": [
+        "test_windows_job_object_tracks_and_cleans_descendants"
+      ]
+    },
+    {
+      "area": "RUNTIME",
+      "case": "Windows Job Object kill-on-close",
+      "covers_findings": "SYN-F05",
+      "evidence": "Job Object membership observed; post-exit descendant census empty; empty_verified=true",
+      "expected_status": "PASS",
+      "setup": "spawn grandchild",
+      "status": "PASS",
+      "test_id": "T-RUN-05",
+      "test_names": [
+        "test_windows_job_object_tracks_and_cleans_descendants"
+      ]
+    },
+    {
+      "area": "RUNTIME",
+      "case": "stdout+stderr combined overflow",
+      "covers_findings": "SYN-F06",
+      "evidence": "OUTPUT_OVERFLOW",
+      "expected_status": "BLOCKED",
+      "setup": "1.4KB output under 1KB cap",
+      "status": "PASS",
+      "test_id": "T-RUN-06",
+      "test_names": [
+        "test_stdout_and_stderr_share_one_budget"
+      ]
+    },
+    {
+      "area": "RUNTIME",
+      "case": "max input files enforcement",
+      "covers_findings": "SYN-F22",
+      "evidence": "INPUT_FILE_LIMIT",
+      "expected_status": "BLOCKED",
+      "setup": "load too many files",
+      "status": "PASS",
+      "test_id": "T-RUN-07",
+      "test_names": [
+        "test_input_file_ceiling_is_checked_before_launch"
+      ]
+    },
+    {
+      "area": "MATRIX",
+      "case": "mixed scored and unscored",
+      "covers_findings": "SYN-F13",
+      "evidence": "unscored_count",
+      "expected_status": "PASS",
+      "setup": "one optional unscored with required pass",
+      "status": "PASS",
+      "test_id": "T-MAT-01",
+      "test_names": [
+        "test_t_mat_01_mixed_scored_and_unscored_passes"
+      ]
+    },
+    {
+      "area": "MATRIX",
+      "case": "all cases unscored",
+      "covers_findings": "SYN-F13",
+      "evidence": "matrix error",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "all optional unscored",
+      "status": "PASS",
+      "test_id": "T-MAT-02",
+      "test_names": [
+        "test_t_mat_02_all_unscored_blocks"
+      ]
+    },
+    {
+      "area": "MATRIX",
+      "case": "required case unscored",
+      "covers_findings": "SYN-F13",
+      "evidence": "matrix error",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "mark F2P unscored",
+      "status": "PASS",
+      "test_id": "T-MAT-03",
+      "test_names": [
+        "test_t_mat_03_required_unscored_blocks"
+      ]
+    },
+    {
+      "area": "KNOWLEDGE",
+      "case": "public check loads frozen pack",
+      "covers_findings": "SYN-F19",
+      "evidence": "manifest pack digest",
+      "expected_status": "PASS",
+      "setup": "pass exact pack",
+      "status": "PASS",
+      "test_id": "T-KNOW-01",
+      "test_names": [
+        "test_manifest_uses_exact_pack_identity_and_rejects_pair_drift"
+      ]
+    },
+    {
+      "area": "KNOWLEDGE",
+      "case": "pack digest mismatch",
+      "covers_findings": "SYN-F19",
+      "evidence": "stale receipt",
+      "expected_status": "BLOCKED_STALE_INPUT",
+      "setup": "alter pack bytes",
+      "status": "PASS",
+      "test_id": "T-KNOW-02",
+      "test_names": [
+        "test_stale_pack_identity_blocks_frozen_load"
+      ]
+    },
+    {
+      "area": "KNOWLEDGE",
+      "case": "caller-authored replay JSON",
+      "covers_findings": "SYN-F15",
+      "evidence": "replay receipt",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "provided but not executed",
+      "status": "PASS",
+      "test_id": "T-KNOW-03",
+      "test_names": [
+        "test_boolean_and_hash_only_candidate_cannot_be_promoted"
+      ]
+    },
+    {
+      "area": "KNOWLEDGE",
+      "case": "actual replay runner executes frozen cases",
+      "covers_findings": "SYN-F15",
+      "evidence": "execution transcript",
+      "expected_status": "PASS",
+      "setup": "run enabled fixture",
+      "status": "PASS",
+      "test_id": "T-KNOW-04",
+      "test_names": [
+        "test_promotion_uses_actual_replay_process_and_transcript"
+      ]
+    },
+    {
+      "area": "RELEASE",
+      "case": "claim evidence digest substitution",
+      "covers_findings": "SYN-F07",
+      "evidence": "claim reject",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "tamper ledger digest",
+      "status": "PASS",
+      "test_id": "T-REL-01",
+      "test_names": [
+        "test_matrix_and_review_must_bind_the_expected_candidate"
+      ]
+    },
+    {
+      "area": "RELEASE",
+      "case": "synthetic platform receipt",
+      "covers_findings": "SYN-F12",
+      "evidence": "domain reject",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "provide status dictionary",
+      "status": "PASS",
+      "test_id": "T-REL-02",
+      "test_names": [
+        "test_status_only_domain_dictionary_is_not_executable_evidence"
+      ]
+    },
+    {
+      "area": "LIFECYCLE",
+      "case": "repeat install with prior rollback",
+      "covers_findings": "SYN-F21",
+      "evidence": "unique rollback path",
+      "expected_status": "PASS",
+      "setup": "install twice",
+      "status": "PASS",
+      "test_id": "T-LIFE-01",
+      "test_names": [
+        "test_repeated_install_retains_distinct_rollback_trees"
+      ]
+    },
+    {
+      "area": "PATH",
+      "case": "output equals target",
+      "covers_findings": "SYN-F20",
+      "evidence": "overlap reject",
+      "expected_status": "BLOCKED_SCOPE",
+      "setup": "use target as output",
+      "status": "PASS",
+      "test_id": "T-PATH-01",
+      "test_names": [
+        "test_t_path_01_output_equal_to_target_is_blocked"
+      ]
+    },
+    {
+      "area": "PATH",
+      "case": "output descendant of target",
+      "covers_findings": "SYN-F20",
+      "evidence": "overlap reject",
+      "expected_status": "BLOCKED_SCOPE",
+      "setup": "use target/output",
+      "status": "PASS",
+      "test_id": "T-PATH-02",
+      "test_names": [
+        "test_t_path_02_output_inside_target_is_blocked[<lambda>0]",
+        "test_t_path_02_output_inside_target_is_blocked[<lambda>1]"
+      ]
+    },
+    {
+      "area": "PATH",
+      "case": "output is ancestor of target",
+      "covers_findings": "SYN-F20",
+      "evidence": "overlap reject",
+      "expected_status": "BLOCKED_SCOPE",
+      "setup": "use parent output",
+      "status": "PASS",
+      "test_id": "T-PATH-03",
+      "test_names": [
+        "test_t_path_03_repair_requires_pairwise_disjoint_paths"
+      ]
+    },
+    {
+      "area": "DOCS",
+      "case": "install dependency inventory includes psutil",
+      "covers_findings": "SYN-F01",
+      "evidence": "dependency parity",
+      "expected_status": "PASS",
+      "setup": "parse SKILL install sentence and requirements",
+      "status": "PASS",
+      "test_id": "T-DOC-01",
+      "test_names": [
+        "test_package_version_and_dependency_lock_are_current"
+      ]
+    },
+    {
+      "area": "DOCS",
+      "case": "oversize diagnostic uses executable policy threshold",
+      "covers_findings": "SYN-F26",
+      "evidence": "diagnostic text and constant",
+      "expected_status": "PASS",
+      "setup": "run 4 MiB boundary fixture",
+      "status": "PASS",
+      "test_id": "T-DOC-02",
+      "test_names": [
+        "test_t_doc_02_oversize_diagnostic_uses_executable_policy_threshold"
+      ]
+    },
+    {
+      "area": "STATE",
+      "case": "claim state vocabulary is canonical",
+      "covers_findings": "SYN-F11",
+      "evidence": "same closed-state value",
+      "expected_status": "PASS",
+      "setup": "run transition and claim validator",
+      "status": "PASS",
+      "test_id": "T-STATE-01",
+      "test_names": [
+        "test_claim_state_and_install_lifecycle_are_separate"
+      ]
+    },
+    {
+      "area": "CANDIDATE",
+      "case": "ledger scope digest substituted with another valid scope",
+      "covers_findings": "SYN-F09",
+      "evidence": "scope-identity reject",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "replace ledger scope_digest",
+      "status": "PASS",
+      "test_id": "T-CC-05",
+      "test_names": [
+        "test_t_cc_05_ledger_scope_substitution_blocks"
+      ]
+    },
+    {
+      "area": "CANDIDATE",
+      "case": "subject tree digest used as candidate digest",
+      "covers_findings": "SYN-F09",
+      "evidence": "subject-candidate separation reject",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "swap subject and candidate identities",
+      "status": "PASS",
+      "test_id": "T-CC-06",
+      "test_names": [
+        "test_t_cc_06_subject_candidate_identity_swap_blocks"
+      ]
+    },
+    {
+      "area": "CANDIDATE",
+      "case": "detection report bound to another candidate",
+      "covers_findings": "SYN-F09;SYN-F28",
+      "evidence": "detection-report reject",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "replace report candidate_digest",
+      "status": "PASS",
+      "test_id": "T-CC-07",
+      "test_names": [
+        "test_t_cc_07_08_report_candidate_substitution_blocks[detection]",
+        "test_t_cc_07_08_report_candidate_substitution_blocks[oracle]"
+      ]
+    },
+    {
+      "area": "CANDIDATE",
+      "case": "oracle report bound to another candidate",
+      "covers_findings": "SYN-F09;SYN-F28",
+      "evidence": "oracle-report reject",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "replace report candidate_digest",
+      "status": "PASS",
+      "test_id": "T-CC-08",
+      "test_names": [
+        "test_t_cc_07_08_report_candidate_substitution_blocks[detection]",
+        "test_t_cc_07_08_report_candidate_substitution_blocks[oracle]"
+      ]
+    },
+    {
+      "area": "CANDIDATE",
+      "case": "source taxonomy impact matrix or ledger rebound to another candidate",
+      "covers_findings": "SYN-F09",
+      "evidence": "each closure-artifact reject",
+      "expected_status": "BLOCKED_VERIFICATION",
+      "setup": "parameterized candidate_digest substitution",
+      "status": "PASS",
+      "test_id": "T-CC-09",
+      "test_names": [
+        "test_t_cc_09_remaining_artifact_substitution_blocks[impact]",
+        "test_t_cc_09_remaining_artifact_substitution_blocks[ledger]",
+        "test_t_cc_09_remaining_artifact_substitution_blocks[matrix]",
+        "test_t_cc_09_remaining_artifact_substitution_blocks[source_inventory]",
+        "test_t_cc_09_remaining_artifact_substitution_blocks[taxonomy]"
+      ]
+    },
+    {
+      "area": "LIFECYCLE",
+      "case": "inspection attempts direct transition to INSTALLED",
+      "covers_findings": "SYN-F11",
+      "evidence": "state-space reject",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "emit inspection receipt with INSTALLED",
+      "status": "PASS",
+      "test_id": "T-LIFE-02",
+      "test_names": [
+        "test_t_life_02_inspection_cannot_claim_installed"
+      ]
+    },
+    {
+      "area": "LIFECYCLE",
+      "case": "validated claim without executed install asks for installed receipt",
+      "covers_findings": "SYN-F11",
+      "evidence": "no INSTALLED receipt",
+      "expected_status": "BLOCKED_EVIDENCE",
+      "setup": "stop after CLAIM_VALIDATED",
+      "status": "PASS",
+      "test_id": "T-LIFE-03",
+      "test_names": [
+        "test_release_state_machine_requires_post_install_replay"
+      ]
+    },
+    {
+      "area": "LIFECYCLE",
+      "case": "install fails after activation",
+      "covers_findings": "SYN-F11",
+      "evidence": "inspection state unchanged",
+      "expected_status": "BLOCKED",
+      "setup": "force readback or smoke failure",
+      "status": "PASS",
+      "test_id": "T-LIFE-04",
+      "test_names": [
+        "test_smoke_failure_restores_old_install"
+      ]
+    },
+    {
+      "area": "RUNTIME",
+      "case": "Windows firewall or proxy exists but srt-win canary is unavailable",
+      "covers_findings": "SYN-F04",
+      "evidence": "NETWORK_POLICY_UNENFORCEABLE",
+      "expected_status": "BLOCKED_ADAPTER",
+      "setup": "disable srt-win while setting firewall/proxy",
+      "status": "PASS",
+      "test_id": "T-RUN-08",
+      "test_names": [
+        "test_windows_network_deny_requires_verified_srt_win"
+      ]
+    }
+  ],
+  "junit_sha256": "89e6a5b13340d01dd6231868480a29e6544f46164472fd8922a5c42940ca0e05",
+  "matrix_sha256": "163642ca4ae140f3f1c403cafdddd3139e94b01fb94131e2a9ebf6e1b885942a",
+  "missing": [],
+  "passed_count": 76,
+  "report_digest": "b8ba4844a7a5f49ccf70591baba8f43cb45bde9e5a5392349966fe7db5a341a5",
+  "schema_version": 1,
+  "status": "PASS",
+  "test_count": 76
+}

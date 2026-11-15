@@ -1,0 +1,54 @@
+{
+  "candidate_digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3",
+  "installation_digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3",
+  "platform": "windows",
+  "readback_digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3",
+  "receipt_digest": "66b2f31119af879e0e7097aacb419ab7ea6873572342d3899916c30ae0cab9dd",
+  "rollback_digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3",
+  "schema_version": 1,
+  "smoke_digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3",
+  "source_digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3",
+  "stages": {
+    "atomic_activation": {
+      "receipt": {
+        "activated_atomically": true,
+        "install_digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3"
+      },
+      "receipt_sha256": "83fe37b6531414e25030cdcb9a1679e8d467d6768abc883a14caa4aa70ff7349",
+      "status": "PASS"
+    },
+    "installation": {
+      "receipt": {
+        "install_digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3",
+        "source_digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3"
+      },
+      "receipt_sha256": "54aa6a759459bae353ad4c18f6fc6079975fb9a672944d1719ef583b0a14a2f3",
+      "status": "PASS"
+    },
+    "readback": {
+      "receipt": {
+        "digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3",
+        "readback_verified": true
+      },
+      "receipt_sha256": "c12c724f90aee32b5ad2337995e18aa1a2efc6dc8a1aaecc379c308931780ff2",
+      "status": "PASS"
+    },
+    "rollback": {
+      "receipt": {
+        "digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3",
+        "retained": true
+      },
+      "receipt_sha256": "ff3eacf244f68f473a026ad7fee8bf7f63c915dc3abd1fe477c1362bc670eb60",
+      "status": "PASS"
+    },
+    "smoke": {
+      "receipt": {
+        "digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3",
+        "smoke_verified": true
+      },
+      "receipt_sha256": "bab4f0c9c19b204dc3203a7292ed3e9965c1932fd643a38724afd36db88c3fda",
+      "status": "PASS"
+    }
+  },
+  "target_digest": "b0ea54f867a902d64ee01be362747fb3ec43c157bb1342ea8d3e6ab9fe2e47a3"
+}

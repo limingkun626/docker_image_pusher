@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fir.local/contracts/runtime-registry-v3.schema.json",
+  "title": "FIR Runtime Registry v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "registry_id",
+    "registry_version",
+    "target_kinds",
+    "release_authority",
+    "artifact_set",
+    "scope_policy",
+    "source_census",
+    "impact_scanners",
+    "target_adapters",
+    "cell_bindings",
+    "known_tools",
+    "known_runtimes",
+    "fixture_archives",
+    "verification_runners",
+    "closure_reducers",
+    "failure_map",
+    "resource_policies",
+    "detectors",
+    "oracles",
+    "external_adapters",
+    "repair_operations",
+    "verification_cells",
+    "sandbox_backends",
+    "tool_closures",
+    "registry_digest"
+  ],
+  "properties": {
+    "schema_version": {"const": 3},
+    "registry_id": {"type": "string", "minLength": 1},
+    "registry_version": {"type": "string", "minLength": 1},
+    "target_kinds": {"const": ["SKILL"]},
+    "release_authority": {"const": false},
+    "artifact_set": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["artifact_id", "path", "sha256"],
+        "properties": {
+          "artifact_id": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"$ref": "#/$defs/digest"}
+        }
+      }
+    },
+    "scope_policy": {"type": "object"},
+    "source_census": {"$ref": "#/$defs/rows"},
+    "impact_scanners": {"$ref": "#/$defs/rows"},
+    "target_adapters": {"$ref": "#/$defs/rows"},
+    "cell_bindings": {
+      "type": "array",
+      "minItems": 72,
+      "maxItems": 72,
+      "items": {"$ref": "#/$defs/cell"}
+    },
+    "known_tools": {"$ref": "#/$defs/rows"},
+    "known_runtimes": {"$ref": "#/$defs/rows"},
+    "fixture_archives": {"$ref": "#/$defs/rows"},
+    "verification_runners": {"$ref": "#/$defs/rows"},
+    "closure_reducers": {"$ref": "#/$defs/rows"},
+    "failure_map": {"type": "object"},
+    "resource_policies": {"type": "object"},
+    "detectors": {"$ref": "#/$defs/rows"},
+    "oracles": {"$ref": "#/$defs/rows"},
+    "external_adapters": {"$ref": "#/$defs/rows"},
+    "repair_operations": {"$ref": "#/$defs/rows"},
+    "verification_cells": {"$ref": "#/$defs/rows"},
+    "sandbox_backends": {"$ref": "#/$defs/rows"},
+    "tool_closures": {"$ref": "#/$defs/rows"},
+    "registry_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "rows": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "binding": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "required": ["kind", "module", "callable", "version", "mechanism_id"],
+          "properties": {
+            "kind": {
+              "enum": ["PYTHON_CALLABLE", "EXACT_ADAPTER"]
+            },
+            "module": {"type": "string", "minLength": 1},
+            "callable": {"type": "string", "minLength": 1},
+            "version": {"type": "string", "minLength": 1},
+            "mechanism_id": {"type": "string", "minLength": 1},
+            "contract_digest": {"$ref": "#/$defs/digest"},
+            "adapter_id": {"type": "string"}
+          },
+          "additionalProperties": true
+        }
+      ]
+    },
+    "cell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cell_id",
+        "target_kind",
+        "category_id",
+        "evidence_plane",
+        "terminal_state",
+        "binding_id",
+        "binding_digest",
+        "detector_binding",
+        "oracle_binding",
+        "exact_adapter_binding",
+        "primary_cell_id",
+        "n_a_proof_ref",
+        "fixture_case_ids",
+        "timeout_seconds",
+        "memory_mib",
+        "failure_state"
+      ],
+      "properties": {
+        "cell_id": {"type": "string", "pattern": "^SKILL:[A-Z_]+:[A-Z_]+$"},
+        "target_kind": {"const": "SKILL"},
+        "category_id": {"type": "string", "minLength": 1},
+        "evidence_plane": {"type": "string", "minLength": 1},
+        "terminal_state": {
+          "enum": [
+            "COVERED_BY_NATIVE_DETECTOR",
+            "COVERED_BY_EXACT_ADAPTER",
+            "COVERED_BY_INDEPENDENT_ORACLE",
+            "MERGED_WITH_PRIMARY_CELL",
+            "NOT_APPLICABLE_WITH_PROOF"
+          ]
+        },
+        "binding_id": {"type": "string", "minLength": 1},
+        "binding_digest": {"$ref": "#/$defs/digest"},
+        "detector_binding": {"$ref": "#/$defs/binding"},
+        "oracle_binding": {"$ref": "#/$defs/binding"},
+        "exact_adapter_binding": {"$ref": "#/$defs/binding"},
+        "primary_cell_id": {"type": ["string", "null"]},
+        "n_a_proof_ref": {"type": ["string", "null"]},
+        "fixture_case_ids": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "timeout_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "memory_mib": {"type": "integer", "minimum": 1},
+        "failure_state": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}
