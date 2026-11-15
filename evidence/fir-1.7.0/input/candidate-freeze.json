@@ -1,30 +1,30 @@
 {
   "acceptance_matrix": {
-    "report_digest": "13cc540d17420ee294714cc12d04017e405f15d5e39becc63fc2c2f2bf7b5ff0",
-    "report_sha256": "6c053e70701fdc826e1c0c616f206e2f48c6b581b8e53eecd6a66218ba2b4ab9",
+    "report_digest": "79b6a9af9aef41a0d0eaad9d9ce58bd0675311a68306c3c9b8bb5abe1463d219",
+    "report_sha256": "3af350a0542b7e8d40f8bcce58ab01d94ad733e69381739746f0979ef5722594",
     "test_count": 76
   },
-  "candidate_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
+  "candidate_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
   "candidate_name": "full-inspection-repair",
-  "candidate_path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-6\\full-inspection-repair",
+  "candidate_path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-7\\full-inspection-repair",
   "capability_pack": {
     "pack_digest": "cd3ff9bdfe5c82efb4da296de9d752ecb40da76304112e05d913f222ad2bd0c0",
     "slices": 22,
     "status": "PASS",
-    "validation_sha256": "a3f114601a33906cbb784a1930a5e68a4bb1cd03f39ef4cbdfd4c20426cbbde3"
+    "validation_sha256": "680fbea883d71c99890850b8e58cba5adb078da719f6a8660ceaeb76b7115716"
   },
-  "captured_at_utc": "2026-11-15T17:40:55+00:00",
+  "captured_at_utc": "2026-11-15T18:20:29+00:00",
   "clean_probe_check": {
     "finding_count": 0,
     "ledger_digest": "5185d4dc72a1fb51d31a3556c9cc90c3a86162f0cddd6f4b58a1a4335e2f7f0e",
     "ledger_sha256": "c53c3a8cffc3b3c4373561c796d17add0de163d9aa01a4358370c4aff588d406",
     "semantic_cells": 72,
-    "semantic_digest": "e93f1ae31f08835aea0cc5d5f3b519a041c434ffdc8690cf4c5b0cb27e94c023",
-    "semantic_sha256": "32958d87f27bb61eb9e78881d505bb59314699996d87a8820e633931559772b3",
+    "semantic_digest": "8b9b32fbdab67c8dfed42c7e9b5d1715862e5f2dea47df3929e5b02a55f1a0cc",
+    "semantic_sha256": "e4cdf2f2c169a9a873aace8858d8a66b3992396249bdf9de9c982631a3fa3219",
     "status": "CHECKED",
-    "summary_sha256": "c0ef88667bf284835611aba7c873cd912e6070e6dfcdb35cdd5aa184b5299831"
+    "summary_sha256": "876af8123f62fd32f5a7047387afe963f459607f0d06736940d48e6846707f6f"
   },
-  "file_count": 153,
+  "file_count": 154,
   "files": [
     {
       "bytes": 51,
@@ -45,6 +45,11 @@
       "bytes": 39023,
       "path": "capabilities/fixtures.zip",
       "sha256": "de54b4c3751c0d535c9a6d0efbbe33c9817536721dd8311842982b6100175d7a"
+    },
+    {
+      "bytes": 297,
+      "path": "capabilities/opengrep-rules.yaml",
+      "sha256": "f710c0afcfad58d382ebef3af576028e7e56fc427a7a1cb12e7a74b5ee6957ff"
     },
     {
       "bytes": 45964,
@@ -292,9 +297,9 @@
       "sha256": "c54126c3ce10a6785a36bf499f9fda27258dbf4fbe2618577b56cf18ddcb0217"
     },
     {
-      "bytes": 97976,
+      "bytes": 98359,
       "path": "scripts/full_inspection_repair/capabilities.py",
-      "sha256": "db1bd568e28d8243c954b3726228da7b1338697ffa97a6f8481dd9947718a8e4"
+      "sha256": "bc2f134a2908064bf03057451eb78850d3930d4ce94b39c2b8f87a9cce1e915a"
     },
     {
       "bytes": 90658,
@@ -352,9 +357,9 @@
       "sha256": "bf41da3fc211f5371a0089822b60116783dd359d5ceb354b875d0aa672a6e170"
     },
     {
-      "bytes": 30568,
+      "bytes": 30596,
       "path": "scripts/full_inspection_repair/lifecycle_adapters.py",
-      "sha256": "5859b0fb8821b6e8461beef26bbf560c7e2c5087676c1c36e4b9775e6cbc7fd2"
+      "sha256": "9f80f786491b1debaaea5965b2985bce3e77cbeb66e3fb3e4f68772cab55bb8c"
     },
     {
       "bytes": 40632,
@@ -417,9 +422,9 @@
       "sha256": "9f7326383f56733fb9654d9da0a0e208e3b57f2df1c9e03bd56b9941f6d5a5b2"
     },
     {
-      "bytes": 51525,
+      "bytes": 51674,
       "path": "scripts/full_inspection_repair/sandbox.py",
-      "sha256": "60987f2c4dd49117119df911dad1aa90cb9b3227e81802e27e83f638c619424c"
+      "sha256": "ebe854a19c680bfa32b75865ac9fe944f82d695dcf2387c32ca9e241b7058607"
     },
     {
       "bytes": 38030,
@@ -607,9 +612,9 @@
       "sha256": "bc1bc939aa402ff877fccb3951f0c29ffcaf6e31ab51b5b5ac2830b64c472f41"
     },
     {
-      "bytes": 13977,
+      "bytes": 14499,
       "path": "tests/unit/test_capabilities.py",
-      "sha256": "1771473454ea3c9ab2e5df7d1ae951ef970c3a2a980c614ec53430fa0a61b14e"
+      "sha256": "f4dd99eb361ccbd5c22b274bb1adf772b9f4acf78e7ad61586b47e38cf795457"
     },
     {
       "bytes": 3118,
@@ -762,9 +767,9 @@
       "sha256": "7df0818e4476e4c7d4c22abb3a608ef60c8669a763e86b5b4f6eaa471c00c12d"
     },
     {
-      "bytes": 12172,
+      "bytes": 13306,
       "path": "tests/unit/test_sandbox_runtime.py",
-      "sha256": "240c85ababc50cee8cecf2413b03c4730f2cf3abc41e333b0f6a8e2498e41486"
+      "sha256": "5df01731d9c5ab678247deabdb961c50c7d2ca56b3ea77e98eaa259458402c75"
     },
     {
       "bytes": 4223,
@@ -815,20 +820,20 @@
     },
     "trust_policy": {
       "bytes": 1490075,
-      "path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-6\\full-inspection-repair\\policies\\trust-policy.json",
+      "path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-7\\full-inspection-repair\\policies\\trust-policy.json",
       "sha256": "b93f6ad7a4b9d719b4b53f029f731857ffbe8fb1877851cd8236c28ca01407d9"
     }
   },
-  "freeze_digest": "589c3f20f2d371de0285ee673d40c2c05eae9f9f3aec56d97233e3824fafc6d2",
+  "freeze_digest": "2e02adaed584b160cfae6912153b5c252e4b35fd89bff4318a820618dc458ab5",
   "generation": 1,
-  "package_manifest_digest": "ca9f19e0b7882bbfc3bed79456bae063bdf33d09c94f0c32f842315afda04ae7",
-  "package_manifest_sha256": "f1b081ca0b8a91779c53e0a8828ae93e8968364c11756f7a83833850bd3223bb",
+  "package_manifest_digest": "4f7fa0959cd142ea8ed55efe75926d4386ce7d7832da6f03fda173e6224cc896",
+  "package_manifest_sha256": "65b15e294ffda9dc9366761a31c5bbb4f8d86653717aad7a8df1ba1c31b5336f",
   "policy_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
   "registry_digest": "7ac802d2c036680e134f5bb589e5fbee2005ab8fc2c27ce46e476e40bb526cc0",
   "reviewer_registry_digest": "fe7c2fa54b17902fe99e9cb8c5805ee0f7caf7aed201055afe42d040de20a3b7",
-  "run_id": "fir-1.7.0-release-20261115-generation-6-r1",
+  "run_id": "fir-1.7.0-release-20261115-generation-7-r1",
   "schema_version": 2,
-  "scope_id": "fir-1.7.0-release-20261115-generation-6",
+  "scope_id": "fir-1.7.0-release-20261115-generation-7",
   "status": "FROZEN_CANDIDATE",
   "taxonomy_coverage_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
   "taxonomy_terminal_counts": {
@@ -838,15 +843,15 @@
     "MERGED_WITH_PRIMARY_CELL": 2,
     "NOT_APPLICABLE_WITH_PROOF": 8
   },
-  "tree_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
+  "tree_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
   "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
   "version": "1.7.0",
   "windows_tests": {
     "errors": 0,
     "failures": 0,
-    "junit_sha256": "2f0bb4d0a1a15b6cee1b4684a55df312a235a09121fcaf35b6f7a148ef8f561d",
-    "passed": 483,
-    "skipped": 10,
-    "tests": 493
+    "junit_sha256": "c2e8da2341e16075372e7caaf7952a85ee63caa06a01162529dd3dd5495c71d2",
+    "passed": 486,
+    "skipped": 9,
+    "tests": 495
   }
 }

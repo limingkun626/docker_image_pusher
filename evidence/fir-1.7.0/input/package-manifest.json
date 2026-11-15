@@ -26,6 +26,11 @@
       "sha256": "de54b4c3751c0d535c9a6d0efbbe33c9817536721dd8311842982b6100175d7a"
     },
     {
+      "bytes": 297,
+      "path": "capabilities/opengrep-rules.yaml",
+      "sha256": "f710c0afcfad58d382ebef3af576028e7e56fc427a7a1cb12e7a74b5ee6957ff"
+    },
+    {
       "bytes": 45964,
       "path": "capabilities/pack.json",
       "sha256": "ab7d9e9721b6df9bd95357dc08d738b2f449bd8c6270506d1144891da9140b46"
@@ -271,9 +276,9 @@
       "sha256": "c54126c3ce10a6785a36bf499f9fda27258dbf4fbe2618577b56cf18ddcb0217"
     },
     {
-      "bytes": 97976,
+      "bytes": 98359,
       "path": "scripts/full_inspection_repair/capabilities.py",
-      "sha256": "db1bd568e28d8243c954b3726228da7b1338697ffa97a6f8481dd9947718a8e4"
+      "sha256": "bc2f134a2908064bf03057451eb78850d3930d4ce94b39c2b8f87a9cce1e915a"
     },
     {
       "bytes": 90658,
@@ -331,9 +336,9 @@
       "sha256": "bf41da3fc211f5371a0089822b60116783dd359d5ceb354b875d0aa672a6e170"
     },
     {
-      "bytes": 30568,
+      "bytes": 30596,
       "path": "scripts/full_inspection_repair/lifecycle_adapters.py",
-      "sha256": "5859b0fb8821b6e8461beef26bbf560c7e2c5087676c1c36e4b9775e6cbc7fd2"
+      "sha256": "9f80f786491b1debaaea5965b2985bce3e77cbeb66e3fb3e4f68772cab55bb8c"
     },
     {
       "bytes": 40632,
@@ -396,9 +401,9 @@
       "sha256": "9f7326383f56733fb9654d9da0a0e208e3b57f2df1c9e03bd56b9941f6d5a5b2"
     },
     {
-      "bytes": 51525,
+      "bytes": 51674,
       "path": "scripts/full_inspection_repair/sandbox.py",
-      "sha256": "60987f2c4dd49117119df911dad1aa90cb9b3227e81802e27e83f638c619424c"
+      "sha256": "ebe854a19c680bfa32b75865ac9fe944f82d695dcf2387c32ca9e241b7058607"
     },
     {
       "bytes": 38030,
@@ -581,9 +586,9 @@
       "sha256": "bc1bc939aa402ff877fccb3951f0c29ffcaf6e31ab51b5b5ac2830b64c472f41"
     },
     {
-      "bytes": 13977,
+      "bytes": 14499,
       "path": "tests/unit/test_capabilities.py",
-      "sha256": "1771473454ea3c9ab2e5df7d1ae951ef970c3a2a980c614ec53430fa0a61b14e"
+      "sha256": "f4dd99eb361ccbd5c22b274bb1adf772b9f4acf78e7ad61586b47e38cf795457"
     },
     {
       "bytes": 3118,
@@ -736,9 +741,9 @@
       "sha256": "7df0818e4476e4c7d4c22abb3a608ef60c8669a763e86b5b4f6eaa471c00c12d"
     },
     {
-      "bytes": 12172,
+      "bytes": 13306,
       "path": "tests/unit/test_sandbox_runtime.py",
-      "sha256": "240c85ababc50cee8cecf2413b03c4730f2cf3abc41e333b0f6a8e2498e41486"
+      "sha256": "5df01731d9c5ab678247deabdb961c50c7d2ca56b3ea77e98eaa259458402c75"
     },
     {
       "bytes": 4223,
@@ -766,8 +771,8 @@
       "sha256": "616388c7358f7257e0aa4b8f320c737fdbe5a05d6ed1e9b2442073f07b63a298"
     }
   ],
-  "manifest_digest": "ca9f19e0b7882bbfc3bed79456bae063bdf33d09c94f0c32f842315afda04ae7",
+  "manifest_digest": "4f7fa0959cd142ea8ed55efe75926d4386ce7d7832da6f03fda173e6224cc896",
   "root_name": "full-inspection-repair",
   "schema_version": 1,
-  "tree_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe"
+  "tree_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f"
 }

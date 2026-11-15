@@ -35,6 +35,10 @@ jobs:
         run: |
           python -m pip install -r evidence/fir-1.7.0/candidate/full-inspection-repair/requirements.txt
 
+      - name: Install external fixture toolchain
+        run: |
+          bash evidence/fir-1.7.0/tools/install_platform_tools.sh macos
+
       - name: Verify exact package
         run: |
           python -B evidence/fir-1.7.0/candidate/full-inspection-repair/scripts/release_skill.py package \
@@ -127,6 +131,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -r evidence/fir-1.7.0/candidate/full-inspection-repair/requirements.txt
+
+      - name: Install external fixture toolchain
+        run: |
+          bash evidence/fir-1.7.0/tools/install_platform_tools.sh linux
 
       - name: Verify exact package
         run: |

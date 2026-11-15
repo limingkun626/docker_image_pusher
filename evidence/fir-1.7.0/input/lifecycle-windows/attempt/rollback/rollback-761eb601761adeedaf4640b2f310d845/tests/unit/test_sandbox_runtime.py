@@ -18,6 +18,7 @@ from full_inspection_repair.sandbox import (
     LinuxNsjailSandbox,
     MacSandboxRuntimeBackend,
     SandboxLimits,
+    SandboxResult,
     WindowsJobSandbox,
     run_sandboxed,
 )
@@ -433,3 +434,42 @@ def test_macos_network_canary_failure_blocks(
     assert observed.failure_code == NETWORK_POLICY_UNENFORCEABLE
     assert observed.network_cleanup_verified is False
     assert observed.network_canary["status"] == "BLOCKED"
+
+
+def test_macos_allow_runs_without_sandbox_runtime(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    backend = MacSandboxRuntimeBackend(None)
+    expected = SandboxResult(
+        backend_id=backend.backend_id,
+        backend_version=backend.backend_version,
+        status="PASS",
+        failure_code=None,
+        returncode=0,
+        stdout=b"",
+        stderr=b"",
+        elapsed_seconds=0.0,
+        peak_rss_mib=0.0,
+        output_bytes=0,
+        root_pid=1,
+        child_pids=(),
+        descendants_empty=True,
+        termination_method="natural-exit",
+        network_policy="ALLOW",
+        network_enforced=False,
+        network_cleanup_verified=True,
+        network_canary={"status": "NOT_REQUIRED"},
+    )
+    monkeypatch.setattr(sandbox_module.sys, "platform", "darwin")
+    monkeypatch.setattr(backend, "_execute", lambda *args, **kwargs: expected)
+
+    observed = backend.run(
+        [sys.executable, "-c", "pass"],
+        cwd=tmp_path,
+        env=None,
+        limits=SandboxLimits(),
+        network_policy="ALLOW",
+    )
+
+    assert observed.status == "PASS"

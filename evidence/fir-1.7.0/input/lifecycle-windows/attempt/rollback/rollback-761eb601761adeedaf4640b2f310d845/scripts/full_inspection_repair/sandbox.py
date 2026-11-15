@@ -38,6 +38,11 @@ def _create_flags(name: str) -> int:
     return int(getattr(subprocess, name, 0))
 
 
+def _last_error() -> int:
+    getter = getattr(ctypes, "get_last_error", None)
+    return int(getter()) if getter is not None else 0
+
+
 @dataclass(frozen=True)
 class SandboxLimits:
     timeout_seconds: float = 30.0
@@ -368,7 +373,7 @@ class _WindowsJob:
                 None,
             ):
                 raise _JobObjectQueryError(
-                    ctypes.get_last_error(),
+                    _last_error(),
                     "QueryInformationJobObject failed",
                 )
             row = ctypes.cast(buffer, ctypes.POINTER(_WindowsPidList)).contents
@@ -1363,7 +1368,7 @@ class MacSandboxRuntimeBackend:
         input_file_count: int | None = None,
     ) -> SandboxResult:
         policy = _normalize_policy(network_policy)
-        if sys.platform != "darwin" or not self.executable:
+        if sys.platform != "darwin" or (policy != "ALLOW" and not self.executable):
             return _blocked(
                 self.backend_id,
                 self.backend_version,

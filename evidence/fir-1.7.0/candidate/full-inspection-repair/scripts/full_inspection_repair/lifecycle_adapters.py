@@ -227,7 +227,8 @@ def _run_install_scenario(
     receipts.append(_pip_install(candidate_wheel, target, upgrade=True))
     candidate_run = _run_installed_entry(target, scratch)
     receipts.append(candidate_run)
-    shutil.rmtree(target)
+    if target.exists():
+        shutil.rmtree(target)
     receipts.append(_pip_install(baseline_wheel, target, upgrade=False))
     rollback_run = _run_installed_entry(target, scratch)
     receipts.append(rollback_run)

@@ -1,0 +1,12 @@
+rules:
+  - id: interfile-source-to-command
+    languages: [python]
+    message: Tainted cross-file input reaches os.system
+    severity: ERROR
+    mode: taint
+    options:
+      taint_interfile: true
+    pattern-sources:
+      - pattern: input()
+    pattern-sinks:
+      - pattern: os.system(...)

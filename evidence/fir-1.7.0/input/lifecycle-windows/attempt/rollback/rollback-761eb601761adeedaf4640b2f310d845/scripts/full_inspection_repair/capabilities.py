@@ -181,15 +181,22 @@ def _candidate_path(candidate_id: str) -> Path | None:
     if registry_path is not None:
         return registry_path
     root = _provenance_root()
-    if root is None:
-        return None
-    for relative in TOOL_PATH_CANDIDATES.get(candidate_id, ()):
-        path = root / relative
-        try:
-            if path.is_file():
-                return path.resolve()
-        except OSError:
-            continue
+    if root is not None:
+        for relative in TOOL_PATH_CANDIDATES.get(candidate_id, ()):
+            path = root / relative
+            try:
+                if path.is_file():
+                    return path.resolve()
+            except OSError:
+                continue
+    for alias in LOGICAL_TOOL_ALIASES.get(f"@tool:{candidate_id}", ()):
+        resolved = shutil.which(alias)
+        if resolved:
+            return Path(resolved).resolve()
+    if candidate_id == "opengrep-rules":
+        bundled = CAPABILITY_ROOT / "opengrep-rules.yaml"
+        if bundled.is_file():
+            return bundled.resolve()
     return None
 
 
@@ -1774,7 +1781,7 @@ def run_slice(
             return receipt
 
     tool_identity = _tool_identity(manifest, command)
-    if (
+    if command_override is None and (
         tool_identity["version_source"]
         in {"OBSERVED", "PACKAGE_MANIFEST", "PACKAGE_METADATA"}
         and tool_identity["version_matches"] is not True

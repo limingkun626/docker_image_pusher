@@ -1,54 +1,54 @@
 {
-  "candidate_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
-  "installation_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
+  "candidate_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
+  "installation_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
   "platform": "windows",
-  "readback_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
-  "receipt_digest": "85f9b0049c0ac94e4a9f5348a859bc0df13475536c7daddc2f6e99dbe160f85e",
-  "rollback_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
+  "readback_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
+  "receipt_digest": "b6a193dce00313ce523b566b6cb2efa3c2b6c6916a65bf3bc8ca8f70ee2c6b1b",
+  "rollback_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
   "schema_version": 1,
-  "smoke_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
-  "source_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
+  "smoke_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
+  "source_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
   "stages": {
     "atomic_activation": {
       "receipt": {
         "activated_atomically": true,
-        "install_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe"
+        "install_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f"
       },
-      "receipt_sha256": "58912688f28c6c91733ba4ee6e0145b8c3bc4e1f1433ceda792065f2448c2178",
+      "receipt_sha256": "d9b9c1f10781e70fc1c4dbf7073d149f50cd950476b074c380b188c4e206e608",
       "status": "PASS"
     },
     "installation": {
       "receipt": {
-        "install_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
-        "source_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe"
+        "install_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
+        "source_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f"
       },
-      "receipt_sha256": "0afb22abf6a9b733830dbb2c1a524461d1f5dae194d5d884ff6d4a4cae500603",
+      "receipt_sha256": "ab0a25d48d1fa402dfec77129a9a50ba6c35c47754d4d6558fa57f00729d05ef",
       "status": "PASS"
     },
     "readback": {
       "receipt": {
-        "digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
+        "digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
         "readback_verified": true
       },
-      "receipt_sha256": "8ccff62a2f9a435dd378e5e69760d3a2574673e7b74b20d106546bf84b7f098e",
+      "receipt_sha256": "a68cd3167382b54fbccc17f546524016497c727def622950132a948137322764",
       "status": "PASS"
     },
     "rollback": {
       "receipt": {
-        "digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
+        "digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
         "retained": true
       },
-      "receipt_sha256": "4ac290bade3b514d430d39f1a14b4ee3276822fa77e125f720c907a85d5ef62f",
+      "receipt_sha256": "9c2545818a8818a7cef5efedd4f2ef8c6a63fa6d7ad0238aa2544000932a39fb",
       "status": "PASS"
     },
     "smoke": {
       "receipt": {
-        "digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
+        "digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
         "smoke_verified": true
       },
-      "receipt_sha256": "622f9b372d03ebaa6b97dc943f9f320b12c596a5f2840d1c9dfcc4a0eb1d6314",
+      "receipt_sha256": "02fd30b69807531c00a8590fb622b8e40a5d7ce021e4f7fb76a05709f2d77f01",
       "status": "PASS"
     }
   },
-  "target_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe"
+  "target_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f"
 }

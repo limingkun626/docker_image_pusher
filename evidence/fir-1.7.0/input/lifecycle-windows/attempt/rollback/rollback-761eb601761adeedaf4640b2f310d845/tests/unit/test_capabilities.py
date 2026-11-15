@@ -17,6 +17,7 @@ from full_inspection_repair.capabilities import (
     ORACLE_SLICES,
     CapabilityBlocked,
     _classify,
+    _candidate_path,
     _tree_binding,
     load_fixtures,
     load_pack,
@@ -47,6 +48,22 @@ def test_fixture_map_covers_every_admitted_slice():
     fixtures = load_fixtures()["slices"]
     assert {item["slice_id"] for item in pack["slices"]} == set(fixtures)
     assert all("positive_target" in item and "negative_target" in item for item in fixtures.values())
+
+
+def test_logical_tool_resolution_falls_back_to_path(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    executable = tmp_path / "pytest"
+    executable.write_text("", encoding="utf-8")
+    monkeypatch.setattr(capabilities_module, "_provenance_root", lambda: None)
+    monkeypatch.setattr(
+        capabilities_module.shutil,
+        "which",
+        lambda name: str(executable) if name == "pytest" else None,
+    )
+
+    assert _candidate_path("pytest") == executable.resolve()
 
 
 def test_empty_target_is_uncovered_and_receipt_is_valid(tmp_path):
