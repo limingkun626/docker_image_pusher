@@ -121,6 +121,17 @@ PYTHON_DISTRIBUTIONS = {
 class CapabilityBlocked(ValueError):
     """Raised when capability evidence cannot produce a trustworthy outcome."""
 
+    def __init__(
+        self,
+        message: str,
+        *,
+        status: str | None = None,
+        failure_code: str | None = None,
+    ) -> None:
+        super().__init__(message)
+        self.status = status
+        self.failure_code = failure_code
+
 
 def _sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
@@ -1527,7 +1538,9 @@ def validate_pack(path: str | Path = DEFAULT_PACK) -> dict[str, Any]:
             assertions = fixture.get(f"{mode}_assertions")
             if not isinstance(assertions, list) or not assertions:
                 raise CapabilityBlocked(
-                    f"{slice_id} {mode} assertions must be non-empty"
+                    f"{slice_id} {mode} assertions must be non-empty",
+                    status="BLOCKED_TAXONOMY",
+                    failure_code="CELL_FIXTURE_ASSERTION_MISSING",
                 )
         if fixture.get("positive_outcome") != "FINDING":
             raise CapabilityBlocked(f"{slice_id} positive outcome must be FINDING")
@@ -2137,53 +2150,54 @@ def run_fixture_case(
         mutation_copy_digest=mutation_copy_digest,
         fixture_identity=identity,
     )
-    expected = fixture.get(f"{mode}_outcome")
-    if expected and receipt.get("outcome") != expected:
-        receipt["fixture_error"] = (
-            f"expected {expected}, received {receipt.get('outcome')}"
-        )
-    for assertion in fixture[f"{mode}_assertions"]:
-        kind = assertion.get("kind")
-        if kind == "normalized-outcome":
-            observed = receipt.get("outcome")
-            expected_value = assertion.get("expected")
-            if observed != expected_value:
-                receipt["fixture_error"] = (
-                    f"semantic assertion expected {expected_value}, "
-                    f"received {observed}"
-                )
-                break
-        elif kind == "candidate-identity":
-            expected_value = assertion.get("expected")
-            if receipt.get("candidate_id") != expected_value:
-                receipt["fixture_error"] = (
-                    f"semantic assertion expected candidate {expected_value}"
-                )
-                break
-    assertion = fixture.get(f"{mode}_assert")
-    if assertion:
-        lowered = (
-            receipt.get("stdout_text", "")
-            + "\n"
-            + receipt.get("stderr_text", "")
-        ).lower()
-        missing = [
-            marker for marker in assertion
-            if marker.lower() not in lowered
-        ]
-        if missing:
+    if receipt.get("terminal_status") == "PASS":
+        expected = fixture.get(f"{mode}_outcome")
+        if expected and receipt.get("outcome") != expected:
             receipt["fixture_error"] = (
-                f"missing output markers {missing}"
+                f"expected {expected}, received {receipt.get('outcome')}"
             )
-    expected_mutation = fixture.get(f"{mode}_mutated")
-    if (
-        expected_mutation is not None
-        and receipt.get("input_mutated_by_tool") is not expected_mutation
-    ):
-        receipt["fixture_error"] = (
-            f"expected mutation {expected_mutation}, "
-            f"received {receipt.get('input_mutated_by_tool')}"
-        )
+        for assertion in fixture[f"{mode}_assertions"]:
+            kind = assertion.get("kind")
+            if kind == "normalized-outcome":
+                observed = receipt.get("outcome")
+                expected_value = assertion.get("expected")
+                if observed != expected_value:
+                    receipt["fixture_error"] = (
+                        f"semantic assertion expected {expected_value}, "
+                        f"received {observed}"
+                    )
+                    break
+            elif kind == "candidate-identity":
+                expected_value = assertion.get("expected")
+                if receipt.get("candidate_id") != expected_value:
+                    receipt["fixture_error"] = (
+                        f"semantic assertion expected candidate {expected_value}"
+                    )
+                    break
+        assertion = fixture.get(f"{mode}_assert")
+        if assertion:
+            lowered = (
+                receipt.get("stdout_text", "")
+                + "\n"
+                + receipt.get("stderr_text", "")
+            ).lower()
+            missing = [
+                marker for marker in assertion
+                if marker.lower() not in lowered
+            ]
+            if missing:
+                receipt["fixture_error"] = (
+                    f"missing output markers {missing}"
+                )
+        expected_mutation = fixture.get(f"{mode}_mutated")
+        if (
+            expected_mutation is not None
+            and receipt.get("input_mutated_by_tool") is not expected_mutation
+        ):
+            receipt["fixture_error"] = (
+                f"expected mutation {expected_mutation}, "
+                f"received {receipt.get('input_mutated_by_tool')}"
+            )
     if "fixture_error" in receipt:
         receipt["receipt_digest"] = canonical_digest(
             {

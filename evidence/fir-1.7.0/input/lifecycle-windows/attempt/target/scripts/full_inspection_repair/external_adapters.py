@@ -292,14 +292,12 @@ def run_external_cell(
             fixture,
             "positive",
             scratch_root=scratch,
-            network_policy_override="ALLOW",
         )
         negative = run_fixture_case(
             manifest,
             fixture,
             "negative",
             scratch_root=scratch,
-            network_policy_override="ALLOW",
         )
     finally:
         if scratch_context is not None:
@@ -399,7 +397,7 @@ def run_for_snapshot(cell_id: str, snapshot: Mapping[str, Any]) -> dict[str, Any
     if spec is None:
         return qualification
     try:
-        target_manifest = {**_manifest(spec), "network_policy": "ALLOW"}
+        target_manifest = _manifest(spec)
         with tempfile.TemporaryDirectory(prefix="fir-exact-target-") as directory:
             target_copy = Path(directory).resolve() / "target"
             shutil.copytree(target_root, target_copy)

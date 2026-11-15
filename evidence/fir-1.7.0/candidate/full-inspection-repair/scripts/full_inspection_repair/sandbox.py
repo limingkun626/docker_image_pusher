@@ -494,7 +494,7 @@ def _network_canary(
         observed = executor(
             [sys.executable, "-B", "-I", "-c", code],
             SandboxLimits(
-                timeout_seconds=5.0,
+                timeout_seconds=30.0,
                 max_output_bytes=8192,
                 max_rss_mib=128.0,
                 max_input_files=0,

@@ -101,6 +101,11 @@
       "sha256": "4fe7e8bd37e714952dd43f1120591bc2d4c196e77dd35c1f236e0e8eb8f0f96a"
     },
     {
+      "bytes": 4618,
+      "path": "contracts/capability-matrix.schema.json",
+      "sha256": "999b18afeb2b38997fe5d3c20029c44a588f064dd07cb4034c6527b05cd45c3b"
+    },
+    {
       "bytes": 4891,
       "path": "contracts/capability-slice-contract.schema.json",
       "sha256": "40001077fc4b238e9b170c2bd9ce8ed1d65c065e301b7b9dc53a401b7ccb5d12"
@@ -114,6 +119,11 @@
       "bytes": 3201,
       "path": "contracts/defect-taxonomy.schema.json",
       "sha256": "f83f2cf1bebae49a5d616b54144d2d23a10eada14023e9cb90db464207544bd8"
+    },
+    {
+      "bytes": 2860,
+      "path": "contracts/domain-receipt.schema.json",
+      "sha256": "3bd14a4046bd2a11b3a683674c9baebfc7adb46d89b2d2c407c558d526daf702"
     },
     {
       "bytes": 965,
@@ -151,9 +161,19 @@
       "sha256": "9e4bd9cbca787653026a502b02ce41f69867c3a8aee061d37f6edc5f716037c7"
     },
     {
+      "bytes": 9559,
+      "path": "contracts/impact-graph.schema.json",
+      "sha256": "ff27dacc4683bf3fc226038135e7173caa9a555c362dc8d9582f8f27e3806e7e"
+    },
+    {
       "bytes": 2896,
       "path": "contracts/issue-observation.schema.json",
       "sha256": "478d17c2081d558db050e7d145229add1cbcdb6e800727f274af9df1433c474e"
+    },
+    {
+      "bytes": 4432,
+      "path": "contracts/knowledge-replay-receipt.schema.json",
+      "sha256": "2cc9ee9affe534222eb7db784cec0dc29c3f1885b9755869aecb41bce2b3307d"
     },
     {
       "bytes": 1666,
@@ -194,6 +214,11 @@
       "bytes": 5186,
       "path": "contracts/runtime-registry-v3.schema.json",
       "sha256": "deeea04d0f23d96314fce1832d02cb171d4db72ce37122706b038ff2ae20fbe9"
+    },
+    {
+      "bytes": 5159,
+      "path": "contracts/semantic-cell-result.schema.json",
+      "sha256": "e9a67edb9a73deaa9e3ebe045fed0236303a8e4a32599dfbd820d482b4e37d03"
     },
     {
       "bytes": 2666,
@@ -276,9 +301,9 @@
       "sha256": "c54126c3ce10a6785a36bf499f9fda27258dbf4fbe2618577b56cf18ddcb0217"
     },
     {
-      "bytes": 98669,
+      "bytes": 99282,
       "path": "scripts/full_inspection_repair/capabilities.py",
-      "sha256": "40776e90212a0f27ef9a6391cf58d56c65d5e428e11afe1f7b97bc808a31a587"
+      "sha256": "b7c6e6c2a60f3c33b394cad48a71beeb76427df5c164856c37f12810c0a0909a"
     },
     {
       "bytes": 90658,
@@ -311,14 +336,19 @@
       "sha256": "bf081a8bac8a47fac763eaea71da4e18ace6b830c2e82a310f01a865df7d242f"
     },
     {
-      "bytes": 17091,
+      "bytes": 16970,
       "path": "scripts/full_inspection_repair/external_adapters.py",
-      "sha256": "e88b995b0d53959d46452e64e19fe1b7061b963d6372fa0ffd2e28eec8a248f2"
+      "sha256": "1e01edea2f7f7038e7075e217211214bc8e921680a13ae6c8090542d81eb30c2"
     },
     {
       "bytes": 7506,
       "path": "scripts/full_inspection_repair/file_classes.py",
       "sha256": "6b7f800ab403371a05e023e7b09691a814e46fdee954f4e6d9274800457ff45d"
+    },
+    {
+      "bytes": 1989,
+      "path": "scripts/full_inspection_repair/fixture_identity.py",
+      "sha256": "b503978f60552f6f45a548cd992b8fec3dfb781dd41c4881be49cb90577c098e"
     },
     {
       "bytes": 38051,
@@ -401,9 +431,9 @@
       "sha256": "9f7326383f56733fb9654d9da0a0e208e3b57f2df1c9e03bd56b9941f6d5a5b2"
     },
     {
-      "bytes": 51308,
+      "bytes": 51309,
       "path": "scripts/full_inspection_repair/sandbox.py",
-      "sha256": "b3c69346c336088b463c7a8200da47896d13fe45a8569bd20016ab4b75c25d2c"
+      "sha256": "7143c4545b6d4cd1e29a9c1523775aa62702c2388b74141ea6ee016d9cfc5eac"
     },
     {
       "bytes": 38030,
@@ -464,6 +494,11 @@
       "bytes": 206,
       "path": "scripts/run_inspection.py",
       "sha256": "f2e1abf56cbd7e48086a3b7449a9178d662bffeb08c0a0d67b4e35f8e13b263c"
+    },
+    {
+      "bytes": 13176,
+      "path": "tests/contract/test_controlplane_artifacts.py",
+      "sha256": "4f17193eab0ef4b095368660222aa156738c345928e34bbb11bb18e2121b38e6"
     },
     {
       "bytes": 6896,
@@ -556,9 +591,9 @@
       "sha256": "4a217503a571cd388eac9e9c6aafe548a662699182f7b16220bc84a846455d52"
     },
     {
-      "bytes": 8810,
+      "bytes": 13862,
       "path": "tests/integration/test_runtime_exact_adapters.py",
-      "sha256": "2c0568db90c9e9230a5349464a3b824d1ddb6ae2103211b5f72ea242befcd2cb"
+      "sha256": "16391ae2b90f6fee66d88af873a27eff9b35ef5cd08a7a6513e326bad7ed7a33"
     },
     {
       "bytes": 3031,
@@ -584,6 +619,11 @@
       "bytes": 6262,
       "path": "tests/knowledge_replay_fixture.py",
       "sha256": "bc1bc939aa402ff877fccb3951f0c29ffcaf6e31ab51b5b5ac2830b64c472f41"
+    },
+    {
+      "bytes": 9910,
+      "path": "tests/unit/test_acceptance_semantics_r11.py",
+      "sha256": "4b6259951819d37099199ad28e5f9655f4294653149ec6f4bbe96663a98f5721"
     },
     {
       "bytes": 15031,
@@ -771,8 +811,8 @@
       "sha256": "616388c7358f7257e0aa4b8f320c737fdbe5a05d6ed1e9b2442073f07b63a298"
     }
   ],
-  "manifest_digest": "bf519495d9ca56e2bcd79571daccf913a09bac11affcb2f3cc533a61d126e0fe",
+  "manifest_digest": "831cfd4fe18a4cc9d766bac22c78396517eec7a5e6e9bd0e7967366decb103ad",
   "root_name": "full-inspection-repair",
   "schema_version": 1,
-  "tree_digest": "d0e35516ce19fd7b11d8b21fb772f964f50c3d2cc51d584021b0523075d7a650"
+  "tree_digest": "2a1d8446b2b8ba5a6672640770c7e30929917df035c4445e637e4670bfabd595"
 }

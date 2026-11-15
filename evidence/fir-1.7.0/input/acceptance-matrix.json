@@ -283,7 +283,7 @@
       "status": "PASS",
       "test_id": "T-CAP-01",
       "test_names": [
-        "test_capability_pack_is_complete_and_non_authoritative"
+        "test_t_cap_01_empty_positive_assertions_block_capability_pack"
       ]
     },
     {
@@ -309,7 +309,7 @@
       "status": "PASS",
       "test_id": "T-CAP-03",
       "test_names": [
-        "test_manifest_uses_exact_pack_identity_and_rejects_pair_drift"
+        "test_t_cap_03_matrix_without_fixture_archive_digest_blocks_evidence"
       ]
     },
     {
@@ -595,7 +595,7 @@
       "status": "PASS",
       "test_id": "T-RUN-02",
       "test_names": [
-        "test_windows_network_deny_requires_verified_srt_win"
+        "test_t_run_02_successful_deny_canary_blocks_network_execution"
       ]
     },
     {
@@ -621,7 +621,7 @@
       "status": "PASS",
       "test_id": "T-RUN-04",
       "test_names": [
-        "test_windows_job_object_tracks_and_cleans_descendants"
+        "test_t_run_04_surviving_root_grandchild_emits_blocked_process_tree"
       ]
     },
     {
@@ -996,11 +996,11 @@
       ]
     }
   ],
-  "junit_sha256": "dc277e8d1251f93306ef64d1538f4e9dc799a9032a2950e6b87b43705fbcb021",
+  "junit_sha256": "4229f6b1beefd91ea59e11bdf45be2c28081867f0835ea9528271ebd8c324b04",
   "matrix_sha256": "163642ca4ae140f3f1c403cafdddd3139e94b01fb94131e2a9ebf6e1b885942a",
   "missing": [],
   "passed_count": 76,
-  "report_digest": "207fb12f7310f942208bc509fde59ced24a6b766cbe5eaccd40e1cc63d71d173",
+  "report_digest": "f0b8ed2bfcd56f9319b6eebc3b886f9ccda6cd2bf98088638fc8ff06eae4149e",
   "schema_version": 1,
   "status": "PASS",
   "test_count": 76

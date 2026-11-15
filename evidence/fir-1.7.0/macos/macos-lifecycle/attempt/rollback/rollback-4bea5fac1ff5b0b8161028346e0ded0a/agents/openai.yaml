@@ -1,4 +1,0 @@
-interface:
-  display_name: "完整检修"
-  short_description: "全量普查、全局影响分析、一次批量修复、全量验证与证据闭环"
-  default_prompt: "Use $full-inspection-repair to inspect and repair this target to zero open risk."

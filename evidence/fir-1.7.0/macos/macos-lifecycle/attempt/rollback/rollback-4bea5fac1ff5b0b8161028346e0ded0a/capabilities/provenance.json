@@ -1,8 +1,0 @@
-{
-  "fixture_count": 22,
-  "schema_version": 1,
-  "slice_count": 22,
-  "source_contracts": "F:\\Codex\\reports\\fir-enhancement-closed-plan-r1-20261114\\03_capability_slice_contracts.jsonl",
-  "source_package": "F:\\Codex\\reports\\fir-capability-admission-r1-20261114",
-  "toolchain_root": "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes"
-}

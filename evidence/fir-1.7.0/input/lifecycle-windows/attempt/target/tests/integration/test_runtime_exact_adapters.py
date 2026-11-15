@@ -22,6 +22,7 @@ from full_inspection_repair.lifecycle_adapters import (
     process_tree_probe,
     run_for_snapshot as run_lifecycle_snapshot,
 )
+from full_inspection_repair.sandbox import get_backend
 from full_inspection_repair.r2_engine import (
     compare_semantic_witnesses,
     run_cell,
@@ -48,7 +49,24 @@ def test_exact_adapter_cells_use_real_or_explicitly_blocked_bindings() -> None:
 def test_every_external_adapter_executes_its_frozen_fixture_pair(
     cell_id: str,
 ) -> None:
+    manifest = external_adapters_module._manifest(ADAPTERS[cell_id])
+    probe = get_backend(manifest["network_policy"]).probe()
+    enforced = bool(
+        probe.get(
+            "available",
+            probe.get("network_enforcement", False),
+        )
+    )
     observed = run_external_cell(cell_id)
+    if not enforced:
+        assert observed["status"] == "BLOCKED_ADAPTER", observed
+        assert observed["failure_code"] == "NETWORK_POLICY_UNENFORCEABLE"
+        assert all(
+            receipt["network_policy"] == manifest["network_policy"]
+            and receipt["network_enforced"] is False
+            for receipt in observed["fixture_execution"].values()
+        )
+        return
     assert observed["status"] == "PASS", observed
     assert observed["fixture_execution"]["positive"]["outcome"] == "FINDING"
     assert observed["fixture_execution"]["negative"]["outcome"] == "CLEAN"
@@ -57,6 +75,16 @@ def test_every_external_adapter_executes_its_frozen_fixture_pair(
 def test_exact_adapter_runs_frozen_fixture_even_without_target_snapshot(
     tmp_path: Path,
 ) -> None:
+    manifest = external_adapters_module._manifest(
+        ADAPTERS["SKILL:FUNCTIONAL_FAULT:BEHAVIOR"]
+    )
+    probe = get_backend(manifest["network_policy"]).probe()
+    enforced = bool(
+        probe.get(
+            "available",
+            probe.get("network_enforcement", False),
+        )
+    )
     observed = run_external_cell(
         "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
         tmp_path / "scratch",
@@ -64,6 +92,10 @@ def test_exact_adapter_runs_frozen_fixture_even_without_target_snapshot(
     assert observed["release_authority"] is False
     assert observed["tool_identity"]["fixture_digest"]
     assert observed["receipt_digest"]
+    if not enforced:
+        assert observed["status"] == "BLOCKED_ADAPTER"
+        assert observed["failure_code"] == "NETWORK_POLICY_UNENFORCEABLE"
+        return
     assert observed["status"] == "PASS", observed
     assert observed["failure_code"] is None
     assert observed["facts"]
@@ -82,6 +114,16 @@ def test_exact_adapter_requires_a_target_for_semantic_execution() -> None:
 
 
 def test_exact_adapter_executes_target_not_only_fixtures(tmp_path: Path) -> None:
+    manifest = external_adapters_module._manifest(
+        ADAPTERS["SKILL:FUNCTIONAL_FAULT:BEHAVIOR"]
+    )
+    probe = get_backend(manifest["network_policy"]).probe()
+    enforced = bool(
+        probe.get(
+            "available",
+            probe.get("network_enforcement", False),
+        )
+    )
     target = tmp_path / "target"
     target.mkdir()
     (target / "test_ok.py").write_text(
@@ -99,6 +141,10 @@ def test_exact_adapter_executes_target_not_only_fixtures(tmp_path: Path) -> None
         },
     )
 
+    if not enforced:
+        assert observed["status"] == "BLOCKED_ADAPTER", observed
+        assert observed["failure_code"] == "NETWORK_POLICY_UNENFORCEABLE"
+        return
     assert observed["status"] == "PASS", observed
     assert observed["inner_receipt_digest"]
     assert observed["tool_identity"]["target_digest"]
@@ -109,6 +155,16 @@ def test_exact_adapter_resolves_temporary_parent_before_target_copy(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
+    manifest = external_adapters_module._manifest(
+        ADAPTERS["SKILL:FUNCTIONAL_FAULT:BEHAVIOR"]
+    )
+    probe = get_backend(manifest["network_policy"]).probe()
+    enforced = bool(
+        probe.get(
+            "available",
+            probe.get("network_enforcement", False),
+        )
+    )
     actual = tmp_path / "actual"
     actual.mkdir()
     alias = tmp_path / "alias"
@@ -147,7 +203,77 @@ def test_exact_adapter_resolves_temporary_parent_before_target_copy(
         },
     )
 
+    if not enforced:
+        assert observed["status"] == "BLOCKED_ADAPTER", observed
+        assert observed["failure_code"] == "NETWORK_POLICY_UNENFORCEABLE"
+        return
     assert observed["status"] == "PASS", observed
+
+
+def test_exact_adapter_never_overrides_declared_network_policy(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    observed_policies: list[str] = []
+
+    def fake_fixture_case(
+        manifest: dict[str, object],
+        fixture: dict[str, object],
+        mode: str,
+        **_: object,
+    ) -> dict[str, object]:
+        observed_policies.append(str(manifest["network_policy"]))
+        return {
+            "terminal_status": "PASS",
+            "outcome": "FINDING" if mode == "positive" else "CLEAN",
+            "subject_digest": ("1" if mode == "positive" else "2") * 64,
+            "network_policy": manifest["network_policy"],
+            "network_enforced": True,
+        }
+
+    def fake_run_slice(
+        manifest: dict[str, object],
+        target: Path,
+        **_: object,
+    ) -> dict[str, object]:
+        observed_policies.append(str(manifest["network_policy"]))
+        return {
+            "terminal_status": "PASS",
+            "outcome": "CLEAN",
+            "subject_digest": "3" * 64,
+            "network_policy": manifest["network_policy"],
+            "network_enforced": True,
+        }
+
+    monkeypatch.setattr(
+        external_adapters_module,
+        "run_fixture_case",
+        fake_fixture_case,
+    )
+    monkeypatch.setattr(
+        external_adapters_module,
+        "run_slice",
+        fake_run_slice,
+    )
+    target = tmp_path / "target"
+    target.mkdir()
+    (target / "test_ok.py").write_text(
+        "def test_ok():\n"
+        "    assert True\n",
+        encoding="utf-8",
+    )
+
+    observed = run_for_snapshot(
+        "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+        {
+            "target_root": str(target),
+            "subject_digest": "4" * 64,
+            "fixture_scratch_root": str(tmp_path / "fixtures"),
+        },
+    )
+
+    assert observed["status"] == "PASS", observed
+    assert observed_policies == ["DENY", "DENY", "DENY"]
 
 
 def test_semantic_witnesses_ignore_labels_and_line_conventions() -> None:
@@ -183,6 +309,16 @@ def test_semantic_witnesses_ignore_labels_and_line_conventions() -> None:
 def test_run_cell_exact_adapter_uses_target_execution(
     tmp_path: Path,
 ) -> None:
+    manifest = external_adapters_module._manifest(
+        ADAPTERS["SKILL:FUNCTIONAL_FAULT:BEHAVIOR"]
+    )
+    probe = get_backend(manifest["network_policy"]).probe()
+    enforced = bool(
+        probe.get(
+            "available",
+            probe.get("network_enforcement", False),
+        )
+    )
     (tmp_path / "test_failure.py").write_text(
         "def test_failure():\n"
         "    assert False\n",
@@ -196,6 +332,13 @@ def test_run_cell_exact_adapter_uses_target_execution(
             "subject_digest": "a" * 64,
         },
     )
+    if not enforced:
+        assert observed["status"] == "BLOCKED", observed
+        assert (
+            observed["exact_adapter_receipt"]["failure_code"]
+            == "NETWORK_POLICY_UNENFORCEABLE"
+        )
+        return
     assert observed["status"] == "FINDING", observed
     assert observed["comparison"]["comparison"] == "AGREE"
     assert observed["duplicate_measurement"] is False
@@ -263,10 +406,24 @@ def test_all_exact_lifecycle_cells_use_frozen_positive_negative_fixtures() -> No
 
 
 def test_lifecycle_dispatch_falls_back_to_import_linter_fixture_pair() -> None:
+    manifest = external_adapters_module._manifest(
+        ADAPTERS["SKILL:INCONSISTENCY:LIFECYCLE"]
+    )
+    probe = get_backend(manifest["network_policy"]).probe()
+    enforced = bool(
+        probe.get(
+            "available",
+            probe.get("network_enforcement", False),
+        )
+    )
     observed = run_lifecycle_snapshot(
         "SKILL:INCONSISTENCY:LIFECYCLE",
         {},
     )
+    if not enforced:
+        assert observed["status"] == "BLOCKED_ADAPTER", observed
+        assert observed["failure_code"] == "NETWORK_POLICY_UNENFORCEABLE"
+        return
     assert observed["status"] == "PASS"
     assert observed["logical_tool_id"] == "import-linter"
     assert observed["fixture_execution"]["positive"]["outcome"] == "FINDING"

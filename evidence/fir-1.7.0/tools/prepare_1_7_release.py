@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import sys
 import xml.etree.ElementTree as ET
 from datetime import UTC, datetime
@@ -9,7 +10,8 @@ from pathlib import Path
 
 
 RUN = Path(r"F:\Codex\runs\fir-1.7.0-release-20261115")
-GEN = RUN / "generation-13"
+GEN_NAME = os.environ.get("FIR_GENERATION_NAME", "generation-13")
+GEN = RUN / GEN_NAME
 CANDIDATE = GEN / "full-inspection-repair"
 PACKAGE = GEN / "package" / "package-manifest.json"
 BUILD = GEN / "release-build"
@@ -17,8 +19,8 @@ JUNIT = BUILD / "windows-junit.xml"
 ACCEPTANCE = BUILD / "acceptance-matrix.json"
 SELF_CHECK = BUILD / "windows-check" / "summary.json"
 CAPABILITY_VALIDATION = BUILD / "capability-pack-validation.json"
-SCOPE_ID = "fir-1.7.0-release-20261115-generation-13"
-RUN_ID = "fir-1.7.0-release-20261115-generation-13-r1"
+SCOPE_ID = f"fir-1.7.0-release-20261115-{GEN_NAME}"
+RUN_ID = f"fir-1.7.0-release-20261115-{GEN_NAME}-r1"
 
 FIXED_INPUTS = {
     "evaluator_artifact": Path(

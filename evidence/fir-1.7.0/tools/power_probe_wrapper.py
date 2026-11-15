@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import importlib.util
+import os
 import sys
 from pathlib import Path
 
-RUN = Path(r"F:\Codex\runs\fir-1.7.0-release-20261115\generation-13")
+RUN_ROOT = Path(r"F:\Codex\runs\fir-1.7.0-release-20261115")
+RUN = RUN_ROOT / os.environ.get("FIR_GENERATION_NAME", "generation-13")
 SOURCE = Path(
     r"F:\Codex\runs\fir-r2-release-20261115\power_probe.py"
 )
