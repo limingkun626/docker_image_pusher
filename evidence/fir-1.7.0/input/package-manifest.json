@@ -401,9 +401,9 @@
       "sha256": "9f7326383f56733fb9654d9da0a0e208e3b57f2df1c9e03bd56b9941f6d5a5b2"
     },
     {
-      "bytes": 51844,
+      "bytes": 51732,
       "path": "scripts/full_inspection_repair/sandbox.py",
-      "sha256": "c9aad47277629f3bcf9acebbf2c00f38b6a8c6dc839dc42ae823161b9b4e4c18"
+      "sha256": "e49a2e66ccd1c5e2ad2c4b8a9f2fce6655f52d2f49708b4c0c0babad07fb56d0"
     },
     {
       "bytes": 38030,
@@ -771,8 +771,8 @@
       "sha256": "616388c7358f7257e0aa4b8f320c737fdbe5a05d6ed1e9b2442073f07b63a298"
     }
   ],
-  "manifest_digest": "9e2d2994878c6672fb60e0dcff1819192ac685ee576dffed9e18629cae35420b",
+  "manifest_digest": "d73f0d80b1f3ede1f4a8546398da3c42db6554e6dd2f668fda4c5d16f330802d",
   "root_name": "full-inspection-repair",
   "schema_version": 1,
-  "tree_digest": "f10b11c956c0b0352a5292c0f5dc2bd3e28ba4b86be921755a26f29815576afa"
+  "tree_digest": "0cb211e8c29b65e56c84210dd808074097eff571f891726d0753c6bb0bfef585"
 }

@@ -1,28 +1,28 @@
 {
   "acceptance_matrix": {
-    "report_digest": "0afcdd8f5547ed41b19c28ddc9e4333e949d60902e1b4e0b9e50b2f38a3bb41c",
-    "report_sha256": "d21feda417e7c6cfd18096aadfc1e7008e62b4db0ea28680c7f4ea12e56a2fe9",
+    "report_digest": "1488d670648d5bcb7bf4dba8b7f2b2cbdfc75da3bb3a82d6a7f2471dba08ec81",
+    "report_sha256": "30ba1b794689da57f714fdec57ae538002f2374104088ffef2b36e447e14060a",
     "test_count": 76
   },
-  "candidate_digest": "f10b11c956c0b0352a5292c0f5dc2bd3e28ba4b86be921755a26f29815576afa",
+  "candidate_digest": "0cb211e8c29b65e56c84210dd808074097eff571f891726d0753c6bb0bfef585",
   "candidate_name": "full-inspection-repair",
-  "candidate_path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-8\\full-inspection-repair",
+  "candidate_path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-9\\full-inspection-repair",
   "capability_pack": {
     "pack_digest": "cd3ff9bdfe5c82efb4da296de9d752ecb40da76304112e05d913f222ad2bd0c0",
     "slices": 22,
     "status": "PASS",
-    "validation_sha256": "3c24477e3bc2c97cc2d7297611a2a7118f59ac4fd72b7deb4b6f70bd1286e552"
+    "validation_sha256": "7a54cd996684bd8a0700f69e9995d22dd104b74603fec7eb9fc14f4b5003fbc9"
   },
-  "captured_at_utc": "2026-11-15T18:49:30+00:00",
+  "captured_at_utc": "2026-11-15T19:07:57+00:00",
   "clean_probe_check": {
     "finding_count": 0,
     "ledger_digest": "5185d4dc72a1fb51d31a3556c9cc90c3a86162f0cddd6f4b58a1a4335e2f7f0e",
     "ledger_sha256": "c53c3a8cffc3b3c4373561c796d17add0de163d9aa01a4358370c4aff588d406",
     "semantic_cells": 72,
-    "semantic_digest": "fccd7570f3cca428fda9b2bf0673d710ed36fb3fe33c3c08c50f6c6b4c6a2025",
-    "semantic_sha256": "9a794e983dd3af5fd3c337cb5c7ea57455e090791df94f7b854072316d7ffc10",
+    "semantic_digest": "84a0dd72004c2cf5b90ee5f28e9f1c4e3e41c950e390ed41cf9cbf3dcffb3302",
+    "semantic_sha256": "b08ab06d2ec6d05f588a8427fa669fa34bdb21cfed143de1ad7b7c8caa15220d",
     "status": "CHECKED",
-    "summary_sha256": "da28a1fc119e905dcd463dbf4b621adc4d2c0aa2ad40184cfb5cf09e68b6aecb"
+    "summary_sha256": "e0cc0ef8a110966b4346a18c439fb4a6eda7e62cf9d01169274071a4e416350f"
   },
   "file_count": 154,
   "files": [
@@ -422,9 +422,9 @@
       "sha256": "9f7326383f56733fb9654d9da0a0e208e3b57f2df1c9e03bd56b9941f6d5a5b2"
     },
     {
-      "bytes": 51844,
+      "bytes": 51732,
       "path": "scripts/full_inspection_repair/sandbox.py",
-      "sha256": "c9aad47277629f3bcf9acebbf2c00f38b6a8c6dc839dc42ae823161b9b4e4c18"
+      "sha256": "e49a2e66ccd1c5e2ad2c4b8a9f2fce6655f52d2f49708b4c0c0babad07fb56d0"
     },
     {
       "bytes": 38030,
@@ -820,20 +820,20 @@
     },
     "trust_policy": {
       "bytes": 1490075,
-      "path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-8\\full-inspection-repair\\policies\\trust-policy.json",
+      "path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-9\\full-inspection-repair\\policies\\trust-policy.json",
       "sha256": "b93f6ad7a4b9d719b4b53f029f731857ffbe8fb1877851cd8236c28ca01407d9"
     }
   },
-  "freeze_digest": "4c06402dd1758f3ccdcdf9240527d0e5e81b98907e13b0e15db4fabcdfa84ab4",
+  "freeze_digest": "cbea9f0562503e52db69015f06fe2ee6c116cc8d11135721e8261f230c933e5e",
   "generation": 1,
-  "package_manifest_digest": "9e2d2994878c6672fb60e0dcff1819192ac685ee576dffed9e18629cae35420b",
-  "package_manifest_sha256": "3539f1846ecdee0fa16fcb3c0a6cb9868753e42f2585ae0b0425d739f69b8f46",
+  "package_manifest_digest": "d73f0d80b1f3ede1f4a8546398da3c42db6554e6dd2f668fda4c5d16f330802d",
+  "package_manifest_sha256": "391c6bce6c8ab291a5ccb72f41ea43ac12ad92b19c93b79561fdd6f6b209e770",
   "policy_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
   "registry_digest": "7ac802d2c036680e134f5bb589e5fbee2005ab8fc2c27ce46e476e40bb526cc0",
   "reviewer_registry_digest": "fe7c2fa54b17902fe99e9cb8c5805ee0f7caf7aed201055afe42d040de20a3b7",
-  "run_id": "fir-1.7.0-release-20261115-generation-8-r1",
+  "run_id": "fir-1.7.0-release-20261115-generation-9-r1",
   "schema_version": 2,
-  "scope_id": "fir-1.7.0-release-20261115-generation-8",
+  "scope_id": "fir-1.7.0-release-20261115-generation-9",
   "status": "FROZEN_CANDIDATE",
   "taxonomy_coverage_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
   "taxonomy_terminal_counts": {
@@ -843,13 +843,13 @@
     "MERGED_WITH_PRIMARY_CELL": 2,
     "NOT_APPLICABLE_WITH_PROOF": 8
   },
-  "tree_digest": "f10b11c956c0b0352a5292c0f5dc2bd3e28ba4b86be921755a26f29815576afa",
+  "tree_digest": "0cb211e8c29b65e56c84210dd808074097eff571f891726d0753c6bb0bfef585",
   "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
   "version": "1.7.0",
   "windows_tests": {
     "errors": 0,
     "failures": 0,
-    "junit_sha256": "73a308043bff6698225228f788c9ba2616fcf23acebae6eccea1be02b44083f9",
+    "junit_sha256": "0d7e43dc40fc632ff624551d30a4f40415605b7ddaba2f60a11db2933321ab50",
     "passed": 487,
     "skipped": 9,
     "tests": 496
