@@ -1,7 +1,7 @@
 {
   "fixture_archive_digest": "de54b4c3751c0d535c9a6d0efbbe33c9817536721dd8311842982b6100175d7a",
   "oracle_slices": 2,
-  "pack": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-7\\full-inspection-repair\\capabilities\\pack.json",
+  "pack": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-8\\full-inspection-repair\\capabilities\\pack.json",
   "pack_digest": "cd3ff9bdfe5c82efb4da296de9d752ecb40da76304112e05d913f222ad2bd0c0",
   "release_authority": false,
   "schema_version": 1,

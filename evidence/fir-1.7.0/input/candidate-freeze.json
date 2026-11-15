@@ -1,28 +1,28 @@
 {
   "acceptance_matrix": {
-    "report_digest": "79b6a9af9aef41a0d0eaad9d9ce58bd0675311a68306c3c9b8bb5abe1463d219",
-    "report_sha256": "3af350a0542b7e8d40f8bcce58ab01d94ad733e69381739746f0979ef5722594",
+    "report_digest": "0afcdd8f5547ed41b19c28ddc9e4333e949d60902e1b4e0b9e50b2f38a3bb41c",
+    "report_sha256": "d21feda417e7c6cfd18096aadfc1e7008e62b4db0ea28680c7f4ea12e56a2fe9",
     "test_count": 76
   },
-  "candidate_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
+  "candidate_digest": "f10b11c956c0b0352a5292c0f5dc2bd3e28ba4b86be921755a26f29815576afa",
   "candidate_name": "full-inspection-repair",
-  "candidate_path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-7\\full-inspection-repair",
+  "candidate_path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-8\\full-inspection-repair",
   "capability_pack": {
     "pack_digest": "cd3ff9bdfe5c82efb4da296de9d752ecb40da76304112e05d913f222ad2bd0c0",
     "slices": 22,
     "status": "PASS",
-    "validation_sha256": "680fbea883d71c99890850b8e58cba5adb078da719f6a8660ceaeb76b7115716"
+    "validation_sha256": "3c24477e3bc2c97cc2d7297611a2a7118f59ac4fd72b7deb4b6f70bd1286e552"
   },
-  "captured_at_utc": "2026-11-15T18:20:29+00:00",
+  "captured_at_utc": "2026-11-15T18:49:30+00:00",
   "clean_probe_check": {
     "finding_count": 0,
     "ledger_digest": "5185d4dc72a1fb51d31a3556c9cc90c3a86162f0cddd6f4b58a1a4335e2f7f0e",
     "ledger_sha256": "c53c3a8cffc3b3c4373561c796d17add0de163d9aa01a4358370c4aff588d406",
     "semantic_cells": 72,
-    "semantic_digest": "8b9b32fbdab67c8dfed42c7e9b5d1715862e5f2dea47df3929e5b02a55f1a0cc",
-    "semantic_sha256": "e4cdf2f2c169a9a873aace8858d8a66b3992396249bdf9de9c982631a3fa3219",
+    "semantic_digest": "fccd7570f3cca428fda9b2bf0673d710ed36fb3fe33c3c08c50f6c6b4c6a2025",
+    "semantic_sha256": "9a794e983dd3af5fd3c337cb5c7ea57455e090791df94f7b854072316d7ffc10",
     "status": "CHECKED",
-    "summary_sha256": "876af8123f62fd32f5a7047387afe963f459607f0d06736940d48e6846707f6f"
+    "summary_sha256": "da28a1fc119e905dcd463dbf4b621adc4d2c0aa2ad40184cfb5cf09e68b6aecb"
   },
   "file_count": 154,
   "files": [
@@ -297,9 +297,9 @@
       "sha256": "c54126c3ce10a6785a36bf499f9fda27258dbf4fbe2618577b56cf18ddcb0217"
     },
     {
-      "bytes": 98359,
+      "bytes": 98662,
       "path": "scripts/full_inspection_repair/capabilities.py",
-      "sha256": "bc2f134a2908064bf03057451eb78850d3930d4ce94b39c2b8f87a9cce1e915a"
+      "sha256": "48293ecad7a6f65d99b3eecbe04d8bb896f9744623e0a251d91679792185249a"
     },
     {
       "bytes": 90658,
@@ -422,9 +422,9 @@
       "sha256": "9f7326383f56733fb9654d9da0a0e208e3b57f2df1c9e03bd56b9941f6d5a5b2"
     },
     {
-      "bytes": 51674,
+      "bytes": 51844,
       "path": "scripts/full_inspection_repair/sandbox.py",
-      "sha256": "ebe854a19c680bfa32b75865ac9fe944f82d695dcf2387c32ca9e241b7058607"
+      "sha256": "c9aad47277629f3bcf9acebbf2c00f38b6a8c6dc839dc42ae823161b9b4e4c18"
     },
     {
       "bytes": 38030,
@@ -612,9 +612,9 @@
       "sha256": "bc1bc939aa402ff877fccb3951f0c29ffcaf6e31ab51b5b5ac2830b64c472f41"
     },
     {
-      "bytes": 14499,
+      "bytes": 15031,
       "path": "tests/unit/test_capabilities.py",
-      "sha256": "f4dd99eb361ccbd5c22b274bb1adf772b9f4acf78e7ad61586b47e38cf795457"
+      "sha256": "a9fa476a3cf0c9859a65d6fb5df41ca12ad221e7d940672dabf9ebc075008c72"
     },
     {
       "bytes": 3118,
@@ -820,20 +820,20 @@
     },
     "trust_policy": {
       "bytes": 1490075,
-      "path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-7\\full-inspection-repair\\policies\\trust-policy.json",
+      "path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-8\\full-inspection-repair\\policies\\trust-policy.json",
       "sha256": "b93f6ad7a4b9d719b4b53f029f731857ffbe8fb1877851cd8236c28ca01407d9"
     }
   },
-  "freeze_digest": "2e02adaed584b160cfae6912153b5c252e4b35fd89bff4318a820618dc458ab5",
+  "freeze_digest": "4c06402dd1758f3ccdcdf9240527d0e5e81b98907e13b0e15db4fabcdfa84ab4",
   "generation": 1,
-  "package_manifest_digest": "4f7fa0959cd142ea8ed55efe75926d4386ce7d7832da6f03fda173e6224cc896",
-  "package_manifest_sha256": "65b15e294ffda9dc9366761a31c5bbb4f8d86653717aad7a8df1ba1c31b5336f",
+  "package_manifest_digest": "9e2d2994878c6672fb60e0dcff1819192ac685ee576dffed9e18629cae35420b",
+  "package_manifest_sha256": "3539f1846ecdee0fa16fcb3c0a6cb9868753e42f2585ae0b0425d739f69b8f46",
   "policy_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
   "registry_digest": "7ac802d2c036680e134f5bb589e5fbee2005ab8fc2c27ce46e476e40bb526cc0",
   "reviewer_registry_digest": "fe7c2fa54b17902fe99e9cb8c5805ee0f7caf7aed201055afe42d040de20a3b7",
-  "run_id": "fir-1.7.0-release-20261115-generation-7-r1",
+  "run_id": "fir-1.7.0-release-20261115-generation-8-r1",
   "schema_version": 2,
-  "scope_id": "fir-1.7.0-release-20261115-generation-7",
+  "scope_id": "fir-1.7.0-release-20261115-generation-8",
   "status": "FROZEN_CANDIDATE",
   "taxonomy_coverage_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
   "taxonomy_terminal_counts": {
@@ -843,15 +843,15 @@
     "MERGED_WITH_PRIMARY_CELL": 2,
     "NOT_APPLICABLE_WITH_PROOF": 8
   },
-  "tree_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f",
+  "tree_digest": "f10b11c956c0b0352a5292c0f5dc2bd3e28ba4b86be921755a26f29815576afa",
   "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
   "version": "1.7.0",
   "windows_tests": {
     "errors": 0,
     "failures": 0,
-    "junit_sha256": "c2e8da2341e16075372e7caaf7952a85ee63caa06a01162529dd3dd5495c71d2",
-    "passed": 486,
+    "junit_sha256": "73a308043bff6698225228f788c9ba2616fcf23acebae6eccea1be02b44083f9",
+    "passed": 487,
     "skipped": 9,
-    "tests": 495
+    "tests": 496
   }
 }

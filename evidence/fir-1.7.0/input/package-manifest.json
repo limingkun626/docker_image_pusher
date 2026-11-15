@@ -276,9 +276,9 @@
       "sha256": "c54126c3ce10a6785a36bf499f9fda27258dbf4fbe2618577b56cf18ddcb0217"
     },
     {
-      "bytes": 98359,
+      "bytes": 98662,
       "path": "scripts/full_inspection_repair/capabilities.py",
-      "sha256": "bc2f134a2908064bf03057451eb78850d3930d4ce94b39c2b8f87a9cce1e915a"
+      "sha256": "48293ecad7a6f65d99b3eecbe04d8bb896f9744623e0a251d91679792185249a"
     },
     {
       "bytes": 90658,
@@ -401,9 +401,9 @@
       "sha256": "9f7326383f56733fb9654d9da0a0e208e3b57f2df1c9e03bd56b9941f6d5a5b2"
     },
     {
-      "bytes": 51674,
+      "bytes": 51844,
       "path": "scripts/full_inspection_repair/sandbox.py",
-      "sha256": "ebe854a19c680bfa32b75865ac9fe944f82d695dcf2387c32ca9e241b7058607"
+      "sha256": "c9aad47277629f3bcf9acebbf2c00f38b6a8c6dc839dc42ae823161b9b4e4c18"
     },
     {
       "bytes": 38030,
@@ -586,9 +586,9 @@
       "sha256": "bc1bc939aa402ff877fccb3951f0c29ffcaf6e31ab51b5b5ac2830b64c472f41"
     },
     {
-      "bytes": 14499,
+      "bytes": 15031,
       "path": "tests/unit/test_capabilities.py",
-      "sha256": "f4dd99eb361ccbd5c22b274bb1adf772b9f4acf78e7ad61586b47e38cf795457"
+      "sha256": "a9fa476a3cf0c9859a65d6fb5df41ca12ad221e7d940672dabf9ebc075008c72"
     },
     {
       "bytes": 3118,
@@ -771,8 +771,8 @@
       "sha256": "616388c7358f7257e0aa4b8f320c737fdbe5a05d6ed1e9b2442073f07b63a298"
     }
   ],
-  "manifest_digest": "4f7fa0959cd142ea8ed55efe75926d4386ce7d7832da6f03fda173e6224cc896",
+  "manifest_digest": "9e2d2994878c6672fb60e0dcff1819192ac685ee576dffed9e18629cae35420b",
   "root_name": "full-inspection-repair",
   "schema_version": 1,
-  "tree_digest": "f82310e4e7dacdf524bd8f7d4f5fc763ef44a281e9e7c4ff7709b8cc0e54770f"
+  "tree_digest": "f10b11c956c0b0352a5292c0f5dc2bd3e28ba4b86be921755a26f29815576afa"
 }

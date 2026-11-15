@@ -66,6 +66,22 @@ def test_logical_tool_resolution_falls_back_to_path(
     assert _candidate_path("pytest") == executable.resolve()
 
 
+def test_logical_tool_resolution_uses_distinct_executable_names(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    executable = tmp_path / "lint-imports"
+    executable.write_text("", encoding="utf-8")
+    monkeypatch.setattr(capabilities_module, "_provenance_root", lambda: None)
+    monkeypatch.setattr(
+        capabilities_module.shutil,
+        "which",
+        lambda name: str(executable) if name == "lint-imports" else None,
+    )
+
+    assert _candidate_path("import-linter") == executable.resolve()
+
+
 def test_empty_target_is_uncovered_and_receipt_is_valid(tmp_path):
     pack = load_pack(slice_ids=["SLICE-9ae4bc3f41975252"])
     target = tmp_path / "empty"

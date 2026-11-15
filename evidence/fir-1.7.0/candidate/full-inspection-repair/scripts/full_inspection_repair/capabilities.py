@@ -104,6 +104,13 @@ LOGICAL_TOOL_ALIASES = {
     "@tool:tree-sitter-runtime": ("tree-sitter",),
     "@tool:trivy": ("trivy",),
 }
+PATH_TOOL_ALIASES = {
+    "hypothesis": ("pytest", "hypothesis"),
+    "import-linter": ("lint-imports", "import-linter"),
+    "opengrep": ("opengrep",),
+    "pytest": ("pytest",),
+    "schemathesis": ("schemathesis",),
+}
 
 PYTHON_DISTRIBUTIONS = {
     "jsonschema": "jsonschema",
@@ -189,7 +196,11 @@ def _candidate_path(candidate_id: str) -> Path | None:
                     return path.resolve()
             except OSError:
                 continue
-    for alias in LOGICAL_TOOL_ALIASES.get(f"@tool:{candidate_id}", ()):
+    aliases = PATH_TOOL_ALIASES.get(
+        candidate_id,
+        LOGICAL_TOOL_ALIASES.get(f"@tool:{candidate_id}", ()),
+    )
+    for alias in aliases:
         resolved = shutil.which(alias)
         if resolved:
             return Path(resolved).resolve()

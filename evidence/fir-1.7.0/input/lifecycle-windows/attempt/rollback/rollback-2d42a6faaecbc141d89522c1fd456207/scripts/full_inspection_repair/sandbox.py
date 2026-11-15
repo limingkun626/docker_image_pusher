@@ -1177,7 +1177,7 @@ class MacSandboxRuntimeBackend:
             resource_module = __import__("resource")
         except ImportError:
             return None, "resource module unavailable"
-        for name in ("RLIMIT_AS", "RLIMIT_NOFILE"):
+        for name in ("RLIMIT_NOFILE",):
             if not hasattr(resource_module, name):
                 return None, f"{name} unavailable"
         return resource_module, ""
@@ -1228,10 +1228,13 @@ class MacSandboxRuntimeBackend:
 
         def limit_resources() -> None:
             memory_bytes = max(1, int(limits.max_rss_mib * 1024 * 1024))
-            resource_module.setrlimit(
-                resource_module.RLIMIT_AS,
-                (memory_bytes, memory_bytes),
-            )
+            for name in ("RLIMIT_AS", "RLIMIT_DATA", "RLIMIT_RSS"):
+                if hasattr(resource_module, name):
+                    resource_module.setrlimit(
+                        getattr(resource_module, name),
+                        (memory_bytes, memory_bytes),
+                    )
+                    break
             resource_module.setrlimit(
                 resource_module.RLIMIT_NOFILE,
                 (256, 256),
