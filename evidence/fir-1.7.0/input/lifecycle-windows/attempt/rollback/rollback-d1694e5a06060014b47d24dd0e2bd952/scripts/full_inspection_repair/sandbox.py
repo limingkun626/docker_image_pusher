@@ -887,10 +887,8 @@ class LinuxNsjailSandbox:
             str(cwd),
             "--time_limit",
             str(max(1, int(limits.timeout_seconds))),
-            "--rlimit_as",
-            str(max(1, int(limits.max_rss_mib))),
             "--rlimit_nofile",
-            "256",
+            "4096",
         ]
         if policy != "ALLOW":
             prefix.append("--clone_newnet")
@@ -934,15 +932,8 @@ class LinuxNsjailSandbox:
 
         def limit_resources() -> None:
             resource_module.setrlimit(
-                resource_module.RLIMIT_AS,
-                (
-                    max(1, int(limits.max_rss_mib * 1024 * 1024)),
-                    max(1, int(limits.max_rss_mib * 1024 * 1024)),
-                ),
-            )
-            resource_module.setrlimit(
                 resource_module.RLIMIT_NOFILE,
-                (256, 256),
+                (4096, 4096),
             )
 
         def terminate_tree() -> None:
@@ -1006,16 +997,30 @@ class LinuxNsjailSandbox:
                 process.wait(timeout=5)
             for thread in threads:
                 thread.join(timeout=2)
-            child_pids = sorted(
-                {
-                    item.pid
-                    for item in psutil.Process(process.pid).children(recursive=True)
-                }
-            )
-            descendants_empty = not _alive_pids(child_pids)
+            if budget.overflow and budget.overflow.is_set():
+                failure = OUTPUT_OVERFLOW
+            if failure is None and process.returncode != 0:
+                error_text = bytes(budget.stderr or b"").lower()
+                if (
+                    b"memoryerror" in error_text
+                    or b"out of memory" in error_text
+                    or b"cannot allocate memory" in error_text
+                ):
+                    failure = "OOM"
+            remaining = _process_group_pids(process.pid)
+            child_pids = sorted(remaining)
+            if remaining:
+                terminate_tree()
+                try:
+                    process.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    pass
+                time.sleep(0.1)
+                remaining = _process_group_pids(process.pid)
+                child_pids = sorted(set(child_pids) | set(remaining))
+            descendants_empty = not remaining
             if not descendants_empty:
                 failure = PROCESS_TREE_NOT_EMPTY
-                terminate_tree()
             return SandboxResult(
                 backend_id=self.backend_id,
                 backend_version=self.backend_version,

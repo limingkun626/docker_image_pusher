@@ -401,9 +401,9 @@
       "sha256": "9f7326383f56733fb9654d9da0a0e208e3b57f2df1c9e03bd56b9941f6d5a5b2"
     },
     {
-      "bytes": 50961,
+      "bytes": 51308,
       "path": "scripts/full_inspection_repair/sandbox.py",
-      "sha256": "9ac349cadb1137c9ca1dc52062d639478b90434b58308bfb4fb7b5f88d5fff48"
+      "sha256": "b3c69346c336088b463c7a8200da47896d13fe45a8569bd20016ab4b75c25d2c"
     },
     {
       "bytes": 38030,
@@ -741,9 +741,9 @@
       "sha256": "7df0818e4476e4c7d4c22abb3a608ef60c8669a763e86b5b4f6eaa471c00c12d"
     },
     {
-      "bytes": 13884,
+      "bytes": 14437,
       "path": "tests/unit/test_sandbox_runtime.py",
-      "sha256": "e15612308faf996fc409f00012a67b64cd7db8fe1167f98fe4a2f146aaa499fe"
+      "sha256": "c1d76072f66f15ca4348655cf51615acf662ff3ef524a3fba7dabf3c4f9231e2"
     },
     {
       "bytes": 4223,
@@ -771,8 +771,8 @@
       "sha256": "616388c7358f7257e0aa4b8f320c737fdbe5a05d6ed1e9b2442073f07b63a298"
     }
   ],
-  "manifest_digest": "7e44cf2e7bd150980566d82c735b60858b838933cbf111397ada950ad4c9bb3f",
+  "manifest_digest": "bf519495d9ca56e2bcd79571daccf913a09bac11affcb2f3cc533a61d126e0fe",
   "root_name": "full-inspection-repair",
   "schema_version": 1,
-  "tree_digest": "29638f466110a1ee5213a97161a52e2116f5bb28b6ad88814894a52d11ae0c42"
+  "tree_digest": "d0e35516ce19fd7b11d8b21fb772f964f50c3d2cc51d584021b0523075d7a650"
 }
