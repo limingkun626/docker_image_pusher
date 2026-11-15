@@ -41,6 +41,7 @@ printf '%s\n' "${venv}/bin" "${bin_dir}" >> "${GITHUB_PATH}"
 
 "${venv}/bin/pytest" --version
 "${venv}/bin/lint-imports" --version
-"${venv}/bin/mutmut" --version
+"${venv}/bin/python" -c \
+  'import importlib.metadata; print("mutmut " + importlib.metadata.version("mutmut"))'
 "${venv}/bin/schemathesis" --version
 "${bin_dir}/opengrep" --version
