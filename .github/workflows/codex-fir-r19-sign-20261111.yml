@@ -62,7 +62,7 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          python -B ../tools/make_lifecycle_harness.py \
+          python -B ../../tools/make_lifecycle_harness.py \
             --candidate . \
             --manifest ../../input/package-manifest.json \
             --platform macos \
