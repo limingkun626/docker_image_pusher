@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://codex.local/fir/r2/taxonomy-disposition.schema.json",
+  "title": "FIR R2 taxonomy cell disposition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "target_kind",
+    "category_id",
+    "evidence_plane",
+    "cell_id",
+    "terminal_state",
+    "mechanism_id",
+    "detector_ids",
+    "oracle_ids",
+    "contract_digest",
+    "policy_version",
+    "policy_digest",
+    "failure_state",
+    "rollback_slice"
+  ],
+  "properties": {
+    "schema_version": {"const": 2},
+    "target_kind": {"const": "SKILL"},
+    "category_id": {
+      "enum": [
+        "FUNCTIONAL_FAULT",
+        "RISK_EXPOSURE",
+        "LATENT_DEFECT",
+        "VULNERABILITY",
+        "OMISSION",
+        "INCONSISTENCY",
+        "BOUNDARY",
+        "EXCEPTION_PATH",
+        "OTHER_DECLARED"
+      ]
+    },
+    "evidence_plane": {
+      "enum": [
+        "STATIC",
+        "CONTRACT",
+        "SEMANTIC",
+        "BEHAVIOR",
+        "RUNTIME",
+        "SECURITY",
+        "PERFORMANCE",
+        "LIFECYCLE"
+      ]
+    },
+    "cell_id": {"type": "string", "pattern": "^SKILL:[A-Z_]+:[A-Z_]+$"},
+    "terminal_state": {
+      "enum": [
+        "COVERED_BY_NATIVE_DETECTOR",
+        "COVERED_BY_EXACT_ADAPTER",
+        "COVERED_BY_INDEPENDENT_ORACLE",
+        "MERGED_WITH_PRIMARY_CELL",
+        "NOT_APPLICABLE_WITH_PROOF"
+      ]
+    },
+    "mechanism_id": {"type": "string", "minLength": 1},
+    "primary_cell_id": {"type": ["string", "null"]},
+    "detector_ids": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "oracle_ids": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "contract_digest": {"$ref": "#/$defs/digest"},
+    "policy_version": {"type": "string", "minLength": 1},
+    "policy_digest": {"$ref": "#/$defs/digest"},
+    "failure_state": {
+      "enum": [
+        "BLOCKED_TAXONOMY",
+        "BLOCKED_DETECTOR",
+        "BLOCKED_ADAPTER",
+        "BLOCKED_EVIDENCE",
+        "UNCOVERED",
+        "UNSUPPORTED"
+      ]
+    },
+    "failure_states": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "BLOCKED_TAXONOMY",
+          "BLOCKED_DETECTOR",
+          "BLOCKED_ADAPTER",
+          "BLOCKED_EVIDENCE",
+          "UNCOVERED",
+          "UNSUPPORTED"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "rollback_slice": {"type": "string", "minLength": 1},
+    "na_proof_digest": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

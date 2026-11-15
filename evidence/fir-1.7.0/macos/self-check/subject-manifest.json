@@ -4,16 +4,16 @@
   "adapter_version": "2.0.0",
   "character_coverage_digest": "6f71a1e734127dc6a7835eb74cd824f1b389170b81d1501427850447fc9346ab",
   "codepoint_count": 35,
-  "config_digest": "e8488fec079ae0b058b4a8b000eca41957205cdd905f388491b6e24dd80a4d29",
+  "config_digest": "ec3b06748bae71fdbbce3a251619a56170d39cf7cb3268586fbde326edea3c98",
   "coverage_gap_count": 0,
   "defect_taxonomy_digest": "af8bb56177017d78709abb273f036e65b4b77bd89d58da195d32f94107265b7e",
   "detector_pack_digest": "e3f63d016ec314c11b85a8da91461c947e0162138d08e82502ab972d36a5d0d8",
   "directories": [
     {
-      "file_id": "3506831",
-      "generation": "4447f69d599fa79cac699ddb177ed6469420786bb1ccf66435051a063be85495",
+      "file_id": "3508660",
+      "generation": "dacb6faebab240e36a057209808872740415f528e46d99fd1ba1709051671063",
       "relative_path": ".",
-      "volume_id": "16777228"
+      "volume_id": "16777226"
     }
   ],
   "evidence_policy_digest": "8614f63e97af87f1c04c16900e51862206ac6d25033dde19e653e85568eef1a9",
@@ -30,9 +30,9 @@
   "knowledge_pack_digest": "b5fd2b6788576df5a72ad9410374e62d0cc88ea9de3968cb2a9e9190422604f3",
   "knowledge_pack_id": "default-v0",
   "punctuation_count": 9,
-  "root_generation": "4447f69d599fa79cac699ddb177ed6469420786bb1ccf66435051a063be85495",
+  "root_generation": "dacb6faebab240e36a057209808872740415f528e46d99fd1ba1709051671063",
   "schema_version": 2,
-  "snapshot_digest": "fb601d71a69bcc3ce0b99617365f1eabe534a5e5bd4f3cf1ebf6bdd9d4c15f29",
+  "snapshot_digest": "f0814edd19b178f498b274b57aaa0403314fbeac371858a12b288122d678e833",
   "subject_id": "skill:ab9f771f43d10ef8",
   "subject_kind": "SKILL",
   "subject_root": "/Users/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/probe-skill",

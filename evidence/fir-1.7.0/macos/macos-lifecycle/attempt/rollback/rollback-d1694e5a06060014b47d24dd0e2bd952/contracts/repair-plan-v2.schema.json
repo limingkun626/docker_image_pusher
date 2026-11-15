@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://full-inspection-repair.local/contracts/repair-plan-v2.schema.json",
+  "title": "FIR Repair Plan V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scope_id",
+    "issue_set_digest",
+    "base_subject_digest",
+    "registry_digest",
+    "policy_digest",
+    "decision_set_digest",
+    "candidate_generation",
+    "root_ids",
+    "root_dag",
+    "finding_root_map",
+    "operations",
+    "dependencies",
+    "conflicts",
+    "batch_digest"
+  ],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "scope_id": { "type": "string", "minLength": 1 },
+    "issue_set_digest": { "$ref": "#/$defs/digest" },
+    "base_subject_digest": { "$ref": "#/$defs/digest" },
+    "registry_digest": { "$ref": "#/$defs/digest" },
+    "policy_digest": { "$ref": "#/$defs/digest" },
+    "decision_set_digest": { "anyOf": [{ "$ref": "#/$defs/digest" }, { "type": "null" }] },
+    "candidate_generation": { "const": 1 },
+    "root_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "root_dag": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["root_id", "depends_on"],
+        "properties": {
+          "root_id": { "type": "string", "minLength": 1 },
+          "depends_on": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+        }
+      }
+    },
+    "finding_root_map": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "operation_id",
+          "risk_ids",
+          "operation_type",
+          "binding_id",
+          "binding_version",
+          "target",
+          "preimage_sha256",
+          "parameters",
+          "preconditions",
+          "postconditions",
+          "rollback_slice"
+        ],
+        "properties": {
+          "operation_id": { "$ref": "#/$defs/digest" },
+          "risk_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+          "operation_type": {
+            "enum": [
+              "APPEND_FINAL_NEWLINE",
+              "REPLACE_BYTE_RANGE",
+              "AST_RULE_REWRITE",
+              "SET_JSON_POINTER",
+              "CREATE_FILE_FROM_TEMPLATE",
+              "MOVE_FILE_WITH_REFERENCES",
+              "HUMAN_DECISION_REQUIRED"
+            ]
+          },
+          "binding_id": { "type": "string", "minLength": 1 },
+          "binding_version": { "type": "string", "minLength": 1 },
+          "target": { "type": "string", "minLength": 1 },
+          "preimage_sha256": {
+            "anyOf": [{ "$ref": "#/$defs/digest" }, { "type": "null" }]
+          },
+          "expected_postimage_sha256": {
+            "anyOf": [{ "$ref": "#/$defs/digest" }, { "type": "null" }]
+          },
+          "parameters": { "type": "object" },
+          "preconditions": { "type": "array", "items": { "type": "string" } },
+          "postconditions": { "type": "array", "items": { "type": "string" } },
+          "rollback_slice": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [{ "$ref": "#/$defs/digest" }, { "$ref": "#/$defs/digest" }],
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "conflicts": { "type": "array" },
+    "batch_digest": { "$ref": "#/$defs/digest" }
+  },
+  "$defs": {
+    "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

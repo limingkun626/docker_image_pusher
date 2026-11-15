@@ -160,6 +160,24 @@ def test_linux_deny_without_nsjail_blocks(
     assert observed.failure_code == NETWORK_POLICY_UNENFORCEABLE
 
 
+@pytest.mark.skipif(
+    not sys.platform.startswith("linux"),
+    reason="Linux process-group backend",
+)
+def test_linux_process_sandbox_handles_fast_exit(tmp_path: Path) -> None:
+    observed = LinuxProcessSandbox().run(
+        [sys.executable, "-B", "-c", "print('fast-exit')"],
+        cwd=tmp_path,
+        env=None,
+        limits=SandboxLimits(timeout_seconds=5),
+        network_policy="ALLOW",
+    )
+
+    assert observed.status == "PASS", observed.error
+    assert observed.failure_code is None
+    assert observed.descendants_empty is True
+
+
 def test_windows_job_assigns_suspended_process_before_resume(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

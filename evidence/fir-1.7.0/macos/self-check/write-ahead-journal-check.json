@@ -1,8 +1,8 @@
 {
   "failures": [],
-  "head_digest": "927a155a042a7fba074c191b9019190c3af9d33beeb52d9219c10611c12be8f6",
+  "head_digest": "42058216ecf314e1ee4b69f68b692ed192ce4979a1879a17b0b8337c565b4030",
   "record_count": 6,
-  "source_run_id": "run:d831e54415d44890a36e330ddd897077",
+  "source_run_id": "run:267bfbceb0294237bdd4acdd8bfc38df",
   "status": "PASS",
   "subject_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed"
 }

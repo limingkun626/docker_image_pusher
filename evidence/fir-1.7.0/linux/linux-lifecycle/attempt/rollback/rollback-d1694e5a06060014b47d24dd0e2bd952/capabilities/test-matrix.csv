@@ -1,0 +1,243 @@
+capability_slice_id,candidate_id,test_class,action,expected
+SLICE-3233bd156148d7e2,ast-grep,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-3233bd156148d7e2,ast-grep,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-3233bd156148d7e2,ast-grep,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-3233bd156148d7e2,ast-grep,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-3233bd156148d7e2,ast-grep,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-3233bd156148d7e2,ast-grep,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-3233bd156148d7e2,ast-grep,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-3233bd156148d7e2,ast-grep,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-3233bd156148d7e2,ast-grep,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-3233bd156148d7e2,ast-grep,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-3233bd156148d7e2,ast-grep,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-87ab5ff8cdbc1770,ast-grep,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-87ab5ff8cdbc1770,ast-grep,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-87ab5ff8cdbc1770,ast-grep,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-87ab5ff8cdbc1770,ast-grep,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-87ab5ff8cdbc1770,ast-grep,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-87ab5ff8cdbc1770,ast-grep,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-87ab5ff8cdbc1770,ast-grep,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-87ab5ff8cdbc1770,ast-grep,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-87ab5ff8cdbc1770,ast-grep,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-87ab5ff8cdbc1770,ast-grep,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-87ab5ff8cdbc1770,ast-grep,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-e4653d9ce52284fc,dependency-cruiser,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-e4653d9ce52284fc,dependency-cruiser,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-e4653d9ce52284fc,dependency-cruiser,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-e4653d9ce52284fc,dependency-cruiser,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-e4653d9ce52284fc,dependency-cruiser,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-e4653d9ce52284fc,dependency-cruiser,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-e4653d9ce52284fc,dependency-cruiser,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-e4653d9ce52284fc,dependency-cruiser,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-e4653d9ce52284fc,dependency-cruiser,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-e4653d9ce52284fc,dependency-cruiser,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-e4653d9ce52284fc,dependency-cruiser,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-c95a4fc56c57d42a,eslint,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-c95a4fc56c57d42a,eslint,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-c95a4fc56c57d42a,eslint,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-c95a4fc56c57d42a,eslint,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-c95a4fc56c57d42a,eslint,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-c95a4fc56c57d42a,eslint,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-c95a4fc56c57d42a,eslint,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-c95a4fc56c57d42a,eslint,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-c95a4fc56c57d42a,eslint,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-c95a4fc56c57d42a,eslint,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-c95a4fc56c57d42a,eslint,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-4f08b4dc03c39f80,hypothesis,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-4f08b4dc03c39f80,hypothesis,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-4f08b4dc03c39f80,hypothesis,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-4f08b4dc03c39f80,hypothesis,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-4f08b4dc03c39f80,hypothesis,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-4f08b4dc03c39f80,hypothesis,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-4f08b4dc03c39f80,hypothesis,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-4f08b4dc03c39f80,hypothesis,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-4f08b4dc03c39f80,hypothesis,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-4f08b4dc03c39f80,hypothesis,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-4f08b4dc03c39f80,hypothesis,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-4c97c069b2d3b694,import-linter,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-4c97c069b2d3b694,import-linter,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-4c97c069b2d3b694,import-linter,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-4c97c069b2d3b694,import-linter,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-4c97c069b2d3b694,import-linter,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-4c97c069b2d3b694,import-linter,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-4c97c069b2d3b694,import-linter,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-4c97c069b2d3b694,import-linter,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-4c97c069b2d3b694,import-linter,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-4c97c069b2d3b694,import-linter,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-4c97c069b2d3b694,import-linter,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-322b9b55b7d0b8fa,jsonschema,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-322b9b55b7d0b8fa,jsonschema,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-322b9b55b7d0b8fa,jsonschema,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-322b9b55b7d0b8fa,jsonschema,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-322b9b55b7d0b8fa,jsonschema,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-322b9b55b7d0b8fa,jsonschema,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-322b9b55b7d0b8fa,jsonschema,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-322b9b55b7d0b8fa,jsonschema,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-322b9b55b7d0b8fa,jsonschema,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-322b9b55b7d0b8fa,jsonschema,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-322b9b55b7d0b8fa,jsonschema,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-b0f2f0e6cb318280,mutmut,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-b0f2f0e6cb318280,mutmut,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-b0f2f0e6cb318280,mutmut,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-b0f2f0e6cb318280,mutmut,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-b0f2f0e6cb318280,mutmut,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-b0f2f0e6cb318280,mutmut,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-b0f2f0e6cb318280,mutmut,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-b0f2f0e6cb318280,mutmut,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-b0f2f0e6cb318280,mutmut,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-b0f2f0e6cb318280,mutmut,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-b0f2f0e6cb318280,mutmut,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-5cd50955e7caf7db,mypy,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-5cd50955e7caf7db,mypy,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-5cd50955e7caf7db,mypy,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-5cd50955e7caf7db,mypy,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-5cd50955e7caf7db,mypy,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-5cd50955e7caf7db,mypy,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-5cd50955e7caf7db,mypy,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-5cd50955e7caf7db,mypy,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-5cd50955e7caf7db,mypy,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-5cd50955e7caf7db,mypy,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-5cd50955e7caf7db,mypy,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-8511218645035615,opengrep,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-8511218645035615,opengrep,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-8511218645035615,opengrep,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-8511218645035615,opengrep,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-8511218645035615,opengrep,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-8511218645035615,opengrep,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-8511218645035615,opengrep,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-8511218645035615,opengrep,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-8511218645035615,opengrep,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-8511218645035615,opengrep,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-8511218645035615,opengrep,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-57d9534a5fb62f57,pytest,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-57d9534a5fb62f57,pytest,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-57d9534a5fb62f57,pytest,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-57d9534a5fb62f57,pytest,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-57d9534a5fb62f57,pytest,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-57d9534a5fb62f57,pytest,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-57d9534a5fb62f57,pytest,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-57d9534a5fb62f57,pytest,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-57d9534a5fb62f57,pytest,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-57d9534a5fb62f57,pytest,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-57d9534a5fb62f57,pytest,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-caf22f3a1d069518,ruff,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-caf22f3a1d069518,ruff,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-caf22f3a1d069518,ruff,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-caf22f3a1d069518,ruff,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-caf22f3a1d069518,ruff,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-caf22f3a1d069518,ruff,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-caf22f3a1d069518,ruff,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-caf22f3a1d069518,ruff,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-caf22f3a1d069518,ruff,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-caf22f3a1d069518,ruff,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-caf22f3a1d069518,ruff,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-703d9804d88fad61,schemathesis,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-703d9804d88fad61,schemathesis,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-703d9804d88fad61,schemathesis,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-703d9804d88fad61,schemathesis,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-703d9804d88fad61,schemathesis,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-703d9804d88fad61,schemathesis,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-703d9804d88fad61,schemathesis,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-703d9804d88fad61,schemathesis,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-703d9804d88fad61,schemathesis,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-703d9804d88fad61,schemathesis,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-703d9804d88fad61,schemathesis,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-d7a3a346445d1e96,strykerjs,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-d7a3a346445d1e96,strykerjs,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-d7a3a346445d1e96,strykerjs,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-d7a3a346445d1e96,strykerjs,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-d7a3a346445d1e96,strykerjs,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-d7a3a346445d1e96,strykerjs,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-d7a3a346445d1e96,strykerjs,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-d7a3a346445d1e96,strykerjs,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-d7a3a346445d1e96,strykerjs,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-d7a3a346445d1e96,strykerjs,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-d7a3a346445d1e96,strykerjs,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-29e52c4f9b508cee,syft,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-29e52c4f9b508cee,syft,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-29e52c4f9b508cee,syft,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-29e52c4f9b508cee,syft,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-29e52c4f9b508cee,syft,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-29e52c4f9b508cee,syft,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-29e52c4f9b508cee,syft,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-29e52c4f9b508cee,syft,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-29e52c4f9b508cee,syft,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-29e52c4f9b508cee,syft,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-29e52c4f9b508cee,syft,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-9ae4bc3f41975252,tree-sitter,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-9ae4bc3f41975252,tree-sitter,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-9ae4bc3f41975252,tree-sitter,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-9ae4bc3f41975252,tree-sitter,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-9ae4bc3f41975252,tree-sitter,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-9ae4bc3f41975252,tree-sitter,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-9ae4bc3f41975252,tree-sitter,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-9ae4bc3f41975252,tree-sitter,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-9ae4bc3f41975252,tree-sitter,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-9ae4bc3f41975252,tree-sitter,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-9ae4bc3f41975252,tree-sitter,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-edfb454882dfc164,trivy,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-edfb454882dfc164,trivy,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-edfb454882dfc164,trivy,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-edfb454882dfc164,trivy,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-edfb454882dfc164,trivy,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-edfb454882dfc164,trivy,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-edfb454882dfc164,trivy,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-edfb454882dfc164,trivy,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-edfb454882dfc164,trivy,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-edfb454882dfc164,trivy,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-edfb454882dfc164,trivy,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-15323d9fb3ed2b72,trivy,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-15323d9fb3ed2b72,trivy,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-15323d9fb3ed2b72,trivy,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-15323d9fb3ed2b72,trivy,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-15323d9fb3ed2b72,trivy,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-15323d9fb3ed2b72,trivy,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-15323d9fb3ed2b72,trivy,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-15323d9fb3ed2b72,trivy,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-15323d9fb3ed2b72,trivy,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-15323d9fb3ed2b72,trivy,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-15323d9fb3ed2b72,trivy,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-0880b7c0fee15791,IC-CAP-02,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-0880b7c0fee15791,IC-CAP-02,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-0880b7c0fee15791,IC-CAP-02,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-0880b7c0fee15791,IC-CAP-02,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-0880b7c0fee15791,IC-CAP-02,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-0880b7c0fee15791,IC-CAP-02,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-0880b7c0fee15791,IC-CAP-02,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-0880b7c0fee15791,IC-CAP-02,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-0880b7c0fee15791,IC-CAP-02,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-0880b7c0fee15791,IC-CAP-02,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-0880b7c0fee15791,IC-CAP-02,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-326f8fc2f5936f49,IC-CAP-03,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-326f8fc2f5936f49,IC-CAP-03,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-326f8fc2f5936f49,IC-CAP-03,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-326f8fc2f5936f49,IC-CAP-03,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-326f8fc2f5936f49,IC-CAP-03,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-326f8fc2f5936f49,IC-CAP-03,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-326f8fc2f5936f49,IC-CAP-03,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-326f8fc2f5936f49,IC-CAP-03,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-326f8fc2f5936f49,IC-CAP-03,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-326f8fc2f5936f49,IC-CAP-03,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-326f8fc2f5936f49,IC-CAP-03,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-df7849ce84d49074,IC-CAP-06,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-df7849ce84d49074,IC-CAP-06,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-df7849ce84d49074,IC-CAP-06,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-df7849ce84d49074,IC-CAP-06,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-df7849ce84d49074,IC-CAP-06,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-df7849ce84d49074,IC-CAP-06,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-df7849ce84d49074,IC-CAP-06,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-df7849ce84d49074,IC-CAP-06,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-df7849ce84d49074,IC-CAP-06,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-df7849ce84d49074,IC-CAP-06,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-df7849ce84d49074,IC-CAP-06,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
+SLICE-19490cdb9f51a957,IC-CAP-06,positive,Run the admitted positive fixture and require normalized FINDING evidence.,FINDING|PASS
+SLICE-19490cdb9f51a957,IC-CAP-06,negative,Run the admitted clean/near-miss fixture and require normalized CLEAN evidence.,CLEAN|PASS
+SLICE-19490cdb9f51a957,IC-CAP-06,empty_input,"Run against a validated empty denominator and require UNCOVERED, never CLEAN.",UNCOVERED
+SLICE-19490cdb9f51a957,IC-CAP-06,malformed_output,Inject syntactically invalid or contract-incomplete tool output.,BLOCKED
+SLICE-19490cdb9f51a957,IC-CAP-06,timeout,Exceed timeout_seconds and terminate the complete process tree.,BLOCKED|TIMEOUT
+SLICE-19490cdb9f51a957,IC-CAP-06,oom,Exceed memory_mib and terminate the complete process tree.,BLOCKED|MEMORY_LIMIT
+SLICE-19490cdb9f51a957,IC-CAP-06,output_overflow,Exceed max_output_bytes and prevent partial output from becoming evidence.,BLOCKED|OUTPUT_LIMIT
+SLICE-19490cdb9f51a957,IC-CAP-06,tool_failure,Remove or fail the exact executable and require UNSUPPORTED/BLOCKED.,UNSUPPORTED|BLOCKED
+SLICE-19490cdb9f51a957,IC-CAP-06,offline,Deny external network and require frozen-cache success or explicit BLOCKED.,PASS|BLOCKED
+SLICE-19490cdb9f51a957,IC-CAP-06,repeatability,Repeat the same frozen input and compare normalized outcome and evidence digests.,IDENTICAL_OR_EXPLAINED
+SLICE-19490cdb9f51a957,IC-CAP-06,rollback,Remove/disable the slice and verify only its cells return to UNCOVERED/BLOCKED.,ROLLBACK_VERIFIED
