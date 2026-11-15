@@ -18,13 +18,13 @@ tests/integration/test_r2_external_adapters.py:27:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 scripts/full_inspection_repair/r2_engine.py:1487: in run_bounded_process
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7056957c0>
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af8460b30>
 argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-c', "print('offline')"]
 cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
 limits = SandboxLimits(timeout_seconds=30.0, max_output_bytes=1048576, max_rss_mib=1024.0, max_input_files=None)
@@ -62,15 +62,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7053ca4b0>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/schemathesis', '/home/runner/work/docker_image_pusher/docker_image_pusher...tmp/fir-exact-adapter-_4crhqgn/SLICE-703d9804d88fad61/positive-ae3db2df4e56495fb2fe3897de0b1fd2', '--mode', 'positive']
-cwd = PosixPath('/tmp/fir-exact-adapter-_4crhqgn/SLICE-703d9804d88fad61/positive-ae3db2df4e56495fb2fe3897de0b1fd2')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af8316780>
+argv = ['/home/runner/work/_temp/fir-tools/venv/bin/schemathesis', '/home/runner/work/docker_image_pusher/docker_image_pusher...tmp/fir-exact-adapter-b3k6w72k/SLICE-703d9804d88fad61/positive-e73aed114e9440459ac852537aca51ec', '--mode', 'positive']
+cwd = PosixPath('/tmp/fir-exact-adapter-b3k6w72k/SLICE-703d9804d88fad61/positive-e73aed114e9440459ac852537aca51ec')
 limits = SandboxLimits(timeout_seconds=120.0, max_output_bytes=8388608, max_rss_mib=2048.0, max_input_files=64)
 policy = 'ALLOW'
 
@@ -106,15 +106,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af705556600>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/tmp/fir-exact-adapter-pxi6ugsp/SLICE-57d9534a5fb62f57/positive-551fe742c5c740bdbbf89e0b979bb82c/test_calc.py']
-cwd = PosixPath('/tmp/fir-exact-adapter-pxi6ugsp/SLICE-57d9534a5fb62f57/positive-551fe742c5c740bdbbf89e0b979bb82c')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af8477020>
+argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/tmp/fir-exact-adapter-4ufsx5oh/SLICE-57d9534a5fb62f57/positive-5d1de8ab903949d2bf6cd84c11b4142c/test_calc.py']
+cwd = PosixPath('/tmp/fir-exact-adapter-4ufsx5oh/SLICE-57d9534a5fb62f57/positive-5d1de8ab903949d2bf6cd84c11b4142c')
 limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
 policy = 'ALLOW'
 
@@ -150,15 +150,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7055bf9b0>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/schemathesis', '/home/runner/work/docker_image_pusher/docker_image_pusher...tmp/fir-exact-adapter-_2ptdvck/SLICE-703d9804d88fad61/positive-f06c6260b35e4212a5d6982b1f2030cf', '--mode', 'positive']
-cwd = PosixPath('/tmp/fir-exact-adapter-_2ptdvck/SLICE-703d9804d88fad61/positive-f06c6260b35e4212a5d6982b1f2030cf')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af8474ad0>
+argv = ['/home/runner/work/_temp/fir-tools/venv/bin/schemathesis', '/home/runner/work/docker_image_pusher/docker_image_pusher...tmp/fir-exact-adapter-2rguwo27/SLICE-703d9804d88fad61/positive-b283bbc2a23748e79a165a7a017a4d66', '--mode', 'positive']
+cwd = PosixPath('/tmp/fir-exact-adapter-2rguwo27/SLICE-703d9804d88fad61/positive-b283bbc2a23748e79a165a7a017a4d66')
 limits = SandboxLimits(timeout_seconds=120.0, max_output_bytes=8388608, max_rss_mib=2048.0, max_input_files=64)
 policy = 'ALLOW'
 
@@ -194,15 +194,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7055be030>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/lint-imports', '--no-cache', '--config', '/tmp/fir-exact-adapter-exusa5bq/SLICE-4c97c069b2d3b694/positive-323dcdf4684b4166bb7e874fc7019f88/.importlinter']
-cwd = PosixPath('/tmp/fir-exact-adapter-exusa5bq/SLICE-4c97c069b2d3b694/positive-323dcdf4684b4166bb7e874fc7019f88')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af84613d0>
+argv = ['/home/runner/work/_temp/fir-tools/venv/bin/lint-imports', '--no-cache', '--config', '/tmp/fir-exact-adapter-ycwdwuw6/SLICE-4c97c069b2d3b694/positive-ba5c544ec5f5466c8e3f6fb4190c22f9/.importlinter']
+cwd = PosixPath('/tmp/fir-exact-adapter-ycwdwuw6/SLICE-4c97c069b2d3b694/positive-ba5c544ec5f5466c8e3f6fb4190c22f9')
 limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
 policy = 'ALLOW'
 
@@ -238,15 +238,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7056b4aa0>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python3.12', '/home/runner/work/docker_image_pusher/docker_image_pusher/...g/mutmut_probe.py', '/tmp/fir-exact-adapter-n2d2a9o5/SLICE-b0f2f0e6cb318280/positive-ed630995b347454ea5f90e48ba68873a']
-cwd = PosixPath('/tmp/fir-exact-adapter-n2d2a9o5/SLICE-b0f2f0e6cb318280/positive-ed630995b347454ea5f90e48ba68873a')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af8462180>
+argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python3.12', '/home/runner/work/docker_image_pusher/docker_image_pusher/...g/mutmut_probe.py', '/tmp/fir-exact-adapter-0gt0jabn/SLICE-b0f2f0e6cb318280/positive-9b1c4f3c8f60452d82551325fa901b04']
+cwd = PosixPath('/tmp/fir-exact-adapter-0gt0jabn/SLICE-b0f2f0e6cb318280/positive-9b1c4f3c8f60452d82551325fa901b04')
 limits = SandboxLimits(timeout_seconds=120.0, max_output_bytes=2097152, max_rss_mib=1024.0, max_input_files=32)
 policy = 'ALLOW'
 
@@ -282,15 +282,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af705557b90>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/tmp/fir-exact-adapter-8dmsukpp/SLICE-57d9534a5fb62f57/positive-752fa5087d7e4e6c991c860855b5cf3f/test_calc.py']
-cwd = PosixPath('/tmp/fir-exact-adapter-8dmsukpp/SLICE-57d9534a5fb62f57/positive-752fa5087d7e4e6c991c860855b5cf3f')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af83132c0>
+argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/tmp/fir-exact-adapter-m11vllbl/SLICE-57d9534a5fb62f57/positive-dca6b7364b3b43a39a15efeecb9f67c2/test_calc.py']
+cwd = PosixPath('/tmp/fir-exact-adapter-m11vllbl/SLICE-57d9534a5fb62f57/positive-dca6b7364b3b43a39a15efeecb9f67c2')
 limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
 policy = 'ALLOW'
 
@@ -326,15 +326,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7055bf230>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/schemathesis', '/home/runner/work/docker_image_pusher/docker_image_pusher...tmp/fir-exact-adapter-au1zh6ww/SLICE-703d9804d88fad61/positive-97903872720e43cc882755a35c51c624', '--mode', 'positive']
-cwd = PosixPath('/tmp/fir-exact-adapter-au1zh6ww/SLICE-703d9804d88fad61/positive-97903872720e43cc882755a35c51c624')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af820a330>
+argv = ['/home/runner/work/_temp/fir-tools/venv/bin/schemathesis', '/home/runner/work/docker_image_pusher/docker_image_pusher...tmp/fir-exact-adapter-m_uw6xla/SLICE-703d9804d88fad61/positive-a86e8574f8904b028a0bab2915514a26', '--mode', 'positive']
+cwd = PosixPath('/tmp/fir-exact-adapter-m_uw6xla/SLICE-703d9804d88fad61/positive-a86e8574f8904b028a0bab2915514a26')
 limits = SandboxLimits(timeout_seconds=120.0, max_output_bytes=8388608, max_rss_mib=2048.0, max_input_files=64)
 policy = 'ALLOW'
 
@@ -370,15 +370,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7055afcb0>
-argv = ['/home/runner/work/_temp/fir-tools/bin/opengrep', 'scan', '--enable-interfile', '--no-git-ignore', '--project-root=/tmp/fir-exact-adapter-uypfpmkr/SLICE-8511218645035615/positive-d1a0681685944a12aa7d20abe22c0a09', '--config', ...]
-cwd = PosixPath('/tmp/fir-exact-adapter-uypfpmkr/SLICE-8511218645035615/positive-d1a0681685944a12aa7d20abe22c0a09')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af8317d40>
+argv = ['/home/runner/work/_temp/fir-tools/bin/opengrep', 'scan', '--enable-interfile', '--no-git-ignore', '--project-root=/tmp/fir-exact-adapter-xtapjwvf/SLICE-8511218645035615/positive-906550927544445ebcdb465b64c0d278', '--config', ...]
+cwd = PosixPath('/tmp/fir-exact-adapter-xtapjwvf/SLICE-8511218645035615/positive-906550927544445ebcdb465b64c0d278')
 limits = SandboxLimits(timeout_seconds=300.0, max_output_bytes=4194304, max_rss_mib=2048.0, max_input_files=64)
 policy = 'ALLOW'
 
@@ -415,15 +415,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7055bf590>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/home/runner/work/_temp/pytest/test_exact_adapter_runs_frozen0/scratch/SLICE-57d9534a5fb62f57/positive-d774eebdccda41409972f8fe2075be5d/test_calc.py']
-cwd = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_runs_frozen0/scratch/SLICE-57d9534a5fb62f57/positive-d774eebdccda41409972f8fe2075be5d')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af8353680>
+argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/home/runner/work/_temp/pytest/test_exact_adapter_runs_frozen0/scratch/SLICE-57d9534a5fb62f57/positive-5eeb4d5fc91d4abe904daaff471938fc/test_calc.py']
+cwd = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_runs_frozen0/scratch/SLICE-57d9534a5fb62f57/positive-5eeb4d5fc91d4abe904daaff471938fc')
 limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
 policy = 'ALLOW'
 
@@ -472,15 +472,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7053cb260>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/home/runner/work/_temp/pytest/test_exact_adapter_executes_ta0/fixtures/SLICE-57d9534a5fb62f57/positive-4a7acf05f313426cb483b03b27e42d99/test_calc.py']
-cwd = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_executes_ta0/fixtures/SLICE-57d9534a5fb62f57/positive-4a7acf05f313426cb483b03b27e42d99')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af84747d0>
+argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/home/runner/work/_temp/pytest/test_exact_adapter_executes_ta0/fixtures/SLICE-57d9534a5fb62f57/positive-3b83161c6a5f4f059baf86faaba72d22/test_calc.py']
+cwd = PosixPath('/home/runner/work/_temp/pytest/test_exact_adapter_executes_ta0/fixtures/SLICE-57d9534a5fb62f57/positive-3b83161c6a5f4f059baf86faaba72d22')
 limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
 policy = 'ALLOW'
 
@@ -531,15 +531,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af70668e1e0>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/tmp/fir-exact-adapter-vw3m9abo/SLICE-57d9534a5fb62f57/positive-0f14f1512ee34fc0838592ed351ed7e6/test_calc.py']
-cwd = PosixPath('/tmp/fir-exact-adapter-vw3m9abo/SLICE-57d9534a5fb62f57/positive-0f14f1512ee34fc0838592ed351ed7e6')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af82081a0>
+argv = ['/home/runner/work/_temp/fir-tools/venv/bin/pytest', '-q', '/tmp/fir-exact-adapter-8ek2ow9t/SLICE-57d9534a5fb62f57/positive-b3a2c8400dd446848a38900de0066a7b/test_calc.py']
+cwd = PosixPath('/tmp/fir-exact-adapter-8ek2ow9t/SLICE-57d9534a5fb62f57/positive-b3a2c8400dd446848a38900de0066a7b')
 limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
 policy = 'ALLOW'
 
@@ -571,15 +571,15 @@ tests/integration/test_runtime_exact_adapters.py:187:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 scripts/full_inspection_repair/lifecycle_adapters.py:683: in process_tree_probe
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af705570410>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-B', '-I', '-c', "import subprocess,sys,time\nfrom pathlib imp...'])\nPath('/tmp/fir-lifecycle-process-fextd4l8/child.pid').write_text(str(p.pid),encoding='utf-8')\ntime.sleep(0.2)\n"]
-cwd = PosixPath('/tmp/fir-lifecycle-process-fextd4l8')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af82e4b90>
+argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-B', '-I', '-c', "import subprocess,sys,time\nfrom pathlib imp...'])\nPath('/tmp/fir-lifecycle-process-q4f4t8_c/child.pid').write_text(str(p.pid),encoding='utf-8')\ntime.sleep(0.2)\n"]
+cwd = PosixPath('/tmp/fir-lifecycle-process-q4f4t8_c')
 limits = SandboxLimits(timeout_seconds=10, max_output_bytes=65536, max_rss_mib=256, max_input_files=16)
 policy = 'ALLOW'
 
@@ -614,15 +614,15 @@ scripts/full_inspection_repair/lifecycle_adapters.py:381: in run_frozen_process_
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 scripts/full_inspection_repair/lifecycle_adapters.py:350: in _run_process_scenario
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af705643440>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-B', '-I', '-c', "import subprocess,sys,time\nfrom pathlib imp...mp/fir-lifecycle-process-pair-xfncbu6e/positive/child.pid').write_text(str(p.pid),encoding='utf-8')\ntime.sleep(.1)\n"]
-cwd = PosixPath('/tmp/fir-lifecycle-process-pair-xfncbu6e/positive')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af8314800>
+argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-B', '-I', '-c', "import subprocess,sys,time\nfrom pathlib imp...mp/fir-lifecycle-process-pair-rolq3rxw/positive/child.pid').write_text(str(p.pid),encoding='utf-8')\ntime.sleep(.1)\n"]
+cwd = PosixPath('/tmp/fir-lifecycle-process-pair-rolq3rxw/positive')
 limits = SandboxLimits(timeout_seconds=10, max_output_bytes=65536, max_rss_mib=256, max_input_files=16)
 policy = 'ALLOW'
 
@@ -662,15 +662,15 @@ scripts/full_inspection_repair/lifecycle_adapters.py:224: in _run_install_scenar
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 scripts/full_inspection_repair/lifecycle_adapters.py:170: in _pip_install
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7055722a0>
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af83505f0>
 argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-m', 'pip', 'install', '--no-index', '--no-deps', ...]
-cwd = PosixPath('/tmp/fir-lifecycle-install-pair-hnogz1bt/positive')
+cwd = PosixPath('/tmp/fir-lifecycle-install-pair-bemtrmu4/positive')
 limits = SandboxLimits(timeout_seconds=120, max_output_bytes=2097152, max_rss_mib=1024, max_input_files=32)
 policy = 'ALLOW'
 
@@ -705,15 +705,15 @@ scripts/full_inspection_repair/capabilities.py:2132: in run_fixture_case
     receipt = run_slice(
 scripts/full_inspection_repair/capabilities.py:1847: in run_slice
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7053c9a90>
-argv = ['/home/runner/work/_temp/fir-tools/venv/bin/lint-imports', '--no-cache', '--config', '/tmp/fir-exact-adapter-0rgo82bm/SLICE-4c97c069b2d3b694/positive-3602f891a90a4bd385b40bc2f25c9151/.importlinter']
-cwd = PosixPath('/tmp/fir-exact-adapter-0rgo82bm/SLICE-4c97c069b2d3b694/positive-3602f891a90a4bd385b40bc2f25c9151')
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af82e6840>
+argv = ['/home/runner/work/_temp/fir-tools/venv/bin/lint-imports', '--no-cache', '--config', '/tmp/fir-exact-adapter-56go5lhc/SLICE-4c97c069b2d3b694/positive-9794b84847d64a7a996eb5528c5485c2/.importlinter']
+cwd = PosixPath('/tmp/fir-exact-adapter-56go5lhc/SLICE-4c97c069b2d3b694/positive-9794b84847d64a7a996eb5528c5485c2')
 limits = SandboxLimits(timeout_seconds=60.0, max_output_bytes=1048576, max_rss_mib=512.0, max_input_files=64)
 policy = 'ALLOW'
 
@@ -754,13 +754,13 @@ tests/unit/test_r2_engine.py:211:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 scripts/full_inspection_repair/r2_engine.py:1487: in run_bounded_process
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7054845c0>
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af8458350>
 argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-c', 'import time; time.sleep(2)']
 cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
 limits = SandboxLimits(timeout_seconds=0.2, max_output_bytes=1024, max_rss_mib=32, max_input_files=None)
@@ -804,13 +804,13 @@ tests/unit/test_r2_engine.py:211:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 scripts/full_inspection_repair/r2_engine.py:1487: in run_bounded_process
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7055bea80>
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af84884d0>
 argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-c', 'import time\ndata=bytearray(32*1024*1024)\ntime.sleep(2)']
 cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
 limits = SandboxLimits(timeout_seconds=0.2, max_output_bytes=1024, max_rss_mib=32, max_input_files=None)
@@ -853,13 +853,13 @@ tests/unit/test_r2_engine.py:211:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 scripts/full_inspection_repair/r2_engine.py:1487: in run_bounded_process
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7053ec290>
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af82e72f0>
 argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-c', "import sys; sys.stdout.write('x'*4096)"]
 cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
 limits = SandboxLimits(timeout_seconds=0.2, max_output_bytes=1024, max_rss_mib=32, max_input_files=None)
@@ -909,14 +909,14 @@ scripts/full_inspection_repair/r2_engine.py:903: in _runtime_detector
     observed = run_bounded_process(
 scripts/full_inspection_repair/r2_engine.py:1487: in run_bounded_process
     observed = run_sandboxed(
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7053ecf20>
-argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-B', '-I', '/home/runner/work/docker_image_pusher/docker_image...on-repair/scripts/full_inspection_repair/runtime_monitor.py', '--fixture', '/tmp/fir-runtime-2xjb2voh/fixture.py', ...]
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af8313230>
+argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-B', '-I', '/home/runner/work/docker_image_pusher/docker_image...on-repair/scripts/full_inspection_repair/runtime_monitor.py', '--fixture', '/tmp/fir-runtime-uacrqngf/fixture.py', ...]
 cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
 limits = SandboxLimits(timeout_seconds=5.0, max_output_bytes=1048576, max_rss_mib=256.0, max_input_files=None)
 policy = 'ALLOW'
@@ -954,13 +954,13 @@ ___________________ test_stdout_and_stderr_share_one_budget ____________________
 
 tests/unit/test_sandbox_runtime.py:28: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-scripts/full_inspection_repair/sandbox.py:1505: in run_sandboxed
+scripts/full_inspection_repair/sandbox.py:1503: in run_sandboxed
     return selected.run(
 scripts/full_inspection_repair/sandbox.py:1091: in run
     wrapped = self._wrap(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x7af7053ee0f0>
+self = <full_inspection_repair.sandbox.LinuxNsjailSandbox object at 0x754af8308ce0>
 argv = ['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '-B', '-c', "import sys; sys.stdout.write('x'*700); sys.stderr.write('y'*700)"]
 cwd = PosixPath('/home/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/candidate/full-inspection-repair')
 limits = SandboxLimits(timeout_seconds=10, max_output_bytes=1024, max_rss_mib=256, max_input_files=None)
@@ -996,4 +996,4 @@ SKIPPED [1] tests/unit/test_r12_runtime_repair.py:431: Windows USN journal
 SKIPPED [1] tests/unit/test_r8_runtime_reader.py:117: Windows junction fixture
 SKIPPED [1] tests/unit/test_sandbox_runtime.py:72: Windows Job Object backend
 SKIPPED [1] tests/unit/test_sandbox_runtime.py:88: Windows Job Object backend
-21 failed, 459 passed, 16 skipped in 109.42s (0:01:49)
+21 failed, 459 passed, 16 skipped in 110.40s (0:01:50)

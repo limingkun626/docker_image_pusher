@@ -432,4 +432,4 @@ SKIPPED [1] tests/unit/test_r12_runtime_repair.py:431: Windows USN journal
 SKIPPED [1] tests/unit/test_r8_runtime_reader.py:117: Windows junction fixture
 SKIPPED [1] tests/unit/test_sandbox_runtime.py:72: Windows Job Object backend
 SKIPPED [1] tests/unit/test_sandbox_runtime.py:88: Windows Job Object backend
-21 failed, 460 passed, 15 skipped in 175.39s (0:02:55)
+21 failed, 460 passed, 15 skipped in 140.02s (0:02:20)
