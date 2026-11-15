@@ -1,0 +1,43 @@
+{
+  "captured_at_utc": "2026-11-15T04:28:55+00:00",
+  "new_candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+  "predecessors": [
+    {
+      "candidate_digest": "37032d0b4da102ecc873a1e25f4a2c52739836f8193901ff45e3c820d1ff3dae",
+      "scope": "R2 candidate implementation",
+      "status": "SUPERSEDED"
+    },
+    {
+      "candidate_digest": "7082ad66a2957a51ebcca637505bcaadd350259162f2f81a888820e6aebc87d2",
+      "scope": "generation-2",
+      "status": "SUPERSEDED"
+    },
+    {
+      "candidate_digest": "c91119661a1278fa5f6fe2540ccc7440532a0af2c82ea8bd618feb57b58fbbf3",
+      "scope": "generation-3",
+      "status": "SUPERSEDED"
+    }
+  ],
+  "reopen_digest": "8bf6c2953ce9bfc03a072a2e86b70797b8eac84de6150dff518a18ae82f74e74",
+  "reopen_reasons": [
+    {
+      "change": "assemble the synthetic AWS test value at runtime",
+      "incident": "GENERATION_2_SYNTHETIC_SECRET_FIXTURE",
+      "invalidated_evidence": [
+        "generation-2/candidate-check"
+      ]
+    },
+    {
+      "change": "scope Windows-bound ast-grep probes to Windows and add a POSIX fail-closed firewall control",
+      "incident": "GENERATION_3_POSIX_TEST_PLATFORM_ASSUMPTIONS",
+      "invalidated_evidence": [
+        "generation-3/windows-junit.xml",
+        "generation-3/linux-junit.xml",
+        "generation-3/candidate-check"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "scope_id": "fir-r2-release-20261115-generation-4",
+  "status": "PASS"
+}

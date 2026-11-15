@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "slices": {
+    "SLICE-0880b7c0fee15791": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ic-cap02-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ic-cap02-positive/target"
+    },
+    "SLICE-15323d9fb3ed2b72": {
+      "allow_empty_negative": true,
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/trivy-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/trivy-positive/target"
+    },
+    "SLICE-19490cdb9f51a957": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ic-cap06-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ic-cap06-positive/target"
+    },
+    "SLICE-29e52c4f9b508cee": {
+      "allow_empty_negative": true,
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/syft-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/syft-positive/target"
+    },
+    "SLICE-322b9b55b7d0b8fa": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/jsonschema-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/jsonschema-positive/target"
+    },
+    "SLICE-3233bd156148d7e2": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ast-grep-inspect-negative/target/valid.py",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ast-grep-inspect-positive/target/service.py"
+    },
+    "SLICE-326f8fc2f5936f49": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ic-cap03-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ic-cap03-positive/target"
+    },
+    "SLICE-4c97c069b2d3b694": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/import-linter-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/import-linter-positive/target"
+    },
+    "SLICE-4f08b4dc03c39f80": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/hypothesis-negative/target/test_property_pass.py",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/hypothesis-positive/target/test_property_fail.py"
+    },
+    "SLICE-57d9534a5fb62f57": {
+      "negative_assert": [],
+      "negative_command": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\hypothesis\\Scripts\\pytest.exe",
+        "-q",
+        "{target}/test_calc.py"
+      ],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/pytest-negative/target",
+      "positive_assert": [],
+      "positive_command": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\hypothesis\\Scripts\\pytest.exe",
+        "-q",
+        "{target}/test_calc.py"
+      ],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/pytest-positive/target"
+    },
+    "SLICE-5cd50955e7caf7db": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/mypy-negative/target/mypy-negative.py",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/mypy-positive/target/mypy-positive.py"
+    },
+    "SLICE-703d9804d88fad61": {
+      "negative_assert": [],
+      "negative_command": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\schemathesis\\Scripts\\python.exe",
+        "{tooling}/schemathesis_probe.py",
+        "{target}",
+        "--mode",
+        "negative"
+      ],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/schemathesis-negative/target",
+      "positive_assert": [],
+      "positive_command": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\schemathesis\\Scripts\\python.exe",
+        "{tooling}/schemathesis_probe.py",
+        "{target}",
+        "--mode",
+        "positive"
+      ],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/schemathesis-positive/target"
+    },
+    "SLICE-8511218645035615": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/opengrep-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/opengrep-positive/target"
+    },
+    "SLICE-87ab5ff8cdbc1770": {
+      "negative_assert": [],
+      "negative_mutated": false,
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ast-grep-repair-negative/target",
+      "positive_assert": [],
+      "positive_mutated": true,
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ast-grep-repair-positive/target"
+    },
+    "SLICE-9ae4bc3f41975252": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/tree-sitter-negative/target/valid.py",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/tree-sitter-positive/target/malformed.py"
+    },
+    "SLICE-b0f2f0e6cb318280": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/mutmut-negative/target",
+      "positive_assert": [
+        "survived"
+      ],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/mutmut-positive/target"
+    },
+    "SLICE-c95a4fc56c57d42a": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/eslint-negative/target/negative.js",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/eslint-positive/target/positive.js"
+    },
+    "SLICE-caf22f3a1d069518": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ruff-negative/target/valid.py",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ruff-positive/target/malformed.py"
+    },
+    "SLICE-d7a3a346445d1e96": {
+      "negative_assert": [],
+      "negative_command": [
+        "node",
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\strykerjs\\node_modules\\@stryker-mutator\\core\\bin\\stryker.js",
+        "run",
+        "--testRunner",
+        "command",
+        "--commandRunner.command",
+        "node --test",
+        "--mutate",
+        "{target}/src/subject.js",
+        "--reporters",
+        "clear-text",
+        "--concurrency",
+        "1",
+        "--dryRunOnly"
+      ],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/strykerjs-negative/target",
+      "positive_assert": [
+        "6 mutant(s)",
+        "survived"
+      ],
+      "positive_command": [
+        "node",
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\strykerjs\\node_modules\\@stryker-mutator\\core\\bin\\stryker.js",
+        "run",
+        "--testRunner",
+        "command",
+        "--commandRunner.command",
+        "node --test",
+        "--mutate",
+        "{target}/src/subject.js",
+        "--reporters",
+        "clear-text",
+        "--concurrency",
+        "1"
+      ],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/strykerjs-positive/target"
+    },
+    "SLICE-df7849ce84d49074": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/ic-cap06-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/ic-cap06-positive/target"
+    },
+    "SLICE-e4653d9ce52284fc": {
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/dependency-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/dependency-positive/target"
+    },
+    "SLICE-edfb454882dfc164": {
+      "allow_empty_negative": true,
+      "negative_assert": [],
+      "negative_outcome": "CLEAN",
+      "negative_target": "fixtures/trivy-negative/target",
+      "positive_assert": [],
+      "positive_outcome": "FINDING",
+      "positive_target": "fixtures/trivy-positive/target"
+    }
+  }
+}

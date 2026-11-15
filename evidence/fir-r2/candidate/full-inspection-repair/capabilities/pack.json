@@ -1,0 +1,1667 @@
+{
+  "pack_digest": "09249059a2b897ac0a3cf71b3601c36b3d3ebc072cd5adc9bbe2a66f0612d1db",
+  "pack_id": "fir-capability-pack-1.5.0-r1",
+  "pack_version": "1.5.0",
+  "schema_version": 1,
+  "slices": [
+    {
+      "adapter_id": "fir-ast-grep-6148d7e2",
+      "candidate_id": "ast-grep",
+      "command_template": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "{tooling}/ast_grep_inspect_probe.py",
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\ast-grep\\node_modules\\.bin\\ast-grep.cmd",
+        "run",
+        "--lang",
+        "python",
+        "--pattern",
+        "subprocess.run($$$ARGS)",
+        "--json=compact",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "0.51.2",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "inspect",
+      "implementation_order": 45,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe {tooling}/ast_grep_inspect_probe.py F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\ast-grep\\node_modules\\.bin\\ast-grep.cmd run --lang python --pattern subprocess.run($$$ARGS) --json=compact {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {
+        "classification": [
+          "DEFECT_DETECTED",
+          "CLEAN",
+          "INVALID_CONTRACT"
+        ]
+      },
+      "json_required_fields": [
+        "classification",
+        "results"
+      ],
+      "json_root": "object",
+      "license": "MIT",
+      "max_input_files": 64,
+      "max_output_bytes": 2097152,
+      "memory_mib": 512,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-3233bd156148d7e2"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-3233bd156148d7e2",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_2_STATIC_SECURITY_ARCHITECTURE",
+      "timeout_seconds": 30
+    },
+    {
+      "adapter_id": "fir-ast-grep-cdbc1770",
+      "candidate_id": "ast-grep",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\ast-grep\\node_modules\\.bin\\ast-grep.cmd",
+        "scan",
+        "--config",
+        "sgconfig.yml",
+        "--update-all",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "0.51.2",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "repair",
+      "implementation_order": 85,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\ast-grep\\node_modules\\.bin\\ast-grep.cmd scan --config sgconfig.yml --update-all {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {
+        "classification": [
+          "DEFECT_DETECTED",
+          "CLEAN",
+          "INVALID_CONTRACT"
+        ]
+      },
+      "json_required_fields": [],
+      "json_root": null,
+      "license": "MIT",
+      "max_input_files": 64,
+      "max_output_bytes": 2097152,
+      "memory_mib": 512,
+      "mutation_semantics": true,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "C:\\Users\\Administrator\\AppData\\Local\\nvm\\v24.18.0\\node.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "finding_kind": "PATTERN_MATCH",
+          "outcome": "FINDING"
+        },
+        {
+          "exit_codes": [
+            1
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "TEXT",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-87ab5ff8cdbc1770"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-87ab5ff8cdbc1770",
+      "success_codes": [
+        0,
+        1
+      ],
+      "target_phase": "PHASE_6_DETERMINISTIC_REPAIR",
+      "timeout_seconds": 30
+    },
+    {
+      "adapter_id": "fir-dependency-cruiser-e52284fc",
+      "candidate_id": "dependency-cruiser",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\dependency-cruiser\\node_modules\\.bin\\depcruise.cmd",
+        "--no-config",
+        "--output-type",
+        "json",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "v18.7.2",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "architecture",
+      "implementation_order": 50,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\dependency-cruiser\\node_modules\\.bin\\depcruise.cmd --no-config --output-type json {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [
+        "modules",
+        "summary"
+      ],
+      "json_root": "object",
+      "license": "MIT",
+      "max_input_files": 64,
+      "max_output_bytes": 2097152,
+      "memory_mib": 512,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "C:\\Users\\Administrator\\AppData\\Local\\nvm\\v24.18.0\\node.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-e4653d9ce52284fc"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-e4653d9ce52284fc",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_2_STATIC_SECURITY_ARCHITECTURE",
+      "timeout_seconds": 60
+    },
+    {
+      "adapter_id": "fir-eslint-6c57d42a",
+      "candidate_id": "eslint",
+      "command_template": [
+        "node",
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\eslint\\node_modules\\eslint\\bin\\eslint.js",
+        "--no-config-lookup",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "v10.14.0",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "inspect",
+      "implementation_order": 35,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "node F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\eslint\\node_modules\\eslint\\bin\\eslint.js --no-config-lookup {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [],
+      "json_root": null,
+      "license": "MIT",
+      "max_input_files": 64,
+      "max_output_bytes": 1048576,
+      "memory_mib": 512,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "C:\\Users\\Administrator\\AppData\\Local\\nvm\\v24.18.0\\node.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        },
+        {
+          "exit_codes": [
+            1
+          ],
+          "finding_kind": "LINT_FINDING",
+          "outcome": "FINDING"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "TEXT",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-c95a4fc56c57d42a"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-c95a4fc56c57d42a",
+      "success_codes": [
+        0,
+        1
+      ],
+      "target_phase": "PHASE_2_STATIC_SECURITY_ARCHITECTURE",
+      "timeout_seconds": 30
+    },
+    {
+      "adapter_id": "fir-hypothesis-03c39f80",
+      "candidate_id": "hypothesis",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\hypothesis\\Scripts\\pytest.exe",
+        "-q",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "v6.170.15",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "verify",
+      "implementation_order": 65,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\hypothesis\\Scripts\\pytest.exe -q {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [],
+      "json_root": null,
+      "license": "MPL-2.0",
+      "max_input_files": 64,
+      "max_output_bytes": 1048576,
+      "memory_mib": 512,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\hypothesis\\Scripts\\pytest.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        },
+        {
+          "exit_codes": [
+            1
+          ],
+          "finding_kind": "PROPERTY_FAILURE",
+          "outcome": "FINDING"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "TEXT",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-4f08b4dc03c39f80"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-4f08b4dc03c39f80",
+      "success_codes": [
+        0,
+        1
+      ],
+      "target_phase": "PHASE_3_TESTS_PROPERTIES_MUTATION",
+      "timeout_seconds": 60
+    },
+    {
+      "adapter_id": "fir-import-linter-b2d3b694",
+      "candidate_id": "import-linter",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\import-linter\\Scripts\\lint-imports.exe",
+        "--no-cache",
+        "--config",
+        "{target}/.importlinter"
+      ],
+      "environment_overrides": {
+        "PYTHONPATH": "{target}"
+      },
+      "exact_version": "v2.16",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "architecture",
+      "implementation_order": 50,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\import-linter\\Scripts\\lint-imports.exe --no-cache --config {target}/.importlinter"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [],
+      "json_root": null,
+      "license": "BSD-2-Clause",
+      "max_input_files": 64,
+      "max_output_bytes": 1048576,
+      "memory_mib": 512,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\import-linter\\Scripts\\lint-imports.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        },
+        {
+          "exit_codes": [
+            1
+          ],
+          "finding_kind": "ARCHITECTURE_VIOLATION",
+          "outcome": "FINDING"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "TEXT",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-4c97c069b2d3b694"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-4c97c069b2d3b694",
+      "success_codes": [
+        0,
+        1
+      ],
+      "target_phase": "PHASE_2_STATIC_SECURITY_ARCHITECTURE",
+      "timeout_seconds": 60
+    },
+    {
+      "adapter_id": "fir-jsonschema-b7d0b8fa",
+      "candidate_id": "jsonschema",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\jsonschema\\Scripts\\python.exe",
+        "{tooling}/jsonschema_probe.py",
+        "{target}/schema.json",
+        "{target}/valid.json"
+      ],
+      "environment_overrides": {},
+      "exact_version": "v4.26.0",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "verify",
+      "implementation_order": 10,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\jsonschema\\Scripts\\python.exe {tooling}/jsonschema_probe.py {target}/schema.json {target}/valid.json"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {
+        "classification": [
+          "VALID",
+          "INVALID"
+        ]
+      },
+      "json_required_fields": [
+        "classification"
+      ],
+      "json_root": "object",
+      "license": "MIT",
+      "max_input_files": 64,
+      "max_output_bytes": 1048576,
+      "memory_mib": 256,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\jsonschema\\Scripts\\python.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-322b9b55b7d0b8fa"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-322b9b55b7d0b8fa",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_0_ADAPTER_FOUNDATION",
+      "timeout_seconds": 30
+    },
+    {
+      "adapter_id": "fir-mutmut-cb318280",
+      "candidate_id": "mutmut",
+      "command_template": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "{tooling}/mutmut_probe.py",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "3.8.0",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [
+        "survived"
+      ],
+      "implementation_category": "verify",
+      "implementation_order": 70,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe {tooling}/mutmut_probe.py {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [],
+      "json_root": null,
+      "license": "BSD-3-Clause",
+      "max_input_files": 32,
+      "max_output_bytes": 2097152,
+      "memory_mib": 1024,
+      "mutation_semantics": false,
+      "network_enforcement": "WSL_NETNS",
+      "network_policy": "DENY",
+      "network_programs": [],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "TEXT",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-b0f2f0e6cb318280"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-b0f2f0e6cb318280",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_3_TESTS_PROPERTIES_MUTATION",
+      "timeout_seconds": 120
+    },
+    {
+      "adapter_id": "fir-mypy-e7caf7db",
+      "candidate_id": "mypy",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\ruff\\Scripts\\mypy.exe",
+        "--no-incremental",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "v2.4.1",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "inspect",
+      "implementation_order": 30,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\ruff\\Scripts\\mypy.exe --no-incremental {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [],
+      "json_root": null,
+      "license": "MIT",
+      "max_input_files": 64,
+      "max_output_bytes": 1048576,
+      "memory_mib": 512,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\ruff\\Scripts\\mypy.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        },
+        {
+          "exit_codes": [
+            1
+          ],
+          "finding_kind": "TYPE_ERROR",
+          "outcome": "FINDING"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "TEXT",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-5cd50955e7caf7db"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-5cd50955e7caf7db",
+      "success_codes": [
+        0,
+        1
+      ],
+      "target_phase": "PHASE_1_SYNTAX_AND_SYMBOLS",
+      "timeout_seconds": 60
+    },
+    {
+      "adapter_id": "fir-opengrep-45035615",
+      "candidate_id": "opengrep",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\opengrep\\bin\\opengrep.exe",
+        "scan",
+        "--enable-interfile",
+        "--no-git-ignore",
+        "--project-root={target}",
+        "--config",
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\opengrep\\rules.yaml",
+        "--json",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "v2.0.0",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "inspect",
+      "implementation_order": 40,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\opengrep\\bin\\opengrep.exe scan --enable-interfile --no-git-ignore --project-root={target} --config F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\opengrep\\rules.yaml --json {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [
+        "results"
+      ],
+      "json_root": "object",
+      "license": "LGPL-2.1",
+      "max_input_files": 64,
+      "max_output_bytes": 4194304,
+      "memory_mib": 2048,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\opengrep\\bin\\opengrep.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-8511218645035615"
+      ],
+      "rules_digest": "f710c0afcfad58d382ebef3af576028e7e56fc427a7a1cb12e7a74b5ee6957ff",
+      "slice_id": "SLICE-8511218645035615",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_2_STATIC_SECURITY_ARCHITECTURE",
+      "timeout_seconds": 300
+    },
+    {
+      "adapter_id": "fir-pytest-5fb62f57",
+      "candidate_id": "pytest",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\hypothesis\\Scripts\\pytest.exe",
+        "-q",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "9.1.1",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "verify",
+      "implementation_order": 60,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\hypothesis\\Scripts\\pytest.exe -q {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [],
+      "json_root": null,
+      "license": "MIT",
+      "max_input_files": 64,
+      "max_output_bytes": 1048576,
+      "memory_mib": 512,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\hypothesis\\Scripts\\pytest.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        },
+        {
+          "exit_codes": [
+            1
+          ],
+          "finding_kind": "TEST_FAILURE",
+          "outcome": "FINDING"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "TEXT",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-57d9534a5fb62f57"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-57d9534a5fb62f57",
+      "success_codes": [
+        0,
+        1
+      ],
+      "target_phase": "PHASE_3_TESTS_PROPERTIES_MUTATION",
+      "timeout_seconds": 60
+    },
+    {
+      "adapter_id": "fir-ruff-1d069518",
+      "candidate_id": "ruff",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\ruff\\Scripts\\ruff.exe",
+        "check",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "0.17.5",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "inspect",
+      "implementation_order": 35,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\ruff\\Scripts\\ruff.exe check {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [],
+      "json_root": null,
+      "license": "MIT",
+      "max_input_files": 64,
+      "max_output_bytes": 1048576,
+      "memory_mib": 256,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\ruff\\Scripts\\ruff.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        },
+        {
+          "exit_codes": [
+            1
+          ],
+          "finding_kind": "LINT_FINDING",
+          "outcome": "FINDING"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "TEXT",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-caf22f3a1d069518"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-caf22f3a1d069518",
+      "success_codes": [
+        0,
+        1
+      ],
+      "target_phase": "PHASE_2_STATIC_SECURITY_ARCHITECTURE",
+      "timeout_seconds": 30
+    },
+    {
+      "adapter_id": "fir-schemathesis-d88fad61",
+      "candidate_id": "schemathesis",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\schemathesis\\Scripts\\python.exe",
+        "{tooling}/schemathesis_probe.py",
+        "{target}",
+        "--mode",
+        "positive"
+      ],
+      "environment_overrides": {
+        "ALL_PROXY": "",
+        "HTTPS_PROXY": "",
+        "HTTP_PROXY": "",
+        "NO_PROXY": "127.0.0.1,localhost",
+        "no_proxy": "127.0.0.1,localhost"
+      },
+      "exact_version": "v4.33.4",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "verify",
+      "implementation_order": 65,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\py\\schemathesis\\Scripts\\python.exe {tooling}/schemathesis_probe.py {target} --mode positive"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {
+        "classification": [
+          "DEFECT_DETECTED",
+          "CLEAN"
+        ]
+      },
+      "json_required_fields": [
+        "classification",
+        "mode",
+        "actual_exit",
+        "expected_exit"
+      ],
+      "json_root": "object",
+      "license": "MIT",
+      "max_input_files": 64,
+      "max_output_bytes": 8388608,
+      "memory_mib": 2048,
+      "mutation_semantics": false,
+      "network_enforcement": "LOOPBACK_ONLY",
+      "network_policy": "LOOPBACK_ONLY",
+      "network_programs": [],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-703d9804d88fad61"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-703d9804d88fad61",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_3_TESTS_PROPERTIES_MUTATION",
+      "timeout_seconds": 120
+    },
+    {
+      "adapter_id": "fir-strykerjs-445d1e96",
+      "candidate_id": "strykerjs",
+      "command_template": [
+        "node",
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\strykerjs\\node_modules\\@stryker-mutator\\core\\bin\\stryker.js",
+        "run",
+        "--testRunner",
+        "command",
+        "--commandRunner.command",
+        "node --test",
+        "--mutate",
+        "{target}/src/**/*.js",
+        "--reporters",
+        "clear-text",
+        "--concurrency",
+        "1",
+        "--dryRunOnly"
+      ],
+      "environment_overrides": {},
+      "exact_version": "v10.1.1",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [
+        "[survived]"
+      ],
+      "implementation_category": "verify",
+      "implementation_order": 70,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "node F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\node\\strykerjs\\node_modules\\@stryker-mutator\\core\\bin\\stryker.js run --testRunner command --commandRunner.command node --test --mutate {target}/src/**/*.js --reporters clear-text --concurrency 1 --dryRunOnly"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [],
+      "json_root": null,
+      "license": "Apache-2.0",
+      "max_input_files": 32,
+      "max_output_bytes": 2097152,
+      "memory_mib": 1024,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "C:\\Users\\Administrator\\AppData\\Local\\nvm\\v24.18.0\\node.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "TEXT",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-d7a3a346445d1e96"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-d7a3a346445d1e96",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_3_TESTS_PROPERTIES_MUTATION",
+      "timeout_seconds": 120
+    },
+    {
+      "adapter_id": "fir-syft-9b508cee",
+      "candidate_id": "syft",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\bin\\syft\\v1.57.1\\syft.exe",
+        "scan",
+        "dir:{target}",
+        "-o",
+        "json"
+      ],
+      "environment_overrides": {},
+      "exact_version": "v1.57.1",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "inspect",
+      "implementation_order": 55,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\bin\\syft\\v1.57.1\\syft.exe scan dir:{target} -o json"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [
+        "artifacts",
+        "source",
+        "descriptor"
+      ],
+      "json_root": "object",
+      "license": "Apache-2.0",
+      "max_input_files": 32,
+      "max_output_bytes": 8388608,
+      "memory_mib": 2048,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\bin\\syft\\v1.57.1\\syft.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-29e52c4f9b508cee"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-29e52c4f9b508cee",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_4_SUPPLY_CHAIN_AND_ORACLE",
+      "timeout_seconds": 120
+    },
+    {
+      "adapter_id": "fir-tree-sitter-41975252",
+      "candidate_id": "tree-sitter",
+      "command_template": [
+        "node",
+        "{tooling}/tree_sitter_parse.js",
+        "{target}"
+      ],
+      "environment_overrides": {
+        "FIR_TREE_SITTER_GRAMMAR": "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\tree-sitter-python-v0.25.0.proxy.wasm",
+        "FIR_TREE_SITTER_RUNTIME": "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\tree-sitter-web"
+      },
+      "exact_version": "v0.27.2",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "inspect",
+      "implementation_order": 20,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "node {tooling}/tree_sitter_parse.js {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [
+        "rootType",
+        "hasError",
+        "sourceBytes",
+        "errorNodeCount",
+        "errors"
+      ],
+      "json_root": "object",
+      "license": "MIT",
+      "max_input_files": 64,
+      "max_output_bytes": 1048576,
+      "memory_mib": 512,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "C:\\Users\\Administrator\\AppData\\Local\\nvm\\v24.18.0\\node.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-9ae4bc3f41975252"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-9ae4bc3f41975252",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_1_SYNTAX_AND_SYMBOLS",
+      "timeout_seconds": 60
+    },
+    {
+      "adapter_id": "fir-trivy-82dfc164",
+      "candidate_id": "trivy",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\bin\\trivy\\v0.76.2\\trivy.exe",
+        "fs",
+        "--scanners",
+        "license",
+        "--format",
+        "json",
+        "--offline-scan",
+        "--skip-db-update",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "v0.76.2",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "oracle",
+      "implementation_order": 56,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\bin\\trivy\\v0.76.2\\trivy.exe fs --scanners license --format json --offline-scan --skip-db-update {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [
+        "SchemaVersion",
+        "ArtifactName",
+        "ArtifactType"
+      ],
+      "json_root": "object",
+      "license": "Apache-2.0",
+      "max_input_files": 32,
+      "max_output_bytes": 8388608,
+      "memory_mib": 2048,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\bin\\trivy\\v0.76.2\\trivy.exe"
+      ],
+      "oracle_only": true,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-edfb454882dfc164"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-edfb454882dfc164",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_4_SUPPLY_CHAIN_AND_ORACLE",
+      "timeout_seconds": 120
+    },
+    {
+      "adapter_id": "fir-trivy-b3ed2b72",
+      "candidate_id": "trivy",
+      "command_template": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\bin\\trivy\\v0.76.2\\trivy.exe",
+        "fs",
+        "--scanners",
+        "license",
+        "--format",
+        "json",
+        "--offline-scan",
+        "--skip-db-update",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "v0.76.2",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "oracle",
+      "implementation_order": 56,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\bin\\trivy\\v0.76.2\\trivy.exe fs --scanners license --format json --offline-scan --skip-db-update {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [
+        "SchemaVersion",
+        "ArtifactName",
+        "ArtifactType"
+      ],
+      "json_root": "object",
+      "license": "Apache-2.0",
+      "max_input_files": 32,
+      "max_output_bytes": 8388608,
+      "memory_mib": 2048,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes\\bin\\trivy\\v0.76.2\\trivy.exe"
+      ],
+      "oracle_only": true,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-15323d9fb3ed2b72"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-15323d9fb3ed2b72",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_4_SUPPLY_CHAIN_AND_ORACLE",
+      "timeout_seconds": 120
+    },
+    {
+      "adapter_id": "fir-ic-cap-02-fee15791",
+      "candidate_id": "IC-CAP-02",
+      "command_template": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "{tooling}/ic_cap02_projection.py",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "1.16.4-rc.96",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "close",
+      "implementation_order": 90,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe {tooling}/ic_cap02_projection.py {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [
+        "projections"
+      ],
+      "json_root": "object",
+      "license": "LOCAL_SOURCE_NO_STANDALONE_LICENSE_FILE",
+      "max_input_files": 128,
+      "max_output_bytes": 8388608,
+      "memory_mib": 256,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-0880b7c0fee15791"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-0880b7c0fee15791",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_7_CLOSURE_AND_REVIEW",
+      "timeout_seconds": 30
+    },
+    {
+      "adapter_id": "fir-ic-cap-03-f5936f49",
+      "candidate_id": "IC-CAP-03",
+      "command_template": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "{tooling}/ic_cap03_manifest.py",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "1.16.4-rc.96",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "verify",
+      "implementation_order": 75,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe {tooling}/ic_cap03_manifest.py {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {
+        "classification": [
+          "VALID",
+          "INVALID"
+        ]
+      },
+      "json_required_fields": [
+        "classification",
+        "errors"
+      ],
+      "json_root": "object",
+      "license": "LOCAL_SOURCE_NO_STANDALONE_LICENSE_FILE",
+      "max_input_files": 128,
+      "max_output_bytes": 8388608,
+      "memory_mib": 256,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-326f8fc2f5936f49"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-326f8fc2f5936f49",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_3_TESTS_PROPERTIES_MUTATION",
+      "timeout_seconds": 60
+    },
+    {
+      "adapter_id": "fir-ic-cap-06-84d49074",
+      "candidate_id": "IC-CAP-06",
+      "command_template": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "{tooling}/ic_cap06_protocol.py",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "1.16.4-rc.96",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "plan",
+      "implementation_order": 80,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe {tooling}/ic_cap06_protocol.py {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [
+        "receipts"
+      ],
+      "json_root": "object",
+      "license": "LOCAL_SOURCE_NO_STANDALONE_LICENSE_FILE",
+      "max_input_files": 128,
+      "max_output_bytes": 8388608,
+      "memory_mib": 512,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-df7849ce84d49074"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-df7849ce84d49074",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_5_IMPACT_AND_REPAIR_PLANNING",
+      "timeout_seconds": 120
+    },
+    {
+      "adapter_id": "fir-ic-cap-06-9f51a957",
+      "candidate_id": "IC-CAP-06",
+      "command_template": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "{tooling}/ic_cap06_protocol.py",
+        "{target}"
+      ],
+      "environment_overrides": {},
+      "exact_version": "1.16.4-rc.96",
+      "excluded_features": [
+        "all features outside the admitted capability slice"
+      ],
+      "failure_statuses": [
+        "UNSUPPORTED",
+        "UNCOVERED",
+        "BLOCKED"
+      ],
+      "finding_markers": [],
+      "implementation_category": "close",
+      "implementation_order": 92,
+      "input_contract": "frozen target subtree/evidence plus versioned policy and adapter digests",
+      "invocation_allowlist": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe {tooling}/ic_cap06_protocol.py {target}"
+      ],
+      "json_array_item_required_fields": [],
+      "json_enum_fields": {},
+      "json_required_fields": [
+        "receipts"
+      ],
+      "json_root": "object",
+      "license": "LOCAL_SOURCE_NO_STANDALONE_LICENSE_FILE",
+      "max_input_files": 128,
+      "max_output_bytes": 8388608,
+      "memory_mib": 512,
+      "mutation_semantics": false,
+      "network_enforcement": "WINDOWS_FIREWALL",
+      "network_policy": "DENY",
+      "network_programs": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+      ],
+      "oracle_only": false,
+      "outcome_rules": [
+        {
+          "exit_codes": [
+            0
+          ],
+          "outcome": "CLEAN"
+        }
+      ],
+      "output_contract": "normalized receipt with outcome, evidence digests, unsupported cells and no release authority",
+      "output_format": "JSON",
+      "release_authority": false,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_attempts": 0
+      },
+      "rollback_command": [
+        "disable",
+        "SLICE-19490cdb9f51a957"
+      ],
+      "rules_digest": null,
+      "slice_id": "SLICE-19490cdb9f51a957",
+      "success_codes": [
+        0
+      ],
+      "target_phase": "PHASE_7_CLOSURE_AND_REVIEW",
+      "timeout_seconds": 120
+    }
+  ],
+  "toolchain_root": "F:\\Codex\\reports\\fir-capability-admission-r1-20261114\\work\\runtimes"
+}
