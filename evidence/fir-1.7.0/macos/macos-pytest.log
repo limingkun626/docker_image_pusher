@@ -1,0 +1,145 @@
+.........................sssss.......................................... [ 14%]
+sss.......................s....................F.F.F.F...F.F............ [ 29%]
+........................................................................ [ 43%]
+........................................................................ [ 58%]
+.................s......s...s........................................... [ 72%]
+................................................................s....... [ 87%]
+..........................ss....................................         [100%]
+=================================== FAILURES ===================================
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:BOUNDARY:BEHAVIOR] _
+
+cell_id = 'SKILL:BOUNDARY:BEHAVIOR'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
+
+tests/integration/test_runtime_exact_adapters.py:50: AssertionError
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:INCONSISTENCY:BEHAVIOR] _
+
+cell_id = 'SKILL:INCONSISTENCY:BEHAVIOR'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
+
+tests/integration/test_runtime_exact_adapters.py:50: AssertionError
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:LATENT_DEFECT:BEHAVIOR] _
+
+cell_id = 'SKILL:LATENT_DEFECT:BEHAVIOR'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
+
+tests/integration/test_runtime_exact_adapters.py:50: AssertionError
+_ test_every_external_adapter_executes_its_frozen_fixture_pair[SKILL:RISK_EXPOSURE:BEHAVIOR] _
+
+cell_id = 'SKILL:RISK_EXPOSURE:BEHAVIOR'
+
+    @pytest.mark.parametrize("cell_id", sorted(ADAPTERS))
+    def test_every_external_adapter_executes_its_frozen_fixture_pair(
+        cell_id: str,
+    ) -> None:
+        observed = run_external_cell(cell_id)
+>       assert observed["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
+
+tests/integration/test_runtime_exact_adapters.py:50: AssertionError
+_____________ test_exact_adapter_executes_target_not_only_fixtures _____________
+
+tmp_path = PosixPath('/Users/runner/work/_temp/pytest/test_exact_adapter_executes_ta0')
+
+    def test_exact_adapter_executes_target_not_only_fixtures(tmp_path: Path) -> None:
+        target = tmp_path / "target"
+        target.mkdir()
+        (target / "test_ok.py").write_text(
+            "def test_ok():\n"
+            "    assert True\n",
+            encoding="utf-8",
+        )
+    
+        observed = run_for_snapshot(
+            "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+            {
+                "target_root": str(target),
+                "subject_digest": "a" * 64,
+                "fixture_scratch_root": str(tmp_path / "fixtures"),
+            },
+        )
+    
+>       assert observed["status"] == "PASS"
+E       AssertionError: assert 'BLOCKED_ADAPTER' == 'PASS'
+E         
+E         - PASS
+E         + BLOCKED_ADAPTER
+
+tests/integration/test_runtime_exact_adapters.py:100: AssertionError
+______________ test_run_cell_exact_adapter_uses_target_execution _______________
+
+tmp_path = PosixPath('/Users/runner/work/_temp/pytest/test_run_cell_exact_adapter_us0')
+
+    def test_run_cell_exact_adapter_uses_target_execution(
+        tmp_path: Path,
+    ) -> None:
+        (tmp_path / "test_failure.py").write_text(
+            "def test_failure():\n"
+            "    assert False\n",
+            encoding="utf-8",
+        )
+        observed = run_cell(
+            "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+            {
+                "files": {},
+                "target_root": str(tmp_path),
+                "subject_digest": "a" * 64,
+            },
+        )
+>       assert observed["status"] == "FINDING"
+E       AssertionError: assert 'BLOCKED' == 'FINDING'
+E         
+E         - FINDING
+E         + BLOCKED
+
+tests/integration/test_runtime_exact_adapters.py:151: AssertionError
+=========================== short test summary info ============================
+SKIPPED [1] tests/integration/test_capability_cli.py:70: Windows srt-win policy is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:102: the pinned ast-grep capability command is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:140: the pinned ast-grep capability command is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:167: Windows srt-win policy is Windows-specific
+SKIPPED [1] tests/integration/test_capability_cli.py:190: Windows srt-win policy is Windows-specific
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:704: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:743: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r12_release_trust_repair.py:799: real Windows venv closure test
+SKIPPED [1] tests/integration/test_r8_release_sigstore.py:397: real Sigstore bundle environment is not configured
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:103: Windows alternate data streams
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:280: Windows directory flush
+SKIPPED [1] tests/unit/test_r12_runtime_repair.py:431: Windows USN journal
+SKIPPED [1] tests/unit/test_r8_runtime_reader.py:117: Windows junction fixture
+SKIPPED [1] tests/unit/test_sandbox_runtime.py:72: Windows Job Object backend
+SKIPPED [1] tests/unit/test_sandbox_runtime.py:88: Windows Job Object backend
+6 failed, 475 passed, 15 skipped in 217.74s (0:03:37)
