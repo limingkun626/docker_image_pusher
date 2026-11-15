@@ -1,7 +1,8 @@
 {
+  "candidate_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
   "candidate_name": "full-inspection-repair",
   "candidate_path": "F:\\Codex\\runs\\fir-r2-release-20261115\\scope-generation-4\\full-inspection-repair",
-  "captured_at_utc": "2026-11-15T04:28:55+00:00",
+  "captured_at_utc": "2026-11-15T04:48:45+00:00",
   "file_count": 123,
   "files": [
     {
@@ -647,7 +648,7 @@
       "sha256": "b93f6ad7a4b9d719b4b53f029f731857ffbe8fb1877851cd8236c28ca01407d9"
     }
   },
-  "freeze_digest": "795a9e7d2cdbe12effaa1ee4bc261fd6aaf96c26666509eada82de15e85d7b91",
+  "freeze_digest": "0ebda2bfba6e2b538e27fe38eca81511901cf8bf1c7dbb2f17515c29546ffff5",
   "generation": 4,
   "package_manifest_digest": "b0cbdab3ba4f7a57aebb36ab7666cef1289734a8a3ab15d123f1f62714150baa",
   "package_manifest_sha256": "e265bbd38e45dd3588d719461c8851bc1da80b2ba7cdb2c2ba8bbc275c3af890",

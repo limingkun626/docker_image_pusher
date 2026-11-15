@@ -9,6 +9,6 @@
   "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
   "oidc_issuer": "https://token.actions.githubusercontent.com",
   "trust_root_id": "sigstore:abaa28e5742590a89203105e550752548daad953299b3bc66656bca0d1dd775c",
-  "requested_at_utc": "2026-11-15T05:05:00Z",
-  "request_attempt": 2
+  "requested_at_utc": "2026-11-15T05:10:00Z",
+  "request_attempt": 3
 }
