@@ -109,7 +109,7 @@ PATH_TOOL_ALIASES = {
     "import-linter": ("lint-imports", "import-linter"),
     "opengrep": ("opengrep",),
     "pytest": ("pytest",),
-    "schemathesis": ("schemathesis",),
+    "schemathesis": ("schemathesis-python",),
 }
 
 PYTHON_DISTRIBUTIONS = {

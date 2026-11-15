@@ -19,6 +19,7 @@ mkdir -p "${bin_dir}"
 for tool in pytest lint-imports mutmut schemathesis; do
   ln -sf "${venv}/bin/${tool}" "${bin_dir}/${tool}"
 done
+ln -sf "${venv}/bin/python" "${bin_dir}/schemathesis-python"
 case "${platform}" in
   macos)
     asset="opengrep_osx_arm64"

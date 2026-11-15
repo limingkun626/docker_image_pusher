@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import argparse
+import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -17,20 +19,29 @@ def main() -> int:
     parser.add_argument("target")
     args = parser.parse_args()
     target = Path(args.target).resolve()
-    run = subprocess.run(
-        [
-            "wsl.exe",
+    if os.name == "nt":
+        wsl = shutil.which("wsl.exe")
+        if wsl is None:
+            sys.stderr.write("wsl.exe is unavailable\n")
+            return 127
+        prefix = [
+            wsl,
             "-d",
             "Ubuntu2404",
             "--",
             "unshare",
             "-n",
             "--",
-            MUTMUT,
-            "run",
-            "--max-children",
-            "1",
-        ],
+            os.environ.get("FIR_MUTMUT", MUTMUT),
+        ]
+    else:
+        executable = shutil.which("mutmut")
+        if executable is None:
+            sys.stderr.write("mutmut executable is unavailable\n")
+            return 127
+        prefix = [executable]
+    run = subprocess.run(
+        [*prefix, "run", "--max-children", "1"],
         cwd=target,
         capture_output=True,
         text=True,
@@ -43,17 +54,7 @@ def main() -> int:
         sys.stderr.write(run.stderr)
         return run.returncode
     results = subprocess.run(
-        [
-            "wsl.exe",
-            "-d",
-            "Ubuntu2404",
-            "--",
-            "unshare",
-            "-n",
-            "--",
-            MUTMUT,
-            "results",
-        ],
+        [*prefix, "results"],
         cwd=target,
         capture_output=True,
         text=True,

@@ -71,14 +71,14 @@
       "sha256": "56bd7cd6139389d97f9ce8344a525b16411d162dc2a2daddf065cb62cd6f04e7"
     },
     {
-      "bytes": 1501,
+      "bytes": 1733,
       "path": "capabilities/tooling/mutmut_probe.py",
-      "sha256": "e0a7b45fc3f75bade96b8299759a4b284d56e085411aaeca8ade4df605df3b8c"
+      "sha256": "00c77959a2db91a4c8e2e74e15c3fd7e2608cef76c0d1f082322f5ea5b566a88"
     },
     {
-      "bytes": 2634,
+      "bytes": 3302,
       "path": "capabilities/tooling/schemathesis_probe.py",
-      "sha256": "fe58c9e05d9636e43251ec4d3862c5959f9468bb29371514544bf151213a2f9d"
+      "sha256": "65947719f53d2fcce3a13c7b984b4b7803d85a78563fafd2a5f24da49efbf86c"
     },
     {
       "bytes": 1349,
@@ -276,9 +276,9 @@
       "sha256": "c54126c3ce10a6785a36bf499f9fda27258dbf4fbe2618577b56cf18ddcb0217"
     },
     {
-      "bytes": 98662,
+      "bytes": 98669,
       "path": "scripts/full_inspection_repair/capabilities.py",
-      "sha256": "48293ecad7a6f65d99b3eecbe04d8bb896f9744623e0a251d91679792185249a"
+      "sha256": "40776e90212a0f27ef9a6391cf58d56c65d5e428e11afe1f7b97bc808a31a587"
     },
     {
       "bytes": 90658,
@@ -311,9 +311,9 @@
       "sha256": "bf081a8bac8a47fac763eaea71da4e18ace6b830c2e82a310f01a865df7d242f"
     },
     {
-      "bytes": 17081,
+      "bytes": 17091,
       "path": "scripts/full_inspection_repair/external_adapters.py",
-      "sha256": "cc9db8eb381b47a66eaaca1bf9e1f23300b83ee5bd71e2cd072c0f7cf14e6f41"
+      "sha256": "e88b995b0d53959d46452e64e19fe1b7061b963d6372fa0ffd2e28eec8a248f2"
     },
     {
       "bytes": 7506,
@@ -401,9 +401,9 @@
       "sha256": "9f7326383f56733fb9654d9da0a0e208e3b57f2df1c9e03bd56b9941f6d5a5b2"
     },
     {
-      "bytes": 50270,
+      "bytes": 50961,
       "path": "scripts/full_inspection_repair/sandbox.py",
-      "sha256": "15081fa19370c81bd13273ad15a5f2290d1fe563fb1cc6846d884522a760c2c6"
+      "sha256": "9ac349cadb1137c9ca1dc52062d639478b90434b58308bfb4fb7b5f88d5fff48"
     },
     {
       "bytes": 38030,
@@ -556,9 +556,9 @@
       "sha256": "4a217503a571cd388eac9e9c6aafe548a662699182f7b16220bc84a846455d52"
     },
     {
-      "bytes": 7458,
+      "bytes": 8810,
       "path": "tests/integration/test_runtime_exact_adapters.py",
-      "sha256": "f9c60dc43ab6ea278e4205ae1fa4d029c0ee66d113a6e440981ebc131d7ff24d"
+      "sha256": "2c0568db90c9e9230a5349464a3b824d1ddb6ae2103211b5f72ea242befcd2cb"
     },
     {
       "bytes": 3031,
@@ -741,9 +741,9 @@
       "sha256": "7df0818e4476e4c7d4c22abb3a608ef60c8669a763e86b5b4f6eaa471c00c12d"
     },
     {
-      "bytes": 12689,
+      "bytes": 13884,
       "path": "tests/unit/test_sandbox_runtime.py",
-      "sha256": "589795f9ebc973dc65f67f2a00bd94650ca096df33abe38eb8c3cb7e158e628d"
+      "sha256": "e15612308faf996fc409f00012a67b64cd7db8fe1167f98fe4a2f146aaa499fe"
     },
     {
       "bytes": 4223,
@@ -771,8 +771,8 @@
       "sha256": "616388c7358f7257e0aa4b8f320c737fdbe5a05d6ed1e9b2442073f07b63a298"
     }
   ],
-  "manifest_digest": "8a8f734ce818caf1cb417674475d5e3330d01e3e5e7727373eea80e90848ea0c",
+  "manifest_digest": "7e44cf2e7bd150980566d82c735b60858b838933cbf111397ada950ad4c9bb3f",
   "root_name": "full-inspection-repair",
   "schema_version": 1,
-  "tree_digest": "80e531398bd36ebf3bac1d376cc0b6a65c88262cab41bde4b25fc31b9189593c"
+  "tree_digest": "29638f466110a1ee5213a97161a52e2116f5bb28b6ad88814894a52d11ae0c42"
 }

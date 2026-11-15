@@ -1,28 +1,28 @@
 {
   "acceptance_matrix": {
-    "report_digest": "9eba29379a164374ed0338d6cb87258d5d6f0b0e9b1c56e674eeed73d39e8687",
-    "report_sha256": "2b474c144d463557a33bc4857e722a8c740dd45269740369d17e0de5e3ed1eae",
+    "report_digest": "9a9377ce30527d466e5e2339433e35e77d76ae29063538984d81a58e66024fc0",
+    "report_sha256": "0d8ab159b5410ece54653471b03996f20e9d234eb51d6544ae062b395755c975",
     "test_count": 76
   },
-  "candidate_digest": "80e531398bd36ebf3bac1d376cc0b6a65c88262cab41bde4b25fc31b9189593c",
+  "candidate_digest": "29638f466110a1ee5213a97161a52e2116f5bb28b6ad88814894a52d11ae0c42",
   "candidate_name": "full-inspection-repair",
-  "candidate_path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-10\\full-inspection-repair",
+  "candidate_path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-12\\full-inspection-repair",
   "capability_pack": {
     "pack_digest": "cd3ff9bdfe5c82efb4da296de9d752ecb40da76304112e05d913f222ad2bd0c0",
     "slices": 22,
     "status": "PASS",
-    "validation_sha256": "72819fc707912012273f880c17b74457a41f1e0a8b4b7bbcbffbba4e13bd744f"
+    "validation_sha256": "deb4411a0cf384ffffbc8067802d0507b89a5946af01d41ec26c9c9061982d9a"
   },
-  "captured_at_utc": "2026-11-15T19:21:38+00:00",
+  "captured_at_utc": "2026-11-15T19:45:06+00:00",
   "clean_probe_check": {
     "finding_count": 0,
     "ledger_digest": "5185d4dc72a1fb51d31a3556c9cc90c3a86162f0cddd6f4b58a1a4335e2f7f0e",
     "ledger_sha256": "c53c3a8cffc3b3c4373561c796d17add0de163d9aa01a4358370c4aff588d406",
     "semantic_cells": 72,
-    "semantic_digest": "ed3db408debcff93b444ef07acb76c64fb99bb19faf8920f722f496d5c2c1962",
-    "semantic_sha256": "4055e9e01d78724c5f52f4fdf72553464fc776c26d89ba577ef5ca44e1d16474",
+    "semantic_digest": "9c5b517428d6975b6f3b85b23c170d787ecc057127c7916c9928fb20b25c6995",
+    "semantic_sha256": "2ab6760293d61b940c67b4241d57e8eeacc19e7de9cd921c4818004dbf6aa8f9",
     "status": "CHECKED",
-    "summary_sha256": "b069cec8b24028303065118b0cc3e7ce3ed9329bf90dbf76f4f09576e9ee1619"
+    "summary_sha256": "fa345ca1b19cbc076a4e1ce3f979b0c68412b2a3ab84c66d92bb0df4586f2c3d"
   },
   "file_count": 154,
   "files": [
@@ -92,14 +92,14 @@
       "sha256": "56bd7cd6139389d97f9ce8344a525b16411d162dc2a2daddf065cb62cd6f04e7"
     },
     {
-      "bytes": 1501,
+      "bytes": 1733,
       "path": "capabilities/tooling/mutmut_probe.py",
-      "sha256": "e0a7b45fc3f75bade96b8299759a4b284d56e085411aaeca8ade4df605df3b8c"
+      "sha256": "00c77959a2db91a4c8e2e74e15c3fd7e2608cef76c0d1f082322f5ea5b566a88"
     },
     {
-      "bytes": 2634,
+      "bytes": 3302,
       "path": "capabilities/tooling/schemathesis_probe.py",
-      "sha256": "fe58c9e05d9636e43251ec4d3862c5959f9468bb29371514544bf151213a2f9d"
+      "sha256": "65947719f53d2fcce3a13c7b984b4b7803d85a78563fafd2a5f24da49efbf86c"
     },
     {
       "bytes": 1349,
@@ -297,9 +297,9 @@
       "sha256": "c54126c3ce10a6785a36bf499f9fda27258dbf4fbe2618577b56cf18ddcb0217"
     },
     {
-      "bytes": 98662,
+      "bytes": 98669,
       "path": "scripts/full_inspection_repair/capabilities.py",
-      "sha256": "48293ecad7a6f65d99b3eecbe04d8bb896f9744623e0a251d91679792185249a"
+      "sha256": "40776e90212a0f27ef9a6391cf58d56c65d5e428e11afe1f7b97bc808a31a587"
     },
     {
       "bytes": 90658,
@@ -332,9 +332,9 @@
       "sha256": "bf081a8bac8a47fac763eaea71da4e18ace6b830c2e82a310f01a865df7d242f"
     },
     {
-      "bytes": 17081,
+      "bytes": 17091,
       "path": "scripts/full_inspection_repair/external_adapters.py",
-      "sha256": "cc9db8eb381b47a66eaaca1bf9e1f23300b83ee5bd71e2cd072c0f7cf14e6f41"
+      "sha256": "e88b995b0d53959d46452e64e19fe1b7061b963d6372fa0ffd2e28eec8a248f2"
     },
     {
       "bytes": 7506,
@@ -422,9 +422,9 @@
       "sha256": "9f7326383f56733fb9654d9da0a0e208e3b57f2df1c9e03bd56b9941f6d5a5b2"
     },
     {
-      "bytes": 50270,
+      "bytes": 50961,
       "path": "scripts/full_inspection_repair/sandbox.py",
-      "sha256": "15081fa19370c81bd13273ad15a5f2290d1fe563fb1cc6846d884522a760c2c6"
+      "sha256": "9ac349cadb1137c9ca1dc52062d639478b90434b58308bfb4fb7b5f88d5fff48"
     },
     {
       "bytes": 38030,
@@ -582,9 +582,9 @@
       "sha256": "4a217503a571cd388eac9e9c6aafe548a662699182f7b16220bc84a846455d52"
     },
     {
-      "bytes": 7458,
+      "bytes": 8810,
       "path": "tests/integration/test_runtime_exact_adapters.py",
-      "sha256": "f9c60dc43ab6ea278e4205ae1fa4d029c0ee66d113a6e440981ebc131d7ff24d"
+      "sha256": "2c0568db90c9e9230a5349464a3b824d1ddb6ae2103211b5f72ea242befcd2cb"
     },
     {
       "bytes": 3031,
@@ -767,9 +767,9 @@
       "sha256": "7df0818e4476e4c7d4c22abb3a608ef60c8669a763e86b5b4f6eaa471c00c12d"
     },
     {
-      "bytes": 12689,
+      "bytes": 13884,
       "path": "tests/unit/test_sandbox_runtime.py",
-      "sha256": "589795f9ebc973dc65f67f2a00bd94650ca096df33abe38eb8c3cb7e158e628d"
+      "sha256": "e15612308faf996fc409f00012a67b64cd7db8fe1167f98fe4a2f146aaa499fe"
     },
     {
       "bytes": 4223,
@@ -820,20 +820,20 @@
     },
     "trust_policy": {
       "bytes": 1490075,
-      "path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-10\\full-inspection-repair\\policies\\trust-policy.json",
+      "path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-12\\full-inspection-repair\\policies\\trust-policy.json",
       "sha256": "b93f6ad7a4b9d719b4b53f029f731857ffbe8fb1877851cd8236c28ca01407d9"
     }
   },
-  "freeze_digest": "e4f4ea55d5656348434c0d534e1a77fb16d212f9a12b1fba6bb41a1f8804ba22",
+  "freeze_digest": "2463279483bf34485a9ac3809a3ae0739029a598553ba91050ef000c44c76466",
   "generation": 1,
-  "package_manifest_digest": "8a8f734ce818caf1cb417674475d5e3330d01e3e5e7727373eea80e90848ea0c",
-  "package_manifest_sha256": "56c5326cae70b740454647878a03f7b23a7dd74a996dac81651f152410292c15",
+  "package_manifest_digest": "7e44cf2e7bd150980566d82c735b60858b838933cbf111397ada950ad4c9bb3f",
+  "package_manifest_sha256": "df5866e1f9be21a88bee0e528c69b590816ce823ba372dcc9b3b26a89bd06250",
   "policy_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
   "registry_digest": "7ac802d2c036680e134f5bb589e5fbee2005ab8fc2c27ce46e476e40bb526cc0",
   "reviewer_registry_digest": "fe7c2fa54b17902fe99e9cb8c5805ee0f7caf7aed201055afe42d040de20a3b7",
-  "run_id": "fir-1.7.0-release-20261115-generation-10-r1",
+  "run_id": "fir-1.7.0-release-20261115-generation-12-r1",
   "schema_version": 2,
-  "scope_id": "fir-1.7.0-release-20261115-generation-10",
+  "scope_id": "fir-1.7.0-release-20261115-generation-12",
   "status": "FROZEN_CANDIDATE",
   "taxonomy_coverage_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
   "taxonomy_terminal_counts": {
@@ -843,15 +843,15 @@
     "MERGED_WITH_PRIMARY_CELL": 2,
     "NOT_APPLICABLE_WITH_PROOF": 8
   },
-  "tree_digest": "80e531398bd36ebf3bac1d376cc0b6a65c88262cab41bde4b25fc31b9189593c",
+  "tree_digest": "29638f466110a1ee5213a97161a52e2116f5bb28b6ad88814894a52d11ae0c42",
   "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
   "version": "1.7.0",
   "windows_tests": {
     "errors": 0,
     "failures": 0,
-    "junit_sha256": "5a9e5d8f45de5fdee3a5ff2c9b6fecaff0540f86bfee8464475f343338130245",
-    "passed": 487,
-    "skipped": 9,
-    "tests": 496
+    "junit_sha256": "fbc66dc87b1ec8e84fc944d0d7603a8f2dac6640b4f9fdcfb0e2fdb499a5d3a8",
+    "passed": 489,
+    "skipped": 10,
+    "tests": 499
   }
 }

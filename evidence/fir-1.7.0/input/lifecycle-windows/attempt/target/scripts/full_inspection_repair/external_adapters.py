@@ -401,7 +401,7 @@ def run_for_snapshot(cell_id: str, snapshot: Mapping[str, Any]) -> dict[str, Any
     try:
         target_manifest = {**_manifest(spec), "network_policy": "ALLOW"}
         with tempfile.TemporaryDirectory(prefix="fir-exact-target-") as directory:
-            target_copy = Path(directory) / "target"
+            target_copy = Path(directory).resolve() / "target"
             shutil.copytree(target_root, target_copy)
             target_copy_digest = str(_tree_binding(target_copy)["sha256"])
             target_receipt = run_slice(

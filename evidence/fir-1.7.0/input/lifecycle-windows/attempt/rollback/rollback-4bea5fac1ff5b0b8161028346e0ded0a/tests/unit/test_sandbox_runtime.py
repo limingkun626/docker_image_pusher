@@ -16,6 +16,7 @@ from full_inspection_repair.sandbox import (
     JOB_OBJECT_QUERY_FAILED,
     NETWORK_POLICY_UNENFORCEABLE,
     LinuxNsjailSandbox,
+    LinuxProcessSandbox,
     MacSandboxRuntimeBackend,
     SandboxLimits,
     SandboxResult,
@@ -122,6 +123,41 @@ def test_linux_backend_uses_a_new_network_namespace() -> None:
 
     assert "--clone_newnet" in command
     assert command[-1] == "/bin/true"
+
+
+def test_linux_allow_runs_without_nsjail(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(sandbox_module.os, "name", "posix")
+    monkeypatch.setattr(sandbox_module.sys, "platform", "linux")
+    monkeypatch.setattr(sandbox_module.shutil, "which", lambda name: None)
+    backend = sandbox_module.get_backend("ALLOW")
+
+    assert isinstance(backend, LinuxProcessSandbox)
+    assert backend._wrap(
+        ["/bin/true"],
+        cwd=Path("."),
+        limits=SandboxLimits(timeout_seconds=5),
+        policy="ALLOW",
+    ) == ["/bin/true"]
+
+
+def test_linux_deny_without_nsjail_blocks(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(sandbox_module.os, "name", "posix")
+    monkeypatch.setattr(sandbox_module.sys, "platform", "linux")
+    monkeypatch.setattr(sandbox_module.shutil, "which", lambda name: None)
+    observed = sandbox_module.get_backend("DENY").run(
+        ["/bin/true"],
+        cwd=None,
+        env=None,
+        limits=SandboxLimits(timeout_seconds=5),
+        network_policy="DENY",
+    )
+
+    assert observed.status == "BLOCKED_ADAPTER"
+    assert observed.failure_code == NETWORK_POLICY_UNENFORCEABLE
 
 
 def test_windows_job_assigns_suspended_process_before_resume(

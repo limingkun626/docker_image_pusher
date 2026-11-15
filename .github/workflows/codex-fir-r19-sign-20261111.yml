@@ -96,7 +96,7 @@ jobs:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
           set -o pipefail
-          python -B -m pytest -q -rs -p no:cacheprovider . \
+          python -B -m pytest -q -rs --showlocals -p no:cacheprovider . \
             --junitxml "$RUNNER_TEMP/macos-junit.xml" \
             --basetemp "$RUNNER_TEMP/pytest" \
             2>&1 | tee "$RUNNER_TEMP/macos-pytest.log"
@@ -193,7 +193,7 @@ jobs:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
           set -o pipefail
-          python -B -m pytest -q -rs -p no:cacheprovider . \
+          python -B -m pytest -q -rs --showlocals -p no:cacheprovider . \
             --junitxml "$RUNNER_TEMP/linux-junit.xml" \
             --basetemp "$RUNNER_TEMP/pytest" \
             2>&1 | tee "$RUNNER_TEMP/linux-pytest.log"

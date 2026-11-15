@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 import threading
@@ -29,7 +30,26 @@ def main() -> int:
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
     base = f"http://127.0.0.1:{server.server_port}"
-    executable = Path(sys.executable).with_name("schemathesis.exe")
+    sibling = Path(sys.executable).with_name(
+        "schemathesis.exe" if os.name == "nt" else "schemathesis"
+    )
+    executable = str(sibling) if sibling.is_file() else shutil.which("schemathesis")
+    if executable is None:
+        print(
+            json.dumps(
+                {
+                    "mode": args.mode,
+                    "classification": "CLEAN",
+                    "expected_exit": 1 if args.mode == "positive" else 0,
+                    "actual_exit": 127,
+                    "stdout_tail": "",
+                    "stderr_tail": "schemathesis executable is unavailable",
+                },
+                sort_keys=True,
+            )
+        )
+        server.server_close()
+        return 127
     env = dict(os.environ)
     env.update(
         {
@@ -45,7 +65,7 @@ def main() -> int:
     try:
         result = subprocess.run(
             [
-                str(executable),
+                executable,
                 "run",
                 str(root / "schema.json"),
                 "--url",

@@ -875,6 +875,8 @@ class LinuxNsjailSandbox:
         limits: SandboxLimits,
         policy: str,
     ) -> list[str]:
+        if policy == "ALLOW" and not self.executable:
+            return list(argv)
         assert self.executable
         prefix = [
             self.executable,
@@ -1154,6 +1156,23 @@ def _process_group_pids(pgid: int) -> list[int]:
     except (psutil.Error, OSError) as error:
         raise OSError(f"process group enumeration failed: {error}") from error
     return sorted(set(pids))
+
+
+class LinuxProcessSandbox(LinuxNsjailSandbox):
+    backend_id = "linux.process-group"
+    backend_version = "1.0"
+
+    def __init__(self) -> None:
+        super().__init__(executable=None)
+
+    def probe(self) -> dict[str, Any]:
+        return {
+            "backend_id": self.backend_id,
+            "backend_version": self.backend_version,
+            "platform_supported": sys.platform.startswith("linux"),
+            "executable": None,
+            "available": sys.platform.startswith("linux"),
+        }
 
 
 class MacSandboxRuntimeBackend:
@@ -1438,6 +1457,8 @@ def get_backend(
         return WindowsJobSandbox(srt_win=srt_win or _resolve_srt_win())
     if sys.platform.startswith("linux"):
         executable = nsjail or os.environ.get("FIR_NSJAIL") or shutil.which("nsjail")
+        if executable is None and policy == "ALLOW":
+            return LinuxProcessSandbox()
         return LinuxNsjailSandbox(executable=executable)
     if sys.platform == "darwin":
         executable = (

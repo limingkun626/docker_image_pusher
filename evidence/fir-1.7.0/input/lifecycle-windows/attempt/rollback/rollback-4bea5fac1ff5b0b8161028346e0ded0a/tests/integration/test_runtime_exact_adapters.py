@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -14,6 +15,7 @@ from full_inspection_repair.external_adapters import (
     run_external_cell,
     run_for_snapshot,
 )
+from full_inspection_repair import external_adapters as external_adapters_module
 from full_inspection_repair.lifecycle_adapters import (
     dependency_probe,
     install_upgrade_probe,
@@ -47,7 +49,7 @@ def test_every_external_adapter_executes_its_frozen_fixture_pair(
     cell_id: str,
 ) -> None:
     observed = run_external_cell(cell_id)
-    assert observed["status"] == "PASS"
+    assert observed["status"] == "PASS", observed
     assert observed["fixture_execution"]["positive"]["outcome"] == "FINDING"
     assert observed["fixture_execution"]["negative"]["outcome"] == "CLEAN"
 
@@ -62,7 +64,7 @@ def test_exact_adapter_runs_frozen_fixture_even_without_target_snapshot(
     assert observed["release_authority"] is False
     assert observed["tool_identity"]["fixture_digest"]
     assert observed["receipt_digest"]
-    assert observed["status"] == "PASS"
+    assert observed["status"] == "PASS", observed
     assert observed["failure_code"] is None
     assert observed["facts"]
     assert observed["fixture_execution"]["positive"]["outcome"] == "FINDING"
@@ -97,9 +99,55 @@ def test_exact_adapter_executes_target_not_only_fixtures(tmp_path: Path) -> None
         },
     )
 
-    assert observed["status"] == "PASS"
+    assert observed["status"] == "PASS", observed
     assert observed["inner_receipt_digest"]
     assert observed["tool_identity"]["target_digest"]
+
+
+@pytest.mark.skipif(os.name == "nt", reason="POSIX symlink fixture")
+def test_exact_adapter_resolves_temporary_parent_before_target_copy(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    actual = tmp_path / "actual"
+    actual.mkdir()
+    alias = tmp_path / "alias"
+    alias.symlink_to(actual, target_is_directory=True)
+    scratch = alias / "run"
+    scratch.mkdir()
+
+    class TemporaryDirectory:
+        name = str(scratch)
+
+        def __enter__(self) -> str:
+            return self.name
+
+        def __exit__(self, *args: object) -> None:
+            return None
+
+    monkeypatch.setattr(
+        external_adapters_module.tempfile,
+        "TemporaryDirectory",
+        lambda **_: TemporaryDirectory(),
+    )
+    target = tmp_path / "target"
+    target.mkdir()
+    (target / "test_ok.py").write_text(
+        "def test_ok():\n"
+        "    assert True\n",
+        encoding="utf-8",
+    )
+
+    observed = run_for_snapshot(
+        "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+        {
+            "target_root": str(target),
+            "subject_digest": "a" * 64,
+            "fixture_scratch_root": str(tmp_path / "fixtures"),
+        },
+    )
+
+    assert observed["status"] == "PASS", observed
 
 
 def test_semantic_witnesses_ignore_labels_and_line_conventions() -> None:
@@ -148,7 +196,7 @@ def test_run_cell_exact_adapter_uses_target_execution(
             "subject_digest": "a" * 64,
         },
     )
-    assert observed["status"] == "FINDING"
+    assert observed["status"] == "FINDING", observed
     assert observed["comparison"]["comparison"] == "AGREE"
     assert observed["duplicate_measurement"] is False
 
