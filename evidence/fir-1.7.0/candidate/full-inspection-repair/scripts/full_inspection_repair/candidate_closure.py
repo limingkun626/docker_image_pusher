@@ -16,7 +16,24 @@ from .contracts import (
     validate_run_manifest,
     validate_source_inventory,
 )
-from .verification_matrix import verify_matrix_binding
+from .source_inventory import (
+    assert_source_closure_complete,
+    build_source_closure,
+    build_source_closure_evidence,
+    build_source_inventory,
+)
+from .runtime_registry import load_registry
+from .semantic_matrix import (
+    build_semantic_evaluation_matrix,
+    execute_semantic_matrix,
+    semantic_case_identities,
+    semantic_report_projection,
+)
+from .verification_matrix import (
+    build_case_registry,
+    validate_case_registry,
+    verify_matrix_binding,
+)
 
 
 class ClosureError(ValueError):
@@ -117,6 +134,176 @@ def build_candidate_source_inventory(
     return inventory
 
 
+def _assert_no_semantic_findings(report: Mapping[str, Any]) -> None:
+    findings = report.get("findings")
+    if not findings:
+        return
+    finding_ids = sorted(
+        str(item.get("semantic_digest"))
+        for item in findings
+        if isinstance(item, Mapping)
+    )
+    raise ClosureError(
+        "candidate semantic execution retains findings: " + ", ".join(finding_ids),
+        "BLOCKED_VERIFICATION",
+    )
+
+
+def _validate_source_evidence(
+    *,
+    source_inventory_report: Mapping[str, Any],
+    semantic_report: Mapping[str, Any],
+    source_closure: Mapping[str, Any],
+    detection: Mapping[str, Any],
+    oracle: Mapping[str, Any],
+    run: Mapping[str, Any],
+    candidate_digest: str,
+    candidate_root: str | Path,
+    registry: Any,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    if source_inventory_report.get("source_inventory_digest") != material_digest(
+        dict(source_inventory_report), "source_inventory_digest"
+    ):
+        raise ClosureError(
+            "source inventory report digest mismatch", "BLOCKED_EVIDENCE"
+        )
+    subject = build_subject(candidate_root, "SKILL")
+    runtime_registry = load_registry()
+    expected_registry_digest = (
+        registry.get("registry_digest", registry.get("digest"))
+        if isinstance(registry, Mapping)
+        else str(registry)
+    )
+    if runtime_registry.registry_digest != expected_registry_digest:
+        raise ClosureError("runtime registry is not the frozen registry", "BLOCKED_STALE_INPUT")
+    registry_snapshot = runtime_registry
+    expected_inventory = build_source_inventory(
+        subject,
+        candidate_digest=candidate_digest,
+        registry_snapshot=registry_snapshot,
+    )
+    if expected_inventory != source_inventory_report:
+        raise ClosureError(
+            "source inventory report does not match candidate bytes",
+            "BLOCKED_EVIDENCE",
+        )
+    expected_report = {
+        "subject_digest": candidate_digest,
+        "candidate_digest": candidate_digest,
+        "runtime_registry_digest": run["bindings"]["registry_digest"],
+        "source_inventory_digest": source_inventory_report[
+            "source_inventory_digest"
+        ],
+        "taxonomy_digest": run["bindings"]["taxonomy_policy_digest"],
+    }
+    for field, expected in expected_report.items():
+        if semantic_report.get(field) != expected:
+            raise ClosureError(
+                f"semantic report {field} mismatch", "BLOCKED_EVIDENCE"
+            )
+    if semantic_report.get("report_digest") != material_digest(
+        dict(semantic_report), "report_digest"
+    ):
+        raise ClosureError("semantic report digest mismatch", "BLOCKED_EVIDENCE")
+    cells = semantic_report.get("cells")
+    if not isinstance(cells, list) or not cells:
+        raise ClosureError("semantic report cells are missing", "BLOCKED_EVIDENCE")
+    cell_ids = [str(cell["cell_id"]) for cell in cells]
+    if [str(item) for item in semantic_report.get("receipt_digests", [])] != [
+        str(cell.get("receipt_digest")) for cell in cells
+    ]:
+        raise ClosureError(
+            "semantic report receipt list does not match its cells",
+            "BLOCKED_EVIDENCE",
+        )
+    for cell in cells:
+        if cell.get("receipt_digest") != material_digest(cell, "receipt_digest"):
+            raise ClosureError(
+                f"semantic cell receipt digest mismatch: {cell.get('cell_id')}",
+                "BLOCKED_EVIDENCE",
+            )
+    for label, report in (("detection", detection), ("oracle", oracle)):
+        report_cells = report.get("cells")
+        if not isinstance(report_cells, list):
+            raise ClosureError(f"{label} cells are missing", "BLOCKED_EVIDENCE")
+        if [str(cell.get("cell_id")) for cell in report_cells] != cell_ids:
+            raise ClosureError(
+                f"{label} cells do not match the semantic report",
+                "BLOCKED_EVIDENCE",
+            )
+        expected_receipts = []
+        for cell in cells:
+            role = "detector_result" if label == "detection" else "oracle_result"
+            result = cell.get(role)
+            receipt = (
+                result.get("result_digest")
+                if isinstance(result, Mapping) and result.get("result_digest")
+                else cell.get("receipt_digest")
+            )
+            expected_receipts.append(str(receipt))
+        if [str(cell.get("receipt_digest")) for cell in report_cells] != expected_receipts:
+            raise ClosureError(
+                f"{label} receipts do not match the semantic report",
+                "BLOCKED_EVIDENCE",
+            )
+        if [str(item) for item in report.get("receipt_digests", [])] != expected_receipts:
+            raise ClosureError(
+                f"{label} receipt digests do not match the semantic report",
+                "BLOCKED_EVIDENCE",
+            )
+    expected_evidence = build_source_closure_evidence(
+        source_inventory_report,
+        scope_id=str(run["run_id"]),
+        semantic_report=semantic_report,
+        environment_digest=str(run["bindings"]["environment_digest"]),
+    )
+    expected_closure = build_source_closure(
+        source_inventory_report,
+        scope_id=str(run["run_id"]),
+        evidence=expected_evidence,
+    )
+    if dict(source_closure) != expected_closure:
+        raise ClosureError(
+            "source closure is not reproducible from the current evidence",
+            "BLOCKED_EVIDENCE",
+        )
+    actual_semantic = execute_semantic_matrix(
+        subject,
+        runtime_registry,
+        phase=str(semantic_report.get("phase") or "VERIFICATION"),
+        candidate_digest=candidate_digest,
+        scope_id=str(run["run_id"]),
+    )
+    _assert_no_semantic_findings(actual_semantic)
+    if semantic_report_projection(actual_semantic) != semantic_report_projection(
+        semantic_report
+    ):
+        raise ClosureError(
+            "semantic report is not reproducible by the frozen executors",
+            "BLOCKED_EVIDENCE",
+        )
+    registry_data = runtime_registry.as_dict()
+    tool_digest = canonical_digest(
+        {
+            "known_tools": registry_data["known_tools"],
+            "tool_closures": registry_data["tool_closures"],
+            "sandbox_backends": registry_data["sandbox_backends"],
+        }
+    )
+    expected_cases = build_case_registry(
+        semantic_case_identities(actual_semantic, tool_digest)
+    )
+    expected_matrix = build_semantic_evaluation_matrix(
+        actual_semantic,
+        tool_digest=tool_digest,
+        run_id=str(run["run_id"]),
+        scope_digest=str(run["scope_digest"]),
+        subject_digest=str(run["subject"]["tree_digest"]),
+        candidate_digest=candidate_digest,
+    )
+    return expected_cases, expected_matrix
+
+
 def require_candidate_closure(
     *,
     candidate: dict[str, Any],
@@ -127,9 +314,12 @@ def require_candidate_closure(
     taxonomy: dict[str, Any],
     impact: dict[str, Any],
     matrix: dict[str, Any],
+    source_inventory_report: Mapping[str, Any],
+    semantic_report: Mapping[str, Any],
+    evaluation_case_registry: Mapping[str, Any],
     registry: Any,
     run: dict[str, Any],
-    candidate_root: str | Path | None = None,
+    candidate_root: str | Path,
     source_closure: Mapping[str, Any] | None = None,
     source_denominator_digest: str | None = None,
 ) -> dict[str, Any]:
@@ -166,15 +356,14 @@ def require_candidate_closure(
         run["candidate_digest"],
         "BLOCKED_EVIDENCE",
     )
-    if candidate_root is not None:
-        try:
-            actual = build_subject(candidate_root, "SKILL")
-        except ValueError as exc:
-            raise ClosureError(
-                f"candidate bytes cannot be rebuilt: {exc}"
-            ) from exc
-        _equal("candidate bytes", actual.tree_digest, candidate_digest)
-        _equal("candidate dirHash1", dir_hash1(candidate_root), candidate["candidate_dir_hash1"])
+    try:
+        actual = build_subject(candidate_root, "SKILL")
+    except ValueError as exc:
+        raise ClosureError(
+            f"candidate bytes cannot be rebuilt: {exc}"
+        ) from exc
+    _equal("candidate bytes", actual.tree_digest, candidate_digest)
+    _equal("candidate dirHash1", dir_hash1(candidate_root), candidate["candidate_dir_hash1"])
 
     expected = {
         "run_id": run["run_id"],
@@ -219,6 +408,21 @@ def require_candidate_closure(
     )
     if source_closure is None:
         raise ClosureError("candidate source closure is missing", "BLOCKED_EVIDENCE")
+    expected_case_registry, expected_matrix = _validate_source_evidence(
+        source_inventory_report=source_inventory_report,
+        semantic_report=semantic_report,
+        source_closure=source_closure,
+        detection=detection,
+        oracle=oracle,
+        run=run,
+        candidate_digest=candidate_digest,
+        candidate_root=candidate_root,
+        registry=registry,
+    )
+    try:
+        assert_source_closure_complete(source_closure)
+    except ContractError as exc:
+        raise ClosureError(str(exc), "BLOCKED_EVIDENCE") from exc
     _equal(
         "source closure candidate",
         source_closure.get("candidate_digest"),
@@ -231,21 +435,6 @@ def require_candidate_closure(
         source_denominator_digest,
         "BLOCKED_EVIDENCE",
     )
-    if source_closure.get("terminal_count") != source_closure.get("source_count"):
-        raise ClosureError("candidate source closure is incomplete")
-    closure_material = {
-        key: value
-        for key, value in source_closure.items()
-        if key != "closure_digest"
-    }
-    if source_closure.get("closure_digest") != material_digest(
-        closure_material,
-        "closure_digest",
-    ):
-        raise ClosureError(
-            "candidate source closure digest mismatch",
-            "BLOCKED_EVIDENCE",
-        )
     _validate_for_closure(
         validate_risk_ledger_v2,
         ledger,
@@ -385,6 +574,24 @@ def require_candidate_closure(
             digest,
             "BLOCKED_EVIDENCE",
         )
+    case_registry = validate_case_registry(evaluation_case_registry)
+    case_registry_digest = str(case_registry["registry_digest"])
+    if case_registry != expected_case_registry:
+        raise ClosureError(
+            "evaluation case registry is not derived from the executed matrix",
+            "BLOCKED_EVIDENCE",
+        )
+    _equal(
+        "evaluation case registry",
+        run["bindings"]["evaluation_case_registry_digest"],
+        case_registry_digest,
+        "BLOCKED_EVIDENCE",
+    )
+    if matrix != expected_matrix:
+        raise ClosureError(
+            "verification matrix is not reproducible from the executed cases",
+            "BLOCKED_EVIDENCE",
+        )
     try:
         verify_matrix_binding(
             matrix,
@@ -392,6 +599,8 @@ def require_candidate_closure(
             scope_digest=run["scope_digest"],
             subject_digest=run["subject"]["tree_digest"],
             candidate_digest=candidate_digest,
+            expected_identities=case_registry["cases"],
+            case_registry_digest=case_registry_digest,
         )
     except ValueError as exc:
         raise ClosureError(str(exc)) from exc
@@ -434,6 +643,9 @@ def rebuild_candidate(
     taxonomy: dict[str, Any],
     impact: dict[str, Any],
     matrix: dict[str, Any],
+    source_inventory_report: dict[str, Any],
+    semantic_report: dict[str, Any],
+    evaluation_case_registry: dict[str, Any],
     registry: Any,
     source_closure: dict[str, Any] | None = None,
     source_denominator_digest: str | None = None,
@@ -471,6 +683,9 @@ def rebuild_candidate(
         taxonomy=taxonomy,
         impact=impact,
         matrix=matrix,
+        source_inventory_report=source_inventory_report,
+        semantic_report=semantic_report,
+        evaluation_case_registry=evaluation_case_registry,
         registry=registry,
         run=run,
         candidate_root=candidate_root,

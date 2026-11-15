@@ -38,6 +38,7 @@ def _resign(inventory: dict[str, object]) -> None:
 def _evidence(inventory: dict[str, object]) -> dict[str, dict[str, object]]:
     return build_source_closure_evidence(
         inventory,
+        scope_id="scope:test",
         semantic_report={
             "report_digest": "1" * 64,
             "cells": [
@@ -122,7 +123,11 @@ def test_t_src_05_candidate_binding_is_not_reusable(tmp_path: Path) -> None:
             subject_digest=subject.tree_digest,
             candidate_digest="c" * 64,
         )
-    closure = build_source_closure(inventory, evidence=_evidence(inventory))
+    closure = build_source_closure(
+        inventory,
+        scope_id="scope:test",
+        evidence=_evidence(inventory),
+    )
     assert_source_closure_complete(closure)
 
 
@@ -137,4 +142,22 @@ def test_source_closure_does_not_self_certify_applicable_sources(
         for item in closure["records"]
     )
     with pytest.raises(SourceInventoryError, match="nonterminal"):
+        assert_source_closure_complete(closure)
+
+
+def test_source_closure_rejects_opaque_unresolved_evidence(
+    tmp_path: Path,
+) -> None:
+    inventory = build_source_inventory(_subject(tmp_path))
+    closure = build_source_closure(
+        inventory,
+        scope_id="scope:test",
+        evidence=_evidence(inventory),
+    )
+    closure["records"][0]["evidence_refs"] = ["never-executed"]
+    closure["closure_digest"] = canonical_digest(
+        {key: value for key, value in closure.items() if key != "closure_digest"}
+    )
+
+    with pytest.raises(SourceInventoryError, match="unresolved evidence"):
         assert_source_closure_complete(closure)

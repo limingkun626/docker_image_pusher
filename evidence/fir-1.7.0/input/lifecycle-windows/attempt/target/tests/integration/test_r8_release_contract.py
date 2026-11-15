@@ -33,7 +33,7 @@ from full_inspection_repair.review import (
 )
 from full_inspection_repair.risk_gate import REQUIRED_DOMAINS
 from release_skill import run as release_run
-from domain_receipt_fixture import domain_entry
+from domain_receipt_fixture import domain_entry, signed_domain_set
 
 ISSUER = "issuer.example/r8-review"
 HISTORY_KEY = b"r8-release-history-anchor-key-0001"
@@ -131,6 +131,11 @@ def _evidence_bundle(
         "ledger_digest",
     )
     domains = _domains(scope, candidate)
+    domain_signature = signed_domain_set(
+        domains,
+        scope_digest=scope,
+        candidate_digest=candidate,
+    )
     matrix = _with_digest(
         {
             "schema_version": 1,
@@ -172,6 +177,7 @@ def _evidence_bundle(
         "coverage": coverage,
         "matrix": matrix,
         "domains": domains,
+        "domain_signature": domain_signature,
         "limitations": [],
         "unverified_claims": [],
         "not_run": [],

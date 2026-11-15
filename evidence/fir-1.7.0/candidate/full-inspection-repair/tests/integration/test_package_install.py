@@ -30,7 +30,7 @@ from full_inspection_repair.review import (
     trust_root_id_for_public_key,
 )
 from full_inspection_repair.risk_gate import REQUIRED_DOMAINS
-from domain_receipt_fixture import domain_entry
+from domain_receipt_fixture import domain_entry, signed_domain_set
 
 ISSUER = "issuer.example/package-review"
 EVALUATOR_BYTES = canonical_json({"evaluator": "package-install"}).encode("utf-8")
@@ -146,6 +146,11 @@ def _bundle(
     evaluator = EVALUATOR
     coverage = build_complete_coverage({"SKILL.md": b"# Demo\n"})
     domains = _domains(scope, candidate)
+    domain_signature = signed_domain_set(
+        domains,
+        scope_digest=scope,
+        candidate_digest=candidate,
+    )
     matrix: dict[str, object] = {
         "schema_version": 1,
         "status": "PASS",
@@ -195,6 +200,7 @@ def _bundle(
         "coverage": coverage,
         "matrix": matrix,
         "domains": domains,
+        "domain_signature": domain_signature,
         "limitations": [],
         "unverified_claims": [],
         "not_run": [],

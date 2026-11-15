@@ -279,6 +279,8 @@ def _validate_domain_signature(
                 isinstance(entry, dict)
                 and isinstance(entry.get("receipt"), dict)
             ):
+                entry.pop("receipt_sha256", None)
+                entry["receipt"].pop("receipt_digest", None)
                 entry["receipt"].pop("signature_receipt_digest", None)
     if not isinstance(signature, dict):
         raise ValueError("verified domain-set signature is missing")

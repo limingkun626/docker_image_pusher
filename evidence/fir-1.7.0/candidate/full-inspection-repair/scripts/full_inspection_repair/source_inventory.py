@@ -466,6 +466,38 @@ def build_source_closure(
                 "unsupported_reason",
                 None if supplied else "EVIDENCE_NOT_SUPPLIED",
             )
+        receipts = {
+            str(item.get("evidence_ref")): item
+            for item in supplied.get("receipts", [])
+            if isinstance(item, Mapping)
+        }
+        if status in SATISFYING_TERMINAL_STATUSES and source.get(
+            "applicability"
+        ) == "APPLICABLE":
+            unresolved = [
+                str(ref)
+                for ref in refs
+                if str(ref) not in receipts
+                or receipts[str(ref)].get("receipt_digest")
+                != canonical_digest(
+                    {
+                        key: value
+                        for key, value in receipts[str(ref)].items()
+                        if key != "receipt_digest"
+                    }
+                )
+                or receipts[str(ref)].get("source_id") != source_id
+                or receipts[str(ref)].get("scope_id") != scope_id
+                or receipts[str(ref)].get("subject_digest")
+                != inventory["subject_digest"]
+                or receipts[str(ref)].get("candidate_digest")
+                != inventory.get("candidate_digest")
+                or receipts[str(ref)].get("runtime_registry_digest")
+                != inventory.get("runtime_registry_digest")
+            ]
+            if unresolved:
+                status = "BLOCKED"
+                reason = "EVIDENCE_UNRESOLVED"
         if status not in TERMINAL_STATUSES:
             raise SourceInventoryError(f"invalid source terminal status: {status}")
         if status in SATISFYING_TERMINAL_STATUSES and not all(refs):
@@ -487,6 +519,9 @@ def build_source_closure(
                 "evidence_method_version": str(
                     supplied.get("evidence_method_version", "1.0.0")
                 ),
+                "evidence_receipts": [
+                    receipts[ref] for ref in refs if ref in receipts
+                ],
                 "unsupported_reason": reason,
                 "proof_ref": source.get("proof_ref"),
             }
@@ -521,11 +556,12 @@ def build_source_closure(
 def build_source_closure_evidence(
     inventory: Mapping[str, Any],
     *,
+    scope_id: str,
     semantic_report: Mapping[str, Any],
     environment_digest: str,
 ) -> dict[str, dict[str, Any]]:
     report_digest = str(semantic_report["report_digest"])
-    registry_digest = str(inventory["runtime_registry_digest"])
+    registry_digest = inventory.get("runtime_registry_digest")
     cells = [item for item in semantic_report["cells"] if isinstance(item, Mapping)]
     receipt_digests = sorted(
         str(item["receipt_digest"]) for item in cells if item.get("receipt_digest")
@@ -587,11 +623,30 @@ def build_source_closure_evidence(
             raise SourceInventoryError(
                 f"no evidence projection for source type: {source_type}"
             )
+        receipts = []
+        for ref in refs:
+            receipt: dict[str, Any] = {
+                "schema_version": 1,
+                "kind": "source-evidence-receipt",
+                "source_id": source_id,
+                "source_type": source_type,
+                "scope_id": scope_id,
+                "subject_digest": str(inventory["subject_digest"]),
+                "candidate_digest": inventory.get("candidate_digest"),
+                "runtime_registry_digest": registry_digest,
+                "evidence_ref": ref,
+                "evidence_sha256": ref.rsplit(":", 1)[-1],
+                "method_id": method,
+                "method_version": "1.0.0",
+            }
+            receipt["receipt_digest"] = canonical_digest(receipt)
+            receipts.append(receipt)
         evidence[source_id] = {
             "terminal_status": "SATISFIED",
             "evidence_refs": refs,
             "evidence_method_id": method,
             "evidence_method_version": "1.0.0",
+            "receipts": receipts,
         }
     return evidence
 
@@ -615,6 +670,40 @@ def assert_source_closure_complete(closure: Mapping[str, Any]) -> None:
     if blocking:
         raise SourceInventoryError(
             "source closure has nonterminal sources: " + ", ".join(blocking)
+        )
+    unresolved: list[str] = []
+    for item in records:
+        if item.get("terminal_status") != "SATISFIED":
+            continue
+        receipts = {
+            str(receipt.get("evidence_ref")): receipt
+            for receipt in item.get("evidence_receipts", [])
+            if isinstance(receipt, Mapping)
+        }
+        for ref in item.get("evidence_refs", []):
+            receipt = receipts.get(str(ref))
+            if (
+                receipt is None
+                or receipt.get("receipt_digest")
+                != canonical_digest(
+                    {
+                        key: value
+                        for key, value in receipt.items()
+                        if key != "receipt_digest"
+                    }
+                )
+                or receipt.get("source_id") != item["source_id"]
+                or receipt.get("scope_id") != closure.get("scope_id")
+                or receipt.get("subject_digest") != closure.get("subject_digest")
+                or receipt.get("candidate_digest") != closure.get("candidate_digest")
+                or receipt.get("runtime_registry_digest")
+                != closure.get("runtime_registry_digest")
+            ):
+                unresolved.append(str(item["source_id"]))
+                break
+    if unresolved:
+        raise SourceInventoryError(
+            "source closure has unresolved evidence: " + ", ".join(unresolved)
         )
     if closure.get("source_count") != len(records):
         raise SourceInventoryError("source closure source_count mismatch")

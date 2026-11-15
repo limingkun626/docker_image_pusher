@@ -115,6 +115,8 @@ def normalized_domains(domains: dict[str, Any]) -> dict[str, Any]:
             continue
         for entry in group.values():
             if isinstance(entry, dict) and isinstance(entry.get("receipt"), dict):
+                entry.pop("receipt_sha256", None)
+                entry["receipt"].pop("receipt_digest", None)
                 entry["receipt"].pop("signature_receipt_digest", None)
     return value
 
@@ -505,6 +507,56 @@ def verify_power_evidence(
     return value
 
 
+def verify_clean_probe(
+    root: Path,
+    *,
+    platform_name: str,
+) -> dict[str, Any]:
+    summary = read_json(root / "summary.json")
+    semantic = read_json(root / "semantic-matrix.json")
+    ledger = read_json(root / "risk-ledger.json")
+    require_digest(semantic, "report_digest", f"{platform_name} semantic matrix")
+    require_digest(ledger, "ledger_digest", f"{platform_name} clean-probe ledger")
+    cells = semantic.get("cells")
+    if not isinstance(cells, list):
+        raise ValueError(f"{platform_name} clean probe semantic cells are missing")
+    if (
+        summary.get("status") != "CHECKED"
+        or summary.get("open_count") != 0
+        or summary.get("blocked_detectors") not in (None, [])
+        or summary.get("semantic_matrix_digest") != semantic.get("report_digest")
+        or semantic.get("finding_count") != 0
+        or semantic.get("findings") != []
+        or semantic.get("cell_count") != summary.get("semantic_cell_count")
+        or semantic.get("cell_count") != 72
+        or len(cells) != 72
+    ):
+        raise ValueError(f"{platform_name} clean probe semantic evidence is not closed")
+    if any(
+        cell.get("status") not in {"CLEAN", "CLEAN_WITH_PROOF"}
+        or cell.get("findings")
+        for cell in cells
+        if isinstance(cell, dict)
+    ):
+        raise ValueError(f"{platform_name} clean probe has non-clean semantic cells")
+    if (
+        ledger.get("open_count") != 0
+        or ledger.get("items") != []
+        or ledger.get("missing_sources")
+        or ledger.get("unexpected_sources")
+        or ledger.get("residual_risks")
+        or ledger.get("unresolved_ids")
+    ):
+        raise ValueError(f"{platform_name} clean probe ledger is not closed")
+    return {
+        "summary": summary,
+        "semantic": semantic,
+        "ledger": ledger,
+        "semantic_sha256": sha256(root / "semantic-matrix.json"),
+        "ledger_sha256": sha256(root / "risk-ledger.json"),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, required=True)
@@ -610,10 +662,32 @@ def main() -> int:
         "macos": junit_counts(macos_junit),
     }
 
+    clean_probes = {
+        "windows": verify_clean_probe(windows_check, platform_name="windows"),
+        "linux": verify_clean_probe(linux_check, platform_name="linux"),
+        "macos": verify_clean_probe(
+            macos / "self-check",
+            platform_name="macos",
+        ),
+    }
+    frozen_probe = freeze.get("clean_probe_check")
+    windows_probe = clean_probes["windows"]
+    if not isinstance(frozen_probe, dict):
+        raise ValueError("candidate freeze lacks clean-probe evidence")
+    expected_probe_bindings = {
+        "summary_sha256": sha256(windows_check / "summary.json"),
+        "semantic_digest": windows_probe["semantic"]["report_digest"],
+        "semantic_sha256": windows_probe["semantic_sha256"],
+        "finding_count": windows_probe["semantic"]["finding_count"],
+        "ledger_digest": windows_probe["ledger"]["ledger_digest"],
+        "ledger_sha256": windows_probe["ledger_sha256"],
+    }
+    for field, expected in expected_probe_bindings.items():
+        if frozen_probe.get(field) != expected:
+            raise ValueError(f"candidate freeze clean-probe {field} mismatch")
     checks = {
-        "windows": read_json(windows_check / "summary.json"),
-        "linux": read_json(linux_check / "summary.json"),
-        "macos": read_json(macos / "self-check" / "summary.json"),
+        name: value["summary"]
+        for name, value in clean_probes.items()
     }
     probe_digests = {
         name: value.get("tree_digest") for name, value in checks.items()
@@ -676,10 +750,15 @@ def main() -> int:
         }
         for item in manifest["files"]
     ]
+    probe_findings = [
+        finding
+        for probe in clean_probes.values()
+        for finding in probe["ledger"]["items"]
+    ]
     ledger = build_risk_ledger(
         scope_digest=scope_digest,
         required_sources=source_ids,
-        findings=[],
+        findings=probe_findings,
         source_inventory=source_inventory,
     )
     if (
@@ -1021,6 +1100,22 @@ def main() -> int:
         },
         "candidate_checks": checks,
         "clean_probe_digest": probe_digest,
+        "clean_probe_semantic_digests": {
+            name: value["semantic"]["report_digest"]
+            for name, value in clean_probes.items()
+        },
+        "clean_probe_ledger_digests": {
+            name: value["ledger"]["ledger_digest"]
+            for name, value in clean_probes.items()
+        },
+        "clean_probe_semantic_sha256": {
+            name: value["semantic_sha256"]
+            for name, value in clean_probes.items()
+        },
+        "clean_probe_ledger_sha256": {
+            name: value["ledger_sha256"]
+            for name, value in clean_probes.items()
+        },
         "taxonomy": {
             "cells": len(coverage_matrix["cells"]),
             "terminal_counts": terminal_counts,
@@ -1057,8 +1152,8 @@ def main() -> int:
         "domains_digest": canonical_digest(domains),
         "domain_signature_digest": domain_signature["receipt_digest"],
         "domain_signature_artifacts": domain_signature_artifacts,
-        "findings_digest": canonical_digest([]),
-        "findings": [],
+        "findings_digest": canonical_digest(probe_findings),
+        "findings": probe_findings,
         "limitations": [],
         "unverified_claims": [],
         "not_run": [],
@@ -1068,7 +1163,7 @@ def main() -> int:
         "reviewed_at": reviewed_at,
     }
     gate = assess_release_gate(
-        findings=[],
+        findings=probe_findings,
         review=seed_review,
         domains=domains,
         coverage=coverage,
@@ -1092,10 +1187,11 @@ def main() -> int:
         "verification_digest": verification["verification_digest"],
         "ledger_digest": ledger["ledger_digest"],
         "evaluator_digest": evaluator_digest,
-        "findings": [],
+        "findings": probe_findings,
         "coverage": coverage,
         "matrix": matrix,
         "domains": domains,
+        "domain_signature": domain_signature,
         "limitations": [],
         "unverified_claims": [],
         "not_run": [],
@@ -1126,7 +1222,7 @@ def main() -> int:
         "domains_digest": canonical_digest(domains),
         "domain_signature_digest": domain_signature["receipt_digest"],
         "domain_signature_artifacts": domain_signature_artifacts,
-        "findings_digest": canonical_digest([]),
+        "findings_digest": canonical_digest(probe_findings),
         "power_evidence_digest": power["evidence_digest"],
         "reviewed_at": reviewed_at,
     }
@@ -1142,12 +1238,13 @@ def main() -> int:
         "evaluator_digest": evaluator_digest,
         "coverage_digest": coverage["coverage_digest"],
         "domains_digest": canonical_digest(domains),
-        "findings_digest": canonical_digest([]),
+        "findings_digest": canonical_digest(probe_findings),
         "matrix_digest": matrix["matrix_digest"],
-        "findings": [],
+        "findings": probe_findings,
         "coverage": coverage,
         "matrix": matrix,
         "domains": domains,
+        "domain_signature": domain_signature,
         "limitations": [],
         "unverified_claims": [],
         "not_run": [],

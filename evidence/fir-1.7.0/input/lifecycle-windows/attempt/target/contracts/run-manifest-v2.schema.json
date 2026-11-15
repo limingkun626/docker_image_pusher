@@ -43,7 +43,8 @@
         "knowledge_pack_digest",
         "tool_closure_digest",
         "environment_digest",
-        "config_digest"
+        "config_digest",
+        "evaluation_case_registry_digest"
       ],
       "properties": {
         "registry_digest": { "$ref": "#/$defs/digest" },
@@ -52,7 +53,8 @@
         "knowledge_pack_digest": { "$ref": "#/$defs/digest" },
         "tool_closure_digest": { "$ref": "#/$defs/digest" },
         "environment_digest": { "$ref": "#/$defs/digest" },
-        "config_digest": { "$ref": "#/$defs/digest" }
+        "config_digest": { "$ref": "#/$defs/digest" },
+        "evaluation_case_registry_digest": { "$ref": "#/$defs/digest" }
       }
     },
     "repair_plan_digest": { "anyOf": [{ "$ref": "#/$defs/digest" }, { "type": "null" }] },

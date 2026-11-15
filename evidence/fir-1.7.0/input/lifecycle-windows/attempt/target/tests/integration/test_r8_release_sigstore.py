@@ -28,7 +28,7 @@ from full_inspection_repair.review import (
     sigstore_trust_root_id,
 )
 from full_inspection_repair.risk_gate import REQUIRED_DOMAINS
-from domain_receipt_fixture import domain_entry
+from domain_receipt_fixture import domain_entry, signed_domain_set
 
 IDENTITY = (
     "https://github.com/example/release/.github/workflows/publish.yml"
@@ -82,6 +82,11 @@ def _subject(source: Path) -> tuple[dict[str, object], dict[str, object]]:
     evaluator = EVALUATOR
     coverage = build_complete_coverage({"SKILL.md": b"# Demo\n"})
     domains = _domains(scope, candidate)
+    domain_signature = signed_domain_set(
+        domains,
+        scope_digest=scope,
+        candidate_digest=candidate,
+    )
     matrix: dict[str, object] = {
         "schema_version": 1,
         "status": "PASS",
@@ -129,6 +134,7 @@ def _subject(source: Path) -> tuple[dict[str, object], dict[str, object]]:
         "coverage": coverage,
         "matrix": matrix,
         "domains": domains,
+        "domain_signature": domain_signature,
         "limitations": [],
         "unverified_claims": [],
         "not_run": [],

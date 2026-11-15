@@ -68,12 +68,12 @@
     {
       "artifact_id": "artifact:scripts/full_inspection_repair/semantic_matrix.py",
       "path": "scripts/full_inspection_repair/semantic_matrix.py",
-      "sha256": "058aaa27cc4c063e6a336f0678199a3fe249cfe8f0d8fff17b689e23535723d3"
+      "sha256": "fbe6b20e46362a4169451176990ba3a5c8c5cb3b12dcff1efdaa9a1cc4d625a0"
     },
     {
       "artifact_id": "artifact:scripts/full_inspection_repair/source_inventory.py",
       "path": "scripts/full_inspection_repair/source_inventory.py",
-      "sha256": "e569a516cec618583111f027d7f3aee35cfaf21d9de2c2301b7bacb223fc3320"
+      "sha256": "0582812e664567644efbc6297c57bf101d805bb68bf8083bf9ae38340c48a567"
     },
     {
       "artifact_id": "artifact:scripts/full_inspection_repair/taxonomy_qualification.py",
@@ -2369,7 +2369,7 @@
         "callable": "assert_source_closure_complete",
         "module": "full_inspection_repair.source_inventory"
       },
-      "implementation_digest": "e569a516cec618583111f027d7f3aee35cfaf21d9de2c2301b7bacb223fc3320",
+      "implementation_digest": "0582812e664567644efbc6297c57bf101d805bb68bf8083bf9ae38340c48a567",
       "version": "1.0.0"
     }
   ],
@@ -3594,7 +3594,7 @@
       "version": "1.0.0"
     }
   ],
-  "registry_digest": "5c083ef77ad48f90300b326ef7e4828aeb317ea10cfd5e1ea641c2d7c4c3dff2",
+  "registry_digest": "7ac802d2c036680e134f5bb589e5fbee2005ab8fc2c27ce46e476e40bb526cc0",
   "registry_id": "FIR-RUNTIME-REGISTRY",
   "registry_version": "1.7.0",
   "release_authority": false,
@@ -3746,7 +3746,7 @@
         "callable": "build_source_inventory",
         "module": "full_inspection_repair.source_inventory"
       },
-      "implementation_digest": "e569a516cec618583111f027d7f3aee35cfaf21d9de2c2301b7bacb223fc3320",
+      "implementation_digest": "0582812e664567644efbc6297c57bf101d805bb68bf8083bf9ae38340c48a567",
       "source_types": [
         "RESOURCE",
         "CLAIM",
@@ -3814,7 +3814,7 @@
         "callable": "execute_semantic_matrix",
         "module": "full_inspection_repair.semantic_matrix"
       },
-      "implementation_digest": "058aaa27cc4c063e6a336f0678199a3fe249cfe8f0d8fff17b689e23535723d3",
+      "implementation_digest": "fbe6b20e46362a4169451176990ba3a5c8c5cb3b12dcff1efdaa9a1cc4d625a0",
       "version": "1.0.0"
     }
   ],

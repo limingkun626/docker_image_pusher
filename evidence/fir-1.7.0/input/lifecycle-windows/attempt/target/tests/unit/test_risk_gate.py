@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "tests"))
 from full_inspection_repair.contracts import canonical_digest
 from full_inspection_repair.coverage import build_complete_coverage
 from full_inspection_repair.risk_gate import REQUIRED_DOMAINS, assess_release_gate
-from domain_receipt_fixture import domain_entry
+from domain_receipt_fixture import domain_entry, signed_domain_set
 
 CANDIDATE = "c" * 64
 SCOPE = "b" * 64
@@ -116,6 +116,49 @@ def test_final_gate_requires_verified_domain_set_signature() -> None:
     assert gate["status"] != "PASS"
     assert gate["release_ready"] is False
     assert any("DOMAIN_SIGNATURE" in item or "signature" in item for item in gate["blockers"])
+
+
+def test_domain_signature_binds_raw_evidence_without_derived_digests() -> None:
+    inputs = gate_inputs()
+    signature = signed_domain_set(
+        inputs["domains"],
+        scope_digest=SCOPE,
+        candidate_digest=CANDIDATE,
+    )
+    inputs["matrix"]["domains_digest"] = canonical_digest(inputs["domains"])
+    inputs["matrix"].pop("matrix_digest")
+    inputs["matrix"]["matrix_digest"] = canonical_digest(inputs["matrix"])
+    inputs["review"]["matrix_digest"] = inputs["matrix"]["matrix_digest"]
+
+    gate = assess_release_gate(
+        **inputs,
+        require_evidence_binding=True,
+        require_domain_signature=True,
+        domain_signature=signature,
+    )
+    assert "verified domain-set signature binding mismatch" not in gate["blockers"]
+
+    receipt = inputs["domains"]["platform_support"]["windows_install"]["receipt"]
+    receipt["raw_evidence"]["smoke_exit_code"] = 1
+    receipt["raw_evidence_digest"] = canonical_digest(receipt["raw_evidence"])
+    receipt["receipt_digest"] = canonical_digest(
+        {key: value for key, value in receipt.items() if key != "receipt_digest"}
+    )
+    inputs["domains"]["platform_support"]["windows_install"]["receipt_sha256"] = receipt[
+        "receipt_digest"
+    ]
+    inputs["matrix"]["domains_digest"] = canonical_digest(inputs["domains"])
+    inputs["matrix"].pop("matrix_digest")
+    inputs["matrix"]["matrix_digest"] = canonical_digest(inputs["matrix"])
+    inputs["review"]["matrix_digest"] = inputs["matrix"]["matrix_digest"]
+
+    tampered = assess_release_gate(
+        **inputs,
+        require_evidence_binding=True,
+        require_domain_signature=True,
+        domain_signature=signature,
+    )
+    assert "verified domain-set signature binding mismatch" in tampered["blockers"]
 
 
 def test_platform_support_requires_all_released_platforms() -> None:

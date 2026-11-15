@@ -8,9 +8,13 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "qualification stops after macOS evidence; full runs finalization"
+        description: "qualification records macOS and Linux evidence; full also finalizes and signs"
         required: false
-        default: full
+        default: qualification
+        type: choice
+        options:
+          - qualification
+          - full
 
 permissions:
   contents: write
@@ -108,11 +112,11 @@ jobs:
           path: evidence/fir-1.7.0/macos
           if-no-files-found: error
 
-  finalize:
+  linux:
     needs: macos
-    if: ${{ inputs.mode != 'qualification' }}
+    if: ${{ always() }}
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
@@ -124,10 +128,32 @@ jobs:
         run: |
           python -m pip install -r evidence/fir-1.7.0/candidate/full-inspection-repair/requirements.txt
 
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
-        with:
-          name: fir-1.7.0-macos-evidence
-          path: evidence/fir-1.7.0/macos
+      - name: Verify exact package
+        run: |
+          python -B evidence/fir-1.7.0/candidate/full-inspection-repair/scripts/release_skill.py package \
+            --source evidence/fir-1.7.0/candidate/full-inspection-repair \
+            --output "$RUNNER_TEMP/package"
+          python -B - "$RUNNER_TEMP/package/package-manifest.json" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          expected = json.loads(
+              Path("evidence/fir-1.7.0/input/package-manifest.json").read_text()
+          )
+          actual = json.loads(Path(sys.argv[1]).read_text())
+          if actual != expected:
+              raise SystemExit("checkout package manifest differs from the freeze")
+          sys.path.insert(
+              0, "evidence/fir-1.7.0/candidate/full-inspection-repair/scripts"
+          )
+          from full_inspection_repair.package import verify_package_manifest
+
+          verify_package_manifest(
+              "evidence/fir-1.7.0/candidate/full-inspection-repair",
+              expected,
+          )
+          PY
 
       - name: Full Linux tests
         working-directory: evidence/fir-1.7.0/candidate/full-inspection-repair
@@ -160,7 +186,85 @@ jobs:
             --candidate . \
             --manifest ../../input/package-manifest.json \
             --platform linux \
-            --output "$RUNNER_TEMP/lifecycle-linux"
+            --output "$RUNNER_TEMP/linux-lifecycle"
+
+      - name: Preserve Linux evidence
+        if: always()
+        run: |
+          mkdir -p evidence/fir-1.7.0/linux
+          for item in linux-junit.xml linux-pytest.log linux-check linux-lifecycle; do
+            if test -e "$RUNNER_TEMP/$item"; then
+              cp -R "$RUNNER_TEMP/$item" evidence/fir-1.7.0/linux/
+            fi
+          done
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: fir-1.7.0-linux-evidence
+          path: evidence/fir-1.7.0/linux
+          if-no-files-found: error
+
+  preserve-platform-evidence:
+    needs: [macos, linux]
+    if: ${{ always() && (github.event_name == 'push' || inputs.mode == 'qualification') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: fir-1.7.0-macos-evidence
+          path: evidence/fir-1.7.0/macos
+
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: fir-1.7.0-linux-evidence
+          path: evidence/fir-1.7.0/linux
+
+      - name: Commit platform evidence
+        run: |
+          git config user.name "Codex FIR 1.7.0 Reviewer"
+          git config user.email "codex-fir-1.7.0@users.noreply.github.com"
+          git add evidence/fir-1.7.0/macos evidence/fir-1.7.0/linux
+          if git diff --cached --quiet; then
+            echo "platform evidence unchanged"
+          else
+            git commit -m "Record FIR 1.7.0 macOS and Linux qualification evidence [skip ci]"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+  finalize:
+    needs: [macos, linux]
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'full' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -r evidence/fir-1.7.0/candidate/full-inspection-repair/requirements.txt
+
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: fir-1.7.0-macos-evidence
+          path: "$RUNNER_TEMP/macos-evidence"
+
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: fir-1.7.0-linux-evidence
+          path: "$RUNNER_TEMP/linux-evidence"
+
+      - name: Stage platform evidence
+        run: |
+          mkdir -p evidence/fir-1.7.0/macos evidence/fir-1.7.0/linux
+          cp -R "$RUNNER_TEMP/macos-evidence/macos/." evidence/fir-1.7.0/macos/
+          cp -R "$RUNNER_TEMP/linux-evidence/linux/." evidence/fir-1.7.0/linux/
 
       - uses: sigstore/cosign-installer@756fe2d284c7292c4e9b62c8a28f1e5629c59532
 
@@ -168,13 +272,13 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          cp "$RUNNER_TEMP/linux-junit.xml" evidence/fir-1.7.0/input/linux-junit.xml
-          cp -R "$RUNNER_TEMP/lifecycle-linux" evidence/fir-1.7.0/input/lifecycle-linux
+          cp "$RUNNER_TEMP/linux-evidence/linux-junit.xml" evidence/fir-1.7.0/input/linux-junit.xml
+          cp -R "$RUNNER_TEMP/linux-evidence/linux-lifecycle" evidence/fir-1.7.0/input/lifecycle-linux
           python -B evidence/fir-1.7.0/tools/finalize_release_1_7.py \
             --root evidence/fir-1.7.0 \
             --windows-check evidence/fir-1.7.0/input/windows-check \
-            --linux-check "$RUNNER_TEMP/linux-check" \
-            --macos evidence/fir-1.7.0/macos \
+            --linux-check "$RUNNER_TEMP/linux-evidence/linux-check" \
+            --macos "$RUNNER_TEMP/macos-evidence/macos" \
             --output evidence/fir-1.7.0/final
 
       - name: Sign reviewer attestation
@@ -232,7 +336,7 @@ jobs:
         run: |
           git config user.name "Codex FIR 1.7.0 Reviewer"
           git config user.email "codex-fir-1.7.0@users.noreply.github.com"
-          git add evidence/fir-1.7.0/macos evidence/fir-1.7.0/final evidence/fir-1.7.0/signed
+          git add evidence/fir-1.7.0/macos evidence/fir-1.7.0/linux evidence/fir-1.7.0/final evidence/fir-1.7.0/signed
           if git diff --cached --quiet; then
             test -s evidence/fir-1.7.0/signed/REVIEWER-ATTESTATION.sigstore.json
           else

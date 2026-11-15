@@ -10,6 +10,7 @@ import platform
 import re
 import sys
 import uuid
+from collections.abc import Mapping
 from contextlib import suppress
 from datetime import UTC, datetime
 from pathlib import Path
@@ -53,7 +54,11 @@ from .observation import ObservationJournal
 from .protected_reader import MAX_FILE_BYTES
 from .repair import RepairBlocked, apply_batch, plan_batch
 from .runtime_registry import RegistryError, current_platform, load_registry
-from .semantic_matrix import execute_semantic_matrix
+from .semantic_matrix import (
+    build_semantic_evaluation_matrix,
+    execute_semantic_matrix,
+    semantic_case_identities,
+)
 from .source_inventory import (
     SourceInventoryError,
     assert_source_closure_complete,
@@ -75,7 +80,12 @@ from .verification import (
     reconcile_detector_results,
     verify_repair,
 )
-from .verification_matrix import MatrixBlocked, reconcile_evaluation
+from .verification_matrix import (
+    MatrixBlocked,
+    build_case_registry,
+    reconcile_evaluation,
+    validate_case_registry,
+)
 from .write_ahead import (
     WriteAheadJournal,
     load_journal_checkpoint,
@@ -542,9 +552,18 @@ def _semantic_risk_findings(
             if not isinstance(witness, dict):
                 continue
             primary = witness.get("primary_locator", {})
-            locator = str(primary.get("path", "")) if isinstance(primary, dict) else ""
-            if locator not in locators:
-                continue
+            observed_locator = (
+                str(primary.get("path", "")) if isinstance(primary, dict) else ""
+            )
+            locator = (
+                observed_locator
+                if observed_locator in locators
+                else "SKILL.md"
+                if "SKILL.md" in locators
+                else sorted(locators)[0]
+                if locators
+                else "SKILL.md"
+            )
             category = str(cell.get("category_id") or witness.get("cell_id"))
             defect_class = str(witness.get("defect_class_id") or "SEMANTIC")
             invariant = str(witness.get("invariant_id") or cell.get("cell_id"))
@@ -559,6 +578,7 @@ def _semantic_risk_findings(
                 "cell_id": cell.get("cell_id"),
                 "locator": locator,
                 "semantic_digest": witness.get("semantic_digest"),
+                "observed_locator": observed_locator,
             }
             risk_id = canonical_digest(identity)
             output[risk_id] = {
@@ -569,9 +589,12 @@ def _semantic_risk_findings(
                 "subject_id": subject.subject_id,
                 "source_id": f"source:{locator}",
                 "severity": "High",
-                "message": f"semantic matrix detected {defect_class} at {locator}",
+                "message": (
+                    f"semantic matrix detected {defect_class} at "
+                    f"{observed_locator or '<snapshot>'}"
+                ),
                 "mechanism": "cell-specific detector and independent oracle agreed",
-                "affected_refs": [locator],
+                "affected_refs": [observed_locator or locator],
                 "root_cause_id": canonical_digest(
                     {"category": category, "defect_class": defect_class}
                 ),
@@ -747,9 +770,24 @@ def _require_journal_pass(path: Path, checkpoint: dict[str, Any]) -> dict[str, o
     return receipt
 
 
-def _load_evaluation_matrix(path: str | None) -> dict[str, object] | None:
+def _load_evaluation_matrix(
+    path: str | None,
+    *,
+    run_id: str,
+    scope_digest: str,
+    subject_digest: str,
+    candidate_digest: str,
+    case_registry: Mapping[str, Any] | None,
+) -> dict[str, object] | None:
     if path is None:
         return None
+    if case_registry is None:
+        raise MatrixBlocked(
+            "evaluation evidence requires a frozen case registry",
+            "BLOCKED_EVIDENCE",
+        )
+    registry = validate_case_registry(dict(case_registry))
+    registry_digest = str(registry["registry_digest"])
     evidence = strict_loads(Path(path).read_bytes())
     if not isinstance(evidence, dict):
         raise ContractError("evaluation evidence must be a JSON object")
@@ -770,6 +808,20 @@ def _load_evaluation_matrix(path: str | None) -> dict[str, object] | None:
             or any(character not in "0123456789abcdef" for character in value)
         ):
             raise MatrixBlocked(f"evaluation {name} binding is missing")
+    expected_bindings = {
+        "run_id": run_id,
+        "scope_digest": scope_digest,
+        "subject_digest": subject_digest,
+        "candidate_digest": candidate_digest,
+    }
+    for name, expected in expected_bindings.items():
+        if bindings[name] != expected:
+            raise MatrixBlocked(f"evaluation {name} does not match the frozen run")
+    if evidence.get("case_registry_digest") != registry_digest:
+        raise MatrixBlocked(
+            "evaluation case registry digest does not match the frozen run",
+            "BLOCKED_EVIDENCE",
+        )
     return reconcile_evaluation(
         requested=[str(item) for item in evidence.get("requested", [])],
         attempts={
@@ -779,7 +831,8 @@ def _load_evaluation_matrix(path: str | None) -> dict[str, object] | None:
         f2p={str(item) for item in evidence.get("f2p", [])},
         p2p={str(item) for item in evidence.get("p2p", [])},
         case_identities=case_identities,
-        expected_identities=case_identities,
+        expected_identities=registry["cases"],
+        case_registry_digest=registry_digest,
         run_id=bindings["run_id"],
         scope_digest=bindings["scope_digest"],
         subject_digest=bindings["subject_digest"],
@@ -908,6 +961,19 @@ def _prepare_run(
 ]:
     output = Path(args.output).resolve()
     output.mkdir(parents=True, exist_ok=True)
+    case_registry_path = getattr(args, "evaluation_case_registry", None)
+    if case_registry_path:
+        registry_value = strict_loads(Path(case_registry_path).read_bytes())
+        case_registry = validate_case_registry(registry_value)
+        _write_json(output / "evaluation-case-registry.json", case_registry)
+        state.bind(
+            evaluation_case_registry_digest=case_registry["registry_digest"]
+        )
+    elif getattr(args, "evaluation_evidence", None):
+        raise MatrixBlocked(
+            "evaluation evidence requires --evaluation-case-registry",
+            "BLOCKED_EVIDENCE",
+        )
     subject = build_subject(args.target, args.kind)
     knowledge_pack = _load_requested_knowledge_pack(args, subject.subject_kind)
     registry = load_registry()
@@ -958,6 +1024,9 @@ def _prepare_run(
             "knowledge_pack_digest": identities["knowledge_pack_digest"],
             "environment_digest": environment_digest,
             "config_digest": identities["config_digest"],
+                "evaluation_case_registry_digest": state.bindings.get(
+                    "evaluation_case_registry_digest"
+                ),
         }
     )
     state.bind(
@@ -1013,6 +1082,7 @@ def _prepare_run(
         subject,
         registry,
         phase="DISCOVERY",
+        scope_id=state.run_id,
     )
     journal.append(
         event_key="semantic-matrix:execute",
@@ -1038,6 +1108,7 @@ def _prepare_run(
         scope_id=state.run_id,
         evidence=build_source_closure_evidence(
             source_inventory_report,
+            scope_id=state.run_id,
             semantic_report=semantic_report,
             environment_digest=str(state.bindings["environment_digest"]),
         ),
@@ -1142,7 +1213,18 @@ def _prepare_run(
         checkpoint,
     )
     _require_journal_pass(output / "write-ahead-journal.jsonl", checkpoint)
-    matrix = _load_evaluation_matrix(getattr(args, "evaluation_evidence", None))
+    matrix = _load_evaluation_matrix(
+        getattr(args, "evaluation_evidence", None),
+        run_id=state.run_id,
+        scope_digest=str(state.bindings["scope_digest"]),
+        subject_digest=subject.tree_digest,
+        candidate_digest=subject.tree_digest,
+        case_registry=(
+            strict_loads((output / "evaluation-case-registry.json").read_bytes())
+            if (output / "evaluation-case-registry.json").is_file()
+            else None
+        ),
+    )
     _assert_inputs_current(
         args,
         state,
@@ -1585,6 +1667,7 @@ def _run_manifest(
     registry,
     batch: dict[str, object],
     candidate_digest: str,
+    evaluation_case_registry_digest: str,
 ) -> dict[str, object]:
     subject_manifest = _subject_manifest(
         subject,
@@ -1594,16 +1677,7 @@ def _run_manifest(
     )
     trust_path = Path(__file__).resolve().parents[2] / "policies" / "trust-policy.json"
     trust_policy_digest = canonical_digest(strict_loads(trust_path.read_bytes()))
-    registry_data = (
-        registry.as_dict() if hasattr(registry, "as_dict") else dict(registry)
-    )
-    tool_closure_digest = canonical_digest(
-        {
-            "known_tools": registry_data["known_tools"],
-            "tool_closures": registry_data["tool_closures"],
-            "sandbox_backends": registry_data["sandbox_backends"],
-        }
-    )
+    tool_closure_digest = _tool_closure_digest(registry)
     bindings = {
         "registry_digest": registry.registry_digest,
         "taxonomy_policy_digest": str(taxonomy["coverage_digest"]),
@@ -1612,6 +1686,7 @@ def _run_manifest(
         "tool_closure_digest": tool_closure_digest,
         "environment_digest": str(state.bindings["environment_digest"]),
         "config_digest": str(subject_manifest["config_digest"]),
+        "evaluation_case_registry_digest": evaluation_case_registry_digest,
     }
     return build_run_manifest(
         run_id=state.run_id,
@@ -1666,6 +1741,19 @@ def _role_report(
     }
     report["report_digest"] = material_digest(report, "report_digest")
     return report
+
+
+def _tool_closure_digest(registry) -> str:
+    registry_data = (
+        registry.as_dict() if hasattr(registry, "as_dict") else dict(registry)
+    )
+    return canonical_digest(
+        {
+            "known_tools": registry_data["known_tools"],
+            "tool_closures": registry_data["tool_closures"],
+            "sandbox_backends": registry_data["sandbox_backends"],
+        }
+    )
 
 
 def _candidate_source_inventory(
@@ -1748,35 +1836,27 @@ def _candidate_impact_artifact(
 def _candidate_matrix_artifact(
     semantic_report: dict[str, object],
     run: dict[str, object],
+    case_registry: dict[str, object],
 ) -> dict[str, object]:
-    cell_ids = [str(cell["cell_id"]) for cell in semantic_report["cells"]]
-    attempts = {
-        str(cell["cell_id"]): (
-            "PASS"
-            if cell["status"] in {"CLEAN", "CLEAN_WITH_PROOF", "FINDING"}
-            else "INFRA_ERROR"
-        )
-        for cell in semantic_report["cells"]
-    }
-    identities = {
-        str(cell["cell_id"]): {
-            "fixture_digest": str(cell["binding_digest"]),
-            "runner_digest": str(cell["receipt_digest"]),
-            "tool_digest": str(run["bindings"]["tool_closure_digest"]),
-        }
-        for cell in semantic_report["cells"]
-    }
-    return reconcile_evaluation(
-        requested=cell_ids,
-        attempts=attempts,
-        f2p=set(cell_ids),
-        p2p=set(),
-        case_identities=identities,
-        expected_identities=identities,
+    matrix = build_semantic_evaluation_matrix(
+        semantic_report,
+        tool_digest=str(run["bindings"]["tool_closure_digest"]),
         run_id=str(run["run_id"]),
         scope_digest=str(run["scope_digest"]),
         subject_digest=str(run["subject"]["tree_digest"]),
         candidate_digest=str(run["candidate_digest"]),
+    )
+    if matrix["case_identities"] != case_registry["cases"]:
+        raise EvidenceBlocked("candidate case registry does not match its matrix")
+    return matrix
+
+
+def _candidate_case_registry(
+    semantic_report: dict[str, object],
+    tool_closure_digest: str,
+) -> dict[str, object]:
+    return build_case_registry(
+        semantic_case_identities(semantic_report, tool_closure_digest)
     )
 
 
@@ -2013,6 +2093,8 @@ def _repair(args) -> int:
             candidate_subject,
             state.bindings.get("runtime_registry_snapshot") or load_registry(),
             phase="VERIFICATION",
+            candidate_digest=candidate_subject.tree_digest,
+            scope_id=state.run_id,
         )
         matrix_failure = _matrix_failure_status(candidate_semantic_report)
         if matrix_failure is not None:
@@ -2064,6 +2146,10 @@ def _repair(args) -> int:
                     source_id.removeprefix("source:"),
                     source_id,
                 )
+        candidate_case_registry = _candidate_case_registry(
+            candidate_semantic_report,
+            _tool_closure_digest(load_registry()),
+        )
         run = _run_manifest(
             state=state,
             subject=subject,
@@ -2073,6 +2159,9 @@ def _repair(args) -> int:
             registry=load_registry(),
             batch=batch,
             candidate_digest=candidate_subject.tree_digest,
+            evaluation_case_registry_digest=str(
+                candidate_case_registry["registry_digest"]
+            ),
         )
         candidate_inventory = _candidate_source_inventory(
             candidate_inventory_report,
@@ -2125,6 +2214,7 @@ def _repair(args) -> int:
         candidate_matrix = _candidate_matrix_artifact(
             candidate_semantic_report,
             run,
+            candidate_case_registry,
         )
         candidate_required_sources = [
             str(item["source_id"]) for item in candidate_inventory_report["sources"]
@@ -2157,6 +2247,7 @@ def _repair(args) -> int:
             scope_id=str(run["run_id"]),
             evidence=build_source_closure_evidence(
                 candidate_inventory_report,
+                scope_id=str(run["run_id"]),
                 semantic_report=candidate_semantic_report,
                 environment_digest=str(state.bindings["environment_digest"]),
             ),
@@ -2191,6 +2282,9 @@ def _repair(args) -> int:
             taxonomy=candidate_taxonomy,
             impact=candidate_impact,
             matrix=candidate_matrix,
+            source_inventory_report=candidate_inventory_report,
+            semantic_report=candidate_semantic_report,
+            evaluation_case_registry=candidate_case_registry,
             registry=load_registry(),
             run=run,
             candidate_root=candidate_subject.root,
@@ -2312,6 +2406,7 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--expected-policy-digest")
         command.add_argument("--expected-environment-digest")
         command.add_argument("--evaluation-evidence")
+        command.add_argument("--evaluation-case-registry")
         command.add_argument("--capability-pack")
         command.add_argument("--capability-required", action="store_true")
         command.add_argument("--knowledge-pack")

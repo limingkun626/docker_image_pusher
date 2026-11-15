@@ -37,6 +37,7 @@ from full_inspection_repair.verification import (
 )
 from full_inspection_repair.verification_matrix import (
     MatrixBlocked,
+    build_case_registry,
     reconcile_evaluation,
 )
 from knowledge_replay_fixture import valid_knowledge_pack
@@ -653,13 +654,26 @@ def test_end_of_run_always_compares_frozen_bindings(
     assert state.events == ["input_drift"]
 
 
-def test_cli_blocks_unscored_requested_case(tmp_path: Path):
+def test_cli_rejects_foreign_evaluation_binding_before_status_reconciliation(
+    tmp_path: Path,
+):
     source = tmp_path / "source-skill"
     source.mkdir()
     (source / "SKILL.md").write_text("# Demo\n", encoding="utf-8")
     output = tmp_path / "run"
     taxonomy = write_taxonomy(tmp_path / "taxonomy.json")
     evaluation = tmp_path / "evaluation.json"
+    case_registry = build_case_registry(
+        {
+            "case-a": {
+                "fixture_digest": "1" * 64,
+                "runner_digest": "2" * 64,
+                "tool_digest": "3" * 64,
+            }
+        }
+    )
+    registry_path = tmp_path / "case-registry.json"
+    registry_path.write_text(json.dumps(case_registry), encoding="utf-8")
     evaluation.write_text(
         json.dumps(
             {
@@ -678,6 +692,7 @@ def test_cli_blocks_unscored_requested_case(tmp_path: Path):
                 "scope_digest": "4" * 64,
                 "subject_digest": "5" * 64,
                 "candidate_digest": "6" * 64,
+                "case_registry_digest": case_registry["registry_digest"],
             }
         ),
         encoding="utf-8",
@@ -696,13 +711,15 @@ def test_cli_blocks_unscored_requested_case(tmp_path: Path):
             str(taxonomy),
             "--evaluation-evidence",
             str(evaluation),
+            "--evaluation-case-registry",
+            str(registry_path),
         ]
     )
 
     summary = read_json(output / "summary.json")
     assert code == 2
     assert summary["status"] == "BLOCKED_VERIFICATION"
-    assert "unscored" in summary["error"]
+    assert "frozen run" in summary["error"]
 
 
 def test_repair_records_candidate_stage_observations_before_blocking(

@@ -130,8 +130,19 @@ are not authoritative.
 
 Pass `--taxonomy $inspectionRoot\taxonomy-coverage.json` to use a frozen
 taxonomy. Pass `--expected-tree-digest <sha256>` to reject a target that differs
-from the frozen tree. Pass `--evaluation-evidence <json>` to add
-`verification-matrix.json` to the run.
+from the frozen tree. Pass both `--evaluation-evidence <json>` and
+`--evaluation-case-registry <json>` to add `verification-matrix.json` to the
+run. The registry must contain the exact fixture, runner and tool digests for
+every case; its digest is frozen into the scope and every matrix identity is
+checked against that registry.
+
+Candidate closure rebuilds the detailed source inventory from the current
+candidate bytes, re-executes the frozen semantic cell executors, and derives the
+source-evidence receipts from those executed results. A supplied semantic report,
+case registry, matrix, or source closure is accepted only when its stable
+projection is exactly reproducible from the current candidate and registry;
+rehashing invented receipts or replacing the case set does not create valid
+evidence. Matrix six-state counts must also equal the per-case statuses.
 
 ## Repair
 

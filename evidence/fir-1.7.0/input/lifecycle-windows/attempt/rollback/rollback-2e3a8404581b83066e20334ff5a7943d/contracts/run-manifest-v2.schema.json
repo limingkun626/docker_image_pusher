@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://full-inspection-repair.local/contracts/run-manifest-v2.schema.json",
+  "title": "FIR Run Manifest V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "scope_id",
+    "scope_digest",
+    "platform",
+    "subject",
+    "bindings",
+    "repair_plan_digest",
+    "candidate_digest",
+    "manifest_digest"
+  ],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "scope_id": { "type": "string", "minLength": 1 },
+    "scope_digest": { "$ref": "#/$defs/digest" },
+    "platform": { "enum": ["WINDOWS", "LINUX", "MACOS"] },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["manifest_digest", "tree_digest", "dir_hash1", "logical_identity"],
+      "properties": {
+        "manifest_digest": { "$ref": "#/$defs/digest" },
+        "tree_digest": { "$ref": "#/$defs/digest" },
+        "dir_hash1": { "$ref": "#/$defs/digest" },
+        "logical_identity": { "type": "string", "minLength": 1 }
+      }
+    },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_digest",
+        "taxonomy_policy_digest",
+        "trust_policy_digest",
+        "knowledge_pack_digest",
+        "tool_closure_digest",
+        "environment_digest",
+        "config_digest",
+        "evaluation_case_registry_digest"
+      ],
+      "properties": {
+        "registry_digest": { "$ref": "#/$defs/digest" },
+        "taxonomy_policy_digest": { "$ref": "#/$defs/digest" },
+        "trust_policy_digest": { "$ref": "#/$defs/digest" },
+        "knowledge_pack_digest": { "$ref": "#/$defs/digest" },
+        "tool_closure_digest": { "$ref": "#/$defs/digest" },
+        "environment_digest": { "$ref": "#/$defs/digest" },
+        "config_digest": { "$ref": "#/$defs/digest" },
+        "evaluation_case_registry_digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "repair_plan_digest": { "anyOf": [{ "$ref": "#/$defs/digest" }, { "type": "null" }] },
+    "candidate_digest": { "anyOf": [{ "$ref": "#/$defs/digest" }, { "type": "null" }] },
+    "manifest_digest": { "$ref": "#/$defs/digest" }
+  },
+  "$defs": {
+    "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

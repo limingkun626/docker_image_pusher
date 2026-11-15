@@ -108,3 +108,50 @@ def domain_entry(
         "receipt": receipt,
         "receipt_sha256": receipt["receipt_digest"],
     }
+
+
+def signed_domain_set(
+    domains: dict[str, dict[str, object]],
+    *,
+    scope_digest: str,
+    candidate_digest: str,
+) -> dict[str, object]:
+    import copy
+
+    normalized = copy.deepcopy(domains)
+    for group in normalized.values():
+        for entry in group.values():
+            entry.pop("receipt_sha256", None)
+            entry["receipt"].pop("receipt_digest", None)
+            entry["receipt"].pop("signature_receipt_digest", None)
+    signature: dict[str, object] = {
+        "schema_version": 1,
+        "status": "VERIFIED",
+        "verification_method": "sigstore-keyless",
+        "reviewer": "reviewer",
+        "issuer": "issuer",
+        "trust_root_id": "trust-root",
+        "subject_digest": canonical_digest(normalized),
+        "candidate_digest": candidate_digest,
+        "scope_digest": scope_digest,
+        "bundle_sha256": canonical_digest({"bundle": "domain-set"}),
+        "verifier_sha256": canonical_digest({"verifier": "domain-set"}),
+        "verifier_closure_digest": canonical_digest(
+            {"closure": "domain-set"}
+        ),
+        "verifier_exit_code": 0,
+    }
+    signature["receipt_digest"] = canonical_digest(signature)
+    for group in domains.values():
+        for entry in group.values():
+            receipt = entry["receipt"]
+            receipt["signature_receipt_digest"] = signature["receipt_digest"]
+            receipt["receipt_digest"] = canonical_digest(
+                {
+                    key: value
+                    for key, value in receipt.items()
+                    if key != "receipt_digest"
+                }
+            )
+            entry["receipt_sha256"] = receipt["receipt_digest"]
+    return signature

@@ -1,0 +1,3837 @@
+{
+  "artifact_set": [
+    {
+      "artifact_id": "artifact:capabilities/fixtures.zip",
+      "path": "capabilities/fixtures.zip",
+      "sha256": "de54b4c3751c0d535c9a6d0efbbe33c9817536721dd8311842982b6100175d7a"
+    },
+    {
+      "artifact_id": "artifact:contracts/defect-taxonomy.schema.json",
+      "path": "contracts/defect-taxonomy.schema.json",
+      "sha256": "f83f2cf1bebae49a5d616b54144d2d23a10eada14023e9cb90db464207544bd8"
+    },
+    {
+      "artifact_id": "artifact:contracts/required-source.schema.json",
+      "path": "contracts/required-source.schema.json",
+      "sha256": "9562f826d45c7288baf818a9991ee7fe65eac9ed3f5858dcdba450fa8497571a"
+    },
+    {
+      "artifact_id": "artifact:contracts/runtime-registry-v3.schema.json",
+      "path": "contracts/runtime-registry-v3.schema.json",
+      "sha256": "deeea04d0f23d96314fce1832d02cb171d4db72ce37122706b038ff2ae20fbe9"
+    },
+    {
+      "artifact_id": "artifact:contracts/source-closure.schema.json",
+      "path": "contracts/source-closure.schema.json",
+      "sha256": "fbfb3d1ed98540d37caa06d30e906e32a461b2f451bc097ba304d5f5f4e0cb59"
+    },
+    {
+      "artifact_id": "artifact:policies/cell-solution-registry.json",
+      "path": "policies/cell-solution-registry.json",
+      "sha256": "b6b4d20aa5d97854d82e20a1efaaa1b712b0cb6be9cff71d601510031c06d923"
+    },
+    {
+      "artifact_id": "artifact:policies/taxonomy-policy-v2.json",
+      "path": "policies/taxonomy-policy-v2.json",
+      "sha256": "e6aec9ed69be2f3f5adee8ef0e71ecb1971753f3fe9f1af4027e8e31e83459c3"
+    },
+    {
+      "artifact_id": "artifact:policies/taxonomy-policy.json",
+      "path": "policies/taxonomy-policy.json",
+      "sha256": "dfc619c8ca786fec71c0d81d2ec7aae03b7d4fd3a20b396d500e9fc423e1aacf"
+    },
+    {
+      "artifact_id": "artifact:scripts/full_inspection_repair/adapters.py",
+      "path": "scripts/full_inspection_repair/adapters.py",
+      "sha256": "96e19d6d71c22c92ad0f3ce46d6d7b10be3ae16cfeb1b18fb45aeccdd505f726"
+    },
+    {
+      "artifact_id": "artifact:scripts/full_inspection_repair/detector_registry.py",
+      "path": "scripts/full_inspection_repair/detector_registry.py",
+      "sha256": "87626238a06eaafa4fcaa543f3b58b9fc5d40989a64cab376e92c5008137bdbe"
+    },
+    {
+      "artifact_id": "artifact:scripts/full_inspection_repair/file_classes.py",
+      "path": "scripts/full_inspection_repair/file_classes.py",
+      "sha256": "6b7f800ab403371a05e023e7b09691a814e46fdee954f4e6d9274800457ff45d"
+    },
+    {
+      "artifact_id": "artifact:scripts/full_inspection_repair/impact.py",
+      "path": "scripts/full_inspection_repair/impact.py",
+      "sha256": "609a9367bed2a77ebba16478750a3804ccd81f01fcafb042568e054a2037962c"
+    },
+    {
+      "artifact_id": "artifact:scripts/full_inspection_repair/runtime_registry.py",
+      "path": "scripts/full_inspection_repair/runtime_registry.py",
+      "sha256": "9f7326383f56733fb9654d9da0a0e208e3b57f2df1c9e03bd56b9941f6d5a5b2"
+    },
+    {
+      "artifact_id": "artifact:scripts/full_inspection_repair/semantic_matrix.py",
+      "path": "scripts/full_inspection_repair/semantic_matrix.py",
+      "sha256": "fbe6b20e46362a4169451176990ba3a5c8c5cb3b12dcff1efdaa9a1cc4d625a0"
+    },
+    {
+      "artifact_id": "artifact:scripts/full_inspection_repair/source_inventory.py",
+      "path": "scripts/full_inspection_repair/source_inventory.py",
+      "sha256": "0582812e664567644efbc6297c57bf101d805bb68bf8083bf9ae38340c48a567"
+    },
+    {
+      "artifact_id": "artifact:scripts/full_inspection_repair/taxonomy_qualification.py",
+      "path": "scripts/full_inspection_repair/taxonomy_qualification.py",
+      "sha256": "02e2bc1ab0a71bea2042b07075339398414f4ed8c0b8edfcb35519a6a20a5f80"
+    }
+  ],
+  "cell_bindings": [
+    {
+      "binding_digest": "967123ae38931d65c220ffa0491d274abdd1d3f43f8505d4e0d8cc9aac496f5d",
+      "binding_id": "cell.skill.boundary.behavior",
+      "category_id": "BOUNDARY",
+      "cell_id": "SKILL:BOUNDARY:BEHAVIOR",
+      "detector_binding": null,
+      "evidence_plane": "BEHAVIOR",
+      "exact_adapter_binding": {
+        "adapter_id": "adapter.skill.boundary.behavior",
+        "callable": "run_external_adapter",
+        "contract_digest": "68c01c4bbc7c4b414416f2f1a7d1c9febc5fb805a451166c6998e405f4eff330",
+        "kind": "EXACT_ADAPTER",
+        "mechanism_id": "SKILL:BOUNDARY:BEHAVIOR:exact-adapter",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.boundary.behavior.positive",
+        "fixture.skill.boundary.behavior.negative"
+      ],
+      "memory_mib": 2048,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "68c01c4bbc7c4b414416f2f1a7d1c9febc5fb805a451166c6998e405f4eff330",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:BEHAVIOR:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_EXACT_ADAPTER",
+      "timeout_seconds": 120
+    },
+    {
+      "binding_digest": "411d41a5113e441edad1c77b6461188b637d6dfc183cdd5f65a82edc79ca56a4",
+      "binding_id": "cell.skill.boundary.contract",
+      "category_id": "BOUNDARY",
+      "cell_id": "SKILL:BOUNDARY:CONTRACT",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "1596e91ae8d2b394bffaffecc6dbb4b326dcd6f572114c129a77c38ce1f62135",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:CONTRACT:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "CONTRACT",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.boundary.contract.positive",
+        "fixture.skill.boundary.contract.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "1596e91ae8d2b394bffaffecc6dbb4b326dcd6f572114c129a77c38ce1f62135",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:CONTRACT:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "1f44570d41a71c795cee05ed4a7a56df24da7fbd690040ec830ae1c405618bdd",
+      "binding_id": "cell.skill.boundary.lifecycle",
+      "category_id": "BOUNDARY",
+      "cell_id": "SKILL:BOUNDARY:LIFECYCLE",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "1d630619de99de481cb452f2172484704d49c35fedfa8cd778b6dc92121aaf46",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:LIFECYCLE:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "LIFECYCLE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.boundary.lifecycle.positive",
+        "fixture.skill.boundary.lifecycle.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "1d630619de99de481cb452f2172484704d49c35fedfa8cd778b6dc92121aaf46",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:LIFECYCLE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "fe7be2290dcdd50955c4ac3f81def072d64d80947f6407e95d24d4231159bdbd",
+      "binding_id": "cell.skill.boundary.performance",
+      "category_id": "BOUNDARY",
+      "cell_id": "SKILL:BOUNDARY:PERFORMANCE",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "3c4bff6963508869e8deba2f35eda36335d87acc318dc4cf5e789c651defa8f6",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:PERFORMANCE:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "PERFORMANCE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.boundary.performance.positive",
+        "fixture.skill.boundary.performance.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "3c4bff6963508869e8deba2f35eda36335d87acc318dc4cf5e789c651defa8f6",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:PERFORMANCE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "4f8b6bd011db80cb552c7dd38a3d2b0defa462c9ae1a0cbce7a20188abf2dbe7",
+      "binding_id": "cell.skill.boundary.runtime",
+      "category_id": "BOUNDARY",
+      "cell_id": "SKILL:BOUNDARY:RUNTIME",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "80b5b5297aaac6bc23bba0974196e5e6f62f0c7dc12e4512f94e29b9fc35b3f3",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:RUNTIME:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "RUNTIME",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.boundary.runtime.positive",
+        "fixture.skill.boundary.runtime.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "80b5b5297aaac6bc23bba0974196e5e6f62f0c7dc12e4512f94e29b9fc35b3f3",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:RUNTIME:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "3f3a6b9784684fa51228b68ffb97d8002efea187fac4ce120544635aa161f1aa",
+      "binding_id": "cell.skill.boundary.security",
+      "category_id": "BOUNDARY",
+      "cell_id": "SKILL:BOUNDARY:SECURITY",
+      "detector_binding": null,
+      "evidence_plane": "SECURITY",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.boundary.security.positive",
+        "fixture.skill.boundary.security.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "3682dbfc5660b4264aff33efc2e397b985b8797a4fa8cf777b61a9f1dea5f433",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:SECURITY:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "3dd806407750c39b14559359c49dc44d398fdc2dd1183a97e1d4884d0b9f4e63",
+      "binding_id": "cell.skill.boundary.semantic",
+      "category_id": "BOUNDARY",
+      "cell_id": "SKILL:BOUNDARY:SEMANTIC",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "1a07995e31c0d0da91bc1b2dd656b71ae369fe3d673c3643dec4ab8074ddc618",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:SEMANTIC:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "SEMANTIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.boundary.semantic.positive",
+        "fixture.skill.boundary.semantic.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "1a07995e31c0d0da91bc1b2dd656b71ae369fe3d673c3643dec4ab8074ddc618",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:SEMANTIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "418ef1c6bfaf29426177d0dc89657d2417ab64f0467254a987a6b80f23950f87",
+      "binding_id": "cell.skill.boundary.static",
+      "category_id": "BOUNDARY",
+      "cell_id": "SKILL:BOUNDARY:STATIC",
+      "detector_binding": null,
+      "evidence_plane": "STATIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.boundary.static.positive",
+        "fixture.skill.boundary.static.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "3b89dac2b27502b225c716e2f44237d2688a4701c24337878fa1b275c680fddf",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:BOUNDARY:STATIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "e0a4edac244fe6149a8959810d14c79b7a077d027ae016765ee6d6a532cef15d",
+      "binding_id": "cell.skill.exception_path.behavior",
+      "category_id": "EXCEPTION_PATH",
+      "cell_id": "SKILL:EXCEPTION_PATH:BEHAVIOR",
+      "detector_binding": null,
+      "evidence_plane": "BEHAVIOR",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.exception_path.behavior.positive",
+        "fixture.skill.exception_path.behavior.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "11921778afadb776da010ed57af391a459e513a3e179279a7ecd040b79121fcd",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:BEHAVIOR:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "58151701033035438a120f18b52993b53c318fc982362383e547a5123f0a3b68",
+      "binding_id": "cell.skill.exception_path.contract",
+      "category_id": "EXCEPTION_PATH",
+      "cell_id": "SKILL:EXCEPTION_PATH:CONTRACT",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "453b3c65f1c3f0410109eba465818d677305bedbb270d67d2cc01fedfca0b057",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:CONTRACT:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "CONTRACT",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.exception_path.contract.positive",
+        "fixture.skill.exception_path.contract.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "453b3c65f1c3f0410109eba465818d677305bedbb270d67d2cc01fedfca0b057",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:CONTRACT:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "e2e65c27b3216befc802435eeb73e71d2856527088c2523488c9c2df345080bc",
+      "binding_id": "cell.skill.exception_path.lifecycle",
+      "category_id": "EXCEPTION_PATH",
+      "cell_id": "SKILL:EXCEPTION_PATH:LIFECYCLE",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "7f9d5e752509492fc501cecb4badf61f8297a43e5e4fdd921d8b8e9c58af8d20",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:LIFECYCLE:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "LIFECYCLE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.exception_path.lifecycle.positive",
+        "fixture.skill.exception_path.lifecycle.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "7f9d5e752509492fc501cecb4badf61f8297a43e5e4fdd921d8b8e9c58af8d20",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:LIFECYCLE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "3e89ba0b49b2c0b8ddd72eb9d43ec5202971fd1b56c25de48eb841d37dc1bf9b",
+      "binding_id": "cell.skill.exception_path.performance",
+      "category_id": "EXCEPTION_PATH",
+      "cell_id": "SKILL:EXCEPTION_PATH:PERFORMANCE",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "64eef42f7e68b041028cc43e03bf8f973ae99eafd1b44286c0786eb8997d9ac4",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:PERFORMANCE:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "PERFORMANCE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.exception_path.performance.positive",
+        "fixture.skill.exception_path.performance.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "64eef42f7e68b041028cc43e03bf8f973ae99eafd1b44286c0786eb8997d9ac4",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:PERFORMANCE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "1bd844050380d81c32ad1dc8bb668af5508fa684ca56ec712594689e4fd5a1ea",
+      "binding_id": "cell.skill.exception_path.runtime",
+      "category_id": "EXCEPTION_PATH",
+      "cell_id": "SKILL:EXCEPTION_PATH:RUNTIME",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "8879df699211314740d04324f7222241e285c527963c1c318f7ce2cf01096414",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:RUNTIME:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "RUNTIME",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.exception_path.runtime.positive",
+        "fixture.skill.exception_path.runtime.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "8879df699211314740d04324f7222241e285c527963c1c318f7ce2cf01096414",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:RUNTIME:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "4fd9052f9394b4219aa425dcc8ac03996e6bd16f1f530740f11e2b994c2be239",
+      "binding_id": "cell.skill.exception_path.security",
+      "category_id": "EXCEPTION_PATH",
+      "cell_id": "SKILL:EXCEPTION_PATH:SECURITY",
+      "detector_binding": null,
+      "evidence_plane": "SECURITY",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.exception_path.security.positive",
+        "fixture.skill.exception_path.security.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "d7a686772be22da7968f7bcf70f1ec4b48f16b3cf76391f8b4f7ea6ba946d041",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:SECURITY:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "36baefed8b13b736da19d19b9cfaa23364655a5e5ad4a1d20e6cfad92c127d9a",
+      "binding_id": "cell.skill.exception_path.semantic",
+      "category_id": "EXCEPTION_PATH",
+      "cell_id": "SKILL:EXCEPTION_PATH:SEMANTIC",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "6803c620110ac96f917a42f05edf71d2bdfe1614c6c18ffe244806cd45388dfb",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:SEMANTIC:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "SEMANTIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.exception_path.semantic.positive",
+        "fixture.skill.exception_path.semantic.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "6803c620110ac96f917a42f05edf71d2bdfe1614c6c18ffe244806cd45388dfb",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:SEMANTIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "225aae919924fa01d5a64b93836b0b92ab270585713e2b70288c6a543a1480f1",
+      "binding_id": "cell.skill.exception_path.static",
+      "category_id": "EXCEPTION_PATH",
+      "cell_id": "SKILL:EXCEPTION_PATH:STATIC",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "b2b6565746be8f60f2605b0295d07aa248423f3560057b7de1f20a40cc441b76",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:STATIC:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "STATIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.exception_path.static.positive",
+        "fixture.skill.exception_path.static.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "b2b6565746be8f60f2605b0295d07aa248423f3560057b7de1f20a40cc441b76",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:EXCEPTION_PATH:STATIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "24a83f7509c54b9069bdbc80247d7273b46ddb658a607137c0f098edeb067a85",
+      "binding_id": "cell.skill.functional_fault.behavior",
+      "category_id": "FUNCTIONAL_FAULT",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR",
+      "detector_binding": null,
+      "evidence_plane": "BEHAVIOR",
+      "exact_adapter_binding": {
+        "adapter_id": "adapter.skill.functional_fault.behavior",
+        "callable": "run_external_adapter",
+        "contract_digest": "dacaf4b3d0a5d717d5c209eb4f5e8e54a46dd1cdaa93e4b0f1cbf3835be48c3d",
+        "kind": "EXACT_ADAPTER",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR:exact-adapter",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.functional_fault.behavior.positive",
+        "fixture.skill.functional_fault.behavior.negative"
+      ],
+      "memory_mib": 2048,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "dacaf4b3d0a5d717d5c209eb4f5e8e54a46dd1cdaa93e4b0f1cbf3835be48c3d",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:BEHAVIOR:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_EXACT_ADAPTER",
+      "timeout_seconds": 120
+    },
+    {
+      "binding_digest": "124a1712dadece56784d3f0a2b82b08655e3f4e430f29eefb6ba0dfb7c0b9beb",
+      "binding_id": "cell.skill.functional_fault.contract",
+      "category_id": "FUNCTIONAL_FAULT",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "18ef0238d41e82d861edba1160acff41eb342aa16e019eafc7f14dda544a8f96",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "CONTRACT",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.functional_fault.contract.positive",
+        "fixture.skill.functional_fault.contract.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "18ef0238d41e82d861edba1160acff41eb342aa16e019eafc7f14dda544a8f96",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:CONTRACT:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "e7237524aeb24e21e7dfd086730e6bd8940c437b984d690c59704cf75a5cb495",
+      "binding_id": "cell.skill.functional_fault.lifecycle",
+      "category_id": "FUNCTIONAL_FAULT",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE",
+      "detector_binding": null,
+      "evidence_plane": "LIFECYCLE",
+      "exact_adapter_binding": {
+        "adapter_id": "adapter.skill.functional_fault.lifecycle",
+        "callable": "run_external_adapter",
+        "contract_digest": "4d2c203b94bdff398c90fff6365fd476aeb701ea19d1716f7903706aaa899d4e",
+        "kind": "EXACT_ADAPTER",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE:exact-adapter",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.functional_fault.lifecycle.positive",
+        "fixture.skill.functional_fault.lifecycle.negative"
+      ],
+      "memory_mib": 2048,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "4d2c203b94bdff398c90fff6365fd476aeb701ea19d1716f7903706aaa899d4e",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:LIFECYCLE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_EXACT_ADAPTER",
+      "timeout_seconds": 120
+    },
+    {
+      "binding_digest": "d5ec928405ef9a419bd97bb5eae50b9736a84858b513d29ba81895c77ffe2eea",
+      "binding_id": "cell.skill.functional_fault.performance",
+      "category_id": "FUNCTIONAL_FAULT",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "b6fce124501b0a9b3b09154ce54b9500a97bcb0440eced9143d9609fadd02ec4",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "PERFORMANCE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.functional_fault.performance.positive",
+        "fixture.skill.functional_fault.performance.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "b6fce124501b0a9b3b09154ce54b9500a97bcb0440eced9143d9609fadd02ec4",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:PERFORMANCE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "35981ef600bc7fe1e73cab14fd79b41af6abc2b60cfb0e5238ff2a1d9f09fb0a",
+      "binding_id": "cell.skill.functional_fault.runtime",
+      "category_id": "FUNCTIONAL_FAULT",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "d3774c41908a7766b43dc2fd51ccb45a672fbed8bce18d2e98858b26fc9289cc",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "RUNTIME",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.functional_fault.runtime.positive",
+        "fixture.skill.functional_fault.runtime.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "d3774c41908a7766b43dc2fd51ccb45a672fbed8bce18d2e98858b26fc9289cc",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:RUNTIME:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "593be98b205b135ca10fbf946c1af1d1ef4e9683b9a587a068b301fefddc3895",
+      "binding_id": "cell.skill.functional_fault.security",
+      "category_id": "FUNCTIONAL_FAULT",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SECURITY",
+      "detector_binding": null,
+      "evidence_plane": "SECURITY",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.functional_fault.security.positive",
+        "fixture.skill.functional_fault.security.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "887aca5231be86a699c70d6ac5769535b2d4c8304fca741a358b259bb8cf0b94",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:SECURITY:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "104d580529cf00023d093399b79fee612c1b07a4fd7ec23c989e2f83763b93f7",
+      "binding_id": "cell.skill.functional_fault.semantic",
+      "category_id": "FUNCTIONAL_FAULT",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "5753c475c8f09e202883d41083308747d643ba02f5c0880a71f6e0d63d33846a",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "SEMANTIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.functional_fault.semantic.positive",
+        "fixture.skill.functional_fault.semantic.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "5753c475c8f09e202883d41083308747d643ba02f5c0880a71f6e0d63d33846a",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:SEMANTIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "d523f2d6410efabda06b8520a317bfcb667f98ad25116f015e668d8f8d8dd7c9",
+      "binding_id": "cell.skill.functional_fault.static",
+      "category_id": "FUNCTIONAL_FAULT",
+      "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
+      "detector_binding": null,
+      "evidence_plane": "STATIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.functional_fault.static.positive",
+        "fixture.skill.functional_fault.static.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "9898567da9213af6f59601de4ac142adae5ee3328ae84ee7747947dce75ba332",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:FUNCTIONAL_FAULT:STATIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "bf3c17c233e41d5dae27ae9a9b824616f84e645cc12438d325f41c566dba1d7f",
+      "binding_id": "cell.skill.inconsistency.behavior",
+      "category_id": "INCONSISTENCY",
+      "cell_id": "SKILL:INCONSISTENCY:BEHAVIOR",
+      "detector_binding": null,
+      "evidence_plane": "BEHAVIOR",
+      "exact_adapter_binding": {
+        "adapter_id": "adapter.skill.inconsistency.behavior",
+        "callable": "run_external_adapter",
+        "contract_digest": "97f5cf3ca486d959070a73475b09b63a41ab899f6e408f0e4f314de8ba4d5754",
+        "kind": "EXACT_ADAPTER",
+        "mechanism_id": "SKILL:INCONSISTENCY:BEHAVIOR:exact-adapter",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.inconsistency.behavior.positive",
+        "fixture.skill.inconsistency.behavior.negative"
+      ],
+      "memory_mib": 2048,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "97f5cf3ca486d959070a73475b09b63a41ab899f6e408f0e4f314de8ba4d5754",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:INCONSISTENCY:BEHAVIOR:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_EXACT_ADAPTER",
+      "timeout_seconds": 120
+    },
+    {
+      "binding_digest": "3763c0ffc2e99e31302f65c0eefecba81170c2031b05b4e54f582e78b476618b",
+      "binding_id": "cell.skill.inconsistency.contract",
+      "category_id": "INCONSISTENCY",
+      "cell_id": "SKILL:INCONSISTENCY:CONTRACT",
+      "detector_binding": null,
+      "evidence_plane": "CONTRACT",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.inconsistency.contract.positive",
+        "fixture.skill.inconsistency.contract.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "3ef1e2c96ccafe3b0b6a12b0aec7d563e4876b510cee263fb836f2f7ee0d5f37",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:INCONSISTENCY:CONTRACT:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "427624d7268b8c63c60bba253302f9996ba9303d734f05d4bf761c618d212188",
+      "binding_id": "cell.skill.inconsistency.lifecycle",
+      "category_id": "INCONSISTENCY",
+      "cell_id": "SKILL:INCONSISTENCY:LIFECYCLE",
+      "detector_binding": null,
+      "evidence_plane": "LIFECYCLE",
+      "exact_adapter_binding": {
+        "adapter_id": "adapter.skill.inconsistency.lifecycle",
+        "callable": "run_external_adapter",
+        "contract_digest": "c3773bd505fcaa9a57416110bf57868136449cd279d3972dcd020643a2367e08",
+        "kind": "EXACT_ADAPTER",
+        "mechanism_id": "SKILL:INCONSISTENCY:LIFECYCLE:exact-adapter",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.inconsistency.lifecycle.positive",
+        "fixture.skill.inconsistency.lifecycle.negative"
+      ],
+      "memory_mib": 2048,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "c3773bd505fcaa9a57416110bf57868136449cd279d3972dcd020643a2367e08",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:INCONSISTENCY:LIFECYCLE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_EXACT_ADAPTER",
+      "timeout_seconds": 120
+    },
+    {
+      "binding_digest": "1e5ffbca537157f4debb6ccb9ceca840aad34d5af76cef77be7d9f60050cfe8a",
+      "binding_id": "cell.skill.inconsistency.performance",
+      "category_id": "INCONSISTENCY",
+      "cell_id": "SKILL:INCONSISTENCY:PERFORMANCE",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "be608133b71bf5fdbae5d5b1f27819d519f3913f923a5cb16692f93ebc6c627b",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:INCONSISTENCY:PERFORMANCE:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "PERFORMANCE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.inconsistency.performance.positive",
+        "fixture.skill.inconsistency.performance.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "be608133b71bf5fdbae5d5b1f27819d519f3913f923a5cb16692f93ebc6c627b",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:INCONSISTENCY:PERFORMANCE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "c79d8602da033da287cab1c05727b1f9bb875361167751db34d411eb7a3782f5",
+      "binding_id": "cell.skill.inconsistency.runtime",
+      "category_id": "INCONSISTENCY",
+      "cell_id": "SKILL:INCONSISTENCY:RUNTIME",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "f09d6ef6814786d47dde75c88dcd7c7d088bd37f2284298d266cf67fff32ce03",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:INCONSISTENCY:RUNTIME:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "RUNTIME",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.inconsistency.runtime.positive",
+        "fixture.skill.inconsistency.runtime.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "f09d6ef6814786d47dde75c88dcd7c7d088bd37f2284298d266cf67fff32ce03",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:INCONSISTENCY:RUNTIME:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "54035801df54e274a9fc74506681ba1e59594ac02f22a1b789a80f6fc0609c1f",
+      "binding_id": "cell.skill.inconsistency.security",
+      "category_id": "INCONSISTENCY",
+      "cell_id": "SKILL:INCONSISTENCY:SECURITY",
+      "detector_binding": null,
+      "evidence_plane": "SECURITY",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.inconsistency.security.positive",
+        "fixture.skill.inconsistency.security.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "6f38a2918bfb98ca511f6776868dc7dee07c8ef1573986a9aa4dbe94bc6036fe",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:INCONSISTENCY:SECURITY:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "971da1c22da5ef70be6cf255076604ee1567640f9fad0bf6bd3121ce76b8bd90",
+      "binding_id": "cell.skill.inconsistency.semantic",
+      "category_id": "INCONSISTENCY",
+      "cell_id": "SKILL:INCONSISTENCY:SEMANTIC",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "2c5fd49064a97eb141a4fae28f48a6118c289808abaefa906c9ee1a72b4ef1a6",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:INCONSISTENCY:SEMANTIC:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "SEMANTIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.inconsistency.semantic.positive",
+        "fixture.skill.inconsistency.semantic.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "2c5fd49064a97eb141a4fae28f48a6118c289808abaefa906c9ee1a72b4ef1a6",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:INCONSISTENCY:SEMANTIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "b0e7c1f2577b6afd0fc9e951a6854356d33ac0029ad8a3a82f529b5348cd1462",
+      "binding_id": "cell.skill.inconsistency.static",
+      "category_id": "INCONSISTENCY",
+      "cell_id": "SKILL:INCONSISTENCY:STATIC",
+      "detector_binding": null,
+      "evidence_plane": "STATIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.inconsistency.static.positive",
+        "fixture.skill.inconsistency.static.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "052bb10852d52dd7c2712c659240bdfaafe3c3e27ef8e47d37c8bd2e994fac6b",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:INCONSISTENCY:STATIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "bc95139d7085ff587a84b558b4c576b49fcea7bba5f2a0fe57a2b20aab9d9159",
+      "binding_id": "cell.skill.latent_defect.behavior",
+      "category_id": "LATENT_DEFECT",
+      "cell_id": "SKILL:LATENT_DEFECT:BEHAVIOR",
+      "detector_binding": null,
+      "evidence_plane": "BEHAVIOR",
+      "exact_adapter_binding": {
+        "adapter_id": "adapter.skill.latent_defect.behavior",
+        "callable": "run_external_adapter",
+        "contract_digest": "d258a69232022b352d6318d1a7f0217e91c1340d00d66f6c9d9324b71c230b9d",
+        "kind": "EXACT_ADAPTER",
+        "mechanism_id": "SKILL:LATENT_DEFECT:BEHAVIOR:exact-adapter",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.latent_defect.behavior.positive",
+        "fixture.skill.latent_defect.behavior.negative"
+      ],
+      "memory_mib": 2048,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "d258a69232022b352d6318d1a7f0217e91c1340d00d66f6c9d9324b71c230b9d",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:LATENT_DEFECT:BEHAVIOR:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_EXACT_ADAPTER",
+      "timeout_seconds": 120
+    },
+    {
+      "binding_digest": "00a60728134207a4cd263e4465ff63539cace456790bcbfdd0d7109b4220687a",
+      "binding_id": "cell.skill.latent_defect.contract",
+      "category_id": "LATENT_DEFECT",
+      "cell_id": "SKILL:LATENT_DEFECT:CONTRACT",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "bc2d0d50f448759a1476de573fecbcdf0075f68479e36136d0da01ddc026c516",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:LATENT_DEFECT:CONTRACT:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "CONTRACT",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.latent_defect.contract.positive",
+        "fixture.skill.latent_defect.contract.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "bc2d0d50f448759a1476de573fecbcdf0075f68479e36136d0da01ddc026c516",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:LATENT_DEFECT:CONTRACT:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "29fafa7df7d5f8ab764bb6ac0a81b436099434542fc7c70aeada520bf43dae2c",
+      "binding_id": "cell.skill.latent_defect.lifecycle",
+      "category_id": "LATENT_DEFECT",
+      "cell_id": "SKILL:LATENT_DEFECT:LIFECYCLE",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "dc3bfd8385107a172e71fb0fb5a7b1f4354cb9a942809c0940be0c131a01f663",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:LATENT_DEFECT:LIFECYCLE:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "LIFECYCLE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.latent_defect.lifecycle.positive",
+        "fixture.skill.latent_defect.lifecycle.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "dc3bfd8385107a172e71fb0fb5a7b1f4354cb9a942809c0940be0c131a01f663",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:LATENT_DEFECT:LIFECYCLE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "6da955690db1a91c5b1c0d34c8e58a793e1f098ed0a71110ef59934275fa1e5c",
+      "binding_id": "cell.skill.latent_defect.performance",
+      "category_id": "LATENT_DEFECT",
+      "cell_id": "SKILL:LATENT_DEFECT:PERFORMANCE",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "dc52fadaee68576d65cd16a48bd83f22b1332b8f8db272d1497cded08eb061eb",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:LATENT_DEFECT:PERFORMANCE:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "PERFORMANCE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.latent_defect.performance.positive",
+        "fixture.skill.latent_defect.performance.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "dc52fadaee68576d65cd16a48bd83f22b1332b8f8db272d1497cded08eb061eb",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:LATENT_DEFECT:PERFORMANCE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "398996e35deb0df203933552f4b71b0504d1e8cf5e06fa9b5d47132eafe126cb",
+      "binding_id": "cell.skill.latent_defect.runtime",
+      "category_id": "LATENT_DEFECT",
+      "cell_id": "SKILL:LATENT_DEFECT:RUNTIME",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "072f2352eecefc1da164cbc3609ee581e9bf83f4854208255e1d13acade7986e",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:LATENT_DEFECT:RUNTIME:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "RUNTIME",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.latent_defect.runtime.positive",
+        "fixture.skill.latent_defect.runtime.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "072f2352eecefc1da164cbc3609ee581e9bf83f4854208255e1d13acade7986e",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:LATENT_DEFECT:RUNTIME:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "0d194a1775082fc31ee7f8182662338747f9f5951290657352387a2e800a0cbe",
+      "binding_id": "cell.skill.latent_defect.security",
+      "category_id": "LATENT_DEFECT",
+      "cell_id": "SKILL:LATENT_DEFECT:SECURITY",
+      "detector_binding": null,
+      "evidence_plane": "SECURITY",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.latent_defect.security.positive",
+        "fixture.skill.latent_defect.security.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "2b28be3aa1d691bec6c64bdaf6f0e31a14e5149fd7649189b2973b26495e27e3",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:LATENT_DEFECT:SECURITY:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "b0623a24a74c5181d4f9eb9ff37390c662be67a9c84dba059b927da2504ab0e9",
+      "binding_id": "cell.skill.latent_defect.semantic",
+      "category_id": "LATENT_DEFECT",
+      "cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "detector_binding": null,
+      "evidence_plane": "SEMANTIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.latent_defect.semantic.positive",
+        "fixture.skill.latent_defect.semantic.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "716665190c008aba2bc7661d29781866db3e7debe0443a55e86004984e132cc9",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:LATENT_DEFECT:SEMANTIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "02de10a0c1d4f8d3c67d25eed2c4ca691ec8af355267b50a4c851d5aee751691",
+      "binding_id": "cell.skill.latent_defect.static",
+      "category_id": "LATENT_DEFECT",
+      "cell_id": "SKILL:LATENT_DEFECT:STATIC",
+      "detector_binding": null,
+      "evidence_plane": "STATIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.latent_defect.static.positive",
+        "fixture.skill.latent_defect.static.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": null,
+      "primary_cell_id": "SKILL:LATENT_DEFECT:SEMANTIC",
+      "target_kind": "SKILL",
+      "terminal_state": "MERGED_WITH_PRIMARY_CELL",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "e19a106893423bfed516a040f30ccb3b83a9c3d917a10c962c63536d8e5c609e",
+      "binding_id": "cell.skill.omission.behavior",
+      "category_id": "OMISSION",
+      "cell_id": "SKILL:OMISSION:BEHAVIOR",
+      "detector_binding": null,
+      "evidence_plane": "BEHAVIOR",
+      "exact_adapter_binding": {
+        "adapter_id": "adapter.skill.omission.behavior",
+        "callable": "run_external_adapter",
+        "contract_digest": "7589635b804eeca74996c2bed77f2dd8c8c28b0bd16058d4d09a1469e8a036d9",
+        "kind": "EXACT_ADAPTER",
+        "mechanism_id": "SKILL:OMISSION:BEHAVIOR:exact-adapter",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.omission.behavior.positive",
+        "fixture.skill.omission.behavior.negative"
+      ],
+      "memory_mib": 2048,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "7589635b804eeca74996c2bed77f2dd8c8c28b0bd16058d4d09a1469e8a036d9",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:BEHAVIOR:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_EXACT_ADAPTER",
+      "timeout_seconds": 120
+    },
+    {
+      "binding_digest": "c36899409b922f581b38a15e06e6a78cf0117a2eb1aa6e88cc20e54abce163f1",
+      "binding_id": "cell.skill.omission.contract",
+      "category_id": "OMISSION",
+      "cell_id": "SKILL:OMISSION:CONTRACT",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "0f6f6f879a703b533b4846d257e7bd3c26f8020c1c043d9482f5b1b685d87066",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:CONTRACT:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "CONTRACT",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.omission.contract.positive",
+        "fixture.skill.omission.contract.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "0f6f6f879a703b533b4846d257e7bd3c26f8020c1c043d9482f5b1b685d87066",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:CONTRACT:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "12a2f4137d49ef909e59c9c609e91096e1c40c6ed67cda44273eb54209ba7783",
+      "binding_id": "cell.skill.omission.lifecycle",
+      "category_id": "OMISSION",
+      "cell_id": "SKILL:OMISSION:LIFECYCLE",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "717d8c482009be460fec62517bc13f26cc69f967f3613bd6bdb8bc2672aa3725",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:LIFECYCLE:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "LIFECYCLE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.omission.lifecycle.positive",
+        "fixture.skill.omission.lifecycle.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "717d8c482009be460fec62517bc13f26cc69f967f3613bd6bdb8bc2672aa3725",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:LIFECYCLE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "577ee300186688a0706a2a23ac46fe1b1a1a635f6fcd57b550c9ff7760dba83e",
+      "binding_id": "cell.skill.omission.performance",
+      "category_id": "OMISSION",
+      "cell_id": "SKILL:OMISSION:PERFORMANCE",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "2a9d9c13110a3f51a5ba8a3a75e12307834b50b0ac56c392f420e53a95956095",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:PERFORMANCE:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "PERFORMANCE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.omission.performance.positive",
+        "fixture.skill.omission.performance.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "2a9d9c13110a3f51a5ba8a3a75e12307834b50b0ac56c392f420e53a95956095",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:PERFORMANCE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "50253ac7219de5bd95e3db5bee6d286c24e1cb50b83c66028be685b6a7b0a35a",
+      "binding_id": "cell.skill.omission.runtime",
+      "category_id": "OMISSION",
+      "cell_id": "SKILL:OMISSION:RUNTIME",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "5954bbc792078bc878204c277b52dc3d0ea975b6210729b5ff379a39a41756ee",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:RUNTIME:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "RUNTIME",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.omission.runtime.positive",
+        "fixture.skill.omission.runtime.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "5954bbc792078bc878204c277b52dc3d0ea975b6210729b5ff379a39a41756ee",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:RUNTIME:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "cabde6c753eab32ec5173072057a518a13a98bc4edf66670105a6569b612626f",
+      "binding_id": "cell.skill.omission.security",
+      "category_id": "OMISSION",
+      "cell_id": "SKILL:OMISSION:SECURITY",
+      "detector_binding": null,
+      "evidence_plane": "SECURITY",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.omission.security.positive",
+        "fixture.skill.omission.security.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "e87ab53ca0fa8f507c9332184fa6e064eea93e3398d41cfe9a8a899540280d84",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:SECURITY:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "0825c7745c58d3f1d7c16b5f4896df85bff8de6bc4978bbf79843d60f0d078b6",
+      "binding_id": "cell.skill.omission.semantic",
+      "category_id": "OMISSION",
+      "cell_id": "SKILL:OMISSION:SEMANTIC",
+      "detector_binding": null,
+      "evidence_plane": "SEMANTIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.omission.semantic.positive",
+        "fixture.skill.omission.semantic.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "f2986dce935b4d935a4e32390764a6c8aa833ebb99c21a78ee8e9bb46c24ccc1",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:SEMANTIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "21cafbeac2bd63722843dc5563cbb7f3a67f54cd52c75d9992ca0ea876cc9fc3",
+      "binding_id": "cell.skill.omission.static",
+      "category_id": "OMISSION",
+      "cell_id": "SKILL:OMISSION:STATIC",
+      "detector_binding": null,
+      "evidence_plane": "STATIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.omission.static.positive",
+        "fixture.skill.omission.static.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "ee50f677921e69606e3422fa7fa69d94ba182d585dfb3541cff296ccc9ebafa3",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:OMISSION:STATIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "6b50f610bd0b74fe7749fe8921c2f459df2189d5d3b7ed0b3523b4353f6dd52c",
+      "binding_id": "cell.skill.other_declared.behavior",
+      "category_id": "OTHER_DECLARED",
+      "cell_id": "SKILL:OTHER_DECLARED:BEHAVIOR",
+      "detector_binding": null,
+      "evidence_plane": "BEHAVIOR",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.other_declared.behavior.positive",
+        "fixture.skill.other_declared.behavior.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": "policy:taxonomy-policy-v2.json:na_scope",
+      "oracle_binding": null,
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "NOT_APPLICABLE_WITH_PROOF",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "0cd62210d94d5ba32e19c1dd1a569fe72bc758edeee438121c7134f7624e30da",
+      "binding_id": "cell.skill.other_declared.contract",
+      "category_id": "OTHER_DECLARED",
+      "cell_id": "SKILL:OTHER_DECLARED:CONTRACT",
+      "detector_binding": null,
+      "evidence_plane": "CONTRACT",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.other_declared.contract.positive",
+        "fixture.skill.other_declared.contract.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": "policy:taxonomy-policy-v2.json:na_scope",
+      "oracle_binding": null,
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "NOT_APPLICABLE_WITH_PROOF",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "8caa84df5f5749e2941aa33c35d402622a2b22465f4250ec768352d9bf47ef69",
+      "binding_id": "cell.skill.other_declared.lifecycle",
+      "category_id": "OTHER_DECLARED",
+      "cell_id": "SKILL:OTHER_DECLARED:LIFECYCLE",
+      "detector_binding": null,
+      "evidence_plane": "LIFECYCLE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.other_declared.lifecycle.positive",
+        "fixture.skill.other_declared.lifecycle.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": "policy:taxonomy-policy-v2.json:na_scope",
+      "oracle_binding": null,
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "NOT_APPLICABLE_WITH_PROOF",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "cd3a04d65a883bbb675beef2ce5e8e112b838d80b8f40a97b040fd106ec21bb7",
+      "binding_id": "cell.skill.other_declared.performance",
+      "category_id": "OTHER_DECLARED",
+      "cell_id": "SKILL:OTHER_DECLARED:PERFORMANCE",
+      "detector_binding": null,
+      "evidence_plane": "PERFORMANCE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.other_declared.performance.positive",
+        "fixture.skill.other_declared.performance.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": "policy:taxonomy-policy-v2.json:na_scope",
+      "oracle_binding": null,
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "NOT_APPLICABLE_WITH_PROOF",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "83d0afb1c7eb4210b3ee8521877c4793e286060405de34c455ffc731ed35b29e",
+      "binding_id": "cell.skill.other_declared.runtime",
+      "category_id": "OTHER_DECLARED",
+      "cell_id": "SKILL:OTHER_DECLARED:RUNTIME",
+      "detector_binding": null,
+      "evidence_plane": "RUNTIME",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.other_declared.runtime.positive",
+        "fixture.skill.other_declared.runtime.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": "policy:taxonomy-policy-v2.json:na_scope",
+      "oracle_binding": null,
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "NOT_APPLICABLE_WITH_PROOF",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "b490f96cc125bf2cd34d54b8af91046857609b5db92cfbd2d49a026395a1c9ed",
+      "binding_id": "cell.skill.other_declared.security",
+      "category_id": "OTHER_DECLARED",
+      "cell_id": "SKILL:OTHER_DECLARED:SECURITY",
+      "detector_binding": null,
+      "evidence_plane": "SECURITY",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.other_declared.security.positive",
+        "fixture.skill.other_declared.security.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": "policy:taxonomy-policy-v2.json:na_scope",
+      "oracle_binding": null,
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "NOT_APPLICABLE_WITH_PROOF",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "2d1b16c439fa92889ecf7af2d06287ea988bd909577e7e35137cc81df5ea6b7a",
+      "binding_id": "cell.skill.other_declared.semantic",
+      "category_id": "OTHER_DECLARED",
+      "cell_id": "SKILL:OTHER_DECLARED:SEMANTIC",
+      "detector_binding": null,
+      "evidence_plane": "SEMANTIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.other_declared.semantic.positive",
+        "fixture.skill.other_declared.semantic.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": "policy:taxonomy-policy-v2.json:na_scope",
+      "oracle_binding": null,
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "NOT_APPLICABLE_WITH_PROOF",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "72bbb7f9e4467e575988afe6f1c770f3751d182f269a2f2c4d4a94512e51e64d",
+      "binding_id": "cell.skill.other_declared.static",
+      "category_id": "OTHER_DECLARED",
+      "cell_id": "SKILL:OTHER_DECLARED:STATIC",
+      "detector_binding": null,
+      "evidence_plane": "STATIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.other_declared.static.positive",
+        "fixture.skill.other_declared.static.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": "policy:taxonomy-policy-v2.json:na_scope",
+      "oracle_binding": null,
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "NOT_APPLICABLE_WITH_PROOF",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "95ca4e0ddeb0b438814bfec1156651d7d738a367d38575275fe97633922306aa",
+      "binding_id": "cell.skill.risk_exposure.behavior",
+      "category_id": "RISK_EXPOSURE",
+      "cell_id": "SKILL:RISK_EXPOSURE:BEHAVIOR",
+      "detector_binding": null,
+      "evidence_plane": "BEHAVIOR",
+      "exact_adapter_binding": {
+        "adapter_id": "adapter.skill.risk_exposure.behavior",
+        "callable": "run_external_adapter",
+        "contract_digest": "68ede747d2f8ba5bd712a65382f51a8ba678039676b2db1d52f33a3db94fb303",
+        "kind": "EXACT_ADAPTER",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:BEHAVIOR:exact-adapter",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.risk_exposure.behavior.positive",
+        "fixture.skill.risk_exposure.behavior.negative"
+      ],
+      "memory_mib": 2048,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "68ede747d2f8ba5bd712a65382f51a8ba678039676b2db1d52f33a3db94fb303",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:BEHAVIOR:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_EXACT_ADAPTER",
+      "timeout_seconds": 120
+    },
+    {
+      "binding_digest": "421847f905a0eee1dc0948b3cc7590f4f141aae8d3b42213313dbbbe60a45ab9",
+      "binding_id": "cell.skill.risk_exposure.contract",
+      "category_id": "RISK_EXPOSURE",
+      "cell_id": "SKILL:RISK_EXPOSURE:CONTRACT",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "4815e58fbe238845d312f9653fccfecf22361af37be6f14651ce22dcc2aa204c",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:CONTRACT:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "CONTRACT",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.risk_exposure.contract.positive",
+        "fixture.skill.risk_exposure.contract.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "4815e58fbe238845d312f9653fccfecf22361af37be6f14651ce22dcc2aa204c",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:CONTRACT:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "b313afa7197b125d737fe094dd270def4a9971b1f9d65253d8dcdf19e6b2f498",
+      "binding_id": "cell.skill.risk_exposure.lifecycle",
+      "category_id": "RISK_EXPOSURE",
+      "cell_id": "SKILL:RISK_EXPOSURE:LIFECYCLE",
+      "detector_binding": null,
+      "evidence_plane": "LIFECYCLE",
+      "exact_adapter_binding": {
+        "adapter_id": "adapter.skill.risk_exposure.lifecycle",
+        "callable": "run_external_adapter",
+        "contract_digest": "3af61e8f731c3ac7b34635d19e5c0200c8ec0c003b098ba1138f856c950bc908",
+        "kind": "EXACT_ADAPTER",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:LIFECYCLE:exact-adapter",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.risk_exposure.lifecycle.positive",
+        "fixture.skill.risk_exposure.lifecycle.negative"
+      ],
+      "memory_mib": 2048,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "3af61e8f731c3ac7b34635d19e5c0200c8ec0c003b098ba1138f856c950bc908",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:LIFECYCLE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_EXACT_ADAPTER",
+      "timeout_seconds": 120
+    },
+    {
+      "binding_digest": "d384c204d902dcce5c33faa4561e1766fd9edac4b3a49927b8edcd60a522a821",
+      "binding_id": "cell.skill.risk_exposure.performance",
+      "category_id": "RISK_EXPOSURE",
+      "cell_id": "SKILL:RISK_EXPOSURE:PERFORMANCE",
+      "detector_binding": null,
+      "evidence_plane": "PERFORMANCE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.risk_exposure.performance.positive",
+        "fixture.skill.risk_exposure.performance.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "5d6188bc042206d3ba2fed6906fa1b284db208d38371a751e7d0e8433e296272",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:PERFORMANCE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "e94191bf304ebd1075e10952e84fd5c4214dc5c8ee7f5bea7302c2debab8ad48",
+      "binding_id": "cell.skill.risk_exposure.runtime",
+      "category_id": "RISK_EXPOSURE",
+      "cell_id": "SKILL:RISK_EXPOSURE:RUNTIME",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "72824926e8e59011956a5d0140daeb050ea6d9e9fa298f438f356e1a088b8939",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:RUNTIME:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "RUNTIME",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.risk_exposure.runtime.positive",
+        "fixture.skill.risk_exposure.runtime.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "72824926e8e59011956a5d0140daeb050ea6d9e9fa298f438f356e1a088b8939",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:RUNTIME:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "5106fe6820d5e7bda4fc6e703db7259ee3002d1bf019a73e23f674dae6a4de51",
+      "binding_id": "cell.skill.risk_exposure.security",
+      "category_id": "RISK_EXPOSURE",
+      "cell_id": "SKILL:RISK_EXPOSURE:SECURITY",
+      "detector_binding": null,
+      "evidence_plane": "SECURITY",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_TAXONOMY",
+      "fixture_case_ids": [
+        "fixture.skill.risk_exposure.security.positive",
+        "fixture.skill.risk_exposure.security.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": null,
+      "primary_cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "target_kind": "SKILL",
+      "terminal_state": "MERGED_WITH_PRIMARY_CELL",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "739aa4af011c187a721954bbe94d2169cd9d8f837da6a52352be052a479418e1",
+      "binding_id": "cell.skill.risk_exposure.semantic",
+      "category_id": "RISK_EXPOSURE",
+      "cell_id": "SKILL:RISK_EXPOSURE:SEMANTIC",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "1bc6b33b72cf1444f369560912e9184470d2836ab0f4f043157db78037f92531",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:SEMANTIC:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "SEMANTIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.risk_exposure.semantic.positive",
+        "fixture.skill.risk_exposure.semantic.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "1bc6b33b72cf1444f369560912e9184470d2836ab0f4f043157db78037f92531",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:SEMANTIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "e2ff74dcdd86da1529a8c3bb2841fb2a492224c1e43e5019ace616b456ee8c84",
+      "binding_id": "cell.skill.risk_exposure.static",
+      "category_id": "RISK_EXPOSURE",
+      "cell_id": "SKILL:RISK_EXPOSURE:STATIC",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "1af9ba2e583894c4fafdaa79066af98bc2caef324209c13eab9ab932aff7cf34",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:STATIC:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "STATIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.risk_exposure.static.positive",
+        "fixture.skill.risk_exposure.static.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "1af9ba2e583894c4fafdaa79066af98bc2caef324209c13eab9ab932aff7cf34",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:RISK_EXPOSURE:STATIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "8b920264aecc2cff6899cac4bc724528e2b673f1e3e28e4cf730268785738138",
+      "binding_id": "cell.skill.vulnerability.behavior",
+      "category_id": "VULNERABILITY",
+      "cell_id": "SKILL:VULNERABILITY:BEHAVIOR",
+      "detector_binding": null,
+      "evidence_plane": "BEHAVIOR",
+      "exact_adapter_binding": {
+        "adapter_id": "adapter.skill.vulnerability.behavior",
+        "callable": "run_external_adapter",
+        "contract_digest": "9dc5c10fa801d10935e4a6a94ba34f67581ec9ae5d7d005a23c868e1ef9f5833",
+        "kind": "EXACT_ADAPTER",
+        "mechanism_id": "SKILL:VULNERABILITY:BEHAVIOR:exact-adapter",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.vulnerability.behavior.positive",
+        "fixture.skill.vulnerability.behavior.negative"
+      ],
+      "memory_mib": 2048,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "9dc5c10fa801d10935e4a6a94ba34f67581ec9ae5d7d005a23c868e1ef9f5833",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:BEHAVIOR:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_EXACT_ADAPTER",
+      "timeout_seconds": 120
+    },
+    {
+      "binding_digest": "6001b2722f4e5ccbe6da02c34aaa048c2f308e66db061d740fd83796f404fc13",
+      "binding_id": "cell.skill.vulnerability.contract",
+      "category_id": "VULNERABILITY",
+      "cell_id": "SKILL:VULNERABILITY:CONTRACT",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "66aa79d6cc321c260c27974664e3c49a9c1be5cfdc2d7fb4035a0851c62ee020",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:CONTRACT:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "CONTRACT",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.vulnerability.contract.positive",
+        "fixture.skill.vulnerability.contract.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "66aa79d6cc321c260c27974664e3c49a9c1be5cfdc2d7fb4035a0851c62ee020",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:CONTRACT:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "4c75263d4639c02959a6588ea4c58991da0b3523b36792f3766dee30d2cfaaaa",
+      "binding_id": "cell.skill.vulnerability.lifecycle",
+      "category_id": "VULNERABILITY",
+      "cell_id": "SKILL:VULNERABILITY:LIFECYCLE",
+      "detector_binding": null,
+      "evidence_plane": "LIFECYCLE",
+      "exact_adapter_binding": {
+        "adapter_id": "adapter.skill.vulnerability.lifecycle",
+        "callable": "run_external_adapter",
+        "contract_digest": "f47e34d693e52b93776c7c45f638cd6db7040850dac82d9b7dcbe1a45830d532",
+        "kind": "EXACT_ADAPTER",
+        "mechanism_id": "SKILL:VULNERABILITY:LIFECYCLE:exact-adapter",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "failure_state": "BLOCKED_ADAPTER",
+      "fixture_case_ids": [
+        "fixture.skill.vulnerability.lifecycle.positive",
+        "fixture.skill.vulnerability.lifecycle.negative"
+      ],
+      "memory_mib": 2048,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "f47e34d693e52b93776c7c45f638cd6db7040850dac82d9b7dcbe1a45830d532",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:LIFECYCLE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_EXACT_ADAPTER",
+      "timeout_seconds": 120
+    },
+    {
+      "binding_digest": "a46f102566af23938e5074c51ff9c8ccee37bdedcf704e20bcffd6314c8db671",
+      "binding_id": "cell.skill.vulnerability.performance",
+      "category_id": "VULNERABILITY",
+      "cell_id": "SKILL:VULNERABILITY:PERFORMANCE",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "9d3bb7dd90fd7ac737904b6de4d057fb82bd6c2e98eaa760764dea20a9b900d5",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:PERFORMANCE:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "PERFORMANCE",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.vulnerability.performance.positive",
+        "fixture.skill.vulnerability.performance.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "9d3bb7dd90fd7ac737904b6de4d057fb82bd6c2e98eaa760764dea20a9b900d5",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:PERFORMANCE:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "e7d5f398c4174c8873224ec9d56d26314a397d35328c96f136c5784cfbb9024c",
+      "binding_id": "cell.skill.vulnerability.runtime",
+      "category_id": "VULNERABILITY",
+      "cell_id": "SKILL:VULNERABILITY:RUNTIME",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "b2b2c66b66f42e74eb8772ec1f22276de9a9655cd63dd31706520b41a9bbd5fc",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:RUNTIME:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "RUNTIME",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_DETECTOR",
+      "fixture_case_ids": [
+        "fixture.skill.vulnerability.runtime.positive",
+        "fixture.skill.vulnerability.runtime.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "b2b2c66b66f42e74eb8772ec1f22276de9a9655cd63dd31706520b41a9bbd5fc",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:RUNTIME:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "532d8c1e3588e439f67f6c3bec4cd4c6855d42cd7321a492d8a8542cfc4fa2d8",
+      "binding_id": "cell.skill.vulnerability.security",
+      "category_id": "VULNERABILITY",
+      "cell_id": "SKILL:VULNERABILITY:SECURITY",
+      "detector_binding": null,
+      "evidence_plane": "SECURITY",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.vulnerability.security.positive",
+        "fixture.skill.vulnerability.security.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "19145bcaf721bea8d55b8c3b790bff8b5ff3d6e2a01b1e7aa2b56bacc95b1183",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:SECURITY:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_INDEPENDENT_ORACLE",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "4e99c2d57caccd95ebd22d92f254a09243cad2a57b14b080785ae9680e175946",
+      "binding_id": "cell.skill.vulnerability.semantic",
+      "category_id": "VULNERABILITY",
+      "cell_id": "SKILL:VULNERABILITY:SEMANTIC",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "ef7a4ee3c7deb99dddc840fb9f308d0bc500092c8d187afeffd6acc01fb026db",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:SEMANTIC:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "SEMANTIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.vulnerability.semantic.positive",
+        "fixture.skill.vulnerability.semantic.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "ef7a4ee3c7deb99dddc840fb9f308d0bc500092c8d187afeffd6acc01fb026db",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:SEMANTIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    },
+    {
+      "binding_digest": "35227c7e5e704192dbdafe7b28ccccb99b9b88d2282e26ee9785cd0e24746aa8",
+      "binding_id": "cell.skill.vulnerability.static",
+      "category_id": "VULNERABILITY",
+      "cell_id": "SKILL:VULNERABILITY:STATIC",
+      "detector_binding": {
+        "callable": "run_native",
+        "contract_digest": "a2188fbff77675de1530e889a8520cfda7b27d647062a9af8da75456a6f61875",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:STATIC:detector",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "evidence_plane": "STATIC",
+      "exact_adapter_binding": null,
+      "failure_state": "BLOCKED_EVIDENCE",
+      "fixture_case_ids": [
+        "fixture.skill.vulnerability.static.positive",
+        "fixture.skill.vulnerability.static.negative"
+      ],
+      "memory_mib": 256,
+      "n_a_proof_ref": null,
+      "oracle_binding": {
+        "callable": "run_oracle",
+        "contract_digest": "a2188fbff77675de1530e889a8520cfda7b27d647062a9af8da75456a6f61875",
+        "kind": "PYTHON_CALLABLE",
+        "mechanism_id": "SKILL:VULNERABILITY:STATIC:oracle",
+        "module": "full_inspection_repair.r2_engine",
+        "version": "1.0.0"
+      },
+      "primary_cell_id": null,
+      "target_kind": "SKILL",
+      "terminal_state": "COVERED_BY_NATIVE_DETECTOR",
+      "timeout_seconds": 10
+    }
+  ],
+  "closure_reducers": [
+    {
+      "binding_id": "reducer.source-closure",
+      "implementation": {
+        "callable": "assert_source_closure_complete",
+        "module": "full_inspection_repair.source_inventory"
+      },
+      "implementation_digest": "0582812e664567644efbc6297c57bf101d805bb68bf8083bf9ae38340c48a567",
+      "version": "1.0.0"
+    }
+  ],
+  "detectors": [
+    {
+      "binding_id": "cell.skill.boundary.contract.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.boundary.lifecycle.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.boundary.performance.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.boundary.runtime.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.boundary.semantic.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.contract.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.lifecycle.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.performance.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.runtime.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.semantic.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.static.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.contract.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.performance.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.runtime.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.semantic.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.inconsistency.performance.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.inconsistency.runtime.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.inconsistency.semantic.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.latent_defect.contract.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.latent_defect.lifecycle.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.latent_defect.performance.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.latent_defect.runtime.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.contract.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.lifecycle.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.performance.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.runtime.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.risk_exposure.contract.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.risk_exposure.runtime.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.risk_exposure.semantic.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.risk_exposure.static.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.contract.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.performance.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.runtime.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.semantic.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.static.detector",
+      "implementation": {
+        "callable": "run_native",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    }
+  ],
+  "external_adapters": [
+    {
+      "binding_id": "adapter.skill.boundary.behavior",
+      "implementation": {
+        "callable": "run_external_adapter",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "adapter.skill.functional_fault.behavior",
+      "implementation": {
+        "callable": "run_external_adapter",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "adapter.skill.functional_fault.lifecycle",
+      "implementation": {
+        "callable": "run_external_adapter",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "adapter.skill.inconsistency.behavior",
+      "implementation": {
+        "callable": "run_external_adapter",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "adapter.skill.inconsistency.lifecycle",
+      "implementation": {
+        "callable": "run_external_adapter",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "adapter.skill.latent_defect.behavior",
+      "implementation": {
+        "callable": "run_external_adapter",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "adapter.skill.omission.behavior",
+      "implementation": {
+        "callable": "run_external_adapter",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "adapter.skill.risk_exposure.behavior",
+      "implementation": {
+        "callable": "run_external_adapter",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "adapter.skill.risk_exposure.lifecycle",
+      "implementation": {
+        "callable": "run_external_adapter",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "adapter.skill.vulnerability.behavior",
+      "implementation": {
+        "callable": "run_external_adapter",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "adapter.skill.vulnerability.lifecycle",
+      "implementation": {
+        "callable": "run_external_adapter",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "release_authority": false,
+      "version": "1.0.0"
+    }
+  ],
+  "failure_map": {
+    "duplicate_binding": "BLOCKED_TAXONOMY",
+    "missing_module": "BLOCKED_ADAPTER",
+    "oracle_disagreement": "BLOCKED_EVIDENCE",
+    "stale_implementation": "BLOCKED_STALE_INPUT",
+    "unsupported_source": "BLOCKED_EVIDENCE"
+  },
+  "fixture_archives": [
+    {
+      "binding_id": "fixture.capabilities",
+      "extraction_policy": "package-relative-no-links",
+      "path": "capabilities/fixtures.zip",
+      "sha256": "de54b4c3751c0d535c9a6d0efbbe33c9817536721dd8311842982b6100175d7a"
+    }
+  ],
+  "impact_scanners": [
+    {
+      "binding_id": "scanner.javascript.references",
+      "edge_kinds": [
+        "IMPORTS",
+        "REFERENCES",
+        "COMMAND_REF",
+        "CONFIG_REF",
+        "TEST_REF",
+        "RUNTIME_LOAD",
+        "LIFECYCLE_REF",
+        "EXTERNAL_DEPENDENCY"
+      ],
+      "implementation": {
+        "callable": "build_impact_graph",
+        "module": "full_inspection_repair.impact"
+      },
+      "implementation_digest": "609a9367bed2a77ebba16478750a3804ccd81f01fcafb042568e054a2037962c",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "scanner.markdown.links",
+      "edge_kinds": [
+        "IMPORTS",
+        "REFERENCES",
+        "COMMAND_REF",
+        "CONFIG_REF",
+        "TEST_REF",
+        "RUNTIME_LOAD",
+        "LIFECYCLE_REF",
+        "EXTERNAL_DEPENDENCY"
+      ],
+      "implementation": {
+        "callable": "build_impact_graph",
+        "module": "full_inspection_repair.impact"
+      },
+      "implementation_digest": "609a9367bed2a77ebba16478750a3804ccd81f01fcafb042568e054a2037962c",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "scanner.markup.references",
+      "edge_kinds": [
+        "IMPORTS",
+        "REFERENCES",
+        "COMMAND_REF",
+        "CONFIG_REF",
+        "TEST_REF",
+        "RUNTIME_LOAD",
+        "LIFECYCLE_REF",
+        "EXTERNAL_DEPENDENCY"
+      ],
+      "implementation": {
+        "callable": "build_impact_graph",
+        "module": "full_inspection_repair.impact"
+      },
+      "implementation_digest": "609a9367bed2a77ebba16478750a3804ccd81f01fcafb042568e054a2037962c",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "scanner.powershell.commands",
+      "edge_kinds": [
+        "IMPORTS",
+        "REFERENCES",
+        "COMMAND_REF",
+        "CONFIG_REF",
+        "TEST_REF",
+        "RUNTIME_LOAD",
+        "LIFECYCLE_REF",
+        "EXTERNAL_DEPENDENCY"
+      ],
+      "implementation": {
+        "callable": "build_impact_graph",
+        "module": "full_inspection_repair.impact"
+      },
+      "implementation_digest": "609a9367bed2a77ebba16478750a3804ccd81f01fcafb042568e054a2037962c",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "scanner.python.ast",
+      "edge_kinds": [
+        "IMPORTS",
+        "REFERENCES",
+        "COMMAND_REF",
+        "CONFIG_REF",
+        "TEST_REF",
+        "RUNTIME_LOAD",
+        "LIFECYCLE_REF",
+        "EXTERNAL_DEPENDENCY"
+      ],
+      "implementation": {
+        "callable": "_import_records",
+        "module": "full_inspection_repair.impact"
+      },
+      "implementation_digest": "609a9367bed2a77ebba16478750a3804ccd81f01fcafb042568e054a2037962c",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "scanner.shell.commands",
+      "edge_kinds": [
+        "IMPORTS",
+        "REFERENCES",
+        "COMMAND_REF",
+        "CONFIG_REF",
+        "TEST_REF",
+        "RUNTIME_LOAD",
+        "LIFECYCLE_REF",
+        "EXTERNAL_DEPENDENCY"
+      ],
+      "implementation": {
+        "callable": "build_impact_graph",
+        "module": "full_inspection_repair.impact"
+      },
+      "implementation_digest": "609a9367bed2a77ebba16478750a3804ccd81f01fcafb042568e054a2037962c",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "scanner.structured-config.paths",
+      "edge_kinds": [
+        "IMPORTS",
+        "REFERENCES",
+        "COMMAND_REF",
+        "CONFIG_REF",
+        "TEST_REF",
+        "RUNTIME_LOAD",
+        "LIFECYCLE_REF",
+        "EXTERNAL_DEPENDENCY"
+      ],
+      "implementation": {
+        "callable": "build_impact_graph",
+        "module": "full_inspection_repair.impact"
+      },
+      "implementation_digest": "609a9367bed2a77ebba16478750a3804ccd81f01fcafb042568e054a2037962c",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "scanner.stylesheet.references",
+      "edge_kinds": [
+        "IMPORTS",
+        "REFERENCES",
+        "COMMAND_REF",
+        "CONFIG_REF",
+        "TEST_REF",
+        "RUNTIME_LOAD",
+        "LIFECYCLE_REF",
+        "EXTERNAL_DEPENDENCY"
+      ],
+      "implementation": {
+        "callable": "build_impact_graph",
+        "module": "full_inspection_repair.impact"
+      },
+      "implementation_digest": "609a9367bed2a77ebba16478750a3804ccd81f01fcafb042568e054a2037962c",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "scanner.test.references",
+      "edge_kinds": [
+        "IMPORTS",
+        "REFERENCES",
+        "COMMAND_REF",
+        "CONFIG_REF",
+        "TEST_REF",
+        "RUNTIME_LOAD",
+        "LIFECYCLE_REF",
+        "EXTERNAL_DEPENDENCY"
+      ],
+      "implementation": {
+        "callable": "build_impact_graph",
+        "module": "full_inspection_repair.impact"
+      },
+      "implementation_digest": "609a9367bed2a77ebba16478750a3804ccd81f01fcafb042568e054a2037962c",
+      "version": "1.0.0"
+    }
+  ],
+  "known_runtimes": [
+    {
+      "binding_id": "runtime.python312",
+      "name": "CPython",
+      "platforms": [
+        "WINDOWS",
+        "LINUX",
+        "MACOS"
+      ],
+      "version": ">=3.12"
+    }
+  ],
+  "known_tools": [
+    {
+      "binding_id": "known.tool.python",
+      "logical_path": "python",
+      "platforms": [
+        "WINDOWS",
+        "LINUX",
+        "MACOS"
+      ],
+      "version": ">=3.12"
+    },
+    {
+      "binding_id": "known.tool.pytest",
+      "logical_path": "pytest",
+      "platforms": [
+        "WINDOWS",
+        "LINUX",
+        "MACOS"
+      ],
+      "version": "9.1.1"
+    },
+    {
+      "binding_id": "known.tool.sigstore",
+      "logical_path": "sigstore-verifier",
+      "platforms": [
+        "WINDOWS",
+        "LINUX",
+        "MACOS"
+      ],
+      "version": "external-pinned"
+    }
+  ],
+  "oracles": [
+    {
+      "binding_id": "cell.skill.boundary.behavior.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.boundary.contract.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.boundary.lifecycle.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.boundary.performance.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.boundary.runtime.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.boundary.security.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.boundary.semantic.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.boundary.static.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.behavior.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.contract.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.lifecycle.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.performance.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.runtime.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.security.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.semantic.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.exception_path.static.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.behavior.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.contract.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.lifecycle.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.performance.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.runtime.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.security.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.semantic.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.functional_fault.static.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.inconsistency.behavior.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.inconsistency.contract.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.inconsistency.lifecycle.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.inconsistency.performance.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.inconsistency.runtime.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.inconsistency.security.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.inconsistency.semantic.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.inconsistency.static.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.latent_defect.behavior.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.latent_defect.contract.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.latent_defect.lifecycle.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.latent_defect.performance.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.latent_defect.runtime.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.latent_defect.security.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.latent_defect.semantic.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.behavior.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.contract.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.lifecycle.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.performance.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.runtime.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.security.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.semantic.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.omission.static.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.risk_exposure.behavior.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.risk_exposure.contract.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.risk_exposure.lifecycle.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.risk_exposure.performance.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.risk_exposure.runtime.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.risk_exposure.semantic.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.risk_exposure.static.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.behavior.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.contract.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.lifecycle.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.performance.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.runtime.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.security.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.semantic.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "cell.skill.vulnerability.static.oracle",
+      "implementation": {
+        "callable": "run_oracle",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "version": "1.0.0"
+    }
+  ],
+  "registry_digest": "7ac802d2c036680e134f5bb589e5fbee2005ab8fc2c27ce46e476e40bb526cc0",
+  "registry_id": "FIR-RUNTIME-REGISTRY",
+  "registry_version": "1.7.0",
+  "release_authority": false,
+  "repair_operations": [
+    {
+      "binding_id": "repair.append-final-newline",
+      "implementation": {
+        "callable": "plan_batch",
+        "module": "full_inspection_repair.repair"
+      },
+      "implementation_digest": "ce21aca352f6771110841b74a8840a9667c678525c5c5a772ef150bc45e084b1",
+      "operation_type": "APPEND_FINAL_NEWLINE",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "repair.replace-byte-range",
+      "implementation": {
+        "callable": "plan_batch",
+        "module": "full_inspection_repair.repair"
+      },
+      "implementation_digest": "ce21aca352f6771110841b74a8840a9667c678525c5c5a772ef150bc45e084b1",
+      "operation_type": "REPLACE_BYTE_RANGE",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "repair.ast-rule-rewrite",
+      "implementation": {
+        "callable": "plan_batch",
+        "module": "full_inspection_repair.repair"
+      },
+      "implementation_digest": "ce21aca352f6771110841b74a8840a9667c678525c5c5a772ef150bc45e084b1",
+      "operation_type": "AST_RULE_REWRITE",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "repair.set-json-pointer",
+      "implementation": {
+        "callable": "plan_batch",
+        "module": "full_inspection_repair.repair"
+      },
+      "implementation_digest": "ce21aca352f6771110841b74a8840a9667c678525c5c5a772ef150bc45e084b1",
+      "operation_type": "SET_JSON_POINTER",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "repair.create-file-from-template",
+      "implementation": {
+        "callable": "plan_batch",
+        "module": "full_inspection_repair.repair"
+      },
+      "implementation_digest": "ce21aca352f6771110841b74a8840a9667c678525c5c5a772ef150bc45e084b1",
+      "operation_type": "CREATE_FILE_FROM_TEMPLATE",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "repair.move-file-with-references",
+      "implementation": {
+        "callable": "plan_batch",
+        "module": "full_inspection_repair.repair"
+      },
+      "implementation_digest": "ce21aca352f6771110841b74a8840a9667c678525c5c5a772ef150bc45e084b1",
+      "operation_type": "MOVE_FILE_WITH_REFERENCES",
+      "release_authority": false,
+      "version": "1.0.0"
+    },
+    {
+      "binding_id": "repair.human-decision-required",
+      "implementation": {
+        "callable": "plan_batch",
+        "module": "full_inspection_repair.repair"
+      },
+      "implementation_digest": "ce21aca352f6771110841b74a8840a9667c678525c5c5a772ef150bc45e084b1",
+      "operation_type": "HUMAN_DECISION_REQUIRED",
+      "release_authority": false,
+      "version": "1.0.0"
+    }
+  ],
+  "resource_policies": {
+    "detector": {
+      "memory_mib": 256,
+      "timeout_seconds": 10
+    },
+    "external_adapter": {
+      "memory_mib": 2048,
+      "timeout_seconds": 120
+    },
+    "impact": {
+      "max_input_files": 100000,
+      "max_output_bytes": 67108864
+    },
+    "lifecycle_adapter": {
+      "memory_mib": 2048,
+      "timeout_seconds": 120
+    }
+  },
+  "sandbox_backends": [
+    {
+      "binding_id": "sandbox.job-object",
+      "implementation": {
+        "callable": "run_bounded_process",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "platforms": [
+        "WINDOWS"
+      ],
+      "unavailable_behavior": "BLOCKED_ADAPTER"
+    },
+    {
+      "binding_id": "sandbox.nsjail",
+      "implementation": {
+        "callable": "run_bounded_process",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "platforms": [
+        "LINUX"
+      ],
+      "unavailable_behavior": "BLOCKED_ADAPTER"
+    },
+    {
+      "binding_id": "sandbox.srt",
+      "implementation": {
+        "callable": "run_bounded_process",
+        "module": "full_inspection_repair.r2_engine"
+      },
+      "implementation_digest": "088e79461d93020b16823a9b4bcaac9630e561424550dc6edc7f51aa9aba206a",
+      "platforms": [
+        "MACOS"
+      ],
+      "unavailable_behavior": "BLOCKED_ADAPTER"
+    }
+  ],
+  "schema_version": 3,
+  "scope_policy": {
+    "frozen_during_run": true,
+    "path_identity": "normalized-realpath",
+    "stale_input_failure": "BLOCKED_STALE_INPUT"
+  },
+  "source_census": [
+    {
+      "binding_id": "source.skill-inventory",
+      "implementation": {
+        "callable": "build_source_inventory",
+        "module": "full_inspection_repair.source_inventory"
+      },
+      "implementation_digest": "0582812e664567644efbc6297c57bf101d805bb68bf8083bf9ae38340c48a567",
+      "source_types": [
+        "RESOURCE",
+        "CLAIM",
+        "INVARIANT",
+        "PLANE",
+        "BEHAVIOR",
+        "RUNTIME",
+        "LIFECYCLE",
+        "EXTERNAL"
+      ],
+      "version": "2.0.0"
+    }
+  ],
+  "target_adapters": [
+    {
+      "binding_id": "target.skill",
+      "implementation": {
+        "callable": "build_subject",
+        "module": "full_inspection_repair.adapters"
+      },
+      "implementation_digest": "96e19d6d71c22c92ad0f3ce46d6d7b10be3ae16cfeb1b18fb45aeccdd505f726",
+      "source_producer": "source.skill-inventory",
+      "target_kinds": [
+        "SKILL"
+      ],
+      "version": "2.0.0"
+    }
+  ],
+  "target_kinds": [
+    "SKILL"
+  ],
+  "tool_closures": [
+    {
+      "binding_id": "tool.python",
+      "logical_path": "python",
+      "platforms": [
+        "WINDOWS",
+        "LINUX",
+        "MACOS"
+      ]
+    },
+    {
+      "binding_id": "tool.pytest",
+      "logical_path": "pytest",
+      "platforms": [
+        "WINDOWS",
+        "LINUX",
+        "MACOS"
+      ]
+    },
+    {
+      "binding_id": "tool.sigstore-verifier",
+      "logical_path": "sigstore-verifier",
+      "platforms": [
+        "WINDOWS",
+        "LINUX",
+        "MACOS"
+      ]
+    }
+  ],
+  "verification_cells": [
+    {
+      "binding_id": "verify.semantic-matrix",
+      "implementation": {
+        "callable": "execute_semantic_matrix",
+        "module": "full_inspection_repair.semantic_matrix"
+      },
+      "implementation_digest": "fbe6b20e46362a4169451176990ba3a5c8c5cb3b12dcff1efdaa9a1cc4d625a0",
+      "version": "1.0.0"
+    }
+  ],
+  "verification_runners": [
+    {
+      "binding_id": "runner.pytest",
+      "implementation": {
+        "callable": "verify_repair",
+        "module": "full_inspection_repair.verification"
+      },
+      "implementation_digest": "8742b7042f8ddd1e9cc8b8a3676968e86b326ef4702c7f752b7eb81bf9d7bd85",
+      "platforms": [
+        "WINDOWS",
+        "LINUX",
+        "MACOS"
+      ],
+      "version": "1.0.0"
+    }
+  ]
+}

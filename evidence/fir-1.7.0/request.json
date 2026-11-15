@@ -1,0 +1,9 @@
+{
+  "candidate_digest": "c24fa8e436fdeaac5996df32b7f47afe0c8665e948e400ba86ca939ce7afebbe",
+  "freeze_digest": "589c3f20f2d371de0285ee673d40c2c05eae9f9f3aec56d97233e3824fafc6d2",
+  "generation": 6,
+  "request_id": "fir-1.7.0-release-20261115-generation-6",
+  "schema_version": 1,
+  "status": "REQUESTED",
+  "version": "1.7.0"
+}

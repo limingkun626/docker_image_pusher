@@ -1207,6 +1207,8 @@ def _recompute_gate(review: dict[str, Any]) -> dict[str, Any]:
         expected_scope_digest=subject["scope_digest"],
         expected_verification_digest=subject["verification_digest"],
         require_evidence_binding=True,
+        require_domain_signature=True,
+        domain_signature=subject.get("domain_signature"),
     )
 
 

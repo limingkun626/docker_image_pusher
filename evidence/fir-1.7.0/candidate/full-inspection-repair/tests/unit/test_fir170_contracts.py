@@ -39,6 +39,7 @@ def _bindings() -> dict[str, str]:
             "tool_closure_digest",
             "environment_digest",
             "config_digest",
+            "evaluation_case_registry_digest",
         )
     }
 

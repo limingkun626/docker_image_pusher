@@ -462,6 +462,7 @@ def _review(args) -> int:
         "coverage": evidence["coverage"],
         "matrix": evidence["matrix"],
         "domains": evidence["domains"],
+        "domain_signature": evidence.get("domain_signature"),
         "limitations": evidence["limitations"],
         "unverified_claims": evidence["unverified_claims"],
         "not_run": evidence["not_run"],

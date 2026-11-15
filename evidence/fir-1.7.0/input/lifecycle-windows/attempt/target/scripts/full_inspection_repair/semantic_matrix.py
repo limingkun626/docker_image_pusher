@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import copy
 import multiprocessing
 import os
 import shutil
@@ -61,6 +62,18 @@ _KEY_ALIASES = {
     "normalizedevidence": "normalized_evidence",
     "normalizedevidence": "normalized_evidence",
 }
+_VOLATILE_EXECUTION_KEYS = frozenset(
+    {
+        "recorded_at",
+        "started_at",
+        "finished_at",
+        "receipt_digest",
+        "signature_receipt_digest",
+        "root_pid",
+        "child_pids",
+        "elapsed_seconds",
+    }
+)
 
 
 def _key(value: object) -> str:
@@ -268,6 +281,46 @@ def _snapshot(subject: Any) -> dict[str, Any]:
             for item in getattr(subject, "files", ())
         },
     }
+
+
+def _with_lifecycle_rollback(
+    snapshot: Mapping[str, Any],
+    subject: Any,
+) -> tuple[dict[str, Any], dict[str, Any] | None]:
+    from .r2_engine import run_lifecycle_transaction
+
+    marker_name = ".fir-lifecycle-rollback-probe"
+
+    def action(root: Path) -> None:
+        target = root / marker_name
+        if target.exists():
+            raise FileExistsError(target)
+        target.write_bytes(b"fir lifecycle rollback probe\n")
+
+    def rollback(root: Path) -> None:
+        (root / marker_name).unlink(missing_ok=True)
+
+    observed = run_lifecycle_transaction(
+        capability_id="L03",
+        fixture=subject.root,
+        operation="ROLLBACK",
+        action=action,
+        rollback=rollback,
+        expected_residue=(),
+    )
+    receipt = observed.get("receipt")
+    rollback_verified = bool(
+        observed.get("status") == "PASS"
+        and isinstance(receipt, Mapping)
+        and receipt.get("after_tree_digest") != receipt.get("before_tree_digest")
+        and receipt.get("terminal_status") == "PASS"
+    )
+    value = dict(snapshot)
+    value["lifecycle_transaction"] = {
+        "rollback_verified": rollback_verified,
+        "receipt": dict(receipt) if isinstance(receipt, Mapping) else None,
+    }
+    return value, dict(receipt) if isinstance(receipt, Mapping) else None
 
 
 def _exact_adapter_worker(connection: Any, cell_id: str, snapshot: Mapping[str, Any]) -> None:
@@ -754,6 +807,8 @@ def execute_semantic_matrix(
     *,
     snapshot: Mapping[str, Any] | None = None,
     phase: str = "DISCOVERY",
+    candidate_digest: str | None = None,
+    scope_id: str = "scope:current",
 ) -> dict[str, Any]:
     from .detector_registry import default_taxonomy_coverage
     from .r2_engine import run_native, run_oracle
@@ -766,6 +821,7 @@ def execute_semantic_matrix(
     frozen_snapshot.setdefault("target_root", str(subject.root))
     source_inventory = build_source_inventory(
         subject,
+        candidate_digest=candidate_digest,
         registry_snapshot=runtime_registry,
     )
     taxonomy = default_taxonomy_coverage(getattr(subject, "subject_kind", "SKILL"))
@@ -866,8 +922,15 @@ def execute_semantic_matrix(
                 phase=phase,
             )
         else:
-            detector_raw = run_native(cell_id, frozen_snapshot)
-            oracle_raw = run_oracle(cell_id, frozen_snapshot)
+            cell_snapshot = frozen_snapshot
+            lifecycle_receipt = None
+            if cell_id == "SKILL:EXCEPTION_PATH:LIFECYCLE":
+                cell_snapshot, lifecycle_receipt = _with_lifecycle_rollback(
+                    frozen_snapshot,
+                    subject,
+                )
+            detector_raw = run_native(cell_id, cell_snapshot)
+            oracle_raw = run_oracle(cell_id, cell_snapshot)
             cell = build_cell_receipt(
                 binding,
                 detector_raw=detector_raw,
@@ -875,6 +938,17 @@ def execute_semantic_matrix(
                 subject_digest=frozen_snapshot.get("subject_digest"),
                 phase=phase,
             )
+            if lifecycle_receipt is not None:
+                cell["lifecycle_receipt"] = lifecycle_receipt
+                cell["process_tree_receipt"] = dict(
+                    lifecycle_receipt.get("process_receipt", {})
+                )
+                cell["network_guard_receipt"] = dict(
+                    lifecycle_receipt.get("network_receipt", {})
+                )
+                cell["receipt_digest"] = canonical_digest(
+                    {key: value for key, value in cell.items() if key != "receipt_digest"}
+                )
         primary_results[cell_id] = cell
         cells.append(cell)
     cells.sort(key=lambda item: str(item["cell_id"]))
@@ -889,9 +963,9 @@ def execute_semantic_matrix(
     report: dict[str, Any] = {
         "schema_version": 2,
         "phase": phase,
-        "scope_id": "scope:current",
+        "scope_id": scope_id,
         "subject_digest": frozen_snapshot.get("subject_digest"),
-        "candidate_digest": frozen_snapshot.get("candidate_digest"),
+        "candidate_digest": candidate_digest or frozen_snapshot.get("candidate_digest"),
         "runtime_registry_digest": runtime_registry.registry_digest,
         "taxonomy_digest": taxonomy["coverage_digest"],
         "source_inventory_digest": source_inventory["source_inventory_digest"],
@@ -913,6 +987,99 @@ def execute_semantic_matrix(
     }
     report["report_digest"] = canonical_digest(report)
     return report
+
+
+def semantic_cell_projection(cell: Mapping[str, Any]) -> dict[str, Any]:
+    def normalize(value: Any) -> Any:
+        if isinstance(value, Mapping):
+            return {
+                key: normalize(item)
+                for key, item in value.items()
+                if key not in _VOLATILE_EXECUTION_KEYS
+            }
+        if isinstance(value, list):
+            return [normalize(item) for item in value]
+        return value
+
+    return normalize(copy.deepcopy(dict(cell)))
+
+
+def semantic_report_projection(report: Mapping[str, Any]) -> dict[str, Any]:
+    cells = report.get("cells")
+    if not isinstance(cells, list):
+        cells = []
+    projection = copy.deepcopy(dict(report))
+    projection.pop("report_digest", None)
+    projection.pop("receipt_digests", None)
+    projection["cells"] = [
+        semantic_cell_projection(cell)
+        for cell in sorted(cells, key=lambda item: str(item["cell_id"]))
+    ]
+    projection["projection_digest"] = canonical_digest(projection)
+    return projection
+
+
+def semantic_case_identities(
+    report: Mapping[str, Any],
+    tool_digest: str,
+) -> dict[str, dict[str, str]]:
+    cells = report.get("cells")
+    if not isinstance(cells, list) or not cells:
+        raise ValueError("semantic report cells are missing")
+    return {
+        str(cell["cell_id"]): {
+            "fixture_digest": str(cell["binding_digest"]),
+            "runner_digest": canonical_digest(semantic_cell_projection(cell)),
+            "tool_digest": tool_digest,
+        }
+        for cell in cells
+    }
+
+
+def build_semantic_evaluation_matrix(
+    report: Mapping[str, Any],
+    *,
+    tool_digest: str,
+    run_id: str,
+    scope_digest: str,
+    subject_digest: str,
+    candidate_digest: str,
+) -> dict[str, Any]:
+    from .verification_matrix import (
+        build_case_registry,
+        reconcile_evaluation,
+    )
+
+    cells = report.get("cells")
+    if not isinstance(cells, list) or not cells:
+        raise ValueError("semantic report cells are missing")
+    case_ids = [str(cell["cell_id"]) for cell in cells]
+    attempts = {
+        case_id: (
+            "PASS"
+            if cell["status"] in {"CLEAN", "CLEAN_WITH_PROOF"}
+            else "FAIL"
+            if cell["status"] == "FINDING"
+            else "INFRA_ERROR"
+        )
+        for case_id, cell in zip(case_ids, cells, strict=True)
+    }
+    registry = build_case_registry(
+        semantic_case_identities(report, tool_digest)
+    )
+    return reconcile_evaluation(
+        requested=case_ids,
+        attempts=attempts,
+        f2p=set(case_ids),
+        p2p=set(),
+        case_identities=registry["cases"],
+        expected_identities=registry["cases"],
+        case_registry_digest=str(registry["registry_digest"]),
+        run_id=run_id,
+        scope_digest=scope_digest,
+        subject_digest=subject_digest,
+        candidate_digest=candidate_digest,
+    )
 
 
 run_semantic_matrix = execute_semantic_matrix

@@ -30,7 +30,7 @@ from full_inspection_repair.review import (
 )
 from full_inspection_repair.risk_gate import REQUIRED_DOMAINS
 from release_skill import run as release_run
-from domain_receipt_fixture import domain_entry
+from domain_receipt_fixture import domain_entry, signed_domain_set
 
 SCOPE = "a" * 64
 CANDIDATE = "c" * 64
@@ -70,6 +70,12 @@ def finding() -> dict[str, object]:
 
 def subject() -> dict[str, object]:
     coverage = build_complete_coverage({"SKILL.md": b"# Demo.\n"})
+    domain_values = domains()
+    domain_signature = signed_domain_set(
+        domain_values,
+        scope_digest="a" * 64,
+        candidate_digest=CANDIDATE,
+    )
     matrix: dict[str, object] = {
         "schema_version": 1,
         "status": "PASS",
@@ -79,7 +85,7 @@ def subject() -> dict[str, object]:
         "verification_digest": VERIFICATION,
         "evaluator_digest": EVALUATOR,
         "coverage_digest": coverage["coverage_digest"],
-        "domains_digest": canonical_digest(domains()),
+        "domains_digest": canonical_digest(domain_values),
         "requested_cases": ["F-1"],
         "checks": [
             {
@@ -105,7 +111,8 @@ def subject() -> dict[str, object]:
         "findings": [finding()],
         "coverage": coverage,
         "matrix": matrix,
-        "domains": domains(),
+        "domains": domain_values,
+        "domain_signature": domain_signature,
         "limitations": [],
         "unverified_claims": [],
         "not_run": [],

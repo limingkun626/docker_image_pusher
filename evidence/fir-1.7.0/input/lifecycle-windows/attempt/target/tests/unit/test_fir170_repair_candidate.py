@@ -13,6 +13,7 @@ from full_inspection_repair import repair as repair_module
 from full_inspection_repair.adapters import Subject, build_subject
 from full_inspection_repair.candidate_closure import (
     ClosureError,
+    _assert_no_semantic_findings,
     require_candidate_closure,
 )
 from full_inspection_repair.contracts import (
@@ -29,7 +30,21 @@ from full_inspection_repair.repair import (
     plan_batch,
     preflight_batch,
 )
-from full_inspection_repair.verification_matrix import reconcile_evaluation
+from full_inspection_repair.source_inventory import (
+    build_source_closure,
+    build_source_closure_evidence,
+    build_source_inventory,
+)
+from full_inspection_repair.runtime_registry import load_registry
+from full_inspection_repair.semantic_matrix import (
+    build_semantic_evaluation_matrix,
+    execute_semantic_matrix,
+    semantic_case_identities,
+)
+from full_inspection_repair.verification_matrix import (
+    build_case_registry,
+    reconcile_evaluation,
+)
 
 
 def _digest(label: str) -> str:
@@ -104,6 +119,7 @@ def _run(manifest_source: Subject, candidate: Subject, candidate_manifest, batch
             "tool_closure_digest",
             "environment_digest",
             "config_digest",
+            "evaluation_case_registry_digest",
         )
     }
     run = {
@@ -140,6 +156,7 @@ def _report(label: str, run: dict[str, object], candidate_digest: str):
             {
                 "cell_id": "SKILL:FUNCTIONAL_FAULT:STATIC",
                 "status": "CLEAN",
+                "receipt_digest": _digest(label + "-receipt"),
             }
         ],
         "receipt_digests": [_digest(label + "-receipt")],
@@ -148,7 +165,43 @@ def _report(label: str, run: dict[str, object], candidate_digest: str):
     return report
 
 
-def _closure_artifacts(run, candidate_digest):
+def _role_report(
+    semantic_report: dict[str, object],
+    run: dict[str, object],
+    *,
+    role: str,
+) -> dict[str, object]:
+    cells = []
+    receipts = []
+    for cell in semantic_report["cells"]:
+        result = cell.get(f"{role}_result")
+        result = result if isinstance(result, dict) else {}
+        receipt = result.get("result_digest") or cell["receipt_digest"]
+        receipts.append(receipt)
+        cells.append(
+            {
+                "cell_id": cell["cell_id"],
+                "status": "CLEAN" if cell["status"] == "CLEAN_WITH_PROOF" else cell["status"],
+                "receipt_digest": receipt,
+            }
+        )
+    report = {
+        "schema_version": 2,
+        "run_id": run["run_id"],
+        "scope_digest": run["scope_digest"],
+        "subject_digest": run["tree_digest"] if "tree_digest" in run else run["subject"]["tree_digest"],
+        "candidate_digest": run["candidate_digest"],
+        "registry_digest": run["bindings"]["registry_digest"],
+        "policy_digest": run["bindings"]["taxonomy_policy_digest"],
+        "tool_closure_digest": run["bindings"]["tool_closure_digest"],
+        "cells": cells,
+        "receipt_digests": receipts,
+    }
+    report["report_digest"] = material_digest(report, "report_digest")
+    return report
+
+
+def _closure_artifacts(run, candidate_root, candidate_digest):
     source_inventory = {
         "schema_version": 2,
         "run_id": run["run_id"],
@@ -167,41 +220,45 @@ def _closure_artifacts(run, candidate_digest):
     source_inventory["inventory_digest"] = material_digest(
         source_inventory, "inventory_digest"
     )
-    source_closure = {
-        "schema_version": 1,
-        "scope_id": run["run_id"],
-        "subject_digest": run["subject"]["tree_digest"],
-        "candidate_digest": candidate_digest,
-        "runtime_registry_digest": run["bindings"]["registry_digest"],
-        "source_denominator_digest": canonical_digest(
-            source_inventory["sources"]
-        ),
-        "source_count": 1,
-        "terminal_count": 1,
-        "records": [
-            {
-                "source_id": "source:SKILL.md",
-                "terminal_status": "SATISFIED",
-                "evidence_refs": ["semantic-matrix:" + "1" * 64],
-            }
-        ],
-        "coverage_boundary_digest": canonical_digest(
-            [{"source_id": "source:SKILL.md"}]
-        ),
-    }
-    source_closure["closure_digest"] = material_digest(
-        source_closure,
-        "closure_digest",
+    runtime_registry = load_registry()
+    candidate_subject = build_subject(candidate_root, "SKILL")
+    source_inventory_report = build_source_inventory(
+        candidate_subject,
+        candidate_digest=candidate_digest,
+        registry_snapshot=runtime_registry,
     )
-    detection = _report("detection", run, candidate_digest)
-    oracle = _report("oracle", run, candidate_digest)
+    semantic_report = execute_semantic_matrix(
+        candidate_subject,
+        runtime_registry,
+        phase="VERIFICATION",
+        candidate_digest=candidate_digest,
+        scope_id=run["run_id"],
+    )
+    registry_data = runtime_registry.as_dict()
+    run["bindings"]["registry_digest"] = runtime_registry.registry_digest
+    run["bindings"]["taxonomy_policy_digest"] = semantic_report["taxonomy_digest"]
+    run["bindings"]["tool_closure_digest"] = canonical_digest(
+        {
+            "known_tools": registry_data["known_tools"],
+            "tool_closures": registry_data["tool_closures"],
+            "sandbox_backends": registry_data["sandbox_backends"],
+        }
+    )
+    run["candidate_digest"] = candidate_digest
+    run["manifest_digest"] = material_digest(run, "manifest_digest")
+    source_inventory["policy_digest"] = semantic_report["taxonomy_digest"]
+    source_inventory["inventory_digest"] = material_digest(
+        source_inventory, "inventory_digest"
+    )
+    detection = _role_report(semantic_report, run, role="detector")
+    oracle = _role_report(semantic_report, run, role="oracle")
     taxonomy = {
         "schema_version": 2,
         "scope_digest": run["scope_digest"],
         "subject_digest": run["subject"]["tree_digest"],
         "candidate_digest": candidate_digest,
-        "required_cell_count": 1,
-        "covered_cell_count": 1,
+        "required_cell_count": len(semantic_report["cells"]),
+        "covered_cell_count": len(semantic_report["cells"]),
     }
     taxonomy["coverage_digest"] = material_digest(taxonomy, "coverage_digest")
     impact = {
@@ -212,24 +269,33 @@ def _closure_artifacts(run, candidate_digest):
         "unresolved_count": 0,
     }
     impact["graph_digest"] = material_digest(impact, "graph_digest")
-    identities = {
-        "case-1": {
-            "fixture_digest": _digest("fixture"),
-            "runner_digest": _digest("runner"),
-            "tool_digest": _digest("tool"),
-        }
-    }
-    matrix = reconcile_evaluation(
-        requested=["case-1"],
-        attempts={"case-1": "PASS"},
-        f2p={"case-1"},
-        p2p=set(),
-        case_identities=identities,
-        expected_identities=identities,
+    case_registry = build_case_registry(
+        semantic_case_identities(
+            semantic_report,
+            run["bindings"]["tool_closure_digest"],
+        )
+    )
+    run["bindings"]["evaluation_case_registry_digest"] = case_registry[
+        "registry_digest"
+    ]
+    run["manifest_digest"] = material_digest(run, "manifest_digest")
+    matrix = build_semantic_evaluation_matrix(
+        semantic_report,
+        tool_digest=run["bindings"]["tool_closure_digest"],
         run_id=run["run_id"],
         scope_digest=run["scope_digest"],
         subject_digest=run["subject"]["tree_digest"],
         candidate_digest=candidate_digest,
+    )
+    source_closure = build_source_closure(
+        source_inventory_report,
+        scope_id=run["run_id"],
+        evidence=build_source_closure_evidence(
+            source_inventory_report,
+            scope_id=run["run_id"],
+            semantic_report=semantic_report,
+            environment_digest=run["bindings"]["environment_digest"],
+        ),
     )
     evidence = {
         "source_inventory_digest": source_inventory["inventory_digest"],
@@ -251,16 +317,19 @@ def _closure_artifacts(run, candidate_digest):
         source_inventory_digest=source_inventory["inventory_digest"],
         evidence_digests=evidence,
     )
-    return (
-        source_inventory,
-        source_closure,
-        ledger,
-        detection,
-        oracle,
-        taxonomy,
-        impact,
-        matrix,
-    )
+    return {
+        "source_inventory": source_inventory,
+        "source_inventory_report": source_inventory_report,
+        "semantic_report": semantic_report,
+        "case_registry": case_registry,
+        "source_closure": source_closure,
+        "ledger": ledger,
+        "detection": detection,
+        "oracle": oracle,
+        "taxonomy": taxonomy,
+        "impact": impact,
+        "matrix": matrix,
+    }
 
 
 def _closure_fixture(tmp_path: Path):
@@ -270,7 +339,7 @@ def _closure_fixture(tmp_path: Path):
     receipt = apply_batch(source, batch, candidate_root)
     candidate = build_subject(candidate_root, "SKILL")
     run = _run(source, candidate, receipt["candidate_manifest"], batch)
-    artifacts = _closure_artifacts(run, candidate.tree_digest)
+    artifacts = _closure_artifacts(run, candidate_root, candidate.tree_digest)
     return {
         "source_root": source_root,
         "source": source,
@@ -279,14 +348,7 @@ def _closure_fixture(tmp_path: Path):
         "manifest": receipt["candidate_manifest"],
         "batch": batch,
         "run": run,
-        "source_inventory": artifacts[0],
-        "source_closure": artifacts[1],
-        "ledger": artifacts[2],
-        "detection": artifacts[3],
-        "oracle": artifacts[4],
-        "taxonomy": artifacts[5],
-        "impact": artifacts[6],
-        "matrix": artifacts[7],
+        **artifacts,
     }
 
 
@@ -469,22 +531,7 @@ def test_t_cc_01_residual_risk_blocks(tmp_path: Path):
     ledger["residual_risks"] = ["residual"]
     ledger["ledger_digest"] = material_digest(ledger, "ledger_digest")
     with pytest.raises((ClosureError, ContractError), match="residual"):
-        require_candidate_closure(
-            candidate=fixture["manifest"],
-            ledger=ledger,
-            source_inventory=fixture["source_inventory"],
-            detection=fixture["detection"],
-            oracle=fixture["oracle"],
-            taxonomy=fixture["taxonomy"],
-            impact=fixture["impact"],
-            matrix=fixture["matrix"],
-            registry=fixture["run"]["bindings"]["registry_digest"],
-            run=fixture["run"],
-            source_closure=fixture["source_closure"],
-            source_denominator_digest=fixture["source_closure"][
-                "source_denominator_digest"
-            ],
-        )
+        _closure_call(fixture, ledger=ledger)
 
 
 def test_t_cc_02_unresolved_id_blocks(tmp_path: Path):
@@ -493,22 +540,7 @@ def test_t_cc_02_unresolved_id_blocks(tmp_path: Path):
     ledger["unresolved_ids"] = ["finding-open"]
     ledger["ledger_digest"] = material_digest(ledger, "ledger_digest")
     with pytest.raises((ClosureError, ContractError), match="unresolved"):
-        require_candidate_closure(
-            candidate=fixture["manifest"],
-            ledger=ledger,
-            source_inventory=fixture["source_inventory"],
-            detection=fixture["detection"],
-            oracle=fixture["oracle"],
-            taxonomy=fixture["taxonomy"],
-            impact=fixture["impact"],
-            matrix=fixture["matrix"],
-            registry=fixture["run"]["bindings"]["registry_digest"],
-            run=fixture["run"],
-            source_closure=fixture["source_closure"],
-            source_denominator_digest=fixture["source_closure"][
-                "source_denominator_digest"
-            ],
-        )
+        _closure_call(fixture, ledger=ledger)
 
 
 def test_t_cc_03_source_matrix_digest_blocks(tmp_path: Path):
@@ -517,45 +549,29 @@ def test_t_cc_03_source_matrix_digest_blocks(tmp_path: Path):
     matrix["candidate_digest"] = fixture["source"].tree_digest
     matrix["matrix_digest"] = material_digest(matrix, "matrix_digest")
     with pytest.raises(ClosureError, match="matrix candidate"):
-        require_candidate_closure(
-            candidate=fixture["manifest"],
-            ledger=fixture["ledger"],
-            source_inventory=fixture["source_inventory"],
-            detection=fixture["detection"],
-            oracle=fixture["oracle"],
-            taxonomy=fixture["taxonomy"],
-            impact=fixture["impact"],
-            matrix=matrix,
-            registry=fixture["run"]["bindings"]["registry_digest"],
-            run=fixture["run"],
-            source_closure=fixture["source_closure"],
-            source_denominator_digest=fixture["source_closure"][
-                "source_denominator_digest"
-            ],
-        )
+        _closure_call(fixture, matrix=matrix)
 
 
 def test_t_cc_04_complete_candidate_closure(tmp_path: Path):
     fixture = _closure_fixture(tmp_path)
-    proof = require_candidate_closure(
-        candidate=fixture["manifest"],
-        ledger=fixture["ledger"],
-        source_inventory=fixture["source_inventory"],
-        detection=fixture["detection"],
-        oracle=fixture["oracle"],
-        taxonomy=fixture["taxonomy"],
-        impact=fixture["impact"],
-        matrix=fixture["matrix"],
-        registry=fixture["run"]["bindings"]["registry_digest"],
-        run=fixture["run"],
-        candidate_root=fixture["candidate_root"],
-        source_closure=fixture["source_closure"],
-        source_denominator_digest=fixture["source_closure"][
-            "source_denominator_digest"
-        ],
-    )
+    proof = _closure_call(fixture)
     assert proof["open_count"] == 0
     assert proof["attestation"]["subject"][0]["digest"]["sha256"] == fixture["candidate"].tree_digest
+
+
+def test_actual_semantic_finding_cannot_pass_candidate_closure():
+    with pytest.raises(ClosureError, match="retains findings") as caught:
+        _assert_no_semantic_findings(
+            {
+                "findings": [
+                    {
+                        "semantic_digest": "a" * 64,
+                        "defect_class_id": "lifecycle-rollback-unverified",
+                    }
+                ]
+            }
+        )
+    assert caught.value.code == "BLOCKED_VERIFICATION"
 
 
 def _closure_call(fixture, **overrides):
@@ -568,16 +584,21 @@ def _closure_call(fixture, **overrides):
         "taxonomy": fixture["taxonomy"],
         "impact": fixture["impact"],
         "matrix": fixture["matrix"],
+        "source_inventory_report": fixture["source_inventory_report"],
+        "semantic_report": fixture["semantic_report"],
+        "evaluation_case_registry": fixture["case_registry"],
         "source_closure": fixture["source_closure"],
         "source_denominator_digest": fixture["source_closure"][
             "source_denominator_digest"
         ],
     }
     artifacts.update(overrides)
+    closure_run = artifacts.pop("run", fixture["run"])
     return require_candidate_closure(
         **artifacts,
-        registry=fixture["run"]["bindings"]["registry_digest"],
-        run=fixture["run"],
+        registry=closure_run["bindings"]["registry_digest"],
+        run=closure_run,
+        candidate_root=fixture["candidate_root"],
     )
 
 
@@ -642,3 +663,133 @@ def test_t_cc_09_remaining_artifact_substitution_blocks(
         substituted[digest_field] = material_digest(substituted, digest_field)
     with pytest.raises(ClosureError, match="candidate|scope|subject"):
         _closure_call(fixture, **{artifact_name: substituted})
+
+
+def test_t_cc_10_rehashed_forged_source_receipt_blocks(tmp_path: Path):
+    fixture = _closure_fixture(tmp_path)
+    closure = copy.deepcopy(fixture["source_closure"])
+    source_id = "source:SKILL.md"
+    record = next(item for item in closure["records"] if item["source_id"] == source_id)
+    forged = {
+        "schema_version": 1,
+        "kind": "forged-source-evidence",
+        "source_id": source_id,
+        "source_type": "RESOURCE",
+        "scope_id": fixture["run"]["run_id"],
+        "subject_digest": fixture["candidate"].tree_digest,
+        "candidate_digest": fixture["candidate"].tree_digest,
+        "runtime_registry_digest": fixture["run"]["bindings"]["registry_digest"],
+        "evidence_ref": "never-executed",
+        "evidence_sha256": "1" * 64,
+        "method_id": "forged-method",
+        "method_version": "1.0.0",
+    }
+    forged["receipt_digest"] = material_digest(forged, "receipt_digest")
+    record["evidence_refs"] = ["never-executed"]
+    record["evidence_receipts"] = [forged]
+    closure["closure_digest"] = material_digest(closure, "closure_digest")
+
+    with pytest.raises(ClosureError, match="not reproducible"):
+        _closure_call(fixture, source_closure=closure)
+
+
+def test_t_cc_11_foreign_case_identity_blocks(tmp_path: Path):
+    fixture = _closure_fixture(tmp_path)
+    identities = {
+        "foreign-case": {
+            "fixture_digest": "7" * 64,
+            "runner_digest": "8" * 64,
+            "tool_digest": "9" * 64,
+        }
+    }
+    matrix = reconcile_evaluation(
+        requested=["foreign-case"],
+        attempts={"foreign-case": "PASS"},
+        f2p={"foreign-case"},
+        p2p=set(),
+        case_identities=identities,
+        expected_identities=identities,
+        case_registry_digest=fixture["case_registry"]["registry_digest"],
+        run_id=fixture["run"]["run_id"],
+        scope_digest=fixture["run"]["scope_digest"],
+        subject_digest=fixture["run"]["subject"]["tree_digest"],
+        candidate_digest=fixture["candidate"].tree_digest,
+    )
+    ledger = copy.deepcopy(fixture["ledger"])
+    ledger["evidence_digests"]["matrix_digest"] = matrix["matrix_digest"]
+    ledger["ledger_digest"] = material_digest(ledger, "ledger_digest")
+
+    with pytest.raises(ClosureError, match="matrix is not reproducible"):
+        _closure_call(fixture, matrix=matrix, ledger=ledger)
+
+
+def test_t_cc_12_rehashed_semantic_receipts_require_reexecution(tmp_path: Path):
+    fixture = _closure_fixture(tmp_path)
+    semantic = copy.deepcopy(fixture["semantic_report"])
+    cell = semantic["cells"][0]
+    cell["detector_result"] = {
+        "raw_status": "FORGED",
+        "error": None,
+        "facts": [],
+        "method_id": "forged",
+        "method_version": "1.0.0",
+    }
+    cell["receipt_digest"] = material_digest(cell, "receipt_digest")
+    semantic["receipt_digests"] = [
+        item["receipt_digest"] for item in semantic["cells"]
+    ]
+    semantic["report_digest"] = material_digest(semantic, "report_digest")
+
+    run = copy.deepcopy(fixture["run"])
+    case_registry = build_case_registry(
+        semantic_case_identities(
+            semantic,
+            run["bindings"]["tool_closure_digest"],
+        )
+    )
+    run["bindings"]["evaluation_case_registry_digest"] = case_registry[
+        "registry_digest"
+    ]
+    run["manifest_digest"] = material_digest(run, "manifest_digest")
+    detection = _role_report(semantic, run, role="detector")
+    oracle = _role_report(semantic, run, role="oracle")
+    matrix = build_semantic_evaluation_matrix(
+        semantic,
+        tool_digest=run["bindings"]["tool_closure_digest"],
+        run_id=run["run_id"],
+        scope_digest=run["scope_digest"],
+        subject_digest=run["subject"]["tree_digest"],
+        candidate_digest=fixture["candidate"].tree_digest,
+    )
+    closure = build_source_closure(
+        fixture["source_inventory_report"],
+        scope_id=run["run_id"],
+        evidence=build_source_closure_evidence(
+            fixture["source_inventory_report"],
+            scope_id=run["run_id"],
+            semantic_report=semantic,
+            environment_digest=run["bindings"]["environment_digest"],
+        ),
+    )
+    ledger = copy.deepcopy(fixture["ledger"])
+    ledger["evidence_digests"].update(
+        {
+            "detection_digest": detection["report_digest"],
+            "oracle_digest": oracle["report_digest"],
+            "matrix_digest": matrix["matrix_digest"],
+        }
+    )
+    ledger["ledger_digest"] = material_digest(ledger, "ledger_digest")
+
+    with pytest.raises(ClosureError, match="not reproducible by the frozen executors"):
+        _closure_call(
+            fixture,
+            run=run,
+            semantic_report=semantic,
+            evaluation_case_registry=case_registry,
+            detection=detection,
+            oracle=oracle,
+            matrix=matrix,
+            source_closure=closure,
+            ledger=ledger,
+        )
