@@ -287,8 +287,8 @@ def domain_entry(
                 "verifier_output_sha256": facts.get(
                     "verifier_output_sha256", canonical_digest(facts)
                 ),
-                "trust_root_digest": facts.get(
-                    "trust_root_digest", TRUST_ROOT_ID
+                "trust_root_digest": canonical_digest(
+                    facts.get("trust_root_digest", TRUST_ROOT_ID)
                 ),
             }
         )
@@ -1076,8 +1076,8 @@ def main() -> int:
                     "candidate_digest": candidate_digest,
                     "runner": entry["runner"],
                     "environment": entry["environment"],
-                    "receipt": entry["receipt"],
-                    "receipt_sha256": entry["receipt_sha256"],
+                    "receipt": entry,
+                    "receipt_sha256": canonical_digest(entry),
                 }
             )
 
