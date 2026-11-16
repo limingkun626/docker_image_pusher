@@ -285,12 +285,12 @@ jobs:
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: fir-1.7.0-macos-evidence
-          path: "$RUNNER_TEMP/macos-evidence"
+          path: ${{ runner.temp }}/macos-evidence
 
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: fir-1.7.0-linux-evidence
-          path: "$RUNNER_TEMP/linux-evidence"
+          path: ${{ runner.temp }}/linux-evidence
 
       - name: Stage platform evidence
         run: |
