@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "Id": 41,
+      "MachineName": "DESKTOP-GGA6JS7",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "RecordId": 70390,
+      "TimeCreated": "/Date(1794790792327)/"
+    }
+  ]
+}
