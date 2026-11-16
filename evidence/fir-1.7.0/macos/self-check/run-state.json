@@ -1,0 +1,44 @@
+{
+  "current_state": "IMPACT_CLOSURE",
+  "environment_digest": "5e269d4cb2683a91558471a3858429bca9ed37a14f1d7305c0dcd2b694952fca",
+  "history": [
+    {
+      "event": "freeze_scope",
+      "from": "INTAKE",
+      "to": "SCOPE_FROZEN"
+    },
+    {
+      "event": "census",
+      "from": "SCOPE_FROZEN",
+      "to": "SUBJECT_CENSUS"
+    },
+    {
+      "event": "discover",
+      "from": "SUBJECT_CENSUS",
+      "to": "ISSUE_DISCOVERY"
+    },
+    {
+      "event": "impact",
+      "from": "ISSUE_DISCOVERY",
+      "to": "IMPACT_CLOSURE"
+    }
+  ],
+  "knowledge_pack_digest": null,
+  "knowledge_pack_id": null,
+  "policy_digest": "f4474b54ab1217643734e41e298b59adfb2cafc4a06923418040471b13362eac",
+  "run_id": "run:e3625272de5241d6a0314c610999df79",
+  "runtime_registry_digest": "7ac802d2c036680e134f5bb589e5fbee2005ab8fc2c27ce46e476e40bb526cc0",
+  "runtime_registry_id": "FIR-RUNTIME-REGISTRY",
+  "runtime_registry_version": "1.7.0",
+  "schema_version": 1,
+  "scope_digest": "3ef0425d7ddfeeff5b292ed335e13870c35dca248e56ed5dfa4a943adc391d05",
+  "scope_id": "run:e3625272de5241d6a0314c610999df79",
+  "snapshot_digest": "c66bd1b745ebc475a5b0680fb53ccc8e4d7726169107cfed8cb51fe1e58eba92",
+  "source_closure_digest": "e4c7d3869ceefb73c120183f80332fcc18238c1bc6e9fc3e15ac85e95aa36b9f",
+  "source_inventory_digest": "5bd59f2ba4e8e1353c1cb5eacab3d425fa879d595697fe060e734bea7d746ad3",
+  "subject_id": "skill:ab9f771f43d10ef8",
+  "subject_kind": "SKILL",
+  "target": "/Users/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/probe-skill",
+  "taxonomy_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
+  "tree_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed"
+}

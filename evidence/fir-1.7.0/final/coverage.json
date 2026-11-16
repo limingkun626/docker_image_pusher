@@ -1,0 +1,24 @@
+{
+  "binary_file_count": 0,
+  "codepoint_count": 35,
+  "coverage_digest": "2e09aaa5a20fadba37c383189681d4c6209c6ac5f1f07349cad19b7c749e6128",
+  "file_count": 1,
+  "gap_count": 0,
+  "gaps": [],
+  "line_count": 5,
+  "punctuation_count": 9,
+  "schema_version": 1,
+  "source_character_coverage_digest": "6f71a1e734127dc6a7835eb74cd824f1b389170b81d1501427850447fc9346ab",
+  "taxonomy_cell_count": 72,
+  "taxonomy_coverage_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
+  "taxonomy_terminal_counts": {
+    "COVERED_BY_EXACT_ADAPTER": 11,
+    "COVERED_BY_INDEPENDENT_ORACLE": 16,
+    "COVERED_BY_NATIVE_DETECTOR": 35,
+    "MERGED_WITH_PRIMARY_CELL": 2,
+    "NOT_APPLICABLE_WITH_PROOF": 8
+  },
+  "uncovered": [],
+  "uncovered_count": 0,
+  "unit_count": 4
+}

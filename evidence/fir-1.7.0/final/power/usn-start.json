@@ -1,0 +1,20 @@
+{
+  "allocation_delta": 8388608,
+  "filesystem": "NTFS",
+  "first_usn": 2021654528,
+  "journal_id": 134387664276282105,
+  "lowest_valid_usn": 0,
+  "maximum_size": 67108864,
+  "maximum_usn": 9223372036854710272,
+  "next_usn": 2092971464,
+  "path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-15\\power",
+  "schema_version": 1,
+  "start_digest": "0a2ac04b93a1b30193533265d41156661894b02eea12a9f8e0453eadef0e7228",
+  "start_usn": 2092971464,
+  "started_at": "2026-11-16T00:57:13+00:00",
+  "status": "STARTED",
+  "volume": "F:\\",
+  "volume_device": "\\\\.\\F:",
+  "volume_name": "AI",
+  "volume_serial": "b4d96ba6"
+}

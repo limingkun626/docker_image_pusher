@@ -1,0 +1,1307 @@
+{
+  "durability": {
+    "physical_power_loss": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "durability.physical_power_loss",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "bytes": 3369,
+            "path": "input/power/PHYSICAL-POWER-EVIDENCE.json",
+            "sha256": "e6a69748953198f2f775914826bf42b639e613039f4f92b15189660f5d6dd93f"
+          }
+        ],
+        "facts": {
+          "boot_id_after": "5186d11603484bbbfd12cd1722bb2ad0acd77024b8bae5ef82376a1f7f4b1405",
+          "boot_id_before": "377c18dec27bdef11062a76cb0d098946e40ada2771718b2406ab522e030655c",
+          "boot_identity_changed": true,
+          "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "event": "PHYSICAL_MID_SWAP_OUTAGE",
+          "kernel_power_event_id": 41,
+          "mid_swap_recovered": true,
+          "recovered_tree_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "rollback_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7"
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "boot_id_after": "5186d11603484bbbfd12cd1722bb2ad0acd77024b8bae5ef82376a1f7f4b1405",
+          "boot_id_before": "377c18dec27bdef11062a76cb0d098946e40ada2771718b2406ab522e030655c",
+          "domain": "durability.physical_power_loss",
+          "exit_code": 0,
+          "mid_swap": true,
+          "power_loss_observed": true,
+          "recovered_tree_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9"
+        },
+        "raw_evidence_digest": "90eefdd926ed15252dc7f00db142016807b50de4ecd37879cb82ce4def02173f",
+        "receipt_digest": "3eeb834ee3dff368cb730c052875f740f7395419e32447ee7cbcb7d34bd21f26",
+        "runner": {
+          "id": "python -B \"F:\\Codex\\runs\\fir-1.7.0-release-20261115\\power_probe_wrapper.py\" arm",
+          "runner_sha256": "a2368414f382f65fe8a46916e381e2044365fc74401611e0fa50624915271c63",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "3eeb834ee3dff368cb730c052875f740f7395419e32447ee7cbcb7d34bd21f26",
+      "runner": "python -B \"F:\\Codex\\runs\\fir-1.7.0-release-20261115\\power_probe_wrapper.py\" arm",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    },
+    "software_atomicity": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "durability.software_atomicity",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "bytes": 78995,
+            "path": "input/windows-junit.xml",
+            "sha256": "b726f5d4c7ef266c81640a6c0644a26171a7ab488730a31054db2600840b581d"
+          },
+          {
+            "bytes": 80887,
+            "path": "input/linux-junit.xml",
+            "sha256": "0d48cb9cf58299cd2f117ffbf8223d552ce9ca187f3b2840ecc5b985fd9ac4d0"
+          }
+        ],
+        "facts": {
+          "atomic_activation": true,
+          "linux_pass_count": 529,
+          "required_tests": [
+            "test_failed_second_operation_removes_candidate_tree",
+            "test_install_package_copies_exact_reviewed_tree",
+            "test_installation_uses_durable_replace_for_all_directory_transitions",
+            "test_restore_failure_reports_blocked_restore"
+          ],
+          "rollback_retained": true,
+          "windows_pass_count": 534
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "durability.software_atomicity",
+          "exit_code": 0,
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "stage_digest": "72bba90a546f1e141f1a3ca4c9675ce13a81629c7a154f86854f8be918e16952"
+        },
+        "raw_evidence_digest": "f636cce3078b59fb7ddf334aba672042ad32e07d4df567b08e85fad062145844",
+        "receipt_digest": "b724a3921ecdeb3e210a7badec24d6199193c8caead72dd10db2e4e3f2fcf159",
+        "runner": {
+          "id": "pytest package, durability, rollback and crash-recovery suites",
+          "runner_sha256": "3f57541267b26b0fc419fa11a13fc1c35885d3c15026d5834e17a810b73aa903",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "b724a3921ecdeb3e210a7badec24d6199193c8caead72dd10db2e4e3f2fcf159",
+      "runner": "pytest package, durability, rollback and crash-recovery suites",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    }
+  },
+  "evaluator": {
+    "structured_blocked_receipt": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "evaluator.structured_blocked_receipt",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "bytes": 78995,
+            "path": "input/windows-junit.xml",
+            "sha256": "b726f5d4c7ef266c81640a6c0644a26171a7ab488730a31054db2600840b581d"
+          }
+        ],
+        "facts": {
+          "required_tests": [
+            "test_cli_blocked_output_file_is_structured_json_without_traceback",
+            "test_r8_cli_emits_blocked_install_receipt",
+            "test_release_cli_turns_bad_manifest_into_blocked_receipt"
+          ]
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "case_count": 1,
+          "domain": "evaluator.structured_blocked_receipt",
+          "exit_code": 0,
+          "failed_count": 0,
+          "raw_result_sha256": "6243f62c67e8dc3ef62ca069fbd63496c829bf1359bde3d569beb50564d9d318"
+        },
+        "raw_evidence_digest": "387c458583f3826eba3f60e2a239bc4389d8863fb51ce0804bbe81e87b73ae04",
+        "receipt_digest": "e43a1723963b09b473b3cfbcc48135f9693955f93506bc8204401aa9262a140e",
+        "runner": {
+          "id": "pytest structured release failure receipts",
+          "runner_sha256": "cab44a141b64d1a0fd09723ccca58ad52b1f4f70558f2d2acb87d023ad33b188",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "e43a1723963b09b473b3cfbcc48135f9693955f93506bc8204401aa9262a140e",
+      "runner": "pytest structured release failure receipts",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    },
+    "tamper_input_matrix": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "evaluator.tamper_input_matrix",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "bytes": 78995,
+            "path": "input/windows-junit.xml",
+            "sha256": "b726f5d4c7ef266c81640a6c0644a26171a7ab488730a31054db2600840b581d"
+          }
+        ],
+        "facts": {
+          "required_tests": [
+            "test_sigstore_helper_substitution_blocks_before_execution",
+            "test_sigstore_replacement_between_verify_and_hash_blocks",
+            "test_sigstore_script_wrapper_requires_complete_runtime_closure",
+            "test_sigstore_verifier_content_and_version_are_pinned"
+          ]
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "case_count": 1,
+          "domain": "evaluator.tamper_input_matrix",
+          "exit_code": 0,
+          "failed_count": 0,
+          "raw_result_sha256": "54ee1baa7f1125303cb93a11cfa377c32b3377f17992240a4bbf3b18fb384c99"
+        },
+        "raw_evidence_digest": "27bca66a4dba790b7a56a7171f384c54f87c8605bc25dcf2beaf9e58ea55364d",
+        "receipt_digest": "092933f1c203c845ff2b39a2b0e7df763ab626b9e10443bab0a17cc026741e2a",
+        "runner": {
+          "id": "pytest Sigstore tamper and substitution matrix",
+          "runner_sha256": "2ab801e7c5b02b64df454a7c7b269b46407cf02b5e269fe1c56b6330f06a0514",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "092933f1c203c845ff2b39a2b0e7df763ab626b9e10443bab0a17cc026741e2a",
+      "runner": "pytest Sigstore tamper and substitution matrix",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    },
+    "verifier_identity_frozen": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "evaluator.verifier_identity_frozen",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "bytes": 38468,
+            "path": "input/evaluator/matrix_selftest_r19.py",
+            "sha256": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083"
+          },
+          {
+            "path": "policies/trust-policy.json",
+            "sha256": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c"
+          }
+        ],
+        "facts": {
+          "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
+          "policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+          "verifier_sha256": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627",
+          "verifier_version": "4.5.1"
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "case_count": 1,
+          "domain": "evaluator.verifier_identity_frozen",
+          "exit_code": 0,
+          "failed_count": 0,
+          "raw_result_sha256": "9f64bb756b5b8d2be9a213dc0f797dfc94134915dc4d8f0fdd08d02e9b09130c"
+        },
+        "raw_evidence_digest": "091fcb0e7a4c1c9a5bbff4cb1551e43c4f89710388481b30a8a07654c1b6b929",
+        "receipt_digest": "2eab35421c82e02621ed9d1aa5e7649c0e98ecd179b231a703e4ead59bde5b3b",
+        "runner": {
+          "id": "pytest evaluator trust and verifier identity controls",
+          "runner_sha256": "332d4f5a6261927a77ba4e2391d4392ec3619d6bc1531f38dee081d3423d46ff",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "2eab35421c82e02621ed9d1aa5e7649c0e98ecd179b231a703e4ead59bde5b3b",
+      "runner": "pytest evaluator trust and verifier identity controls",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    }
+  },
+  "lifecycle": {
+    "atomic_activation": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "lifecycle.atomic_activation",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "path": "windows-lifecycle",
+            "sha256": "33048ad88f0122526a837c0372578fb639ae7950e00cffd688ff6e6cf0afb598"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "2f45be4f8a17a7fe79332027d9fb7e307f75d264c0d46309afd5d6f688f5047e"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "f13c5dc505ba2ed584f3f7a5353ecb0bffb29bbc70804457110892fe858f8f6d"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "platforms": [
+            "windows",
+            "linux",
+            "macos"
+          ],
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "stage": "atomic_activation",
+          "status": "PASS"
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "lifecycle.atomic_activation",
+          "exit_code": 0,
+          "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "smoke_exit_code": 0,
+          "target_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9"
+        },
+        "raw_evidence_digest": "f73e489028c1cc06ad14c26197cbb974e07d39e67489b4585d789cf43b971c31",
+        "receipt_digest": "6b39cb385913601707ad56d336a46be5bd24315bff92b6ebadefc10ac75f516f",
+        "runner": {
+          "id": "three-platform lifecycle harness",
+          "runner_sha256": "757fa50361df2ac3b196a991120f1516df9083e9b12f20f78519f44c8f495fc9",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "6b39cb385913601707ad56d336a46be5bd24315bff92b6ebadefc10ac75f516f",
+      "runner": "three-platform lifecycle harness",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    },
+    "post_activation_smoke": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "lifecycle.post_activation_smoke",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "path": "windows-lifecycle",
+            "sha256": "33048ad88f0122526a837c0372578fb639ae7950e00cffd688ff6e6cf0afb598"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "2f45be4f8a17a7fe79332027d9fb7e307f75d264c0d46309afd5d6f688f5047e"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "f13c5dc505ba2ed584f3f7a5353ecb0bffb29bbc70804457110892fe858f8f6d"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "platforms": [
+            "windows",
+            "linux",
+            "macos"
+          ],
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "stage": "smoke",
+          "status": "PASS"
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "lifecycle.post_activation_smoke",
+          "exit_code": 0,
+          "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "smoke_exit_code": 0,
+          "target_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9"
+        },
+        "raw_evidence_digest": "6670d93439108792550aba4b361ab5a180bcd6a5e23d61bf7f929423d4d4902a",
+        "receipt_digest": "2c4ce02b39963a426c2abb565a2a89544626ac87984c9cc5e8ceaa8ae6fa3b56",
+        "runner": {
+          "id": "three-platform lifecycle harness",
+          "runner_sha256": "757fa50361df2ac3b196a991120f1516df9083e9b12f20f78519f44c8f495fc9",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "2c4ce02b39963a426c2abb565a2a89544626ac87984c9cc5e8ceaa8ae6fa3b56",
+      "runner": "three-platform lifecycle harness",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    },
+    "readback": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "lifecycle.readback",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "path": "windows-lifecycle",
+            "sha256": "33048ad88f0122526a837c0372578fb639ae7950e00cffd688ff6e6cf0afb598"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "2f45be4f8a17a7fe79332027d9fb7e307f75d264c0d46309afd5d6f688f5047e"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "f13c5dc505ba2ed584f3f7a5353ecb0bffb29bbc70804457110892fe858f8f6d"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "platforms": [
+            "windows",
+            "linux",
+            "macos"
+          ],
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "stage": "readback",
+          "status": "PASS"
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "lifecycle.readback",
+          "exit_code": 0,
+          "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "smoke_exit_code": 0,
+          "target_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9"
+        },
+        "raw_evidence_digest": "f3c82ee78776386f4a84033a79db9f22ffc86266367ab95278d9f73e7946c311",
+        "receipt_digest": "3a7a7111e2e4ce95f2beba630c1ccc53e06714674e07e56537befd682828b949",
+        "runner": {
+          "id": "three-platform lifecycle harness",
+          "runner_sha256": "757fa50361df2ac3b196a991120f1516df9083e9b12f20f78519f44c8f495fc9",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "3a7a7111e2e4ce95f2beba630c1ccc53e06714674e07e56537befd682828b949",
+      "runner": "three-platform lifecycle harness",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    },
+    "rollback_retained": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "lifecycle.rollback_retained",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "path": "windows-lifecycle",
+            "sha256": "33048ad88f0122526a837c0372578fb639ae7950e00cffd688ff6e6cf0afb598"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "2f45be4f8a17a7fe79332027d9fb7e307f75d264c0d46309afd5d6f688f5047e"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "f13c5dc505ba2ed584f3f7a5353ecb0bffb29bbc70804457110892fe858f8f6d"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "platforms": [
+            "windows",
+            "linux",
+            "macos"
+          ],
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "stage": "rollback",
+          "status": "PASS"
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "lifecycle.rollback_retained",
+          "exit_code": 0,
+          "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "smoke_exit_code": 0,
+          "target_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9"
+        },
+        "raw_evidence_digest": "6a8060c5819a4fd244bb904f78bcd9fd70a3a6c69b3e88d25f9a82135f0cca78",
+        "receipt_digest": "107e23bf0e973619b6976c70a74e6ac7f0e26faa74530eb6325e1727aedc26d1",
+        "runner": {
+          "id": "three-platform lifecycle harness",
+          "runner_sha256": "757fa50361df2ac3b196a991120f1516df9083e9b12f20f78519f44c8f495fc9",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "107e23bf0e973619b6976c70a74e6ac7f0e26faa74530eb6325e1727aedc26d1",
+      "runner": "three-platform lifecycle harness",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    },
+    "staging_install": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "lifecycle.staging_install",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "path": "windows-lifecycle",
+            "sha256": "33048ad88f0122526a837c0372578fb639ae7950e00cffd688ff6e6cf0afb598"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "2f45be4f8a17a7fe79332027d9fb7e307f75d264c0d46309afd5d6f688f5047e"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "f13c5dc505ba2ed584f3f7a5353ecb0bffb29bbc70804457110892fe858f8f6d"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "platforms": [
+            "windows",
+            "linux",
+            "macos"
+          ],
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "stage": "installation",
+          "status": "PASS"
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "lifecycle.staging_install",
+          "exit_code": 0,
+          "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "smoke_exit_code": 0,
+          "target_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9"
+        },
+        "raw_evidence_digest": "6b317dfbbbd22b28b91c6e8cdc2dd728378085563f613714214c5cf61526159b",
+        "receipt_digest": "685f5c383bc58312eb9eb7bdf94a10ae7c97e9786dbf06ec399ff1f133b72b8f",
+        "runner": {
+          "id": "three-platform lifecycle harness",
+          "runner_sha256": "757fa50361df2ac3b196a991120f1516df9083e9b12f20f78519f44c8f495fc9",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "685f5c383bc58312eb9eb7bdf94a10ae7c97e9786dbf06ec399ff1f133b72b8f",
+      "runner": "three-platform lifecycle harness",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    }
+  },
+  "platform_support": {
+    "linux_install": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "platform_support.linux_install",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "bytes": 80887,
+            "path": "input/linux-junit.xml",
+            "sha256": "0d48cb9cf58299cd2f117ffbf8223d552ce9ca187f3b2840ecc5b985fd9ac4d0"
+          },
+          {
+            "path": "linux-self-check-summary",
+            "sha256": "2cec6a9cc95e3edbbd9b913e4c820e478461e50f14940dd2b88cae2104ae0947"
+          },
+          {
+            "path": "linux-lifecycle",
+            "sha256": "2f45be4f8a17a7fe79332027d9fb7e307f75d264c0d46309afd5d6f688f5047e"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "lifecycle": "PASS",
+          "platform": "linux",
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "rollback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "self_check": "CHECKED",
+          "tests": {
+            "errors": 0,
+            "failures": 0,
+            "passed": 529,
+            "skipped": 16,
+            "tests": 545
+          }
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "platform_support.linux_install",
+          "exit_code": 0,
+          "platform": "linux",
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "rollback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "smoke_exit_code": 0
+        },
+        "raw_evidence_digest": "be89fe26d1ef4be59635209cbfb0e2386c22e0d86b52352e28d2682cd407bab9",
+        "receipt_digest": "2fa60f8d71d3e7cd7ec08427b46df90db0905d8b9bb9dec4dec295bbf49404b6",
+        "runner": {
+          "id": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+          "runner_sha256": "11ac683aff62c9f2a527485690459912c96d5e0458c91146ea592c271191815e",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "2fa60f8d71d3e7cd7ec08427b46df90db0905d8b9bb9dec4dec295bbf49404b6",
+      "runner": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    },
+    "macos_install": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "platform_support.macos_install",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "bytes": 80939,
+            "path": "macos/macos-junit.xml",
+            "sha256": "358700153caefac5c3f30050a66d29c0839c767993b83c533aa845b74be28761"
+          },
+          {
+            "path": "macos-self-check-summary",
+            "sha256": "6a9873a7791e8e4e1a97e279261abc90d70962fde7c7715c2023fe6a92ad5860"
+          },
+          {
+            "path": "macos-lifecycle",
+            "sha256": "f13c5dc505ba2ed584f3f7a5353ecb0bffb29bbc70804457110892fe858f8f6d"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "lifecycle": "PASS",
+          "platform": "macos",
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "rollback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "self_check": "CHECKED",
+          "tests": {
+            "errors": 0,
+            "failures": 0,
+            "passed": 529,
+            "skipped": 16,
+            "tests": 545
+          }
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "platform_support.macos_install",
+          "exit_code": 0,
+          "platform": "macos",
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "rollback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "smoke_exit_code": 0
+        },
+        "raw_evidence_digest": "38c4aa2f321d893eea1758df9ab47bad4cf36052354d63aa59814fb7720f992c",
+        "receipt_digest": "96bef42a17efbe9fa2cd4bcf31726687114c0fe7b3dd7cee61273fe67e2db97f",
+        "runner": {
+          "id": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+          "runner_sha256": "11ac683aff62c9f2a527485690459912c96d5e0458c91146ea592c271191815e",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "96bef42a17efbe9fa2cd4bcf31726687114c0fe7b3dd7cee61273fe67e2db97f",
+      "runner": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    },
+    "windows_install": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "platform_support.windows_install",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "bytes": 78995,
+            "path": "input/windows-junit.xml",
+            "sha256": "b726f5d4c7ef266c81640a6c0644a26171a7ab488730a31054db2600840b581d"
+          },
+          {
+            "path": "windows-self-check-summary",
+            "sha256": "dfd8b9af5eb2e3bae06509a6ee81129affffe7db71aef23882e456f603b13ea9"
+          },
+          {
+            "path": "windows-lifecycle",
+            "sha256": "33048ad88f0122526a837c0372578fb639ae7950e00cffd688ff6e6cf0afb598"
+          }
+        ],
+        "facts": {
+          "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "lifecycle": "PASS",
+          "platform": "windows",
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "rollback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "self_check": "CHECKED",
+          "tests": {
+            "errors": 0,
+            "failures": 0,
+            "passed": 534,
+            "skipped": 11,
+            "tests": 545
+          }
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "platform_support.windows_install",
+          "exit_code": 0,
+          "platform": "windows",
+          "readback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "rollback_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+          "smoke_exit_code": 0
+        },
+        "raw_evidence_digest": "bcf9aeeb678bfc1297e38064f55b8b9669b22492b06659844cadb9e9e52c5093",
+        "receipt_digest": "4ace9c3e286d315f88c794f35855ee5e728cafe5022b1f8ab25c8f3fca3c0387",
+        "runner": {
+          "id": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+          "runner_sha256": "11ac683aff62c9f2a527485690459912c96d5e0458c91146ea592c271191815e",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "4ace9c3e286d315f88c794f35855ee5e728cafe5022b1f8ab25c8f3fca3c0387",
+      "runner": "python -B -m pytest; run_inspection.py check; lifecycle harness",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    }
+  },
+  "trust": {
+    "external_reviewer_signature": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "trust.external_reviewer_signature",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "path": ".github/workflows/codex-fir-r19-sign-20261111.yml",
+            "sha256": "2c8c40ace74b7f83e2f273126a8e4628975a8183df56bcf9e019c259b15f0c89"
+          },
+          {
+            "path": "policies/trust-policy.json",
+            "sha256": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c"
+          }
+        ],
+        "facts": {
+          "oidc_issuer": "https://token.actions.githubusercontent.com",
+          "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "trust_root_id": "sigstore:abaa28e5742590a89203105e550752548daad953299b3bc66656bca0d1dd775c",
+          "verification": "offline exact-identity Sigstore bundle verification"
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "trust.external_reviewer_signature",
+          "exit_code": 0,
+          "trust_root_digest": "77cfc75fdf255b90b21d7381f323d08558f512d502c50d1f600b6d4015c6d0d6",
+          "verifier_output_sha256": "d7fd80982df28f81967d83229d87af7b0c7e2bfc23ee63f988145922c1454c00"
+        },
+        "raw_evidence_digest": "3c31f6253d48b0a87ee2b094d10e5bda97227fdd4a040b2c6804d07ed1e48b59",
+        "receipt_digest": "577c918fad925e223434297c1281fedc87eccee5affaa70d6ef0ddb258b8ddc0",
+        "runner": {
+          "id": "cosign sign-blob under GitHub Actions OIDC",
+          "runner_sha256": "0a16c68346bc463ca34936cfbcf248c58b1e211001eb62c92c2c1c242e5ca91e",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "577c918fad925e223434297c1281fedc87eccee5affaa70d6ef0ddb258b8ddc0",
+      "runner": "cosign sign-blob under GitHub Actions OIDC",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    },
+    "external_trust_root": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "trust.external_trust_root",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "path": "policies/trust-policy.json",
+            "sha256": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c"
+          }
+        ],
+        "facts": {
+          "oidc_issuer": "https://token.actions.githubusercontent.com",
+          "reviewer_registry_digest": "fe7c2fa54b17902fe99e9cb8c5805ee0f7caf7aed201055afe42d040de20a3b7",
+          "trust_root_id": "sigstore:abaa28e5742590a89203105e550752548daad953299b3bc66656bca0d1dd775c"
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "trust.external_trust_root",
+          "exit_code": 0,
+          "trust_root_digest": "77cfc75fdf255b90b21d7381f323d08558f512d502c50d1f600b6d4015c6d0d6",
+          "verifier_output_sha256": "173c020cef000e915377c25fc0b5c883550c3a3fb14ad6774b3058f0aaa687b2"
+        },
+        "raw_evidence_digest": "8fc00165dba35df016ff7711e20bce3c422742d94e8200931978bed425178a33",
+        "receipt_digest": "706b9cbc7e894f35513f385601a3e669e0bc49c4a4d4331ad43ab159599eba15",
+        "runner": {
+          "id": "code-frozen trust policy",
+          "runner_sha256": "568a14feca220ac9edc31a14c606a556da8420c46cc4eb00239b49aaf1196121",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "706b9cbc7e894f35513f385601a3e669e0bc49c4a4d4331ad43ab159599eba15",
+      "runner": "code-frozen trust policy",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    },
+    "non_producer_review": {
+      "environment": {
+        "github_run_id": "43788937686",
+        "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16"
+      },
+      "receipt": {
+        "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "command": [
+          "python",
+          "-B",
+          "finalize_release_1_7.py"
+        ],
+        "command_digest": "c73efe82f221d2bef3daec2c9444505f8c88bcab83fb02af5fbba345b088e571",
+        "domain": "trust.non_producer_review",
+        "environment": {
+          "github_run_id": "43788937686",
+          "github_workflow_ref": "limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16"
+        },
+        "environment_digest": "cefb756f2f93fee8eef21f674fdbce4b765f54f61843dfdcfbd05bd381346006",
+        "evidence": [
+          {
+            "path": "trust-registry.json",
+            "sha256": "fe7c2fa54b17902fe99e9cb8c5805ee0f7caf7aed201055afe42d040de20a3b7"
+          },
+          {
+            "path": "policies/trust-policy.json",
+            "sha256": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c"
+          }
+        ],
+        "facts": {
+          "producer": "codex-primary",
+          "producer_reviewer_separated": true,
+          "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111"
+        },
+        "finished_at": "2026-11-16T02:01:31+00:00",
+        "installer_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+        "kind": "domain-receipt",
+        "raw_evidence": {
+          "domain": "trust.non_producer_review",
+          "exit_code": 0,
+          "trust_root_digest": "77cfc75fdf255b90b21d7381f323d08558f512d502c50d1f600b6d4015c6d0d6",
+          "verifier_output_sha256": "4d63a9c14bf74eb453a86debc54c8899babc7f471cdfeacaf511351cb8dc207d"
+        },
+        "raw_evidence_digest": "4b4456aa9431f420893d20986483351a17a2a0ef513f08d414d1fe0f405ddd10",
+        "receipt_digest": "0e7d2bb8c2ac56e8593291e500cb7928b96c0e711be5bf7ad4d571f70f3583ca",
+        "runner": {
+          "id": "GitHub Actions OIDC reviewer workflow",
+          "runner_sha256": "182cda8edc9b883ed2c3ed5b2e2c92c9401dc359a80dd8595ab61ee7d6ba8b8b",
+          "version": "1.0.0"
+        },
+        "schema_version": 1,
+        "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+        "signature_receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+        "signer": {
+          "id": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+          "verification_method": "sigstore-keyless"
+        },
+        "started_at": "2026-11-16T02:01:31+00:00",
+        "status": "VERIFIED",
+        "trust_policy_digest": "324fba8e9e841288c20f44b8b3f6adbda6ebf5945295edb499144c8c6026d29c",
+        "verifier_digest": "47eaae099a72762dcb2a2019a049a560ce92a8d256f8843163f2454d4753d627"
+      },
+      "receipt_sha256": "0e7d2bb8c2ac56e8593291e500cb7928b96c0e711be5bf7ad4d571f70f3583ca",
+      "runner": "GitHub Actions OIDC reviewer workflow",
+      "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+      "status": "VERIFIED"
+    }
+  }
+}

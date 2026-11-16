@@ -1,0 +1,15 @@
+{
+  "armed_at": "2026-11-16T00:57:13+00:00",
+  "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+  "marker_digest": "f9fdb1e08c139d299d088097a9c9ed9e5e14acc22ba7e925fc2573bb6e0508a5",
+  "mid_swap_at": "2026-11-16T00:57:22+00:00",
+  "rollback_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+  "rollback_exists": true,
+  "schema_version": 1,
+  "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+  "staged_candidates": [
+    "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-15\\power\\attempt\\.active.install-5dzo6qq2\\active"
+  ],
+  "status": "MID_SWAP_REACHED",
+  "target_exists": false
+}

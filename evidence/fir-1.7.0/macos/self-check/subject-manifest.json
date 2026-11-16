@@ -1,0 +1,42 @@
+{
+  "adapter_contract_digest": "96e19d6d71c22c92ad0f3ce46d6d7b10be3ae16cfeb1b18fb45aeccdd505f726",
+  "adapter_id": "protected-reader",
+  "adapter_version": "2.0.0",
+  "character_coverage_digest": "6f71a1e734127dc6a7835eb74cd824f1b389170b81d1501427850447fc9346ab",
+  "codepoint_count": 35,
+  "config_digest": "2e462165ec38df44e984171483c8983b9c435720bf9476fcf3411d1babeabdba",
+  "coverage_gap_count": 0,
+  "defect_taxonomy_digest": "af8bb56177017d78709abb273f036e65b4b77bd89d58da195d32f94107265b7e",
+  "detector_pack_digest": "e3f63d016ec314c11b85a8da91461c947e0162138d08e82502ab972d36a5d0d8",
+  "directories": [
+    {
+      "file_id": "3507864",
+      "generation": "ea6fd8bf58ff51081982ea19aa97668570aaf1795977761d8ea6cbd2b57dc7c3",
+      "relative_path": ".",
+      "volume_id": "16777230"
+    }
+  ],
+  "evidence_policy_digest": "8614f63e97af87f1c04c16900e51862206ac6d25033dde19e653e85568eef1a9",
+  "files": [
+    {
+      "locator": "SKILL.md",
+      "same_handle": true,
+      "sha256": "db3d5de60023831c05ee00b2b10d79dbfb8ae58cebe81f2bb69baff2afd67dae",
+      "size": 35
+    }
+  ],
+  "fingerprint_registry_digest": "97de4cdf5a47a2c4566f58b8410e1b300f9dda164ccd3209b93cda8f6013f6a0",
+  "generation": 1,
+  "knowledge_pack_digest": "b5fd2b6788576df5a72ad9410374e62d0cc88ea9de3968cb2a9e9190422604f3",
+  "knowledge_pack_id": "default-v0",
+  "punctuation_count": 9,
+  "root_generation": "ea6fd8bf58ff51081982ea19aa97668570aaf1795977761d8ea6cbd2b57dc7c3",
+  "schema_version": 2,
+  "snapshot_digest": "c66bd1b745ebc475a5b0680fb53ccc8e4d7726169107cfed8cb51fe1e58eba92",
+  "subject_id": "skill:ab9f771f43d10ef8",
+  "subject_kind": "SKILL",
+  "subject_root": "/Users/runner/work/docker_image_pusher/docker_image_pusher/evidence/fir-1.7.0/probe-skill",
+  "taxonomy_coverage_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
+  "tree_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed",
+  "uncovered_character_count": 0
+}

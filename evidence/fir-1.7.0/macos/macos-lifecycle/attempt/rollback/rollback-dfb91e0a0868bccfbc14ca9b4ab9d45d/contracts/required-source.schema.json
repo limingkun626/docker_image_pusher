@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Required Source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "source_id", "source_type", "locator", "applicability"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "source_id": { "type": "string", "minLength": 1 },
+    "source_type": {
+      "enum": [
+        "RESOURCE",
+        "CLAIM",
+        "INVARIANT",
+        "PLANE",
+        "BEHAVIOR",
+        "RUNTIME",
+        "LIFECYCLE",
+        "EXTERNAL"
+      ]
+    },
+    "locator": { "type": "string", "minLength": 1 },
+    "applicability": {
+      "enum": ["APPLICABLE", "NOT_APPLICABLE_WITH_PROOF", "REQUIRED_MISSING"]
+    },
+    "proof_ref": { "type": ["string", "null"] }
+  },
+  "if": {
+    "properties": {
+      "applicability": { "const": "NOT_APPLICABLE_WITH_PROOF" }
+    }
+  },
+  "then": {
+    "required": ["proof_ref"],
+    "properties": {
+      "proof_ref": { "type": "string", "minLength": 1 }
+    }
+  }
+}

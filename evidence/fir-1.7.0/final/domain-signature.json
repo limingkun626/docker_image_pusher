@@ -1,0 +1,19 @@
+{
+  "bundle_sha256": "6fb9b8f2bf2f399893a951b0129a854a0bfb34b241dc0b0de69fecd3a5a52c67",
+  "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "receipt_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+  "reviewer": "https://github.com/limingkun626/docker_image_pusher/.github/workflows/codex-fir-r19-sign-20261111.yml@refs/heads/codex-fir-r19-sign-20261111",
+  "schema_version": 1,
+  "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+  "status": "VERIFIED",
+  "subject_digest": "4af612a1fd5f88f4162bbeb0e3b24dc0f7a0e75497a0419289726c314912fe82",
+  "subject_sha256": "bdb568f77786b6f8b1a9d11b30cffacea2cb1671907b3b2c184989b3918fc3a5",
+  "trust_root_id": "sigstore:abaa28e5742590a89203105e550752548daad953299b3bc66656bca0d1dd775c",
+  "verification_method": "sigstore-keyless",
+  "verifier_closure_digest": "e459c9fc06446bd104173e1165dc4defd2fb93335d55405bb75926666c368b06",
+  "verifier_executable": "/home/runner/.cosign/cosign",
+  "verifier_exit_code": 0,
+  "verifier_sha256": "424e2c97d0b45fd7a6b608a87f090f35633f4c23ece5f092d48bba11aaf4bbfa",
+  "verifier_version": "Verified OK"
+}

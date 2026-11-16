@@ -1,0 +1,46 @@
+{
+  "candidate_digest": null,
+  "consumer_evidence": {},
+  "consumer_receipts": {},
+  "edges": [],
+  "finding_closure": {},
+  "graph_digest": "ea3292a7540fa4767566c287024dd064cac7fd056b173b6dbbe753d0ff67f5f3",
+  "impact_scanner_registry_digest": "b1b4fcaf26812516973f435825ba662910ca6480f802a4f473332dd7b8b4e5ab",
+  "imports": [],
+  "no_consumer_proofs": {},
+  "nodes": [
+    {
+      "id": "file:SKILL.md",
+      "kind": "FILE",
+      "locator": "SKILL.md",
+      "roles": [
+        "SOURCE",
+        "DOCUMENTATION"
+      ]
+    }
+  ],
+  "opaque_sources": [],
+  "scanner_coverage": [
+    {
+      "coverage_status": "SCANNED",
+      "edge_kinds": [],
+      "failure_reason": null,
+      "file_class": "DOCUMENTATION",
+      "locator": "SKILL.md",
+      "observed_ranges": [
+        {
+          "end_byte": 35,
+          "start_byte": 0
+        }
+      ],
+      "scanner_digest": "2c40918e89685997cce91cab6c5f73ffe863dcc3f4caaf592f3c153337c72de3",
+      "scanner_id": "scanner.markdown.links",
+      "scanner_version": "1.0.0"
+    }
+  ],
+  "scanner_coverage_digest": "dd110c7ac3bc5a2dad362f38976c5c1c4bf9ac47a166ba2049fa28429723c761",
+  "schema_version": 3,
+  "source_closure_digest": null,
+  "subject_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed",
+  "unsupported_sources": []
+}

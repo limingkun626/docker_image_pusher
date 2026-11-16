@@ -1,0 +1,144 @@
+{
+  "acceptance_matrix": {
+    "count": 76,
+    "passed": 76,
+    "report_digest": "e83ce0066e1d3dd8b9856e6b6430e69bc299a789ae12f2b1d42368150af1fbda",
+    "sha256": "f88de31a68537829d633f2b8a68dc3a72b4ca43a6ffc01c27c66af44d275ea15"
+  },
+  "candidate_checks": {
+    "linux": {
+      "blocked_detectors": [],
+      "capability_digest": null,
+      "capability_status": null,
+      "closed_count": 0,
+      "coverage_digest": "6f71a1e734127dc6a7835eb74cd824f1b389170b81d1501427850447fc9346ab",
+      "detectors": 10,
+      "impact_digest": "ea3292a7540fa4767566c287024dd064cac7fd056b173b6dbbe753d0ff67f5f3",
+      "matrix_digest": null,
+      "open_count": 0,
+      "semantic_cell_count": 72,
+      "semantic_matrix_digest": "ae9d3714398a241574ddfd5d5a25e9d9b961a4b302fd56b7069b625c9e44ea10",
+      "status": "CHECKED",
+      "subject_id": "skill:ab9f771f43d10ef8",
+      "subject_kind": "SKILL",
+      "taxonomy_digest": "5d210b7f26dc8b4986cfd02608136f079ce8be3eb1b21060e6192e35f3cdbdd7",
+      "tree_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed"
+    },
+    "macos": {
+      "blocked_detectors": [],
+      "capability_digest": null,
+      "capability_status": null,
+      "closed_count": 0,
+      "coverage_digest": "6f71a1e734127dc6a7835eb74cd824f1b389170b81d1501427850447fc9346ab",
+      "detectors": 10,
+      "impact_digest": "ea3292a7540fa4767566c287024dd064cac7fd056b173b6dbbe753d0ff67f5f3",
+      "matrix_digest": null,
+      "open_count": 0,
+      "semantic_cell_count": 72,
+      "semantic_matrix_digest": "6a750e7dd4db12dc70ebe3cd740d57b6c065f5dc6a274a6a5eff56f9d13ac67b",
+      "status": "CHECKED",
+      "subject_id": "skill:ab9f771f43d10ef8",
+      "subject_kind": "SKILL",
+      "taxonomy_digest": "2b2adb99cb5047a8024677dc1f9ee4ecefb9105349d8856999eaa3eb1343769c",
+      "tree_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed"
+    },
+    "windows": {
+      "blocked_detectors": [],
+      "capability_digest": null,
+      "capability_status": null,
+      "closed_count": 0,
+      "coverage_digest": "6f71a1e734127dc6a7835eb74cd824f1b389170b81d1501427850447fc9346ab",
+      "detectors": 10,
+      "impact_digest": "ea3292a7540fa4767566c287024dd064cac7fd056b173b6dbbe753d0ff67f5f3",
+      "matrix_digest": null,
+      "open_count": 0,
+      "semantic_cell_count": 72,
+      "semantic_matrix_digest": "12b4b30e551d2207775bc8672978ba027b622b5960aef83d4d900eaf38abb3d9",
+      "status": "CHECKED",
+      "subject_id": "skill:ab9f771f43d10ef8",
+      "subject_kind": "SKILL",
+      "taxonomy_digest": "58db7b988a3d55b9321b4287ef810d6ddf45bc32b0f79e0164387f0f4f6584d5",
+      "tree_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed"
+    }
+  },
+  "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+  "captured_at_utc": "2026-11-16T02:01:31+00:00",
+  "clean_probe_digest": "ab9f771f43d10ef87994f67776dbceb762016b57d50ddc3fcdd69bb63a9d93ed",
+  "clean_probe_ledger_digests": {
+    "linux": "5185d4dc72a1fb51d31a3556c9cc90c3a86162f0cddd6f4b58a1a4335e2f7f0e",
+    "macos": "5185d4dc72a1fb51d31a3556c9cc90c3a86162f0cddd6f4b58a1a4335e2f7f0e",
+    "windows": "5185d4dc72a1fb51d31a3556c9cc90c3a86162f0cddd6f4b58a1a4335e2f7f0e"
+  },
+  "clean_probe_ledger_sha256": {
+    "linux": "11114811c94c9828f0762a36ad3ae136b8e578719e95d281ae64703c24c0d91a",
+    "macos": "11114811c94c9828f0762a36ad3ae136b8e578719e95d281ae64703c24c0d91a",
+    "windows": "c53c3a8cffc3b3c4373561c796d17add0de163d9aa01a4358370c4aff588d406"
+  },
+  "clean_probe_semantic_digests": {
+    "linux": "ae9d3714398a241574ddfd5d5a25e9d9b961a4b302fd56b7069b625c9e44ea10",
+    "macos": "6a750e7dd4db12dc70ebe3cd740d57b6c065f5dc6a274a6a5eff56f9d13ac67b",
+    "windows": "12b4b30e551d2207775bc8672978ba027b622b5960aef83d4d900eaf38abb3d9"
+  },
+  "clean_probe_semantic_sha256": {
+    "linux": "9e4ba082ad514f8bc16211402b71b3cd99f2ef0c80c032dd545c9cba675b2230",
+    "macos": "06bd8d81da062af4c4ab1fc13331d6028d72466cb70021979c5db50132e2c069",
+    "windows": "c47cdc7046e150804473189d4128f61200160fe02a1d13457a9e1131189a0f20"
+  },
+  "domain_signature_artifacts": {
+    "bundle": "DOMAIN-SET.sigstore.json",
+    "bundle_sha256": "6fb9b8f2bf2f399893a951b0129a854a0bfb34b241dc0b0de69fecd3a5a52c67",
+    "subject": "DOMAIN-SET-SIGNATURE-SUBJECT.json",
+    "subject_sha256": "bdb568f77786b6f8b1a9d11b30cffacea2cb1671907b3b2c184989b3918fc3a5"
+  },
+  "domain_signature_digest": "4e52f77609c8c2cc38297db63ea095023737009dee0ef9459a537144f8b6bba6",
+  "evaluator_digest": "6ca0936625d4e0539352533a0ce0402d9abe55d83c7835e1d36cf3a69b8d4083",
+  "failure_count": 0,
+  "lifecycle_receipt_digests": {
+    "linux": "2f45be4f8a17a7fe79332027d9fb7e307f75d264c0d46309afd5d6f688f5047e",
+    "macos": "f13c5dc505ba2ed584f3f7a5353ecb0bffb29bbc70804457110892fe858f8f6d",
+    "windows": "33048ad88f0122526a837c0372578fb639ae7950e00cffd688ff6e6cf0afb598"
+  },
+  "package_manifest_digest": "3c189fa36ba3fa2e3510a8dd1b18c1f44b56a63d0a106a849cdeef2127521d2a",
+  "power_evidence_digest": "a683bdf1313e4d0f85e8a449dbc9065428dced65a4135e58bf04bc1752fcf6a8",
+  "run_id": "fir-1.7.0-release-20261115-generation-15-r1",
+  "schema_version": 3,
+  "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+  "scope_id": "fir-1.7.0-release-20261115-generation-15",
+  "status": "PASS",
+  "taxonomy": {
+    "cells": 72,
+    "coverage_digest": "fe2ebf1c210df1bb8622792733bb82096812072b21f4b0c62a5061bb8d3f9f74",
+    "qualification_controls": 720,
+    "terminal_counts": {
+      "COVERED_BY_EXACT_ADAPTER": 11,
+      "COVERED_BY_INDEPENDENT_ORACLE": 16,
+      "COVERED_BY_NATIVE_DETECTOR": 35,
+      "MERGED_WITH_PRIMARY_CELL": 2,
+      "NOT_APPLICABLE_WITH_PROOF": 8
+    }
+  },
+  "test_suites": {
+    "linux": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 529,
+      "skipped": 16,
+      "tests": 545
+    },
+    "macos": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 529,
+      "skipped": 16,
+      "tests": 545
+    },
+    "windows": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 534,
+      "skipped": 11,
+      "tests": 545
+    }
+  },
+  "verification_digest": "f1449cb72117ed3f5728ae612014d69dd3a4169c6cf192b905adb48b9bff3444"
+}

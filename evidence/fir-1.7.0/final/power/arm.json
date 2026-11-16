@@ -1,0 +1,27 @@
+{
+  "arm_digest": "f1845b46bf56299801d55746ce26b2c1268b859be95a7d7a900149d784e48a95",
+  "armed_at": "2026-11-16T00:57:13+00:00",
+  "boot": {
+    "boot_id": "377c18dec27bdef11062a76cb0d098946e40ada2771718b2406ab522e030655c",
+    "computer_name": "DESKTOP-GGA6JS7",
+    "last_boot_utc": "2026-11-15T10:18:41.5000000Z",
+    "machine_guid": "00086770-8a43-4524-8292-451d48c30b75"
+  },
+  "candidate_digest": "6395a682110865ef9bc5e9fb7b16b63488e679b5f64569edb1cd7c26d75bf5e9",
+  "installed_target": "C:\\Users\\Administrator\\.codex\\skills\\full-inspection-repair",
+  "marker_path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-15\\power\\MID-SWAP.json",
+  "old_target_digest": "bdb5b5edd46c862f2c583f3fed48f124344b0a3c7fd7071588d50210f8f52da7",
+  "package_manifest_digest": "3c189fa36ba3fa2e3510a8dd1b18c1f44b56a63d0a106a849cdeef2127521d2a",
+  "probe_command": "python -B \"F:\\Codex\\runs\\fir-1.7.0-release-20261115\\power_probe_wrapper.py\" arm",
+  "probe_script": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\power_probe_wrapper.py",
+  "probe_script_sha256": "3dd2f6195d138a99790f9dd38188c3c19d1ec56ce2b6ec6275a2b188053abb57",
+  "rollback_test": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-15\\power\\attempt\\rollback",
+  "run_id": "fir-1.7.0-release-20261115-generation-15-r1",
+  "schema_version": 1,
+  "scope_digest": "b064b95560fa7c8b01d9c7664c2ea299c1e7e859a346d8b8202ff5e4a8ae40f4",
+  "scope_id": "fir-1.7.0-release-20261115-generation-15",
+  "status": "ARMED",
+  "target_test": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-15\\power\\attempt\\active",
+  "usn_start_digest": "5f33758523ad7047e87b2ff34948f9103cde06ca7bbf3cb3347cc801cc4aa111",
+  "usn_start_path": "F:\\Codex\\runs\\fir-1.7.0-release-20261115\\generation-15\\power\\usn-start.json"
+}
