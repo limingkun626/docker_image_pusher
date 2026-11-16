@@ -310,7 +310,7 @@ jobs:
             --root evidence/fir-1.7.0 \
             --windows-check evidence/fir-1.7.0/input/windows-check \
             --linux-check "$RUNNER_TEMP/linux-evidence/linux-check" \
-            --macos "$RUNNER_TEMP/macos-evidence" \
+            --macos evidence/fir-1.7.0/macos \
             --output evidence/fir-1.7.0/final
 
       - name: Sign reviewer attestation
