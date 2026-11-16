@@ -295,8 +295,8 @@ jobs:
       - name: Stage platform evidence
         run: |
           mkdir -p evidence/fir-1.7.0/macos evidence/fir-1.7.0/linux
-          cp -R "$RUNNER_TEMP/macos-evidence/macos/." evidence/fir-1.7.0/macos/
-          cp -R "$RUNNER_TEMP/linux-evidence/linux/." evidence/fir-1.7.0/linux/
+          cp -R "$RUNNER_TEMP/macos-evidence/." evidence/fir-1.7.0/macos/
+          cp -R "$RUNNER_TEMP/linux-evidence/." evidence/fir-1.7.0/linux/
 
       - uses: sigstore/cosign-installer@756fe2d284c7292c4e9b62c8a28f1e5629c59532
 
@@ -310,7 +310,7 @@ jobs:
             --root evidence/fir-1.7.0 \
             --windows-check evidence/fir-1.7.0/input/windows-check \
             --linux-check "$RUNNER_TEMP/linux-evidence/linux-check" \
-            --macos "$RUNNER_TEMP/macos-evidence/macos" \
+            --macos "$RUNNER_TEMP/macos-evidence" \
             --output evidence/fir-1.7.0/final
 
       - name: Sign reviewer attestation
